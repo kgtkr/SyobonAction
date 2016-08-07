@@ -114,5 +114,117 @@ namespace SyobonAction
             Stage();
 
         }//stagep
+
+        static void tekizimen()
+        {
+
+            //壁
+            for (tt_ = 0; tt_ < n地面max; tt_++)
+            {
+                if (n地面a[tt_] - fx + n地面c[tt_] >= -12010 && n地面a[tt_] - fx <= n画面幅 + 12100 && n地面type[tt_] <= 99)
+                {
+                    xx[0] = 200; xx[2] = 1000;
+                    xx[1] = 2000;//anobia[t]
+
+                    xx[8] = n地面a[tt_] - fx; xx[9] = n地面b[tt_] - fy;
+                    if (n敵キャラa[t_] + n敵キャラnobia[t_] - fx > xx[8] - xx[0] && n敵キャラa[t_] - fx < xx[8] + xx[2] && n敵キャラb[t_] + n敵キャラnobib[t_] - fy > xx[9] + xx[1] * 3 / 4 && n敵キャラb[t_] - fy < xx[9] + n地面d[tt_] - xx[2]) { n敵キャラa[t_] = xx[8] - xx[0] - n敵キャラnobia[t_] + fx; n敵キャラmuki[t_] = 0; }
+                    if (n敵キャラa[t_] + n敵キャラnobia[t_] - fx > xx[8] + n地面c[tt_] - xx[0] && n敵キャラa[t_] - fx < xx[8] + n地面c[tt_] + xx[0] && n敵キャラb[t_] + n敵キャラnobib[t_] - fy > xx[9] + xx[1] * 3 / 4 && n敵キャラb[t_] - fy < xx[9] + n地面d[tt_] - xx[2]) { n敵キャラa[t_] = xx[8] + n地面c[tt_] + xx[0] + fx; n敵キャラmuki[t_] = 1; }
+
+                    if (n敵キャラa[t_] + n敵キャラnobia[t_] - fx > xx[8] + xx[0] && n敵キャラa[t_] - fx < xx[8] + n地面c[tt_] - xx[0] && n敵キャラb[t_] + n敵キャラnobib[t_] - fy > xx[9] && n敵キャラb[t_] + n敵キャラnobib[t_] - fy < xx[9] + n地面d[tt_] - xx[1] && n敵キャラd[t_] >= -100) { n敵キャラb[t_] = n地面b[tt_] - fy - n敵キャラnobib[t_] + 100 + fy; n敵キャラd[t_] = 0; n敵キャラxzimen[t_] = 1; }
+
+                    if (n敵キャラa[t_] + n敵キャラnobia[t_] - fx > xx[8] + xx[0] && n敵キャラa[t_] - fx < xx[8] + n地面c[tt_] - xx[0] && n敵キャラb[t_] - fy > xx[9] + n地面d[tt_] - xx[1] && n敵キャラb[t_] - fy < xx[9] + n地面d[tt_] + xx[0])
+                    {
+                        n敵キャラb[t_] = xx[9] + n地面d[tt_] + xx[0] + fy; if (n敵キャラd[t_] < 0) { n敵キャラd[t_] = -n敵キャラd[t_] * 2 / 3; }//axzimen[t]=1;
+                    }
+
+                }
+            }
+
+            //ブロック
+            for (tt_ = 0; tt_ < nブロックmax; tt_++)
+            {
+                xx[0] = 200; xx[1] = 3000; xx[2] = 1000;
+                xx[8] = nブロックa[tt_] - fx; xx[9] = nブロックb[tt_] - fy;
+                if (nブロックa[tt_] - fx + xx[1] >= -12010 && nブロックa[tt_] - fx <= n画面幅 + 12000)
+                {
+                    if (n敵キャラtype[t_] != 86 && n敵キャラtype[t_] != 90 && nブロックtype[tt_] != 140)
+                    {
+
+                        //上
+                        if (nブロックtype[tt_] != 7)
+                        {
+                            if (!(nブロックtype[tt_] == 117))
+                            {
+                                if (n敵キャラa[t_] + n敵キャラnobia[t_] - fx > xx[8] + xx[0] && n敵キャラa[t_] - fx < xx[8] + xx[1] - xx[0] * 1 && n敵キャラb[t_] + n敵キャラnobib[t_] - fy > xx[9] && n敵キャラb[t_] + n敵キャラnobib[t_] - fy < xx[9] + xx[1] && n敵キャラd[t_] >= -100)
+                                {
+                                    n敵キャラb[t_] = xx[9] - n敵キャラnobib[t_] + 100 + fy; n敵キャラd[t_] = 0; n敵キャラxzimen[t_] = 1;
+                                    //ジャンプ台
+                                    if (nブロックtype[tt_] == 120) { n敵キャラd[t_] = -1600; n敵キャラzimentype[t_] = 30; }
+                                }
+                            }
+                        }
+
+                        //下
+                        if (nブロックtype[tt_] != 117)
+                        {
+                            if (n敵キャラa[t_] + n敵キャラnobia[t_] - fx > xx[8] + xx[0] && n敵キャラa[t_] - fx < xx[8] + xx[1] - xx[0] * 1 && n敵キャラb[t_] - fy > xx[9] + xx[1] - xx[1] && n敵キャラb[t_] - fy < xx[9] + xx[1] + xx[0])
+                            {
+                                n敵キャラb[t_] = xx[9] + xx[1] + xx[0] + fy; if (n敵キャラd[t_] < 0) { n敵キャラd[t_] = 0; }                                                             //}
+                            }
+                        }
+
+                        //左右
+                        xx[27] = 0;
+                        if ((n敵キャラtype[t_] >= 100 || (nブロックtype[tt_] != 7 || nブロックtype[tt_] == 7 && n敵キャラtype[t_] == 2)) && nブロックtype[tt_] != 117)
+                        {
+                            if (n敵キャラa[t_] + n敵キャラnobia[t_] - fx > xx[8] && n敵キャラa[t_] - fx < xx[8] + xx[2] && n敵キャラb[t_] + n敵キャラnobib[t_] - fy > xx[9] + xx[1] / 2 - xx[0] && n敵キャラb[t_] - fy < xx[9] + xx[2]) { n敵キャラa[t_] = xx[8] - n敵キャラnobia[t_] + fx; n敵キャラc[t_] = 0; n敵キャラmuki[t_] = 0; xx[27] = 1; }
+                            if (n敵キャラa[t_] + n敵キャラnobia[t_] - fx > xx[8] + xx[1] - xx[0] * 2 && n敵キャラa[t_] - fx < xx[8] + xx[1] && n敵キャラb[t_] + n敵キャラnobib[t_] - fy > xx[9] + xx[1] / 2 - xx[0] && n敵キャラb[t_] - fy < xx[9] + xx[2]) { n敵キャラa[t_] = xx[8] + xx[1] + fx; n敵キャラc[t_] = 0; n敵キャラmuki[t_] = 1; xx[27] = 1; }
+                            //こうらブレイク
+                            if (xx[27] == 1 && (nブロックtype[tt_] == 7 || nブロックtype[tt_] == 1) && n敵キャラtype[t_] == 2)
+                            {
+                                if (nブロックtype[tt_] == 7)
+                                {
+                                    v効果音再生(nオーディオ_[4]); nブロックtype[tt_] = 3;
+                                    eyobi(nブロックa[tt_] + 10, nブロックb[tt_], 0, -800, 0, 40, 3000, 3000, 0, 16);
+                                }
+                                else if (nブロックtype[tt_] == 1)
+                                {
+                                    v効果音再生(nオーディオ_[3]);
+                                    eyobi(nブロックa[tt_] + 1200, nブロックb[tt_] + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
+                                    eyobi(nブロックa[tt_] + 1200, nブロックb[tt_] + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
+                                    eyobi(nブロックa[tt_] + 1200, nブロックb[tt_] + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);
+                                    eyobi(nブロックa[tt_] + 1200, nブロックb[tt_] + 1200, -240, -1400, 0, 160, 1000, 1000, 1, 120);
+                                    brockBreak(tt_);
+                                }
+
+                            }
+                        }
+                    }
+                    if (n敵キャラtype[t_] == 86 || n敵キャラtype[t_] == 90)
+                    {
+                        if (n敵キャラa[t_] + n敵キャラnobia[t_] - fx > xx[8] && n敵キャラa[t_] - fx < xx[8] + xx[1] && n敵キャラb[t_] + n敵キャラnobib[t_] - fy > xx[9] && n敵キャラb[t_] - fy < xx[9] + xx[1])
+                        {
+                            v効果音再生(nオーディオ_[3]);
+                            eyobi(nブロックa[tt_] + 1200, nブロックb[tt_] + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
+                            eyobi(nブロックa[tt_] + 1200, nブロックb[tt_] + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
+                            eyobi(nブロックa[tt_] + 1200, nブロックb[tt_] + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);
+                            eyobi(nブロックa[tt_] + 1200, nブロックb[tt_] + 1200, -240, -1400, 0, 160, 1000, 1000, 1, 120);
+                            brockBreak(tt_);
+
+                        }
+                    }//90
+                }
+                //剣とってクリア
+                if (nブロックtype[tt_] == 140)
+                {
+                    if (n敵キャラb[t_] - fy > xx[9] - xx[0] * 2 - 2000 && n敵キャラb[t_] - fy < xx[9] + xx[1] - xx[0] * 2 + 2000 && n敵キャラa[t_] + n敵キャラnobia[t_] - fx > xx[8] - 400 && n敵キャラa[t_] - fx < xx[8] + xx[1])
+                    {
+                        nブロックa[tt_] = -800000;//ot(oto[4]);
+                        nリフトacttype[20] = 1; nリフトon[20] = 1;
+                    }
+                }
+            }
+
+        }
     }
 }
