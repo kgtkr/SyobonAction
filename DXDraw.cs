@@ -26,28 +26,28 @@ namespace SyobonAction
         }
 
         //点
-        public static void drawpixel(int a, int b) {
-            DX.DrawPixel(a, b, n色);
+        public static void DrawPixel(int x, int y) {
+            DX.DrawPixel(x, y, n色);
         }
         //線
-        public static void DrawLine(int a, int b, int c, int d) {
-            DX.DrawLine(a, b, c, d, n色);
+        public static void DrawLine(int x1, int y1, int x2, int y2) {
+            DX.DrawLine(x1, y1, x2, y2, n色);
         }
         //四角形(塗り無し)
-        public static void DrawBox塗り無し(int a, int b, int c, int d) {
-            DX.DrawBox(a, b, a + c, b + d, n色, DX.FALSE);
+        public static void DrawBox塗り無し(int x, int y, int w, int h) {
+            DX.DrawBox(x, y, x + w, y + h, n色, DX.FALSE);
         }
         //四角形(塗り有り)
-        public static void DrawBox塗り潰し(int a, int b, int c, int d) {
-            DX.DrawBox(a, b, a + c, b + d, n色, DX.TRUE);
+        public static void DrawBox塗り潰し(int x, int y, int w, int h) {
+            DX.DrawBox(x, y, x + w, y + h, n色, DX.TRUE);
         }
         //円(塗り無し)
-        public static void DrawOval塗り無し(int a, int b, int c, int d) {
-            DX.DrawOval(a, b, c, d, n色, DX.FALSE);
+        public static void DrawOval塗り無し(int x, int y, int rx, int ry) {
+            DX.DrawOval(x, y, rx, ry, n色, DX.FALSE);
         }
         //円(塗り有り)
-        public static void DrawOval塗り潰し(int a, int b, int c, int d) {
-            DX.DrawOval(a, b, c, d, n色, DX.TRUE);
+        public static void DrawOval塗り潰し(int x, int y, int rx, int ry) {
+            DX.DrawOval(x, y, rx, ry, n色, DX.TRUE);
         }
 
         //画像表示
@@ -58,20 +58,20 @@ namespace SyobonAction
             if (nミラー == 1)
                 DX.DrawTurnGraph(x, y, img, DX.TRUE);
         }
-        public static void DrawGraph(int mx, int a, int b, int c, int d, int e, int f)
+        public static void DrawGraph(int img, int x, int y, int imgX, int imgY, int imgW, int imgH)
         {
             int m;
-            m = DX.DerivationGraph(c, d, e, f, mx);
+            m = DX.DerivationGraph(imgX, imgY, imgW, imgH, img);
             if (nミラー == 0)
-                DX.DrawGraph(a, b, m, DX.TRUE);
+                DX.DrawGraph(x, y, m, DX.TRUE);
             if (nミラー == 1)
-                DX.DrawTurnGraph(a, b, m, DX.TRUE);
+                DX.DrawTurnGraph(x, y, m, DX.TRUE);
         }
 
         //文字
-        public static void DrawString(string x, int a, int b)
+        public static void DrawString(string str, int x, int y)
         {
-            DX.DrawString(a, b, x, n色);
+            DX.DrawString(x, y, str, n色);
 
             Program.xx[2] = 4;
 

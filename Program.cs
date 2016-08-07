@@ -52,66 +52,30 @@ namespace SyobonAction
                 if (maint == 3) break;
             }
 
-
-
             //ＤＸライブラリ使用の終了処理
             DX.DxLib_End();
-        }
-
-
-        //スリープ
-        static void wait(int interval)
-        {
-            DX.WaitTimer(interval);
         }
 
         //タイマー測定
         static void wait2(long stime, long etime, int FLAME_TIME)
         {
             if (etime - stime < FLAME_TIME)
-                wait((int)(FLAME_TIME - (etime - stime)));
+                DX.WaitTimer((int)(FLAME_TIME - (etime - stime)));
         }
-
-
-        //乱数作成
-        static int rand(int Rand)
-        {
-            return DX.GetRand(Rand);
-        }
-
-        //終了
-        static void end()
-        {
-            //maint=3;
-            DX.DxLib_End();
-        }
-
-
-        
-
-        
-
-        
 
         //音楽再生
-        static void ot(int x)
+        static void v効果音再生(int x)
         {
             DX.PlaySoundMem(x, DX.DX_PLAYTYPE_BACK);
         }
 
-
-
-
         //BGM変更
-        static void bgmchange(int x)
+        static void bgmChange(int x)
         {
             DX.StopSoundMem(nオーディオ_[0]);
             nオーディオ_[0] = 0;
             nオーディオ_[0] = x;
-        }//bgmchange()
-
-
-
+        }
 
         //ブロック出現
 
@@ -125,15 +89,8 @@ namespace SyobonAction
 
 
         //ブロック破壊
-        static void brockbreak(int t)
+        static void brockBreak(int t)
         {
-            if (nブロックitem[t] == 1)
-            {
-            }
-            if (nブロックitem[t] >= 2 && nブロックitem[t] <= 7)
-            {
-            }
-
             nブロックa[t] = -800000;
         }//brock
 
@@ -329,14 +286,14 @@ namespace SyobonAction
 
 
                     //大砲音
-                    if (xtype == 7 && DX.CheckSoundMem(nオーディオ_[10]) == 0) { ot(nオーディオ_[10]); }
+                    if (xtype == 7 && DX.CheckSoundMem(nオーディオ_[10]) == 0) { v効果音再生(nオーディオ_[10]); }
                     //ファイア音
-                    if (xtype == 10 && DX.CheckSoundMem(nオーディオ_[18]) == 0) { ot(nオーディオ_[18]); }
+                    if (xtype == 10 && DX.CheckSoundMem(nオーディオ_[18]) == 0) { v効果音再生(nオーディオ_[18]); }
 
 
                     n敵キャラzimentype[n敵キャラco] = 1;
 
-                    if (xtype == 87) { n敵キャラtm[n敵キャラco] = rand(179) + (-90); }
+                    if (xtype == 87) { n敵キャラtm[n敵キャラco] = DX.GetRand(179) + (-90); }
 
                     n敵キャラco += 1; if (n敵キャラco >= n敵キャラmax - 1) { n敵キャラco = 0; }
                 }//t1
