@@ -915,11 +915,6 @@ namespace SyobonAction
 
             if (nスタッフロール == 1) main = 2;
 
-
-            //キー
-            key = DX.GetJoypadInputState(DX.DX_INPUT_KEY_PAD1);
-
-
             if (main == 1 && nメッセージブロックtype == 0)
             {
 
@@ -1004,25 +999,31 @@ namespace SyobonAction
                 xx[0] = 0; nプレイヤーactaon[2] = 0; nプレイヤーactaon[3] = 0;
                 if (nプレイヤーkeytm <= 0)
                 {
-                    if ((key & DX.PAD_INPUT_LEFT) != DX.FALSE && keyTm <= 0) { nプレイヤーactaon[0] = -1; nプレイヤーmuki = 0; nプレイヤーactaon[4] = -1; }
-                    if ((key & DX.PAD_INPUT_RIGHT) != DX.FALSE && keyTm <= 0) { nプレイヤーactaon[0] = 1; nプレイヤーmuki = 1; nプレイヤーactaon[4] = 1; }
-                    if ((key & DX.PAD_INPUT_DOWN) != DX.FALSE) { nプレイヤーactaon[3] = 1; }
+                    if (Key.GetKey(DX.KEY_INPUT_LEFT) && keyTm <= 0) {
+                        nプレイヤーactaon[0] = -1; nプレイヤーmuki = 0; nプレイヤーactaon[4] = -1;
+                    }
+                    if (Key.GetKey(DX.KEY_INPUT_RIGHT) && keyTm <= 0) {
+                        nプレイヤーactaon[0] = 1; nプレイヤーmuki = 1; nプレイヤーactaon[4] = 1;
+                    }
+                    if (Key.GetKey(DX.KEY_INPUT_DOWN)) {
+                        nプレイヤーactaon[3] = 1;
+                    }
                 }
 
-                if (DX.CheckHitKey(DX.KEY_INPUT_F1) == 1) { main = 100; }
-                if (DX.CheckHitKey(DX.KEY_INPUT_O) == 1) { if (nプレイヤーhp >= 1) nプレイヤーhp = 0; if (nステージc >= 5) { nステージc = 0; stagepoint = 0; } }
+                if (Key.GetKey(DX.KEY_INPUT_F1)) { main = 100; }
+                if (Key.GetKey(DX.KEY_INPUT_O)) { if (nプレイヤーhp >= 1) nプレイヤーhp = 0; if (nステージc >= 5) { nステージc = 0; stagepoint = 0; } }
 
 
                 if (nプレイヤーkeytm <= 0)
                 {
-                    if ((key & DX.PAD_INPUT_UP) == DX.TRUE || DX.CheckHitKey(DX.KEY_INPUT_Z) == 1)
+                    if (Key.GetKey(DX.KEY_INPUT_Z))
                     {//end();
                         if (nプレイヤーactaon[1] == 10) { nプレイヤーactaon[1] = 1; xx[0] = 1; }
                         nプレイヤーactaon[2] = 1;
                     }
                 }
 
-                if ((key & DX.PAD_INPUT_UP) == DX.TRUE || DX.CheckHitKey(DX.KEY_INPUT_Z) == 1)
+                if (Key.GetKey(DX.KEY_INPUT_Z))
                 {
                     if (nプレイヤーjumptm == 8 && nプレイヤーd >= -900)
                     {
@@ -2912,11 +2913,11 @@ namespace SyobonAction
                 maintm++;
 
                 xx[7] = 46;
-                if (DX.CheckHitKey(DX.KEY_INPUT_1) == 1)
+                if (Key.GetKey(DX.KEY_INPUT_1))
                 {
                     DX.DxLib_End();
                 }
-                if (DX.CheckHitKey(DX.KEY_INPUT_SPACE) == 1)
+                if (Key.GetKey(DX.KEY_INPUT_SPACE))
                 {
                     for (t_ = 0; t_ <= xx[7]; t_ += 1)
                     {
@@ -2968,20 +2969,20 @@ namespace SyobonAction
                 maintm++; xx[0] = 0;
                 if (maintm <= 10) { maintm = 11; nステージa = 1; nステージb = 1; nステージc = 0; over = 0; }
 
-                if (DX.CheckHitKey(DX.KEY_INPUT_1) == 1) { nステージa = 1; nステージb = 1; nステージc = 0; }
-                if (DX.CheckHitKey(DX.KEY_INPUT_2) == 1) { nステージa = 1; nステージb = 2; nステージc = 0; }
-                if (DX.CheckHitKey(DX.KEY_INPUT_3) == 1) { nステージa = 1; nステージb = 3; nステージc = 0; }
-                if (DX.CheckHitKey(DX.KEY_INPUT_4) == 1) { nステージa = 1; nステージb = 4; nステージc = 0; }
-                if (DX.CheckHitKey(DX.KEY_INPUT_5) == 1) { nステージa = 2; nステージb = 1; nステージc = 0; }
-                if (DX.CheckHitKey(DX.KEY_INPUT_6) == 1) { nステージa = 2; nステージb = 2; nステージc = 0; }
-                if (DX.CheckHitKey(DX.KEY_INPUT_7) == 1) { nステージa = 2; nステージb = 3; nステージc = 0; }
-                if (DX.CheckHitKey(DX.KEY_INPUT_8) == 1) { nステージa = 2; nステージb = 4; nステージc = 0; }
-                if (DX.CheckHitKey(DX.KEY_INPUT_9) == 1) { nステージa = 3; nステージb = 1; nステージc = 0; }
-                if (DX.CheckHitKey(DX.KEY_INPUT_0) == 1) { xx[0] = 1; over = 1; }
+                if (Key.GetKey(DX.KEY_INPUT_1)) { nステージa = 1; nステージb = 1; nステージc = 0; }
+                if (Key.GetKey(DX.KEY_INPUT_2)) { nステージa = 1; nステージb = 2; nステージc = 0; }
+                if (Key.GetKey(DX.KEY_INPUT_3)) { nステージa = 1; nステージb = 3; nステージc = 0; }
+                if (Key.GetKey(DX.KEY_INPUT_4)) { nステージa = 1; nステージb = 4; nステージc = 0; }
+                if (Key.GetKey(DX.KEY_INPUT_5)) { nステージa = 2; nステージb = 1; nステージc = 0; }
+                if (Key.GetKey(DX.KEY_INPUT_6)) { nステージa = 2; nステージb = 2; nステージc = 0; }
+                if (Key.GetKey(DX.KEY_INPUT_7)) { nステージa = 2; nステージb = 3; nステージc = 0; }
+                if (Key.GetKey(DX.KEY_INPUT_8)) { nステージa = 2; nステージb = 4; nステージc = 0; }
+                if (Key.GetKey(DX.KEY_INPUT_9)) { nステージa = 3; nステージb = 1; nステージc = 0; }
+                if (Key.GetKey(DX.KEY_INPUT_0)) { xx[0] = 1; over = 1; }
 
 
-                if (DX.CheckHitKey(DX.KEY_INPUT_RETURN) == 1) { xx[0] = 1; }
-                if (DX.CheckHitKey(DX.KEY_INPUT_Z) == 1) { xx[0] = 1; }
+                if (Key.GetKey(DX.KEY_INPUT_RETURN)) { xx[0] = 1; }
+                if (Key.GetKey(DX.KEY_INPUT_Z)) { xx[0] = 1; }
 
                 if (xx[0] == 1)
                 {

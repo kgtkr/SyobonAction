@@ -52,7 +52,7 @@ namespace SyobonAction
         static int zxon;
 
         //キーコンフィグ
-        static int key, keyTm;
+        static int keyTm;
 
 
         //地面

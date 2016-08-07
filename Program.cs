@@ -28,14 +28,17 @@ namespace SyobonAction
 
             //全ロード
             Load();
+            Key.Init();
 
             //フォント
             DX.SetFontSize(16);
             DX.SetFontThickness(4);
 
             //ループ
-            while (DX.ProcessMessage() == 0 && DX.CheckHitKey(DX.KEY_INPUT_ESCAPE) == DX.FALSE)
+            while (DX.ProcessMessage() == 0 && !Key.GetKey(DX.KEY_INPUT_ESCAPE))
             {
+                Key.Update();
+
                 maint = 0;
                 //処理
                 Mainprogram();
@@ -43,10 +46,11 @@ namespace SyobonAction
                 //描画
                 Draw();
 
-
                 //30-fps
                 xx[0] = 30;
-                if (DX.CheckHitKey(DX.KEY_INPUT_SPACE) == 1) { xx[0] = 60; }
+                if (Key.GetKey(DX.KEY_INPUT_SPACE)) {
+                    xx[0] = 60;
+                }
                 wait2(nタイマー測定, DX.GetNowCount(), 1000 / xx[0]);
 
                 if (maint == 3) break;

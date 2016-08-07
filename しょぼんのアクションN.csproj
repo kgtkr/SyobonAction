@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DXDraw.cs" />
+    <Compile Include="Key.cs" />
     <Compile Include="ProgramLoad.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Program2.cs" />
