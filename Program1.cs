@@ -1111,7 +1111,7 @@ namespace SyobonAction
 
                     mkeytm = 2;
                     md = -1500;
-                    if (mb <= -6000) { blackx = 1; blacktm = 20; stc += 5; stagerr = 0; DX.StopSoundMem(nオーディオ[0]); mtm = 0; mtype = 0; mkeytm = -1; }
+                    if (mb <= -6000) { blackx = 1; blacktm = 20; stc += 5; DX.StopSoundMem(nオーディオ[0]); mtm = 0; mtype = 0; mkeytm = -1; }
                 }//2
 
                 //ジャンプ台アウト
@@ -1187,7 +1187,7 @@ namespace SyobonAction
                                 mxtype = 0;
                                 blackx = 1;
                                 blacktm = 20;
-                                stagerr = 0; DX.StopSoundMem(nオーディオ[0]);
+                                DX.StopSoundMem(nオーディオ[0]);
                             }
                         }
                     }//00
@@ -1992,22 +1992,8 @@ namespace SyobonAction
                     }
                 }//壁
 
-
-
-
-
-
-
-
-
-
                 //キー入力初期化
-                //for (t=0;t<=6;t++)
                 actaon[0] = 0; actaon[4] = 0;
-
-
-
-
 
                 //リフト
                 for (t = 0; t < srmax; t++)
@@ -2019,16 +2005,10 @@ namespace SyobonAction
                         xx[0] = 500; xx[1] = 1200; xx[2] = 1000; xx[7] = 2000;
                         if (md >= 100) { xx[1] = 900 + md; }
 
-                        //if (srtype[t]==1){xx[0]=600;}
                         if (md > xx[1]) xx[1] = md + 100;
-                        //xx[18]=0;
 
                         srb[t] += sre[t];
                         sre[t] += srf[t];
-                        //if (srf[t]>=500)srf[t]=0;
-
-
-
 
                         //動き
                         switch (sracttype[t])
@@ -2037,30 +2017,10 @@ namespace SyobonAction
                             case 1:
                                 if (sron[t] == 1) srf[t] = 60;
                                 break;
-
-
                             case 2:
-                                /*
-                                if (sra[t]<=srmovep[t]-srmove[t])srmuki[t]=1;
-                                if (sra[t]>=srmovep[t]+srmove[t])srmuki[t]=0;
-                                */
                                 break;
 
                             case 3:
-                                /*
-                                if (srb[t]<=srmovep[t]-srmove[t])srmuki[t]=1;
-                                if (srb[t]>=srmovep[t]+srmove[t])srmuki[t]=0;
-                                */
-                                break;
-
-                            /*
-                            case 4:
-                            if (srmove[t]==0){srmuki[t]=0;}else{srmuki[t]=1;}
-                            if (sra[t]-fx<-1100-src[t]){sra[t]=fymax+fx+scrollx;}
-                            if (sra[t]-fx>24000+scrollx){sra[t]=-1100-src[t]+fx;}
-                            break;
-                            */
-
                             case 5:
                                 if (srmove[t] == 0) { srmuki[t] = 0; }
                                 else { srmuki[t] = 1; }
@@ -2078,15 +2038,12 @@ namespace SyobonAction
 
                         }//sw
 
-                        //if (srtype[t]==1){sre[10]=300;sre[11]=300;}
-
                         //乗ったとき
                         if (!(mztm >= 1 && mztype == 1 && actaon[3] == 1) && mhp >= 1)
                         {
                             if (ma + mnobia > xx[8] + xx[0] && ma < xx[8] + xx[12] - xx[0] && mb + mnobib > xx[9] && mb + mnobib < xx[9] + xx[1] && md >= -100)
                             {
                                 mb = xx[9] - mnobib + 100;
-                                //if (sracttype[t]!=7)mzimen=1;
 
                                 if (srtype[t] == 1) { sre[10] = 900; sre[11] = 900; }
 
@@ -2096,20 +2053,10 @@ namespace SyobonAction
                                 }
                                 else {
                                     //すべり
-                                    //md=0;mrzimen=1;mzimen=1;
                                     md = -800;
                                 }
 
 
-                                /*
-                                md=0;
-                                if ((sracttype[t]==1 || sracttype[t]==6) && sron[t]==1)mb+=sre[t];
-
-                                if (sracttype[t]==2 || sracttype[t]==4){
-                                if (srmuki[t]==0)ma-=srsok[t];
-                                if (srmuki[t]==1)ma+=srsok[t];
-                                }
-                                */
 
                                 //落下
                                 if ((sracttype[t] == 1) && sron[t] == 0) sron[t] = 1;
@@ -2117,11 +2064,6 @@ namespace SyobonAction
                                 if (sracttype[t] == 1 && sron[t] == 1 || sracttype[t] == 3 || sracttype[t] == 5)
                                 {
                                     mb += sre[t];
-                                    //if (srmuki[t]==0)
-                                    //if (srf[t]<0)
-                                    //if (srmuki[t]==1)
-                                    //if (srf[t]>0)
-                                    //mb+=srsok[t];
                                 }
 
                                 if (sracttype[t] == 7)
@@ -2155,8 +2097,6 @@ namespace SyobonAction
                                     mc = 2400; srmove[t] += 1;
                                     if (srmove[t] >= 100) { mhp = 0; mmsgtype = 53; mmsgtm = 30; srmove[t] = -5000; }
                                 }
-
-                                //if (srtype[t]==1){md=-600;mb-=610;mhp-=1;if (mmutekion!=1)mmutekitm=40;}
                             }//判定内
 
 
@@ -2183,16 +2123,6 @@ namespace SyobonAction
 
                         }//!
 
-                        /*
-                        //ジャンプ台
-                        if (sracttype[t]==7){
-                        if (ma+mnobia>xx[8]+xx[0] && ma<xx[8]+xx[12]-xx[0] && mb+mnobib>xx[9]+xx[1]/2 && mb+mnobib<xx[9]+xx[1]*3/2 && md>=-100){
-                        if (actaon[2]!=1){md=-600;mb-=810;}
-                        if (actaon[2]==1){mb-=400;md=-1400;mjumptm=10;}
-                        }}
-                        */
-
-
                         if (sracttype[t] == 2 || sracttype[t] == 4)
                         {
                             if (srmuki[t] == 0) sra[t] -= srsok[t];
@@ -2203,11 +2133,6 @@ namespace SyobonAction
                             if (srmuki[t] == 0) srb[t] -= srsok[t];
                             if (srmuki[t] == 1) srb[t] += srsok[t];
                         }
-
-
-
-
-
 
                         //敵キャラ適用
                         for (tt = 0; tt < amax; tt++)
@@ -2220,28 +2145,8 @@ namespace SyobonAction
                                 }
                             }
                         }
-
-
                     }
                 }//リフト
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                 //グラ
                 for (t = 0; t < emax; t++)
@@ -2259,11 +2164,6 @@ namespace SyobonAction
 
                 }//emax
 
-
-
-
-
-
                 //敵キャラの配置
                 for (t = 0; t < bmax; t++)
                 {
@@ -2280,14 +2180,10 @@ namespace SyobonAction
                             if (bz[t] == 0 && btm[t] < 0 && ba[t] - fx >= fxmax + 2000 && ba[t] - fx < fxmax + 2000 + mc && tt == 0) { xx[0] = 1; amuki[aco] = 0; }// && mmuki==1
                             if (bz[t] == 0 && btm[t] < 0 && ba[t] - fx >= -400 - n敵サイズW[btype[t]] + mc && ba[t] - fx < -400 - n敵サイズW[btype[t]] && tt == 1) { xx[0] = 1; xx[1] = 1; amuki[aco] = 1; }// && mmuki==0
                             if (bz[t] == 1 && ba[t] - fx >= 0 - n敵サイズW[btype[t]] && ba[t] - fx <= fxmax + 4000 && bb[t] - fy >= -9000 && bb[t] - fy <= fymax + 4000 && btm[t] < 0) { xx[0] = 1; bz[t] = 0; }// && xza<=5000// && tyuukan!=1
-                                                                                                                                                                                                         //if (bz[t]==2){xx[0]=0;xx[1]=0;}
-                                                                                                                                                                                                         //if (btype[t]>=100){bz[t]=2;}
-
                             if (xx[0] == 1)
                             {//400
-                                btm[t] = 401; xx[0] = 0;//if (btype[t]>=20 && btype[t]<=23){btm[t]=90000;}
+                                btm[t] = 401; xx[0] = 0;
                                 if (btype[t] >= 10) { btm[t] = 9999999; }
-
 
                                 //10
                                 ayobi(ba[t], bb[t], 0, 0, 0, btype[t], bxtype[t]);
@@ -2298,10 +2194,6 @@ namespace SyobonAction
 
                     }
                 }//t
-
-
-
-
 
                 //敵キャラ
                 for (t = 0; t < amax; t++)
@@ -2330,8 +2222,6 @@ namespace SyobonAction
                             case 2:
                                 xx[10] = 0; xx[17] = 800;
                                 if (axtype[t] >= 1) xx[10] = xx[17];
-                                //if (axtype[t]==1)xx[10]=xx[17];
-                                //if (axtype[t]==2)xx[10]=-xx[17];
                                 //他の敵を倒す
                                 if (axtype[t] >= 1)
                                 {
@@ -2348,7 +2238,6 @@ namespace SyobonAction
                                         }
                                     }
                                 }
-
                                 break;
 
                             //あらまき
@@ -2690,23 +2579,14 @@ namespace SyobonAction
                         if (amuki[t] == 0) aacta[t] -= xx[10];
                         if (amuki[t] == 1) aacta[t] += xx[10];
 
-
-
                         //最大値
                         xx[0] = 850; xx[1] = 1200;
 
-                        //if (mc>xx[0]){mc=xx[0];}
-                        //if (mc<-xx[0]){mc=-xx[0];}
                         if (ad[t] > xx[1] && azimentype[t] != 5) { ad[t] = xx[1]; }
 
 
                         //行動
                         aa[t] += aacta[t];//ab[t]+=aactb[t];
-
-
-
-
-
 
                         if ((azimentype[t] >= 1 || azimentype[t] == -1) && abrocktm[t] <= 0)
                         {
@@ -2737,7 +2617,6 @@ namespace SyobonAction
                             }
 
 
-
                         }//azimentype[t]>=1
 
                         //ブロックから出現するさい
@@ -2748,10 +2627,6 @@ namespace SyobonAction
                             if (abrocktm[t] > 100) { }
                             if (abrocktm[t] == 100) { ab[t] -= 800; ad[t] = -1200; ac[t] = 700; abrocktm[t] = 0; }
                         }//abrocktm[t]>0
-
-
-
-
 
                         //プレイヤーからの判定
                         xx[0] = 250; xx[1] = 1600; xx[2] = 1000;
@@ -2764,7 +2639,7 @@ namespace SyobonAction
                         if (ma + mnobia > xx[8] + xx[0] * 2 && ma < xx[8] + anobia[t] - xx[0] * 2 && mb + mnobib > xx[9] - xx[5] && mb + mnobib < xx[9] + xx[1] + xx[12] && (mmutekitm <= 0 || md >= 100) && abrocktm[t] <= 0)
                         {
                             if (atype[t] != 4 && atype[t] != 9 && atype[t] != 10 && (atype[t] <= 78 || atype[t] == 85) && mzimen != 1 && mtype != 200)
-                            {// && atype[t]!=4 && atype[t]!=7){
+                            {
 
                                 if (atype[t] == 0)
                                 {
@@ -2815,10 +2690,6 @@ namespace SyobonAction
                                     atype[t] = 151; ad[t] = 0;
                                 }
 
-                                //if (atype[t]==4){
-                                //xx[25]=1;
-                                //}
-
                                 if (atype[t] != 85)
                                 {
                                     if (xx[25] == 0) { ot(nオーディオ[5]); mb = xx[9] - 1000 - anobib[t]; md = -1000; }
@@ -2830,11 +2701,7 @@ namespace SyobonAction
 
                                 if (actaon[2] == 1) { md = -1600; actaon[2] = 0; }
                             }
-                            //if (atype[t]==200){mb=xx[9]-900-anobib[t];md=-2400;}
                         }
-
-                        //if (aa[t]+anobia[t]-fx>xx[8]-xx[0] && aa[t]-fx<xx[8]){md=-1000;}//aa[t]=-9000000;
-                        // && ab[t]-fy<xx[9]+xx[1]/2 && ab[t]+anobib[t]-fy>xx[9]+mnobib-xx[2]
 
                         xx[15] = -500;
 
@@ -2862,8 +2729,6 @@ namespace SyobonAction
                                             //mmutekitm=40;
                                         }
                                     }
-
-
 
                                     if (atype[t] == 6)
                                     {
@@ -2945,15 +2810,12 @@ namespace SyobonAction
                                         {
                                             atype[t] = 81;
                                         }
-
-
                                     }//mhp==0
 
 
                                     //こうら
                                     if (atype[t] == 2)
                                     {
-                                        //if (axtype[t]==1 || axtype[t]==2){axtype[t]=0;}
                                         if (axtype[t] == 0)
                                         {
                                             if (ma + mnobia > xx[8] + xx[0] * 2 && ma < xx[8] + anobia[t] / 2 - xx[0] * 4)
@@ -2970,7 +2832,6 @@ namespace SyobonAction
 
                                 }
                             }
-                            //else if (mmutekitm>=0 && mmutekitm<=2){mmutekitm+=1;}
                             //アイテム
                             if (atype[t] >= 100 && atype[t] <= 199)
                             {
@@ -2995,7 +2856,6 @@ namespace SyobonAction
                                         txtype[7] = 80;
                                         ot(nオーディオ[4]);
 
-                                        //ayobi(aa[t]-6*3000+1000,-3*3000,0,0,0,110,0);
                                         ayobi(aa[t] - 8 * 3000 - 1000, -4 * 3000, 0, 0, 0, 110, 0);
                                         ayobi(aa[t] - 10 * 3000 + 1000, -1 * 3000, 0, 0, 0, 110, 0);
 
@@ -3008,68 +2868,26 @@ namespace SyobonAction
                                     }
                                 }//105
 
-
-
                                 if (atype[t] == 110) { mhp -= 1; mmsgtm = 30; mmsgtype = 3; }
 
-                                /*
-                                if (atype[t]==101){mmutekitm=120;mmutekion=1;}
-                                if (atype[t]==102){mhp-=1;mmutekitm=20;}
-                                if (atype[t]==103){
-                                //xx[24]=2400;
-                                eyobi(aa[t]-500,ab[t],0,-600,0,80,2500,1600,2,32);
-                                }
-                                if (atype[t]==104){mztm=120;mztype=1;}
-                                if (atype[t]==105){mztm=160;mztype=2;}
-
-                                if (atype[t]==120){mtype=3;mnobia=3800;mnobib=2300;}
-
-
-                                if (atype[t]==130){msoubi=1;}
-                                if (atype[t]==131){msoubi=2;}
-                                if (atype[t]==132){msoubi=3;}
-                                if (atype[t]==133){msoubi=4;}
-
-                                */
                                 aa[t] = -90000000;
                             }
 
                         }//(ma
-
-
-
-
-
 
                     }
                     else { aa[t] = -9000000; }
 
                 }//t
 
-
-
-
-
-
-
                 //スクロール
-                //xx[0]=xx[0];
-                //x
                 if (kscroll != 1 && kscroll != 2)
                 {
                     xx[2] = mascrollmax; xx[3] = 0;
                     xx[1] = xx[2]; if (ma > xx[1] && fzx < scrollx) { xx[5] = ma - xx[1]; ma = xx[1]; fx += xx[5]; fzx += xx[5]; if (xx[1] <= 5000) xx[3] = 1; }
-                    //if (kscroll!=5){//戻りなし
-                    //xx[1]=xx[2]-500;if (ma<xx[1] && fzx>700){xx[5]=xx[1]-ma;ma=xx[1];fx-=xx[5];fzx-=xx[5];}
-                    //}
-                    //if (xx[3]==1){if (tyuukan==1)tyuukan=1;}
                 }//kscroll
 
-
-
-
-
-            }//if (main==1){
+            }
 
 
             //スタッフロール
@@ -3111,7 +2929,6 @@ namespace SyobonAction
 
             }//main==2
 
-
             if (main == 10)
             {
                 maintm++;
@@ -3119,7 +2936,6 @@ namespace SyobonAction
                 if (fast == 1) maintm += 2;
                 if (maintm >= 30) { maintm = 0; main = 1; zxon = 0; }
             }//if (main==10){
-
 
             //タイトル
             if (main == 100)
@@ -3151,8 +2967,6 @@ namespace SyobonAction
                 }
 
             }//100
-
-
 
             //描画
             rpaint();
@@ -3191,11 +3005,6 @@ namespace SyobonAction
                 }
             }
 
-
-
-
-
-
             //ブロック
             for (tt = 0; tt < tmax; tt++)
             {
@@ -3224,16 +3033,12 @@ namespace SyobonAction
                             }
                         }
 
-
                         //下
                         if (ttype[tt] != 117)
                         {
                             if (aa[t] + anobia[t] - fx > xx[8] + xx[0] && aa[t] - fx < xx[8] + xx[1] - xx[0] * 1 && ab[t] - fy > xx[9] + xx[1] - xx[1] && ab[t] - fy < xx[9] + xx[1] + xx[0])
                             {
-                                ab[t] = xx[9] + xx[1] + xx[0] + fy; if (ad[t] < 0) { ad[t] = 0; }//=-ad[t]*2/3;}
-                                                                                                 //if (ttype[t]==7){
-                                                                                                 //for (t2=0;t2<tmax;t2++){if (ttype[t2]==5){ttype[t2]=6;}else if (ttype[t2]==6){ttype[t2]=5;}}
-                                                                                                 //}
+                                ab[t] = xx[9] + xx[1] + xx[0] + fy; if (ad[t] < 0) { ad[t] = 0; }                                                             //}
                             }
                         }
 
@@ -3277,8 +3082,6 @@ namespace SyobonAction
 
                         }
                     }//90
-
-
                 }
                 //剣とってクリア
                 if (ttype[tt] == 140)

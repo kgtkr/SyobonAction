@@ -34,7 +34,7 @@ namespace SyobonAction
 
 
         //ステージ読み込みループ(いじらない)
-        static int stagerr, stagepoint;
+        static int stagepoint;
         //オーバーフローさせる
         static int over = 0;
 
@@ -49,11 +49,11 @@ namespace SyobonAction
         static int mirror;
 
         //ループ
-        static int t1, t2, t3, t4;
+        static int t1, t2, t3;
 
 
         //初期化
-        static int zxon, zzxon;
+        static int zxon;
 
         //キーコンフィグ
         static int key, keytm;
@@ -64,7 +64,7 @@ namespace SyobonAction
 
         //地面
         const int smax = 31;
-        static int sx, sco;
+        static int sco;
         static int[] sa = new int[smax],
             sb = new int[smax], 
             sc = new int[smax],
@@ -79,10 +79,10 @@ namespace SyobonAction
         //プレイヤー
         static int mainmsgtype;
         static int mb, mnobia, mnobib, mhp;
-        static int mc, md, macttype, atkon, atktm, mactsok, msstar, nokori = 2, mactp, mact;
+        static int mc, md, atktm, nokori = 2, mactp, mact;
 
         static int mtype, mxtype, mtm, mzz;
-        static int mzimen, mrzimen, mkasok, mmuki, mmukitm, mjumptm, mkeytm, mcleartm;
+        static int mzimen, mrzimen, mkasok, mmuki, mjumptm, mkeytm;
         static int mmutekitm, mmutekion;
         static int mztm, mztype;
         static int[] actaon=new int[7];
@@ -107,7 +107,7 @@ namespace SyobonAction
             txtype = new int[tmax];
 
         //メッセージブロック
-        static int tmsgtm, tmsgtype, tmsgx, tmsgy, tmsgnobix, tmsgnobiy, tmsg;
+        static int tmsgtm, tmsgtype, tmsgy, tmsg;
 
         //効果を持たないグラ
         const int emax = 201;
@@ -164,7 +164,7 @@ namespace SyobonAction
 
         //背景
         const int nmax = 41;
-        static int nxxmax, nco;
+        static int nco;
         static int[] na = new int[nmax], 
             nb = new int[nmax], 
             nc = new int[nmax], 
@@ -199,7 +199,7 @@ namespace SyobonAction
 
 
         //スクロール範囲
-        static int fx = 0, fy = 0, fzx, fzy, scrollx, scrolly;
+        static int fx = 0, fy = 0, fzx, scrollx, scrolly;
         //全体のポイント
         static int fma = 0, fmb = 0;
         //強制スクロール
