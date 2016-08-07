@@ -11,25 +11,25 @@ namespace SyobonAction
     {
         static void stagecls()
         {
-            for (t_ = 0; t_ < smax; t_++) { sa[t_] = -9000000; sb[t_] = 1; sc[t_] = 1; sd[t_] = 1; sgtype[t_] = 0; stype[t_] = 0; sxtype[t_] = 0; }
-            for (t_ = 0; t_ < tmax; t_++) { ta[t_] = -9000000; tb[t_] = 1; tc[t_] = 1; td[t_] = 1; titem[t_] = 0; txtype[t_] = 0; }
-            for (t_ = 0; t_ < srmax; t_++) { sra[t_] = -9000000; srb[t_] = 1; src[t_] = 1; srd[t_] = 1; sre[t_] = 0; srf[t_] = 0; srmuki[t_] = 0; sron[t_] = 0; sree[t_] = 0; srsok[t_] = 0; srmove[t_] = 0; srmovep[t_] = 0; srsp[t_] = 0; }
-            for (t_ = 0; t_ < amax; t_++) { aa[t_] = -9000000; ab[t_] = 1; ac[t_] = 0; ad[t_] = 1; azimentype[t_] = 0; atype[t_] = 0; axtype[t_] = 0; ae[t_] = 0; af[t_] = 0; atm[t_] = 0; a2tm[t_] = 0; abrocktm[t_] = 0; amsgtm[t_] = 0; }
-            for (t_ = 0; t_ < bmax; t_++) { ba[t_] = -9000000; bb[t_] = 1; bz[t_] = 1; btm[t_] = 0; bxtype[t_] = 0; }
-            for (t_ = 0; t_ < emax; t_++) { ea[t_] = -9000000; eb[t_] = 1; ec[t_] = 1; ed[t_] = 1; egtype[t_] = 0; }
-            for (t_ = 0; t_ < nmax; t_++) {
-                na[t_] = -9000000;
-                nb[t_] = 1;
-                nc[t_] = 1;
-                nd[t_] = 1;
+            for (t_ = 0; t_ < n地面max; t_++) { n地面a[t_] = -9000000; n地面b[t_] = 1; n地面c[t_] = 1; n地面d[t_] = 1; n地面gtype [t_] = 0; n地面type[t_] = 0; n地面xtype[t_] = 0; }
+            for (t_ = 0; t_ < nブロックmax; t_++) { nブロックa[t_] = -9000000; nブロックb[t_] = 1; nブロックc[t_] = 1; nブロックd[t_] = 1; nブロックitem[t_] = 0; nブロックxtype[t_] = 0; }
+            for (t_ = 0; t_ < nリフトmax; t_++) { nリフトa[t_] = -9000000; nリフトb[t_] = 1; nリフトc[t_] = 1; nリフトd[t_] = 1; nリフトe[t_] = 0; nリフトf[t_] = 0; nリフトmuki[t_] = 0; nリフトon[t_] = 0; nリフトee[t_] = 0; nリフトsok[t_] = 0; nリフトmove[t_] = 0; nリフトmovep[t_] = 0; nリフトsp[t_] = 0; }
+            for (t_ = 0; t_ < n敵キャラmax; t_++) { n敵キャラa[t_] = -9000000; n敵キャラb[t_] = 1; n敵キャラc[t_] = 0; n敵キャラd[t_] = 1; n敵キャラzimentype[t_] = 0; n敵キャラtype[t_] = 0; n敵キャラxtype[t_] = 0; n敵キャラe[t_] = 0; n敵キャラf[t_] = 0; n敵キャラtm[t_] = 0; n敵キャラ2tm[t_] = 0; n敵キャラbrocktm[t_] = 0; n敵キャラmsgtm[t_] = 0; }
+            for (t_ = 0; t_ < n敵出現max; t_++) { n敵出現a[t_] = -9000000; n敵出現b[t_] = 1; n敵出現z[t_] = 1; n敵出現tm[t_] = 0; n敵出現xtype[t_] = 0; }
+            for (t_ = 0; t_ < n絵max; t_++) { n絵a[t_] = -9000000; n絵b[t_] = 1; n絵c[t_] = 1; n絵d[t_] = 1; n絵gtype[t_] = 0; }
+            for (t_ = 0; t_ < n背景max; t_++) {
+                n背景a[t_] = -9000000;
+                n背景b[t_] = 1;
+                n背景c[t_] = 1;
+                n背景d[t_] = 1;
                 n背景サイズW_[t_] = 1;
                 n背景サイズH_[t_] = 1;
-                ng[t_] = 0;
-                ntype[t_] = 0;
+                n背景g[t_] = 0;
+                n背景type[t_] = 0;
             }
             
 
-            sco = 0; tco = 0; aco = 0; bco = 0; eco = 0; nco = 0;
+            n地面co = 0; nブロックco = 0; n敵キャラco = 0; n敵出現co = 0; n絵co = 0; n背景co = 0;
             //haikeitouroku();
         }//stagecls()
 
@@ -56,41 +56,41 @@ namespace SyobonAction
                     if (stagedate[t_,tt_] >= 1 && stagedate[t_,tt_] <= 255) xx[10] = (int)stagedate[t_,tt_];
                     xx[21] = tt_ * 29; xx[22] = t_ * 29 - 12; xx[23] = xx[10];
                     if (xx[10] >= 1 && xx[10] <= 19 && xx[10] != 9) { tyobi(tt_ * 29, t_ * 29 - 12, xx[10]); }
-                    if (xx[10] >= 20 && xx[10] <= 29) { sra[srco] = xx[21] * 100; srb[srco] = xx[22] * 100; src[srco] = 3000; srtype[srco] = 0; srco++; if (srco >= srmax) srco = 0; }
-                    if (xx[10] == 30) { sa[sco] = xx[21] * 100; sb[sco] = xx[22] * 100; sc[sco] = 3000; sd[sco] = 6000; stype[sco] = 500; sco++; if (sco >= smax) sco = 0; }
-                    if (xx[10] == 40) { sa[sco] = xx[21] * 100; sb[sco] = xx[22] * 100; sc[sco] = 6000; sd[sco] = 3000; stype[sco] = 1; sco++; if (sco >= smax) sco = 0; }
-                    if (xx[10] == 41) { sa[sco] = xx[21] * 100 + 500; sb[sco] = xx[22] * 100; sc[sco] = 5000; sd[sco] = 3000; stype[sco] = 2; sco++; if (sco >= smax) sco = 0; }
+                    if (xx[10] >= 20 && xx[10] <= 29) { nリフトa[nリフトco] = xx[21] * 100; nリフトb[nリフトco] = xx[22] * 100; nリフトc[nリフトco] = 3000; nリフトtype[nリフトco] = 0; nリフトco++; if (nリフトco >= nリフトmax) nリフトco = 0; }
+                    if (xx[10] == 30) { n地面a[n地面co] = xx[21] * 100; n地面b[n地面co] = xx[22] * 100; n地面c[n地面co] = 3000; n地面d[n地面co] = 6000; n地面type[n地面co] = 500; n地面co++; if (n地面co >= n地面max) n地面co = 0; }
+                    if (xx[10] == 40) { n地面a[n地面co] = xx[21] * 100; n地面b[n地面co] = xx[22] * 100; n地面c[n地面co] = 6000; n地面d[n地面co] = 3000; n地面type[n地面co] = 1; n地面co++; if (n地面co >= n地面max) n地面co = 0; }
+                    if (xx[10] == 41) { n地面a[n地面co] = xx[21] * 100 + 500; n地面b[n地面co] = xx[22] * 100; n地面c[n地面co] = 5000; n地面d[n地面co] = 3000; n地面type[n地面co] = 2; n地面co++; if (n地面co >= n地面max) n地面co = 0; }
 
-                    if (xx[10] == 43) { sa[sco] = xx[21] * 100; sb[sco] = xx[22] * 100 + 500; sc[sco] = 2900; sd[sco] = 5300; stype[sco] = 1; sco++; if (sco >= smax) sco = 0; }
-                    if (xx[10] == 44) { sa[sco] = xx[21] * 100; sb[sco] = xx[22] * 100 + 700; sc[sco] = 3900; sd[sco] = 5000; stype[sco] = 5; sco++; if (sco >= smax) sco = 0; }
+                    if (xx[10] == 43) { n地面a[n地面co] = xx[21] * 100; n地面b[n地面co] = xx[22] * 100 + 500; n地面c[n地面co] = 2900; n地面d[n地面co] = 5300; n地面type[n地面co] = 1; n地面co++; if (n地面co >= n地面max) n地面co = 0; }
+                    if (xx[10] == 44) { n地面a[n地面co] = xx[21] * 100; n地面b[n地面co] = xx[22] * 100 + 700; n地面c[n地面co] = 3900; n地面d[n地面co] = 5000; n地面type[n地面co] = 5; n地面co++; if (n地面co >= n地面max) n地面co = 0; }
 
                     //これなぜかバグの原因ｗ
                     if (xx[10] >= 50 && xx[10] <= 79)
                     {
-                        ba[bco] = xx[21] * 100; bb[bco] = xx[22] * 100; btype[bco] = xx[23] - 50; bco++; if (bco >= bmax) bco = 0;
+                        n敵出現a[n敵出現co] = xx[21] * 100; n敵出現b[n敵出現co] = xx[22] * 100; n敵出現type[n敵出現co] = xx[23] - 50; n敵出現co++; if (n敵出現co >= n敵出現max) n敵出現co = 0;
                     }
 
-                    if (xx[10] >= 80 && xx[10] <= 89) { na[nco] = xx[21] * 100; nb[nco] = xx[22] * 100; ntype[nco] = xx[23] - 80; nco++; if (nco >= nmax) nco = 0; }
+                    if (xx[10] >= 80 && xx[10] <= 89) { n背景a[n背景co] = xx[21] * 100; n背景b[n背景co] = xx[22] * 100; n背景type[n背景co] = xx[23] - 80; n背景co++; if (n背景co >= n背景max) n背景co = 0; }
 
                     //コイン
                     if (xx[10] == 9) { tyobi(tt_ * 29, t_ * 29 - 12, 800); }
-                    if (xx[10] == 99) { sa[sco] = xx[21] * 100; sb[sco] = xx[22] * 100; sc[sco] = 3000; sd[sco] = (12 - t_) * 3000; stype[sco] = 300; sco++; if (sco >= smax) sco = 0; }
+                    if (xx[10] == 99) { n地面a[n地面co] = xx[21] * 100; n地面b[n地面co] = xx[22] * 100; n地面c[n地面co] = 3000; n地面d[n地面co] = (12 - t_) * 3000; n地面type[n地面co] = 300; n地面co++; if (n地面co >= n地面max) n地面co = 0; }
                 }
             }
 
             if (tyuukan >= 1)
             {
                 xx[17] = 0;
-                for (t_ = 0; t_ < smax; t_++)
+                for (t_ = 0; t_ < n地面max; t_++)
                 {
-                    if (stype[t_] == 500 && tyuukan >= 1)
+                    if (n地面type[t_] == 500 && tyuukan >= 1)
                     {
-                        fx = sa[t_] - n画面幅 / 2; fzx = fx;
-                        ma = sa[t_] - fx;
-                        mb = sb[t_] - fy;
+                        fx = n地面a[t_] - n画面幅 / 2; fzx = fx;
+                        ma = n地面a[t_] - fx;
+                        nプレイヤーb = n地面b[t_] - fy;
                         tyuukan--; xx[17]++;
 
-                        sa[t_] = -80000000;
+                        n地面a[t_] = -80000000;
                     }
                 }
                 tyuukan += xx[17];

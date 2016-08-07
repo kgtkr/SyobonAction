@@ -47,7 +47,7 @@ namespace SyobonAction
                 //30-fps
                 xx[0] = 30;
                 if (DX.CheckHitKey(DX.KEY_INPUT_SPACE) == 1) { xx[0] = 60; }
-                wait2(stime, DX.GetNowCount(), 1000 / xx[0]);
+                wait2(nタイマー測定, DX.GetNowCount(), 1000 / xx[0]);
 
                 if (maint == 3) break;
             }
@@ -187,23 +187,23 @@ namespace SyobonAction
         static void tyobi(int x, int y, int type)
         {
 
-            ta[tco] = x * 100; tb[tco] = y * 100; ttype[tco] = type;
+            nブロックa[nブロックco] = x * 100; nブロックb[nブロックco] = y * 100; nブロックtype[nブロックco] = type;
 
-            tco++; if (tco >= tmax) tco = 0;
+            nブロックco++; if (nブロックco >= nブロックmax) nブロックco = 0;
         }//tyobi
 
 
         //ブロック破壊
         static void brockbreak(int t)
         {
-            if (titem[t] == 1)
+            if (nブロックitem[t] == 1)
             {
             }
-            if (titem[t] >= 2 && titem[t] <= 7)
+            if (nブロックitem[t] >= 2 && nブロックitem[t] <= 7)
             {
             }
 
-            ta[t] = -800000;
+            nブロックa[t] = -800000;
         }//brock
 
 
@@ -211,19 +211,19 @@ namespace SyobonAction
         static void ttmsg()
         {
             xx[1] = 6000 / 100; xx[2] = 4000 / 100;
-            if (tmsgtype == 1 || tmsgtype == 2)
+            if (nメッセージブロックtype == 1 || nメッセージブロックtype == 2)
             {
                 setc0();
-                fillrect(xx[1], xx[2], 360, tmsgy / 100);
+                fillrect(xx[1], xx[2], 360, nメッセージブロックy / 100);
                 setc1();
-                drawrect(xx[1], xx[2], 360, tmsgy / 100);
+                drawrect(xx[1], xx[2], 360, nメッセージブロックy / 100);
             }
-            if (tmsgtype == 2)
+            if (nメッセージブロックtype == 2)
             {
                 //フォント
                 setfont(20, 5);
 
-                if (tmsg == 0)
+                if (nメッセージブロック == 0)
                 {
                     setc1();
                     //フォント
@@ -231,7 +231,7 @@ namespace SyobonAction
                     txmsg("テスト　hoge", 0);
                 }
 
-                if (tmsg == 1)
+                if (nメッセージブロック == 1)
                 {
                     setc1();
                     txmsg("", 0);
@@ -242,27 +242,27 @@ namespace SyobonAction
                     txmsg("                       ちく より", 6);
                 }
 
-                if (tmsg == 2)
+                if (nメッセージブロック == 2)
                 {
                     txmsg("            ？が必要です ", 3);
                     txmsg("                         m9(^Д^)", 6);
                 }
 
 
-                if (tmsg == 3)
+                if (nメッセージブロック == 3)
                 {
                     txmsg("   別にコインに意味ないけどね ", 3);
                     txmsg("                      (・ω・ )ﾉｼ", 6);
                 }
 
-                if (tmsg == 4)
+                if (nメッセージブロック == 4)
                 {
                     txmsg("この先に隠しブロックがあります ", 2);
                     txmsg("注意してください !!", 4);
                 }
 
 
-                if (tmsg == 5)
+                if (nメッセージブロック == 5)
                 {
                     txmsg("", 0);
                     txmsg(" 前回よりも難易度を下げましたので", 1);
@@ -270,7 +270,7 @@ namespace SyobonAction
                     txmsg("                       ちく より", 6);
                 }
 
-                if (tmsg == 6)
+                if (nメッセージブロック == 6)
                 {
                     txmsg("", 0);
                     txmsg(" そこにいる敵のそばによると、      ", 1);
@@ -278,7 +278,7 @@ namespace SyobonAction
                     txmsg("   可愛いですね。                  ", 3);
                 }
 
-                if (tmsg == 7)
+                if (nメッセージブロック == 7)
                 {
                     txmsg("", 0);
                     txmsg(" あの敵は連れて来れましたか?、     ", 1);
@@ -286,28 +286,28 @@ namespace SyobonAction
                     txmsg(" そこの落とし穴から Let's dive!    ", 3);
                 }
 
-                if (tmsg == 8)
+                if (nメッセージブロック == 8)
                 {
                     txmsg("そんな容易に", 1);
                     txmsg("ヒントに頼るもんじゃないぜ", 2);
                     txmsg("ほら、さっさと次行きな!!", 3);
                 }
 
-                if (tmsg == 9)
+                if (nメッセージブロック == 9)
                 {
                     txmsg(" 正真正銘のファイナルステージ。    ", 1);
                     txmsg(" クリアすれば遂にエンディング!!    ", 2);
                     txmsg(" その土管から戻ってもいいんだぜ?   ", 3);
                 }
 
-                if (tmsg == 10)
+                if (nメッセージブロック == 10)
                 {
                     txmsg(" 床が凍ってるから、すっごい滑るよ。", 1);
                     txmsg(" ", 2);
                     txmsg(" 　                      ", 3);
                 }
 
-                if (tmsg == 100)
+                if (nメッセージブロック == 100)
                 {
                     txmsg("え？私ですか？ ", 0);
                     txmsg("いやぁ、ただの通りすがりの", 2);
@@ -320,15 +320,15 @@ namespace SyobonAction
                 setfont(16, 4);
             }//2
 
-            if (tmsgtype == 3)
+            if (nメッセージブロックtype == 3)
             {
-                xx[5] = (((15 - 1) * 1200 + 1500) / 100 - tmsgy / 100);
+                xx[5] = (((15 - 1) * 1200 + 1500) / 100 - nメッセージブロックy / 100);
                 if (xx[5] > 0)
                 {
                     setc0();
-                    fillrect(xx[1], xx[2] + tmsgy / 100, 360, xx[5]);
+                    fillrect(xx[1], xx[2] + nメッセージブロックy / 100, 360, xx[5]);
                     setc1();
-                    drawrect(xx[1], xx[2] + tmsgy / 100, 360, xx[5]);
+                    drawrect(xx[1], xx[2] + nメッセージブロックy / 100, 360, xx[5]);
                 }
             }
 
@@ -356,11 +356,11 @@ namespace SyobonAction
         static void eyobi(int xa, int xb, int xc, int xd, int xe, int xf, int xnobia, int xnobib, int xgtype, int xtm)
         {
 
-            ea[eco] = xa; eb[eco] = xb; ec[eco] = xc; ed[eco] = xd; ee[eco] = xe; ef[eco] = xf;
-            egtype[eco] = xgtype; etm[eco] = xtm;
-            enobia[eco] = xnobia; enobib[eco] = xnobib;
+            n絵a[n絵co] = xa; n絵b[n絵co] = xb; n絵c[n絵co] = xc; n絵d[n絵co] = xd; n絵e[n絵co] = xe; n絵f[n絵co] = xf;
+            n絵gtype[n絵co] = xgtype; n絵tm[n絵co] = xtm;
+            n絵nobia[n絵co] = xnobia; n絵nobib[n絵co] = xnobib;
 
-            eco++; if (eco >= emax) eco = 0;
+            n絵co++; if (n絵co >= n絵max) n絵co = 0;
 
         }//eyobi
 
@@ -372,28 +372,28 @@ namespace SyobonAction
             for (t1 = 0; t1 <= 1; t1++)
             {
                 t1 = 2;
-                if (aa[aco] >= -9000 && aa[aco] <= 30000) t1 = 0; rz++;
+                if (n敵キャラa[n敵キャラco] >= -9000 && n敵キャラa[n敵キャラco] <= 30000) t1 = 0; rz++;
 
-                if (rz <= amax)
+                if (rz <= n敵キャラmax)
                 {
                     t1 = 3;
 
-                    aa[aco] = xa;
-                    ab[aco] = xb;
-                    ac[aco] = xc;
-                    ad[aco] = xd;
-                    if (xxtype > 100) ac[aco] = xxtype;
+                    n敵キャラa[n敵キャラco] = xa;
+                    n敵キャラb[n敵キャラco] = xb;
+                    n敵キャラc[n敵キャラco] = xc;
+                    n敵キャラd[n敵キャラco] = xd;
+                    if (xxtype > 100) n敵キャラc[n敵キャラco] = xxtype;
                     //ae[aco]=0;af[aco]=0;
-                    atype[aco] = xtype;
-                    if (xxtype >= 0 && xxtype <= 99100) axtype[aco] = xxtype;//ahp[aco]=iz[bxtype[t]];aytm[aco]=0;
+                    n敵キャラtype[n敵キャラco] = xtype;
+                    if (xxtype >= 0 && xxtype <= 99100) n敵キャラxtype[n敵キャラco] = xxtype;//ahp[aco]=iz[bxtype[t]];aytm[aco]=0;
                                                                              //if (xxtype==1)end();
-                    anotm[aco] = xnotm;
-                    if (aa[aco] - fx <= ma + mnobia / 2) amuki[aco] = 1;
-                    if (aa[aco] - fx > ma + mnobia / 2) amuki[aco] = 0;
-                    if (abrocktm[aco] >= 1) amuki[aco] = 1;
-                    if (abrocktm[aco] == 20) amuki[aco] = 0;
+                    n敵キャラnotm[n敵キャラco] = xnotm;
+                    if (n敵キャラa[n敵キャラco] - fx <= ma + nプレイヤーnobia / 2) n敵キャラmuki[n敵キャラco] = 1;
+                    if (n敵キャラa[n敵キャラco] - fx > ma + nプレイヤーnobia / 2) n敵キャラmuki[n敵キャラco] = 0;
+                    if (n敵キャラbrocktm[n敵キャラco] >= 1) n敵キャラmuki[n敵キャラco] = 1;
+                    if (n敵キャラbrocktm[n敵キャラco] == 20) n敵キャラmuki[n敵キャラco] = 0;
 
-                    anobia[aco] = n敵サイズW_[atype[aco]]; anobib[aco] = n敵サイズH_[atype[aco]];
+                    n敵キャラnobia[n敵キャラco] = n敵サイズW_[n敵キャラtype[n敵キャラco]]; n敵キャラnobib[n敵キャラco] = n敵サイズH_[n敵キャラtype[n敵キャラco]];
 
 
 
@@ -403,11 +403,11 @@ namespace SyobonAction
                     if (xtype == 10 && DX.CheckSoundMem(nオーディオ_[18]) == 0) { ot(nオーディオ_[18]); }
 
 
-                    azimentype[aco] = 1;
+                    n敵キャラzimentype[n敵キャラco] = 1;
 
-                    if (xtype == 87) { atm[aco] = rand(179) + (-90); }
+                    if (xtype == 87) { n敵キャラtm[n敵キャラco] = rand(179) + (-90); }
 
-                    aco += 1; if (aco >= amax - 1) { aco = 0; }
+                    n敵キャラco += 1; if (n敵キャラco >= n敵キャラmax - 1) { n敵キャラco = 0; }
                 }//t1
 
             }//rz

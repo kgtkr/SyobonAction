@@ -58,34 +58,41 @@ namespace SyobonAction
         //キーコンフィグ
         static int key, keytm;
 
-        //三角関数
-        static double pai = 3.1415926535;
-
 
         //地面
-        const int smax = 31;
-        static int sco;
-        static int[] sa = new int[smax],
-            sb = new int[smax], 
-            sc = new int[smax],
-            sd = new int[smax],
-            stype = new int[smax], 
-            sxtype = new int[smax],
-            sr = new int[smax];
-        static int[] sgtype=new int[smax];
+        const int n地面max = 31;
+        static int n地面co;
+        static int[] n地面a = new int[n地面max],
+            n地面b = new int[n地面max], 
+            n地面c = new int[n地面max],
+            n地面d = new int[n地面max],
+            n地面type = new int[n地面max], 
+            n地面xtype = new int[n地面max],
+            n地面r = new int[n地面max];
+        static int[] n地面gtype =new int[n地面max];
 
 
 
         //プレイヤー
-        static int mainmsgtype;
-        static int mb, mnobia, mnobib, mhp;
-        static int mc, md, atktm, nokori = 2, mactp, mact;
+        static int nプレイヤーainmsgtype;
+        static int nプレイヤーb, nプレイヤーnobia, nプレイヤーnobib, nプレイヤーhp;
+        static int nプレイヤーc, 
+            nプレイヤーd,
+             nプレイヤーatktm, nokori = 2, nプレイヤーactp, nプレイヤーact;
 
-        static int mtype, mxtype, mtm, mzz;
-        static int mzimen, mrzimen, mkasok, mmuki, mjumptm, mkeytm;
-        static int mmutekitm, mmutekion;
-        static int mztm, mztype;
-        static int[] actaon=new int[7];
+        static int nプレイヤーtype,
+            nプレイヤーxtype,
+            nプレイヤーtm,
+            nプレイヤーzz;
+        static int nプレイヤーzimen, 
+            nプレイヤーrzimen,
+            nプレイヤーkasok, 
+            nプレイヤーmuki,
+            nプレイヤーjumptm, 
+            nプレイヤーkeytm;
+        static int nプレイヤーmutekitm, nプレイヤーmutekion;
+        static int nプレイヤーztm, nプレイヤーztype;
+        static int[] nプレイヤーactaon=new int[7];
         //メッセージ
         static int mmsgtm, mmsgtype;
 
@@ -95,111 +102,111 @@ namespace SyobonAction
 
 
         //ブロック
-        const int tmax = 641;
-        static int tco;
-        static int[] ta = new int[tmax],
-            tb = new int[tmax],
-            tc = new int[tmax],
-            td = new int[tmax],
-            thp = new int[tmax],
-            ttype = new int[tmax];
-        static int[] titem = new int[tmax],
-            txtype = new int[tmax];
+        const int nブロックmax = 641;
+        static int nブロックco;
+        static int[] nブロックa = new int[nブロックmax],
+            nブロックb = new int[nブロックmax],
+            nブロックc = new int[nブロックmax],
+            nブロックd = new int[nブロックmax],
+            nブロックhp = new int[nブロックmax],
+            nブロックtype = new int[nブロックmax];
+        static int[] nブロックitem = new int[nブロックmax],
+            nブロックxtype = new int[nブロックmax];
 
         //メッセージブロック
-        static int tmsgtm, tmsgtype, tmsgy, tmsg;
+        static int nメッセージブロックtm, nメッセージブロックtype, nメッセージブロックy, nメッセージブロック;
 
         //効果を持たないグラ
-        const int emax = 201;
-        static int eco;
-        static int[] ea = new int[emax],
-            eb = new int[emax], 
-            enobia = new int[emax], 
-            enobib = new int[emax], 
-            ec = new int[emax], 
-            ed = new int[emax];
-        static int[] ee = new int[emax],
-            ef = new int[emax], 
-            etm = new int[emax];
-        static int[] egtype = new int[emax];
+        const int n絵max = 201;
+        static int n絵co;
+        static int[] n絵a = new int[n絵max],
+            n絵b = new int[n絵max], 
+            n絵nobia = new int[n絵max], 
+            n絵nobib = new int[n絵max], 
+            n絵c = new int[n絵max], 
+            n絵d = new int[n絵max];
+        static int[] n絵e = new int[n絵max],
+            n絵f = new int[n絵max], 
+            n絵tm = new int[n絵max];
+        static int[] n絵gtype = new int[n絵max];
 
 
 
         //敵キャラ
-        const int amax = 24;
-        static int aco;
-        static int[] aa = new int[amax],
-            ab = new int[amax],
-            anobia = new int[amax],
-            anobib = new int[amax],
-            ac = new int[amax],
-            ad = new int[amax];
-        static int[] ae = new int[amax],
-            af = new int[amax],
-            abrocktm = new int[amax];
-        static int[] aacta = new int[amax],
-            aactb = new int[amax],
-            azimentype = new int[amax],
-            axzimen = new int[amax];
-        static int[] atype = new int[amax],
-            axtype = new int[amax], 
-            amuki = new int[amax], 
-            ahp = new int[amax];
-        static int[] anotm = new int[amax];
-        static int[] atm = new int[amax],
-            a2tm = new int[amax];
-        static int[] amsgtm = new int[amax], 
-            amsgtype = new int[amax];
+        const int n敵キャラmax = 24;
+        static int n敵キャラco;
+        static int[] n敵キャラa = new int[n敵キャラmax],
+            n敵キャラb = new int[n敵キャラmax],
+            n敵キャラnobia = new int[n敵キャラmax],
+            n敵キャラnobib = new int[n敵キャラmax],
+            n敵キャラc = new int[n敵キャラmax],
+            n敵キャラd = new int[n敵キャラmax];
+        static int[] n敵キャラe = new int[n敵キャラmax],
+            n敵キャラf = new int[n敵キャラmax],
+            n敵キャラbrocktm = new int[n敵キャラmax];
+        static int[] n敵キャラacta = new int[n敵キャラmax],
+            n敵キャラactb = new int[n敵キャラmax],
+            n敵キャラzimentype = new int[n敵キャラmax],
+            n敵キャラxzimen = new int[n敵キャラmax];
+        static int[] n敵キャラtype = new int[n敵キャラmax],
+            n敵キャラxtype = new int[n敵キャラmax], 
+            n敵キャラmuki = new int[n敵キャラmax], 
+            n敵キャラhp = new int[n敵キャラmax];
+        static int[] n敵キャラnotm = new int[n敵キャラmax];
+        static int[] n敵キャラtm = new int[n敵キャラmax],
+            n敵キャラ2tm = new int[n敵キャラmax];
+        static int[] n敵キャラmsgtm = new int[n敵キャラmax], 
+            n敵キャラmsgtype = new int[n敵キャラmax];
 
         //敵出現
-        const int bmax = 81;
-        static int bco;
-        static int[] ba = new int[bmax],
-            bb = new int[bmax], 
-            btm = new int[bmax];
-        static int[] btype = new int[bmax], 
-            bxtype = new int[bmax],
-            bz = new int[bmax];
+        const int n敵出現max = 81;
+        static int n敵出現co;
+        static int[] n敵出現a = new int[n敵出現max],
+            n敵出現b = new int[n敵出現max], 
+            n敵出現tm = new int[n敵出現max];
+        static int[] n敵出現type = new int[n敵出現max], 
+            n敵出現xtype = new int[n敵出現max],
+            n敵出現z = new int[n敵出現max];
 
 
         //背景
-        const int nmax = 41;
-        static int nco;
-        static int[] na = new int[nmax], 
-            nb = new int[nmax], 
-            nc = new int[nmax], 
-            nd = new int[nmax], 
-            ntype = new int[nmax];
-        static int[] ng = new int[nmax],
-            nx = new int[nmax];
+        const int n背景max = 41;
+        static int n背景co;
+        static int[] n背景a = new int[n背景max], 
+            n背景b = new int[n背景max], 
+            n背景c = new int[n背景max], 
+            n背景d = new int[n背景max], 
+            n背景type = new int[n背景max];
+        static int[] n背景g = new int[n背景max],
+            n背景x = new int[n背景max];
 
 
         //リフト
-        const int srmax = 21;
-        static int srco;
-        static int[] sra = new int[srmax],
-            srb = new int[srmax], 
-            src = new int[srmax], 
-            srd = new int[srmax],
-            sre = new int[srmax], 
-            srf = new int[srmax];
-        static int[] srtype = new int[srmax], 
-            srgtype = new int[srmax], 
-            sracttype = new int[srmax], 
-            srsp = new int[srmax];
-        static int[] srmuki = new int[srmax],
-            sron = new int[srmax], 
-            sree = new int[srmax];
-        static int[] srsok = new int[srmax],
-            srmovep = new int[srmax],
-            srmove = new int[srmax];
+        const int nリフトmax = 21;
+        static int nリフトco;
+        static int[] nリフトa = new int[nリフトmax],
+            nリフトb = new int[nリフトmax], 
+            nリフトc = new int[nリフトmax], 
+            nリフトd = new int[nリフトmax],
+            nリフトe = new int[nリフトmax], 
+            nリフトf = new int[nリフトmax];
+        static int[] nリフトtype = new int[nリフトmax], 
+            nリフトgtype = new int[nリフトmax], 
+            nリフトacttype = new int[nリフトmax], 
+            nリフトsp = new int[nリフトmax];
+        static int[] nリフトmuki = new int[nリフトmax],
+            nリフトon = new int[nリフトmax], 
+            nリフトee = new int[nリフトmax];
+        static int[] nリフトsok = new int[nリフトmax],
+            nリフトmovep = new int[nリフトmax],
+            nリフトmove = new int[nリフトmax];
 
         //スクロール範囲
         static int fx = 0, fy = 0, fzx, scrollx, scrolly;
         //全体のポイント
-        static int fma = 0, fmb = 0;
+        static int n全体のポイントa = 0, n全体のポイントb = 0;
         //強制スクロール
-        static int kscroll = 0;
+        static int n強制スクロール = 0;
         //画面サイズ(ファミコンサイズ×2)(256-224)
         const int n画面幅 = 48000, n画面高さ = 42000;
 
@@ -220,6 +227,6 @@ namespace SyobonAction
 
 
         //タイマー測定
-        static long stime;
+        static long nタイマー測定;
     }
 }
