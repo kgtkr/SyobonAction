@@ -87,80 +87,11 @@ namespace SyobonAction
         }
 
 
-        //画像関係
-        //{
-        //色かえ(指定)
-        static void setcolor(int red, int green, int blue)
-        {
-            color = DX.GetColor(red, green, blue);
-        }
-        //色かえ(黒)(白)
-        static void setc0() { color = DX.GetColor(0, 0, 0); }
-        static void setc1() { color = DX.GetColor(255, 255, 255); }
+        
 
-        //点
-        static void drawpixel(int a, int b) { DX.DrawPixel(a, b, color); }
-        //線
-        static void drawline(int a, int b, int c, int d) { DX.DrawLine(a, b, c, d, color); }
-        //四角形(塗り無し)
-        static void drawrect(int a, int b, int c, int d) { DX.DrawBox(a, b, a + c, b + d, color, DX.FALSE); }
-        //四角形(塗り有り)
-        static void fillrect(int a, int b, int c, int d) { DX.DrawBox(a, b, a + c, b + d, color, DX.TRUE); }
-        //円(塗り無し)
-        static void drawarc(int a, int b, int c, int d) { DX.DrawOval(a, b, c, d, color, DX.FALSE); }
-        //円(塗り有り)
-        static void fillarc(int a, int b, int c, int d) { DX.DrawOval(a, b, c, d, color, DX.TRUE); }
+        
 
-        //画像の読み込み
-        static int loadimage(string x)
-        {
-            //mgrap[a]=LoadGraph(b);
-            return DX.LoadGraph(x);
-        }
-        static int loadimage(int a, int x, int y, int r, int z)
-        {
-            return DX.DerivationGraph(x, y, r, z, a);
-        }
-
-        //画像表示
-        static void drawimage(int mx, int a, int b)
-        {
-            if (mirror == 0)
-                DX.DrawGraph(a, b, mx, DX.TRUE);
-            if (mirror == 1)
-                DX.DrawTurnGraph(a, b, mx, DX.TRUE);
-        }
-        static void drawimage(int mx, int a, int b, int c, int d, int e, int f)
-        {
-            int m;
-            m = DX.DerivationGraph(c, d, e, f, mx);
-            if (mirror == 0)
-                DX.DrawGraph(a, b, m, DX.TRUE);
-            if (mirror == 1)
-                DX.DrawTurnGraph(a, b, m, DX.TRUE);
-        }
-
-        //反転
-        static void setre() { }
-        static void setre2() { }
-        static void setno() { }
-
-        //文字
-        static void str(string x, int a, int b)
-        {
-            DX.DrawString(a, b, x, color);
-
-            xx[2] = 4;
-
-
-        }
-
-
-
-        //文字ラベル変更
-        static void setfont(int a)
-        {
-        }
+        
 
         //音楽再生
         static void ot(int x)
@@ -213,10 +144,10 @@ namespace SyobonAction
             xx[1] = 6000 / 100; xx[2] = 4000 / 100;
             if (nメッセージブロックtype == 1 || nメッセージブロックtype == 2)
             {
-                setc0();
-                fillrect(xx[1], xx[2], 360, nメッセージブロックy / 100);
-                setc1();
-                drawrect(xx[1], xx[2], 360, nメッセージブロックy / 100);
+                DXDraw.SetColorBlack();
+                DXDraw.DrawBox塗り潰し(xx[1], xx[2], 360, nメッセージブロックy / 100);
+                DXDraw.SetColorWhite();
+                DXDraw.DrawBox塗り無し(xx[1], xx[2], 360, nメッセージブロックy / 100);
             }
             if (nメッセージブロックtype == 2)
             {
@@ -225,7 +156,7 @@ namespace SyobonAction
 
                 if (nメッセージブロック == 0)
                 {
-                    setc1();
+                    DXDraw.SetColorWhite();
                     //フォント
                     setfont(20, 5);
                     txmsg("テスト　hoge", 0);
@@ -233,7 +164,7 @@ namespace SyobonAction
 
                 if (nメッセージブロック == 1)
                 {
-                    setc1();
+                    DXDraw.SetColorWhite();
                     txmsg("", 0);
                     txmsg("ステージ 1 より", 0);
                     txmsg("特殊的なものが増えたので", 1);
@@ -325,10 +256,10 @@ namespace SyobonAction
                 xx[5] = (((15 - 1) * 1200 + 1500) / 100 - nメッセージブロックy / 100);
                 if (xx[5] > 0)
                 {
-                    setc0();
-                    fillrect(xx[1], xx[2] + nメッセージブロックy / 100, 360, xx[5]);
-                    setc1();
-                    drawrect(xx[1], xx[2] + nメッセージブロックy / 100, 360, xx[5]);
+                    DXDraw.SetColorBlack();
+                    DXDraw.DrawBox塗り潰し(xx[1], xx[2] + nメッセージブロックy / 100, 360, xx[5]);
+                    DXDraw.SetColorWhite();
+                    DXDraw.DrawBox塗り無し(xx[1], xx[2] + nメッセージブロックy / 100, 360, xx[5]);
                 }
             }
 
@@ -338,7 +269,7 @@ namespace SyobonAction
         {
             int xx = 6;
 
-            str(x, 60 + xx, 40 + xx + a * 24);
+            DXDraw.DrawString(x, 60 + xx, 40 + xx + a * 24);
 
         }//txmsg
 

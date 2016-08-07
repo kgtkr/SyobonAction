@@ -16,21 +16,21 @@ namespace SyobonAction
         static int main = 100, maintm = 0;
 
         //ステージ
-        static int stagecolor = 0;
-        static int sta = 1, stb = 4, stc = 0;
+        static int nステージ色 = 0;
+        static int nステージa = 1, nステージb = 4, nステージc = 0;
 
         //クイック
-        static int fast = 1;
+        static int nクイック = 1;
 
         //トラップ表示
-        static int trap = 1;
+        static int nトラップ表示 = 1;
 
         //中間ゲート
-        static int tyuukan = 0;
+        static int n中間ゲート = 0;
 
 
         //スタッフロール
-        static int ending = 0;
+        static int nスタッフロール = 0;
 
 
         //ステージ読み込みループ(いじらない)
@@ -39,14 +39,10 @@ namespace SyobonAction
         static int over = 0;
 
         //ステージスイッチ
-        static int stageonoff = 0;
+        static int nステージスイッチ = 0;
 
 
         static int maint;
-
-        //描画
-        static uint color;
-        static int mirror;
 
         //ループ
         static int t1, t2, t3;
@@ -56,7 +52,7 @@ namespace SyobonAction
         static int zxon;
 
         //キーコンフィグ
-        static int key, keytm;
+        static int key, keyTm;
 
 
         //地面
@@ -94,9 +90,9 @@ namespace SyobonAction
         static int nプレイヤーztm, nプレイヤーztype;
         static int[] nプレイヤーactaon=new int[7];
         //メッセージ
-        static int mmsgtm, mmsgtype;
+        static int nメッセージtm, nメッセージtype;
 
-        static int mascrollmax = 21000;//9000
+        static int maScrollMax = 21000;//9000
 
 
 
@@ -202,7 +198,7 @@ namespace SyobonAction
             nリフトmove = new int[nリフトmax];
 
         //スクロール範囲
-        static int fx = 0, fy = 0, fzx, scrollx, scrolly;
+        static int fx = 0, fy = 0, fzx, scrollX, scrollY;
         //全体のポイント
         static int n全体のポイントa = 0, n全体のポイントb = 0;
         //強制スクロール
@@ -213,15 +209,15 @@ namespace SyobonAction
 
 
         //ステージ
-        static byte[,] stagedate=new byte[17,2001];
+        static byte[,] stageDate=new byte[17,2001];
 
         //画面黒
-        static int blacktm = 1, blackx = 0;
+        static int blackTm = 1, blackX = 0;
 
 
 
         //自由な値
-        static int[] xx=new int[91];
+     public   static int[] xx=new int[91];
         static double[] xd=new double[11];
         static string[] xs=new string[31];
 

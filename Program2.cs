@@ -38,7 +38,7 @@ namespace SyobonAction
         {
 
             //fzx=6000*100;
-            scrollx = 3600 * 100;
+            scrollX = 3600 * 100;
 
 
 
@@ -53,7 +53,7 @@ namespace SyobonAction
                 for (t_ = 0; t_ <= 16; t_++)
                 {
                     xx[10] = 0;
-                    if (stagedate[t_,tt_] >= 1 && stagedate[t_,tt_] <= 255) xx[10] = (int)stagedate[t_,tt_];
+                    if (stageDate[t_,tt_] >= 1 && stageDate[t_,tt_] <= 255) xx[10] = (int)stageDate[t_,tt_];
                     xx[21] = tt_ * 29; xx[22] = t_ * 29 - 12; xx[23] = xx[10];
                     if (xx[10] >= 1 && xx[10] <= 19 && xx[10] != 9) { tyobi(tt_ * 29, t_ * 29 - 12, xx[10]); }
                     if (xx[10] >= 20 && xx[10] <= 29) { nリフトa[nリフトco] = xx[21] * 100; nリフトb[nリフトco] = xx[22] * 100; nリフトc[nリフトco] = 3000; nリフトtype[nリフトco] = 0; nリフトco++; if (nリフトco >= nリフトmax) nリフトco = 0; }
@@ -78,22 +78,22 @@ namespace SyobonAction
                 }
             }
 
-            if (tyuukan >= 1)
+            if (n中間ゲート >= 1)
             {
                 xx[17] = 0;
                 for (t_ = 0; t_ < n地面max; t_++)
                 {
-                    if (n地面type[t_] == 500 && tyuukan >= 1)
+                    if (n地面type[t_] == 500 && n中間ゲート >= 1)
                     {
                         fx = n地面a[t_] - n画面幅 / 2; fzx = fx;
                         ma = n地面a[t_] - fx;
                         nプレイヤーb = n地面b[t_] - fy;
-                        tyuukan--; xx[17]++;
+                        n中間ゲート--; xx[17]++;
 
                         n地面a[t_] = -80000000;
                     }
                 }
-                tyuukan += xx[17];
+                n中間ゲート += xx[17];
             }
             //tyobi(1,2,3);
 
@@ -105,7 +105,7 @@ namespace SyobonAction
         {
 
             //fzx=6000*100;
-            scrollx = 3600 * 100;
+            scrollX = 3600 * 100;
 
 
             //1-レンガ,2-コイン,3-空,4-土台//5-6地面//7-隠し//

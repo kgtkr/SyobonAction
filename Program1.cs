@@ -16,20 +16,20 @@ namespace SyobonAction
 
             DX.ClearDrawScreen();
 
-            setcolor(0, 0, 0);
-            if (stagecolor == 1) setcolor(160, 180, 250);
-            if (stagecolor == 2) setcolor(10, 10, 10);
-            if (stagecolor == 3) setcolor(160, 180, 250);
-            if (stagecolor == 4) setcolor(10, 10, 10);
-            if (stagecolor == 5)
+            DXDraw.SetColor(0, 0, 0);
+            if (nステージ色 == 1) DXDraw.SetColor(160, 180, 250);
+            if (nステージ色 == 2) DXDraw.SetColor(10, 10, 10);
+            if (nステージ色 == 3) DXDraw.SetColor(160, 180, 250);
+            if (nステージ色 == 4) DXDraw.SetColor(10, 10, 10);
+            if (nステージ色 == 5)
             {
-                setcolor(160, 180, 250);
+                DXDraw.SetColor(160, 180, 250);
                 nプレイヤーrzimen = 1;
             } else {
                 nプレイヤーrzimen = 0;
             }
 
-            fillrect(0, 0, n画面幅, n画面高さ);
+            DXDraw.DrawBox塗り潰し(0, 0, n画面幅, n画面高さ);
 
 
             if (main == 1 && zxon >= 1)
@@ -46,16 +46,16 @@ namespace SyobonAction
 
                         if (n背景type[t_] != 3)
                         {
-                            if ((n背景type[t_] == 1 || n背景type[t_] == 2) && stagecolor == 5)
+                            if ((n背景type[t_] == 1 || n背景type[t_] == 2) && nステージ色 == 5)
                             {
-                                drawimage(n切り取り画像_[n背景type[t_] + 30, 4], xx[0] / 100, xx[1] / 100);
+                                DXDraw.DrawGraph(n切り取り画像_[n背景type[t_] + 30, 4], xx[0] / 100, xx[1] / 100);
                             }
                             else {
-                                drawimage(n切り取り画像_[n背景type[t_], 4], xx[0] / 100, xx[1] / 100);
+                                DXDraw.DrawGraph(n切り取り画像_[n背景type[t_], 4], xx[0] / 100, xx[1] / 100);
                             }
                         }
                         if (n背景type[t_] == 3)
-                            drawimage(n切り取り画像_[n背景type[t_], 4], xx[0] / 100 - 5, xx[1] / 100);
+                            DXDraw.DrawGraph(n切り取り画像_[n背景type[t_], 4], xx[0] / 100 - 5, xx[1] / 100);
 
                         //51
                         if (n背景type[t_] == 100)
@@ -83,39 +83,39 @@ namespace SyobonAction
 
                         //コイン
                         if (n絵gtype[t_] == 0)
-                            drawimage(n切り取り画像_[0, 2], xx[0] / 100, xx[1] / 100);
+                            DXDraw.DrawGraph(n切り取り画像_[0, 2], xx[0] / 100, xx[1] / 100);
 
                         //ブロックの破片
                         if (n絵gtype[t_] == 1)
                         {
-                            if (stagecolor == 1 || stagecolor == 3 || stagecolor == 5) setcolor(9 * 16, 6 * 16, 3 * 16);
-                            if (stagecolor == 2) setcolor(0, 120, 160);
-                            if (stagecolor == 4) setcolor(192, 192, 192);
+                            if (nステージ色 == 1 || nステージ色 == 3 || nステージ色 == 5) DXDraw.SetColor(9 * 16, 6 * 16, 3 * 16);
+                            if (nステージ色 == 2) DXDraw.SetColor(0, 120, 160);
+                            if (nステージ色 == 4) DXDraw.SetColor(192, 192, 192);
 
-                            fillarc(xx[0] / 100, xx[1] / 100, 7, 7);
-                            setcolor(0, 0, 0);
-                            drawarc(xx[0] / 100, xx[1] / 100, 7, 7);
+                            DXDraw.DrawOval塗り潰し(xx[0] / 100, xx[1] / 100, 7, 7);
+                            DXDraw.SetColor(0, 0, 0);
+                            DXDraw.DrawOval塗り無し(xx[0] / 100, xx[1] / 100, 7, 7);
                         }
 
                         //リフトの破片
                         if (n絵gtype[t_] == 2 || n絵gtype[t_] == 3)
                         {
-                            if (n絵gtype[t_] == 3) mirror = 1;
-                            drawimage(n切り取り画像_[0, 5], xx[0] / 100, xx[1] / 100);
-                            mirror = 0;
+                            if (n絵gtype[t_] == 3) DXDraw.nミラー = 1;
+                            DXDraw.DrawGraph(n切り取り画像_[0, 5], xx[0] / 100, xx[1] / 100);
+                            DXDraw.nミラー = 0;
                         }
 
                         //ポール
                         if (n絵gtype[t_] == 4)
                         {
-                            setc1();
-                            fillrect((xx[0]) / 100 + 10, (xx[1]) / 100, 10, xx[3]);
-                            setc0();
-                            drawrect((xx[0]) / 100 + 10, (xx[1]) / 100, 10, xx[3]);
-                            setcolor(250, 250, 0);
-                            fillarc((xx[0]) / 100 + 15 - 1, (xx[1]) / 100, 10, 10);
-                            setc0();
-                            drawarc((xx[0]) / 100 + 15 - 1, (xx[1]) / 100, 10, 10);
+                            DXDraw.SetColorWhite();
+                            DXDraw.DrawBox塗り潰し((xx[0]) / 100 + 10, (xx[1]) / 100, 10, xx[3]);
+                            DXDraw.SetColorBlack();
+                            DXDraw.DrawBox塗り無し((xx[0]) / 100 + 10, (xx[1]) / 100, 10, xx[3]);
+                            DXDraw.SetColor(250, 250, 0);
+                            DXDraw.DrawOval塗り潰し((xx[0]) / 100 + 15 - 1, (xx[1]) / 100, 10, 10);
+                            DXDraw.SetColorBlack();
+                            DXDraw.DrawOval塗り無し((xx[0]) / 100 + 15 - 1, (xx[1]) / 100, 10, 10);
                         }
 
 
@@ -132,29 +132,29 @@ namespace SyobonAction
 
                         if (nリフトsp[t_] <= 9 || nリフトsp[t_] >= 20)
                         {
-                            setcolor(220, 220, 0);
-                            if (nリフトsp[t_] == 2 || nリフトsp[t_] == 3) { setcolor(0, 220, 0); }
-                            if (nリフトsp[t_] == 21) { setcolor(180, 180, 180); }
-                            fillrect((nリフトa[t_] - fx) / 100, (nリフトb[t_] - fy) / 100, nリフトc[t_] / 100, xx[2]);
+                            DXDraw.SetColor(220, 220, 0);
+                            if (nリフトsp[t_] == 2 || nリフトsp[t_] == 3) { DXDraw.SetColor(0, 220, 0); }
+                            if (nリフトsp[t_] == 21) { DXDraw.SetColor(180, 180, 180); }
+                            DXDraw.DrawBox塗り潰し((nリフトa[t_] - fx) / 100, (nリフトb[t_] - fy) / 100, nリフトc[t_] / 100, xx[2]);
 
-                            setcolor(180, 180, 0);
-                            if (nリフトsp[t_] == 2 || nリフトsp[t_] == 3) { setcolor(0, 180, 0); }
-                            if (nリフトsp[t_] == 21) { setcolor(150, 150, 150); }
-                            drawrect((nリフトa[t_] - fx) / 100, (nリフトb[t_] - fy) / 100, nリフトc[t_] / 100, xx[2]);
+                            DXDraw.SetColor(180, 180, 0);
+                            if (nリフトsp[t_] == 2 || nリフトsp[t_] == 3) { DXDraw.SetColor(0, 180, 0); }
+                            if (nリフトsp[t_] == 21) { DXDraw.SetColor(150, 150, 150); }
+                            DXDraw.DrawBox塗り無し((nリフトa[t_] - fx) / 100, (nリフトb[t_] - fy) / 100, nリフトc[t_] / 100, xx[2]);
                         }
                         else if (nリフトsp[t_] <= 14)
                         {
                             if (nリフトc[t_] >= 5000)
                             {
-                                setcolor(0, 200, 0);
-                                fillrect((nリフトa[t_] - fx) / 100, (nリフトb[t_] - fy) / 100, nリフトc[t_] / 100, 30);
-                                setcolor(0, 160, 0);
-                                drawrect((nリフトa[t_] - fx) / 100, (nリフトb[t_] - fy) / 100, nリフトc[t_] / 100, 30);
+                                DXDraw.SetColor(0, 200, 0);
+                                DXDraw.DrawBox塗り潰し((nリフトa[t_] - fx) / 100, (nリフトb[t_] - fy) / 100, nリフトc[t_] / 100, 30);
+                                DXDraw.SetColor(0, 160, 0);
+                                DXDraw.DrawBox塗り無し((nリフトa[t_] - fx) / 100, (nリフトb[t_] - fy) / 100, nリフトc[t_] / 100, 30);
 
-                                setcolor(180, 120, 60);
-                                fillrect((nリフトa[t_] - fx) / 100 + 20, (nリフトb[t_] - fy) / 100 + 30, nリフトc[t_] / 100 - 40, 480);
-                                setcolor(100, 80, 20);
-                                drawrect((nリフトa[t_] - fx) / 100 + 20, (nリフトb[t_] - fy) / 100 + 30, nリフトc[t_] / 100 - 40, 480);
+                                DXDraw.SetColor(180, 120, 60);
+                                DXDraw.DrawBox塗り潰し((nリフトa[t_] - fx) / 100 + 20, (nリフトb[t_] - fy) / 100 + 30, nリフトc[t_] / 100 - 40, 480);
+                                DXDraw.SetColor(100, 80, 20);
+                                DXDraw.DrawBox塗り無し((nリフトa[t_] - fx) / 100 + 20, (nリフトb[t_] - fy) / 100 + 30, nリフトc[t_] / 100 - 40, 480);
 
                             }
                         }
@@ -162,7 +162,7 @@ namespace SyobonAction
                         {
                             for (t2 = 0; t2 <= 2; t2++)
                             {
-                                xx[6] = 1 + 0; drawimage(n切り取り画像_[xx[6], 1], (nリフトa[t_] - fx) / 100 + t2 * 29, (nリフトb[t_] - fy) / 100);
+                                xx[6] = 1 + 0; DXDraw.DrawGraph(n切り取り画像_[xx[6], 1], (nリフトa[t_] - fx) / 100 + t2 * 29, (nリフトb[t_] - fy) / 100);
                             }
                         }//15
                     }
@@ -170,37 +170,36 @@ namespace SyobonAction
 
 
                 //プレイヤー描画
-                setcolor(0, 0, 255);
-                //mirror=1;
+                DXDraw.SetColor(0, 0, 255);
 
                 if (nプレイヤーactp >= 2000) { nプレイヤーactp -= 2000; if (nプレイヤーact == 0) { nプレイヤーact = 1; } else { nプレイヤーact = 0; } }
-                if (nプレイヤーmuki == 0) mirror = 1;
+                if (nプレイヤーmuki == 0) DXDraw.nミラー = 1;
 
                 if (nプレイヤーtype != 200 && nプレイヤーtype != 1)
                 {
                     if (nプレイヤーzimen == 1)
                     {
                         // 読みこんだグラフィックを拡大描画
-                        if (nプレイヤーact == 0) drawimage(n切り取り画像_[0, 0], ma / 100, nプレイヤーb / 100);
-                        if (nプレイヤーact == 1) drawimage(n切り取り画像_[1, 0], ma / 100, nプレイヤーb / 100);
+                        if (nプレイヤーact == 0) DXDraw.DrawGraph(n切り取り画像_[0, 0], ma / 100, nプレイヤーb / 100);
+                        if (nプレイヤーact == 1) DXDraw.DrawGraph(n切り取り画像_[1, 0], ma / 100, nプレイヤーb / 100);
                     }
                     if (nプレイヤーzimen == 0)
                     {
-                        drawimage(n切り取り画像_[2, 0], ma / 100, nプレイヤーb / 100);
+                        DXDraw.DrawGraph(n切り取り画像_[2, 0], ma / 100, nプレイヤーb / 100);
                     }
                 }
                 //巨大化
                 else if (nプレイヤーtype == 1)
                 {
-                    drawimage(n切り取り画像_[41, 0], ma / 100, nプレイヤーb / 100);
+                    DXDraw.DrawGraph(n切り取り画像_[41, 0], ma / 100, nプレイヤーb / 100);
                 }
 
                 else if (nプレイヤーtype == 200)
                 {
-                    drawimage(n切り取り画像_[3, 0], ma / 100, nプレイヤーb / 100);
+                    DXDraw.DrawGraph(n切り取り画像_[3, 0], ma / 100, nプレイヤーb / 100);
                 }
 
-                mirror = 0;
+                DXDraw.nミラー = 0;
                 //敵キャラ
                 for (t_ = 0; t_ < n敵キャラmax; t_++)
                 {
@@ -209,17 +208,17 @@ namespace SyobonAction
                     xx[2] = n敵キャラnobia[t_] / 100; xx[3] = n敵キャラnobib[t_] / 100; xx[14] = 3000; xx[16] = 0;
                     if (xx[0] + xx[2] * 100 >= -10 - xx[14] && xx[1] <= n画面幅 + xx[14] && xx[1] + xx[3] * 100 >= -10 && xx[3] <= n画面高さ)
                     {
-                        if (n敵キャラmuki[t_] == 1) { mirror = 1; }
+                        if (n敵キャラmuki[t_] == 1) { DXDraw.nミラー = 1; }
                         if (n敵キャラtype[t_] == 3 && n敵キャラxtype[t_] == 1) { DX.DrawRotaGraph(xx[0] / 100 + 13, xx[1] / 100 + 15, 1.0f, Math.PI / 1, n切り取り画像_[n敵キャラtype[t_], 3], DX.TRUE); xx[16] = 1; }
                         if (n敵キャラtype[t_] == 9 && n敵キャラd[t_] >= 1) { DX.DrawRotaGraph(xx[0] / 100 + 13, xx[1] / 100 + 15, 1.0f, Math.PI / 1, n切り取り画像_[n敵キャラtype[t_], 3], DX.TRUE); xx[16] = 1; }
-                        if (n敵キャラtype[t_] >= 100 && n敵キャラmuki[t_] == 1) mirror = 0;
+                        if (n敵キャラtype[t_] >= 100 && n敵キャラmuki[t_] == 1) DXDraw.nミラー = 0;
 
                         //メイン
                         if (n敵キャラtype[t_] < 200 && xx[16] == 0 && n敵キャラtype[t_] != 6 && n敵キャラtype[t_] != 79 && n敵キャラtype[t_] != 86 && n敵キャラtype[t_] != 30)
                         {
                             if (!((n敵キャラtype[t_] == 80 || n敵キャラtype[t_] == 81) && n敵キャラxtype[t_] == 1))
                             {
-                                drawimage(n切り取り画像_[n敵キャラtype[t_], 3], xx[0] / 100, xx[1] / 100);
+                                DXDraw.DrawGraph(n切り取り画像_[n敵キャラtype[t_], 3], xx[0] / 100, xx[1] / 100);
                             }
                         }
 
@@ -229,18 +228,18 @@ namespace SyobonAction
                         {
                             if (n敵キャラtm[t_] >= 10 && n敵キャラtm[t_] <= 19 || n敵キャラtm[t_] >= 100 && n敵キャラtm[t_] <= 119 || n敵キャラtm[t_] >= 200)
                             {
-                                drawimage(n切り取り画像_[150, 3], xx[0] / 100, xx[1] / 100);
+                                DXDraw.DrawGraph(n切り取り画像_[150, 3], xx[0] / 100, xx[1] / 100);
                             }
                             else {
-                                drawimage(n切り取り画像_[6, 3], xx[0] / 100, xx[1] / 100);
+                                DXDraw.DrawGraph(n切り取り画像_[6, 3], xx[0] / 100, xx[1] / 100);
                             }
                         }
 
                         //モララー
                         if (n敵キャラtype[t_] == 30)
                         {
-                            if (n敵キャラxtype[t_] == 0) drawimage(n切り取り画像_[30, 3], xx[0] / 100, xx[1] / 100);
-                            if (n敵キャラxtype[t_] == 1) drawimage(n切り取り画像_[155, 3], xx[0] / 100, xx[1] / 100);
+                            if (n敵キャラxtype[t_] == 0) DXDraw.DrawGraph(n切り取り画像_[30, 3], xx[0] / 100, xx[1] / 100);
+                            if (n敵キャラxtype[t_] == 1) DXDraw.DrawGraph(n切り取り画像_[155, 3], xx[0] / 100, xx[1] / 100);
                         }
 
 
@@ -248,15 +247,15 @@ namespace SyobonAction
                         //ステルス雲
                         if ((n敵キャラtype[t_] == 81) && n敵キャラxtype[t_] == 1)
                         {
-                            drawimage(n切り取り画像_[130, 3], xx[0] / 100, xx[1] / 100);
+                            DXDraw.DrawGraph(n切り取り画像_[130, 3], xx[0] / 100, xx[1] / 100);
                         }
 
                         if (n敵キャラtype[t_] == 79)
                         {
-                            setcolor(250, 250, 0);
-                            fillrect(xx[0] / 100, xx[1] / 100, xx[2], xx[3]);
-                            setc0();
-                            drawrect(xx[0] / 100, xx[1] / 100, xx[2], xx[3]);
+                            DXDraw.SetColor(250, 250, 0);
+                            DXDraw.DrawBox塗り潰し(xx[0] / 100, xx[1] / 100, xx[2], xx[3]);
+                            DXDraw.SetColorBlack();
+                            DXDraw.DrawBox塗り無し(xx[0] / 100, xx[1] / 100, xx[2], xx[3]);
                         }
 
                         if (n敵キャラtype[t_] == 82)
@@ -264,23 +263,23 @@ namespace SyobonAction
 
                             if (n敵キャラxtype[t_] == 0)
                             {
-                                xx[9] = 0; if (stagecolor == 2) { xx[9] = 30; }
-                                if (stagecolor == 4) { xx[9] = 60; }
-                                if (stagecolor == 5) { xx[9] = 90; }
-                                xx[6] = 5 + xx[9]; drawimage(n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
+                                xx[9] = 0; if (nステージ色 == 2) { xx[9] = 30; }
+                                if (nステージ色 == 4) { xx[9] = 60; }
+                                if (nステージ色 == 5) { xx[9] = 90; }
+                                xx[6] = 5 + xx[9]; DXDraw.DrawGraph(n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
                             }
 
                             if (n敵キャラxtype[t_] == 1)
                             {
-                                xx[9] = 0; if (stagecolor == 2) { xx[9] = 30; }
-                                if (stagecolor == 4) { xx[9] = 60; }
-                                if (stagecolor == 5) { xx[9] = 90; }
-                                xx[6] = 4 + xx[9]; drawimage(n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
+                                xx[9] = 0; if (nステージ色 == 2) { xx[9] = 30; }
+                                if (nステージ色 == 4) { xx[9] = 60; }
+                                if (nステージ色 == 5) { xx[9] = 90; }
+                                xx[6] = 4 + xx[9]; DXDraw.DrawGraph(n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
                             }
 
                             if (n敵キャラxtype[t_] == 2)
                             {
-                                drawimage(n切り取り画像_[1, 5], xx[0] / 100, xx[1] / 100);
+                                DXDraw.DrawGraph(n切り取り画像_[1, 5], xx[0] / 100, xx[1] / 100);
                             }
 
                         }
@@ -289,18 +288,18 @@ namespace SyobonAction
 
                             if (n敵キャラxtype[t_] == 0)
                             {
-                                xx[9] = 0; if (stagecolor == 2) { xx[9] = 30; }
-                                if (stagecolor == 4) { xx[9] = 60; }
-                                if (stagecolor == 5) { xx[9] = 90; }
-                                xx[6] = 5 + xx[9]; drawimage(n切り取り画像_[xx[6], 1], xx[0] / 100 + 10, xx[1] / 100 + 9);
+                                xx[9] = 0; if (nステージ色 == 2) { xx[9] = 30; }
+                                if (nステージ色 == 4) { xx[9] = 60; }
+                                if (nステージ色 == 5) { xx[9] = 90; }
+                                xx[6] = 5 + xx[9]; DXDraw.DrawGraph(n切り取り画像_[xx[6], 1], xx[0] / 100 + 10, xx[1] / 100 + 9);
                             }
 
                             if (n敵キャラxtype[t_] == 1)
                             {
-                                xx[9] = 0; if (stagecolor == 2) { xx[9] = 30; }
-                                if (stagecolor == 4) { xx[9] = 60; }
-                                if (stagecolor == 5) { xx[9] = 90; }
-                                xx[6] = 4 + xx[9]; drawimage(n切り取り画像_[xx[6], 1], xx[0] / 100 + 10, xx[1] / 100 + 9);
+                                xx[9] = 0; if (nステージ色 == 2) { xx[9] = 30; }
+                                if (nステージ色 == 4) { xx[9] = 60; }
+                                if (nステージ色 == 5) { xx[9] = 90; }
+                                xx[6] = 4 + xx[9]; DXDraw.DrawGraph(n切り取り画像_[xx[6], 1], xx[0] / 100 + 10, xx[1] / 100 + 9);
                             }
 
                         }
@@ -308,14 +307,14 @@ namespace SyobonAction
                         //偽ポール
                         if (n敵キャラtype[t_] == 85)
                         {
-                            setc1();
-                            fillrect((xx[0]) / 100 + 10, (xx[1]) / 100, 10, xx[3]);
-                            setc0();
-                            drawrect((xx[0]) / 100 + 10, (xx[1]) / 100, 10, xx[3]);
-                            setcolor(0, 250, 200);
-                            fillarc((xx[0]) / 100 + 15 - 1, (xx[1]) / 100, 10, 10);
-                            setc0();
-                            drawarc((xx[0]) / 100 + 15 - 1, (xx[1]) / 100, 10, 10);
+                            DXDraw.SetColorWhite();
+                            DXDraw.DrawBox塗り潰し((xx[0]) / 100 + 10, (xx[1]) / 100, 10, xx[3]);
+                            DXDraw.SetColorBlack();
+                            DXDraw.DrawBox塗り無し((xx[0]) / 100 + 10, (xx[1]) / 100, 10, xx[3]);
+                            DXDraw.SetColor(0, 250, 200);
+                            DXDraw.DrawOval塗り潰し((xx[0]) / 100 + 15 - 1, (xx[1]) / 100, 10, 10);
+                            DXDraw.SetColorBlack();
+                            DXDraw.DrawOval塗り無し((xx[0]) / 100 + 15 - 1, (xx[1]) / 100, 10, 10);
 
                         }//85
 
@@ -325,10 +324,10 @@ namespace SyobonAction
                         {
                             if (ma >= n敵キャラa[t_] - fx - nプレイヤーnobia - 4000 && ma <= n敵キャラa[t_] - fx + n敵キャラnobia[t_] + 4000)
                             {
-                                drawimage(n切り取り画像_[152, 3], xx[0] / 100, xx[1] / 100);
+                                DXDraw.DrawGraph(n切り取り画像_[152, 3], xx[0] / 100, xx[1] / 100);
                             }
                             else {
-                                drawimage(n切り取り画像_[86, 3], xx[0] / 100, xx[1] / 100);
+                                DXDraw.DrawGraph(n切り取り画像_[86, 3], xx[0] / 100, xx[1] / 100);
                             }
                         }
 
@@ -336,10 +335,10 @@ namespace SyobonAction
 
 
                         if (n敵キャラtype[t_] == 200)
-                            drawimage(n切り取り画像_[0, 3], xx[0] / 100, xx[1] / 100);
+                            DXDraw.DrawGraph(n切り取り画像_[0, 3], xx[0] / 100, xx[1] / 100);
 
 
-                        mirror = 0;
+                        DXDraw.nミラー = 0;
 
                     }
                 }
@@ -355,13 +354,13 @@ namespace SyobonAction
                     {
 
                         xx[9] = 0;
-                        if (stagecolor == 2) { xx[9] = 30; }
-                        if (stagecolor == 4) { xx[9] = 60; }
-                        if (stagecolor == 5) { xx[9] = 90; }
+                        if (nステージ色 == 2) { xx[9] = 30; }
+                        if (nステージ色 == 4) { xx[9] = 60; }
+                        if (nステージ色 == 5) { xx[9] = 90; }
 
                         if (nブロックtype[t_] < 100)
                         {
-                            xx[6] = nブロックtype[t_] + xx[9]; drawimage(n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
+                            xx[6] = nブロックtype[t_] + xx[9]; DXDraw.DrawGraph(n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
                         }
 
                         if (nブロックxtype[t_] != 10)
@@ -369,59 +368,59 @@ namespace SyobonAction
 
                             if (nブロックtype[t_] == 100 || nブロックtype[t_] == 101 || nブロックtype[t_] == 102 || nブロックtype[t_] == 103 || nブロックtype[t_] == 104 && nブロックxtype[t_] == 1 || nブロックtype[t_] == 114 && nブロックxtype[t_] == 1 || nブロックtype[t_] == 116)
                             {
-                                xx[6] = 2 + xx[9]; drawimage(n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
+                                xx[6] = 2 + xx[9]; DXDraw.DrawGraph(n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
                             }
 
                             if (nブロックtype[t_] == 112 || nブロックtype[t_] == 104 && nブロックxtype[t_] == 0 || nブロックtype[t_] == 115 && nブロックxtype[t_] == 1)
                             {
-                                xx[6] = 1 + xx[9]; drawimage(n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
+                                xx[6] = 1 + xx[9]; DXDraw.DrawGraph(n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
                             }
 
                             if (nブロックtype[t_] == 111 || nブロックtype[t_] == 113 || nブロックtype[t_] == 115 && nブロックxtype[t_] == 0 || nブロックtype[t_] == 124)
                             {
-                                xx[6] = 3 + xx[9]; drawimage(n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
+                                xx[6] = 3 + xx[9]; DXDraw.DrawGraph(n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
                             }
 
                         }
 
                         if (nブロックtype[t_] == 117 && nブロックxtype[t_] == 1)
                         {
-                            drawimage(n切り取り画像_[4, 5], xx[0] / 100, xx[1] / 100);
+                            DXDraw.DrawGraph(n切り取り画像_[4, 5], xx[0] / 100, xx[1] / 100);
                         }
 
                         if (nブロックtype[t_] == 117 && nブロックxtype[t_] >= 3)
                         {
-                            drawimage(n切り取り画像_[3, 5], xx[0] / 100, xx[1] / 100);
+                            DXDraw.DrawGraph(n切り取り画像_[3, 5], xx[0] / 100, xx[1] / 100);
                         }
 
                         if (nブロックtype[t_] == 115 && nブロックxtype[t_] == 3)
                         {
-                            xx[6] = 1 + xx[9]; drawimage(n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
+                            xx[6] = 1 + xx[9]; DXDraw.DrawGraph(n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
                         }
 
                         //ジャンプ台
                         if (nブロックtype[t_] == 120 && nブロックxtype[t_] != 1)
                         {
-                            drawimage(n切り取り画像_[16, 1], xx[0] / 100 + 3, xx[1] / 100 + 2);
+                            DXDraw.DrawGraph(n切り取り画像_[16, 1], xx[0] / 100 + 3, xx[1] / 100 + 2);
                         }
 
                         //ON-OFF
-                        if (nブロックtype[t_] == 130) drawimage(n切り取り画像_[10, 5], xx[0] / 100, xx[1] / 100);
-                        if (nブロックtype[t_] == 131) drawimage(n切り取り画像_[11, 5], xx[0] / 100, xx[1] / 100);
+                        if (nブロックtype[t_] == 130) DXDraw.DrawGraph(n切り取り画像_[10, 5], xx[0] / 100, xx[1] / 100);
+                        if (nブロックtype[t_] == 131) DXDraw.DrawGraph(n切り取り画像_[11, 5], xx[0] / 100, xx[1] / 100);
 
-                        if (nブロックtype[t_] == 140) drawimage(n切り取り画像_[12, 5], xx[0] / 100, xx[1] / 100);
-                        if (nブロックtype[t_] == 141) drawimage(n切り取り画像_[13, 5], xx[0] / 100, xx[1] / 100);
-                        if (nブロックtype[t_] == 142) drawimage(n切り取り画像_[14, 5], xx[0] / 100, xx[1] / 100);
+                        if (nブロックtype[t_] == 140) DXDraw.DrawGraph(n切り取り画像_[12, 5], xx[0] / 100, xx[1] / 100);
+                        if (nブロックtype[t_] == 141) DXDraw.DrawGraph(n切り取り画像_[13, 5], xx[0] / 100, xx[1] / 100);
+                        if (nブロックtype[t_] == 142) DXDraw.DrawGraph(n切り取り画像_[14, 5], xx[0] / 100, xx[1] / 100);
 
 
                         if (nブロックtype[t_] == 300 || nブロックtype[t_] == 301)
-                            drawimage(n切り取り画像_[1, 5], xx[0] / 100, xx[1] / 100);
+                            DXDraw.DrawGraph(n切り取り画像_[1, 5], xx[0] / 100, xx[1] / 100);
 
                         //Pスイッチ
-                        if (nブロックtype[t_] == 400) { drawimage(n切り取り画像_[2, 5], xx[0] / 100, xx[1] / 100); }
+                        if (nブロックtype[t_] == 400) { DXDraw.DrawGraph(n切り取り画像_[2, 5], xx[0] / 100, xx[1] / 100); }
 
                         //コイン
-                        if (nブロックtype[t_] == 800) { drawimage(n切り取り画像_[0, 2], xx[0] / 100 + 2, xx[1] / 100 + 1); }
+                        if (nブロックtype[t_] == 800) { DXDraw.DrawGraph(n切り取り画像_[0, 2], xx[0] / 100 + 2, xx[1] / 100 + 1); }
 
                     }
                 }
@@ -435,36 +434,36 @@ namespace SyobonAction
 
                         if (n地面type[t_] == 0)
                         {
-                            setcolor(40, 200, 40);
-                            fillrect((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb, n地面c[t_] / 100, n地面d[t_] / 100);
-                            drawrect((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb, n地面c[t_] / 100, n地面d[t_] / 100);
+                            DXDraw.SetColor(40, 200, 40);
+                            DXDraw.DrawBox塗り潰し((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb, n地面c[t_] / 100, n地面d[t_] / 100);
+                            DXDraw.DrawBox塗り無し((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb, n地面c[t_] / 100, n地面d[t_] / 100);
                         }
                         //土管
                         if (n地面type[t_] == 1)
                         {
-                            setcolor(0, 230, 0);
-                            fillrect((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb, n地面c[t_] / 100, n地面d[t_] / 100);
-                            setc0();
-                            drawrect((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb, n地面c[t_] / 100, n地面d[t_] / 100);
+                            DXDraw.SetColor(0, 230, 0);
+                            DXDraw.DrawBox塗り潰し((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb, n地面c[t_] / 100, n地面d[t_] / 100);
+                            DXDraw.SetColorBlack();
+                            DXDraw.DrawBox塗り無し((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb, n地面c[t_] / 100, n地面d[t_] / 100);
                         }
                         //土管(下)
                         if (n地面type[t_] == 2)
                         {
-                            setcolor(0, 230, 0);
-                            fillrect((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb + 1, n地面c[t_] / 100, n地面d[t_] / 100);
-                            setc0();
-                            drawline((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb, (n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb + n地面d[t_] / 100);
-                            drawline((n地面a[t_] - fx) / 100 + n全体のポイントa + n地面c[t_] / 100, (n地面b[t_] - fy) / 100 + n全体のポイントb, (n地面a[t_] - fx) / 100 + n全体のポイントa + n地面c[t_] / 100, (n地面b[t_] - fy) / 100 + n全体のポイントb + n地面d[t_] / 100);
+                            DXDraw.SetColor(0, 230, 0);
+                            DXDraw.DrawBox塗り潰し((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb + 1, n地面c[t_] / 100, n地面d[t_] / 100);
+                            DXDraw.SetColorBlack();
+                            DXDraw.DrawLine((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb, (n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb + n地面d[t_] / 100);
+                            DXDraw.DrawLine((n地面a[t_] - fx) / 100 + n全体のポイントa + n地面c[t_] / 100, (n地面b[t_] - fy) / 100 + n全体のポイントb, (n地面a[t_] - fx) / 100 + n全体のポイントa + n地面c[t_] / 100, (n地面b[t_] - fy) / 100 + n全体のポイントb + n地面d[t_] / 100);
                         }
 
                         //土管(横)
                         if (n地面type[t_] == 5)
                         {
-                            setcolor(0, 230, 0);
-                            fillrect((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb + 1, n地面c[t_] / 100, n地面d[t_] / 100);
-                            setc0();
-                            drawline((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb, (n地面a[t_] - fx) / 100 + n全体のポイントa + n地面c[t_] / 100, (n地面b[t_] - fy) / 100 + n全体のポイントb);
-                            drawline((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb + n地面d[t_] / 100, (n地面a[t_] - fx) / 100 + n全体のポイントa + n地面c[t_] / 100, (n地面b[t_] - fy) / 100 + n全体のポイントb + n地面d[t_] / 100);
+                            DXDraw.SetColor(0, 230, 0);
+                            DXDraw.DrawBox塗り潰し((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb + 1, n地面c[t_] / 100, n地面d[t_] / 100);
+                            DXDraw.SetColorBlack();
+                            DXDraw.DrawLine((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb, (n地面a[t_] - fx) / 100 + n全体のポイントa + n地面c[t_] / 100, (n地面b[t_] - fy) / 100 + n全体のポイントb);
+                            DXDraw.DrawLine((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb + n地面d[t_] / 100, (n地面a[t_] - fx) / 100 + n全体のポイントa + n地面c[t_] / 100, (n地面b[t_] - fy) / 100 + n全体のポイントb + n地面d[t_] / 100);
                         }
 
 
@@ -475,14 +474,14 @@ namespace SyobonAction
                             {
                                 for (t3 = 0; t3 <= n地面c[t_] / 3000; t3++)
                                 {
-                                    drawimage(n切り取り画像_[1, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb);
+                                    DXDraw.DrawGraph(n切り取り画像_[1, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb);
                                 }
                             }
                             if (n地面xtype[t_] == 1 || n地面xtype[t_] == 2)
                             {
                                 for (t3 = 0; t3 <= n地面c[t_] / 3000; t3++)
                                 {
-                                    drawimage(n切り取り画像_[31, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb);
+                                    DXDraw.DrawGraph(n切り取り画像_[31, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb);
                                 }
                             }
                             if (n地面xtype[t_] == 3 || n地面xtype[t_] == 4)
@@ -491,7 +490,7 @@ namespace SyobonAction
                                 {
                                     for (t2 = 0; t2 <= n地面d[t_] / 3000; t2++)
                                     {
-                                        drawimage(n切り取り画像_[65, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + 29 * t2 + n全体のポイントb);
+                                        DXDraw.DrawGraph(n切り取り画像_[65, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + 29 * t2 + n全体のポイントb);
                                     }
                                 }
                             }
@@ -500,7 +499,7 @@ namespace SyobonAction
                             {
                                 for (t3 = 0; t3 <= n地面c[t_] / 3000; t3++)
                                 {
-                                    drawimage(n切り取り画像_[65, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb);
+                                    DXDraw.DrawGraph(n切り取り画像_[65, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb);
                                 }
                             }
 
@@ -510,23 +509,23 @@ namespace SyobonAction
                         //落ちるやつ
                         if (n地面type[t_] == 52)
                         {
-                            xx[29] = 0; if (stagecolor == 2) { xx[29] = 30; }
-                            if (stagecolor == 4) { xx[29] = 60; }
-                            if (stagecolor == 5) { xx[29] = 90; }
+                            xx[29] = 0; if (nステージ色 == 2) { xx[29] = 30; }
+                            if (nステージ色 == 4) { xx[29] = 60; }
+                            if (nステージ色 == 5) { xx[29] = 90; }
 
                             for (t3 = 0; t3 <= n地面c[t_] / 3000; t3++)
                             {
                                 if (n地面xtype[t_] == 0)
                                 {
-                                    drawimage(n切り取り画像_[5 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb);
-                                    if (stagecolor != 4) { drawimage(n切り取り画像_[6 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29); }
-                                    else { drawimage(n切り取り画像_[5 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29); }
+                                    DXDraw.DrawGraph(n切り取り画像_[5 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb);
+                                    if (nステージ色 != 4) { DXDraw.DrawGraph(n切り取り画像_[6 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29); }
+                                    else { DXDraw.DrawGraph(n切り取り画像_[5 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29); }
                                 }
                                 if (n地面xtype[t_] == 1)
                                 {
                                     for (t2 = 0; t2 <= n地面d[t_] / 3000; t2++)
                                     {
-                                        drawimage(n切り取り画像_[1 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29 * t2);
+                                        DXDraw.DrawGraph(n切り取り画像_[1 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29 * t2);
                                     }
                                 }
 
@@ -534,7 +533,7 @@ namespace SyobonAction
                                 {
                                     for (t2 = 0; t2 <= n地面d[t_] / 3000; t2++)
                                     {
-                                        drawimage(n切り取り画像_[5 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29 * t2);
+                                        DXDraw.DrawGraph(n切り取り画像_[5 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29 * t2);
                                     }
                                 }
 
@@ -543,33 +542,33 @@ namespace SyobonAction
 
 
                         //ステージトラップ
-                        if (trap == 1)
+                        if (nトラップ表示 == 1)
                         {
                             if (n地面type[t_] >= 100 && n地面type[t_] <= 299)
                             {
-                                if (stagecolor == 1 || stagecolor == 3 || stagecolor == 5) setc0();
-                                if (stagecolor == 2 || stagecolor == 4) setc1();
-                                drawrect((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb, n地面c[t_] / 100, n地面d[t_] / 100);
+                                if (nステージ色 == 1 || nステージ色 == 3 || nステージ色 == 5) DXDraw.SetColorBlack();
+                                if (nステージ色 == 2 || nステージ色 == 4) DXDraw.SetColorWhite();
+                                DXDraw.DrawBox塗り無し((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb, n地面c[t_] / 100, n地面d[t_] / 100);
                             }
                         }
 
                         //ゴール
                         if (n地面type[t_] == 300)
                         {
-                            setc1();
-                            fillrect((n地面a[t_] - fx) / 100 + 10, (n地面b[t_] - fy) / 100, 10, n地面d[t_] / 100 - 8);
-                            setc0();
-                            drawrect((n地面a[t_] - fx) / 100 + 10, (n地面b[t_] - fy) / 100, 10, n地面d[t_] / 100 - 8);
-                            setcolor(250, 250, 0);
-                            fillarc((n地面a[t_] - fx) / 100 + 15 - 1, (n地面b[t_] - fy) / 100, 10, 10);
-                            setc0();
-                            drawarc((n地面a[t_] - fx) / 100 + 15 - 1, (n地面b[t_] - fy) / 100, 10, 10);
+                            DXDraw.SetColorWhite();
+                            DXDraw.DrawBox塗り潰し((n地面a[t_] - fx) / 100 + 10, (n地面b[t_] - fy) / 100, 10, n地面d[t_] / 100 - 8);
+                            DXDraw.SetColorBlack();
+                            DXDraw.DrawBox塗り無し((n地面a[t_] - fx) / 100 + 10, (n地面b[t_] - fy) / 100, 10, n地面d[t_] / 100 - 8);
+                            DXDraw.SetColor(250, 250, 0);
+                            DXDraw.DrawOval塗り潰し((n地面a[t_] - fx) / 100 + 15 - 1, (n地面b[t_] - fy) / 100, 10, 10);
+                            DXDraw.SetColorBlack();
+                            DXDraw.DrawOval塗り無し((n地面a[t_] - fx) / 100 + 15 - 1, (n地面b[t_] - fy) / 100, 10, 10);
                         }
 
                         //中間
                         if (n地面type[t_] == 500)
                         {
-                            drawimage(n切り取り画像_[20, 4], (n地面a[t_] - fx) / 100, (n地面b[t_] - fy) / 100);
+                            DXDraw.DrawGraph(n切り取り画像_[20, 4], (n地面a[t_] - fx) / 100, (n地面b[t_] - fy) / 100);
                         }
                     }
                 }//t
@@ -584,25 +583,25 @@ namespace SyobonAction
                         //入る土管(右)
                         if (n地面type[t_] == 40)
                         {
-                            setcolor(0, 230, 0);
-                            fillrect((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb + 1, n地面c[t_] / 100, n地面d[t_] / 100);
-                            setc0();
-                            drawrect((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb + 1, n地面c[t_] / 100, n地面d[t_] / 100);
+                            DXDraw.SetColor(0, 230, 0);
+                            DXDraw.DrawBox塗り潰し((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb + 1, n地面c[t_] / 100, n地面d[t_] / 100);
+                            DXDraw.SetColorBlack();
+                            DXDraw.DrawBox塗り無し((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb + 1, n地面c[t_] / 100, n地面d[t_] / 100);
                         }
 
                         //とぶ土管
                         if (n地面type[t_] == 50)
                         {
-                            setcolor(0, 230, 0);
-                            fillrect((n地面a[t_] - fx) / 100 + n全体のポイントa + 5, (n地面b[t_] - fy) / 100 + n全体のポイントb + 30, 50, n地面d[t_] / 100 - 30);
-                            setc0();
-                            drawline((n地面a[t_] - fx) / 100 + 5 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb + 30, (n地面a[t_] - fx) / 100 + n全体のポイントa + 5, (n地面b[t_] - fy) / 100 + n全体のポイントb + n地面d[t_] / 100);
-                            drawline((n地面a[t_] - fx) / 100 + 5 + n全体のポイントa + 50, (n地面b[t_] - fy) / 100 + n全体のポイントb + 30, (n地面a[t_] - fx) / 100 + n全体のポイントa + 50 + 5, (n地面b[t_] - fy) / 100 + n全体のポイントb + n地面d[t_] / 100);
+                            DXDraw.SetColor(0, 230, 0);
+                            DXDraw.DrawBox塗り潰し((n地面a[t_] - fx) / 100 + n全体のポイントa + 5, (n地面b[t_] - fy) / 100 + n全体のポイントb + 30, 50, n地面d[t_] / 100 - 30);
+                            DXDraw.SetColorBlack();
+                            DXDraw.DrawLine((n地面a[t_] - fx) / 100 + 5 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb + 30, (n地面a[t_] - fx) / 100 + n全体のポイントa + 5, (n地面b[t_] - fy) / 100 + n全体のポイントb + n地面d[t_] / 100);
+                            DXDraw.DrawLine((n地面a[t_] - fx) / 100 + 5 + n全体のポイントa + 50, (n地面b[t_] - fy) / 100 + n全体のポイントb + 30, (n地面a[t_] - fx) / 100 + n全体のポイントa + 50 + 5, (n地面b[t_] - fy) / 100 + n全体のポイントb + n地面d[t_] / 100);
 
-                            setcolor(0, 230, 0);
-                            fillrect((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb + 1, 60, 30);
-                            setc0();
-                            drawrect((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb + 1, 60, 30);
+                            DXDraw.SetColor(0, 230, 0);
+                            DXDraw.DrawBox塗り潰し((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb + 1, 60, 30);
+                            DXDraw.SetColorBlack();
+                            DXDraw.DrawBox塗り無し((n地面a[t_] - fx) / 100 + n全体のポイントa, (n地面b[t_] - fy) / 100 + n全体のポイントb + 1, 60, 30);
                         }
 
                         //地面(ブロック)
@@ -612,7 +611,7 @@ namespace SyobonAction
                             {
                                 for (t2 = 0; t2 <= n地面d[t_] / 3000; t2++)
                                 {
-                                    drawimage(n切り取り画像_[65, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + 29 * t2 + n全体のポイントb);
+                                    DXDraw.DrawGraph(n切り取り画像_[65, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + 29 * t2 + n全体のポイントb);
                                 }
                             }
                         }
@@ -643,18 +642,18 @@ namespace SyobonAction
                                 xd[5] = tt_ * xx[26] * Math.Sin(n敵キャラtm[t_] * Math.PI / 180 / 2);
                                 xx[24] = (int)xd[4];
                                 xx[25] = (int)xd[5];
-                                setcolor(230, 120, 0);
+                                DXDraw.SetColor(230, 120, 0);
                                 xx[23] = 8;
                                 if (n敵キャラtype[t_] == 87)
                                 {
-                                    fillarc(xx[0] / 100 + xx[24], xx[1] / 100 + xx[25], xx[23], xx[23]);
-                                    setcolor(0, 0, 0);
-                                    drawarc(xx[0] / 100 + xx[24], xx[1] / 100 + xx[25], xx[23], xx[23]);
+                                    DXDraw.DrawOval塗り潰し(xx[0] / 100 + xx[24], xx[1] / 100 + xx[25], xx[23], xx[23]);
+                                    DXDraw.SetColor(0, 0, 0);
+                                    DXDraw.DrawOval塗り無し(xx[0] / 100 + xx[24], xx[1] / 100 + xx[25], xx[23], xx[23]);
                                 }
                                 else {
-                                    fillarc(xx[0] / 100 - xx[24], xx[1] / 100 + xx[25], xx[23], xx[23]);
-                                    setcolor(0, 0, 0);
-                                    drawarc(xx[0] / 100 - xx[24], xx[1] / 100 + xx[25], xx[23], xx[23]);
+                                    DXDraw.DrawOval塗り潰し(xx[0] / 100 - xx[24], xx[1] / 100 + xx[25], xx[23], xx[23]);
+                                    DXDraw.SetColor(0, 0, 0);
+                                    DXDraw.DrawOval塗り無し(xx[0] / 100 - xx[24], xx[1] / 100 + xx[25], xx[23], xx[23]);
                                 }
                             }
 
@@ -664,35 +663,35 @@ namespace SyobonAction
 
 
                 //プレイヤーのメッセージ
-                setc0();
-                if (mmsgtm >= 1)
+                DXDraw.SetColorBlack();
+                if (nメッセージtm >= 1)
                 {
-                    mmsgtm--;
+                    nメッセージtm--;
                     xs[0] = "";
 
-                    if (mmsgtype == 1) xs[0] = "お、おいしい!!";
-                    if (mmsgtype == 2) xs[0] = "毒は無いが……";
-                    if (mmsgtype == 3) xs[0] = "刺さった!!";
-                    if (mmsgtype == 10) xs[0] = "食べるべきではなかった!!";
-                    if (mmsgtype == 11) xs[0] = "俺は燃える男だ!!";
-                    if (mmsgtype == 50) xs[0] = "体が……焼ける……";
-                    if (mmsgtype == 51) xs[0] = "たーまやー!!";
-                    if (mmsgtype == 52) xs[0] = "見事にオワタ";
-                    if (mmsgtype == 53) xs[0] = "足が、足がぁ!!";
-                    if (mmsgtype == 54) xs[0] = "流石は摂氏800度!!";
-                    if (mmsgtype == 55) xs[0] = "溶岩と合体したい……";
+                    if (nメッセージtype == 1) xs[0] = "お、おいしい!!";
+                    if (nメッセージtype == 2) xs[0] = "毒は無いが……";
+                    if (nメッセージtype == 3) xs[0] = "刺さった!!";
+                    if (nメッセージtype == 10) xs[0] = "食べるべきではなかった!!";
+                    if (nメッセージtype == 11) xs[0] = "俺は燃える男だ!!";
+                    if (nメッセージtype == 50) xs[0] = "体が……焼ける……";
+                    if (nメッセージtype == 51) xs[0] = "たーまやー!!";
+                    if (nメッセージtype == 52) xs[0] = "見事にオワタ";
+                    if (nメッセージtype == 53) xs[0] = "足が、足がぁ!!";
+                    if (nメッセージtype == 54) xs[0] = "流石は摂氏800度!!";
+                    if (nメッセージtype == 55) xs[0] = "溶岩と合体したい……";
 
-                    setc0();
-                    str(xs[0], (ma + nプレイヤーnobia + 300) / 100 - 1, nプレイヤーb / 100 - 1);
-                    str(xs[0], (ma + nプレイヤーnobia + 300) / 100 + 1, nプレイヤーb / 100 + 1);
-                    setc1();
-                    str(xs[0], (ma + nプレイヤーnobia + 300) / 100, nプレイヤーb / 100);
+                    DXDraw.SetColorBlack();
+                    DXDraw.DrawString(xs[0], (ma + nプレイヤーnobia + 300) / 100 - 1, nプレイヤーb / 100 - 1);
+                    DXDraw.DrawString(xs[0], (ma + nプレイヤーnobia + 300) / 100 + 1, nプレイヤーb / 100 + 1);
+                    DXDraw.SetColorWhite();
+                    DXDraw.DrawString(xs[0], (ma + nプレイヤーnobia + 300) / 100, nプレイヤーb / 100);
 
                 }//mmsgtm
 
 
                 //敵キャラのメッセージ
-                setc0();
+                DXDraw.SetColorBlack();
                 for (t_ = 0; t_ < n敵キャラmax; t_++)
                 {
                     if (n敵キャラmsgtm[t_] >= 1)
@@ -760,18 +759,15 @@ namespace SyobonAction
 
                         if (n敵キャラmsgtype[t_] != 31)
                         {
-                            //str(xs[0],(aa[t]+anobia[t]+300-fx)/100,(ab[t]-fy)/100);
                             xx[5] = (n敵キャラa[t_] + n敵キャラnobia[t_] + 300 - fx) / 100; xx[6] = (n敵キャラb[t_] - fy) / 100;
                         }
                         else {
                             xx[5] = (n敵キャラa[t_] + n敵キャラnobia[t_] + 300 - fx) / 100; xx[6] = (n敵キャラb[t_] - fy - 800) / 100;
                         }
 
-                        //setc0();
-                        //str(xs[0],xx[5]-1,xx[6]-1);str(xs[0],xx[5]+1,xx[6]+1);
                         DX.ChangeFontType(DX.DX_FONTTYPE_EDGE);
-                        setc1();
-                        str(xs[0], xx[5], xx[6]);
+                        DXDraw.SetColorWhite();
+                        DXDraw.DrawString(xs[0], xx[5], xx[6]);
                         DX.ChangeFontType(DX.DX_FONTTYPE_NORMAL);
 
 
@@ -819,13 +815,13 @@ namespace SyobonAction
 
 
                 //画面黒
-                if (blacktm > 0)
+                if (blackTm > 0)
                 {
-                    blacktm--;
-                    fillrect(0, 0, n画面幅, n画面高さ);
-                    if (blacktm == 0)
+                    blackTm--;
+                    DXDraw.DrawBox塗り潰し(0, 0, n画面幅, n画面高さ);
+                    if (blackTm == 0)
                     {
-                        if (blackx == 1) { zxon = 0; }
+                        if (blackX == 1) { zxon = 0; }
                     }
 
                 }//blacktm
@@ -837,27 +833,27 @@ namespace SyobonAction
             if (main == 2)
             {
 
-                setcolor(255, 255, 255);
-                str("制作・プレイに関わった方々", 240 - 13 * 20 / 2, xx[12] / 100);
-                str("ステージ１　プレイ", 240 - 9 * 20 / 2, xx[13] / 100);
-                str("先輩　Ⅹ～Ｚ", 240 - 6 * 20 / 2, xx[14] / 100);
-                str("ステージ２　プレイ", 240 - 9 * 20 / 2, xx[15] / 100);
-                str("友人　willowlet ", 240 - 8 * 20 / 2, xx[16] / 100);
-                str("ステージ３　プレイ", 240 - 9 * 20 / 2, xx[17] / 100);
-                str("友人　willowlet ", 240 - 8 * 20 / 2, xx[18] / 100);
-                str("ステージ４　プレイ", 240 - 9 * 20 / 2, xx[19] / 100);
-                str("友人２　ann ", 240 - 6 * 20 / 2, xx[20] / 100);
-                str("ご協力", 240 - 3 * 20 / 2, xx[21] / 100);
-                str("Ｔ先輩", 240 - 3 * 20 / 2, xx[22] / 100);
-                str("Ｓ先輩", 240 - 3 * 20 / 2, xx[23] / 100);
-                str("動画技術提供", 240 - 6 * 20 / 2, xx[24] / 100);
-                str("Ｋ先輩", 240 - 3 * 20 / 2, xx[25] / 100);
-                str("動画キャプチャ・編集・エンコード", 240 - 16 * 20 / 2, xx[26] / 100);
-                str("willowlet ", 240 - 5 * 20 / 2, xx[27] / 100);
-                str("プログラム・描画・ネタ・動画編集", 240 - 16 * 20 / 2, xx[28] / 100);
-                str("ちく", 240 - 2 * 20 / 2, xx[29] / 100);
+                DXDraw.SetColor(255, 255, 255);
+                DXDraw.DrawString("制作・プレイに関わった方々", 240 - 13 * 20 / 2, xx[12] / 100);
+                DXDraw.DrawString("ステージ１　プレイ", 240 - 9 * 20 / 2, xx[13] / 100);
+                DXDraw.DrawString("先輩　Ⅹ～Ｚ", 240 - 6 * 20 / 2, xx[14] / 100);
+                DXDraw.DrawString("ステージ２　プレイ", 240 - 9 * 20 / 2, xx[15] / 100);
+                DXDraw.DrawString("友人　willowlet ", 240 - 8 * 20 / 2, xx[16] / 100);
+                DXDraw.DrawString("ステージ３　プレイ", 240 - 9 * 20 / 2, xx[17] / 100);
+                DXDraw.DrawString("友人　willowlet ", 240 - 8 * 20 / 2, xx[18] / 100);
+                DXDraw.DrawString("ステージ４　プレイ", 240 - 9 * 20 / 2, xx[19] / 100);
+                DXDraw.DrawString("友人２　ann ", 240 - 6 * 20 / 2, xx[20] / 100);
+                DXDraw.DrawString("ご協力", 240 - 3 * 20 / 2, xx[21] / 100);
+                DXDraw.DrawString("Ｔ先輩", 240 - 3 * 20 / 2, xx[22] / 100);
+                DXDraw.DrawString("Ｓ先輩", 240 - 3 * 20 / 2, xx[23] / 100);
+                DXDraw.DrawString("動画技術提供", 240 - 6 * 20 / 2, xx[24] / 100);
+                DXDraw.DrawString("Ｋ先輩", 240 - 3 * 20 / 2, xx[25] / 100);
+                DXDraw.DrawString("動画キャプチャ・編集・エンコード", 240 - 16 * 20 / 2, xx[26] / 100);
+                DXDraw.DrawString("willowlet ", 240 - 5 * 20 / 2, xx[27] / 100);
+                DXDraw.DrawString("プログラム・描画・ネタ・動画編集", 240 - 16 * 20 / 2, xx[28] / 100);
+                DXDraw.DrawString("ちく", 240 - 2 * 20 / 2, xx[29] / 100);
 
-                str("プレイしていただき　ありがとうございました～", 240 - 22 * 20 / 2, xx[30] / 100);
+                DXDraw.DrawString("プレイしていただき　ありがとうございました～", 240 - 22 * 20 / 2, xx[30] / 100);
             }
 
 
@@ -865,13 +861,13 @@ namespace SyobonAction
             if (main == 10)
             {
 
-                setc0();
-                fillrect(0, 0, n画面幅, n画面高さ);
+                DXDraw.SetColorBlack();
+                DXDraw.DrawBox塗り潰し(0, 0, n画面幅, n画面高さ);
 
                 DX.SetFontSize(16);
                 DX.SetFontThickness(4);
 
-                drawimage(n切り取り画像_[0, 0], 190, 190);
+                DXDraw.DrawGraph(n切り取り画像_[0, 0], 190, 190);
                 DX.DrawString(230, 200, " × " + nokori, DX.GetColor(255, 255, 255));
 
 
@@ -882,25 +878,25 @@ namespace SyobonAction
             if (main == 100)
             {
 
-                setcolor(160, 180, 250);
-                fillrect(0, 0, n画面幅, n画面高さ);
+                DXDraw.SetColor(160, 180, 250);
+                DXDraw.DrawBox塗り潰し(0, 0, n画面幅, n画面高さ);
 
-                drawimage(n元画像_[30], 240 - 380 / 2, 60);
+                DXDraw.DrawGraph(n元画像_[30], 240 - 380 / 2, 60);
 
-                drawimage(n切り取り画像_[0, 4], 12 * 30, 10 * 29 - 12);
-                drawimage(n切り取り画像_[1, 4], 6 * 30, 12 * 29 - 12);
+                DXDraw.DrawGraph(n切り取り画像_[0, 4], 12 * 30, 10 * 29 - 12);
+                DXDraw.DrawGraph(n切り取り画像_[1, 4], 6 * 30, 12 * 29 - 12);
 
                 //プレイヤー
-                drawimage(n切り取り画像_[0, 0], 2 * 30, 12 * 29 - 12 - 6);
+                DXDraw.DrawGraph(n切り取り画像_[0, 0], 2 * 30, 12 * 29 - 12 - 6);
                 for (t_ = 0; t_ <= 16; t_++)
                 {
-                    drawimage(n切り取り画像_[5, 1], 29 * t_, 13 * 29 - 12);
-                    drawimage(n切り取り画像_[6, 1], 29 * t_, 14 * 29 - 12);
+                    DXDraw.DrawGraph(n切り取り画像_[5, 1], 29 * t_, 13 * 29 - 12);
+                    DXDraw.DrawGraph(n切り取り画像_[6, 1], 29 * t_, 14 * 29 - 12);
                 }
 
 
-                setcolor(0, 0, 0);
-                str("Enterキーを押せ!!", 240 - 8 * 20 / 2, 250);
+                DXDraw.SetColor(0, 0, 0);
+                DXDraw.DrawString("Enterキーを押せ!!", 240 - 8 * 20 / 2, 250);
 
             }//if (main==100){
 
@@ -916,7 +912,7 @@ namespace SyobonAction
             nタイマー測定 = DX.GetNowCount();
 
 
-            if (ending == 1) main = 2;
+            if (nスタッフロール == 1) main = 2;
 
 
             //キー
@@ -932,7 +928,7 @@ namespace SyobonAction
                     zxon = 1;
                     nプレイヤーainmsgtype = 0;
 
-                    stagecolor = 1;
+                    nステージ色 = 1;
                     ma = 5600; nプレイヤーb = 32000; nプレイヤーmuki = 1; nプレイヤーhp = 1;
                     nプレイヤーc = 0; nプレイヤーd = 0;
                     nプレイヤーnobia = 3000; nプレイヤーnobib = 3600;
@@ -942,7 +938,7 @@ namespace SyobonAction
 
                     fx = 0; fy = 0;
                     fzx = 0;
-                    stageonoff = 0;
+                    nステージスイッチ = 0;
 
 
 
@@ -964,7 +960,7 @@ namespace SyobonAction
                         nリフトco = 0;
                         t_ = nリフトco; nリフトa[t_] = ma + fx; nリフトb[t_] = (13 * 29 - 12) * 100; nリフトc[t_] = 30 * 100; nリフトtype[t_] = 0; nリフトacttype[t_] = 0; nリフトe[t_] = 0; nリフトsp[t_] = 0; nリフトco++;
 
-                        if (rand(4) == 0) stagecolor = rand(5);
+                        if (rand(4) == 0) nステージ色 = rand(5);
                     }
 
 
@@ -983,13 +979,13 @@ namespace SyobonAction
                 xx[0] = 0; nプレイヤーactaon[2] = 0; nプレイヤーactaon[3] = 0;
                 if (nプレイヤーkeytm <= 0)
                 {
-                    if ((key & DX.PAD_INPUT_LEFT) != DX.FALSE && keytm <= 0) { nプレイヤーactaon[0] = -1; nプレイヤーmuki = 0; nプレイヤーactaon[4] = -1; }
-                    if ((key & DX.PAD_INPUT_RIGHT) != DX.FALSE && keytm <= 0) { nプレイヤーactaon[0] = 1; nプレイヤーmuki = 1; nプレイヤーactaon[4] = 1; }
+                    if ((key & DX.PAD_INPUT_LEFT) != DX.FALSE && keyTm <= 0) { nプレイヤーactaon[0] = -1; nプレイヤーmuki = 0; nプレイヤーactaon[4] = -1; }
+                    if ((key & DX.PAD_INPUT_RIGHT) != DX.FALSE && keyTm <= 0) { nプレイヤーactaon[0] = 1; nプレイヤーmuki = 1; nプレイヤーactaon[4] = 1; }
                     if ((key & DX.PAD_INPUT_DOWN) != DX.FALSE) { nプレイヤーactaon[3] = 1; }
                 }
 
                 if (DX.CheckHitKey(DX.KEY_INPUT_F1) == 1) { main = 100; }
-                if (DX.CheckHitKey(DX.KEY_INPUT_O) == 1) { if (nプレイヤーhp >= 1) nプレイヤーhp = 0; if (stc >= 5) { stc = 0; stagepoint = 0; } }
+                if (DX.CheckHitKey(DX.KEY_INPUT_O) == 1) { if (nプレイヤーhp >= 1) nプレイヤーhp = 0; if (nステージc >= 5) { nステージc = 0; stagepoint = 0; } }
 
 
                 if (nプレイヤーkeytm <= 0)
@@ -1093,7 +1089,7 @@ namespace SyobonAction
                     if (nプレイヤーtm <= 11) { nプレイヤーc = 0; nプレイヤーd = 0; }
                     if (nプレイヤーtm == 12) { nプレイヤーd = -1200; }
                     if (nプレイヤーtm >= 12) { nプレイヤーc = 0; }
-                    if (nプレイヤーtm >= 100 || fast == 1) { zxon = 0; main = 10; nプレイヤーtm = 0; nプレイヤーkeytm = 0; nokori--; if (fast == 1) nプレイヤーtype = 0; }//mtm>=100
+                    if (nプレイヤーtm >= 100 || nクイック == 1) { zxon = 0; main = 10; nプレイヤーtm = 0; nプレイヤーkeytm = 0; nokori--; if (nクイック == 1) nプレイヤーtype = 0; }//mtm>=100
                 }//mtype==200
 
 
@@ -1106,7 +1102,7 @@ namespace SyobonAction
 
                     nプレイヤーkeytm = 2;
                     nプレイヤーd = -1500;
-                    if (nプレイヤーb <= -6000) { blackx = 1; blacktm = 20; stc += 5; DX.StopSoundMem(nオーディオ_[0]); nプレイヤーtm = 0; nプレイヤーtype = 0; nプレイヤーkeytm = -1; }
+                    if (nプレイヤーb <= -6000) { blackX = 1; blackTm = 20; nステージc += 5; DX.StopSoundMem(nオーディオ_[0]); nプレイヤーtm = 0; nプレイヤーtype = 0; nプレイヤーkeytm = -1; }
                 }//2
 
                 //ジャンプ台アウト
@@ -1167,21 +1163,21 @@ namespace SyobonAction
                             nプレイヤーc = 0; nプレイヤーd = 0;
                             if (nプレイヤーtm <= 16 && nプレイヤーxtype != 3) { nプレイヤーb += 240; }//mzz=100;}
                             if (nプレイヤーtm <= 16 && nプレイヤーxtype == 3) { ma += 240; }
-                            if (nプレイヤーtm == 19 && nプレイヤーxtype == 2) { nプレイヤーhp = 0; nプレイヤーtype = 2000; nプレイヤーtm = 0; mmsgtm = 30; mmsgtype = 51; }
-                            if (nプレイヤーtm == 19 && nプレイヤーxtype == 5) { nプレイヤーhp = 0; nプレイヤーtype = 2000; nプレイヤーtm = 0; mmsgtm = 30; mmsgtype = 52; }
+                            if (nプレイヤーtm == 19 && nプレイヤーxtype == 2) { nプレイヤーhp = 0; nプレイヤーtype = 2000; nプレイヤーtm = 0; nメッセージtm = 30; nメッセージtype = 51; }
+                            if (nプレイヤーtm == 19 && nプレイヤーxtype == 5) { nプレイヤーhp = 0; nプレイヤーtype = 2000; nプレイヤーtm = 0; nメッセージtm = 30; nメッセージtype = 52; }
                             if (nプレイヤーtm == 20)
                             {
                                 if (nプレイヤーxtype == 6)
                                 {
-                                    stc += 10;
+                                    nステージc += 10;
                                 }
                                 else {
-                                    stc++;
+                                    nステージc++;
                                 }
                                 nプレイヤーb = -80000000;
                                 nプレイヤーxtype = 0;
-                                blackx = 1;
-                                blacktm = 20;
+                                blackX = 1;
+                                blackTm = 20;
                                 DX.StopSoundMem(nオーディオ_[0]);
                             }
                         }
@@ -1197,7 +1193,7 @@ namespace SyobonAction
                         if (nプレイヤーtm == 110) { nプレイヤーb = -80000000; nプレイヤーc = 0; }
                         if (nプレイヤーtm == 250)
                         {
-                            stb++; stc = 0; zxon = 0; tyuukan = 0; main = 10; maintm = 0;
+                            nステージb++; nステージc = 0; zxon = 0; n中間ゲート = 0; main = 10; maintm = 0;
                         }
                     }//mtype==300
 
@@ -1237,10 +1233,10 @@ namespace SyobonAction
                         {
                             if (nプレイヤーtype == 301)
                             {
-                                ending = 1;
+                                nスタッフロール = 1;
                             }
                             else {
-                                sta++; stb = 1; stc = 0; zxon = 0; tyuukan = 0; main = 10; maintm = 0;
+                                nステージa++; nステージb = 1; nステージc = 0; zxon = 0; n中間ゲート = 0; main = 10; maintm = 0;
                             }
                         }
                     }//mtype==301
@@ -1303,7 +1299,7 @@ namespace SyobonAction
                     if (ma < 100) { ma = 100; nプレイヤーc = 0; }
                     if (ma + nプレイヤーnobia > n画面幅) { ma = n画面幅 - nプレイヤーnobia; nプレイヤーc = 0; }
                 }
-                if (nプレイヤーb >= 38000 && nプレイヤーhp >= 0 && stagecolor == 4) { nプレイヤーhp = -2; mmsgtm = 30; mmsgtype = 55; }
+                if (nプレイヤーb >= 38000 && nプレイヤーhp >= 0 && nステージ色 == 4) { nプレイヤーhp = -2; nメッセージtm = 30; nメッセージtype = 55; }
                 if (nプレイヤーb >= 52000 && nプレイヤーhp >= 0) { nプレイヤーhp = -2; }
 
 
@@ -1420,8 +1416,8 @@ namespace SyobonAction
                                                 // トゲ
                                                 if (nブロックtype[t_] == 10)
                                                 {
-                                                    mmsgtm = 30;
-                                                    mmsgtype = 3;
+                                                    nメッセージtm = 30;
+                                                    nメッセージtype = 3;
                                                     nプレイヤーhp--;
                                                 }
                                             }
@@ -1607,7 +1603,7 @@ namespace SyobonAction
                                     if (nブロックxtype[t_] == 2) { ot(nオーディオ_[4]); eyobi(nブロックa[t_] + 10, nブロックb[t_], 0, -800, 0, 40, 3000, 3000, 0, 16); nブロックtype[t_] = 115; nブロックxtype[t_] = 0; }
                                     if (nブロックxtype[t_] == 10)
                                     {
-                                        if (stageonoff == 1) { nブロックtype[t_] = 130; stageonoff = 0; ot(nオーディオ_[13]); nブロックxtype[t_] = 2; for (t_ = 0; t_ < n敵キャラmax; t_++) { if (n敵キャラtype[t_] == 87 || n敵キャラtype[t_] == 88) { if (n敵キャラxtype[t_] == 105) { n敵キャラxtype[t_] = 110; } } } }
+                                        if (nステージスイッチ == 1) { nブロックtype[t_] = 130; nステージスイッチ = 0; ot(nオーディオ_[13]); nブロックxtype[t_] = 2; for (t_ = 0; t_ < n敵キャラmax; t_++) { if (n敵キャラtype[t_] == 87 || n敵キャラtype[t_] == 88) { if (n敵キャラxtype[t_] == 105) { n敵キャラxtype[t_] = 110; } } } }
                                         else { ot(nオーディオ_[4]); eyobi(nブロックa[t_] + 10, nブロックb[t_], 0, -800, 0, 40, 3000, 3000, 0, 16); nブロックtype[t_] = 3; }
                                     }
 
@@ -1653,7 +1649,7 @@ namespace SyobonAction
                                 {
                                     if (nブロックxtype[t_] != 1)
                                     {
-                                        stageonoff = 0; ot(nオーディオ_[13]);
+                                        nステージスイッチ = 0; ot(nオーディオ_[13]);
                                     }
                                 }
                             }
@@ -1661,7 +1657,7 @@ namespace SyobonAction
                             {
                                 if (xx[17] == 1 && nブロックxtype[t_] != 2)
                                 {
-                                    stageonoff = 1; ot(nオーディオ_[13]);
+                                    nステージスイッチ = 1; ot(nオーディオ_[13]);
                                     if (nブロックxtype[t_] == 1)
                                     {
                                         for (t_ = 0; t_ < n敵キャラmax; t_++) { if (n敵キャラtype[t_] == 87 || n敵キャラtype[t_] == 88) { if (n敵キャラxtype[t_] == 105) { n敵キャラxtype[t_] = 110; } } }
@@ -1717,8 +1713,8 @@ namespace SyobonAction
 
 
                         //ONOFF
-                        if (nブロックtype[t_] == 130 && stageonoff == 0) { nブロックtype[t_] = 131; }
-                        if (nブロックtype[t_] == 131 && stageonoff == 1) { nブロックtype[t_] = 130; }
+                        if (nブロックtype[t_] == 130 && nステージスイッチ == 0) { nブロックtype[t_] = 131; }
+                        if (nブロックtype[t_] == 131 && nステージスイッチ == 1) { nブロックtype[t_] = 130; }
 
                         //ヒント
                         if (nブロックtype[t_] == 300)
@@ -1919,7 +1915,7 @@ namespace SyobonAction
                                     //スクロール消し
                                     if (n地面xtype[t_] == 20)
                                     {
-                                        scrollx = 0;
+                                        scrollX = 0;
                                     }
 
                                     //クリア
@@ -1967,7 +1963,7 @@ namespace SyobonAction
                                 //中間ゲート
                                 if (n地面type[t_] == 500 && nプレイヤーtype == 0 && nプレイヤーhp >= 1)
                                 {
-                                    tyuukan += 1;
+                                    n中間ゲート += 1;
                                     n地面a[t_] = -80000000;
                                 }
 
@@ -2019,8 +2015,8 @@ namespace SyobonAction
                             case 5:
                                 if (nリフトmove[t_] == 0) { nリフトmuki[t_] = 0; }
                                 else { nリフトmuki[t_] = 1; }
-                                if (nリフトb[t_] - fy < -2100) { nリフトb[t_] = n画面高さ + fy + scrolly + 2000; }
-                                if (nリフトb[t_] - fy > n画面高さ + scrolly + 2000) { nリフトb[t_] = -2100 + fy; }
+                                if (nリフトb[t_] - fy < -2100) { nリフトb[t_] = n画面高さ + fy + scrollY + 2000; }
+                                if (nリフトb[t_] - fy > n画面高さ + scrollY + 2000) { nリフトb[t_] = -2100 + fy; }
                                 break;
 
                             case 6:
@@ -2084,13 +2080,13 @@ namespace SyobonAction
                                 if (nリフトsp[t_] == 2)
                                 {
                                     nプレイヤーc = -2400; nリフトmove[t_] += 1;
-                                    if (nリフトmove[t_] >= 100) { nプレイヤーhp = 0; mmsgtype = 53; mmsgtm = 30; nリフトmove[t_] = -5000; }
+                                    if (nリフトmove[t_] >= 100) { nプレイヤーhp = 0; nメッセージtype = 53; nメッセージtm = 30; nリフトmove[t_] = -5000; }
                                 }
 
                                 if (nリフトsp[t_] == 3)
                                 {
                                     nプレイヤーc = 2400; nリフトmove[t_] += 1;
-                                    if (nリフトmove[t_] >= 100) { nプレイヤーhp = 0; mmsgtype = 53; mmsgtm = 30; nリフトmove[t_] = -5000; }
+                                    if (nリフトmove[t_] >= 100) { nプレイヤーhp = 0; nメッセージtype = 53; nメッセージtm = 30; nリフトmove[t_] = -5000; }
                                 }
                             }//判定内
 
@@ -2469,7 +2465,7 @@ namespace SyobonAction
                                     if (ma + nプレイヤーnobia > xx[8] + xx[5] && ma < xx[8] + xx[4] - xx[5] && nプレイヤーb + nプレイヤーnobib > xx[9] + xx[5] && nプレイヤーb < xx[9] + xx[4] - xx[5])
                                     {
                                         nプレイヤーhp -= 1;
-                                        mmsgtype = 51; mmsgtm = 30;
+                                        nメッセージtype = 51; nメッセージtm = 30;
                                     }
                                 }
 
@@ -2497,7 +2493,7 @@ namespace SyobonAction
                                     if (ma + nプレイヤーnobia > xx[8] + xx[5] && ma < xx[8] + xx[4] - xx[5] && nプレイヤーb + nプレイヤーnobib > xx[9] + xx[5] && nプレイヤーb < xx[9] + xx[4] - xx[5])
                                     {
                                         nプレイヤーhp -= 1;
-                                        mmsgtype = 51; mmsgtm = 30;
+                                        nメッセージtype = 51; nメッセージtm = 30;
                                     }
                                 }
 
@@ -2737,7 +2733,7 @@ namespace SyobonAction
 
                                         if (n敵キャラtype[t_] == 0 || n敵キャラtype[t_] == 7)
                                         {
-                                            n敵キャラmsgtm[t_] = 60; n敵キャラmsgtype[t_] = rand(7) + 1 + 1000 + (stb - 1) * 10;
+                                            n敵キャラmsgtm[t_] = 60; n敵キャラmsgtype[t_] = rand(7) + 1 + 1000 + (nステージb - 1) * 10;
                                         }
 
                                         if (n敵キャラtype[t_] == 1)
@@ -2757,7 +2753,7 @@ namespace SyobonAction
 
                                         if (n敵キャラtype[t_] == 4)
                                         {
-                                            n敵キャラmsgtm[t_] = 60; n敵キャラmsgtype[t_] = rand(7) + 1 + 1000 + (stb - 1) * 10;
+                                            n敵キャラmsgtm[t_] = 60; n敵キャラmsgtype[t_] = rand(7) + 1 + 1000 + (nステージb - 1) * 10;
                                         }
 
                                         if (n敵キャラtype[t_] == 5)
@@ -2767,7 +2763,7 @@ namespace SyobonAction
 
                                         if (n敵キャラtype[t_] == 9 || n敵キャラtype[t_] == 10)
                                         {
-                                            mmsgtm = 30; mmsgtype = 54;
+                                            nメッセージtm = 30; nメッセージtype = 54;
                                         }
 
 
@@ -2791,7 +2787,7 @@ namespace SyobonAction
 
                                         if (n敵キャラtype[t_] == 84)
                                         {
-                                            mmsgtm = 30; mmsgtype = 50;
+                                            nメッセージtm = 30; nメッセージtype = 50;
                                         }
 
                                         if (n敵キャラtype[t_] == 85)
@@ -2831,12 +2827,12 @@ namespace SyobonAction
                             if (n敵キャラtype[t_] >= 100 && n敵キャラtype[t_] <= 199)
                             {
 
-                                if (n敵キャラtype[t_] == 100 && n敵キャラxtype[t_] == 0) { mmsgtm = 30; mmsgtype = 1; ot(nオーディオ_[9]); }
-                                if (n敵キャラtype[t_] == 100 && n敵キャラxtype[t_] == 1) { mmsgtm = 30; mmsgtype = 2; ot(nオーディオ_[9]); }
+                                if (n敵キャラtype[t_] == 100 && n敵キャラxtype[t_] == 0) { nメッセージtm = 30; nメッセージtype = 1; ot(nオーディオ_[9]); }
+                                if (n敵キャラtype[t_] == 100 && n敵キャラxtype[t_] == 1) { nメッセージtm = 30; nメッセージtype = 2; ot(nオーディオ_[9]); }
                                 if (n敵キャラtype[t_] == 100 && n敵キャラxtype[t_] == 2) { nプレイヤーnobia = 5200; nプレイヤーnobib = 7300; ot(nオーディオ_[9]); ma -= 1100; nプレイヤーb -= 4000; nプレイヤーtype = 1; nプレイヤーhp = 50000000; }
 
-                                if (n敵キャラtype[t_] == 101) { nプレイヤーhp -= 1; mmsgtm = 30; mmsgtype = 11; }
-                                if (n敵キャラtype[t_] == 102) { nプレイヤーhp -= 1; mmsgtm = 30; mmsgtype = 10; }
+                                if (n敵キャラtype[t_] == 101) { nプレイヤーhp -= 1; nメッセージtm = 30; nメッセージtype = 11; }
+                                if (n敵キャラtype[t_] == 102) { nプレイヤーhp -= 1; nメッセージtm = 30; nメッセージtype = 10; }
 
 
                                 //?ボール
@@ -2863,7 +2859,7 @@ namespace SyobonAction
                                     }
                                 }//105
 
-                                if (n敵キャラtype[t_] == 110) { nプレイヤーhp -= 1; mmsgtm = 30; mmsgtype = 3; }
+                                if (n敵キャラtype[t_] == 110) { nプレイヤーhp -= 1; nメッセージtm = 30; nメッセージtype = 3; }
 
                                 n敵キャラa[t_] = -90000000;
                             }
@@ -2878,8 +2874,8 @@ namespace SyobonAction
                 //スクロール
                 if (n強制スクロール != 1 && n強制スクロール != 2)
                 {
-                    xx[2] = mascrollmax; xx[3] = 0;
-                    xx[1] = xx[2]; if (ma > xx[1] && fzx < scrollx) { xx[5] = ma - xx[1]; ma = xx[1]; fx += xx[5]; fzx += xx[5]; if (xx[1] <= 5000) xx[3] = 1; }
+                    xx[2] = maScrollMax; xx[3] = 0;
+                    xx[1] = xx[2]; if (ma > xx[1] && fzx < scrollX) { xx[5] = ma - xx[1]; ma = xx[1]; fx += xx[5]; fzx += xx[5]; if (xx[1] <= 5000) xx[3] = 1; }
                 }//kscroll
 
             }
@@ -2920,7 +2916,7 @@ namespace SyobonAction
                 for (t_ = 0; t_ <= xx[7]; t_ += 1) { xx[12 + t_] -= 100; }//t
 
                 if (xx[30] == -200) { bgmchange(nオーディオ_[106]); }
-                if (xx[30] <= -400) { main = 100; nokori = 2; maintm = 0; ending = 0; }
+                if (xx[30] <= -400) { main = 100; nokori = 2; maintm = 0; nスタッフロール = 0; }
 
             }//main==2
 
@@ -2928,7 +2924,7 @@ namespace SyobonAction
             {
                 maintm++;
 
-                if (fast == 1) maintm += 2;
+                if (nクイック == 1) maintm += 2;
                 if (maintm >= 30) { maintm = 0; main = 1; zxon = 0; }
             }//if (main==10){
 
@@ -2936,17 +2932,17 @@ namespace SyobonAction
             if (main == 100)
             {
                 maintm++; xx[0] = 0;
-                if (maintm <= 10) { maintm = 11; sta = 1; stb = 1; stc = 0; over = 0; }
+                if (maintm <= 10) { maintm = 11; nステージa = 1; nステージb = 1; nステージc = 0; over = 0; }
 
-                if (DX.CheckHitKey(DX.KEY_INPUT_1) == 1) { sta = 1; stb = 1; stc = 0; }
-                if (DX.CheckHitKey(DX.KEY_INPUT_2) == 1) { sta = 1; stb = 2; stc = 0; }
-                if (DX.CheckHitKey(DX.KEY_INPUT_3) == 1) { sta = 1; stb = 3; stc = 0; }
-                if (DX.CheckHitKey(DX.KEY_INPUT_4) == 1) { sta = 1; stb = 4; stc = 0; }
-                if (DX.CheckHitKey(DX.KEY_INPUT_5) == 1) { sta = 2; stb = 1; stc = 0; }
-                if (DX.CheckHitKey(DX.KEY_INPUT_6) == 1) { sta = 2; stb = 2; stc = 0; }
-                if (DX.CheckHitKey(DX.KEY_INPUT_7) == 1) { sta = 2; stb = 3; stc = 0; }
-                if (DX.CheckHitKey(DX.KEY_INPUT_8) == 1) { sta = 2; stb = 4; stc = 0; }
-                if (DX.CheckHitKey(DX.KEY_INPUT_9) == 1) { sta = 3; stb = 1; stc = 0; }
+                if (DX.CheckHitKey(DX.KEY_INPUT_1) == 1) { nステージa = 1; nステージb = 1; nステージc = 0; }
+                if (DX.CheckHitKey(DX.KEY_INPUT_2) == 1) { nステージa = 1; nステージb = 2; nステージc = 0; }
+                if (DX.CheckHitKey(DX.KEY_INPUT_3) == 1) { nステージa = 1; nステージb = 3; nステージc = 0; }
+                if (DX.CheckHitKey(DX.KEY_INPUT_4) == 1) { nステージa = 1; nステージb = 4; nステージc = 0; }
+                if (DX.CheckHitKey(DX.KEY_INPUT_5) == 1) { nステージa = 2; nステージb = 1; nステージc = 0; }
+                if (DX.CheckHitKey(DX.KEY_INPUT_6) == 1) { nステージa = 2; nステージb = 2; nステージc = 0; }
+                if (DX.CheckHitKey(DX.KEY_INPUT_7) == 1) { nステージa = 2; nステージb = 3; nステージc = 0; }
+                if (DX.CheckHitKey(DX.KEY_INPUT_8) == 1) { nステージa = 2; nステージb = 4; nステージc = 0; }
+                if (DX.CheckHitKey(DX.KEY_INPUT_9) == 1) { nステージa = 3; nステージb = 1; nステージc = 0; }
                 if (DX.CheckHitKey(DX.KEY_INPUT_0) == 1) { xx[0] = 1; over = 1; }
 
 
@@ -2958,7 +2954,7 @@ namespace SyobonAction
                     main = 10; zxon = 0; maintm = 0;
                     nokori = 2;
 
-                    fast = 0; trap = 0; tyuukan = 0;
+                    nクイック = 0; nトラップ表示 = 0; n中間ゲート = 0;
                 }
 
             }//100
