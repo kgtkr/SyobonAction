@@ -7,9 +7,9 @@ using DxLibDLL;
 
 namespace SyobonAction
 {
-     static partial class Program
+    static partial class Program
     {
-         static void Main(string[] args)
+        static void Main(string[] args)
         {
             //画面サイズ設定
             DX.SetGraphMode(fxmax / 100, fymax / 100, 16);
@@ -19,17 +19,12 @@ namespace SyobonAction
             DX.SetMainWindowText("しょぼんのアクション");
             //applog無効
             DX.SetOutApplicationLogValidFlag(DX.FALSE);
+            //アイコン
+            DX.SetWindowIconHandle(Properties.Resources.icon.Handle);
 
 
             // ＤＸライブラリ初期化処理(エラーが起きたら直ちに終了)
             if (DX.DxLib_Init() == -1) return;
-
-            // 点を打つ
-            //DrawPixel( 320 , 240 , 0xffff ) ;
-
-            // キー入力待ち
-            //WaitKey();
-
 
             //全ロード
             Load();
@@ -39,10 +34,10 @@ namespace SyobonAction
             DX.SetFontThickness(4);
 
             //ループ
-            //for (maint=0;maint<=2;maint++){
-            while (DX.ProcessMessage() == 0 && DX.CheckHitKey(DX.KEY_INPUT_ESCAPE) == 0)
+            while (DX.ProcessMessage() == 0 && DX.CheckHitKey(DX.KEY_INPUT_ESCAPE) == DX.FALSE)
             {
-                maint = 0; Mainprogram();
+                maint = 0;
+                Mainprogram();
                 if (maint == 3) break;
             }
 
@@ -357,12 +352,6 @@ namespace SyobonAction
             eco++; if (eco >= emax) eco = 0;
 
         }//eyobi
-
-
-
-
-
-
 
 
         //敵キャラ、アイテム作成
