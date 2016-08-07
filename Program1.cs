@@ -186,7 +186,6 @@ namespace SyobonAction
                     if (mzimen == 1)
                     {
                         // 読みこんだグラフィックを拡大描画
-                        //DrawExtendGraph(ma/100,mb/100,ma/100+100,mb/100+100,grap[0][0], TRUE ) ;
                         if (mact == 0) drawimage(n切り取り画像[0, 0], ma / 100, mb / 100);
                         if (mact == 1) drawimage(n切り取り画像[1, 0], ma / 100, mb / 100);
                     }
@@ -215,7 +214,6 @@ namespace SyobonAction
                     xx[2] = anobia[t] / 100; xx[3] = anobib[t] / 100; xx[14] = 3000; xx[16] = 0;
                     if (xx[0] + xx[2] * 100 >= -10 - xx[14] && xx[1] <= fxmax + xx[14] && xx[1] + xx[3] * 100 >= -10 && xx[3] <= fymax)
                     {
-                        //if (atype[t]>=100)amuki[t]=0;
                         if (amuki[t] == 1) { mirror = 1; }
                         if (atype[t] == 3 && axtype[t] == 1) { DX.DrawRotaGraph(xx[0] / 100 + 13, xx[1] / 100 + 15, 1.0f, pai / 1, n切り取り画像[atype[t], 3], DX.TRUE); xx[16] = 1; }
                         if (atype[t] == 9 && ad[t] >= 1) { DX.DrawRotaGraph(xx[0] / 100 + 13, xx[1] / 100 + 15, 1.0f, pai / 1, n切り取り画像[atype[t], 3], DX.TRUE); xx[16] = 1; }
@@ -430,7 +428,6 @@ namespace SyobonAction
                         //コイン
                         if (ttype[t] == 800) { drawimage(n切り取り画像[0, 2], xx[0] / 100 + 2, xx[1] / 100 + 1); }
 
-                        //if (stagecolor==1)t-=30;
                     }
                 }
 
@@ -705,7 +702,7 @@ namespace SyobonAction
                 {
                     if (amsgtm[t] >= 1)
                     {
-                        amsgtm[t]--;//end();
+                        amsgtm[t]--;
 
                         xs[0] = "";
 

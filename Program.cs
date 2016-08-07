@@ -379,7 +379,7 @@ namespace SyobonAction
                     t1 = 3;
 
                     aa[aco] = xa;
-                    ab[aco] = xb;//ag[aco]=0;ah[aco]=0;ai[aco]=bb[t];//ad[t]=0;aeon[t]=1;
+                    ab[aco] = xb;
                     ac[aco] = xc;
                     ad[aco] = xd;
                     if (xxtype > 100) ac[aco] = xxtype;
@@ -405,51 +405,11 @@ namespace SyobonAction
 
                     azimentype[aco] = 1;
 
-                    //if (atype[aco]<=30 && atype[aco]!=4)atm[aco]=20;
-
-
-
-                    //azimentype[aco]=1;
-
-                    switch (atype[aco])
-                    {
-                        /*
-                        case 0:case 1:case 2:case 5:case 6:case 7:case 8:
-                        azimentype[aco]=2;
-                        break;
-
-                        case 3:case 4:
-                        azimentype[aco]=0;
-                        break;
-
-                        case 49:case 50://case 2:case 5:case 6:
-                        azimentype[aco]=4;
-                        break;
-
-                        case 80:case 81:case 82:case 83:case 84:case 85:
-                        azimentype[aco]=1;
-                        break;
-
-                        case 100:case 101:case 102:case 103:case 104:case 105:case 106:case 107:case 108:
-                        azimentype[aco]=1;
-                        break;
-
-                        case 120:case 121:case 122:
-                        azimentype[aco]=1;
-                        break;
-
-                        case 130:case 131:case 132:case 133:case 134:
-                        azimentype[aco]=1;
-                        break;
-                        */
-                    }
-
                     if (xtype == 87) { atm[aco] = rand(179) + (-90); }
 
                     aco += 1; if (aco >= amax - 1) { aco = 0; }
                 }//t1
 
-                //if (bz[t]==1){bz[t]=0;}
             }//rz
 
         }//ayobi

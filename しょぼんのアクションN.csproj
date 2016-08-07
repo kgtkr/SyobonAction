@@ -55,6 +55,7 @@
     <Compile Include="Program1.cs" />
     <Compile Include="Program3.cs" />
     <Compile Include="ProgramStage.cs" />
+    <Compile Include="ProgramStageData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
