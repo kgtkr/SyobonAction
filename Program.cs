@@ -12,7 +12,7 @@ namespace SyobonAction
         static void Main(string[] args)
         {
             //画面サイズ設定
-            DX.SetGraphMode(fxmax / 100, fymax / 100, 16);
+            DX.SetGraphMode(n画面幅 / 100, n画面高さ / 100, 16);
             //最大化の防止
             DX.ChangeWindowMode(DX.TRUE);
             //タイトルの変更
@@ -37,7 +37,18 @@ namespace SyobonAction
             while (DX.ProcessMessage() == 0 && DX.CheckHitKey(DX.KEY_INPUT_ESCAPE) == DX.FALSE)
             {
                 maint = 0;
+                //処理
                 Mainprogram();
+
+                //描画
+                Draw();
+
+
+                //30-fps
+                xx[0] = 30;
+                if (DX.CheckHitKey(DX.KEY_INPUT_SPACE) == 1) { xx[0] = 60; }
+                wait2(stime, DX.GetNowCount(), 1000 / xx[0]);
+
                 if (maint == 3) break;
             }
 
@@ -163,9 +174,9 @@ namespace SyobonAction
         //BGM変更
         static void bgmchange(int x)
         {
-            DX.StopSoundMem(nオーディオ[0]);
-            nオーディオ[0] = 0;
-            nオーディオ[0] = x;
+            DX.StopSoundMem(nオーディオ_[0]);
+            nオーディオ_[0] = 0;
+            nオーディオ_[0] = x;
         }//bgmchange()
 
 
@@ -382,14 +393,14 @@ namespace SyobonAction
                     if (abrocktm[aco] >= 1) amuki[aco] = 1;
                     if (abrocktm[aco] == 20) amuki[aco] = 0;
 
-                    anobia[aco] = n敵サイズW[atype[aco]]; anobib[aco] = n敵サイズH[atype[aco]];
+                    anobia[aco] = n敵サイズW_[atype[aco]]; anobib[aco] = n敵サイズH_[atype[aco]];
 
 
 
                     //大砲音
-                    if (xtype == 7 && DX.CheckSoundMem(nオーディオ[10]) == 0) { ot(nオーディオ[10]); }
+                    if (xtype == 7 && DX.CheckSoundMem(nオーディオ_[10]) == 0) { ot(nオーディオ_[10]); }
                     //ファイア音
-                    if (xtype == 10 && DX.CheckSoundMem(nオーディオ[18]) == 0) { ot(nオーディオ[18]); }
+                    if (xtype == 10 && DX.CheckSoundMem(nオーディオ_[18]) == 0) { ot(nオーディオ_[18]); }
 
 
                     azimentype[aco] = 1;

@@ -194,10 +194,6 @@ namespace SyobonAction
             srmovep = new int[srmax],
             srmove = new int[srmax];
 
-
-
-
-
         //スクロール範囲
         static int fx = 0, fy = 0, fzx, scrollx, scrolly;
         //全体のポイント
@@ -205,7 +201,7 @@ namespace SyobonAction
         //強制スクロール
         static int kscroll = 0;
         //画面サイズ(ファミコンサイズ×2)(256-224)
-        static int fxmax = 48000, fymax = 42000;
+        const int n画面幅 = 48000, n画面高さ = 42000;
 
 
 

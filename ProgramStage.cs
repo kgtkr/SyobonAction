@@ -36,26 +36,91 @@ namespace SyobonAction
 
 
                 sco = 0;
-                t = sco; sa[t] = 20 * 29 * 100 + 500; sb[t] = -6000; sc[t] = 5000; sd[t] = 70000; stype[t] = 100; sco++;
-                t = sco; sa[t] = 54 * 29 * 100 - 500; sb[t] = -6000; sc[t] = 7000; sd[t] = 70000; stype[t] = 101; sco++;
-                t = sco; sa[t] = 112 * 29 * 100 + 1000; sb[t] = -6000; sc[t] = 3000; sd[t] = 70000; stype[t] = 102; sco++;
-                t = sco; sa[t] = 117 * 29 * 100; sb[t] = (2 * 29 - 12) * 100 - 1500; sc[t] = 15000; sd[t] = 3000; stype[t] = 103; sco++;
-                t = sco; sa[t] = 125 * 29 * 100; sb[t] = -6000; sc[t] = 9000; sd[t] = 70000; stype[t] = 101; sco++;
-                //t=sco;sa[t]=77*29*100;sb[t]=(6*29-12)*100-1500;sc[t]=12000;sd[t]=3000;stype[t]=103;sco++;
-                t = 28; sa[t] = 29 * 29 * 100 + 500; sb[t] = (9 * 29 - 12) * 100; sc[t] = 6000; sd[t] = 12000 - 200; stype[t] = 50; sco++;
-                t = sco; sa[t] = 49 * 29 * 100; sb[t] = (5 * 29 - 12) * 100; sc[t] = 9000 - 1; sd[t] = 3000; stype[t] = 51; sgtype[t] = 0; sco++;
-                t = sco; sa[t] = 72 * 29 * 100; sb[t] = (13 * 29 - 12) * 100; sc[t] = 3000 * 5 - 1; sd[t] = 3000; stype[t] = 52; sco++;
+                t_ = sco;
+                sa[t_] = 20 * 29 * 100 + 500;
+                sb[t_] = -6000;
+                sc[t_] = 5000;
+                sd[t_] = 70000;
+                stype[t_] = 100;
+                sco++;
+
+                t_ = sco;
+                sa[t_] = 54 * 29 * 100 - 500;
+                sb[t_] = -6000;
+                sc[t_] = 7000;
+                sd[t_] = 70000;
+                stype[t_] = 101;
+                sco++;
+
+                t_ = sco;
+                sa[t_] = 112 * 29 * 100 + 1000;
+                sb[t_] = -6000;
+                sc[t_] = 3000;
+                sd[t_] = 70000;
+                stype[t_] = 102;
+                sco++;
+
+                t_ = sco;
+                sa[t_] = 117 * 29 * 100;
+                sb[t_] = (2 * 29 - 12) * 100 - 1500;
+                sc[t_] = 15000;
+                sd[t_] = 3000;
+                stype[t_] = 103;
+                sco++;
+
+                t_ = sco;
+                sa[t_] = 125 * 29 * 100;
+                sb[t_] = -6000;
+                sc[t_] = 9000;
+                sd[t_] = 70000;
+                stype[t_] = 101;
+                sco++;
+
+                t_ = 28;
+                sa[t_] = 29 * 29 * 100 + 500;
+                sb[t_] = (9 * 29 - 12) * 100;
+                sc[t_] = 6000;
+                sd[t_] = 12000 - 200;
+                stype[t_] = 50;
+                sco++;
+
+                t_ = sco;
+                sa[t_] = 49 * 29 * 100;
+                sb[t_] = (5 * 29 - 12) * 100;
+                sc[t_] = 9000 - 1;
+                sd[t_] = 3000;
+                stype[t_] = 51;
+                sgtype[t_] = 0;
+                sco++;
+
+                t_ = sco;
+                sa[t_] = 72 * 29 * 100;
+                sb[t_] = (13 * 29 - 12) * 100;
+                sc[t_] = 3000 * 5 - 1;
+                sd[t_] = 3000;
+                stype[t_] = 52;
+                sco++;
 
                 bco = 0;
-                t = bco; ba[t] = 27 * 29 * 100; bb[t] = (9 * 29 - 12) * 100; btype[t] = 0; bxtype[t] = 0; bco++;
-                t = bco; ba[t] = 103 * 29 * 100; bb[t] = (5 * 29 - 12 + 10) * 100; btype[t] = 80; bxtype[t] = 0; bco++;
-                //t=bco;ba[t]=13*29*100;bb[t]=(5*29-12)*100;btype[t]=81;bxtype[t]=0;bco++;
+                t_ = bco;
+                ba[t_] = 27 * 29 * 100;
+                bb[t_] = (9 * 29 - 12) * 100;
+                btype[t_] = 0;
+                bxtype[t_] = 0;
+                bco++;
 
-                for (tt = 0; tt <= 1000; tt++)
+                t_ = bco;
+                ba[t_] = 103 * 29 * 100;
+                bb[t_] = (5 * 29 - 12 + 10) * 100;
+                btype[t_] = 80;
+                bxtype[t_] = 0;
+                bco++;
+
+                for (tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t = 0; t <= 16; t++)
+                    for (t_ = 0; t_ <= 16; t_++)
                     {
-                        stagedate[t, tt] = 0; stagedate[t, tt] = stagedatex[t][tt];
+                        stagedate[t_, tt_] = 0; stagedate[t_, tt_] = stagedatex[t_][tt_];
                     }
                 }
 
@@ -67,12 +132,9 @@ namespace SyobonAction
             {
 
                 //マリ　地上　入れ
-                //StopSoundMem(oto[0]);
-                bgmchange(nオーディオ[100]);
-                //PlaySoundMem(oto[0],DX_PLAYTYPE_LOOP) ;
+                bgmchange(nオーディオ_[100]);
 
                 scrollx = 0 * 100;
-                //ma=3000;mb=3000;
 
                 byte[][] stagedatex = stagedatex2;
 
@@ -81,26 +143,24 @@ namespace SyobonAction
                 tco = 0;
                 //ヒント1
                 txtype[tco] = 1; tyobi(4 * 29, 9 * 29 - 12, 300);
-                //tyobi(7*29,9*29-12,300);
 
                 //毒1
                 tyobi(13 * 29, 8 * 29 - 12, 114);
 
                 //t=28;
                 sco = 0;
-                t = sco; sa[t] = 14 * 29 * 100 + 500; sb[t] = (9 * 29 - 12) * 100; sc[t] = 6000; sd[t] = 12000 - 200; stype[t] = 50; sxtype[t] = 1; sco++;
-                t = sco; sa[t] = 12 * 29 * 100; sb[t] = (11 * 29 - 12) * 100; sc[t] = 3000; sd[t] = 6000 - 200; stype[t] = 40; sxtype[t] = 0; sco++;
-                t = sco; sa[t] = 14 * 29 * 100 + 1000; sb[t] = -6000; sc[t] = 5000; sd[t] = 70000; stype[t] = 100; sxtype[t] = 1; sco++;
+                t_ = sco; sa[t_] = 14 * 29 * 100 + 500; sb[t_] = (9 * 29 - 12) * 100; sc[t_] = 6000; sd[t_] = 12000 - 200; stype[t_] = 50; sxtype[t_] = 1; sco++;
+                t_ = sco; sa[t_] = 12 * 29 * 100; sb[t_] = (11 * 29 - 12) * 100; sc[t_] = 3000; sd[t_] = 6000 - 200; stype[t_] = 40; sxtype[t_] = 0; sco++;
+                t_ = sco; sa[t_] = 14 * 29 * 100 + 1000; sb[t_] = -6000; sc[t_] = 5000; sd[t_] = 70000; stype[t_] = 100; sxtype[t_] = 1; sco++;
 
                 //ブロックもどき
-                //t=bco;ba[t]=7*29*100;bb[t]=(9*29-12)*100;btype[t]=82;bxtype[t]=0;bco++;
 
 
-                for (tt = 0; tt <= 1000; tt++)
+                for (tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t = 0; t <= 16; t++)
+                    for (t_ = 0; t_ <= 16; t_++)
                     {
-                        stagedate[t, tt] = 0; stagedate[t, tt] = stagedatex[t][tt];
+                        stagedate[t_, tt_] = 0; stagedate[t_, tt_] = stagedatex[t_][tt_];
                     }
                 }
 
@@ -112,7 +172,7 @@ namespace SyobonAction
             {
 
                 //マリ　地下　入れ
-                bgmchange(nオーディオ[103]);
+                bgmchange(nオーディオ_[103]);
 
                 scrollx = 4080 * 100;
                 ma = 6000; mb = 3000;
@@ -132,76 +192,68 @@ namespace SyobonAction
 
                 tyobi(49 * 29, 9 * 29 - 12, 114);
 
-                for (t = 0; t >= -7; t--)
+                for (t_ = 0; t_ >= -7; t_--)
                 {
 
-                    tyobi(53 * 29, t * 29 - 12, 1);
+                    tyobi(53 * 29, t_ * 29 - 12, 1);
                 }
 
                 txtype[tco] = 1; tyobi(80 * 29, 5 * 29 - 12, 104);
                 txtype[tco] = 2; tyobi(78 * 29, 5 * 29 - 12, 102);
 
 
-
-                //txtype[tco]=1;tyobi(11*29,9*29-12,114);//毒1
-
                 sco = 0;
-                t = sco; sa[t] = 2 * 29 * 100; sb[t] = (13 * 29 - 12) * 100; sc[t] = 3000 * 1 - 1; sd[t] = 3000; stype[t] = 52; sco++;
-                //t=sco;sa[t]=19*29*100;sb[t]=(13*29-12)*100;sc[t]=3000*1-1;sd[t]=3000;stype[t]=52;sco++;
-                t = sco; sa[t] = 24 * 29 * 100; sb[t] = (13 * 29 - 12) * 100; sc[t] = 3000 * 1 - 1; sd[t] = 3000; stype[t] = 52; sco++;
-                t = sco; sa[t] = 43 * 29 * 100 + 500; sb[t] = -6000; sc[t] = 3000; sd[t] = 70000; stype[t] = 102; sxtype[t] = 1; sco++;
-                t = sco; sa[t] = 53 * 29 * 100 + 500; sb[t] = -6000; sc[t] = 3000; sd[t] = 70000; stype[t] = 102; sxtype[t] = 2; sco++;
-                t = sco; sa[t] = 129 * 29 * 100; sb[t] = (7 * 29 - 12) * 100; sc[t] = 3000; sd[t] = 6000 - 200; stype[t] = 40; sxtype[t] = 2; sco++;
-                t = sco; sa[t] = 154 * 29 * 100; sb[t] = 3000; sc[t] = 9000; sd[t] = 3000; stype[t] = 102; sxtype[t] = 7; sco++;
+                t_ = sco; sa[t_] = 2 * 29 * 100; sb[t_] = (13 * 29 - 12) * 100; sc[t_] = 3000 * 1 - 1; sd[t_] = 3000; stype[t_] = 52; sco++;
+                t_ = sco; sa[t_] = 24 * 29 * 100; sb[t_] = (13 * 29 - 12) * 100; sc[t_] = 3000 * 1 - 1; sd[t_] = 3000; stype[t_] = 52; sco++;
+                t_ = sco; sa[t_] = 43 * 29 * 100 + 500; sb[t_] = -6000; sc[t_] = 3000; sd[t_] = 70000; stype[t_] = 102; sxtype[t_] = 1; sco++;
+                t_ = sco; sa[t_] = 53 * 29 * 100 + 500; sb[t_] = -6000; sc[t_] = 3000; sd[t_] = 70000; stype[t_] = 102; sxtype[t_] = 2; sco++;
+                t_ = sco; sa[t_] = 129 * 29 * 100; sb[t_] = (7 * 29 - 12) * 100; sc[t_] = 3000; sd[t_] = 6000 - 200; stype[t_] = 40; sxtype[t_] = 2; sco++;
+                t_ = sco; sa[t_] = 154 * 29 * 100; sb[t_] = 3000; sc[t_] = 9000; sd[t_] = 3000; stype[t_] = 102; sxtype[t_] = 7; sco++;
 
                 //ブロックもどき
 
-                t = 27; sa[t] = 69 * 29 * 100; sb[t] = (1 * 29 - 12) * 100; sc[t] = 9000 * 2 - 1; sd[t] = 3000; stype[t] = 51; sxtype[t] = 0; sgtype[t] = 0; sco++;
-                t = 28; sa[t] = 66 * 29 * 100; sb[t] = (1 * 29 - 12) * 100; sc[t] = 9000 - 1; sd[t] = 3000; stype[t] = 51; sxtype[t] = 1; sgtype[t] = 0; sco++;
-                t = 29; sa[t] = 66 * 29 * 100; sb[t] = (-2 * 29 - 12) * 100; sc[t] = 9000 * 3 - 1; sd[t] = 3000; stype[t] = 51; sxtype[t] = 2; sgtype[t] = 0; sco++;
+                t_ = 27; sa[t_] = 69 * 29 * 100; sb[t_] = (1 * 29 - 12) * 100; sc[t_] = 9000 * 2 - 1; sd[t_] = 3000; stype[t_] = 51; sxtype[t_] = 0; sgtype[t_] = 0; sco++;
+                t_ = 28; sa[t_] = 66 * 29 * 100; sb[t_] = (1 * 29 - 12) * 100; sc[t_] = 9000 - 1; sd[t_] = 3000; stype[t_] = 51; sxtype[t_] = 1; sgtype[t_] = 0; sco++;
+                t_ = 29; sa[t_] = 66 * 29 * 100; sb[t_] = (-2 * 29 - 12) * 100; sc[t_] = 9000 * 3 - 1; sd[t_] = 3000; stype[t_] = 51; sxtype[t_] = 2; sgtype[t_] = 0; sco++;
 
                 //26 ファイアー土管
-                t = 26; sa[t] = 103 * 29 * 100 - 1500; sb[t] = (9 * 29 - 12) * 100 - 2000; sc[t] = 3000; sd[t] = 3000; stype[t] = 180; sxtype[t] = 0; sr[t] = 0; sgtype[t] = 48; sco++;
-                t = sco; sa[t] = 102 * 29 * 100; sb[t] = (9 * 29 - 12) * 100; sc[t] = 6000; sd[t] = 12000 - 200; stype[t] = 50; sxtype[t] = 2; sco++;
-                t = sco; sa[t] = 123 * 29 * 100; sb[t] = (9 * 29 - 12) * 100; sc[t] = 3000 * 5 - 1; sd[t] = 3000 * 5; stype[t] = 52; sxtype[t] = 1; sco++;
+                t_ = 26; sa[t_] = 103 * 29 * 100 - 1500; sb[t_] = (9 * 29 - 12) * 100 - 2000; sc[t_] = 3000; sd[t_] = 3000; stype[t_] = 180; sxtype[t_] = 0; sr[t_] = 0; sgtype[t_] = 48; sco++;
+                t_ = sco; sa[t_] = 102 * 29 * 100; sb[t_] = (9 * 29 - 12) * 100; sc[t_] = 6000; sd[t_] = 12000 - 200; stype[t_] = 50; sxtype[t_] = 2; sco++;
+                t_ = sco; sa[t_] = 123 * 29 * 100; sb[t_] = (9 * 29 - 12) * 100; sc[t_] = 3000 * 5 - 1; sd[t_] = 3000 * 5; stype[t_] = 52; sxtype[t_] = 1; sco++;
 
-                t = sco; sa[t] = 131 * 29 * 100; sb[t] = (1 * 29 - 12) * 100; sc[t] = 4700; sd[t] = 3000 * 8 - 700; stype[t] = 1; sxtype[t] = 0; sco++;
-
-                //t=sco;sa[t]=44*29*100;sb[t]=-6000;sc[t]=9000;sd[t]=70000;stype[t]=102;sco++;
+                t_ = sco; sa[t_] = 131 * 29 * 100; sb[t_] = (1 * 29 - 12) * 100; sc[t_] = 4700; sd[t_] = 3000 * 8 - 700; stype[t_] = 1; sxtype[t_] = 0; sco++;
 
                 //オワタゾーン
-                t = sco; sa[t] = 143 * 29 * 100; sb[t] = (9 * 29 - 12) * 100; sc[t] = 6000; sd[t] = 12000 - 200; stype[t] = 50; sxtype[t] = 5; sco++;
-                t = sco; sa[t] = 148 * 29 * 100; sb[t] = (9 * 29 - 12) * 100; sc[t] = 6000; sd[t] = 12000 - 200; stype[t] = 50; sxtype[t] = 5; sco++;
-                t = sco; sa[t] = 153 * 29 * 100; sb[t] = (9 * 29 - 12) * 100; sc[t] = 6000; sd[t] = 12000 - 200; stype[t] = 50; sxtype[t] = 5; sco++;
+                t_ = sco; sa[t_] = 143 * 29 * 100; sb[t_] = (9 * 29 - 12) * 100; sc[t_] = 6000; sd[t_] = 12000 - 200; stype[t_] = 50; sxtype[t_] = 5; sco++;
+                t_ = sco; sa[t_] = 148 * 29 * 100; sb[t_] = (9 * 29 - 12) * 100; sc[t_] = 6000; sd[t_] = 12000 - 200; stype[t_] = 50; sxtype[t_] = 5; sco++;
+                t_ = sco; sa[t_] = 153 * 29 * 100; sb[t_] = (9 * 29 - 12) * 100; sc[t_] = 6000; sd[t_] = 12000 - 200; stype[t_] = 50; sxtype[t_] = 5; sco++;
 
 
 
                 bco = 0;
-                t = bco; ba[t] = 18 * 29 * 100; bb[t] = (10 * 29 - 12) * 100; btype[t] = 82; bxtype[t] = 1; bco++;
-                //t=bco;ba[t]=52*29*100;bb[t]=(2*29-12)*100;btype[t]=82;bxtype[t]=1;bco++;
-                t = bco; ba[t] = 51 * 29 * 100 + 1000; bb[t] = (2 * 29 - 12 + 10) * 100; btype[t] = 80; bxtype[t] = 1; bco++;
+                t_ = bco; ba[t_] = 18 * 29 * 100; bb[t_] = (10 * 29 - 12) * 100; btype[t_] = 82; bxtype[t_] = 1; bco++;
+                t_ = bco; ba[t_] = 51 * 29 * 100 + 1000; bb[t_] = (2 * 29 - 12 + 10) * 100; btype[t_] = 80; bxtype[t_] = 1; bco++;
 
                 //？ボール
-                t = bco; ba[t] = 96 * 29 * 100 + 100; bb[t] = (10 * 29 - 12) * 100; btype[t] = 105; bxtype[t] = 0; bco++;
+                t_ = bco; ba[t_] = 96 * 29 * 100 + 100; bb[t_] = (10 * 29 - 12) * 100; btype[t_] = 105; bxtype[t_] = 0; bco++;
 
 
                 //リフト
                 srco = 0;
-                t = srco; sra[t] = 111 * 29 * 100; srb[t] = (8 * 29 - 12) * 100; src[t] = 90 * 100; srtype[t] = 0; sracttype[t] = 5; sre[t] = -300; srco++;
-                t = srco; sra[t] = 111 * 29 * 100; srb[t] = (0 * 29 - 12) * 100; src[t] = 90 * 100; srtype[t] = 0; sracttype[t] = 5; sre[t] = -300; srco++;
-                t = 10; sra[t] = 116 * 29 * 100; srb[t] = (4 * 29 - 12) * 100; src[t] = 90 * 100; srtype[t] = 1; sracttype[t] = 5; sre[t] = 300; srco++;
-                t = 11; sra[t] = 116 * 29 * 100; srb[t] = (12 * 29 - 12) * 100; src[t] = 90 * 100; srtype[t] = 1; sracttype[t] = 5; sre[t] = 300; srco++;
+                t_ = srco; sra[t_] = 111 * 29 * 100; srb[t_] = (8 * 29 - 12) * 100; src[t_] = 90 * 100; srtype[t_] = 0; sracttype[t_] = 5; sre[t_] = -300; srco++;
+                t_ = srco; sra[t_] = 111 * 29 * 100; srb[t_] = (0 * 29 - 12) * 100; src[t_] = 90 * 100; srtype[t_] = 0; sracttype[t_] = 5; sre[t_] = -300; srco++;
+                t_ = 10; sra[t_] = 116 * 29 * 100; srb[t_] = (4 * 29 - 12) * 100; src[t_] = 90 * 100; srtype[t_] = 1; sracttype[t_] = 5; sre[t_] = 300; srco++;
+                t_ = 11; sra[t_] = 116 * 29 * 100; srb[t_] = (12 * 29 - 12) * 100; src[t_] = 90 * 100; srtype[t_] = 1; sracttype[t_] = 5; sre[t_] = 300; srco++;
 
 
 
-                for (tt = 0; tt <= 1000; tt++)
+                for (tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t = 0; t <= 16; t++)
+                    for (t_ = 0; t_ <= 16; t_++)
                     {
-                        stagedate[t, tt] = 0; stagedate[t, tt] = stagedatex[t][tt];
+                        stagedate[t_, tt_] = 0; stagedate[t_, tt_] = stagedatex[t_][tt_];
                     }
                 }
-                //stagedatex[0][0];
 
             }//sta1-2-1
 
@@ -213,29 +265,27 @@ namespace SyobonAction
             {
 
                 //マリ　地上　入れ
-                //StopSoundMem(oto[0]);
-                bgmchange(nオーディオ[100]);
-                //PlaySoundMem(oto[0],DX_PLAYTYPE_LOOP) ;
+                bgmchange(nオーディオ_[100]);
 
                 scrollx = 900 * 100;
                 ma = 7500; mb = 3000 * 9;
 
                 byte[][] stagedatex = stagedatex4;
 
-                t = sco; sa[t] = 5 * 29 * 100 + 500; sb[t] = -6000; sc[t] = 3000; sd[t] = 70000; stype[t] = 102; sxtype[t] = 8; sco++;
+                t_ = sco; sa[t_] = 5 * 29 * 100 + 500; sb[t_] = -6000; sc[t_] = 3000; sd[t_] = 70000; stype[t_] = 102; sxtype[t_] = 8; sco++;
                 //空飛ぶ土管
-                t = 28; sa[t] = 44 * 29 * 100 + 500; sb[t] = (10 * 29 - 12) * 100; sc[t] = 6000; sd[t] = 9000 - 200; stype[t] = 50; sco++;
+                t_ = 28; sa[t_] = 44 * 29 * 100 + 500; sb[t_] = (10 * 29 - 12) * 100; sc[t_] = 6000; sd[t_] = 9000 - 200; stype[t_] = 50; sco++;
 
                 //ポールもどき
                 bco = 0;
-                t = bco; ba[t] = 19 * 29 * 100; bb[t] = (2 * 29 - 12) * 100; btype[t] = 85; bxtype[t] = 0; bco++;
+                t_ = bco; ba[t_] = 19 * 29 * 100; bb[t_] = (2 * 29 - 12) * 100; btype[t_] = 85; bxtype[t_] = 0; bco++;
 
 
-                for (tt = 0; tt <= 1000; tt++)
+                for (tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t = 0; t <= 16; t++)
+                    for (t_ = 0; t_ <= 16; t_++)
                     {
-                        stagedate[t, tt] = 0; stagedate[t, tt] = stagedatex[t][tt];
+                        stagedate[t_, tt_] = 0; stagedate[t_, tt_] = stagedatex[t_][tt_];
                     }
                 }
 
@@ -249,10 +299,7 @@ namespace SyobonAction
             if (sta == 1 && stb == 3 && stc == 6) { stc = 0; }
             if (sta == 1 && stb == 3 && stc == 0)
             {
-
-                //StopSoundMem(oto[0]);
-                bgmchange(nオーディオ[100]);
-                //PlaySoundMem(oto[0],DX_PLAYTYPE_LOOP) ;
+                bgmchange(nオーディオ_[100]);
 
                 scrollx = 3900 * 100;
                 //ma=3000;mb=3000;
@@ -292,57 +339,51 @@ namespace SyobonAction
                 txtype[tco] = 0; tyobi(114 * 29, 9 * 29 - 12, 120);
 
                 //ファイア
-                //tyobi(7*29,9*29-12,101);
-
-
                 bco = 0;
-                t = bco; ba[t] = 101 * 29 * 100; bb[t] = (5 * 29 - 12) * 100; btype[t] = 4; bxtype[t] = 1; bco++;
-                t = bco; ba[t] = 146 * 29 * 100; bb[t] = (10 * 29 - 12) * 100; btype[t] = 6; bxtype[t] = 1; bco++;
+                t_ = bco; ba[t_] = 101 * 29 * 100; bb[t_] = (5 * 29 - 12) * 100; btype[t_] = 4; bxtype[t_] = 1; bco++;
+                t_ = bco; ba[t_] = 146 * 29 * 100; bb[t_] = (10 * 29 - 12) * 100; btype[t_] = 6; bxtype[t_] = 1; bco++;
 
-                t = sco; sa[t] = 9 * 29 * 100; sb[t] = (13 * 29 - 12) * 100; sc[t] = 9000 - 1; sd[t] = 3000; stype[t] = 52; sco++;
-                //t=sco;sa[t]=58*29*100;sb[t]=(13*29-12)*100;sc[t]=9000-1;sd[t]=3000;stype[t]=52;sco++;
+                t_ = sco; sa[t_] = 9 * 29 * 100; sb[t_] = (13 * 29 - 12) * 100; sc[t_] = 9000 - 1; sd[t_] = 3000; stype[t_] = 52; sco++;
 
                 //土管
-                t = sco; sa[t] = 65 * 29 * 100 + 500; sb[t] = (10 * 29 - 12) * 100; sc[t] = 6000; sd[t] = 9000 - 200; stype[t] = 50; sxtype[t] = 1; sco++;
-                //t=28;sa[t]=65*29*100;sb[t]=(10*29-12)*100;sc[t]=6000;sd[t]=9000-200;stype[t]=50;sco++;
+                t_ = sco; sa[t_] = 65 * 29 * 100 + 500; sb[t_] = (10 * 29 - 12) * 100; sc[t_] = 6000; sd[t_] = 9000 - 200; stype[t_] = 50; sxtype[t_] = 1; sco++;
 
                 //トラップ
-                t = sco; sa[t] = 74 * 29 * 100; sb[t] = (8 * 29 - 12) * 100 - 1500; sc[t] = 6000; sd[t] = 3000; stype[t] = 103; sxtype[t] = 1; sco++;
-                t = sco; sa[t] = 96 * 29 * 100 - 3000; sb[t] = -6000; sc[t] = 9000; sd[t] = 70000; stype[t] = 102; sxtype[t] = 10; sco++;
+                t_ = sco; sa[t_] = 74 * 29 * 100; sb[t_] = (8 * 29 - 12) * 100 - 1500; sc[t_] = 6000; sd[t_] = 3000; stype[t_] = 103; sxtype[t_] = 1; sco++;
+                t_ = sco; sa[t_] = 96 * 29 * 100 - 3000; sb[t_] = -6000; sc[t_] = 9000; sd[t_] = 70000; stype[t_] = 102; sxtype[t_] = 10; sco++;
                 //ポール砲
-                t = sco; sa[t] = 131 * 29 * 100 - 1500; sb[t] = (1 * 29 - 12) * 100 - 3000; sc[t] = 15000; sd[t] = 14000; stype[t] = 104; sco++;
+                t_ = sco; sa[t_] = 131 * 29 * 100 - 1500; sb[t_] = (1 * 29 - 12) * 100 - 3000; sc[t_] = 15000; sd[t_] = 14000; stype[t_] = 104; sco++;
 
 
                 //？ボール
-                t = bco; ba[t] = 10 * 29 * 100 + 100; bb[t] = (11 * 29 - 12) * 100; btype[t] = 105; bxtype[t] = 1; bco++;
+                t_ = bco; ba[t_] = 10 * 29 * 100 + 100; bb[t_] = (11 * 29 - 12) * 100; btype[t_] = 105; bxtype[t_] = 1; bco++;
                 //ブロックもどき
-                t = bco; ba[t] = 43 * 29 * 100; bb[t] = (11 * 29 - 12) * 100; btype[t] = 82; bxtype[t] = 1; bco++;
-                //t=bco;ba[t]=146*29*100;bb[t]=(12*29-12)*100;btype[t]=82;bxtype[t]=1;bco++;
+                t_ = bco; ba[t_] = 43 * 29 * 100; bb[t_] = (11 * 29 - 12) * 100; btype[t_] = 82; bxtype[t_] = 1; bco++;
                 //うめぇ
-                t = bco; ba[t] = 1 * 29 * 100; bb[t] = (2 * 29 - 12 + 10) * 100 - 1000; btype[t] = 80; bxtype[t] = 0; bco++;
+                t_ = bco; ba[t_] = 1 * 29 * 100; bb[t_] = (2 * 29 - 12 + 10) * 100 - 1000; btype[t_] = 80; bxtype[t_] = 0; bco++;
 
 
                 //リフト
                 srco = 0;
-                t = srco; sra[t] = 33 * 29 * 100; srb[t] = (3 * 29 - 12) * 100; src[t] = 90 * 100; srtype[t] = 0; sracttype[t] = 0; sre[t] = 0; srsp[t] = 1; srco++;
-                t = srco; sra[t] = 39 * 29 * 100 - 2000; srb[t] = (6 * 29 - 12) * 100; src[t] = 90 * 100; srtype[t] = 0; sracttype[t] = 1; sre[t] = 0; srco++;
-                t = srco; sra[t] = 45 * 29 * 100 + 1500; srb[t] = (10 * 29 - 12) * 100; src[t] = 90 * 100; srtype[t] = 0; sracttype[t] = 0; sre[t] = 0; srsp[t] = 2; srco++;
+                t_ = srco; sra[t_] = 33 * 29 * 100; srb[t_] = (3 * 29 - 12) * 100; src[t_] = 90 * 100; srtype[t_] = 0; sracttype[t_] = 0; sre[t_] = 0; srsp[t_] = 1; srco++;
+                t_ = srco; sra[t_] = 39 * 29 * 100 - 2000; srb[t_] = (6 * 29 - 12) * 100; src[t_] = 90 * 100; srtype[t_] = 0; sracttype[t_] = 1; sre[t_] = 0; srco++;
+                t_ = srco; sra[t_] = 45 * 29 * 100 + 1500; srb[t_] = (10 * 29 - 12) * 100; src[t_] = 90 * 100; srtype[t_] = 0; sracttype[t_] = 0; sre[t_] = 0; srsp[t_] = 2; srco++;
 
-                t = srco; sra[t] = 95 * 29 * 100; srb[t] = (7 * 29 - 12) * 100; src[t] = 180 * 100; srtype[t] = 0; sracttype[t] = 0; sre[t] = 0; srsp[t] = 10; srco++;
-                t = srco; sra[t] = 104 * 29 * 100; srb[t] = (9 * 29 - 12) * 100; src[t] = 90 * 100; srtype[t] = 0; sracttype[t] = 0; sre[t] = 0; srsp[t] = 12; srco++;
-                t = srco; sra[t] = 117 * 29 * 100; srb[t] = (3 * 29 - 12) * 100; src[t] = 90 * 100; srtype[t] = 0; sracttype[t] = 1; sre[t] = 0; srsp[t] = 15; srco++;
-                t = srco; sra[t] = 124 * 29 * 100; srb[t] = (5 * 29 - 12) * 100; src[t] = 210 * 100; srtype[t] = 0; sracttype[t] = 0; sre[t] = 0; srsp[t] = 10; srco++;
+                t_ = srco; sra[t_] = 95 * 29 * 100; srb[t_] = (7 * 29 - 12) * 100; src[t_] = 180 * 100; srtype[t_] = 0; sracttype[t_] = 0; sre[t_] = 0; srsp[t_] = 10; srco++;
+                t_ = srco; sra[t_] = 104 * 29 * 100; srb[t_] = (9 * 29 - 12) * 100; src[t_] = 90 * 100; srtype[t_] = 0; sracttype[t_] = 0; sre[t_] = 0; srsp[t_] = 12; srco++;
+                t_ = srco; sra[t_] = 117 * 29 * 100; srb[t_] = (3 * 29 - 12) * 100; src[t_] = 90 * 100; srtype[t_] = 0; sracttype[t_] = 1; sre[t_] = 0; srsp[t_] = 15; srco++;
+                t_ = srco; sra[t_] = 124 * 29 * 100; srb[t_] = (5 * 29 - 12) * 100; src[t_] = 210 * 100; srtype[t_] = 0; sracttype[t_] = 0; sre[t_] = 0; srsp[t_] = 10; srco++;
 
 
 
                 if (stagepoint == 1) { stagepoint = 0; ma = 4500; mb = -3000; tyuukan = 0; }
 
 
-                for (tt = 0; tt <= 1000; tt++)
+                for (tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t = 0; t <= 16; t++)
+                    for (t_ = 0; t_ <= 16; t_++)
                     {
-                        stagedate[t, tt] = 0; stagedate[t, tt] = stagedatex[t][tt];
+                        stagedate[t_, tt_] = 0; stagedate[t_, tt_] = stagedatex[t_][tt_];
                     }
                 }
 
@@ -355,9 +396,7 @@ namespace SyobonAction
             {
 
                 //マリ　地上　入れ
-                //StopSoundMem(oto[0]);
-                bgmchange(nオーディオ[103]);
-                //PlaySoundMem(oto[0],DX_PLAYTYPE_LOOP) ;
+                bgmchange(nオーディオ_[103]);
 
                 scrollx = 0 * 100;
                 ma = 6000; mb = 6000;
@@ -368,16 +407,15 @@ namespace SyobonAction
 
 
                 tco = 0;
-                //tyobi(15*29,12*29-12,111);
 
                 stc = 0;
 
 
-                for (tt = 0; tt <= 1000; tt++)
+                for (tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t = 0; t <= 16; t++)
+                    for (t_ = 0; t_ <= 16; t_++)
                     {
-                        stagedate[t, tt] = 0; stagedate[t, tt] = stagedatex[t][tt];
+                        stagedate[t_, tt_] = 0; stagedate[t_, tt_] = stagedatex[t_][tt_];
                     }
                 }
 
@@ -391,7 +429,7 @@ namespace SyobonAction
 
                 stagecolor = 3;
 
-                bgmchange(nオーディオ[104]);
+                bgmchange(nオーディオ_[104]);
 
                 scrollx = 0 * 100;
                 ma = 3000; mb = 33000;
@@ -401,7 +439,7 @@ namespace SyobonAction
                 byte[][] stagedatex = stagedatex7;
 
                 sco = 0;
-                t = sco; sa[t] = 14 * 29 * 100 - 5; sb[t] = (11 * 29 - 12) * 100; sc[t] = 6000; sd[t] = 15000 - 200; stype[t] = 50; sxtype[t] = 1; sco++;
+                t_ = sco; sa[t_] = 14 * 29 * 100 - 5; sb[t_] = (11 * 29 - 12) * 100; sc[t_] = 6000; sd[t_] = 15000 - 200; stype[t_] = 50; sxtype[t_] = 1; sco++;
 
 
                 txtype[tco] = 0; tyobi(12 * 29, 4 * 29 - 12, 112);
@@ -412,11 +450,11 @@ namespace SyobonAction
 
                 //stc=0;
 
-                for (tt = 0; tt <= 1000; tt++)
+                for (tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t = 0; t <= 16; t++)
+                    for (t_ = 0; t_ <= 16; t_++)
                     {
-                        stagedate[t, tt] = 0; stagedate[t, tt] = stagedatex[t][tt];
+                        stagedate[t_, tt_] = 0; stagedate[t_, tt_] = stagedatex[t_][tt_];
                     }
                 }
 
@@ -432,7 +470,7 @@ namespace SyobonAction
 
                 //マリ　地上　入れ
                 //StopSoundMem(oto[0]);
-                bgmchange(nオーディオ[105]);
+                bgmchange(nオーディオ_[105]);
                 //PlaySoundMem(oto[0],DX_PLAYTYPE_LOOP) ;
 
                 scrollx = 4400 * 100;
@@ -443,41 +481,39 @@ namespace SyobonAction
                 byte[][] stagedatex = stagedatex8;
 
                 sco = 0;//sco=140;
-                t = sco; sa[t] = 35 * 29 * 100 - 1500 + 750; sb[t] = (8 * 29 - 12) * 100 - 1500; sc[t] = 1500; sd[t] = 3000; stype[t] = 105; sco++;
-                t = sco; sa[t] = 67 * 29 * 100; sb[t] = (4 * 29 - 12) * 100; sc[t] = 9000 - 1; sd[t] = 3000 * 1 - 1; stype[t] = 51; sxtype[t] = 3; sgtype[t] = 0; sco++;
-                t = sco; sa[t] = 73 * 29 * 100; sb[t] = (13 * 29 - 12) * 100; sc[t] = 3000 * 1 - 1; sd[t] = 3000; stype[t] = 52; sco++;
-                //t=sco;sa[t]=79*29*100;sb[t]=(13*29-12)*100;sc[t]=30*3*100-1;sd[t]=6000-200;stype[t]=51;sxtype[t]=4;sco++;
-                //t=sco;sa[t]=83*29*100;sb[t]=(-2*29-12)*100;sc[t]=30*5*100-1;sd[t]=3000-200;stype[t]=51;sxtype[t]=4;sco++;
-                t = sco; sa[t] = 123 * 29 * 100; sb[t] = (1 * 29 - 12) * 100; sc[t] = 30 * 6 * 100 - 1 + 0; sd[t] = 3000 - 200; stype[t] = 51; sxtype[t] = 10; sco++;
+                t_ = sco; sa[t_] = 35 * 29 * 100 - 1500 + 750; sb[t_] = (8 * 29 - 12) * 100 - 1500; sc[t_] = 1500; sd[t_] = 3000; stype[t_] = 105; sco++;
+                t_ = sco; sa[t_] = 67 * 29 * 100; sb[t_] = (4 * 29 - 12) * 100; sc[t_] = 9000 - 1; sd[t_] = 3000 * 1 - 1; stype[t_] = 51; sxtype[t_] = 3; sgtype[t_] = 0; sco++;
+                t_ = sco; sa[t_] = 73 * 29 * 100; sb[t_] = (13 * 29 - 12) * 100; sc[t_] = 3000 * 1 - 1; sd[t_] = 3000; stype[t_] = 52; sco++;
+                t_ = sco; sa[t_] = 123 * 29 * 100; sb[t_] = (1 * 29 - 12) * 100; sc[t_] = 30 * 6 * 100 - 1 + 0; sd[t_] = 3000 - 200; stype[t_] = 51; sxtype[t_] = 10; sco++;
                 //スクロール消し
-                t = sco; sa[t] = 124 * 29 * 100 + 3000; sb[t] = (2 * 29 - 12) * 100; sc[t] = 3000 * 1 - 1; sd[t] = 300000; stype[t] = 102; sxtype[t] = 20; sco++;
-                t = sco; sa[t] = 148 * 29 * 100 + 1000; sb[t] = (-12 * 29 - 12) * 100; sc[t] = 3000 * 1 - 1; sd[t] = 300000; stype[t] = 102; sxtype[t] = 30; sco++;
+                t_ = sco; sa[t_] = 124 * 29 * 100 + 3000; sb[t_] = (2 * 29 - 12) * 100; sc[t_] = 3000 * 1 - 1; sd[t_] = 300000; stype[t_] = 102; sxtype[t_] = 20; sco++;
+                t_ = sco; sa[t_] = 148 * 29 * 100 + 1000; sb[t_] = (-12 * 29 - 12) * 100; sc[t_] = 3000 * 1 - 1; sd[t_] = 300000; stype[t_] = 102; sxtype[t_] = 30; sco++;
 
                 //3連星
-                t = sco; sa[t] = 100 * 29 * 100 + 1000; sb[t] = -6000; sc[t] = 3000; sd[t] = 70000; stype[t] = 102; sxtype[t] = 12; sco++;
+                t_ = sco; sa[t_] = 100 * 29 * 100 + 1000; sb[t_] = -6000; sc[t_] = 3000; sd[t_] = 70000; stype[t_] = 102; sxtype[t_] = 12; sco++;
 
                 //地面1
-                t = sco; sa[t] = 0 * 29 * 100 - 0; sb[t] = 9 * 29 * 100 + 1700; sc[t] = 3000 * 7 - 1; sd[t] = 3000 * 5 - 1; stype[t] = 200; sxtype[t] = 0; sco++;
-                t = sco; sa[t] = 11 * 29 * 100; sb[t] = -1 * 29 * 100 + 1700; sc[t] = 3000 * 8 - 1; sd[t] = 3000 * 4 - 1; stype[t] = 200; sxtype[t] = 0; sco++;
+                t_ = sco; sa[t_] = 0 * 29 * 100 - 0; sb[t_] = 9 * 29 * 100 + 1700; sc[t_] = 3000 * 7 - 1; sd[t_] = 3000 * 5 - 1; stype[t_] = 200; sxtype[t_] = 0; sco++;
+                t_ = sco; sa[t_] = 11 * 29 * 100; sb[t_] = -1 * 29 * 100 + 1700; sc[t_] = 3000 * 8 - 1; sd[t_] = 3000 * 4 - 1; stype[t_] = 200; sxtype[t_] = 0; sco++;
 
 
                 bco = 0;
-                t = bco; ba[t] = 8 * 29 * 100 - 1400; bb[t] = (2 * 29 - 12) * 100 + 500; btype[t] = 86; bxtype[t] = 0; bco++;
-                t = bco; ba[t] = 42 * 29 * 100 - 1400; bb[t] = (-2 * 29 - 12) * 100 + 500; btype[t] = 86; bxtype[t] = 0; bco++;
-                t = bco; ba[t] = 29 * 29 * 100 + 1500; bb[t] = (7 * 29 - 12) * 100 + 1500; btype[t] = 87; bxtype[t] = 105; bco++;
-                t = bco; ba[t] = 47 * 29 * 100 + 1500; bb[t] = (9 * 29 - 12) * 100 + 1500; btype[t] = 87; bxtype[t] = 110; bco++;
-                t = bco; ba[t] = 70 * 29 * 100 + 1500; bb[t] = (9 * 29 - 12) * 100 + 1500; btype[t] = 87; bxtype[t] = 105; bco++;
-                t = bco; ba[t] = 66 * 29 * 100 + 1501; bb[t] = (4 * 29 - 12) * 100 + 1500; btype[t] = 87; bxtype[t] = 101; bco++;
-                t = bco; ba[t] = 85 * 29 * 100 + 1501; bb[t] = (4 * 29 - 12) * 100 + 1500; btype[t] = 87; bxtype[t] = 105; bco++;
+                t_ = bco; ba[t_] = 8 * 29 * 100 - 1400; bb[t_] = (2 * 29 - 12) * 100 + 500; btype[t_] = 86; bxtype[t_] = 0; bco++;
+                t_ = bco; ba[t_] = 42 * 29 * 100 - 1400; bb[t_] = (-2 * 29 - 12) * 100 + 500; btype[t_] = 86; bxtype[t_] = 0; bco++;
+                t_ = bco; ba[t_] = 29 * 29 * 100 + 1500; bb[t_] = (7 * 29 - 12) * 100 + 1500; btype[t_] = 87; bxtype[t_] = 105; bco++;
+                t_ = bco; ba[t_] = 47 * 29 * 100 + 1500; bb[t_] = (9 * 29 - 12) * 100 + 1500; btype[t_] = 87; bxtype[t_] = 110; bco++;
+                t_ = bco; ba[t_] = 70 * 29 * 100 + 1500; bb[t_] = (9 * 29 - 12) * 100 + 1500; btype[t_] = 87; bxtype[t_] = 105; bco++;
+                t_ = bco; ba[t_] = 66 * 29 * 100 + 1501; bb[t_] = (4 * 29 - 12) * 100 + 1500; btype[t_] = 87; bxtype[t_] = 101; bco++;
+                t_ = bco; ba[t_] = 85 * 29 * 100 + 1501; bb[t_] = (4 * 29 - 12) * 100 + 1500; btype[t_] = 87; bxtype[t_] = 105; bco++;
 
                 //ステルスうめぇ
-                t = bco; ba[t] = 57 * 29 * 100; bb[t] = (2 * 29 - 12 + 10) * 100 - 500; btype[t] = 80; bxtype[t] = 1; bco++;
+                t_ = bco; ba[t_] = 57 * 29 * 100; bb[t_] = (2 * 29 - 12 + 10) * 100 - 500; btype[t_] = 80; bxtype[t_] = 1; bco++;
                 //ブロックもどき
-                t = bco; ba[t] = 77 * 29 * 100; bb[t] = (5 * 29 - 12) * 100; btype[t] = 82; bxtype[t] = 2; bco++;
+                t_ = bco; ba[t_] = 77 * 29 * 100; bb[t_] = (5 * 29 - 12) * 100; btype[t_] = 82; bxtype[t_] = 2; bco++;
                 //ボス
-                t = bco; ba[t] = 130 * 29 * 100; bb[t] = (8 * 29 - 12) * 100; btype[t] = 30; bxtype[t] = 0; bco++;
+                t_ = bco; ba[t_] = 130 * 29 * 100; bb[t_] = (8 * 29 - 12) * 100; btype[t_] = 30; bxtype[t_] = 0; bco++;
                 //クックル
-                t = bco; ba[t] = 142 * 29 * 100; bb[t] = (10 * 29 - 12) * 100; btype[t] = 31; bxtype[t] = 0; bco++;
+                t_ = bco; ba[t_] = 142 * 29 * 100; bb[t_] = (10 * 29 - 12) * 100; btype[t_] = 31; bxtype[t_] = 0; bco++;
 
                 //マグマ
                 nco = 0;
@@ -511,9 +547,9 @@ namespace SyobonAction
                 tyobi(86 * 29, 6 * 29 - 12, 117);
 
                 //もろいぶろっく×３
-                for (t = 0; t <= 2; t++)
+                for (t_ = 0; t_ <= 2; t_++)
                 {
-                    txtype[tco] = 3; tyobi((79 + t) * 29, 13 * 29 - 12, 115);
+                    txtype[tco] = 3; tyobi((79 + t_) * 29, 13 * 29 - 12, 115);
                 }
 
                 //ジャンプ
@@ -534,18 +570,18 @@ namespace SyobonAction
 
                 //リフト
                 srco = 0;
-                t = srco; sra[t] = 93 * 29 * 100; srb[t] = (10 * 29 - 12) * 100; src[t] = 60 * 100; srtype[t] = 0; sracttype[t] = 1; sre[t] = 0; srco++;
-                t = 20; sra[t] = 119 * 29 * 100 + 300; srb[t] = (10 * 29 - 12) * 100; src[t] = 12 * 30 * 100 + 1000; srtype[t] = 0; sracttype[t] = 0; srsp[t] = 21; sre[t] = 0; srco++;
+                t_ = srco; sra[t_] = 93 * 29 * 100; srb[t_] = (10 * 29 - 12) * 100; src[t_] = 60 * 100; srtype[t_] = 0; sracttype[t_] = 1; sre[t_] = 0; srco++;
+                t_ = 20; sra[t_] = 119 * 29 * 100 + 300; srb[t_] = (10 * 29 - 12) * 100; src[t_] = 12 * 30 * 100 + 1000; srtype[t_] = 0; sracttype[t_] = 0; srsp[t_] = 21; sre[t_] = 0; srco++;
 
 
                 stc = 0;
 
 
-                for (tt = 0; tt <= 1000; tt++)
+                for (tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t = 0; t <= 16; t++)
+                    for (t_ = 0; t_ <= 16; t_++)
                     {
-                        stagedate[t, tt] = 0; stagedate[t, tt] = stagedatex[t][tt];
+                        stagedate[t_, tt_] = 0; stagedate[t_, tt_] = stagedatex[t_][tt_];
                     }
                 }
 
@@ -556,7 +592,7 @@ namespace SyobonAction
                 ma = 5600;
                 mb = 32000;
 
-                bgmchange(nオーディオ[100]);
+                bgmchange(nオーディオ_[100]);
                 stagecolor = 1;
                 scrollx = 2900 * (113 - 19);
                 //
@@ -667,11 +703,11 @@ namespace SyobonAction
                 bxtype[bco] = 1;
                 bco += 1;
                 //
-                for (tt = 0; tt <= 1000; tt++)
+                for (tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t = 0; t <= 16; t++)
+                    for (t_ = 0; t_ <= 16; t_++)
                     {
-                        stagedate[t, tt] = 0; stagedate[t, tt] = stagedatex[t][tt];
+                        stagedate[t_, tt_] = 0; stagedate[t_, tt_] = stagedatex[t_][tt_];
                     }
                 }
             }
@@ -679,7 +715,7 @@ namespace SyobonAction
             if (sta == 2 && stb == 2 && stc == 0)
             {//2-2(地上)
 
-                bgmchange(nオーディオ[100]);
+                bgmchange(nオーディオ_[100]);
                 stagecolor = 1;
                 scrollx = 2900 * (19 - 19);
                 //
@@ -717,11 +753,11 @@ namespace SyobonAction
                 //
                 tyobi(6 * 29, 9 * 29 - 12, 110);
                 //
-                for (tt = 0; tt <= 1000; tt++)
+                for (tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t = 0; t <= 16; t++)
+                    for (t_ = 0; t_ <= 16; t_++)
                     {
-                        stagedate[t, tt] = 0; stagedate[t, tt] = stagedatex[t][tt];
+                        stagedate[t_, tt_] = 0; stagedate[t_, tt_] = stagedatex[t_][tt_];
                     }
                 }
             }
@@ -729,7 +765,7 @@ namespace SyobonAction
             if (sta == 2 && stb == 2 && stc == 1)
             {//2-2(地下)
 
-                bgmchange(nオーディオ[103]);
+                bgmchange(nオーディオ_[103]);
                 stagecolor = 2;
                 ma = 7500; mb = 9000;
                 scrollx = 2900 * (137 - 19);
@@ -927,11 +963,11 @@ namespace SyobonAction
                 tyobi(71 * 29, 7 * 29 - 12, 115);
                 tco += 1;
                 //
-                for (tt = 0; tt <= 1000; tt++)
+                for (tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t = 0; t <= 16; t++)
+                    for (t_ = 0; t_ <= 16; t_++)
                     {
-                        stagedate[t, tt] = 0; stagedate[t, tt] = stagedatex[t][tt];
+                        stagedate[t_, tt_] = 0; stagedate[t_, tt_] = stagedatex[t_][tt_];
                     }
                 }
             }
@@ -939,7 +975,7 @@ namespace SyobonAction
             if (sta == 2 && stb == 2 && stc == 2)
             {// 2-2 地上
              //
-                bgmchange(nオーディオ[100]);
+                bgmchange(nオーディオ_[100]);
                 stagecolor = 1;
                 scrollx = 2900 * (36 - 19);
                 ma = 7500;
@@ -1020,11 +1056,11 @@ namespace SyobonAction
                 bxtype[bco] = 1;
                 bco += 1;
                 //
-                for (tt = 0; tt <= 1000; tt++)
+                for (tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t = 0; t <= 16; t++)
+                    for (t_ = 0; t_ <= 16; t_++)
                     {
-                        stagedate[t, tt] = 0; stagedate[t, tt] = stagedatex[t][tt];
+                        stagedate[t_, tt_] = 0; stagedate[t_, tt_] = stagedatex[t_][tt_];
                     }
                 }
             }
@@ -1034,7 +1070,7 @@ namespace SyobonAction
                 ma = 7500;
                 mb = 3000 * 8;
 
-                bgmchange(nオーディオ[100]);
+                bgmchange(nオーディオ_[100]);
                 stagecolor = 1;
                 scrollx = 2900 * (126 - 19);
                 //
@@ -1133,11 +1169,11 @@ namespace SyobonAction
                 srsp[srco] = 1;
                 srco++;
                 //
-                for (tt = 0; tt <= 1000; tt++)
+                for (tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t = 0; t <= 16; t++)
+                    for (t_ = 0; t_ <= 16; t_++)
                     {
-                        stagedate[t, tt] = 0; stagedate[t, tt] = stagedatex[t][tt];
+                        stagedate[t_, tt_] = 0; stagedate[t_, tt_] = stagedatex[t_][tt_];
                     }
                 }
             }
@@ -1155,7 +1191,7 @@ namespace SyobonAction
                     stc = 0;
                 }
 
-                bgmchange(nオーディオ[105]);
+                bgmchange(nオーディオ_[105]);
                 stagecolor = 4;
                 scrollx = 2900 * (40 - 19);
                 //
@@ -1225,11 +1261,11 @@ namespace SyobonAction
                 sxtype[sco] = 1;
                 sco += 1;
                 //
-                for (tt = 0; tt <= 1000; tt++)
+                for (tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t = 0; t <= 16; t++)
+                    for (t_ = 0; t_ <= 16; t_++)
                     {
-                        stagedate[t, tt] = 0; stagedate[t, tt] = stagedatex[t][tt];
+                        stagedate[t_, tt_] = 0; stagedate[t_, tt_] = stagedatex[t_][tt_];
                     }
                 }
             }
@@ -1239,7 +1275,7 @@ namespace SyobonAction
                 ma = 4500;
                 mb = 3000 * 11;
 
-                bgmchange(nオーディオ[105]);
+                bgmchange(nオーディオ_[105]);
                 stagecolor = 4;
                 scrollx = 2900 * (21 - 19);
                 //
@@ -1294,11 +1330,11 @@ namespace SyobonAction
                 sxtype[sco] = 0;
                 sco += 1;
                 //
-                for (tt = 0; tt <= 1000; tt++)
+                for (tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t = 0; t <= 16; t++)
+                    for (t_ = 0; t_ <= 16; t_++)
                     {
-                        stagedate[t, tt] = 0; stagedate[t, tt] = stagedatex[t][tt];
+                        stagedate[t_, tt_] = 0; stagedate[t_, tt_] = stagedatex[t_][tt_];
                     }
                 }
             }
@@ -1308,7 +1344,7 @@ namespace SyobonAction
                 ma = 4500;
                 mb = 3000 * 11;
 
-                bgmchange(nオーディオ[105]);
+                bgmchange(nオーディオ_[105]);
                 stagecolor = 4;
                 scrollx = 2900 * (128 - 19);
                 //
@@ -1534,11 +1570,11 @@ namespace SyobonAction
                 srsp[srco] = 21;
                 srco += 1;
                 //
-                for (tt = 0; tt <= 1000; tt++)
+                for (tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t = 0; t <= 16; t++)
+                    for (t_ = 0; t_ <= 16; t_++)
                     {
-                        stagedate[t, tt] = 0; stagedate[t, tt] = stagedatex[t][tt];
+                        stagedate[t_, tt_] = 0; stagedate[t_, tt_] = stagedatex[t_][tt_];
                     }
                 }
             }
@@ -1548,7 +1584,7 @@ namespace SyobonAction
                 ma = 5600;
                 mb = 32000;
 
-                bgmchange(nオーディオ[100]);
+                bgmchange(nオーディオ_[100]);
                 stagecolor = 5;
                 scrollx = 2900 * (112 - 19);
                 byte[][] stagedatex = stagedatex17;
@@ -1634,11 +1670,11 @@ namespace SyobonAction
                 srsp[srco] = 3;
                 srco = 0;
                 //
-                for (tt = 0; tt <= 1000; tt++)
+                for (tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t = 0; t <= 16; t++)
+                    for (t_ = 0; t_ <= 16; t_++)
                     {
-                        stagedate[t, tt] = 0; stagedate[t, tt] = stagedatex[t][tt];
+                        stagedate[t_, tt_] = 0; stagedate[t_, tt_] = stagedatex[t_][tt_];
                     }
                 }
             }
