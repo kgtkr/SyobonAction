@@ -917,27 +917,28 @@ namespace SyobonAction
 
             if (main == 1 && nメッセージブロックtype == 0)
             {
-
-
                 if (zxon == 0)
                 {
                     zxon = 1;
                     nプレイヤーainmsgtype = 0;
 
                     nステージ色 = 1;
-                    ma = 5600; nプレイヤーb = 32000; nプレイヤーmuki = 1; nプレイヤーhp = 1;
-                    nプレイヤーc = 0; nプレイヤーd = 0;
-                    nプレイヤーnobia = 3000; nプレイヤーnobib = 3600;
+                    ma = 5600;
+                    nプレイヤーb = 32000;
+                    nプレイヤーmuki = 1;
+                    nプレイヤーhp = 1;
+
+                    nプレイヤーc = 0;
+                    nプレイヤーd = 0;
+
+                    nプレイヤーnobia = 3000;
+                    nプレイヤーnobib = 3600;
 
                     nプレイヤーtype = 0;
-                    //if (stc==1)end();
 
                     fx = 0; fy = 0;
                     fzx = 0;
                     nステージスイッチ = 0;
-
-
-
 
                     //チーターマン　入れ
                     bgmChange(nオーディオ_[100]);
@@ -945,7 +946,6 @@ namespace SyobonAction
                     stagecls();
 
                     stage();
-
 
                     //ランダムにさせる
                     if (over == 1)
@@ -978,7 +978,15 @@ namespace SyobonAction
                         }
 
                         nリフトco = 0;
-                        t_ = nリフトco; nリフトa[t_] = ma + fx; nリフトb[t_] = (13 * 29 - 12) * 100; nリフトc[t_] = 30 * 100; nリフトtype[t_] = 0; nリフトacttype[t_] = 0; nリフトe[t_] = 0; nリフトsp[t_] = 0; nリフトco++;
+                        t_ = nリフトco;
+                        nリフトa[t_] = ma + fx;
+                        nリフトb[t_] = (13 * 29 - 12) * 100;
+                        nリフトc[t_] = 30 * 100;
+                        nリフトtype[t_] = 0;
+                        nリフトacttype[t_] = 0;
+                        nリフトe[t_] = 0;
+                        nリフトsp[t_] = 0;
+                        nリフトco++;
 
                         if (DX.GetRand(4) == 0) nステージ色 = DX.GetRand(5);
                     }
@@ -1000,25 +1008,45 @@ namespace SyobonAction
                 if (nプレイヤーkeytm <= 0)
                 {
                     if (Key.GetKey(DX.KEY_INPUT_LEFT) && keyTm <= 0) {
-                        nプレイヤーactaon[0] = -1; nプレイヤーmuki = 0; nプレイヤーactaon[4] = -1;
+                        nプレイヤーactaon[0] = -1;
+                        nプレイヤーmuki = 0;
+                        nプレイヤーactaon[4] = -1;
                     }
                     if (Key.GetKey(DX.KEY_INPUT_RIGHT) && keyTm <= 0) {
-                        nプレイヤーactaon[0] = 1; nプレイヤーmuki = 1; nプレイヤーactaon[4] = 1;
+                        nプレイヤーactaon[0] = 1;
+                        nプレイヤーmuki = 1;
+                        nプレイヤーactaon[4] = 1;
                     }
                     if (Key.GetKey(DX.KEY_INPUT_DOWN)) {
                         nプレイヤーactaon[3] = 1;
                     }
                 }
 
-                if (Key.GetKey(DX.KEY_INPUT_F1)) { main = 100; }
-                if (Key.GetKey(DX.KEY_INPUT_O)) { if (nプレイヤーhp >= 1) nプレイヤーhp = 0; if (nステージc >= 5) { nステージc = 0; stagepoint = 0; } }
+                if (Key.GetKey(DX.KEY_INPUT_F1)) {
+                    main = 100;
+                }
+                if (Key.GetKey(DX.KEY_INPUT_O))
+                {
+                    if (nプレイヤーhp >= 1)
+                    {
+                        nプレイヤーhp = 0;
+                    }
+                    if (nステージc >= 5)
+                    {
+                        nステージc = 0;
+                        stagepoint = 0;
+                    }
+                }
 
 
                 if (nプレイヤーkeytm <= 0)
                 {
                     if (Key.GetKey(DX.KEY_INPUT_Z))
-                    {//end();
-                        if (nプレイヤーactaon[1] == 10) { nプレイヤーactaon[1] = 1; xx[0] = 1; }
+                    {
+                        if (nプレイヤーactaon[1] == 10) {
+                            nプレイヤーactaon[1] = 1;
+                            xx[0] = 1;
+                        }
                         nプレイヤーactaon[2] = 1;
                     }
                 }
@@ -1029,25 +1057,34 @@ namespace SyobonAction
                     {
                         nプレイヤーd = -1300;
                         //ダッシュ中
-                        xx[22] = 200; if (nプレイヤーc >= xx[22] || nプレイヤーc <= -xx[22]) { nプレイヤーd = -1400; }
-                        xx[22] = 600; if (nプレイヤーc >= xx[22] || nプレイヤーc <= -xx[22]) { nプレイヤーd = -1500; }
-                    }
-                    // && xx[0]==0 && md<=-10
+                        xx[22] = 200;
+                        if (nプレイヤーc >= xx[22] || nプレイヤーc <= -xx[22]) {
+                            nプレイヤーd = -1400;
+                        }
 
-                    //if (mjumptm==7 && md>=-900){}
+                        xx[22] = 600;
+                        if (nプレイヤーc >= xx[22] || nプレイヤーc <= -xx[22]) {
+                            nプレイヤーd = -1500;
+                        }
+                    }
                     if (xx[0] == 0) nプレイヤーactaon[1] = 10;
                 }
 
-
-
-
-
                 //加速による移動
-                xx[0] = 40; xx[1] = 700; xx[8] = 500; xx[9] = 700;
-                xx[12] = 1; xx[13] = 2;
+                xx[0] = 40;
+                xx[1] = 700;
+                xx[8] = 500;
+                xx[9] = 700;
+
+                xx[12] = 1;
+                xx[13] = 2;
 
                 //すべり補正
-                if (nプレイヤーrzimen == 1) { xx[0] = 20; xx[12] = 9; xx[13] = 10; }
+                if (nプレイヤーrzimen == 1) {
+                    xx[0] = 20;
+                    xx[12] = 9;
+                    xx[13] = 10;
+                }
 
 
                 //if (mzimen==0){xx[0]-=15;}
@@ -1055,13 +1092,29 @@ namespace SyobonAction
                 {
                     if (!(nプレイヤーzimen == 0 && nプレイヤーc < -xx[8]))
                     {
-                        if (nプレイヤーc >= -xx[9]) { nプレイヤーc -= xx[0]; if (nプレイヤーc < -xx[9]) { nプレイヤーc = -xx[9] - 1; } }
-                        if (nプレイヤーc < -xx[9] && nプレイヤーatktm <= 0) nプレイヤーc -= xx[0] / 10;
+                        if (nプレイヤーc >= -xx[9]) {
+                            nプレイヤーc -= xx[0];
+                            if (nプレイヤーc < -xx[9]) {
+                                nプレイヤーc = -xx[9] - 1;
+                            }
+                        }
+
+                        if (nプレイヤーc < -xx[9] && nプレイヤーatktm <= 0)
+                        {
+                            nプレイヤーc -= xx[0] / 10;
+                        }
                     }
                     if (nプレイヤーrzimen != 1)
                     {
-                        if (nプレイヤーc > 100 && nプレイヤーzimen == 0) { nプレイヤーc -= xx[0] * 2 / 3; }
-                        if (nプレイヤーc > 100 && nプレイヤーzimen == 1) { nプレイヤーc -= xx[0]; if (nプレイヤーzimen == 1) { nプレイヤーc -= xx[0] * 1 / 2; } }
+                        if (nプレイヤーc > 100 && nプレイヤーzimen == 0) {
+                            nプレイヤーc -= xx[0] * 2 / 3;
+                        }
+                        if (nプレイヤーc > 100 && nプレイヤーzimen == 1) {
+                            nプレイヤーc -= xx[0];
+                            if (nプレイヤーzimen == 1) {
+                                nプレイヤーc -= xx[0] * 1 / 2;
+                            }
+                        }
                         nプレイヤーactaon[0] = 3;
                         nプレイヤーkasok += 1;
                     }
@@ -1071,54 +1124,104 @@ namespace SyobonAction
                 {
                     if (!(nプレイヤーzimen == 0 && nプレイヤーc > xx[8]))
                     {
-                        if (nプレイヤーc <= xx[9]) { nプレイヤーc += xx[0]; if (nプレイヤーc > xx[9]) { nプレイヤーc = xx[9] + 1; } }
-                        if (nプレイヤーc > xx[9] && nプレイヤーatktm <= 0) nプレイヤーc += xx[0] / 10;
+                        if (nプレイヤーc <= xx[9]) {
+                            nプレイヤーc += xx[0];
+                            if (nプレイヤーc > xx[9]) {
+                                nプレイヤーc = xx[9] + 1;
+                            }
+                        }
+                        if (nプレイヤーc > xx[9] && nプレイヤーatktm <= 0)
+                        {
+                            nプレイヤーc += xx[0] / 10;
+                        }
                     }
                     if (nプレイヤーrzimen != 1)
                     {
-                        if (nプレイヤーc < -100 && nプレイヤーzimen == 0) { nプレイヤーc += xx[0] * 2 / 3; }
-                        if (nプレイヤーc < -100 && nプレイヤーzimen == 1) { nプレイヤーc += xx[0]; if (nプレイヤーzimen == 1) { nプレイヤーc += xx[0] * 1 / 2; } }
-                        nプレイヤーactaon[0] = 3; nプレイヤーkasok += 1;
+                        if (nプレイヤーc < -100 && nプレイヤーzimen == 0) {
+                            nプレイヤーc += xx[0] * 2 / 3;
+                        }
+                        if (nプレイヤーc < -100 && nプレイヤーzimen == 1) {
+                            nプレイヤーc += xx[0];
+                            if (nプレイヤーzimen == 1) {
+                                nプレイヤーc += xx[0] * 1 / 2;
+                            }
+                        }
+                        nプレイヤーactaon[0] = 3;
+                        nプレイヤーkasok += 1;
                     }
                 }
-                if (nプレイヤーactaon[0] == 0 && nプレイヤーkasok > 0) { nプレイヤーkasok -= 2; }
-                if (nプレイヤーkasok > 8) { nプレイヤーkasok = 8; }
+                if (nプレイヤーactaon[0] == 0 && nプレイヤーkasok > 0) {
+                    nプレイヤーkasok -= 2;
+                }
+                if (nプレイヤーkasok > 8) {
+                    nプレイヤーkasok = 8;
+                }
 
                 //すべり補正初期化
-                if (nプレイヤーzimen != 1) nプレイヤーrzimen = 0;
+                if (nプレイヤーzimen != 1) {
+                    nプレイヤーrzimen = 0;
+                }
 
 
                 //ジャンプ
-                if (nプレイヤーjumptm >= 0) nプレイヤーjumptm--;
+                if (nプレイヤーjumptm >= 0)
+                {
+                    nプレイヤーjumptm--;
+                }
                 if (nプレイヤーactaon[1] == 1 && nプレイヤーzimen == 1)
                 {
-                    nプレイヤーb -= 400; nプレイヤーd = -1200; nプレイヤーjumptm = 10;
+                    nプレイヤーb -= 400;
+                    nプレイヤーd = -1200;
+                    nプレイヤーjumptm = 10;
 
                     v効果音再生(nオーディオ_[1]);
 
                     nプレイヤーzimen = 0;
 
                 }
-                if (nプレイヤーactaon[1] <= 9) nプレイヤーactaon[1] = 0;
+                if (nプレイヤーactaon[1] <= 9)
+                {
+                    nプレイヤーactaon[1] = 0;
+                }
 
-
-                if (nプレイヤーmutekitm >= -1) nプレイヤーmutekitm--;
-
+                if (nプレイヤーmutekitm >= -1)
+                {
+                    nプレイヤーmutekitm--;
+                }
 
                 //HPがなくなったとき
                 if (nプレイヤーhp <= 0 && nプレイヤーhp >= -9)
                 {
-                    nプレイヤーkeytm = 12; nプレイヤーhp = -20; nプレイヤーtype = 200; nプレイヤーtm = 0; v効果音再生(nオーディオ_[12]); DX.StopSoundMem(nオーディオ_[0]); DX.StopSoundMem(nオーディオ_[11]); DX.StopSoundMem(nオーディオ_[16]);
+                    nプレイヤーkeytm = 12;
+                    nプレイヤーhp = -20;
+                    nプレイヤーtype = 200;
+                    nプレイヤーtm = 0;
+                    v効果音再生(nオーディオ_[12]);
+                    DX.StopSoundMem(nオーディオ_[0]);
+                    DX.StopSoundMem(nオーディオ_[11]);
+                    DX.StopSoundMem(nオーディオ_[16]);
                 }//mhp
                 if (nプレイヤーtype == 200)
                 {
-                    if (nプレイヤーtm <= 11) { nプレイヤーc = 0; nプレイヤーd = 0; }
-                    if (nプレイヤーtm == 12) { nプレイヤーd = -1200; }
-                    if (nプレイヤーtm >= 12) { nプレイヤーc = 0; }
-                    if (nプレイヤーtm >= 100 || nクイック == 1) { zxon = 0; main = 10; nプレイヤーtm = 0; nプレイヤーkeytm = 0; nokori--; if (nクイック == 1) nプレイヤーtype = 0; }//mtm>=100
-                }//mtype==200
-
-
+                    if (nプレイヤーtm <= 11) {
+                        nプレイヤーc = 0;
+                        nプレイヤーd = 0;
+                    }
+                    if (nプレイヤーtm == 12) {
+                        nプレイヤーd = -1200;
+                    }
+                    if (nプレイヤーtm >= 12) {
+                        nプレイヤーc = 0;
+                    }
+                    if (nプレイヤーtm >= 100 || nクイック == 1) {
+                        zxon = 0;
+                        main = 10;
+                        nプレイヤーtm = 0;
+                        nプレイヤーkeytm = 0;
+                        nokori--;
+                        if (nクイック == 1) nプレイヤーtype = 0;
+                    }
+                }
 
 
                 //音符によるワープ
@@ -1128,14 +1231,25 @@ namespace SyobonAction
 
                     nプレイヤーkeytm = 2;
                     nプレイヤーd = -1500;
-                    if (nプレイヤーb <= -6000) { blackX = 1; blackTm = 20; nステージc += 5; DX.StopSoundMem(nオーディオ_[0]); nプレイヤーtm = 0; nプレイヤーtype = 0; nプレイヤーkeytm = -1; }
-                }//2
+                    if (nプレイヤーb <= -6000) {
+                        blackX = 1;
+                        blackTm = 20;
+                        nステージc += 5;
+                        DX.StopSoundMem(nオーディオ_[0]);
+                        nプレイヤーtm = 0;
+                        nプレイヤーtype = 0;
+                        nプレイヤーkeytm = -1;
+                    }
+                }
 
                 //ジャンプ台アウト
                 if (nプレイヤーtype == 3)
                 {
                     nプレイヤーd = -2400;
-                    if (nプレイヤーb <= -6000) { nプレイヤーb = -80000000; nプレイヤーhp = 0; }
+                    if (nプレイヤーb <= -6000) {
+                        nプレイヤーb = -80000000;
+                        nプレイヤーhp = 0;
+                    }
                 }
 
 
@@ -1149,10 +1263,22 @@ namespace SyobonAction
                     {
                         if (nプレイヤーxtype == 0)
                         {
-                            nプレイヤーc = 0; nプレイヤーd = 0; t_ = 28;
-                            if (nプレイヤーtm <= 16) { nプレイヤーb += 240; nプレイヤーzz = 100; }
-                            if (nプレイヤーtm == 17) { nプレイヤーb = -80000000; }
-                            if (nプレイヤーtm == 23) { n地面a[t_] -= 100; }
+                            nプレイヤーc = 0;
+                            nプレイヤーd = 0;
+                            t_ = 28;
+                            if (nプレイヤーtm <= 16)
+                            {
+                                nプレイヤーb += 240;
+                                nプレイヤーzz = 100;
+                            }
+                            if (nプレイヤーtm == 17)
+                            {
+                                nプレイヤーb = -80000000;
+                            }
+                            if (nプレイヤーtm == 23)
+                            {
+                                n地面a[t_] -= 100;
+                            }
                             if (nプレイヤーtm >= 44 && nプレイヤーtm <= 60)
                             {
                                 if (nプレイヤーtm % 2 == 0) n地面a[t_] += 200;
@@ -1168,29 +1294,68 @@ namespace SyobonAction
                                 if (nプレイヤーtm % 2 == 0) n地面a[t_] += 600;
                                 if (nプレイヤーtm % 2 == 1) n地面a[t_] -= 600;
                             }
-                            if (nプレイヤーtm >= 110) { n地面b[t_] -= nプレイヤーzz; nプレイヤーzz += 80; if (nプレイヤーzz > 1600) nプレイヤーzz = 1600; }
-                            if (nプレイヤーtm == 160) { nプレイヤーtype = 0; nプレイヤーhp--; }
-
+                            if (nプレイヤーtm >= 110)
+                            {
+                                n地面b[t_] -= nプレイヤーzz;
+                                nプレイヤーzz += 80;
+                                if (nプレイヤーzz > 1600) nプレイヤーzz = 1600;
+                            }
+                            if (nプレイヤーtm == 160)
+                            {
+                                nプレイヤーtype = 0;
+                                nプレイヤーhp--;
+                            }
                         }
 
                         //ふっとばし
                         else if (nプレイヤーxtype == 10)
                         {
                             nプレイヤーc = 0; nプレイヤーd = 0;
-                            if (nプレイヤーtm <= 16) { ma += 240; }//mzz=100;}
+                            if (nプレイヤーtm <= 16)
+                            {
+                                ma += 240;
+                            }
                             if (nプレイヤーtm == 16) nプレイヤーb -= 1100;
                             if (nプレイヤーtm == 20) v効果音再生(nオーディオ_[10]);
 
-                            if (nプレイヤーtm >= 24) { ma -= 2000; nプレイヤーmuki = 0; }
-                            if (nプレイヤーtm >= 48) { nプレイヤーtype = 0; nプレイヤーhp--; }
+                            if (nプレイヤーtm >= 24)
+                            {
+                                ma -= 2000;
+                                nプレイヤーmuki = 0;
+                            }
+                            if (nプレイヤーtm >= 48)
+                            {
+                                nプレイヤーtype = 0;
+                                nプレイヤーhp--;
+                            }
 
                         }
                         else {
                             nプレイヤーc = 0; nプレイヤーd = 0;
-                            if (nプレイヤーtm <= 16 && nプレイヤーxtype != 3) { nプレイヤーb += 240; }//mzz=100;}
-                            if (nプレイヤーtm <= 16 && nプレイヤーxtype == 3) { ma += 240; }
-                            if (nプレイヤーtm == 19 && nプレイヤーxtype == 2) { nプレイヤーhp = 0; nプレイヤーtype = 2000; nプレイヤーtm = 0; nメッセージtm = 30; nメッセージtype = 51; }
-                            if (nプレイヤーtm == 19 && nプレイヤーxtype == 5) { nプレイヤーhp = 0; nプレイヤーtype = 2000; nプレイヤーtm = 0; nメッセージtm = 30; nメッセージtype = 52; }
+                            if (nプレイヤーtm <= 16 && nプレイヤーxtype != 3)
+                            {
+                                nプレイヤーb += 240;
+                            }
+                            if (nプレイヤーtm <= 16 && nプレイヤーxtype == 3)
+                            {
+                                ma += 240;
+                            }
+                            if (nプレイヤーtm == 19 && nプレイヤーxtype == 2)
+                            {
+                                nプレイヤーhp = 0;
+                                nプレイヤーtype = 2000;
+                                nプレイヤーtm = 0;
+                                nメッセージtm = 30;
+                                nメッセージtype = 51;
+                            }
+                            if (nプレイヤーtm == 19 && nプレイヤーxtype == 5)
+                            {
+                                nプレイヤーhp = 0;
+                                nプレイヤーtype = 2000;
+                                nプレイヤーtm = 0;
+                                nメッセージtm = 30;
+                                nメッセージtype = 52;
+                            }
                             if (nプレイヤーtm == 20)
                             {
                                 if (nプレイヤーxtype == 6)
@@ -1207,19 +1372,34 @@ namespace SyobonAction
                                 DX.StopSoundMem(nオーディオ_[0]);
                             }
                         }
-                    }//00
+                    }
 
 
                     if (nプレイヤーtype == 300)
                     {
                         nプレイヤーkeytm = 3;
-                        if (nプレイヤーtm <= 1) { nプレイヤーc = 0; nプレイヤーd = 0; }
-                        if (nプレイヤーtm >= 2 && nプレイヤーtm <= 42) { nプレイヤーd = 600; nプレイヤーmuki = 1; }
-                        if (nプレイヤーtm > 43 && nプレイヤーtm <= 108) { nプレイヤーc = 300; }
-                        if (nプレイヤーtm == 110) { nプレイヤーb = -80000000; nプレイヤーc = 0; }
+                        if (nプレイヤーtm <= 1) {
+                            nプレイヤーc = 0;
+                            nプレイヤーd = 0;
+                        }
+                        if (nプレイヤーtm >= 2 && nプレイヤーtm <= 42) {
+                            nプレイヤーd = 600;
+                            nプレイヤーmuki = 1;
+                        }
+                        if (nプレイヤーtm > 43 && nプレイヤーtm <= 108) {
+                            nプレイヤーc = 300;
+                        }
+                        if (nプレイヤーtm == 110) {
+                            nプレイヤーb = -80000000;
+                            nプレイヤーc = 0;
+                        }
                         if (nプレイヤーtm == 250)
                         {
-                            nステージb++; nステージc = 0; zxon = 0; n中間ゲート = 0; main = 10; maintm = 0;
+                            nステージb++; nステージc = 0;
+                            zxon = 0;
+                            n中間ゲート = 0;
+                            main = 10;
+                            maintm = 0;
                         }
                     }//mtype==300
 
@@ -1227,17 +1407,23 @@ namespace SyobonAction
                     {
                         nプレイヤーkeytm = 3;
 
-                        if (nプレイヤーtm <= 1) { nプレイヤーc = 0; nプレイヤーd = 0; }
+                        if (nプレイヤーtm <= 1) {
+                            nプレイヤーc = 0;
+                            nプレイヤーd = 0;
+                        }
 
                         if (nプレイヤーtm >= 2 && (nプレイヤーtype == 301 && nプレイヤーtm <= 102 || nプレイヤーtype == 302 && nプレイヤーtm <= 60))
                         {
                             xx[5] = 500;
-                            ma -= xx[5]; fx += xx[5]; fzx += xx[5];
+                            ma -= xx[5];
+                            fx += xx[5];
+                            fzx += xx[5];
                         }
 
                         if ((nプレイヤーtype == 301 || nプレイヤーtype == 302) && nプレイヤーtm >= 2 && nプレイヤーtm <= 100)
                         {
-                            nプレイヤーc = 250; nプレイヤーmuki = 1;
+                            nプレイヤーc = 250;
+                            nプレイヤーmuki = 1;
                         }
 
                         if (nプレイヤーtm == 200)
@@ -1245,8 +1431,17 @@ namespace SyobonAction
                             v効果音再生(nオーディオ_[17]);
                             if (nプレイヤーtype == 301)
                             {
-                                n背景a[n背景co] = 117 * 29 * 100 - 1100; n背景b[n背景co] = 4 * 29 * 100; n背景type[n背景co] = 101; n背景co++; if (n背景co >= n背景max) n背景co = 0;
-                                n背景a[n背景co] = 115 * 29 * 100 - 1100; n背景b[n背景co] = 6 * 29 * 100; n背景type[n背景co] = 102; n背景co++; if (n背景co >= n背景max) n背景co = 0;
+                                n背景a[n背景co] = 117 * 29 * 100 - 1100;
+                                n背景b[n背景co] = 4 * 29 * 100;
+                                n背景type[n背景co] = 101;
+                                n背景co++;
+                                if (n背景co >= n背景max) n背景co = 0;
+
+                                n背景a[n背景co] = 115 * 29 * 100 - 1100;
+                                n背景b[n背景co] = 6 * 29 * 100;
+                                n背景type[n背景co] = 102;
+                                n背景co++;
+                                if (n背景co >= n背景max) n背景co = 0;
                             }
                             else {
                                 n背景a[n背景co] = 157 * 29 * 100 - 1100; n背景b[n背景co] = 4 * 29 * 100; n背景type[n背景co] = 101; n背景co++; if (n背景co >= n背景max) n背景co = 0;
@@ -1262,19 +1457,25 @@ namespace SyobonAction
                                 nスタッフロール = 1;
                             }
                             else {
-                                nステージa++; nステージb = 1; nステージc = 0; zxon = 0; n中間ゲート = 0; main = 10; maintm = 0;
+                                nステージa++;
+                                nステージb = 1;
+                                nステージc = 0;
+                                zxon = 0;
+                                n中間ゲート = 0;
+                                main = 10;
+                                maintm = 0;
                             }
                         }
-                    }//mtype==301
-
-                }//mtype>=100
-
-
-
+                    }
+                }
 
                 //移動
-                if (nプレイヤーkeytm >= 1) { nプレイヤーkeytm--; }//mc=0;}
-                ma += nプレイヤーc; nプレイヤーb += nプレイヤーd;
+                if (nプレイヤーkeytm >= 1) {
+                    nプレイヤーkeytm--;
+                }
+                ma += nプレイヤーc;
+                nプレイヤーb += nプレイヤーd;
+
                 if (nプレイヤーc < 0) nプレイヤーactp += (-nプレイヤーc);
                 if (nプレイヤーc >= 0) nプレイヤーactp += nプレイヤーc;
 
@@ -1329,13 +1530,8 @@ namespace SyobonAction
                 if (nプレイヤーb >= 52000 && nプレイヤーhp >= 0) { nプレイヤーhp = -2; }
 
 
-
-
-
-
                 //ブロック
                 //1-れんが、コイン、無し、土台、7-隠し
-
                 xx[15] = 0;
                 for (t_ = 0; t_ < nブロックmax; t_++)
                 {
@@ -3033,17 +3229,13 @@ namespace SyobonAction
                         //上
                         if (nブロックtype[tt_] != 7)
                         {
-                            //if (ttype[tt]==117 && txtype[t]==1){ad[t]=-1500;}
                             if (!(nブロックtype[tt_] == 117))
                             {
-                                //if (!(ttype[tt]==120 && txtype[t]==0)){
                                 if (n敵キャラa[t_] + n敵キャラnobia[t_] - fx > xx[8] + xx[0] && n敵キャラa[t_] - fx < xx[8] + xx[1] - xx[0] * 1 && n敵キャラb[t_] + n敵キャラnobib[t_] - fy > xx[9] && n敵キャラb[t_] + n敵キャラnobib[t_] - fy < xx[9] + xx[1] && n敵キャラd[t_] >= -100)
                                 {
                                     n敵キャラb[t_] = xx[9] - n敵キャラnobib[t_] + 100 + fy; n敵キャラd[t_] = 0; n敵キャラxzimen[t_] = 1;
                                     //ジャンプ台
                                     if (nブロックtype[tt_] == 120) { n敵キャラd[t_] = -1600; n敵キャラzimentype[t_] = 30; }
-                                    //}
-
                                 }
                             }
                         }
@@ -3107,8 +3299,8 @@ namespace SyobonAction
                         nリフトacttype[20] = 1; nリフトon[20] = 1;
                     }
                 }
-            }//tt
+            }
 
-        }//tekizimen
+        }
     }
 }
