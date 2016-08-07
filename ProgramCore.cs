@@ -33,7 +33,7 @@ namespace SyobonAction
             DXDraw.DrawBox塗り潰し(0, 0, n画面幅, n画面高さ);
 
 
-            if (main == 1 && zxon >= 1)
+            if (e現在の画面 == E画面.Game && zxon >= 1)
             {
                 DrawBack();
 
@@ -80,13 +80,13 @@ namespace SyobonAction
             }
 
             //スタッフロール
-            if (main == 2)
+            if (e現在の画面 == E画面.Ending)
             {
                 Drawスタッフロール();
             }
 
             //機数表示
-            if (main == 10)
+            if (e現在の画面 == E画面.機数表示)
             {
 
                 Draw機数表示();
@@ -94,7 +94,7 @@ namespace SyobonAction
 
 
             //タイトル
-            if (main == 100)
+            if (e現在の画面 == E画面.Title)
             {
                 Drawタイトル();
 
@@ -109,9 +109,9 @@ namespace SyobonAction
             nタイマー測定 = DX.GetNowCount();
 
 
-            if (nスタッフロール == 1) main = 2;
+            if (nスタッフロール == 1) e現在の画面 = E画面.Ending;
 
-            if (main == 1 && nメッセージブロックtype == 0)
+            if (e現在の画面 == E画面.Game && nメッセージブロックtype == 0)
             {
                 if (zxon == 0)
                 {
@@ -227,22 +227,26 @@ namespace SyobonAction
 
 
             //スタッフロール
-            if (main == 2)
+            if (e現在の画面 == E画面.Ending)
             {
                 Updateスタッフロール();
 
             }//main==2
 
-            if (main == 10)
+            if (e現在の画面 == E画面.機数表示)
             {
                 maintm++;
 
                 if (nクイック == 1) maintm += 2;
-                if (maintm >= 30) { maintm = 0; main = 1; zxon = 0; }
+                if (maintm >= 30) {
+                    maintm = 0;
+                    e現在の画面 = E画面.Game;
+                    zxon = 0;
+                }
             }//if (main==10){
 
             //タイトル
-            if (main == 100)
+            if (e現在の画面 == E画面.Title)
             {
                 Updateタイトル();
 

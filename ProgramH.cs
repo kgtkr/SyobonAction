@@ -13,7 +13,17 @@ namespace SyobonAction
         //プログラム中
         //main-10
         //タイトル-100
-        static int main = 100, maintm = 0;
+        static E画面 e現在の画面 = E画面.Title;
+        static int maintm = 0;
+
+        enum E画面
+        {
+            Game=1,
+            Title=100,
+            Ending=2,
+            機数表示=10,
+
+        }
 
         //ステージ
         static int nステージ色 = 0;

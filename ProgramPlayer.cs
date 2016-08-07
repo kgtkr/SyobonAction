@@ -35,7 +35,7 @@ namespace SyobonAction
 
             if (Key.GetKey(DX.KEY_INPUT_F1))
             {
-                main = 100;
+                e現在の画面 = E画面.Title;
             }
             if (Key.GetKey(DX.KEY_INPUT_O))
             {
@@ -248,7 +248,7 @@ namespace SyobonAction
                 if (nプレイヤーtm >= 100 || nクイック == 1)
                 {
                     zxon = 0;
-                    main = 10;
+                    e現在の画面 = E画面.機数表示;
                     nプレイヤーtm = 0;
                     nプレイヤーkeytm = 0;
                     nokori--;
@@ -437,7 +437,7 @@ namespace SyobonAction
                         nステージb++; nステージc = 0;
                         zxon = 0;
                         n中間ゲート = 0;
-                        main = 10;
+                        e現在の画面 = E画面.機数表示;
                         maintm = 0;
                     }
                 }//mtype==300
@@ -502,7 +502,7 @@ namespace SyobonAction
                             nステージc = 0;
                             zxon = 0;
                             n中間ゲート = 0;
-                            main = 10;
+                            e現在の画面 = E画面.機数表示;
                             maintm = 0;
                         }
                     }

@@ -63,7 +63,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Program2.cs" />
     <Compile Include="ProgramCore.cs" />
-    <Compile Include="Program3.cs" />
+    <Compile Include="ProgramH.cs" />
     <Compile Include="ProgramMsg.cs" />
     <Compile Include="ProgramMsgBlock.cs" />
     <Compile Include="ProgramPlayer.cs" />

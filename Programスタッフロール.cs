@@ -75,7 +75,7 @@ namespace SyobonAction
             for (t_ = 0; t_ <= xx[7]; t_ += 1) { xx[12 + t_] -= 100; }//t
 
             if (xx[30] == -200) { bgmChange(nオーディオ_[106]); }
-            if (xx[30] <= -400) { main = 100; nokori = 2; maintm = 0; nスタッフロール = 0; }
+            if (xx[30] <= -400) { e現在の画面 = E画面.Title; nokori = 2; maintm = 0; nスタッフロール = 0; }
         }
     }
 }
