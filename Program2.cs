@@ -22,8 +22,8 @@ namespace SyobonAction
                 nb[t] = 1;
                 nc[t] = 1;
                 nd[t] = 1;
-                ne[t] = 1;
-                nf[t] = 1;
+                n背景サイズW[t] = 1;
+                n背景サイズH[t] = 1;
                 ng[t] = 0;
                 ntype[t] = 0;
             }
@@ -174,7 +174,7 @@ namespace SyobonAction
 
                 //マリ　地上　入れ
                 //StopSoundMem(oto[0]);
-                bgmchange(oto[100]);
+                bgmchange(nオーディオ[100]);
                 //PlaySoundMem(oto[0],DX_PLAYTYPE_LOOP) ;
 
                 scrollx = 0 * 100;
@@ -218,7 +218,7 @@ namespace SyobonAction
             {
 
                 //マリ　地下　入れ
-                bgmchange(oto[103]);
+                bgmchange(nオーディオ[103]);
 
                 scrollx = 4080 * 100;
                 ma = 6000; mb = 3000;
@@ -332,7 +332,7 @@ namespace SyobonAction
 
                 //マリ　地上　入れ
                 //StopSoundMem(oto[0]);
-                bgmchange(oto[100]);
+                bgmchange(nオーディオ[100]);
                 //PlaySoundMem(oto[0],DX_PLAYTYPE_LOOP) ;
 
                 scrollx = 900 * 100;
@@ -381,7 +381,7 @@ namespace SyobonAction
             {
 
                 //StopSoundMem(oto[0]);
-                bgmchange(oto[100]);
+                bgmchange(nオーディオ[100]);
                 //PlaySoundMem(oto[0],DX_PLAYTYPE_LOOP) ;
 
                 scrollx = 3900 * 100;
@@ -486,7 +486,7 @@ namespace SyobonAction
 
                 //マリ　地上　入れ
                 //StopSoundMem(oto[0]);
-                bgmchange(oto[103]);
+                bgmchange(nオーディオ[103]);
                 //PlaySoundMem(oto[0],DX_PLAYTYPE_LOOP) ;
 
                 scrollx = 0 * 100;
@@ -521,7 +521,7 @@ namespace SyobonAction
 
                 stagecolor = 3;
 
-                bgmchange(oto[104]);
+                bgmchange(nオーディオ[104]);
 
                 scrollx = 0 * 100;
                 ma = 3000; mb = 33000;
@@ -562,7 +562,7 @@ namespace SyobonAction
 
                 //マリ　地上　入れ
                 //StopSoundMem(oto[0]);
-                bgmchange(oto[105]);
+                bgmchange(nオーディオ[105]);
                 //PlaySoundMem(oto[0],DX_PLAYTYPE_LOOP) ;
 
                 scrollx = 4400 * 100;
@@ -686,7 +686,7 @@ namespace SyobonAction
                 ma = 5600;
                 mb = 32000;
 
-                bgmchange(oto[100]);
+                bgmchange(nオーディオ[100]);
                 stagecolor = 1;
                 scrollx = 2900 * (113 - 19);
                 //
@@ -809,7 +809,7 @@ namespace SyobonAction
             if (sta == 2 && stb == 2 && stc == 0)
             {//2-2(地上)
 
-                bgmchange(oto[100]);
+                bgmchange(nオーディオ[100]);
                 stagecolor = 1;
                 scrollx = 2900 * (19 - 19);
                 //
@@ -859,7 +859,7 @@ namespace SyobonAction
             if (sta == 2 && stb == 2 && stc == 1)
             {//2-2(地下)
 
-                bgmchange(oto[103]);
+                bgmchange(nオーディオ[103]);
                 stagecolor = 2;
                 ma = 7500; mb = 9000;
                 scrollx = 2900 * (137 - 19);
@@ -1069,7 +1069,7 @@ namespace SyobonAction
             if (sta == 2 && stb == 2 && stc == 2)
             {// 2-2 地上
              //
-                bgmchange(oto[100]);
+                bgmchange(nオーディオ[100]);
                 stagecolor = 1;
                 scrollx = 2900 * (36 - 19);
                 ma = 7500;
@@ -1164,7 +1164,7 @@ namespace SyobonAction
                 ma = 7500;
                 mb = 3000 * 8;
 
-                bgmchange(oto[100]);
+                bgmchange(nオーディオ[100]);
                 stagecolor = 1;
                 scrollx = 2900 * (126 - 19);
                 //
@@ -1285,7 +1285,7 @@ namespace SyobonAction
                     stc = 0;
                 }
 
-                bgmchange(oto[105]);
+                bgmchange(nオーディオ[105]);
                 stagecolor = 4;
                 scrollx = 2900 * (40 - 19);
                 //
@@ -1369,7 +1369,7 @@ namespace SyobonAction
                 ma = 4500;
                 mb = 3000 * 11;
 
-                bgmchange(oto[105]);
+                bgmchange(nオーディオ[105]);
                 stagecolor = 4;
                 scrollx = 2900 * (21 - 19);
                 //
@@ -1438,7 +1438,7 @@ namespace SyobonAction
                 ma = 4500;
                 mb = 3000 * 11;
 
-                bgmchange(oto[105]);
+                bgmchange(nオーディオ[105]);
                 stagecolor = 4;
                 scrollx = 2900 * (128 - 19);
                 //
@@ -1678,7 +1678,7 @@ namespace SyobonAction
                 ma = 5600;
                 mb = 32000;
 
-                bgmchange(oto[100]);
+                bgmchange(nオーディオ[100]);
                 stagecolor = 5;
                 scrollx = 2900 * (112 - 19);
                 byte[][] stagedatex = stagedatex17;

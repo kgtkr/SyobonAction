@@ -43,7 +43,7 @@ namespace SyobonAction
                 for (t = 0; t < nmax; t++)
                 {
                     xx[0] = na[t] - fx; xx[1] = nb[t] - fy;
-                    xx[2] = ne[ntype[t]] * 100; xx[3] = nf[ntype[t]] * 100;
+                    xx[2] = n背景サイズW[ntype[t]] * 100; xx[3] = n背景サイズH[ntype[t]] * 100;
                     xx[2] = 16000; xx[3] = 16000;
 
                     if (xx[0] + xx[2] >= -10 && xx[0] <= fxmax && xx[1] + xx[3] >= -10 && xx[3] <= fymax)
@@ -53,14 +53,14 @@ namespace SyobonAction
                         {
                             if ((ntype[t] == 1 || ntype[t] == 2) && stagecolor == 5)
                             {
-                                drawimage(grap[ntype[t] + 30, 4], xx[0] / 100, xx[1] / 100);
+                                drawimage(n切り取り画像[ntype[t] + 30, 4], xx[0] / 100, xx[1] / 100);
                             }
                             else {
-                                drawimage(grap[ntype[t], 4], xx[0] / 100, xx[1] / 100);
+                                drawimage(n切り取り画像[ntype[t], 4], xx[0] / 100, xx[1] / 100);
                             }
                         }
                         if (ntype[t] == 3)
-                            drawimage(grap[ntype[t], 4], xx[0] / 100 - 5, xx[1] / 100);
+                            drawimage(n切り取り画像[ntype[t], 4], xx[0] / 100 - 5, xx[1] / 100);
 
                         //51
                         if (ntype[t] == 100)
@@ -88,7 +88,7 @@ namespace SyobonAction
 
                         //コイン
                         if (egtype[t] == 0)
-                            drawimage(grap[0, 2], xx[0] / 100, xx[1] / 100);
+                            drawimage(n切り取り画像[0, 2], xx[0] / 100, xx[1] / 100);
 
                         //ブロックの破片
                         if (egtype[t] == 1)
@@ -106,7 +106,7 @@ namespace SyobonAction
                         if (egtype[t] == 2 || egtype[t] == 3)
                         {
                             if (egtype[t] == 3) mirror = 1;
-                            drawimage(grap[0, 5], xx[0] / 100, xx[1] / 100);
+                            drawimage(n切り取り画像[0, 5], xx[0] / 100, xx[1] / 100);
                             mirror = 0;
                         }
 
@@ -167,7 +167,7 @@ namespace SyobonAction
                         {
                             for (t2 = 0; t2 <= 2; t2++)
                             {
-                                xx[6] = 1 + 0; drawimage(grap[xx[6], 1], (sra[t] - fx) / 100 + t2 * 29, (srb[t] - fy) / 100);
+                                xx[6] = 1 + 0; drawimage(n切り取り画像[xx[6], 1], (sra[t] - fx) / 100 + t2 * 29, (srb[t] - fy) / 100);
                             }
                         }//15
                     }
@@ -187,23 +187,23 @@ namespace SyobonAction
                     {
                         // 読みこんだグラフィックを拡大描画
                         //DrawExtendGraph(ma/100,mb/100,ma/100+100,mb/100+100,grap[0][0], TRUE ) ;
-                        if (mact == 0) drawimage(grap[0, 0], ma / 100, mb / 100);
-                        if (mact == 1) drawimage(grap[1, 0], ma / 100, mb / 100);
+                        if (mact == 0) drawimage(n切り取り画像[0, 0], ma / 100, mb / 100);
+                        if (mact == 1) drawimage(n切り取り画像[1, 0], ma / 100, mb / 100);
                     }
                     if (mzimen == 0)
                     {
-                        drawimage(grap[2, 0], ma / 100, mb / 100);
+                        drawimage(n切り取り画像[2, 0], ma / 100, mb / 100);
                     }
                 }
                 //巨大化
                 else if (mtype == 1)
                 {
-                    drawimage(grap[41, 0], ma / 100, mb / 100);
+                    drawimage(n切り取り画像[41, 0], ma / 100, mb / 100);
                 }
 
                 else if (mtype == 200)
                 {
-                    drawimage(grap[3, 0], ma / 100, mb / 100);
+                    drawimage(n切り取り画像[3, 0], ma / 100, mb / 100);
                 }
 
                 mirror = 0;
@@ -217,8 +217,8 @@ namespace SyobonAction
                     {
                         //if (atype[t]>=100)amuki[t]=0;
                         if (amuki[t] == 1) { mirror = 1; }
-                        if (atype[t] == 3 && axtype[t] == 1) { DX.DrawRotaGraph(xx[0] / 100 + 13, xx[1] / 100 + 15, 1.0f, pai / 1, grap[atype[t], 3], DX.TRUE); xx[16] = 1; }
-                        if (atype[t] == 9 && ad[t] >= 1) { DX.DrawRotaGraph(xx[0] / 100 + 13, xx[1] / 100 + 15, 1.0f, pai / 1, grap[atype[t], 3], DX.TRUE); xx[16] = 1; }
+                        if (atype[t] == 3 && axtype[t] == 1) { DX.DrawRotaGraph(xx[0] / 100 + 13, xx[1] / 100 + 15, 1.0f, pai / 1, n切り取り画像[atype[t], 3], DX.TRUE); xx[16] = 1; }
+                        if (atype[t] == 9 && ad[t] >= 1) { DX.DrawRotaGraph(xx[0] / 100 + 13, xx[1] / 100 + 15, 1.0f, pai / 1, n切り取り画像[atype[t], 3], DX.TRUE); xx[16] = 1; }
                         if (atype[t] >= 100 && amuki[t] == 1) mirror = 0;
 
                         //メイン
@@ -226,7 +226,7 @@ namespace SyobonAction
                         {
                             if (!((atype[t] == 80 || atype[t] == 81) && axtype[t] == 1))
                             {
-                                drawimage(grap[atype[t], 3], xx[0] / 100, xx[1] / 100);
+                                drawimage(n切り取り画像[atype[t], 3], xx[0] / 100, xx[1] / 100);
                             }
                         }
 
@@ -236,18 +236,18 @@ namespace SyobonAction
                         {
                             if (atm[t] >= 10 && atm[t] <= 19 || atm[t] >= 100 && atm[t] <= 119 || atm[t] >= 200)
                             {
-                                drawimage(grap[150, 3], xx[0] / 100, xx[1] / 100);
+                                drawimage(n切り取り画像[150, 3], xx[0] / 100, xx[1] / 100);
                             }
                             else {
-                                drawimage(grap[6, 3], xx[0] / 100, xx[1] / 100);
+                                drawimage(n切り取り画像[6, 3], xx[0] / 100, xx[1] / 100);
                             }
                         }
 
                         //モララー
                         if (atype[t] == 30)
                         {
-                            if (axtype[t] == 0) drawimage(grap[30, 3], xx[0] / 100, xx[1] / 100);
-                            if (axtype[t] == 1) drawimage(grap[155, 3], xx[0] / 100, xx[1] / 100);
+                            if (axtype[t] == 0) drawimage(n切り取り画像[30, 3], xx[0] / 100, xx[1] / 100);
+                            if (axtype[t] == 1) drawimage(n切り取り画像[155, 3], xx[0] / 100, xx[1] / 100);
                         }
 
 
@@ -255,7 +255,7 @@ namespace SyobonAction
                         //ステルス雲
                         if ((atype[t] == 81) && axtype[t] == 1)
                         {
-                            drawimage(grap[130, 3], xx[0] / 100, xx[1] / 100);
+                            drawimage(n切り取り画像[130, 3], xx[0] / 100, xx[1] / 100);
                         }
 
                         if (atype[t] == 79)
@@ -274,7 +274,7 @@ namespace SyobonAction
                                 xx[9] = 0; if (stagecolor == 2) { xx[9] = 30; }
                                 if (stagecolor == 4) { xx[9] = 60; }
                                 if (stagecolor == 5) { xx[9] = 90; }
-                                xx[6] = 5 + xx[9]; drawimage(grap[xx[6], 1], xx[0] / 100, xx[1] / 100);
+                                xx[6] = 5 + xx[9]; drawimage(n切り取り画像[xx[6], 1], xx[0] / 100, xx[1] / 100);
                             }
 
                             if (axtype[t] == 1)
@@ -282,12 +282,12 @@ namespace SyobonAction
                                 xx[9] = 0; if (stagecolor == 2) { xx[9] = 30; }
                                 if (stagecolor == 4) { xx[9] = 60; }
                                 if (stagecolor == 5) { xx[9] = 90; }
-                                xx[6] = 4 + xx[9]; drawimage(grap[xx[6], 1], xx[0] / 100, xx[1] / 100);
+                                xx[6] = 4 + xx[9]; drawimage(n切り取り画像[xx[6], 1], xx[0] / 100, xx[1] / 100);
                             }
 
                             if (axtype[t] == 2)
                             {
-                                drawimage(grap[1, 5], xx[0] / 100, xx[1] / 100);
+                                drawimage(n切り取り画像[1, 5], xx[0] / 100, xx[1] / 100);
                             }
 
                         }
@@ -299,7 +299,7 @@ namespace SyobonAction
                                 xx[9] = 0; if (stagecolor == 2) { xx[9] = 30; }
                                 if (stagecolor == 4) { xx[9] = 60; }
                                 if (stagecolor == 5) { xx[9] = 90; }
-                                xx[6] = 5 + xx[9]; drawimage(grap[xx[6], 1], xx[0] / 100 + 10, xx[1] / 100 + 9);
+                                xx[6] = 5 + xx[9]; drawimage(n切り取り画像[xx[6], 1], xx[0] / 100 + 10, xx[1] / 100 + 9);
                             }
 
                             if (axtype[t] == 1)
@@ -307,7 +307,7 @@ namespace SyobonAction
                                 xx[9] = 0; if (stagecolor == 2) { xx[9] = 30; }
                                 if (stagecolor == 4) { xx[9] = 60; }
                                 if (stagecolor == 5) { xx[9] = 90; }
-                                xx[6] = 4 + xx[9]; drawimage(grap[xx[6], 1], xx[0] / 100 + 10, xx[1] / 100 + 9);
+                                xx[6] = 4 + xx[9]; drawimage(n切り取り画像[xx[6], 1], xx[0] / 100 + 10, xx[1] / 100 + 9);
                             }
 
                         }
@@ -332,10 +332,10 @@ namespace SyobonAction
                         {
                             if (ma >= aa[t] - fx - mnobia - 4000 && ma <= aa[t] - fx + anobia[t] + 4000)
                             {
-                                drawimage(grap[152, 3], xx[0] / 100, xx[1] / 100);
+                                drawimage(n切り取り画像[152, 3], xx[0] / 100, xx[1] / 100);
                             }
                             else {
-                                drawimage(grap[86, 3], xx[0] / 100, xx[1] / 100);
+                                drawimage(n切り取り画像[86, 3], xx[0] / 100, xx[1] / 100);
                             }
                         }
 
@@ -343,7 +343,7 @@ namespace SyobonAction
 
 
                         if (atype[t] == 200)
-                            drawimage(grap[0, 3], xx[0] / 100, xx[1] / 100);
+                            drawimage(n切り取り画像[0, 3], xx[0] / 100, xx[1] / 100);
 
 
                         mirror = 0;
@@ -368,7 +368,7 @@ namespace SyobonAction
 
                         if (ttype[t] < 100)
                         {
-                            xx[6] = ttype[t] + xx[9]; drawimage(grap[xx[6], 1], xx[0] / 100, xx[1] / 100);
+                            xx[6] = ttype[t] + xx[9]; drawimage(n切り取り画像[xx[6], 1], xx[0] / 100, xx[1] / 100);
                         }
 
                         if (txtype[t] != 10)
@@ -376,59 +376,59 @@ namespace SyobonAction
 
                             if (ttype[t] == 100 || ttype[t] == 101 || ttype[t] == 102 || ttype[t] == 103 || ttype[t] == 104 && txtype[t] == 1 || ttype[t] == 114 && txtype[t] == 1 || ttype[t] == 116)
                             {
-                                xx[6] = 2 + xx[9]; drawimage(grap[xx[6], 1], xx[0] / 100, xx[1] / 100);
+                                xx[6] = 2 + xx[9]; drawimage(n切り取り画像[xx[6], 1], xx[0] / 100, xx[1] / 100);
                             }
 
                             if (ttype[t] == 112 || ttype[t] == 104 && txtype[t] == 0 || ttype[t] == 115 && txtype[t] == 1)
                             {
-                                xx[6] = 1 + xx[9]; drawimage(grap[xx[6], 1], xx[0] / 100, xx[1] / 100);
+                                xx[6] = 1 + xx[9]; drawimage(n切り取り画像[xx[6], 1], xx[0] / 100, xx[1] / 100);
                             }
 
                             if (ttype[t] == 111 || ttype[t] == 113 || ttype[t] == 115 && txtype[t] == 0 || ttype[t] == 124)
                             {
-                                xx[6] = 3 + xx[9]; drawimage(grap[xx[6], 1], xx[0] / 100, xx[1] / 100);
+                                xx[6] = 3 + xx[9]; drawimage(n切り取り画像[xx[6], 1], xx[0] / 100, xx[1] / 100);
                             }
 
                         }
 
                         if (ttype[t] == 117 && txtype[t] == 1)
                         {
-                            drawimage(grap[4, 5], xx[0] / 100, xx[1] / 100);
+                            drawimage(n切り取り画像[4, 5], xx[0] / 100, xx[1] / 100);
                         }
 
                         if (ttype[t] == 117 && txtype[t] >= 3)
                         {
-                            drawimage(grap[3, 5], xx[0] / 100, xx[1] / 100);
+                            drawimage(n切り取り画像[3, 5], xx[0] / 100, xx[1] / 100);
                         }
 
                         if (ttype[t] == 115 && txtype[t] == 3)
                         {
-                            xx[6] = 1 + xx[9]; drawimage(grap[xx[6], 1], xx[0] / 100, xx[1] / 100);
+                            xx[6] = 1 + xx[9]; drawimage(n切り取り画像[xx[6], 1], xx[0] / 100, xx[1] / 100);
                         }
 
                         //ジャンプ台
                         if (ttype[t] == 120 && txtype[t] != 1)
                         {
-                            drawimage(grap[16, 1], xx[0] / 100 + 3, xx[1] / 100 + 2);
+                            drawimage(n切り取り画像[16, 1], xx[0] / 100 + 3, xx[1] / 100 + 2);
                         }
 
                         //ON-OFF
-                        if (ttype[t] == 130) drawimage(grap[10, 5], xx[0] / 100, xx[1] / 100);
-                        if (ttype[t] == 131) drawimage(grap[11, 5], xx[0] / 100, xx[1] / 100);
+                        if (ttype[t] == 130) drawimage(n切り取り画像[10, 5], xx[0] / 100, xx[1] / 100);
+                        if (ttype[t] == 131) drawimage(n切り取り画像[11, 5], xx[0] / 100, xx[1] / 100);
 
-                        if (ttype[t] == 140) drawimage(grap[12, 5], xx[0] / 100, xx[1] / 100);
-                        if (ttype[t] == 141) drawimage(grap[13, 5], xx[0] / 100, xx[1] / 100);
-                        if (ttype[t] == 142) drawimage(grap[14, 5], xx[0] / 100, xx[1] / 100);
+                        if (ttype[t] == 140) drawimage(n切り取り画像[12, 5], xx[0] / 100, xx[1] / 100);
+                        if (ttype[t] == 141) drawimage(n切り取り画像[13, 5], xx[0] / 100, xx[1] / 100);
+                        if (ttype[t] == 142) drawimage(n切り取り画像[14, 5], xx[0] / 100, xx[1] / 100);
 
 
                         if (ttype[t] == 300 || ttype[t] == 301)
-                            drawimage(grap[1, 5], xx[0] / 100, xx[1] / 100);
+                            drawimage(n切り取り画像[1, 5], xx[0] / 100, xx[1] / 100);
 
                         //Pスイッチ
-                        if (ttype[t] == 400) { drawimage(grap[2, 5], xx[0] / 100, xx[1] / 100); }
+                        if (ttype[t] == 400) { drawimage(n切り取り画像[2, 5], xx[0] / 100, xx[1] / 100); }
 
                         //コイン
-                        if (ttype[t] == 800) { drawimage(grap[0, 2], xx[0] / 100 + 2, xx[1] / 100 + 1); }
+                        if (ttype[t] == 800) { drawimage(n切り取り画像[0, 2], xx[0] / 100 + 2, xx[1] / 100 + 1); }
 
                         //if (stagecolor==1)t-=30;
                     }
@@ -483,14 +483,14 @@ namespace SyobonAction
                             {
                                 for (t3 = 0; t3 <= sc[t] / 3000; t3++)
                                 {
-                                    drawimage(grap[1, 1], (sa[t] - fx) / 100 + fma + 29 * t3, (sb[t] - fy) / 100 + fmb);
+                                    drawimage(n切り取り画像[1, 1], (sa[t] - fx) / 100 + fma + 29 * t3, (sb[t] - fy) / 100 + fmb);
                                 }
                             }
                             if (sxtype[t] == 1 || sxtype[t] == 2)
                             {
                                 for (t3 = 0; t3 <= sc[t] / 3000; t3++)
                                 {
-                                    drawimage(grap[31, 1], (sa[t] - fx) / 100 + fma + 29 * t3, (sb[t] - fy) / 100 + fmb);
+                                    drawimage(n切り取り画像[31, 1], (sa[t] - fx) / 100 + fma + 29 * t3, (sb[t] - fy) / 100 + fmb);
                                 }
                             }
                             if (sxtype[t] == 3 || sxtype[t] == 4)
@@ -499,7 +499,7 @@ namespace SyobonAction
                                 {
                                     for (t2 = 0; t2 <= sd[t] / 3000; t2++)
                                     {
-                                        drawimage(grap[65, 1], (sa[t] - fx) / 100 + fma + 29 * t3, (sb[t] - fy) / 100 + 29 * t2 + fmb);
+                                        drawimage(n切り取り画像[65, 1], (sa[t] - fx) / 100 + fma + 29 * t3, (sb[t] - fy) / 100 + 29 * t2 + fmb);
                                     }
                                 }
                             }
@@ -508,7 +508,7 @@ namespace SyobonAction
                             {
                                 for (t3 = 0; t3 <= sc[t] / 3000; t3++)
                                 {
-                                    drawimage(grap[65, 1], (sa[t] - fx) / 100 + fma + 29 * t3, (sb[t] - fy) / 100 + fmb);
+                                    drawimage(n切り取り画像[65, 1], (sa[t] - fx) / 100 + fma + 29 * t3, (sb[t] - fy) / 100 + fmb);
                                 }
                             }
 
@@ -526,15 +526,15 @@ namespace SyobonAction
                             {
                                 if (sxtype[t] == 0)
                                 {
-                                    drawimage(grap[5 + xx[29], 1], (sa[t] - fx) / 100 + fma + 29 * t3, (sb[t] - fy) / 100 + fmb);
-                                    if (stagecolor != 4) { drawimage(grap[6 + xx[29], 1], (sa[t] - fx) / 100 + fma + 29 * t3, (sb[t] - fy) / 100 + fmb + 29); }
-                                    else { drawimage(grap[5 + xx[29], 1], (sa[t] - fx) / 100 + fma + 29 * t3, (sb[t] - fy) / 100 + fmb + 29); }
+                                    drawimage(n切り取り画像[5 + xx[29], 1], (sa[t] - fx) / 100 + fma + 29 * t3, (sb[t] - fy) / 100 + fmb);
+                                    if (stagecolor != 4) { drawimage(n切り取り画像[6 + xx[29], 1], (sa[t] - fx) / 100 + fma + 29 * t3, (sb[t] - fy) / 100 + fmb + 29); }
+                                    else { drawimage(n切り取り画像[5 + xx[29], 1], (sa[t] - fx) / 100 + fma + 29 * t3, (sb[t] - fy) / 100 + fmb + 29); }
                                 }
                                 if (sxtype[t] == 1)
                                 {
                                     for (t2 = 0; t2 <= sd[t] / 3000; t2++)
                                     {
-                                        drawimage(grap[1 + xx[29], 1], (sa[t] - fx) / 100 + fma + 29 * t3, (sb[t] - fy) / 100 + fmb + 29 * t2);
+                                        drawimage(n切り取り画像[1 + xx[29], 1], (sa[t] - fx) / 100 + fma + 29 * t3, (sb[t] - fy) / 100 + fmb + 29 * t2);
                                     }
                                 }
 
@@ -542,7 +542,7 @@ namespace SyobonAction
                                 {
                                     for (t2 = 0; t2 <= sd[t] / 3000; t2++)
                                     {
-                                        drawimage(grap[5 + xx[29], 1], (sa[t] - fx) / 100 + fma + 29 * t3, (sb[t] - fy) / 100 + fmb + 29 * t2);
+                                        drawimage(n切り取り画像[5 + xx[29], 1], (sa[t] - fx) / 100 + fma + 29 * t3, (sb[t] - fy) / 100 + fmb + 29 * t2);
                                     }
                                 }
 
@@ -577,7 +577,7 @@ namespace SyobonAction
                         //中間
                         if (stype[t] == 500)
                         {
-                            drawimage(grap[20, 4], (sa[t] - fx) / 100, (sb[t] - fy) / 100);
+                            drawimage(n切り取り画像[20, 4], (sa[t] - fx) / 100, (sb[t] - fy) / 100);
                         }
                     }
                 }//t
@@ -620,7 +620,7 @@ namespace SyobonAction
                             {
                                 for (t2 = 0; t2 <= sd[t] / 3000; t2++)
                                 {
-                                    drawimage(grap[65, 1], (sa[t] - fx) / 100 + fma + 29 * t3, (sb[t] - fy) / 100 + 29 * t2 + fmb);
+                                    drawimage(n切り取り画像[65, 1], (sa[t] - fx) / 100 + fma + 29 * t3, (sb[t] - fy) / 100 + 29 * t2 + fmb);
                                 }
                             }
                         }
@@ -879,7 +879,7 @@ namespace SyobonAction
                 DX.SetFontSize(16);
                 DX.SetFontThickness(4);
 
-                drawimage(grap[0, 0], 190, 190);
+                drawimage(n切り取り画像[0, 0], 190, 190);
                 DX.DrawString(230, 200, " × " + nokori, DX.GetColor(255, 255, 255));
 
 
@@ -893,17 +893,17 @@ namespace SyobonAction
                 setcolor(160, 180, 250);
                 fillrect(0, 0, fxmax, fymax);
 
-                drawimage(mgrap[30], 240 - 380 / 2, 60);
+                drawimage(n元画像[30], 240 - 380 / 2, 60);
 
-                drawimage(grap[0, 4], 12 * 30, 10 * 29 - 12);
-                drawimage(grap[1, 4], 6 * 30, 12 * 29 - 12);
+                drawimage(n切り取り画像[0, 4], 12 * 30, 10 * 29 - 12);
+                drawimage(n切り取り画像[1, 4], 6 * 30, 12 * 29 - 12);
 
                 //プレイヤー
-                drawimage(grap[0, 0], 2 * 30, 12 * 29 - 12 - 6);
+                drawimage(n切り取り画像[0, 0], 2 * 30, 12 * 29 - 12 - 6);
                 for (t = 0; t <= 16; t++)
                 {
-                    drawimage(grap[5, 1], 29 * t, 13 * 29 - 12);
-                    drawimage(grap[6, 1], 29 * t, 14 * 29 - 12);
+                    drawimage(n切り取り画像[5, 1], 29 * t, 13 * 29 - 12);
+                    drawimage(n切り取り画像[6, 1], 29 * t, 14 * 29 - 12);
                 }
 
 
@@ -956,7 +956,7 @@ namespace SyobonAction
 
 
                     //チーターマン　入れ
-                    bgmchange(oto[100]);
+                    bgmchange(nオーディオ[100]);
 
                     stagecls();
 
@@ -977,11 +977,11 @@ namespace SyobonAction
 
 
 
-                    DX.StopSoundMem(oto[0]);
+                    DX.StopSoundMem(nオーディオ[0]);
 
 
                     //メインBGM
-                    DX.PlaySoundMem(oto[0], DX.DX_PLAYTYPE_LOOP);
+                    DX.PlaySoundMem(nオーディオ[0], DX.DX_PLAYTYPE_LOOP);
 
 
                 }//zxon
@@ -1080,7 +1080,7 @@ namespace SyobonAction
                 {
                     mb -= 400; md = -1200; mjumptm = 10;
 
-                    ot(oto[1]);
+                    ot(nオーディオ[1]);
 
                     mzimen = 0;
 
@@ -1094,7 +1094,7 @@ namespace SyobonAction
                 //HPがなくなったとき
                 if (mhp <= 0 && mhp >= -9)
                 {
-                    mkeytm = 12; mhp = -20; mtype = 200; mtm = 0; ot(oto[12]); DX.StopSoundMem(oto[0]); DX.StopSoundMem(oto[11]); DX.StopSoundMem(oto[16]);
+                    mkeytm = 12; mhp = -20; mtype = 200; mtm = 0; ot(nオーディオ[12]); DX.StopSoundMem(nオーディオ[0]); DX.StopSoundMem(nオーディオ[11]); DX.StopSoundMem(nオーディオ[16]);
                 }//mhp
                 if (mtype == 200)
                 {
@@ -1114,7 +1114,7 @@ namespace SyobonAction
 
                     mkeytm = 2;
                     md = -1500;
-                    if (mb <= -6000) { blackx = 1; blacktm = 20; stc += 5; stagerr = 0; DX.StopSoundMem(oto[0]); mtm = 0; mtype = 0; mkeytm = -1; }
+                    if (mb <= -6000) { blackx = 1; blacktm = 20; stc += 5; stagerr = 0; DX.StopSoundMem(nオーディオ[0]); mtm = 0; mtype = 0; mkeytm = -1; }
                 }//2
 
                 //ジャンプ台アウト
@@ -1165,7 +1165,7 @@ namespace SyobonAction
                             mc = 0; md = 0;
                             if (mtm <= 16) { ma += 240; }//mzz=100;}
                             if (mtm == 16) mb -= 1100;
-                            if (mtm == 20) ot(oto[10]);
+                            if (mtm == 20) ot(nオーディオ[10]);
 
                             if (mtm >= 24) { ma -= 2000; mmuki = 0; }
                             if (mtm >= 48) { mtype = 0; mhp--; }
@@ -1190,7 +1190,7 @@ namespace SyobonAction
                                 mxtype = 0;
                                 blackx = 1;
                                 blacktm = 20;
-                                stagerr = 0; DX.StopSoundMem(oto[0]);
+                                stagerr = 0; DX.StopSoundMem(nオーディオ[0]);
                             }
                         }
                     }//00
@@ -1228,7 +1228,7 @@ namespace SyobonAction
 
                         if (mtm == 200)
                         {
-                            ot(oto[17]);
+                            ot(nオーディオ[17]);
                             if (mtype == 301)
                             {
                                 na[nco] = 117 * 29 * 100 - 1100; nb[nco] = 4 * 29 * 100; ntype[nco] = 101; nco++; if (nco >= nmax) nco = 0;
@@ -1350,7 +1350,7 @@ namespace SyobonAction
                                             }
                                             else if (ttype[t] == 115)
                                             {
-                                                ot(oto[3]);
+                                                ot(nオーディオ[3]);
                                                 eyobi(ta[t] + 1200, tb[t] + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
                                                 eyobi(ta[t] + 1200, tb[t] + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
                                                 eyobi(ta[t] + 1200, tb[t] + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);
@@ -1360,14 +1360,14 @@ namespace SyobonAction
                                             //Pスイッチ
                                             else if (ttype[t] == 400)
                                             {
-                                                md = 0; ta[t] = -8000000; ot(oto[13]);
+                                                md = 0; ta[t] = -8000000; ot(nオーディオ[13]);
                                                 for (tt = 0; tt < tmax; tt++) { if (ttype[tt] != 7) { ttype[tt] = 800; } }
                                             }
 
                                             //音符+
                                             else if (ttype[t] == 117)
                                             {
-                                                ot(oto[14]);
+                                                ot(nオーディオ[14]);
                                                 md = -1500; mtype = 2; mtm = 0;
                                                 if (txtype[t] >= 2 && mtype == 2) { mtype = 0; md = -1600; txtype[t] = 3; }
                                                 if (txtype[t] == 0) txtype[t] = 1;
@@ -1404,7 +1404,7 @@ namespace SyobonAction
                                                                                                              //壊れる
                                                 if (ttype[t] == 1 && mzimen == 0)
                                                 {
-                                                    ot(oto[3]);
+                                                    ot(nオーディオ[3]);
                                                     eyobi(ta[t] + 1200, tb[t] + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
                                                     eyobi(ta[t] + 1200, tb[t] + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
                                                     eyobi(ta[t] + 1200, tb[t] + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);
@@ -1414,14 +1414,14 @@ namespace SyobonAction
                                                 //コイン
                                                 if (ttype[t] == 2 && mzimen == 0)
                                                 {
-                                                    ot(oto[4]);
+                                                    ot(nオーディオ[4]);
                                                     eyobi(ta[t] + 10, tb[t], 0, -800, 0, 40, 3000, 3000, 0, 16);
                                                     ttype[t] = 3;
                                                 }
                                                 //隠し
                                                 if (ttype[t] == 7)
                                                 {
-                                                    ot(oto[4]);
+                                                    ot(nオーディオ[4]);
                                                     eyobi(ta[t] + 10, tb[t], 0, -800, 0, 40, 3000, 3000, 0, 16);
                                                     mb = xx[9] + xx[1] + xx[0]; ttype[t] = 3; if (md < 0) { md = -md * 2 / 3; }
                                                 }
@@ -1467,7 +1467,7 @@ namespace SyobonAction
                             {
                                 if (mb > xx[9] - xx[0] * 2 - 2000 && mb < xx[9] + xx[1] - xx[0] * 2 + 2000 && ma + mnobia > xx[8] - 400 && ma < xx[8] + xx[1])
                                 {
-                                    ta[t] = -800000; ot(oto[4]);
+                                    ta[t] = -800000; ot(nオーディオ[4]);
                                 }
                             }
 
@@ -1478,7 +1478,7 @@ namespace SyobonAction
                                 {
                                     ta[t] = -800000;//ot(oto[4]);
                                     sracttype[20] = 1; sron[20] = 1;
-                                    DX.StopSoundMem(oto[0]); mtype = 301; mtm = 0; ot(oto[16]);
+                                    DX.StopSoundMem(nオーディオ[0]); mtype = 301; mtm = 0; ot(nオーディオ[16]);
 
                                 }
                             }
@@ -1503,7 +1503,7 @@ namespace SyobonAction
 
                                 if (xx[17] == 1 && txtype[t] == 0)
                                 {
-                                    ot(oto[4]);
+                                    ot(nオーディオ[4]);
                                     eyobi(ta[t] + 10, tb[t], 0, -800, 0, 40, 3000, 3000, 0, 16);
                                     ttype[t] = 3;
                                 }
@@ -1514,7 +1514,7 @@ namespace SyobonAction
                             {//xx[9]+xx[1]+3000<mb && // && mb>xx[9]-xx[0]*2
                                 if (xx[17] == 1)
                                 {
-                                    ot(oto[8]);
+                                    ot(nオーディオ[8]);
                                     ttype[t] = 3;
                                     abrocktm[aco] = 16;
                                     if (txtype[t] == 0) ayobi(ta[t], tb[t], 0, 0, 0, 0, 0);
@@ -1530,7 +1530,7 @@ namespace SyobonAction
                             {
                                 if (xx[17] == 1)
                                 {
-                                    ot(oto[8]);
+                                    ot(nオーディオ[8]);
                                     ttype[t] = 3; abrocktm[aco] = 16;
                                     if (txtype[t] == 0) ayobi(ta[t], tb[t], 0, 0, 0, 100, 0);
                                     if (txtype[t] == 2) ayobi(ta[t], tb[t], 0, 0, 0, 100, 2);
@@ -1543,7 +1543,7 @@ namespace SyobonAction
                             {
                                 if (xx[17] == 1)
                                 {
-                                    ot(oto[8]);
+                                    ot(nオーディオ[8]);
                                     ttype[t] = 3; abrocktm[aco] = 16; ayobi(ta[t], tb[t], 0, 0, 0, 100, 1);
                                 }
                             }//103
@@ -1554,7 +1554,7 @@ namespace SyobonAction
                             {
                                 if (xx[17] == 1)
                                 {
-                                    ot(oto[8]);
+                                    ot(nオーディオ[8]);
                                     ttype[t] = 3; abrocktm[aco] = 16; ayobi(ta[t], tb[t], 0, 0, 0, 110, 0);
                                 }
                             }//104
@@ -1575,7 +1575,7 @@ namespace SyobonAction
                                 thp[t]++; if (thp[t] >= 16)
                                 {
                                     thp[t] = 0;
-                                    ot(oto[8]);
+                                    ot(nオーディオ[8]);
                                     abrocktm[aco] = 16; ayobi(ta[t], tb[t], 0, 0, 0, 102, 1);
                                 }
                             }
@@ -1595,7 +1595,7 @@ namespace SyobonAction
                                 if (thp[t] >= 3)
                                 {
                                     thp[t] = 0; titem[t]++;
-                                    ot(oto[4]);
+                                    ot(nオーディオ[4]);
                                     eyobi(ta[t] + 10, tb[t], 0, -800, 0, 40, 3000, 3000, 0, 16);
                                     //ttype[t]=3;
                                 }
@@ -1609,14 +1609,14 @@ namespace SyobonAction
                                 {
                                     if (txtype[t] == 0)
                                     {
-                                        ot(oto[8]); ttype[t] = 3;
+                                        ot(nオーディオ[8]); ttype[t] = 3;
                                         abrocktm[aco] = 16; ayobi(ta[t], tb[t], 0, 0, 0, 102, 1);
                                     }
-                                    if (txtype[t] == 2) { ot(oto[4]); eyobi(ta[t] + 10, tb[t], 0, -800, 0, 40, 3000, 3000, 0, 16); ttype[t] = 115; txtype[t] = 0; }
+                                    if (txtype[t] == 2) { ot(nオーディオ[4]); eyobi(ta[t] + 10, tb[t], 0, -800, 0, 40, 3000, 3000, 0, 16); ttype[t] = 115; txtype[t] = 0; }
                                     if (txtype[t] == 10)
                                     {
-                                        if (stageonoff == 1) { ttype[t] = 130; stageonoff = 0; ot(oto[13]); txtype[t] = 2; for (t = 0; t < amax; t++) { if (atype[t] == 87 || atype[t] == 88) { if (axtype[t] == 105) { axtype[t] = 110; } } } }
-                                        else { ot(oto[4]); eyobi(ta[t] + 10, tb[t], 0, -800, 0, 40, 3000, 3000, 0, 16); ttype[t] = 3; }
+                                        if (stageonoff == 1) { ttype[t] = 130; stageonoff = 0; ot(nオーディオ[13]); txtype[t] = 2; for (t = 0; t < amax; t++) { if (atype[t] == 87 || atype[t] == 88) { if (axtype[t] == 105) { axtype[t] = 110; } } } }
+                                        else { ot(nオーディオ[4]); eyobi(ta[t] + 10, tb[t], 0, -800, 0, 40, 3000, 3000, 0, 16); ttype[t] = 3; }
                                     }
 
                                 }
@@ -1635,7 +1635,7 @@ namespace SyobonAction
                             {
                                 if (xx[17] == 1)
                                 {
-                                    ot(oto[8]);
+                                    ot(nオーディオ[8]);
                                     //ot(oto[13]);
                                     ttype[t] = 3;//abrocktm[aco]=18;ayobi(ta[t],tb[t],0,0,0,104,1);
                                     tyobi(ta[t] / 100, (tb[t] / 100) - 29, 400);
@@ -1648,7 +1648,7 @@ namespace SyobonAction
                             {
                                 if (xx[17] == 1)
                                 {
-                                    ot(oto[13]);
+                                    ot(nオーディオ[13]);
                                     for (t = 0; t < amax; t++) { if (atype[t] == 87 || atype[t] == 88) { if (axtype[t] == 101) { axtype[t] = 120; } } }
                                     ttype[t] = 3;
                                 }
@@ -1661,7 +1661,7 @@ namespace SyobonAction
                                 {
                                     if (txtype[t] != 1)
                                     {
-                                        stageonoff = 0; ot(oto[13]);
+                                        stageonoff = 0; ot(nオーディオ[13]);
                                     }
                                 }
                             }
@@ -1669,7 +1669,7 @@ namespace SyobonAction
                             {
                                 if (xx[17] == 1 && txtype[t] != 2)
                                 {
-                                    stageonoff = 1; ot(oto[13]);
+                                    stageonoff = 1; ot(nオーディオ[13]);
                                     if (txtype[t] == 1)
                                     {
                                         for (t = 0; t < amax; t++) { if (atype[t] == 87 || atype[t] == 88) { if (axtype[t] == 105) { axtype[t] = 110; } } }
@@ -1683,7 +1683,7 @@ namespace SyobonAction
                             {
                                 if (xx[17] == 1)
                                 {
-                                    ot(oto[15]);
+                                    ot(nオーディオ[15]);
                                     if (txtype[t] <= 100)
                                     {
                                         tmsgtype = 1; tmsgtm = 15; tmsgy = 300 + (txtype[t] - 1); tmsg = (txtype[t]);
@@ -1700,7 +1700,7 @@ namespace SyobonAction
                             {
                                 if (xx[17] == 1)
                                 {
-                                    ot(oto[3]);
+                                    ot(nオーディオ[3]);
                                     eyobi(ta[t] + 1200, tb[t] + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120); eyobi(ta[t] + 1200, tb[t] + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120); eyobi(ta[t] + 1200, tb[t] + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120); eyobi(ta[t] + 1200, tb[t] + 1200, -240, -1400, 0, 160, 1000, 1000, 1, 120);
                                     brockbreak(t);
                                 }
@@ -1713,7 +1713,7 @@ namespace SyobonAction
                             if (ma + mnobia > xx[8] && ma < xx[8] + xx[1] && mb + mnobib > xx[9] && mb < xx[9] + xx[1])
                             {
 
-                                ot(oto[3]);
+                                ot(nオーディオ[3]);
                                 eyobi(ta[t] + 1200, tb[t] + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
                                 eyobi(ta[t] + 1200, tb[t] + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
                                 eyobi(ta[t] + 1200, tb[t] + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);
@@ -1838,26 +1838,26 @@ namespace SyobonAction
                                     //飛び出し
                                     if (sxtype[t] == 0)
                                     {
-                                        mtype = 100; mtm = 0; ot(oto[7]); mxtype = 0;
+                                        mtype = 100; mtm = 0; ot(nオーディオ[7]); mxtype = 0;
                                     }
                                     //普通
                                     if (sxtype[t] == 1)
                                     {
-                                        mtype = 100; mtm = 0; ot(oto[7]); mxtype = 1;
+                                        mtype = 100; mtm = 0; ot(nオーディオ[7]); mxtype = 1;
                                     }
                                     //普通
                                     if (sxtype[t] == 2)
                                     {
-                                        mtype = 100; mtm = 0; ot(oto[7]); mxtype = 2;
+                                        mtype = 100; mtm = 0; ot(nオーディオ[7]); mxtype = 2;
                                     }
                                     if (sxtype[t] == 5)
                                     {
-                                        mtype = 100; mtm = 0; ot(oto[7]); mxtype = 5;
+                                        mtype = 100; mtm = 0; ot(nオーディオ[7]); mxtype = 5;
                                     }
                                     // ループ
                                     if (sxtype[t] == 6)
                                     {
-                                        mtype = 100; mtm = 0; ot(oto[7]); mxtype = 6;
+                                        mtype = 100; mtm = 0; ot(nオーディオ[7]); mxtype = 6;
                                     }
                                 }
                             }//50
@@ -1870,20 +1870,20 @@ namespace SyobonAction
                                  //飛び出し
                                     if (sxtype[t] == 0)
                                     {
-                                        mtype = 500; mtm = 0; ot(oto[7]);//mxtype=1;
+                                        mtype = 500; mtm = 0; ot(nオーディオ[7]);//mxtype=1;
                                         mtype = 100; mxtype = 10;
                                     }
 
                                     if (sxtype[t] == 2)
                                     {
                                         mxtype = 3;
-                                        mtm = 0; ot(oto[7]);//mxtype=1;
+                                        mtm = 0; ot(nオーディオ[7]);//mxtype=1;
                                         mtype = 100;
                                     }
                                     // ループ
                                     if (sxtype[t] == 6)
                                     {
-                                        mtype = 3; mtm = 0; ot(oto[7]); mxtype = 6;
+                                        mtype = 3; mtm = 0; ot(nオーディオ[7]); mxtype = 6;
                                     }
                                 }
                             }//40
@@ -1899,10 +1899,10 @@ namespace SyobonAction
                                 {
                                     if (sxtype[t] == 0 || sxtype[t] == 1 && ttype[1] != 3)
                                     {
-                                        ayobi(sa[t] + 1000, 32000, 0, 0, 0, 3, 0); sa[t] = -800000000; ot(oto[10]);
+                                        ayobi(sa[t] + 1000, 32000, 0, 0, 0, 3, 0); sa[t] = -800000000; ot(nオーディオ[10]);
                                     }
                                 }
-                                if (stype[t] == 101) { ayobi(sa[t] + 6000, -4000, 0, 0, 0, 3, 1); sa[t] = -800000000; ot(oto[10]); }
+                                if (stype[t] == 101) { ayobi(sa[t] + 6000, -4000, 0, 0, 0, 3, 1); sa[t] = -800000000; ot(nオーディオ[10]); }
                                 if (stype[t] == 102)
                                 {
                                     if (sxtype[t] == 0)
@@ -1910,12 +1910,12 @@ namespace SyobonAction
                                         for (t3 = 0; t3 <= 3; t3++) { ayobi(sa[t] + t3 * 3000, -3000, 0, 0, 0, 0, 0); }
                                     }
                                     if (sxtype[t] == 1 && mb >= 16000) { ayobi(sa[t] + 1500, 44000, 0, -2000, 0, 4, 0); }
-                                    else if (sxtype[t] == 2) { ayobi(sa[t] + 4500, 30000, 0, -1600, 0, 5, 0); ot(oto[10]); sxtype[t] = 3; sa[t] -= 12000; }
+                                    else if (sxtype[t] == 2) { ayobi(sa[t] + 4500, 30000, 0, -1600, 0, 5, 0); ot(nオーディオ[10]); sxtype[t] = 3; sa[t] -= 12000; }
                                     else if (sxtype[t] == 3) { sa[t] += 12000; sxtype[t] = 4; }
-                                    else if (sxtype[t] == 4) { ayobi(sa[t] + 4500, 30000, 0, -1600, 0, 5, 0); ot(oto[10]); sxtype[t] = 5; sxtype[t] = 0; }
+                                    else if (sxtype[t] == 4) { ayobi(sa[t] + 4500, 30000, 0, -1600, 0, 5, 0); ot(nオーディオ[10]); sxtype[t] = 5; sxtype[t] = 0; }
 
                                     else if (sxtype[t] == 7) { mainmsgtype = 1; }
-                                    else if (sxtype[t] == 8) { ayobi(sa[t] - 5000 - 3000 * 1, 26000, 0, -1600, 0, 5, 0); ot(oto[10]); }
+                                    else if (sxtype[t] == 8) { ayobi(sa[t] - 5000 - 3000 * 1, 26000, 0, -1600, 0, 5, 0); ot(nオーディオ[10]); }
                                     else if (sxtype[t] == 9) { for (t3 = 0; t3 <= 2; t3++) { ayobi(sa[t] + t3 * 3000 + 3000, 48000, 0, -6000, 0, 3, 0); } }
                                     if (sxtype[t] == 10) { sa[t] -= 5 * 30 * 100; stype[t] = 101; }
 
@@ -1934,7 +1934,7 @@ namespace SyobonAction
                                     if (sxtype[t] == 30)
                                     {
                                         sa[t] = -80000000; md = 0;
-                                        DX.StopSoundMem(oto[0]); mtype = 302; mtm = 0; ot(oto[16]);
+                                        DX.StopSoundMem(nオーディオ[0]); mtype = 302; mtm = 0; ot(nオーディオ[16]);
                                     }
 
                                     if (sxtype[t] != 3 && sxtype[t] != 4 && sxtype[t] != 10) { sa[t] = -800000000; }
@@ -1970,7 +1970,7 @@ namespace SyobonAction
                                 if (stype[t] == 105 && mzimen == 0 && md >= 0) { ta[1] -= 1000; ta[2] += 1000; sxtype[t]++; if (sxtype[t] >= 3) sa[t] = -8000000; }
 
 
-                                if (stype[t] == 300 && mtype == 0 && mb < xx[9] + sd[t] + xx[0] - 3000 && mhp >= 1) { DX.StopSoundMem(oto[0]); mtype = 300; mtm = 0; ma = sa[t] - fx - 2000; ot(oto[11]); }
+                                if (stype[t] == 300 && mtype == 0 && mb < xx[9] + sd[t] + xx[0] - 3000 && mhp >= 1) { DX.StopSoundMem(nオーディオ[0]); mtype = 300; mtm = 0; ma = sa[t] - fx - 2000; ot(nオーディオ[11]); }
 
                                 //中間ゲート
                                 if (stype[t] == 500 && mtype == 0 && mhp >= 1)
@@ -2137,7 +2137,7 @@ namespace SyobonAction
                                 //特殊
                                 if (srsp[t] == 1)
                                 {
-                                    ot(oto[3]);
+                                    ot(nオーディオ[3]);
                                     eyobi(sra[t] + 200, srb[t] - 1000, -240, -1400, 0, 160, 4500, 4500, 2, 120);
                                     eyobi(sra[t] + 4500 - 200, srb[t] - 1000, 240, -1400, 0, 160, 4500, 4500, 3, 120);
                                     sra[t] = -70000000;
@@ -2281,8 +2281,8 @@ namespace SyobonAction
 
 
                             if (bz[t] == 0 && btm[t] < 0 && ba[t] - fx >= fxmax + 2000 && ba[t] - fx < fxmax + 2000 + mc && tt == 0) { xx[0] = 1; amuki[aco] = 0; }// && mmuki==1
-                            if (bz[t] == 0 && btm[t] < 0 && ba[t] - fx >= -400 - anx[btype[t]] + mc && ba[t] - fx < -400 - anx[btype[t]] && tt == 1) { xx[0] = 1; xx[1] = 1; amuki[aco] = 1; }// && mmuki==0
-                            if (bz[t] == 1 && ba[t] - fx >= 0 - anx[btype[t]] && ba[t] - fx <= fxmax + 4000 && bb[t] - fy >= -9000 && bb[t] - fy <= fymax + 4000 && btm[t] < 0) { xx[0] = 1; bz[t] = 0; }// && xza<=5000// && tyuukan!=1
+                            if (bz[t] == 0 && btm[t] < 0 && ba[t] - fx >= -400 - n敵サイズW[btype[t]] + mc && ba[t] - fx < -400 - n敵サイズW[btype[t]] && tt == 1) { xx[0] = 1; xx[1] = 1; amuki[aco] = 1; }// && mmuki==0
+                            if (bz[t] == 1 && ba[t] - fx >= 0 - n敵サイズW[btype[t]] && ba[t] - fx <= fxmax + 4000 && bb[t] - fy >= -9000 && bb[t] - fy <= fymax + 4000 && btm[t] < 0) { xx[0] = 1; bz[t] = 0; }// && xza<=5000// && tyuukan!=1
                                                                                                                                                                                                          //if (bz[t]==2){xx[0]=0;xx[1]=0;}
                                                                                                                                                                                                          //if (btype[t]>=100){bz[t]=2;}
 
@@ -2346,7 +2346,7 @@ namespace SyobonAction
                                         {
                                             if (aa[t] + anobia[t] - fx > xx[8] + xx[0] * 2 && aa[t] - fx < xx[8] + anobia[tt] - xx[0] * 2 && ab[t] + anobib[t] - fy > xx[9] + xx[5] && ab[t] + anobib[t] - fy < xx[9] + xx[1] * 3 + xx[12] + 1500)
                                             {
-                                                aa[tt] = -800000; ot(oto[6]);
+                                                aa[tt] = -800000; ot(nオーディオ[6]);
                                             }
                                         }
                                     }
@@ -2422,7 +2422,7 @@ namespace SyobonAction
                                     if (atm[t] == 100)
                                     {
                                         eyobi(aa[t] + 1200 - 1200, ab[t] + 3000 - 10 * 3000 - 1500, 0, 0, 0, 0, 1000, 10 * 3000 - 1200, 4, 20);
-                                        if (mtype == 300) { mtype = 0; DX.StopSoundMem(oto[11]); bgmchange(oto[100]); DX.PlaySoundMem(oto[0], DX.DX_PLAYTYPE_LOOP); }
+                                        if (mtype == 300) { mtype = 0; DX.StopSoundMem(nオーディオ[11]); bgmchange(nオーディオ[100]); DX.PlaySoundMem(nオーディオ[0], DX.DX_PLAYTYPE_LOOP); }
                                         for (t1 = 0; t1 < smax; t1++) { if (stype[t1] == 104) sa[t1] = -80000000; }
                                     }
                                     if (atm[t] == 120) { eyobi(aa[t] + 1200 - 1200, ab[t] + 3000 - 10 * 3000 - 1500, 600, -1200, 0, 160, 1000, 10 * 3000 - 1200, 4, 240); amuki[t] = 1; }
@@ -2650,7 +2650,7 @@ namespace SyobonAction
                                                     atype[tt] = 90;//ot(oto[6]);
                                                     anobia[tt] = 6400; anobib[tt] = 6300; axtype[tt] = 0;
                                                     aa[tt] -= 1050; ab[tt] -= 1050;
-                                                    ot(oto[9]); aa[t] = -80000000;
+                                                    ot(nオーディオ[9]); aa[t] = -80000000;
                                                 }
                                             }
                                         }
@@ -2775,7 +2775,7 @@ namespace SyobonAction
                                         aa[t] = -900000;
                                     if (axtype[t] == 1)
                                     {
-                                        ot(oto[5]);
+                                        ot(nオーディオ[5]);
                                         mb = xx[9] - 900 - anobib[t]; md = -2100; xx[25] = 1; actaon[2] = 0;
                                     }
                                 }
@@ -2824,11 +2824,11 @@ namespace SyobonAction
 
                                 if (atype[t] != 85)
                                 {
-                                    if (xx[25] == 0) { ot(oto[5]); mb = xx[9] - 1000 - anobib[t]; md = -1000; }
+                                    if (xx[25] == 0) { ot(nオーディオ[5]); mb = xx[9] - 1000 - anobib[t]; md = -1000; }
                                 }
                                 if (atype[t] == 85)
                                 {
-                                    if (xx[25] == 0) { ot(oto[5]); mb = xx[9] - 4000; md = -1000; axtype[t] = 5; }
+                                    if (xx[25] == 0) { ot(nオーディオ[5]); mb = xx[9] - 4000; md = -1000; axtype[t] = 5; }
                                 }
 
                                 if (actaon[2] == 1) { md = -1600; actaon[2] = 0; }
@@ -2978,9 +2978,9 @@ namespace SyobonAction
                             if (atype[t] >= 100 && atype[t] <= 199)
                             {
 
-                                if (atype[t] == 100 && axtype[t] == 0) { mmsgtm = 30; mmsgtype = 1; ot(oto[9]); }
-                                if (atype[t] == 100 && axtype[t] == 1) { mmsgtm = 30; mmsgtype = 2; ot(oto[9]); }
-                                if (atype[t] == 100 && axtype[t] == 2) { mnobia = 5200; mnobib = 7300; ot(oto[9]); ma -= 1100; mb -= 4000; mtype = 1; mhp = 50000000; }
+                                if (atype[t] == 100 && axtype[t] == 0) { mmsgtm = 30; mmsgtype = 1; ot(nオーディオ[9]); }
+                                if (atype[t] == 100 && axtype[t] == 1) { mmsgtm = 30; mmsgtype = 2; ot(nオーディオ[9]); }
+                                if (atype[t] == 100 && axtype[t] == 2) { mnobia = 5200; mnobib = 7300; ot(nオーディオ[9]); ma -= 1100; mb -= 4000; mtype = 1; mhp = 50000000; }
 
                                 if (atype[t] == 101) { mhp -= 1; mmsgtm = 30; mmsgtype = 11; }
                                 if (atype[t] == 102) { mhp -= 1; mmsgtm = 30; mmsgtype = 10; }
@@ -2991,12 +2991,12 @@ namespace SyobonAction
                                 {
                                     if (axtype[t] == 0)
                                     {
-                                        ot(oto[4]); sgtype[26] = 6;
+                                        ot(nオーディオ[4]); sgtype[26] = 6;
                                     }
                                     if (axtype[t] == 1)
                                     {
                                         txtype[7] = 80;
-                                        ot(oto[4]);
+                                        ot(nオーディオ[4]);
 
                                         //ayobi(aa[t]-6*3000+1000,-3*3000,0,0,0,110,0);
                                         ayobi(aa[t] - 8 * 3000 - 1000, -4 * 3000, 0, 0, 0, 110, 0);
@@ -3086,7 +3086,7 @@ namespace SyobonAction
 
                 if (maintm <= 1)
                 {
-                    maintm = 2; bgmchange(oto[106]); DX.PlaySoundMem(oto[0], DX.DX_PLAYTYPE_LOOP); xx[10] = 0;
+                    maintm = 2; bgmchange(nオーディオ[106]); DX.PlaySoundMem(nオーディオ[0], DX.DX_PLAYTYPE_LOOP); xx[10] = 0;
                     for (t = 0; t <= xx[7]; t += 1) { xx[12 + t] = 980000; }
                     //for (t=0;t<=xx[7];t+=2){xx[12+t]=46000;}
                     xx[12] = 460;
@@ -3109,7 +3109,7 @@ namespace SyobonAction
                 xx[10] += 1;
                 for (t = 0; t <= xx[7]; t += 1) { xx[12 + t] -= 100; }//t
 
-                if (xx[30] == -200) { bgmchange(oto[106]); }
+                if (xx[30] == -200) { bgmchange(nオーディオ[106]); }
                 if (xx[30] <= -400) { main = 100; nokori = 2; maintm = 0; ending = 0; }
 
             }//main==2
@@ -3251,12 +3251,12 @@ namespace SyobonAction
                             {
                                 if (ttype[tt] == 7)
                                 {
-                                    ot(oto[4]); ttype[tt] = 3;
+                                    ot(nオーディオ[4]); ttype[tt] = 3;
                                     eyobi(ta[tt] + 10, tb[tt], 0, -800, 0, 40, 3000, 3000, 0, 16);
                                 }
                                 else if (ttype[tt] == 1)
                                 {
-                                    ot(oto[3]);
+                                    ot(nオーディオ[3]);
                                     eyobi(ta[tt] + 1200, tb[tt] + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
                                     eyobi(ta[tt] + 1200, tb[tt] + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
                                     eyobi(ta[tt] + 1200, tb[tt] + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);
@@ -3271,7 +3271,7 @@ namespace SyobonAction
                     {
                         if (aa[t] + anobia[t] - fx > xx[8] && aa[t] - fx < xx[8] + xx[1] && ab[t] + anobib[t] - fy > xx[9] && ab[t] - fy < xx[9] + xx[1])
                         {
-                            ot(oto[3]);
+                            ot(nオーディオ[3]);
                             eyobi(ta[tt] + 1200, tb[tt] + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
                             eyobi(ta[tt] + 1200, tb[tt] + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
                             eyobi(ta[tt] + 1200, tb[tt] + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);

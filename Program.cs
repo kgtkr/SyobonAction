@@ -168,9 +168,9 @@ namespace SyobonAction
         //BGM変更
         static void bgmchange(int x)
         {
-            DX.StopSoundMem(oto[0]);
-            oto[0] = 0;
-            oto[0] = x;
+            DX.StopSoundMem(nオーディオ[0]);
+            nオーディオ[0] = 0;
+            nオーディオ[0] = x;
         }//bgmchange()
 
 
@@ -393,14 +393,14 @@ namespace SyobonAction
                     if (abrocktm[aco] >= 1) amuki[aco] = 1;
                     if (abrocktm[aco] == 20) amuki[aco] = 0;
 
-                    anobia[aco] = anx[atype[aco]]; anobib[aco] = any[atype[aco]];
+                    anobia[aco] = n敵サイズW[atype[aco]]; anobib[aco] = n敵サイズH[atype[aco]];
 
 
 
                     //大砲音
-                    if (xtype == 7 && DX.CheckSoundMem(oto[10]) == 0) { ot(oto[10]); }
+                    if (xtype == 7 && DX.CheckSoundMem(nオーディオ[10]) == 0) { ot(nオーディオ[10]); }
                     //ファイア音
-                    if (xtype == 10 && DX.CheckSoundMem(oto[18]) == 0) { ot(oto[18]); }
+                    if (xtype == 10 && DX.CheckSoundMem(nオーディオ[18]) == 0) { ot(nオーディオ[18]); }
 
 
                     azimentype[aco] = 1;
