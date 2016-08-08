@@ -42,7 +42,7 @@ namespace SyobonAction
             DXDraw.SetColor(160, 180, 250);
             DXDraw.DrawBox塗り潰し(0, 0, n画面幅, n画面高さ);
 
-            DXDraw.DrawGraph(Res.n元画像_[30], 240 - 380 / 2, 60);
+            DXDraw.DrawGraph(Res.nタイトル画像, 240 - 380 / 2, 60);
 
             DXDraw.DrawGraph(Res.n切り取り画像_[0, 4], 12 * 30, 10 * 29 - 12);
             DXDraw.DrawGraph(Res.n切り取り画像_[1, 4], 6 * 30, 12 * 29 - 12);

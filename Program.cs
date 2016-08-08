@@ -331,7 +331,6 @@ namespace SyobonAction
         //ステージロード
         static void stage()
         {
-
             //fzx=6000*100;
             scrollX = 3600 * 100;
 

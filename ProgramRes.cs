@@ -11,8 +11,7 @@ namespace SyobonAction
     {
         
         public static int[,] n切り取り画像_ = new int[161, 8];
-        public static int[] n元画像_ = new int[51];
-        private static int x1_;
+        public static int nタイトル画像;
         public static int[] nオーディオ_ = new int[151];
 
         public static int[] n敵サイズW_ = new int[160];
@@ -22,6 +21,8 @@ namespace SyobonAction
 
         public static void Init()
         {
+            int[] n元画像_ = new int[51];
+            
             //プレイヤー
             n元画像_[0] = DX.LoadGraph("res/player.png");
             //ブロック
@@ -39,7 +40,7 @@ namespace SyobonAction
             //おまけ2
             n元画像_[7] = DX.LoadGraph("res/omake2.png");
             //タイトル
-            n元画像_[30] = DX.LoadGraph("res/syobon3.PNG");
+            nタイトル画像 = DX.LoadGraph("res/syobon3.PNG");
 
 
             //プレイヤー読み込み
@@ -50,7 +51,7 @@ namespace SyobonAction
             n切り取り画像_[3, 0] = DX.DerivationGraph(31 * 3, 0, 30, 36, n元画像_[0]);
             n切り取り画像_[41, 0] = DX.DerivationGraph(50, 0, 51, 73, n元画像_[6]);
 
-            x1_ = 1;
+            int x1_ = 1;
             //ブロック読み込み
             for (int i = 0; i <= 6; i++)
             {
