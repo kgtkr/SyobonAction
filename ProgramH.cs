@@ -243,13 +243,6 @@ namespace SyobonAction
         public static int xx_27;
         public static int xx_29;
         #endregion
-        #region xd
-        public static double xd_4;
-        public static double xd_5;
-        #endregion
-        #region xs
-        public static string xs_0;
-        #endregion
         #endregion
     }
 }

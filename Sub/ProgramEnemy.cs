@@ -313,7 +313,7 @@ namespace SyobonAction
                             for (int tt_ = 0; tt_ <= n敵キャラxtype[t_] % 100; tt_++)
                             {
                                 xx_26 = 18;
-                                xd_4 = tt_ * xx_26 * Math.Cos(n敵キャラtm[t_] * Math.PI / 180 / 2); xd_5 = tt_ * xx_26 * Math.Sin(n敵キャラtm[t_] * Math.PI / 180 / 2);
+                                double xd_4 = tt_ * xx_26 * Math.Cos(n敵キャラtm[t_] * Math.PI / 180 / 2); double xd_5 = tt_ * xx_26 * Math.Sin(n敵キャラtm[t_] * Math.PI / 180 / 2);
 
                                 xx_4 = 1800; xx_5 = 800;
                                 xx_8 = n敵キャラa[t_] - fx + (int)xd_4 * 100 - xx_4 / 2; xx_9 = n敵キャラb[t_] - fy + (int)xd_5 * 100 - xx_4 / 2;
@@ -338,8 +338,8 @@ namespace SyobonAction
                             for (int tt_ = 0; tt_ <= n敵キャラxtype[t_] % 100; tt_++)
                             {
                                 xx_26 = 18;
-                                xd_4 = -tt_ * xx_26 * Math.Cos(n敵キャラtm[t_] * Math.PI / 180 / 2);
-                                xd_5 = tt_ * xx_26 * Math.Sin(n敵キャラtm[t_] * Math.PI / 180 / 2);
+                                double xd_4 = -tt_ * xx_26 * Math.Cos(n敵キャラtm[t_] * Math.PI / 180 / 2);
+                                double xd_5 = tt_ * xx_26 * Math.Sin(n敵キャラtm[t_] * Math.PI / 180 / 2);
 
                                 xx_4 = 1800;
                                 xx_5 = 800;
@@ -884,8 +884,8 @@ namespace SyobonAction
                         for (int tt_ = 0; tt_ <= n敵キャラxtype[t_] % 100; tt_++)
                         {
                             xx_26 = 18;
-                            xd_4 = tt_ * xx_26 * Math.Cos(n敵キャラtm[t_] * Math.PI / 180 / 2);
-                            xd_5 = tt_ * xx_26 * Math.Sin(n敵キャラtm[t_] * Math.PI / 180 / 2);
+                            double xd_4 = tt_ * xx_26 * Math.Cos(n敵キャラtm[t_] * Math.PI / 180 / 2);
+                            double xd_5 = tt_ * xx_26 * Math.Sin(n敵キャラtm[t_] * Math.PI / 180 / 2);
                             xx_24 = (int)xd_4;
                             xx_25 = (int)xd_5;
                             DXDraw.SetColor(230, 120, 0);

@@ -15,7 +15,7 @@ namespace SyobonAction
             if (nメッセージtm >= 1)
             {
                 nメッセージtm--;
-                xs_0 = "";
+                string xs_0 = "";
 
                 if (nメッセージtype == 1) xs_0 = "お、おいしい!!";
                 if (nメッセージtype == 2) xs_0 = "毒は無いが……";
@@ -46,7 +46,7 @@ namespace SyobonAction
                 {
                     n敵キャラmsgtm[t_]--;
 
-                    xs_0 = "";
+                    string xs_0 = "";
 
                     if (n敵キャラmsgtype[t_] == 1001) xs_0 = "ヤッフー!!";
                     if (n敵キャラmsgtype[t_] == 1002) xs_0 = "え?俺勝っちゃったの?";
@@ -100,10 +100,6 @@ namespace SyobonAction
                     if (n敵キャラmsgtype[t_] == 85) xs_0 = "裏切られたとでも思ったか?";
                     if (n敵キャラmsgtype[t_] == 86) xs_0 = "ポールアターック!!";
 
-
-
-                    //if (stagecolor<=1 || stagecolor==3)setc0();
-                    //if (stagecolor==2)setc1();
 
                     if (n敵キャラmsgtype[t_] != 31)
                     {
