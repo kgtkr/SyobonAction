@@ -237,8 +237,7 @@ namespace SyobonAction
             if (e現在の画面 == E画面.機数表示)
             {
                 maintm++;
-
-                if (nクイック == 1) maintm += 2;
+                if (bクイック) maintm += 2;
                 if (maintm >= 30) {
                     maintm = 0;
                     e現在の画面 = E画面.Game;

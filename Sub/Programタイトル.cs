@@ -33,7 +33,7 @@ namespace SyobonAction
                 e現在の画面 = E画面.機数表示; zxon = 0; maintm = 0;
                 nokori = 2;
 
-                nクイック = 0; nトラップ表示 = 0; n中間ゲート = 0;
+                n中間フラグ = 0;
             }
         }
 

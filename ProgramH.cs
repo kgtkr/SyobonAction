@@ -28,18 +28,17 @@ namespace SyobonAction
         }
 
         //ステージ
-        static int nステージ色 = 0;
+        static int nステージ色 = 0;//1～5
         static int nステージa = 1, nステージb = 4, nステージc = 0;
 
-        //クイック
-        static int nクイック = 1;
+        //クイック(trueにしたらどうなるか要検証)
+        const bool bクイック = false;
 
-        //トラップ表示
-        static int nトラップ表示 = 1;
+        //トラップ表示(デパッグ)
+        const bool bトラップ表示 = false;
 
         //中間ゲート
-        static int n中間ゲート = 0;
-
+        static int n中間フラグ = 0;
 
         //スタッフロール
         static int nスタッフロール = 0;

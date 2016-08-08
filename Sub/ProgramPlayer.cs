@@ -245,14 +245,14 @@ namespace SyobonAction
                 {
                     nプレイヤーc = 0;
                 }
-                if (nプレイヤーtm >= 100 || nクイック == 1)
+                if (nプレイヤーtm >= 100 || bクイック)
                 {
                     zxon = 0;
                     e現在の画面 = E画面.機数表示;
                     nプレイヤーtm = 0;
                     nプレイヤーkeytm = 0;
                     nokori--;
-                    if (nクイック == 1) nプレイヤーtype = 0;
+                    if (bクイック) nプレイヤーtype = 0;
                 }
             }
 
@@ -436,7 +436,7 @@ namespace SyobonAction
                     {
                         nステージb++; nステージc = 0;
                         zxon = 0;
-                        n中間ゲート = 0;
+                        n中間フラグ = 0;
                         e現在の画面 = E画面.機数表示;
                         maintm = 0;
                     }
@@ -501,7 +501,7 @@ namespace SyobonAction
                             nステージb = 1;
                             nステージc = 0;
                             zxon = 0;
-                            n中間ゲート = 0;
+                            n中間フラグ = 0;
                             e現在の画面 = E画面.機数表示;
                             maintm = 0;
                         }
