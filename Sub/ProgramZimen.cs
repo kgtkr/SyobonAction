@@ -16,23 +16,23 @@ namespace SyobonAction
             {
                 if (n地面a[t_] - fx + n地面c[t_] >= -12000 && n地面a[t_] - fx <= n画面幅)
                 {
-                    xx[0] = 200; xx[1] = 2400; xx[2] = 1000; xx[7] = 0;
+                    xx_0 = 200; xx_1 = 2400; xx_2 = 1000; xx_7 = 0;
 
-                    xx[8] = n地面a[t_] - fx; xx[9] = n地面b[t_] - fy;
+                    xx_8 = n地面a[t_] - fx; xx_9 = n地面b[t_] - fy;
                     if ((n地面type[t_] <= 99 || n地面type[t_] == 200) && nプレイヤーtype < 10)
                     {
 
                         //おちるブロック
                         if (n地面type[t_] == 51)
                         {
-                            if (ma + nプレイヤーnobia > xx[8] + xx[0] + 3000 && ma < xx[8] + n地面c[t_] - xx[0] && nプレイヤーb + nプレイヤーnobib > xx[9] + 3000 && n地面gtype[t_] == 0)
+                            if (ma + nプレイヤーnobia > xx_8 + xx_0 + 3000 && ma < xx_8 + n地面c[t_] - xx_0 && nプレイヤーb + nプレイヤーnobib > xx_9 + 3000 && n地面gtype[t_] == 0)
                             {
                                 if (n地面xtype[t_] == 0)
                                 {
                                     n地面gtype[t_] = 1; n地面r[t_] = 0;
                                 }
                             }
-                            if (ma + nプレイヤーnobia > xx[8] + xx[0] + 1000 && ma < xx[8] + n地面c[t_] - xx[0] && nプレイヤーb + nプレイヤーnobib > xx[9] + 3000 && n地面gtype[t_] == 0)
+                            if (ma + nプレイヤーnobia > xx_8 + xx_0 + 1000 && ma < xx_8 + n地面c[t_] - xx_0 && nプレイヤーb + nプレイヤーnobib > xx_9 + 3000 && n地面gtype[t_] == 0)
                             {
                                 if ((n地面xtype[t_] == 10) && n地面gtype[t_] == 0)
                                 {
@@ -48,7 +48,7 @@ namespace SyobonAction
                             {
                                 n地面gtype[t_] = 1; n地面r[t_] = 0;
                             }
-                            if ((n地面xtype[t_] == 3 && nプレイヤーb >= 30000 || n地面xtype[t_] == 4 && nプレイヤーb >= 25000) && n地面gtype[t_] == 0 && nプレイヤーhp >= 1 && ma + nプレイヤーnobia > xx[8] + xx[0] + 3000 - 300 && ma < xx[8] + n地面c[t_] - xx[0])
+                            if ((n地面xtype[t_] == 3 && nプレイヤーb >= 30000 || n地面xtype[t_] == 4 && nプレイヤーb >= 25000) && n地面gtype[t_] == 0 && nプレイヤーhp >= 1 && ma + nプレイヤーnobia > xx_8 + xx_0 + 3000 - 300 && ma < xx_8 + n地面c[t_] - xx_0)
                             {
                                 n地面gtype[t_] = 1; n地面r[t_] = 0;
                                 if (n地面xtype[t_] == 4) n地面r[t_] = 100;
@@ -58,9 +58,9 @@ namespace SyobonAction
                             {
                                 n地面r[t_] += 120; if (n地面r[t_] >= 1600) { n地面r[t_] = 1600; }
                                 n地面b[t_] += n地面r[t_];
-                                if (ma + nプレイヤーnobia > xx[8] + xx[0] && ma < xx[8] + n地面c[t_] - xx[0] && nプレイヤーb + nプレイヤーnobib > xx[9] && nプレイヤーb < xx[9] + n地面d[t_] + xx[0])
+                                if (ma + nプレイヤーnobia > xx_8 + xx_0 && ma < xx_8 + n地面c[t_] - xx_0 && nプレイヤーb + nプレイヤーnobib > xx_9 && nプレイヤーb < xx_9 + n地面d[t_] + xx_0)
                                 {
-                                    nプレイヤーhp--; xx[7] = 1;
+                                    nプレイヤーhp--; xx_7 = 1;
                                 }
                             }
                         }
@@ -68,7 +68,7 @@ namespace SyobonAction
                         //おちるブロック2
                         if (n地面type[t_] == 52)
                         {
-                            if (n地面gtype[t_] == 0 && ma + nプレイヤーnobia > xx[8] + xx[0] + 2000 && ma < xx[8] + n地面c[t_] - xx[0] - 2500 && nプレイヤーb + nプレイヤーnobib > xx[9] - 3000)
+                            if (n地面gtype[t_] == 0 && ma + nプレイヤーnobia > xx_8 + xx_0 + 2000 && ma < xx_8 + n地面c[t_] - xx_0 - 2500 && nプレイヤーb + nプレイヤーnobib > xx_9 - 3000)
                             {
                                 n地面gtype[t_] = 1; n地面r[t_] = 0;
                             }
@@ -82,21 +82,21 @@ namespace SyobonAction
 
 
                         //通常地面
-                        if (xx[7] == 0)
+                        if (xx_7 == 0)
                         {
-                            if (ma + nプレイヤーnobia > xx[8] + xx[0] && ma < xx[8] + n地面c[t_] - xx[0] && nプレイヤーb + nプレイヤーnobib > xx[9] && nプレイヤーb + nプレイヤーnobib < xx[9] + xx[1] && nプレイヤーd >= -100) { nプレイヤーb = n地面b[t_] - fy - nプレイヤーnobib + 100; nプレイヤーd = 0; nプレイヤーzimen = 1; }
-                            if (ma + nプレイヤーnobia > xx[8] - xx[0] && ma < xx[8] + xx[2] && nプレイヤーb + nプレイヤーnobib > xx[9] + xx[1] * 3 / 4 && nプレイヤーb < xx[9] + n地面d[t_] - xx[2]) { ma = xx[8] - xx[0] - nプレイヤーnobia; nプレイヤーc = 0; }
-                            if (ma + nプレイヤーnobia > xx[8] + n地面c[t_] - xx[0] && ma < xx[8] + n地面c[t_] + xx[0] && nプレイヤーb + nプレイヤーnobib > xx[9] + xx[1] * 3 / 4 && nプレイヤーb < xx[9] + n地面d[t_] - xx[2]) { ma = xx[8] + n地面c[t_] + xx[0]; nプレイヤーc = 0; }
-                            if (ma + nプレイヤーnobia > xx[8] + xx[0] * 2 && ma < xx[8] + n地面c[t_] - xx[0] * 2 && nプレイヤーb > xx[9] + n地面d[t_] - xx[1] && nプレイヤーb < xx[9] + n地面d[t_] + xx[0])
+                            if (ma + nプレイヤーnobia > xx_8 + xx_0 && ma < xx_8 + n地面c[t_] - xx_0 && nプレイヤーb + nプレイヤーnobib > xx_9 && nプレイヤーb + nプレイヤーnobib < xx_9 + xx_1 && nプレイヤーd >= -100) { nプレイヤーb = n地面b[t_] - fy - nプレイヤーnobib + 100; nプレイヤーd = 0; nプレイヤーzimen = 1; }
+                            if (ma + nプレイヤーnobia > xx_8 - xx_0 && ma < xx_8 + xx_2 && nプレイヤーb + nプレイヤーnobib > xx_9 + xx_1 * 3 / 4 && nプレイヤーb < xx_9 + n地面d[t_] - xx_2) { ma = xx_8 - xx_0 - nプレイヤーnobia; nプレイヤーc = 0; }
+                            if (ma + nプレイヤーnobia > xx_8 + n地面c[t_] - xx_0 && ma < xx_8 + n地面c[t_] + xx_0 && nプレイヤーb + nプレイヤーnobib > xx_9 + xx_1 * 3 / 4 && nプレイヤーb < xx_9 + n地面d[t_] - xx_2) { ma = xx_8 + n地面c[t_] + xx_0; nプレイヤーc = 0; }
+                            if (ma + nプレイヤーnobia > xx_8 + xx_0 * 2 && ma < xx_8 + n地面c[t_] - xx_0 * 2 && nプレイヤーb > xx_9 + n地面d[t_] - xx_1 && nプレイヤーb < xx_9 + n地面d[t_] + xx_0)
                             {
-                                nプレイヤーb = xx[9] + n地面d[t_] + xx[0]; if (nプレイヤーd < 0) { nプレイヤーd = -nプレイヤーd * 2 / 3; }
+                                nプレイヤーb = xx_9 + n地面d[t_] + xx_0; if (nプレイヤーd < 0) { nプレイヤーd = -nプレイヤーd * 2 / 3; }
                             }
-                        }//xx[7]
+                        }//xx_7
 
                         //入る土管
                         if (n地面type[t_] == 50)
                         {
-                            if (ma + nプレイヤーnobia > xx[8] + 2800 && ma < xx[8] + n地面c[t_] - 3000 && nプレイヤーb + nプレイヤーnobib > xx[9] - 1000 && nプレイヤーb + nプレイヤーnobib < xx[9] + xx[1] + 3000 && nプレイヤーzimen == 1 && nプレイヤーactaon[3] == 1 && nプレイヤーtype == 0)
+                            if (ma + nプレイヤーnobia > xx_8 + 2800 && ma < xx_8 + n地面c[t_] - 3000 && nプレイヤーb + nプレイヤーnobib > xx_9 - 1000 && nプレイヤーb + nプレイヤーnobib < xx_9 + xx_1 + 3000 && nプレイヤーzimen == 1 && nプレイヤーactaon[3] == 1 && nプレイヤーtype == 0)
                             {
                                 //飛び出し
                                 if (n地面xtype[t_] == 0)
@@ -128,7 +128,7 @@ namespace SyobonAction
                         //入る土管(左から)
                         if (n地面type[t_] == 40)
                         {
-                            if (ma + nプレイヤーnobia > xx[8] - 300 && ma < xx[8] + n地面c[t_] - 1000 && nプレイヤーb > xx[9] + 1000 && nプレイヤーb + nプレイヤーnobib < xx[9] + xx[1] + 4000 && nプレイヤーzimen == 1 && nプレイヤーactaon[4] == 1 && nプレイヤーtype == 0)
+                            if (ma + nプレイヤーnobia > xx_8 - 300 && ma < xx_8 + n地面c[t_] - 1000 && nプレイヤーb > xx_9 + 1000 && nプレイヤーb + nプレイヤーnobib < xx_9 + xx_1 + 4000 && nプレイヤーzimen == 1 && nプレイヤーactaon[4] == 1 && nプレイヤーtype == 0)
                             {//end();
                              //飛び出し
                                 if (n地面xtype[t_] == 0)
@@ -156,7 +156,7 @@ namespace SyobonAction
 
                     }//stype
                     else {
-                        if (ma + nプレイヤーnobia > xx[8] + xx[0] && ma < xx[8] + n地面c[t_] - xx[0] && nプレイヤーb + nプレイヤーnobib > xx[9] && nプレイヤーb < xx[9] + n地面d[t_] + xx[0])
+                        if (ma + nプレイヤーnobia > xx_8 + xx_0 && ma < xx_8 + n地面c[t_] - xx_0 && nプレイヤーb + nプレイヤーnobib > xx_9 && nプレイヤーb < xx_9 + n地面d[t_] + xx_0)
                         {
                             if (n地面type[t_] == 100)
                             {
@@ -233,7 +233,7 @@ namespace SyobonAction
                             if (n地面type[t_] == 105 && nプレイヤーzimen == 0 && nプレイヤーd >= 0) { nブロックa[1] -= 1000; nブロックa[2] += 1000; n地面xtype[t_]++; if (n地面xtype[t_] >= 3) n地面a[t_] = -8000000; }
 
 
-                            if (n地面type[t_] == 300 && nプレイヤーtype == 0 && nプレイヤーb < xx[9] + n地面d[t_] + xx[0] - 3000 && nプレイヤーhp >= 1) { DX.StopSoundMem(Res.nオーディオ_[0]); nプレイヤーtype = 300; nプレイヤーtm = 0; ma = n地面a[t_] - fx - 2000; v効果音再生(Res.nオーディオ_[11]); }
+                            if (n地面type[t_] == 300 && nプレイヤーtype == 0 && nプレイヤーb < xx_9 + n地面d[t_] + xx_0 - 3000 && nプレイヤーhp >= 1) { DX.StopSoundMem(Res.nオーディオ_[0]); nプレイヤーtype = 300; nプレイヤーtm = 0; ma = n地面a[t_] - fx - 2000; v効果音再生(Res.nオーディオ_[11]); }
 
                             //中間ゲート
                             if (n地面type[t_] == 500 && nプレイヤーtype == 0 && nプレイヤーhp >= 1)
@@ -344,23 +344,23 @@ namespace SyobonAction
                     //落ちるやつ
                     if (n地面type[t_] == 52)
                     {
-                        xx[29] = 0; if (nステージ色 == 2) { xx[29] = 30; }
-                        if (nステージ色 == 4) { xx[29] = 60; }
-                        if (nステージ色 == 5) { xx[29] = 90; }
+                        xx_29 = 0; if (nステージ色 == 2) { xx_29 = 30; }
+                        if (nステージ色 == 4) { xx_29 = 60; }
+                        if (nステージ色 == 5) { xx_29 = 90; }
 
                         for (int t3 = 0; t3 <= n地面c[t_] / 3000; t3++)
                         {
                             if (n地面xtype[t_] == 0)
                             {
-                                DXDraw.DrawGraph(Res.n切り取り画像_[5 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb);
-                                if (nステージ色 != 4) { DXDraw.DrawGraph(Res.n切り取り画像_[6 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29); }
-                                else { DXDraw.DrawGraph(Res.n切り取り画像_[5 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29); }
+                                DXDraw.DrawGraph(Res.n切り取り画像_[5 + xx_29, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb);
+                                if (nステージ色 != 4) { DXDraw.DrawGraph(Res.n切り取り画像_[6 + xx_29, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29); }
+                                else { DXDraw.DrawGraph(Res.n切り取り画像_[5 + xx_29, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29); }
                             }
                             if (n地面xtype[t_] == 1)
                             {
                                 for (int t2 = 0; t2 <= n地面d[t_] / 3000; t2++)
                                 {
-                                    DXDraw.DrawGraph(Res.n切り取り画像_[1 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29 * t2);
+                                    DXDraw.DrawGraph(Res.n切り取り画像_[1 + xx_29, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29 * t2);
                                 }
                             }
 
@@ -368,7 +368,7 @@ namespace SyobonAction
                             {
                                 for (int t2 = 0; t2 <= n地面d[t_] / 3000; t2++)
                                 {
-                                    DXDraw.DrawGraph(Res.n切り取り画像_[5 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29 * t2);
+                                    DXDraw.DrawGraph(Res.n切り取り画像_[5 + xx_29, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29 * t2);
                                 }
                             }
 

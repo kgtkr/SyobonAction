@@ -106,9 +106,6 @@ namespace SyobonAction
 
         static void Mainprogram()
         {
-            nタイマー測定 = DX.GetNowCount();
-
-
             if (nスタッフロール == 1) e現在の画面 = E画面.Ending;
 
             if (e現在の画面 == E画面.Game && nメッセージブロックtype == 0)
@@ -220,8 +217,8 @@ namespace SyobonAction
                 //スクロール
                 if (n強制スクロール != 1 && n強制スクロール != 2)
                 {
-                    xx[2] = maScrollMax; xx[3] = 0;
-                    xx[1] = xx[2]; if (ma > xx[1] && fzx < scrollX) { xx[5] = ma - xx[1]; ma = xx[1]; fx += xx[5]; fzx += xx[5]; if (xx[1] <= 5000) xx[3] = 1; }
+                    xx_2 = maScrollMax; xx_3 = 0;
+                    xx_1 = xx_2; if (ma > xx_1 && fzx < scrollX) { xx_5 = ma - xx_1; ma = xx_1; fx += xx_5; fzx += xx_5; if (xx_1 <= 5000) xx_3 = 1; }
                 }//kscroll
 
             }

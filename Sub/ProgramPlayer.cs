@@ -12,7 +12,7 @@ namespace SyobonAction
         static void UpdatePlayer()
         {
             //プレイヤーの移動
-            xx[0] = 0; nプレイヤーactaon[2] = 0; nプレイヤーactaon[3] = 0;
+            xx_0 = 0; nプレイヤーactaon[2] = 0; nプレイヤーactaon[3] = 0;
             if (nプレイヤーkeytm <= 0)
             {
                 if (Key.GetKey(DX.KEY_INPUT_LEFT))
@@ -58,7 +58,7 @@ namespace SyobonAction
                     if (nプレイヤーactaon[1] == 10)
                     {
                         nプレイヤーactaon[1] = 1;
-                        xx[0] = 1;
+                        xx_0 = 1;
                     }
                     nプレイヤーactaon[2] = 1;
                 }
@@ -70,70 +70,70 @@ namespace SyobonAction
                 {
                     nプレイヤーd = -1300;
                     //ダッシュ中
-                    xx[22] = 200;
-                    if (nプレイヤーc >= xx[22] || nプレイヤーc <= -xx[22])
+                    xx_22 = 200;
+                    if (nプレイヤーc >= xx_22 || nプレイヤーc <= -xx_22)
                     {
                         nプレイヤーd = -1400;
                     }
 
-                    xx[22] = 600;
-                    if (nプレイヤーc >= xx[22] || nプレイヤーc <= -xx[22])
+                    xx_22 = 600;
+                    if (nプレイヤーc >= xx_22 || nプレイヤーc <= -xx_22)
                     {
                         nプレイヤーd = -1500;
                     }
                 }
-                if (xx[0] == 0) nプレイヤーactaon[1] = 10;
+                if (xx_0 == 0) nプレイヤーactaon[1] = 10;
             }
 
             //加速による移動
-            xx[0] = 40;
-            xx[1] = 700;
-            xx[8] = 500;
-            xx[9] = 700;
+            xx_0 = 40;
+            xx_1 = 700;
+            xx_8 = 500;
+            xx_9 = 700;
 
-            xx[12] = 1;
-            xx[13] = 2;
+            xx_12 = 1;
+            xx_13 = 2;
 
             //すべり補正
             if (nプレイヤーrzimen == 1)
             {
-                xx[0] = 20;
-                xx[12] = 9;
-                xx[13] = 10;
+                xx_0 = 20;
+                xx_12 = 9;
+                xx_13 = 10;
             }
 
 
-            //if (mzimen==0){xx[0]-=15;}
+            //if (mzimen==0){xx_0-=15;}
             if (nプレイヤーactaon[0] == -1)
             {
-                if (!(nプレイヤーzimen == 0 && nプレイヤーc < -xx[8]))
+                if (!(nプレイヤーzimen == 0 && nプレイヤーc < -xx_8))
                 {
-                    if (nプレイヤーc >= -xx[9])
+                    if (nプレイヤーc >= -xx_9)
                     {
-                        nプレイヤーc -= xx[0];
-                        if (nプレイヤーc < -xx[9])
+                        nプレイヤーc -= xx_0;
+                        if (nプレイヤーc < -xx_9)
                         {
-                            nプレイヤーc = -xx[9] - 1;
+                            nプレイヤーc = -xx_9 - 1;
                         }
                     }
 
-                    if (nプレイヤーc < -xx[9])
+                    if (nプレイヤーc < -xx_9)
                     {
-                        nプレイヤーc -= xx[0] / 10;
+                        nプレイヤーc -= xx_0 / 10;
                     }
                 }
                 if (nプレイヤーrzimen != 1)
                 {
                     if (nプレイヤーc > 100 && nプレイヤーzimen == 0)
                     {
-                        nプレイヤーc -= xx[0] * 2 / 3;
+                        nプレイヤーc -= xx_0 * 2 / 3;
                     }
                     if (nプレイヤーc > 100 && nプレイヤーzimen == 1)
                     {
-                        nプレイヤーc -= xx[0];
+                        nプレイヤーc -= xx_0;
                         if (nプレイヤーzimen == 1)
                         {
-                            nプレイヤーc -= xx[0] * 1 / 2;
+                            nプレイヤーc -= xx_0 * 1 / 2;
                         }
                     }
                     nプレイヤーactaon[0] = 3;
@@ -143,33 +143,33 @@ namespace SyobonAction
 
             if (nプレイヤーactaon[0] == 1)
             {
-                if (!(nプレイヤーzimen == 0 && nプレイヤーc > xx[8]))
+                if (!(nプレイヤーzimen == 0 && nプレイヤーc > xx_8))
                 {
-                    if (nプレイヤーc <= xx[9])
+                    if (nプレイヤーc <= xx_9)
                     {
-                        nプレイヤーc += xx[0];
-                        if (nプレイヤーc > xx[9])
+                        nプレイヤーc += xx_0;
+                        if (nプレイヤーc > xx_9)
                         {
-                            nプレイヤーc = xx[9] + 1;
+                            nプレイヤーc = xx_9 + 1;
                         }
                     }
-                    if (nプレイヤーc > xx[9])
+                    if (nプレイヤーc > xx_9)
                     {
-                        nプレイヤーc += xx[0] / 10;
+                        nプレイヤーc += xx_0 / 10;
                     }
                 }
                 if (nプレイヤーrzimen != 1)
                 {
                     if (nプレイヤーc < -100 && nプレイヤーzimen == 0)
                     {
-                        nプレイヤーc += xx[0] * 2 / 3;
+                        nプレイヤーc += xx_0 * 2 / 3;
                     }
                     if (nプレイヤーc < -100 && nプレイヤーzimen == 1)
                     {
-                        nプレイヤーc += xx[0];
+                        nプレイヤーc += xx_0;
                         if (nプレイヤーzimen == 1)
                         {
-                            nプレイヤーc += xx[0] * 1 / 2;
+                            nプレイヤーc += xx_0 * 1 / 2;
                         }
                     }
                     nプレイヤーactaon[0] = 3;
@@ -454,10 +454,10 @@ namespace SyobonAction
 
                     if (nプレイヤーtm >= 2 && (nプレイヤーtype == 301 && nプレイヤーtm <= 102 || nプレイヤーtype == 302 && nプレイヤーtm <= 60))
                     {
-                        xx[5] = 500;
-                        ma -= xx[5];
-                        fx += xx[5];
-                        fzx += xx[5];
+                        xx_5 = 500;
+                        ma -= xx_5;
+                        fx += xx_5;
+                        fzx += xx_5;
                     }
 
                     if ((nプレイヤーtype == 301 || nプレイヤーtype == 302) && nプレイヤーtm >= 2 && nプレイヤーtm <= 100)
@@ -526,12 +526,12 @@ namespace SyobonAction
             //走る際の最大値
             if (nプレイヤーtype == 0)
             {
-                xx[0] = 800; xx[1] = 1600;
-                if (nプレイヤーc > xx[0] && nプレイヤーc < xx[0] + 200) { nプレイヤーc = xx[0]; }
-                if (nプレイヤーc > xx[0] + 200) { nプレイヤーc -= 200; }
-                if (nプレイヤーc < -xx[0] && nプレイヤーc > -xx[0] - 200) { nプレイヤーc = -xx[0]; }
-                if (nプレイヤーc < -xx[0] - 200) { nプレイヤーc += 200; }
-                if (nプレイヤーd > xx[1]) { nプレイヤーd = xx[1]; }
+                xx_0 = 800; xx_1 = 1600;
+                if (nプレイヤーc > xx_0 && nプレイヤーc < xx_0 + 200) { nプレイヤーc = xx_0; }
+                if (nプレイヤーc > xx_0 + 200) { nプレイヤーc -= 200; }
+                if (nプレイヤーc < -xx_0 && nプレイヤーc > -xx_0 - 200) { nプレイヤーc = -xx_0; }
+                if (nプレイヤーc < -xx_0 - 200) { nプレイヤーc += 200; }
+                if (nプレイヤーd > xx_1) { nプレイヤーd = xx_1; }
             }
 
             //プレイヤー
@@ -542,17 +542,17 @@ namespace SyobonAction
                 {
                     if (nプレイヤーrzimen == 0)
                     {
-                        xx[2] = 30; xx[1] = 60; xx[3] = 30;
-                        if (nプレイヤーc >= -xx[3] && nプレイヤーc <= xx[3]) { nプレイヤーc = 0; }
-                        if (nプレイヤーc >= xx[2]) { nプレイヤーc -= xx[1]; }
-                        if (nプレイヤーc <= -xx[2]) { nプレイヤーc += xx[1]; }
+                        xx_2 = 30; xx_1 = 60; xx_3 = 30;
+                        if (nプレイヤーc >= -xx_3 && nプレイヤーc <= xx_3) { nプレイヤーc = 0; }
+                        if (nプレイヤーc >= xx_2) { nプレイヤーc -= xx_1; }
+                        if (nプレイヤーc <= -xx_2) { nプレイヤーc += xx_1; }
                     }
                     if (nプレイヤーrzimen == 1)
                     {
-                        xx[2] = 5; xx[1] = 10; xx[3] = 5;
-                        if (nプレイヤーc >= -xx[3] && nプレイヤーc <= xx[3]) { nプレイヤーc = 0; }
-                        if (nプレイヤーc >= xx[2]) { nプレイヤーc -= xx[1]; }
-                        if (nプレイヤーc <= -xx[2]) { nプレイヤーc += xx[1]; }
+                        xx_2 = 5; xx_1 = 10; xx_3 = 5;
+                        if (nプレイヤーc >= -xx_3 && nプレイヤーc <= xx_3) { nプレイヤーc = 0; }
+                        if (nプレイヤーc >= xx_2) { nプレイヤーc -= xx_1; }
+                        if (nプレイヤーc <= -xx_2) { nプレイヤーc += xx_1; }
                     }
                 }
             }

@@ -16,8 +16,8 @@ namespace SyobonAction
                 ttmsg();
                 if (nメッセージブロックtype == 1)
                 {
-                    xx[0] = 1200;
-                    nメッセージブロックy += xx[0];
+                    xx_0 = 1200;
+                    nメッセージブロックy += xx_0;
                     if (nメッセージブロックtm == 1) { nメッセージブロックtm = 80000000; nメッセージブロックtype = 2; }
                 }//1
 
@@ -28,8 +28,8 @@ namespace SyobonAction
 
                 else if (nメッセージブロックtype == 3)
                 {
-                    xx[0] = 1200;
-                    nメッセージブロックy += xx[0];
+                    xx_0 = 1200;
+                    nメッセージブロックy += xx_0;
                     if (nメッセージブロックtm == 15) DX.WaitKey();
                     if (nメッセージブロックtm == 1) { nメッセージブロックtm = 0; nメッセージブロックtype = 0; nメッセージブロックy = 0; }
                 }//1

@@ -13,10 +13,10 @@ namespace SyobonAction
             //グラ
             for (int t_ = 0; t_ < n絵max; t_++)
             {
-                xx[0] = n絵a[t_] - fx; xx[1] = n絵b[t_] - fy;
-                xx[2] = n絵nobia[t_] / 100; xx[3] = n絵nobib[t_] / 100;
+                xx_0 = n絵a[t_] - fx; xx_1 = n絵b[t_] - fy;
+                xx_2 = n絵nobia[t_] / 100; xx_3 = n絵nobib[t_] / 100;
                 if (n絵tm[t_] >= 0) n絵tm[t_]--;
-                if (xx[0] + xx[2] * 100 >= -10 && xx[1] <= n画面幅 && xx[1] + xx[3] * 100 >= -10 - 8000 && xx[3] <= n画面高さ && n絵tm[t_] >= 0)
+                if (xx_0 + xx_2 * 100 >= -10 && xx_1 <= n画面幅 && xx_1 + xx_3 * 100 >= -10 - 8000 && xx_3 <= n画面高さ && n絵tm[t_] >= 0)
                 {
                     n絵a[t_] += n絵c[t_]; n絵b[t_] += n絵d[t_];
                     n絵c[t_] += n絵e[t_]; n絵d[t_] += n絵f[t_];
@@ -32,14 +32,14 @@ namespace SyobonAction
             //グラ
             for (int t_ = 0; t_ < n絵max; t_++)
             {
-                xx[0] = n絵a[t_] - fx; xx[1] = n絵b[t_] - fy;
-                xx[2] = n絵nobia[t_] / 100; xx[3] = n絵nobib[t_] / 100;
-                if (xx[0] + xx[2] * 100 >= -10 && xx[1] <= n画面幅 && xx[1] + xx[3] * 100 >= -10 - 8000 && xx[3] <= n画面高さ)
+                xx_0 = n絵a[t_] - fx; xx_1 = n絵b[t_] - fy;
+                xx_2 = n絵nobia[t_] / 100; xx_3 = n絵nobib[t_] / 100;
+                if (xx_0 + xx_2 * 100 >= -10 && xx_1 <= n画面幅 && xx_1 + xx_3 * 100 >= -10 - 8000 && xx_3 <= n画面高さ)
                 {
 
                     //コイン
                     if (n絵gtype[t_] == 0)
-                        DXDraw.DrawGraph(Res.n切り取り画像_[0, 2], xx[0] / 100, xx[1] / 100);
+                        DXDraw.DrawGraph(Res.n切り取り画像_[0, 2], xx_0 / 100, xx_1 / 100);
 
                     //ブロックの破片
                     if (n絵gtype[t_] == 1)
@@ -48,16 +48,16 @@ namespace SyobonAction
                         if (nステージ色 == 2) DXDraw.SetColor(0, 120, 160);
                         if (nステージ色 == 4) DXDraw.SetColor(192, 192, 192);
 
-                        DXDraw.DrawOval塗り潰し(xx[0] / 100, xx[1] / 100, 7, 7);
+                        DXDraw.DrawOval塗り潰し(xx_0 / 100, xx_1 / 100, 7, 7);
                         DXDraw.SetColor(0, 0, 0);
-                        DXDraw.DrawOval塗り無し(xx[0] / 100, xx[1] / 100, 7, 7);
+                        DXDraw.DrawOval塗り無し(xx_0 / 100, xx_1 / 100, 7, 7);
                     }
 
                     //リフトの破片
                     if (n絵gtype[t_] == 2 || n絵gtype[t_] == 3)
                     {
                         if (n絵gtype[t_] == 3) DXDraw.nミラー = 1;
-                        DXDraw.DrawGraph(Res.n切り取り画像_[0, 5], xx[0] / 100, xx[1] / 100);
+                        DXDraw.DrawGraph(Res.n切り取り画像_[0, 5], xx_0 / 100, xx_1 / 100);
                         DXDraw.nミラー = 0;
                     }
 
@@ -65,13 +65,13 @@ namespace SyobonAction
                     if (n絵gtype[t_] == 4)
                     {
                         DXDraw.SetColorWhite();
-                        DXDraw.DrawBox塗り潰し((xx[0]) / 100 + 10, (xx[1]) / 100, 10, xx[3]);
+                        DXDraw.DrawBox塗り潰し((xx_0) / 100 + 10, (xx_1) / 100, 10, xx_3);
                         DXDraw.SetColorBlack();
-                        DXDraw.DrawBox塗り無し((xx[0]) / 100 + 10, (xx[1]) / 100, 10, xx[3]);
+                        DXDraw.DrawBox塗り無し((xx_0) / 100 + 10, (xx_1) / 100, 10, xx_3);
                         DXDraw.SetColor(250, 250, 0);
-                        DXDraw.DrawOval塗り潰し((xx[0]) / 100 + 15 - 1, (xx[1]) / 100, 10, 10);
+                        DXDraw.DrawOval塗り潰し((xx_0) / 100 + 15 - 1, (xx_1) / 100, 10, 10);
                         DXDraw.SetColorBlack();
-                        DXDraw.DrawOval塗り無し((xx[0]) / 100 + 15 - 1, (xx[1]) / 100, 10, 10);
+                        DXDraw.DrawOval塗り無し((xx_0) / 100 + 15 - 1, (xx_1) / 100, 10, 10);
                     }
 
 

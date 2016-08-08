@@ -10,7 +10,7 @@ namespace SyobonAction
     {
         static void Updateタイトル()
         {
-            maintm++; xx[0] = 0;
+            maintm++; xx_0 = 0;
             if (maintm <= 10) { maintm = 11; nステージa = 1; nステージb = 1; nステージc = 0; over = 0; }
 
             if (Key.GetKey(DX.KEY_INPUT_1)) { nステージa = 1; nステージb = 1; nステージc = 0; }
@@ -22,13 +22,13 @@ namespace SyobonAction
             if (Key.GetKey(DX.KEY_INPUT_7)) { nステージa = 2; nステージb = 3; nステージc = 0; }
             if (Key.GetKey(DX.KEY_INPUT_8)) { nステージa = 2; nステージb = 4; nステージc = 0; }
             if (Key.GetKey(DX.KEY_INPUT_9)) { nステージa = 3; nステージb = 1; nステージc = 0; }
-            if (Key.GetKey(DX.KEY_INPUT_0)) { xx[0] = 1; over = 1; }
+            if (Key.GetKey(DX.KEY_INPUT_0)) { xx_0 = 1; over = 1; }
 
 
-            if (Key.GetKey(DX.KEY_INPUT_RETURN)) { xx[0] = 1; }
-            if (Key.GetKey(DX.KEY_INPUT_Z)) { xx[0] = 1; }
+            if (Key.GetKey(DX.KEY_INPUT_RETURN)) { xx_0 = 1; }
+            if (Key.GetKey(DX.KEY_INPUT_Z)) { xx_0 = 1; }
 
-            if (xx[0] == 1)
+            if (xx_0 == 1)
             {
                 e現在の画面 = E画面.機数表示; b初期化 = false; maintm = 0;
                 nokori = 2;

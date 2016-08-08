@@ -73,7 +73,7 @@ namespace SyobonAction
         {
             DX.DrawString(x, y, str, n色);
 
-            Program.xx[2] = 4;
+            Program.xx_2 = 4;
 
 
         }

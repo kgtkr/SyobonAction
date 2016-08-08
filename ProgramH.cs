@@ -214,14 +214,42 @@ namespace SyobonAction
         static int blackTm = 1, blackX = 0;
 
 
-
-        //自由な値
-        public static int[] xx = new int[91];
-        static double[] xd = new double[11];
-        static string[] xs = new string[31];
-
-
-        //タイマー測定
-        static long nタイマー測定;
+        #region 自由な値
+        #region xx
+        public static int xx_0;
+        public static int xx_1;
+        public static int xx_2;
+        public static int xx_3;
+        public static int xx_4;
+        public static int xx_5;
+        public static int xx_6;
+        public static int xx_7;
+        public static int xx_8;
+        public static int xx_9;
+        public static int xx_10;
+        public static int xx_11;
+        public static int xx_12;
+        public static int xx_13;
+        public static int xx_14;
+        public static int xx_15;
+        public static int xx_16;
+        public static int xx_17;
+        public static int xx_21;
+        public static int xx_22;
+        public static int xx_23;
+        public static int xx_24;
+        public static int xx_25;
+        public static int xx_26;
+        public static int xx_27;
+        public static int xx_29;
+        #endregion
+        #region xd
+        public static double xd_4;
+        public static double xd_5;
+        #endregion
+        #region xs
+        public static string xs_0;
+        #endregion
+        #endregion
     }
 }
