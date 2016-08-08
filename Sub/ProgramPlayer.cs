@@ -203,7 +203,7 @@ namespace SyobonAction
                 nプレイヤーd = -1200;
                 nプレイヤーjumptm = 10;
 
-                v効果音再生(nオーディオ_[1]);
+                v効果音再生(Res.nオーディオ_[1]);
 
                 nプレイヤーzimen = 0;
 
@@ -225,10 +225,10 @@ namespace SyobonAction
                 nプレイヤーhp = -20;
                 nプレイヤーtype = 200;
                 nプレイヤーtm = 0;
-                v効果音再生(nオーディオ_[12]);
-                DX.StopSoundMem(nオーディオ_[0]);
-                DX.StopSoundMem(nオーディオ_[11]);
-                DX.StopSoundMem(nオーディオ_[16]);
+                v効果音再生(Res.nオーディオ_[12]);
+                DX.StopSoundMem(Res.nオーディオ_[0]);
+                DX.StopSoundMem(Res.nオーディオ_[11]);
+                DX.StopSoundMem(Res.nオーディオ_[16]);
             }//mhp
             if (nプレイヤーtype == 200)
             {
@@ -269,7 +269,7 @@ namespace SyobonAction
                     blackX = 1;
                     blackTm = 20;
                     nステージc += 5;
-                    DX.StopSoundMem(nオーディオ_[0]);
+                    DX.StopSoundMem(Res.nオーディオ_[0]);
                     nプレイヤーtm = 0;
                     nプレイヤーtype = 0;
                     nプレイヤーkeytm = -1;
@@ -351,7 +351,7 @@ namespace SyobonAction
                             ma += 240;
                         }
                         if (nプレイヤーtm == 16) nプレイヤーb -= 1100;
-                        if (nプレイヤーtm == 20) v効果音再生(nオーディオ_[10]);
+                        if (nプレイヤーtm == 20) v効果音再生(Res.nオーディオ_[10]);
 
                         if (nプレイヤーtm >= 24)
                         {
@@ -404,7 +404,7 @@ namespace SyobonAction
                             nプレイヤーxtype = 0;
                             blackX = 1;
                             blackTm = 20;
-                            DX.StopSoundMem(nオーディオ_[0]);
+                            DX.StopSoundMem(Res.nオーディオ_[0]);
                         }
                     }
                 }
@@ -468,7 +468,7 @@ namespace SyobonAction
 
                     if (nプレイヤーtm == 200)
                     {
-                        v効果音再生(nオーディオ_[17]);
+                        v効果音再生(Res.nオーディオ_[17]);
                         if (nプレイヤーtype == 301)
                         {
                             n背景a[n背景co] = 117 * 29 * 100 - 1100;
@@ -583,23 +583,23 @@ namespace SyobonAction
                 if (nプレイヤーzimen == 1)
                 {
                     // 読みこんだグラフィックを拡大描画
-                    if (nプレイヤーact == 0) DXDraw.DrawGraph(n切り取り画像_[0, 0], ma / 100, nプレイヤーb / 100);
-                    if (nプレイヤーact == 1) DXDraw.DrawGraph(n切り取り画像_[1, 0], ma / 100, nプレイヤーb / 100);
+                    if (nプレイヤーact == 0) DXDraw.DrawGraph(Res.n切り取り画像_[0, 0], ma / 100, nプレイヤーb / 100);
+                    if (nプレイヤーact == 1) DXDraw.DrawGraph(Res.n切り取り画像_[1, 0], ma / 100, nプレイヤーb / 100);
                 }
                 if (nプレイヤーzimen == 0)
                 {
-                    DXDraw.DrawGraph(n切り取り画像_[2, 0], ma / 100, nプレイヤーb / 100);
+                    DXDraw.DrawGraph(Res.n切り取り画像_[2, 0], ma / 100, nプレイヤーb / 100);
                 }
             }
             //巨大化
             else if (nプレイヤーtype == 1)
             {
-                DXDraw.DrawGraph(n切り取り画像_[41, 0], ma / 100, nプレイヤーb / 100);
+                DXDraw.DrawGraph(Res.n切り取り画像_[41, 0], ma / 100, nプレイヤーb / 100);
             }
 
             else if (nプレイヤーtype == 200)
             {
-                DXDraw.DrawGraph(n切り取り画像_[3, 0], ma / 100, nプレイヤーb / 100);
+                DXDraw.DrawGraph(Res.n切り取り画像_[3, 0], ma / 100, nプレイヤーb / 100);
             }
         }
     }

@@ -7,24 +7,20 @@ using DxLibDLL;
 
 namespace SyobonAction
 {
-    static partial class Program
+    static class Res
     {
-        static int ma;
-        //t・ttはほぼカウンタ変数として使われているが、
-        //一部他の使い方もされているのでローカルに移せない
-        static int t_;
-        static int tt_;
-        static int[,] n切り取り画像_ = new int[161, 8];
-        static int[] n元画像_ = new int[51];
-        static int x1_;
-        static int[] nオーディオ_ = new int[151];
+        
+        public static int[,] n切り取り画像_ = new int[161, 8];
+        public static int[] n元画像_ = new int[51];
+        private static int x1_;
+        public static int[] nオーディオ_ = new int[151];
 
-        static int[] n敵サイズW_ = new int[160];
-        static int[] n敵サイズH_ = new int[160];
-        static int[] n背景サイズW_ = new int[41];
-        static int[] n背景サイズH_ = new int[41];
+        public static int[] n敵サイズW_ = new int[160];
+        public static int[] n敵サイズH_ = new int[160];
+        public static int[] n背景サイズW_ = new int[41];
+        public static int[] n背景サイズH_ = new int[41];
 
-        static void Load()
+        public static void Init()
         {
             //プレイヤー
             n元画像_[0] = DX.LoadGraph("res/player.png");
@@ -56,12 +52,12 @@ namespace SyobonAction
 
             x1_ = 1;
             //ブロック読み込み
-            for (t_ = 0; t_ <= 6; t_++)
+            for (int i = 0; i <= 6; i++)
             {
-                n切り取り画像_[t_, x1_] = DX.DerivationGraph(33 * t_, 0, 30, 30, n元画像_[x1_]);
-                n切り取り画像_[t_ + 30, x1_] = DX.DerivationGraph(33 * t_, 33, 30, 30, n元画像_[x1_]);
-                n切り取り画像_[t_ + 60, x1_] = DX.DerivationGraph(33 * t_, 66, 30, 30, n元画像_[x1_]);
-                n切り取り画像_[t_ + 90, x1_] = DX.DerivationGraph(33 * t_, 99, 30, 30, n元画像_[x1_]);
+                n切り取り画像_[i, x1_] = DX.DerivationGraph(33 * i, 0, 30, 30, n元画像_[x1_]);
+                n切り取り画像_[i + 30, x1_] = DX.DerivationGraph(33 * i, 33, 30, 30, n元画像_[x1_]);
+                n切り取り画像_[i + 60, x1_] = DX.DerivationGraph(33 * i, 66, 30, 30, n元画像_[x1_]);
+                n切り取り画像_[i + 90, x1_] = DX.DerivationGraph(33 * i, 99, 30, 30, n元画像_[x1_]);
             }
             n切り取り画像_[8, x1_] = DX.DerivationGraph(33 * 7, 0, 30, 30, n元画像_[x1_]);
             n切り取り画像_[16, x1_] = DX.DerivationGraph(33 * 6, 0, 24, 27, n元画像_[2]);
@@ -71,9 +67,9 @@ namespace SyobonAction
             n切り取り画像_[100, x1_] = DX.DerivationGraph(33 * 9, 99, 30, 30, n元画像_[x1_]);
             //ブロック読み込み2
             x1_ = 5;
-            for (t_ = 0; t_ <= 6; t_++)
+            for (int i = 0; i <= 6; i++)
             {
-                n切り取り画像_[t_, x1_] = DX.DerivationGraph(33 * t_, 0, 30, 30, n元画像_[x1_]);
+                n切り取り画像_[i, x1_] = DX.DerivationGraph(33 * i, 0, 30, 30, n元画像_[x1_]);
             }
             n切り取り画像_[10, 5] = DX.DerivationGraph(33 * 1, 33, 30, 30, n元画像_[x1_]);
             n切り取り画像_[11, 5] = DX.DerivationGraph(33 * 2, 33, 30, 30, n元画像_[x1_]);
@@ -83,9 +79,9 @@ namespace SyobonAction
 
             //アイテム読み込み
             x1_ = 2;
-            for (t_ = 0; t_ <= 5; t_++)
+            for (int i = 0; i <= 5; i++)
             {
-                n切り取り画像_[t_, x1_] = DX.DerivationGraph(33 * t_, 0, 30, 30, n元画像_[x1_]);
+                n切り取り画像_[i, x1_] = DX.DerivationGraph(33 * i, 0, 30, 30, n元画像_[x1_]);
             }
 
             //敵キャラ読み込み
@@ -161,11 +157,11 @@ namespace SyobonAction
             //敵サイズ収得
             //int GrHandle=0;
             x1_ = 3;
-            for (t_ = 0; t_ <= 140; t_++)
+            for (int i = 0; i <= 140; i++)
             {
-                DX.GetGraphSize(n切り取り画像_[t_, x1_], out n敵サイズW_[t_], out n敵サイズH_[t_]);
-                n敵サイズW_[t_] *= 100;
-                n敵サイズH_[t_] *= 100;
+                DX.GetGraphSize(n切り取り画像_[i, x1_], out n敵サイズW_[i], out n敵サイズH_[i]);
+                n敵サイズW_[i] *= 100;
+                n敵サイズH_[i] *= 100;
             }
             n敵サイズW_[79] = 120 * 100;
             n敵サイズH_[79] = 15 * 100;
@@ -174,9 +170,9 @@ namespace SyobonAction
 
             //背景サイズ収得
             x1_ = 4;
-            for (t_ = 0; t_ < 40; t_++)
+            for (int i = 0; i < 40; i++)
             {
-                DX.GetGraphSize(n切り取り画像_[t_, x1_], out n背景サイズW_[t_], out n背景サイズH_[t_]);
+                DX.GetGraphSize(n切り取り画像_[i, x1_], out n背景サイズW_[i], out n背景サイズH_[i]);
             }
 
             DX.SetCreateSoundDataType(DX.DX_SOUNDDATATYPE_MEMPRESS);

@@ -42,17 +42,17 @@ namespace SyobonAction
             DXDraw.SetColor(160, 180, 250);
             DXDraw.DrawBox塗り潰し(0, 0, n画面幅, n画面高さ);
 
-            DXDraw.DrawGraph(n元画像_[30], 240 - 380 / 2, 60);
+            DXDraw.DrawGraph(Res.n元画像_[30], 240 - 380 / 2, 60);
 
-            DXDraw.DrawGraph(n切り取り画像_[0, 4], 12 * 30, 10 * 29 - 12);
-            DXDraw.DrawGraph(n切り取り画像_[1, 4], 6 * 30, 12 * 29 - 12);
+            DXDraw.DrawGraph(Res.n切り取り画像_[0, 4], 12 * 30, 10 * 29 - 12);
+            DXDraw.DrawGraph(Res.n切り取り画像_[1, 4], 6 * 30, 12 * 29 - 12);
 
             //プレイヤー
-            DXDraw.DrawGraph(n切り取り画像_[0, 0], 2 * 30, 12 * 29 - 12 - 6);
+            DXDraw.DrawGraph(Res.n切り取り画像_[0, 0], 2 * 30, 12 * 29 - 12 - 6);
             for (t_ = 0; t_ <= 16; t_++)
             {
-                DXDraw.DrawGraph(n切り取り画像_[5, 1], 29 * t_, 13 * 29 - 12);
-                DXDraw.DrawGraph(n切り取り画像_[6, 1], 29 * t_, 14 * 29 - 12);
+                DXDraw.DrawGraph(Res.n切り取り画像_[5, 1], 29 * t_, 13 * 29 - 12);
+                DXDraw.DrawGraph(Res.n切り取り画像_[6, 1], 29 * t_, 14 * 29 - 12);
             }
 
 

@@ -137,7 +137,7 @@ namespace SyobonAction
                     nステージスイッチ = 0;
 
                     //チーターマン　入れ
-                    bgmChange(nオーディオ_[100]);
+                    bgmChange(Res.nオーディオ_[100]);
 
                     stagecls();
 
@@ -189,11 +189,11 @@ namespace SyobonAction
 
 
 
-                    DX.StopSoundMem(nオーディオ_[0]);
+                    DX.StopSoundMem(Res.nオーディオ_[0]);
 
 
                     //メインBGM
-                    DX.PlaySoundMem(nオーディオ_[0], DX.DX_PLAYTYPE_LOOP);
+                    DX.PlaySoundMem(Res.nオーディオ_[0], DX.DX_PLAYTYPE_LOOP);
 
 
                 }//zxon

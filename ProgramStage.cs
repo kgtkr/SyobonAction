@@ -132,7 +132,7 @@ namespace SyobonAction
             {
 
                 //マリ　地上　入れ
-                bgmChange(nオーディオ_[100]);
+                bgmChange(Res.nオーディオ_[100]);
 
                 scrollX = 0 * 100;
 
@@ -172,7 +172,7 @@ namespace SyobonAction
             {
 
                 //マリ　地下　入れ
-                bgmChange(nオーディオ_[103]);
+                bgmChange(Res.nオーディオ_[103]);
 
                 scrollX = 4080 * 100;
                 ma = 6000; nプレイヤーb = 3000;
@@ -265,7 +265,7 @@ namespace SyobonAction
             {
 
                 //マリ　地上　入れ
-                bgmChange(nオーディオ_[100]);
+                bgmChange(Res.nオーディオ_[100]);
 
                 scrollX = 900 * 100;
                 ma = 7500; nプレイヤーb = 3000 * 9;
@@ -299,7 +299,7 @@ namespace SyobonAction
             if (nステージa == 1 && nステージb == 3 && nステージc == 6) { nステージc = 0; }
             if (nステージa == 1 && nステージb == 3 && nステージc == 0)
             {
-                bgmChange(nオーディオ_[100]);
+                bgmChange(Res.nオーディオ_[100]);
 
                 scrollX = 3900 * 100;
                 //ma=3000;mb=3000;
@@ -396,7 +396,7 @@ namespace SyobonAction
             {
 
                 //マリ　地上　入れ
-                bgmChange(nオーディオ_[103]);
+                bgmChange(Res.nオーディオ_[103]);
 
                 scrollX = 0 * 100;
                 ma = 6000; nプレイヤーb = 6000;
@@ -429,7 +429,7 @@ namespace SyobonAction
 
                 nステージ色 = 3;
 
-                bgmChange(nオーディオ_[104]);
+                bgmChange(Res.nオーディオ_[104]);
 
                 scrollX = 0 * 100;
                 ma = 3000; nプレイヤーb = 33000;
@@ -445,10 +445,6 @@ namespace SyobonAction
                 nブロックxtype[nブロックco] = 0; tyobi(12 * 29, 4 * 29 - 12, 112);
                 //ヒント3
                 nブロックxtype[nブロックco] = 3; tyobi(12 * 29, 8 * 29 - 12, 300);
-                //txtype[tco]=0;tyobi(13*29,4*29-12,110);
-
-
-                //stc=0;
 
                 for (tt_ = 0; tt_ <= 1000; tt_++)
                 {
@@ -460,18 +456,12 @@ namespace SyobonAction
 
             }//sta5
 
-
-
-
-
             //1-4(地下)
             if (nステージa == 1 && nステージb == 4 && nステージc == 0)
             {
 
                 //マリ　地上　入れ
-                //StopSoundMem(oto[0]);
-                bgmChange(nオーディオ_[105]);
-                //PlaySoundMem(oto[0],DX_PLAYTYPE_LOOP) ;
+                bgmChange(Res.nオーディオ_[105]);
 
                 scrollX = 4400 * 100;
                 ma = 12000; nプレイヤーb = 6000;
@@ -607,7 +597,7 @@ namespace SyobonAction
                 ma = 5600;
                 nプレイヤーb = 32000;
 
-                bgmChange(nオーディオ_[100]);
+                bgmChange(Res.nオーディオ_[100]);
                 nステージ色 = 1;
                 scrollX = 2900 * (113 - 19);
                 //
@@ -730,7 +720,7 @@ namespace SyobonAction
             if (nステージa == 2 && nステージb == 2 && nステージc == 0)
             {//2-2(地上)
 
-                bgmChange(nオーディオ_[100]);
+                bgmChange(Res.nオーディオ_[100]);
                 nステージ色 = 1;
                 scrollX = 2900 * (19 - 19);
                 //
@@ -780,7 +770,7 @@ namespace SyobonAction
             if (nステージa == 2 && nステージb == 2 && nステージc == 1)
             {//2-2(地下)
 
-                bgmChange(nオーディオ_[103]);
+                bgmChange(Res.nオーディオ_[103]);
                 nステージ色 = 2;
                 ma = 7500; nプレイヤーb = 9000;
                 scrollX = 2900 * (137 - 19);
@@ -990,7 +980,7 @@ namespace SyobonAction
             if (nステージa == 2 && nステージb == 2 && nステージc == 2)
             {// 2-2 地上
              //
-                bgmChange(nオーディオ_[100]);
+                bgmChange(Res.nオーディオ_[100]);
                 nステージ色 = 1;
                 scrollX = 2900 * (36 - 19);
                 ma = 7500;
@@ -1085,7 +1075,7 @@ namespace SyobonAction
                 ma = 7500;
                 nプレイヤーb = 3000 * 8;
 
-                bgmChange(nオーディオ_[100]);
+                bgmChange(Res.nオーディオ_[100]);
                 nステージ色 = 1;
                 scrollX = 2900 * (126 - 19);
                 //
@@ -1206,7 +1196,7 @@ namespace SyobonAction
                     nステージc = 0;
                 }
 
-                bgmChange(nオーディオ_[105]);
+                bgmChange(Res.nオーディオ_[105]);
                 nステージ色 = 4;
                 scrollX = 2900 * (40 - 19);
                 //
@@ -1290,7 +1280,7 @@ namespace SyobonAction
                 ma = 4500;
                 nプレイヤーb = 3000 * 11;
 
-                bgmChange(nオーディオ_[105]);
+                bgmChange(Res.nオーディオ_[105]);
                 nステージ色 = 4;
                 scrollX = 2900 * (21 - 19);
                 //
@@ -1359,7 +1349,7 @@ namespace SyobonAction
                 ma = 4500;
                 nプレイヤーb = 3000 * 11;
 
-                bgmChange(nオーディオ_[105]);
+                bgmChange(Res.nオーディオ_[105]);
                 nステージ色 = 4;
                 scrollX = 2900 * (128 - 19);
                 //
@@ -1599,7 +1589,7 @@ namespace SyobonAction
                 ma = 5600;
                 nプレイヤーb = 32000;
 
-                bgmChange(nオーディオ_[100]);
+                bgmChange(Res.nオーディオ_[100]);
                 nステージ色 = 5;
                 scrollX = 2900 * (112 - 19);
                 byte[][] stagedatex = stagedatex17;

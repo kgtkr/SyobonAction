@@ -25,8 +25,8 @@ namespace SyobonAction
 
 
                         if (n敵出現z[t_] == 0 && n敵出現tm[t_] < 0 && n敵出現a[t_] - fx >= n画面幅 + 2000 && n敵出現a[t_] - fx < n画面幅 + 2000 + nプレイヤーc && tt_ == 0) { xx[0] = 1; n敵キャラmuki[n敵キャラco] = 0; }// && mmuki==1
-                        if (n敵出現z[t_] == 0 && n敵出現tm[t_] < 0 && n敵出現a[t_] - fx >= -400 - n敵サイズW_[n敵出現type[t_]] + nプレイヤーc && n敵出現a[t_] - fx < -400 - n敵サイズW_[n敵出現type[t_]] && tt_ == 1) { xx[0] = 1; xx[1] = 1; n敵キャラmuki[n敵キャラco] = 1; }// && mmuki==0
-                        if (n敵出現z[t_] == 1 && n敵出現a[t_] - fx >= 0 - n敵サイズW_[n敵出現type[t_]] && n敵出現a[t_] - fx <= n画面幅 + 4000 && n敵出現b[t_] - fy >= -9000 && n敵出現b[t_] - fy <= n画面高さ + 4000 && n敵出現tm[t_] < 0) { xx[0] = 1; n敵出現z[t_] = 0; }// && xza<=5000// && tyuukan!=1
+                        if (n敵出現z[t_] == 0 && n敵出現tm[t_] < 0 && n敵出現a[t_] - fx >= -400 - Res.n敵サイズW_[n敵出現type[t_]] + nプレイヤーc && n敵出現a[t_] - fx < -400 - Res.n敵サイズW_[n敵出現type[t_]] && tt_ == 1) { xx[0] = 1; xx[1] = 1; n敵キャラmuki[n敵キャラco] = 1; }// && mmuki==0
+                        if (n敵出現z[t_] == 1 && n敵出現a[t_] - fx >= 0 - Res.n敵サイズW_[n敵出現type[t_]] && n敵出現a[t_] - fx <= n画面幅 + 4000 && n敵出現b[t_] - fy >= -9000 && n敵出現b[t_] - fy <= n画面高さ + 4000 && n敵出現tm[t_] < 0) { xx[0] = 1; n敵出現z[t_] = 0; }// && xza<=5000// && tyuukan!=1
                         if (xx[0] == 1)
                         {//400
                             n敵出現tm[t_] = 401; xx[0] = 0;
@@ -80,7 +80,7 @@ namespace SyobonAction
                                     {
                                         if (n敵キャラa[t_] + n敵キャラnobia[t_] - fx > xx[8] + xx[0] * 2 && n敵キャラa[t_] - fx < xx[8] + n敵キャラnobia[tt_] - xx[0] * 2 && n敵キャラb[t_] + n敵キャラnobib[t_] - fy > xx[9] + xx[5] && n敵キャラb[t_] + n敵キャラnobib[t_] - fy < xx[9] + xx[1] * 3 + xx[12] + 1500)
                                         {
-                                            n敵キャラa[tt_] = -800000; v効果音再生(nオーディオ_[6]);
+                                            n敵キャラa[tt_] = -800000; v効果音再生(Res.nオーディオ_[6]);
                                         }
                                     }
                                 }
@@ -155,7 +155,7 @@ namespace SyobonAction
                                 if (n敵キャラtm[t_] == 100)
                                 {
                                     eyobi(n敵キャラa[t_] + 1200 - 1200, n敵キャラb[t_] + 3000 - 10 * 3000 - 1500, 0, 0, 0, 0, 1000, 10 * 3000 - 1200, 4, 20);
-                                    if (nプレイヤーtype == 300) { nプレイヤーtype = 0; DX.StopSoundMem(nオーディオ_[11]); bgmChange(nオーディオ_[100]); DX.PlaySoundMem(nオーディオ_[0], DX.DX_PLAYTYPE_LOOP); }
+                                    if (nプレイヤーtype == 300) { nプレイヤーtype = 0; DX.StopSoundMem(Res.nオーディオ_[11]); bgmChange(Res.nオーディオ_[100]); DX.PlaySoundMem(Res.nオーディオ_[0], DX.DX_PLAYTYPE_LOOP); }
                                     for (t1 = 0; t1 < n地面max; t1++) { if (n地面type[t1] == 104) n地面a[t1] = -80000000; }
                                 }
                                 if (n敵キャラtm[t_] == 120) { eyobi(n敵キャラa[t_] + 1200 - 1200, n敵キャラb[t_] + 3000 - 10 * 3000 - 1500, 600, -1200, 0, 160, 1000, 10 * 3000 - 1200, 4, 240); n敵キャラmuki[t_] = 1; }
@@ -383,7 +383,7 @@ namespace SyobonAction
                                                 n敵キャラtype[tt_] = 90;//ot(oto[6]);
                                                 n敵キャラnobia[tt_] = 6400; n敵キャラnobib[tt_] = 6300; n敵キャラxtype[tt_] = 0;
                                                 n敵キャラa[tt_] -= 1050; n敵キャラb[tt_] -= 1050;
-                                                v効果音再生(nオーディオ_[9]); n敵キャラa[t_] = -80000000;
+                                                v効果音再生(Res.nオーディオ_[9]); n敵キャラa[t_] = -80000000;
                                             }
                                         }
                                     }
@@ -494,7 +494,7 @@ namespace SyobonAction
                                     n敵キャラa[t_] = -900000;
                                 if (n敵キャラxtype[t_] == 1)
                                 {
-                                    v効果音再生(nオーディオ_[5]);
+                                    v効果音再生(Res.nオーディオ_[5]);
                                     nプレイヤーb = xx[9] - 900 - n敵キャラnobib[t_]; nプレイヤーd = -2100; xx[25] = 1; nプレイヤーactaon[2] = 0;
                                 }
                             }
@@ -539,11 +539,11 @@ namespace SyobonAction
 
                             if (n敵キャラtype[t_] != 85)
                             {
-                                if (xx[25] == 0) { v効果音再生(nオーディオ_[5]); nプレイヤーb = xx[9] - 1000 - n敵キャラnobib[t_]; nプレイヤーd = -1000; }
+                                if (xx[25] == 0) { v効果音再生(Res.nオーディオ_[5]); nプレイヤーb = xx[9] - 1000 - n敵キャラnobib[t_]; nプレイヤーd = -1000; }
                             }
                             if (n敵キャラtype[t_] == 85)
                             {
-                                if (xx[25] == 0) { v効果音再生(nオーディオ_[5]); nプレイヤーb = xx[9] - 4000; nプレイヤーd = -1000; n敵キャラxtype[t_] = 5; }
+                                if (xx[25] == 0) { v効果音再生(Res.nオーディオ_[5]); nプレイヤーb = xx[9] - 4000; nプレイヤーd = -1000; n敵キャラxtype[t_] = 5; }
                             }
 
                             if (nプレイヤーactaon[2] == 1) { nプレイヤーd = -1600; nプレイヤーactaon[2] = 0; }
@@ -683,9 +683,9 @@ namespace SyobonAction
                         if (n敵キャラtype[t_] >= 100 && n敵キャラtype[t_] <= 199)
                         {
 
-                            if (n敵キャラtype[t_] == 100 && n敵キャラxtype[t_] == 0) { nメッセージtm = 30; nメッセージtype = 1; v効果音再生(nオーディオ_[9]); }
-                            if (n敵キャラtype[t_] == 100 && n敵キャラxtype[t_] == 1) { nメッセージtm = 30; nメッセージtype = 2; v効果音再生(nオーディオ_[9]); }
-                            if (n敵キャラtype[t_] == 100 && n敵キャラxtype[t_] == 2) { nプレイヤーnobia = 5200; nプレイヤーnobib = 7300; v効果音再生(nオーディオ_[9]); ma -= 1100; nプレイヤーb -= 4000; nプレイヤーtype = 1; nプレイヤーhp = 50000000; }
+                            if (n敵キャラtype[t_] == 100 && n敵キャラxtype[t_] == 0) { nメッセージtm = 30; nメッセージtype = 1; v効果音再生(Res.nオーディオ_[9]); }
+                            if (n敵キャラtype[t_] == 100 && n敵キャラxtype[t_] == 1) { nメッセージtm = 30; nメッセージtype = 2; v効果音再生(Res.nオーディオ_[9]); }
+                            if (n敵キャラtype[t_] == 100 && n敵キャラxtype[t_] == 2) { nプレイヤーnobia = 5200; nプレイヤーnobib = 7300; v効果音再生(Res.nオーディオ_[9]); ma -= 1100; nプレイヤーb -= 4000; nプレイヤーtype = 1; nプレイヤーhp = 50000000; }
 
                             if (n敵キャラtype[t_] == 101) { nプレイヤーhp -= 1; nメッセージtm = 30; nメッセージtype = 11; }
                             if (n敵キャラtype[t_] == 102) { nプレイヤーhp -= 1; nメッセージtm = 30; nメッセージtype = 10; }
@@ -696,12 +696,12 @@ namespace SyobonAction
                             {
                                 if (n敵キャラxtype[t_] == 0)
                                 {
-                                    v効果音再生(nオーディオ_[4]); n地面gtype[26] = 6;
+                                    v効果音再生(Res.nオーディオ_[4]); n地面gtype[26] = 6;
                                 }
                                 if (n敵キャラxtype[t_] == 1)
                                 {
                                     nブロックxtype[7] = 80;
-                                    v効果音再生(nオーディオ_[4]);
+                                    v効果音再生(Res.nオーディオ_[4]);
 
                                     ayobi(n敵キャラa[t_] - 8 * 3000 - 1000, -4 * 3000, 0, 0, 0, 110, 0);
                                     ayobi(n敵キャラa[t_] - 10 * 3000 + 1000, -1 * 3000, 0, 0, 0, 110, 0);
@@ -740,8 +740,8 @@ namespace SyobonAction
                 if (xx[0] + xx[2] * 100 >= -10 - xx[14] && xx[1] <= n画面幅 + xx[14] && xx[1] + xx[3] * 100 >= -10 && xx[3] <= n画面高さ)
                 {
                     if (n敵キャラmuki[t_] == 1) { DXDraw.nミラー = 1; }
-                    if (n敵キャラtype[t_] == 3 && n敵キャラxtype[t_] == 1) { DX.DrawRotaGraph(xx[0] / 100 + 13, xx[1] / 100 + 15, 1.0f, Math.PI / 1, n切り取り画像_[n敵キャラtype[t_], 3], DX.TRUE); xx[16] = 1; }
-                    if (n敵キャラtype[t_] == 9 && n敵キャラd[t_] >= 1) { DX.DrawRotaGraph(xx[0] / 100 + 13, xx[1] / 100 + 15, 1.0f, Math.PI / 1, n切り取り画像_[n敵キャラtype[t_], 3], DX.TRUE); xx[16] = 1; }
+                    if (n敵キャラtype[t_] == 3 && n敵キャラxtype[t_] == 1) { DX.DrawRotaGraph(xx[0] / 100 + 13, xx[1] / 100 + 15, 1.0f, Math.PI / 1, Res.n切り取り画像_[n敵キャラtype[t_], 3], DX.TRUE); xx[16] = 1; }
+                    if (n敵キャラtype[t_] == 9 && n敵キャラd[t_] >= 1) { DX.DrawRotaGraph(xx[0] / 100 + 13, xx[1] / 100 + 15, 1.0f, Math.PI / 1, Res.n切り取り画像_[n敵キャラtype[t_], 3], DX.TRUE); xx[16] = 1; }
                     if (n敵キャラtype[t_] >= 100 && n敵キャラmuki[t_] == 1) DXDraw.nミラー = 0;
 
                     //メイン
@@ -749,7 +749,7 @@ namespace SyobonAction
                     {
                         if (!((n敵キャラtype[t_] == 80 || n敵キャラtype[t_] == 81) && n敵キャラxtype[t_] == 1))
                         {
-                            DXDraw.DrawGraph(n切り取り画像_[n敵キャラtype[t_], 3], xx[0] / 100, xx[1] / 100);
+                            DXDraw.DrawGraph(Res.n切り取り画像_[n敵キャラtype[t_], 3], xx[0] / 100, xx[1] / 100);
                         }
                     }
 
@@ -759,18 +759,18 @@ namespace SyobonAction
                     {
                         if (n敵キャラtm[t_] >= 10 && n敵キャラtm[t_] <= 19 || n敵キャラtm[t_] >= 100 && n敵キャラtm[t_] <= 119 || n敵キャラtm[t_] >= 200)
                         {
-                            DXDraw.DrawGraph(n切り取り画像_[150, 3], xx[0] / 100, xx[1] / 100);
+                            DXDraw.DrawGraph(Res.n切り取り画像_[150, 3], xx[0] / 100, xx[1] / 100);
                         }
                         else {
-                            DXDraw.DrawGraph(n切り取り画像_[6, 3], xx[0] / 100, xx[1] / 100);
+                            DXDraw.DrawGraph(Res.n切り取り画像_[6, 3], xx[0] / 100, xx[1] / 100);
                         }
                     }
 
                     //モララー
                     if (n敵キャラtype[t_] == 30)
                     {
-                        if (n敵キャラxtype[t_] == 0) DXDraw.DrawGraph(n切り取り画像_[30, 3], xx[0] / 100, xx[1] / 100);
-                        if (n敵キャラxtype[t_] == 1) DXDraw.DrawGraph(n切り取り画像_[155, 3], xx[0] / 100, xx[1] / 100);
+                        if (n敵キャラxtype[t_] == 0) DXDraw.DrawGraph(Res.n切り取り画像_[30, 3], xx[0] / 100, xx[1] / 100);
+                        if (n敵キャラxtype[t_] == 1) DXDraw.DrawGraph(Res.n切り取り画像_[155, 3], xx[0] / 100, xx[1] / 100);
                     }
 
 
@@ -778,7 +778,7 @@ namespace SyobonAction
                     //ステルス雲
                     if ((n敵キャラtype[t_] == 81) && n敵キャラxtype[t_] == 1)
                     {
-                        DXDraw.DrawGraph(n切り取り画像_[130, 3], xx[0] / 100, xx[1] / 100);
+                        DXDraw.DrawGraph(Res.n切り取り画像_[130, 3], xx[0] / 100, xx[1] / 100);
                     }
 
                     if (n敵キャラtype[t_] == 79)
@@ -797,7 +797,7 @@ namespace SyobonAction
                             xx[9] = 0; if (nステージ色 == 2) { xx[9] = 30; }
                             if (nステージ色 == 4) { xx[9] = 60; }
                             if (nステージ色 == 5) { xx[9] = 90; }
-                            xx[6] = 5 + xx[9]; DXDraw.DrawGraph(n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
+                            xx[6] = 5 + xx[9]; DXDraw.DrawGraph(Res.n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
                         }
 
                         if (n敵キャラxtype[t_] == 1)
@@ -805,12 +805,12 @@ namespace SyobonAction
                             xx[9] = 0; if (nステージ色 == 2) { xx[9] = 30; }
                             if (nステージ色 == 4) { xx[9] = 60; }
                             if (nステージ色 == 5) { xx[9] = 90; }
-                            xx[6] = 4 + xx[9]; DXDraw.DrawGraph(n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
+                            xx[6] = 4 + xx[9]; DXDraw.DrawGraph(Res.n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
                         }
 
                         if (n敵キャラxtype[t_] == 2)
                         {
-                            DXDraw.DrawGraph(n切り取り画像_[1, 5], xx[0] / 100, xx[1] / 100);
+                            DXDraw.DrawGraph(Res.n切り取り画像_[1, 5], xx[0] / 100, xx[1] / 100);
                         }
 
                     }
@@ -822,7 +822,7 @@ namespace SyobonAction
                             xx[9] = 0; if (nステージ色 == 2) { xx[9] = 30; }
                             if (nステージ色 == 4) { xx[9] = 60; }
                             if (nステージ色 == 5) { xx[9] = 90; }
-                            xx[6] = 5 + xx[9]; DXDraw.DrawGraph(n切り取り画像_[xx[6], 1], xx[0] / 100 + 10, xx[1] / 100 + 9);
+                            xx[6] = 5 + xx[9]; DXDraw.DrawGraph(Res.n切り取り画像_[xx[6], 1], xx[0] / 100 + 10, xx[1] / 100 + 9);
                         }
 
                         if (n敵キャラxtype[t_] == 1)
@@ -830,7 +830,7 @@ namespace SyobonAction
                             xx[9] = 0; if (nステージ色 == 2) { xx[9] = 30; }
                             if (nステージ色 == 4) { xx[9] = 60; }
                             if (nステージ色 == 5) { xx[9] = 90; }
-                            xx[6] = 4 + xx[9]; DXDraw.DrawGraph(n切り取り画像_[xx[6], 1], xx[0] / 100 + 10, xx[1] / 100 + 9);
+                            xx[6] = 4 + xx[9]; DXDraw.DrawGraph(Res.n切り取り画像_[xx[6], 1], xx[0] / 100 + 10, xx[1] / 100 + 9);
                         }
 
                     }
@@ -855,15 +855,15 @@ namespace SyobonAction
                     {
                         if (ma >= n敵キャラa[t_] - fx - nプレイヤーnobia - 4000 && ma <= n敵キャラa[t_] - fx + n敵キャラnobia[t_] + 4000)
                         {
-                            DXDraw.DrawGraph(n切り取り画像_[152, 3], xx[0] / 100, xx[1] / 100);
+                            DXDraw.DrawGraph(Res.n切り取り画像_[152, 3], xx[0] / 100, xx[1] / 100);
                         }
                         else {
-                            DXDraw.DrawGraph(n切り取り画像_[86, 3], xx[0] / 100, xx[1] / 100);
+                            DXDraw.DrawGraph(Res.n切り取り画像_[86, 3], xx[0] / 100, xx[1] / 100);
                         }
                     }
 
                     if (n敵キャラtype[t_] == 200)
-                        DXDraw.DrawGraph(n切り取り画像_[0, 3], xx[0] / 100, xx[1] / 100);
+                        DXDraw.DrawGraph(Res.n切り取り画像_[0, 3], xx[0] / 100, xx[1] / 100);
 
                     DXDraw.nミラー = 0;
                 }

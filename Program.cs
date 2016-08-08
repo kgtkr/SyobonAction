@@ -11,23 +11,23 @@ namespace SyobonAction
     {
         static void Main(string[] args)
         {
+            //applog無効
+            DX.SetOutApplicationLogValidFlag(DX.FALSE);
             //画面サイズ設定
             DX.SetGraphMode(n画面幅 / 100, n画面高さ / 100, 16);
             //最大化の防止
             DX.ChangeWindowMode(DX.TRUE);
             //タイトルの変更
             DX.SetMainWindowText("しょぼんのアクション");
-            //applog無効
-            DX.SetOutApplicationLogValidFlag(DX.FALSE);
-            //アイコン
+                        //アイコン
             DX.SetWindowIconHandle(Properties.Resources.icon.Handle);
 
 
             // ＤＸライブラリ初期化処理(エラーが起きたら直ちに終了)
             if (DX.DxLib_Init() == -1) return;
 
-            //全ロード
-            Load();
+            //初期化
+            Res.Init();
             Key.Init();
 
             //フォント
@@ -76,9 +76,9 @@ namespace SyobonAction
         //BGM変更
         static void bgmChange(int x)
         {
-            DX.StopSoundMem(nオーディオ_[0]);
-            nオーディオ_[0] = 0;
-            nオーディオ_[0] = x;
+            DX.StopSoundMem(Res.nオーディオ_[0]);
+            Res.nオーディオ_[0] = 0;
+            Res.nオーディオ_[0] = x;
         }
 
         //ブロック出現
@@ -285,14 +285,14 @@ namespace SyobonAction
                     if (n敵キャラbrocktm[n敵キャラco] >= 1) n敵キャラmuki[n敵キャラco] = 1;
                     if (n敵キャラbrocktm[n敵キャラco] == 20) n敵キャラmuki[n敵キャラco] = 0;
 
-                    n敵キャラnobia[n敵キャラco] = n敵サイズW_[n敵キャラtype[n敵キャラco]]; n敵キャラnobib[n敵キャラco] = n敵サイズH_[n敵キャラtype[n敵キャラco]];
+                    n敵キャラnobia[n敵キャラco] = Res.n敵サイズW_[n敵キャラtype[n敵キャラco]]; n敵キャラnobib[n敵キャラco] = Res.n敵サイズH_[n敵キャラtype[n敵キャラco]];
 
 
 
                     //大砲音
-                    if (xtype == 7 && DX.CheckSoundMem(nオーディオ_[10]) == 0) { v効果音再生(nオーディオ_[10]); }
+                    if (xtype == 7 && DX.CheckSoundMem(Res.nオーディオ_[10]) == 0) { v効果音再生(Res.nオーディオ_[10]); }
                     //ファイア音
-                    if (xtype == 10 && DX.CheckSoundMem(nオーディオ_[18]) == 0) { v効果音再生(nオーディオ_[18]); }
+                    if (xtype == 10 && DX.CheckSoundMem(Res.nオーディオ_[18]) == 0) { v効果音再生(Res.nオーディオ_[18]); }
 
 
                     n敵キャラzimentype[n敵キャラco] = 1;
@@ -320,8 +320,8 @@ namespace SyobonAction
                 n背景b[t_] = 1;
                 n背景c[t_] = 1;
                 n背景d[t_] = 1;
-                n背景サイズW_[t_] = 1;
-                n背景サイズH_[t_] = 1;
+                Res.n背景サイズW_[t_] = 1;
+                Res.n背景サイズH_[t_] = 1;
                 n背景g[t_] = 0;
                 n背景type[t_] = 0;
             }
@@ -482,12 +482,12 @@ namespace SyobonAction
                             {
                                 if (nブロックtype[tt_] == 7)
                                 {
-                                    v効果音再生(nオーディオ_[4]); nブロックtype[tt_] = 3;
+                                    v効果音再生(Res.nオーディオ_[4]); nブロックtype[tt_] = 3;
                                     eyobi(nブロックa[tt_] + 10, nブロックb[tt_], 0, -800, 0, 40, 3000, 3000, 0, 16);
                                 }
                                 else if (nブロックtype[tt_] == 1)
                                 {
-                                    v効果音再生(nオーディオ_[3]);
+                                    v効果音再生(Res.nオーディオ_[3]);
                                     eyobi(nブロックa[tt_] + 1200, nブロックb[tt_] + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
                                     eyobi(nブロックa[tt_] + 1200, nブロックb[tt_] + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
                                     eyobi(nブロックa[tt_] + 1200, nブロックb[tt_] + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);
@@ -502,7 +502,7 @@ namespace SyobonAction
                     {
                         if (n敵キャラa[t_] + n敵キャラnobia[t_] - fx > xx[8] && n敵キャラa[t_] - fx < xx[8] + xx[1] && n敵キャラb[t_] + n敵キャラnobib[t_] - fy > xx[9] && n敵キャラb[t_] - fy < xx[9] + xx[1])
                         {
-                            v効果音再生(nオーディオ_[3]);
+                            v効果音再生(Res.nオーディオ_[3]);
                             eyobi(nブロックa[tt_] + 1200, nブロックb[tt_] + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
                             eyobi(nブロックa[tt_] + 1200, nブロックb[tt_] + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
                             eyobi(nブロックa[tt_] + 1200, nブロックb[tt_] + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);

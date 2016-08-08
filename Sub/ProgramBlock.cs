@@ -41,7 +41,7 @@ namespace SyobonAction
                                         }
                                         else if (nブロックtype[t_] == 115)
                                         {
-                                            v効果音再生(nオーディオ_[3]);
+                                            v効果音再生(Res.nオーディオ_[3]);
                                             eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
                                             eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
                                             eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);
@@ -51,14 +51,14 @@ namespace SyobonAction
                                         //Pスイッチ
                                         else if (nブロックtype[t_] == 400)
                                         {
-                                            nプレイヤーd = 0; nブロックa[t_] = -8000000; v効果音再生(nオーディオ_[13]);
+                                            nプレイヤーd = 0; nブロックa[t_] = -8000000; v効果音再生(Res.nオーディオ_[13]);
                                             for (tt_ = 0; tt_ < nブロックmax; tt_++) { if (nブロックtype[tt_] != 7) { nブロックtype[tt_] = 800; } }
                                         }
 
                                         //音符+
                                         else if (nブロックtype[t_] == 117)
                                         {
-                                            v効果音再生(nオーディオ_[14]);
+                                            v効果音再生(Res.nオーディオ_[14]);
                                             nプレイヤーd = -1500; nプレイヤーtype = 2; nプレイヤーtm = 0;
                                             if (nブロックxtype[t_] >= 2 && nプレイヤーtype == 2) { nプレイヤーtype = 0; nプレイヤーd = -1600; nブロックxtype[t_] = 3; }
                                             if (nブロックxtype[t_] == 0) nブロックxtype[t_] = 1;
@@ -95,7 +95,7 @@ namespace SyobonAction
                                                                                                                              //壊れる
                                             if (nブロックtype[t_] == 1 && nプレイヤーzimen == 0)
                                             {
-                                                v効果音再生(nオーディオ_[3]);
+                                                v効果音再生(Res.nオーディオ_[3]);
                                                 eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
                                                 eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
                                                 eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);
@@ -105,14 +105,14 @@ namespace SyobonAction
                                             //コイン
                                             if (nブロックtype[t_] == 2 && nプレイヤーzimen == 0)
                                             {
-                                                v効果音再生(nオーディオ_[4]);
+                                                v効果音再生(Res.nオーディオ_[4]);
                                                 eyobi(nブロックa[t_] + 10, nブロックb[t_], 0, -800, 0, 40, 3000, 3000, 0, 16);
                                                 nブロックtype[t_] = 3;
                                             }
                                             //隠し
                                             if (nブロックtype[t_] == 7)
                                             {
-                                                v効果音再生(nオーディオ_[4]);
+                                                v効果音再生(Res.nオーディオ_[4]);
                                                 eyobi(nブロックa[t_] + 10, nブロックb[t_], 0, -800, 0, 40, 3000, 3000, 0, 16);
                                                 nプレイヤーb = xx[9] + xx[1] + xx[0]; nブロックtype[t_] = 3; if (nプレイヤーd < 0) { nプレイヤーd = -nプレイヤーd * 2 / 3; }
                                             }
@@ -158,7 +158,7 @@ namespace SyobonAction
                         {
                             if (nプレイヤーb > xx[9] - xx[0] * 2 - 2000 && nプレイヤーb < xx[9] + xx[1] - xx[0] * 2 + 2000 && ma + nプレイヤーnobia > xx[8] - 400 && ma < xx[8] + xx[1])
                             {
-                                nブロックa[t_] = -800000; v効果音再生(nオーディオ_[4]);
+                                nブロックa[t_] = -800000; v効果音再生(Res.nオーディオ_[4]);
                             }
                         }
 
@@ -169,7 +169,7 @@ namespace SyobonAction
                             {
                                 nブロックa[t_] = -800000;//ot(oto[4]);
                                 nリフトacttype[20] = 1; nリフトon[20] = 1;
-                                DX.StopSoundMem(nオーディオ_[0]); nプレイヤーtype = 301; nプレイヤーtm = 0; v効果音再生(nオーディオ_[16]);
+                                DX.StopSoundMem(Res.nオーディオ_[0]); nプレイヤーtype = 301; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ_[16]);
 
                             }
                         }
@@ -194,7 +194,7 @@ namespace SyobonAction
 
                             if (xx[17] == 1 && nブロックxtype[t_] == 0)
                             {
-                                v効果音再生(nオーディオ_[4]);
+                                v効果音再生(Res.nオーディオ_[4]);
                                 eyobi(nブロックa[t_] + 10, nブロックb[t_], 0, -800, 0, 40, 3000, 3000, 0, 16);
                                 nブロックtype[t_] = 3;
                             }
@@ -205,7 +205,7 @@ namespace SyobonAction
                         {//xx[9]+xx[1]+3000<mb && // && mb>xx[9]-xx[0]*2
                             if (xx[17] == 1)
                             {
-                                v効果音再生(nオーディオ_[8]);
+                                v効果音再生(Res.nオーディオ_[8]);
                                 nブロックtype[t_] = 3;
                                 n敵キャラbrocktm[n敵キャラco] = 16;
                                 if (nブロックxtype[t_] == 0) ayobi(nブロックa[t_], nブロックb[t_], 0, 0, 0, 0, 0);
@@ -221,7 +221,7 @@ namespace SyobonAction
                         {
                             if (xx[17] == 1)
                             {
-                                v効果音再生(nオーディオ_[8]);
+                                v効果音再生(Res.nオーディオ_[8]);
                                 nブロックtype[t_] = 3; n敵キャラbrocktm[n敵キャラco] = 16;
                                 if (nブロックxtype[t_] == 0) ayobi(nブロックa[t_], nブロックb[t_], 0, 0, 0, 100, 0);
                                 if (nブロックxtype[t_] == 2) ayobi(nブロックa[t_], nブロックb[t_], 0, 0, 0, 100, 2);
@@ -234,7 +234,7 @@ namespace SyobonAction
                         {
                             if (xx[17] == 1)
                             {
-                                v効果音再生(nオーディオ_[8]);
+                                v効果音再生(Res.nオーディオ_[8]);
                                 nブロックtype[t_] = 3; n敵キャラbrocktm[n敵キャラco] = 16; ayobi(nブロックa[t_], nブロックb[t_], 0, 0, 0, 100, 1);
                             }
                         }//103
@@ -245,7 +245,7 @@ namespace SyobonAction
                         {
                             if (xx[17] == 1)
                             {
-                                v効果音再生(nオーディオ_[8]);
+                                v効果音再生(Res.nオーディオ_[8]);
                                 nブロックtype[t_] = 3; n敵キャラbrocktm[n敵キャラco] = 16; ayobi(nブロックa[t_], nブロックb[t_], 0, 0, 0, 110, 0);
                             }
                         }//104
@@ -266,7 +266,7 @@ namespace SyobonAction
                             nブロックhp[t_]++; if (nブロックhp[t_] >= 16)
                             {
                                 nブロックhp[t_] = 0;
-                                v効果音再生(nオーディオ_[8]);
+                                v効果音再生(Res.nオーディオ_[8]);
                                 n敵キャラbrocktm[n敵キャラco] = 16; ayobi(nブロックa[t_], nブロックb[t_], 0, 0, 0, 102, 1);
                             }
                         }
@@ -286,7 +286,7 @@ namespace SyobonAction
                             if (nブロックhp[t_] >= 3)
                             {
                                 nブロックhp[t_] = 0; nブロックitem[t_]++;
-                                v効果音再生(nオーディオ_[4]);
+                                v効果音再生(Res.nオーディオ_[4]);
                                 eyobi(nブロックa[t_] + 10, nブロックb[t_], 0, -800, 0, 40, 3000, 3000, 0, 16);
                                 //ttype[t]=3;
                             }
@@ -300,14 +300,14 @@ namespace SyobonAction
                             {
                                 if (nブロックxtype[t_] == 0)
                                 {
-                                    v効果音再生(nオーディオ_[8]); nブロックtype[t_] = 3;
+                                    v効果音再生(Res.nオーディオ_[8]); nブロックtype[t_] = 3;
                                     n敵キャラbrocktm[n敵キャラco] = 16; ayobi(nブロックa[t_], nブロックb[t_], 0, 0, 0, 102, 1);
                                 }
-                                if (nブロックxtype[t_] == 2) { v効果音再生(nオーディオ_[4]); eyobi(nブロックa[t_] + 10, nブロックb[t_], 0, -800, 0, 40, 3000, 3000, 0, 16); nブロックtype[t_] = 115; nブロックxtype[t_] = 0; }
+                                if (nブロックxtype[t_] == 2) { v効果音再生(Res.nオーディオ_[4]); eyobi(nブロックa[t_] + 10, nブロックb[t_], 0, -800, 0, 40, 3000, 3000, 0, 16); nブロックtype[t_] = 115; nブロックxtype[t_] = 0; }
                                 if (nブロックxtype[t_] == 10)
                                 {
-                                    if (nステージスイッチ == 1) { nブロックtype[t_] = 130; nステージスイッチ = 0; v効果音再生(nオーディオ_[13]); nブロックxtype[t_] = 2; for (t_ = 0; t_ < n敵キャラmax; t_++) { if (n敵キャラtype[t_] == 87 || n敵キャラtype[t_] == 88) { if (n敵キャラxtype[t_] == 105) { n敵キャラxtype[t_] = 110; } } } }
-                                    else { v効果音再生(nオーディオ_[4]); eyobi(nブロックa[t_] + 10, nブロックb[t_], 0, -800, 0, 40, 3000, 3000, 0, 16); nブロックtype[t_] = 3; }
+                                    if (nステージスイッチ == 1) { nブロックtype[t_] = 130; nステージスイッチ = 0; v効果音再生(Res.nオーディオ_[13]); nブロックxtype[t_] = 2; for (t_ = 0; t_ < n敵キャラmax; t_++) { if (n敵キャラtype[t_] == 87 || n敵キャラtype[t_] == 88) { if (n敵キャラxtype[t_] == 105) { n敵キャラxtype[t_] = 110; } } } }
+                                    else { v効果音再生(Res.nオーディオ_[4]); eyobi(nブロックa[t_] + 10, nブロックb[t_], 0, -800, 0, 40, 3000, 3000, 0, 16); nブロックtype[t_] = 3; }
                                 }
 
                             }
@@ -326,7 +326,7 @@ namespace SyobonAction
                         {
                             if (xx[17] == 1)
                             {
-                                v効果音再生(nオーディオ_[8]);
+                                v効果音再生(Res.nオーディオ_[8]);
                                 //ot(oto[13]);
                                 nブロックtype[t_] = 3;//abrocktm[aco]=18;ayobi(ta[t],tb[t],0,0,0,104,1);
                                 tyobi(nブロックa[t_] / 100, (nブロックb[t_] / 100) - 29, 400);
@@ -339,7 +339,7 @@ namespace SyobonAction
                         {
                             if (xx[17] == 1)
                             {
-                                v効果音再生(nオーディオ_[13]);
+                                v効果音再生(Res.nオーディオ_[13]);
                                 for (t_ = 0; t_ < n敵キャラmax; t_++) { if (n敵キャラtype[t_] == 87 || n敵キャラtype[t_] == 88) { if (n敵キャラxtype[t_] == 101) { n敵キャラxtype[t_] = 120; } } }
                                 nブロックtype[t_] = 3;
                             }
@@ -352,7 +352,7 @@ namespace SyobonAction
                             {
                                 if (nブロックxtype[t_] != 1)
                                 {
-                                    nステージスイッチ = 0; v効果音再生(nオーディオ_[13]);
+                                    nステージスイッチ = 0; v効果音再生(Res.nオーディオ_[13]);
                                 }
                             }
                         }
@@ -360,7 +360,7 @@ namespace SyobonAction
                         {
                             if (xx[17] == 1 && nブロックxtype[t_] != 2)
                             {
-                                nステージスイッチ = 1; v効果音再生(nオーディオ_[13]);
+                                nステージスイッチ = 1; v効果音再生(Res.nオーディオ_[13]);
                                 if (nブロックxtype[t_] == 1)
                                 {
                                     for (t_ = 0; t_ < n敵キャラmax; t_++) { if (n敵キャラtype[t_] == 87 || n敵キャラtype[t_] == 88) { if (n敵キャラxtype[t_] == 105) { n敵キャラxtype[t_] = 110; } } }
@@ -374,7 +374,7 @@ namespace SyobonAction
                         {
                             if (xx[17] == 1)
                             {
-                                v効果音再生(nオーディオ_[15]);
+                                v効果音再生(Res.nオーディオ_[15]);
                                 if (nブロックxtype[t_] <= 100)
                                 {
                                     nメッセージブロックtype = 1; nメッセージブロックtm = 15; nメッセージブロックy = 300 + (nブロックxtype[t_] - 1); nメッセージブロック = (nブロックxtype[t_]);
@@ -391,7 +391,7 @@ namespace SyobonAction
                         {
                             if (xx[17] == 1)
                             {
-                                v効果音再生(nオーディオ_[3]);
+                                v効果音再生(Res.nオーディオ_[3]);
                                 eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120); eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120); eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120); eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, -240, -1400, 0, 160, 1000, 1000, 1, 120);
                                 brockBreak(t_);
                             }
@@ -404,7 +404,7 @@ namespace SyobonAction
                         if (ma + nプレイヤーnobia > xx[8] && ma < xx[8] + xx[1] && nプレイヤーb + nプレイヤーnobib > xx[9] && nプレイヤーb < xx[9] + xx[1])
                         {
 
-                            v効果音再生(nオーディオ_[3]);
+                            v効果音再生(Res.nオーディオ_[3]);
                             eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
                             eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
                             eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);
@@ -451,7 +451,7 @@ namespace SyobonAction
 
                     if (nブロックtype[t_] < 100)
                     {
-                        xx[6] = nブロックtype[t_] + xx[9]; DXDraw.DrawGraph(n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
+                        xx[6] = nブロックtype[t_] + xx[9]; DXDraw.DrawGraph(Res.n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
                     }
 
                     if (nブロックxtype[t_] != 10)
@@ -459,59 +459,59 @@ namespace SyobonAction
 
                         if (nブロックtype[t_] == 100 || nブロックtype[t_] == 101 || nブロックtype[t_] == 102 || nブロックtype[t_] == 103 || nブロックtype[t_] == 104 && nブロックxtype[t_] == 1 || nブロックtype[t_] == 114 && nブロックxtype[t_] == 1 || nブロックtype[t_] == 116)
                         {
-                            xx[6] = 2 + xx[9]; DXDraw.DrawGraph(n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
+                            xx[6] = 2 + xx[9]; DXDraw.DrawGraph(Res.n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
                         }
 
                         if (nブロックtype[t_] == 112 || nブロックtype[t_] == 104 && nブロックxtype[t_] == 0 || nブロックtype[t_] == 115 && nブロックxtype[t_] == 1)
                         {
-                            xx[6] = 1 + xx[9]; DXDraw.DrawGraph(n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
+                            xx[6] = 1 + xx[9]; DXDraw.DrawGraph(Res.n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
                         }
 
                         if (nブロックtype[t_] == 111 || nブロックtype[t_] == 113 || nブロックtype[t_] == 115 && nブロックxtype[t_] == 0 || nブロックtype[t_] == 124)
                         {
-                            xx[6] = 3 + xx[9]; DXDraw.DrawGraph(n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
+                            xx[6] = 3 + xx[9]; DXDraw.DrawGraph(Res.n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
                         }
 
                     }
 
                     if (nブロックtype[t_] == 117 && nブロックxtype[t_] == 1)
                     {
-                        DXDraw.DrawGraph(n切り取り画像_[4, 5], xx[0] / 100, xx[1] / 100);
+                        DXDraw.DrawGraph(Res.n切り取り画像_[4, 5], xx[0] / 100, xx[1] / 100);
                     }
 
                     if (nブロックtype[t_] == 117 && nブロックxtype[t_] >= 3)
                     {
-                        DXDraw.DrawGraph(n切り取り画像_[3, 5], xx[0] / 100, xx[1] / 100);
+                        DXDraw.DrawGraph(Res.n切り取り画像_[3, 5], xx[0] / 100, xx[1] / 100);
                     }
 
                     if (nブロックtype[t_] == 115 && nブロックxtype[t_] == 3)
                     {
-                        xx[6] = 1 + xx[9]; DXDraw.DrawGraph(n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
+                        xx[6] = 1 + xx[9]; DXDraw.DrawGraph(Res.n切り取り画像_[xx[6], 1], xx[0] / 100, xx[1] / 100);
                     }
 
                     //ジャンプ台
                     if (nブロックtype[t_] == 120 && nブロックxtype[t_] != 1)
                     {
-                        DXDraw.DrawGraph(n切り取り画像_[16, 1], xx[0] / 100 + 3, xx[1] / 100 + 2);
+                        DXDraw.DrawGraph(Res.n切り取り画像_[16, 1], xx[0] / 100 + 3, xx[1] / 100 + 2);
                     }
 
                     //ON-OFF
-                    if (nブロックtype[t_] == 130) DXDraw.DrawGraph(n切り取り画像_[10, 5], xx[0] / 100, xx[1] / 100);
-                    if (nブロックtype[t_] == 131) DXDraw.DrawGraph(n切り取り画像_[11, 5], xx[0] / 100, xx[1] / 100);
+                    if (nブロックtype[t_] == 130) DXDraw.DrawGraph(Res.n切り取り画像_[10, 5], xx[0] / 100, xx[1] / 100);
+                    if (nブロックtype[t_] == 131) DXDraw.DrawGraph(Res.n切り取り画像_[11, 5], xx[0] / 100, xx[1] / 100);
 
-                    if (nブロックtype[t_] == 140) DXDraw.DrawGraph(n切り取り画像_[12, 5], xx[0] / 100, xx[1] / 100);
-                    if (nブロックtype[t_] == 141) DXDraw.DrawGraph(n切り取り画像_[13, 5], xx[0] / 100, xx[1] / 100);
-                    if (nブロックtype[t_] == 142) DXDraw.DrawGraph(n切り取り画像_[14, 5], xx[0] / 100, xx[1] / 100);
+                    if (nブロックtype[t_] == 140) DXDraw.DrawGraph(Res.n切り取り画像_[12, 5], xx[0] / 100, xx[1] / 100);
+                    if (nブロックtype[t_] == 141) DXDraw.DrawGraph(Res.n切り取り画像_[13, 5], xx[0] / 100, xx[1] / 100);
+                    if (nブロックtype[t_] == 142) DXDraw.DrawGraph(Res.n切り取り画像_[14, 5], xx[0] / 100, xx[1] / 100);
 
 
                     if (nブロックtype[t_] == 300 || nブロックtype[t_] == 301)
-                        DXDraw.DrawGraph(n切り取り画像_[1, 5], xx[0] / 100, xx[1] / 100);
+                        DXDraw.DrawGraph(Res.n切り取り画像_[1, 5], xx[0] / 100, xx[1] / 100);
 
                     //Pスイッチ
-                    if (nブロックtype[t_] == 400) { DXDraw.DrawGraph(n切り取り画像_[2, 5], xx[0] / 100, xx[1] / 100); }
+                    if (nブロックtype[t_] == 400) { DXDraw.DrawGraph(Res.n切り取り画像_[2, 5], xx[0] / 100, xx[1] / 100); }
 
                     //コイン
-                    if (nブロックtype[t_] == 800) { DXDraw.DrawGraph(n切り取り画像_[0, 2], xx[0] / 100 + 2, xx[1] / 100 + 1); }
+                    if (nブロックtype[t_] == 800) { DXDraw.DrawGraph(Res.n切り取り画像_[0, 2], xx[0] / 100 + 2, xx[1] / 100 + 1); }
 
                 }
             }

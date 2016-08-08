@@ -59,7 +59,7 @@
     <Compile Include="Sub\ProgramBack.cs" />
     <Compile Include="Sub\ProgramBlock.cs" />
     <Compile Include="Sub\ProgramEnemy.cs" />
-    <Compile Include="ProgramLoad.cs" />
+    <Compile Include="ProgramRes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgramCore.cs" />
     <Compile Include="ProgramH.cs" />

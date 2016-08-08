@@ -101,26 +101,26 @@ namespace SyobonAction
                                 //飛び出し
                                 if (n地面xtype[t_] == 0)
                                 {
-                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(nオーディオ_[7]); nプレイヤーxtype = 0;
+                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ_[7]); nプレイヤーxtype = 0;
                                 }
                                 //普通
                                 if (n地面xtype[t_] == 1)
                                 {
-                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(nオーディオ_[7]); nプレイヤーxtype = 1;
+                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ_[7]); nプレイヤーxtype = 1;
                                 }
                                 //普通
                                 if (n地面xtype[t_] == 2)
                                 {
-                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(nオーディオ_[7]); nプレイヤーxtype = 2;
+                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ_[7]); nプレイヤーxtype = 2;
                                 }
                                 if (n地面xtype[t_] == 5)
                                 {
-                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(nオーディオ_[7]); nプレイヤーxtype = 5;
+                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ_[7]); nプレイヤーxtype = 5;
                                 }
                                 // ループ
                                 if (n地面xtype[t_] == 6)
                                 {
-                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(nオーディオ_[7]); nプレイヤーxtype = 6;
+                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ_[7]); nプレイヤーxtype = 6;
                                 }
                             }
                         }//50
@@ -133,20 +133,20 @@ namespace SyobonAction
                              //飛び出し
                                 if (n地面xtype[t_] == 0)
                                 {
-                                    nプレイヤーtype = 500; nプレイヤーtm = 0; v効果音再生(nオーディオ_[7]);//mxtype=1;
+                                    nプレイヤーtype = 500; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ_[7]);//mxtype=1;
                                     nプレイヤーtype = 100; nプレイヤーxtype = 10;
                                 }
 
                                 if (n地面xtype[t_] == 2)
                                 {
                                     nプレイヤーxtype = 3;
-                                    nプレイヤーtm = 0; v効果音再生(nオーディオ_[7]);//mxtype=1;
+                                    nプレイヤーtm = 0; v効果音再生(Res.nオーディオ_[7]);//mxtype=1;
                                     nプレイヤーtype = 100;
                                 }
                                 // ループ
                                 if (n地面xtype[t_] == 6)
                                 {
-                                    nプレイヤーtype = 3; nプレイヤーtm = 0; v効果音再生(nオーディオ_[7]); nプレイヤーxtype = 6;
+                                    nプレイヤーtype = 3; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ_[7]); nプレイヤーxtype = 6;
                                 }
                             }
                         }//40
@@ -162,10 +162,10 @@ namespace SyobonAction
                             {
                                 if (n地面xtype[t_] == 0 || n地面xtype[t_] == 1 && nブロックtype[1] != 3)
                                 {
-                                    ayobi(n地面a[t_] + 1000, 32000, 0, 0, 0, 3, 0); n地面a[t_] = -800000000; v効果音再生(nオーディオ_[10]);
+                                    ayobi(n地面a[t_] + 1000, 32000, 0, 0, 0, 3, 0); n地面a[t_] = -800000000; v効果音再生(Res.nオーディオ_[10]);
                                 }
                             }
-                            if (n地面type[t_] == 101) { ayobi(n地面a[t_] + 6000, -4000, 0, 0, 0, 3, 1); n地面a[t_] = -800000000; v効果音再生(nオーディオ_[10]); }
+                            if (n地面type[t_] == 101) { ayobi(n地面a[t_] + 6000, -4000, 0, 0, 0, 3, 1); n地面a[t_] = -800000000; v効果音再生(Res.nオーディオ_[10]); }
                             if (n地面type[t_] == 102)
                             {
                                 if (n地面xtype[t_] == 0)
@@ -173,12 +173,12 @@ namespace SyobonAction
                                     for (t3 = 0; t3 <= 3; t3++) { ayobi(n地面a[t_] + t3 * 3000, -3000, 0, 0, 0, 0, 0); }
                                 }
                                 if (n地面xtype[t_] == 1 && nプレイヤーb >= 16000) { ayobi(n地面a[t_] + 1500, 44000, 0, -2000, 0, 4, 0); }
-                                else if (n地面xtype[t_] == 2) { ayobi(n地面a[t_] + 4500, 30000, 0, -1600, 0, 5, 0); v効果音再生(nオーディオ_[10]); n地面xtype[t_] = 3; n地面a[t_] -= 12000; }
+                                else if (n地面xtype[t_] == 2) { ayobi(n地面a[t_] + 4500, 30000, 0, -1600, 0, 5, 0); v効果音再生(Res.nオーディオ_[10]); n地面xtype[t_] = 3; n地面a[t_] -= 12000; }
                                 else if (n地面xtype[t_] == 3) { n地面a[t_] += 12000; n地面xtype[t_] = 4; }
-                                else if (n地面xtype[t_] == 4) { ayobi(n地面a[t_] + 4500, 30000, 0, -1600, 0, 5, 0); v効果音再生(nオーディオ_[10]); n地面xtype[t_] = 5; n地面xtype[t_] = 0; }
+                                else if (n地面xtype[t_] == 4) { ayobi(n地面a[t_] + 4500, 30000, 0, -1600, 0, 5, 0); v効果音再生(Res.nオーディオ_[10]); n地面xtype[t_] = 5; n地面xtype[t_] = 0; }
 
                                 else if (n地面xtype[t_] == 7) { nプレイヤーainmsgtype = 1; }
-                                else if (n地面xtype[t_] == 8) { ayobi(n地面a[t_] - 5000 - 3000 * 1, 26000, 0, -1600, 0, 5, 0); v効果音再生(nオーディオ_[10]); }
+                                else if (n地面xtype[t_] == 8) { ayobi(n地面a[t_] - 5000 - 3000 * 1, 26000, 0, -1600, 0, 5, 0); v効果音再生(Res.nオーディオ_[10]); }
                                 else if (n地面xtype[t_] == 9) { for (t3 = 0; t3 <= 2; t3++) { ayobi(n地面a[t_] + t3 * 3000 + 3000, 48000, 0, -6000, 0, 3, 0); } }
                                 if (n地面xtype[t_] == 10) { n地面a[t_] -= 5 * 30 * 100; n地面type[t_] = 101; }
 
@@ -197,7 +197,7 @@ namespace SyobonAction
                                 if (n地面xtype[t_] == 30)
                                 {
                                     n地面a[t_] = -80000000; nプレイヤーd = 0;
-                                    DX.StopSoundMem(nオーディオ_[0]); nプレイヤーtype = 302; nプレイヤーtm = 0; v効果音再生(nオーディオ_[16]);
+                                    DX.StopSoundMem(Res.nオーディオ_[0]); nプレイヤーtype = 302; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ_[16]);
                                 }
 
                                 if (n地面xtype[t_] != 3 && n地面xtype[t_] != 4 && n地面xtype[t_] != 10) { n地面a[t_] = -800000000; }
@@ -233,7 +233,7 @@ namespace SyobonAction
                             if (n地面type[t_] == 105 && nプレイヤーzimen == 0 && nプレイヤーd >= 0) { nブロックa[1] -= 1000; nブロックa[2] += 1000; n地面xtype[t_]++; if (n地面xtype[t_] >= 3) n地面a[t_] = -8000000; }
 
 
-                            if (n地面type[t_] == 300 && nプレイヤーtype == 0 && nプレイヤーb < xx[9] + n地面d[t_] + xx[0] - 3000 && nプレイヤーhp >= 1) { DX.StopSoundMem(nオーディオ_[0]); nプレイヤーtype = 300; nプレイヤーtm = 0; ma = n地面a[t_] - fx - 2000; v効果音再生(nオーディオ_[11]); }
+                            if (n地面type[t_] == 300 && nプレイヤーtype == 0 && nプレイヤーb < xx[9] + n地面d[t_] + xx[0] - 3000 && nプレイヤーhp >= 1) { DX.StopSoundMem(Res.nオーディオ_[0]); nプレイヤーtype = 300; nプレイヤーtm = 0; ma = n地面a[t_] - fx - 2000; v効果音再生(Res.nオーディオ_[11]); }
 
                             //中間ゲート
                             if (n地面type[t_] == 500 && nプレイヤーtype == 0 && nプレイヤーhp >= 1)
@@ -309,14 +309,14 @@ namespace SyobonAction
                         {
                             for (t3 = 0; t3 <= n地面c[t_] / 3000; t3++)
                             {
-                                DXDraw.DrawGraph(n切り取り画像_[1, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb);
+                                DXDraw.DrawGraph(Res.n切り取り画像_[1, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb);
                             }
                         }
                         if (n地面xtype[t_] == 1 || n地面xtype[t_] == 2)
                         {
                             for (t3 = 0; t3 <= n地面c[t_] / 3000; t3++)
                             {
-                                DXDraw.DrawGraph(n切り取り画像_[31, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb);
+                                DXDraw.DrawGraph(Res.n切り取り画像_[31, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb);
                             }
                         }
                         if (n地面xtype[t_] == 3 || n地面xtype[t_] == 4)
@@ -325,7 +325,7 @@ namespace SyobonAction
                             {
                                 for (t2 = 0; t2 <= n地面d[t_] / 3000; t2++)
                                 {
-                                    DXDraw.DrawGraph(n切り取り画像_[65, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + 29 * t2 + n全体のポイントb);
+                                    DXDraw.DrawGraph(Res.n切り取り画像_[65, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + 29 * t2 + n全体のポイントb);
                                 }
                             }
                         }
@@ -334,7 +334,7 @@ namespace SyobonAction
                         {
                             for (t3 = 0; t3 <= n地面c[t_] / 3000; t3++)
                             {
-                                DXDraw.DrawGraph(n切り取り画像_[65, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb);
+                                DXDraw.DrawGraph(Res.n切り取り画像_[65, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb);
                             }
                         }
 
@@ -352,15 +352,15 @@ namespace SyobonAction
                         {
                             if (n地面xtype[t_] == 0)
                             {
-                                DXDraw.DrawGraph(n切り取り画像_[5 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb);
-                                if (nステージ色 != 4) { DXDraw.DrawGraph(n切り取り画像_[6 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29); }
-                                else { DXDraw.DrawGraph(n切り取り画像_[5 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29); }
+                                DXDraw.DrawGraph(Res.n切り取り画像_[5 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb);
+                                if (nステージ色 != 4) { DXDraw.DrawGraph(Res.n切り取り画像_[6 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29); }
+                                else { DXDraw.DrawGraph(Res.n切り取り画像_[5 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29); }
                             }
                             if (n地面xtype[t_] == 1)
                             {
                                 for (t2 = 0; t2 <= n地面d[t_] / 3000; t2++)
                                 {
-                                    DXDraw.DrawGraph(n切り取り画像_[1 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29 * t2);
+                                    DXDraw.DrawGraph(Res.n切り取り画像_[1 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29 * t2);
                                 }
                             }
 
@@ -368,7 +368,7 @@ namespace SyobonAction
                             {
                                 for (t2 = 0; t2 <= n地面d[t_] / 3000; t2++)
                                 {
-                                    DXDraw.DrawGraph(n切り取り画像_[5 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29 * t2);
+                                    DXDraw.DrawGraph(Res.n切り取り画像_[5 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29 * t2);
                                 }
                             }
 
@@ -403,7 +403,7 @@ namespace SyobonAction
                     //中間
                     if (n地面type[t_] == 500)
                     {
-                        DXDraw.DrawGraph(n切り取り画像_[20, 4], (n地面a[t_] - fx) / 100, (n地面b[t_] - fy) / 100);
+                        DXDraw.DrawGraph(Res.n切り取り画像_[20, 4], (n地面a[t_] - fx) / 100, (n地面b[t_] - fy) / 100);
                     }
                 }
             }//t
@@ -446,7 +446,7 @@ namespace SyobonAction
                         {
                             for (t2 = 0; t2 <= n地面d[t_] / 3000; t2++)
                             {
-                                DXDraw.DrawGraph(n切り取り画像_[65, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + 29 * t2 + n全体のポイントb);
+                                DXDraw.DrawGraph(Res.n切り取り画像_[65, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + 29 * t2 + n全体のポイントb);
                             }
                         }
                     }

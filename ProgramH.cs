@@ -8,6 +8,12 @@ namespace SyobonAction
 {
     static partial class Program
     {
+        static int ma;
+        //t・ttはほぼカウンタ変数として使われているが、
+        //一部他の使い方もされているのでローカルに移せない
+        static int t_;
+        static int tt_;
+
         //String 使用
 
         //プログラム中
