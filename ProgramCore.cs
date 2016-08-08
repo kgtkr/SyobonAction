@@ -146,7 +146,7 @@ namespace SyobonAction
                     //ランダムにさせる
                     if (over == 1)
                     {
-                        for (t_ = 0; t_ < nブロックmax; t_++)
+                        for (int t_ = 0; t_ < nブロックmax; t_++)
                         {
                             if (DX.GetRand(3) <= 1)
                             {
@@ -160,7 +160,7 @@ namespace SyobonAction
                                 nブロックxtype[t_] = DX.GetRand(4);
                             }
                         }
-                        for (t_ = 0; t_ < n敵出現max; t_++)
+                        for (int t_ = 0; t_ < n敵出現max; t_++)
                         {
                             if (DX.GetRand(2) <= 1)
                             {
@@ -173,17 +173,18 @@ namespace SyobonAction
                             }
                         }
 
-                        nリフトco = 0;
-                        t_ = nリフトco;
-                        nリフトa[t_] = ma + fx;
-                        nリフトb[t_] = (13 * 29 - 12) * 100;
-                        nリフトc[t_] = 30 * 100;
-                        nリフトtype[t_] = 0;
-                        nリフトacttype[t_] = 0;
-                        nリフトe[t_] = 0;
-                        nリフトsp[t_] = 0;
-                        nリフトco++;
-
+                        {
+                            nリフトco = 0;
+                            int t_ = nリフトco;
+                            nリフトa[t_] = ma + fx;
+                            nリフトb[t_] = (13 * 29 - 12) * 100;
+                            nリフトc[t_] = 30 * 100;
+                            nリフトtype[t_] = 0;
+                            nリフトacttype[t_] = 0;
+                            nリフトe[t_] = 0;
+                            nリフトsp[t_] = 0;
+                            nリフトco++;
+                        }
                         if (DX.GetRand(4) == 0) nステージ色 = DX.GetRand(5);
                     }
 

@@ -12,14 +12,14 @@ namespace SyobonAction
         static void UpdateEnemy()
         {
             //敵キャラの配置
-            for (t_ = 0; t_ < n敵出現max; t_++)
+            for (int t_ = 0; t_ < n敵出現max; t_++)
             {
                 if (n敵出現a[t_] >= -80000)
                 {
 
                     if (n敵出現tm[t_] >= 0) { n敵出現tm[t_] = n敵出現tm[t_] - 1; }
 
-                    for (tt_ = 0; tt_ <= 1; tt_++)
+                    for (int tt_ = 0; tt_ <= 1; tt_++)
                     {
                         xx[0] = 0; xx[1] = 0;
 
@@ -43,7 +43,7 @@ namespace SyobonAction
             }//t
 
             //敵キャラ
-            for (t_ = 0; t_ < n敵キャラmax; t_++)
+            for (int t_ = 0; t_ < n敵キャラmax; t_++)
             {
                 xx[0] = n敵キャラa[t_] - fx; xx[1] = n敵キャラb[t_] - fy;
                 xx[2] = n敵キャラnobia[t_]; xx[3] = n敵キャラnobib[t_]; xx[14] = 12000 * 1;
@@ -72,7 +72,7 @@ namespace SyobonAction
                             //他の敵を倒す
                             if (n敵キャラxtype[t_] >= 1)
                             {
-                                for (tt_ = 0; tt_ < n敵キャラmax; tt_++)
+                                for (int tt_ = 0; tt_ < n敵キャラmax; tt_++)
                                 {
                                     xx[0] = 250; xx[5] = -800; xx[12] = 0; xx[1] = 1600;
                                     xx[8] = n敵キャラa[tt_] - fx; xx[9] = n敵キャラb[tt_] - fy;
@@ -144,7 +144,7 @@ namespace SyobonAction
                             //ポール捨て
                             if (n敵キャラxtype[t_] == 1)
                             {
-                                for (tt_ = 0; tt_ < n地面max; tt_++)
+                                for (int tt_ = 0; tt_ < n地面max; tt_++)
                                 {
                                     if (n地面type[tt_] == 300)
                                     {
@@ -164,7 +164,7 @@ namespace SyobonAction
                             if (n敵キャラtm[t_] >= 220) { n敵キャラtm[t_] = 0; n敵キャラmuki[t_] = 0; }
 
                             //他の敵を投げる
-                            for (tt_ = 0; tt_ < n敵キャラmax; tt_++)
+                            for (int tt_ = 0; tt_ < n敵キャラmax; tt_++)
                             {
                                 xx[0] = 250; xx[5] = -800; xx[12] = 0; xx[1] = 1600;
                                 xx[8] = n敵キャラa[tt_] - fx; xx[9] = n敵キャラb[tt_] - fy;
@@ -236,7 +236,7 @@ namespace SyobonAction
                             {
                                 if (n敵キャラtm[t_] == 50 && nプレイヤーb >= 6000) { n敵キャラc[t_] = 300; n敵キャラd[t_] -= 1600; n敵キャラb[t_] -= 1000; }
 
-                                for (tt_ = 0; tt_ < n敵キャラmax; tt_++)
+                                for (int tt_ = 0; tt_ < n敵キャラmax; tt_++)
                                 {
                                     xx[0] = 250; xx[5] = -800; xx[12] = 0; xx[1] = 1600;
                                     xx[8] = n敵キャラa[tt_] - fx; xx[9] = n敵キャラb[tt_] - fy;
@@ -310,7 +310,7 @@ namespace SyobonAction
                             if (n敵キャラtm[t_] > 360 * xx[25]) n敵キャラtm[t_] -= 360 * xx[25];
                             if (n敵キャラtm[t_] < 0) n敵キャラtm[t_] += 360 * xx[25];
 
-                            for (tt_ = 0; tt_ <= n敵キャラxtype[t_] % 100; tt_++)
+                            for (int tt_ = 0; tt_ <= n敵キャラxtype[t_] % 100; tt_++)
                             {
                                 xx[26] = 18;
                                 xd[4] = tt_ * xx[26] * Math.Cos(n敵キャラtm[t_] * Math.PI / 180 / 2); xd[5] = tt_ * xx[26] * Math.Sin(n敵キャラtm[t_] * Math.PI / 180 / 2);
@@ -335,7 +335,7 @@ namespace SyobonAction
                             if (n敵キャラtm[t_] > 360 * xx[25]) n敵キャラtm[t_] -= 360 * xx[25];
                             if (n敵キャラtm[t_] < 0) n敵キャラtm[t_] += 360 * xx[25];
 
-                            for (tt_ = 0; tt_ <= n敵キャラxtype[t_] % 100; tt_++)
+                            for (int tt_ = 0; tt_ <= n敵キャラxtype[t_] % 100; tt_++)
                             {
                                 xx[26] = 18;
                                 xd[4] = -tt_ * xx[26] * Math.Cos(n敵キャラtm[t_] * Math.PI / 180 / 2);
@@ -358,7 +358,6 @@ namespace SyobonAction
 
                         case 90:
                             xx[10] = 160;
-                            //azimentype[t]=0;
                             break;
 
 
@@ -370,7 +369,7 @@ namespace SyobonAction
                             //ほかの敵を巨大化
                             if (n敵キャラxtype[t_] == 2)
                             {
-                                for (tt_ = 0; tt_ < n敵キャラmax; tt_++)
+                                for (int tt_ = 0; tt_ < n敵キャラmax; tt_++)
                                 {
                                     xx[0] = 250; xx[5] = -800; xx[12] = 0; xx[1] = 1600;
                                     xx[8] = n敵キャラa[tt_] - fx; xx[9] = n敵キャラb[tt_] - fy;
@@ -460,7 +459,7 @@ namespace SyobonAction
                         //地面判定
                         if (n敵キャラzimentype[t_] != 2)
                         {
-                            tekizimen();
+                            tekizimen(t_);
                         }
 
 
@@ -560,10 +559,9 @@ namespace SyobonAction
                     if (n敵キャラtype[t_] == 85) xx[16] = -n敵キャラnobib[t_] + 6000;
                     if (ma + nプレイヤーnobia > xx[8] + xx[4] && ma < xx[8] + n敵キャラnobia[t_] - xx[4] && nプレイヤーb < xx[9] + n敵キャラnobib[t_] + xx[15] && nプレイヤーb + nプレイヤーnobib > xx[9] + n敵キャラnobib[t_] - xx[0] + xx[16] && n敵キャラnotm[t_] <= 0 && n敵キャラbrocktm[t_] <= 0)
                     {
-                        if (nプレイヤーmutekion == 1) { n敵キャラa[t_] = -9000000; }
                         if (nプレイヤーmutekitm <= 0 && (n敵キャラtype[t_] <= 99 || n敵キャラtype[t_] >= 200))
                         {
-                            if (nプレイヤーmutekion != 1 && nプレイヤーtype != 200)
+                            if (nプレイヤーtype != 200)
                             {
                                 //if (mmutekitm<=0)
 
@@ -732,7 +730,7 @@ namespace SyobonAction
         {
             DXDraw.nミラー = 0;
             //敵キャラ
-            for (t_ = 0; t_ < n敵キャラmax; t_++)
+            for (int t_ = 0; t_ < n敵キャラmax; t_++)
             {
 
                 xx[0] = n敵キャラa[t_] - fx; xx[1] = n敵キャラb[t_] - fy;
@@ -873,18 +871,17 @@ namespace SyobonAction
         static void DrawEnemyファイアバー()
         {
             //ファイアバー
-            for (t_ = 0; t_ < n敵キャラmax; t_++)
+            for (int t_ = 0; t_ < n敵キャラmax; t_++)
             {
 
                 xx[0] = n敵キャラa[t_] - fx; xx[1] = n敵キャラb[t_] - fy;
-                //xx[2]=anobia[t]/100;xx[3]=anobib[t]/100;
                 xx[14] = 12000; xx[16] = 0;
                 if (n敵キャラtype[t_] == 87 || n敵キャラtype[t_] == 88)
                 {
                     if (xx[0] + xx[2] * 100 >= -10 - xx[14] && xx[1] <= n画面幅 + xx[14] && xx[1] + xx[3] * 100 >= -10 && xx[3] <= n画面高さ)
                     {
 
-                        for (tt_ = 0; tt_ <= n敵キャラxtype[t_] % 100; tt_++)
+                        for (int tt_ = 0; tt_ <= n敵キャラxtype[t_] % 100; tt_++)
                         {
                             xx[26] = 18;
                             xd[4] = tt_ * xx[26] * Math.Cos(n敵キャラtm[t_] * Math.PI / 180 / 2);

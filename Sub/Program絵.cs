@@ -11,7 +11,7 @@ namespace SyobonAction
         static void Update絵()
         {
             //グラ
-            for (t_ = 0; t_ < n絵max; t_++)
+            for (int t_ = 0; t_ < n絵max; t_++)
             {
                 xx[0] = n絵a[t_] - fx; xx[1] = n絵b[t_] - fy;
                 xx[2] = n絵nobia[t_] / 100; xx[3] = n絵nobib[t_] / 100;
@@ -30,7 +30,7 @@ namespace SyobonAction
         static void Draw絵()
         {
             //グラ
-            for (t_ = 0; t_ < n絵max; t_++)
+            for (int t_ = 0; t_ < n絵max; t_++)
             {
                 xx[0] = n絵a[t_] - fx; xx[1] = n絵b[t_] - fy;
                 xx[2] = n絵nobia[t_] / 100; xx[3] = n絵nobib[t_] / 100;

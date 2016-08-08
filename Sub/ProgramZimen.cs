@@ -12,7 +12,7 @@ namespace SyobonAction
         static void UpdateZimen()
         {
             //壁
-            for (t_ = 0; t_ < n地面max; t_++)
+            for (int t_ = 0; t_ < n地面max; t_++)
             {
                 if (n地面a[t_] - fx + n地面c[t_] >= -12000 && n地面a[t_] - fx <= n画面幅)
                 {
@@ -262,7 +262,7 @@ namespace SyobonAction
         static void DrawZimen()
         {
             //地面(壁)//土管も
-            for (t_ = 0; t_ < n地面max; t_++)
+            for (int t_ = 0; t_ < n地面max; t_++)
             {
                 if (n地面a[t_] - fx + n地面c[t_] >= -10 && n地面a[t_] - fx <= n画面幅 + 1100)
                 {
@@ -410,7 +410,7 @@ namespace SyobonAction
 
 
             //描画上書き(土管)
-            for (t_ = 0; t_ < n地面max; t_++)
+            for (int t_ = 0; t_ < n地面max; t_++)
             {
                 if (n地面a[t_] - fx + n地面c[t_] >= -10 && n地面a[t_] - fx <= n画面幅 + 1100)
                 {

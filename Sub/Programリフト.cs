@@ -12,7 +12,7 @@ namespace SyobonAction
         static void Updateリフト()
         {
             //リフト
-            for (t_ = 0; t_ < nリフトmax; t_++)
+            for (int t_ = 0; t_ < nリフトmax; t_++)
             {
                 xx[10] = nリフトa[t_]; xx[11] = nリフトb[t_]; xx[12] = nリフトc[t_]; xx[13] = nリフトd[t_];
                 xx[8] = xx[10] - fx; xx[9] = xx[11] - fy;
@@ -40,8 +40,8 @@ namespace SyobonAction
                         case 5:
                             if (nリフトmove[t_] == 0) { nリフトmuki[t_] = 0; }
                             else { nリフトmuki[t_] = 1; }
-                            if (nリフトb[t_] - fy < -2100) { nリフトb[t_] = n画面高さ + fy + scrollY + 2000; }
-                            if (nリフトb[t_] - fy > n画面高さ + scrollY + 2000) { nリフトb[t_] = -2100 + fy; }
+                            if (nリフトb[t_] - fy < -2100) { nリフトb[t_] = n画面高さ + fy + 2000; }
+                            if (nリフトb[t_] - fy > n画面高さ + 2000) { nリフトb[t_] = -2100 + fy; }
                             break;
 
                         case 6:
@@ -55,85 +55,81 @@ namespace SyobonAction
                     }//sw
 
                     //乗ったとき
-                    if (!(nプレイヤーztm >= 1 && nプレイヤーztype == 1 && nプレイヤーactaon[3] == 1) && nプレイヤーhp >= 1)
+                    if (ma + nプレイヤーnobia > xx[8] + xx[0] && ma < xx[8] + xx[12] - xx[0] && nプレイヤーb + nプレイヤーnobib > xx[9] && nプレイヤーb + nプレイヤーnobib < xx[9] + xx[1] && nプレイヤーd >= -100)
                     {
-                        if (ma + nプレイヤーnobia > xx[8] + xx[0] && ma < xx[8] + xx[12] - xx[0] && nプレイヤーb + nプレイヤーnobib > xx[9] && nプレイヤーb + nプレイヤーnobib < xx[9] + xx[1] && nプレイヤーd >= -100)
+                        nプレイヤーb = xx[9] - nプレイヤーnobib + 100;
+
+                        if (nリフトtype[t_] == 1) { nリフトe[10] = 900; nリフトe[11] = 900; }
+
+                        if (nリフトsp[t_] != 12)
                         {
-                            nプレイヤーb = xx[9] - nプレイヤーnobib + 100;
-
-                            if (nリフトtype[t_] == 1) { nリフトe[10] = 900; nリフトe[11] = 900; }
-
-                            if (nリフトsp[t_] != 12)
-                            {
-                                nプレイヤーzimen = 1; nプレイヤーd = 0;
-                            }
-                            else {
-                                //すべり
-                                nプレイヤーd = -800;
-                            }
-
-
-
-                            //落下
-                            if ((nリフトacttype[t_] == 1) && nリフトon[t_] == 0) nリフトon[t_] = 1;
-
-                            if (nリフトacttype[t_] == 1 && nリフトon[t_] == 1 || nリフトacttype[t_] == 3 || nリフトacttype[t_] == 5)
-                            {
-                                nプレイヤーb += nリフトe[t_];
-                            }
-
-                            if (nリフトacttype[t_] == 7)
-                            {
-                                if (nプレイヤーactaon[2] != 1) { nプレイヤーd = -600; nプレイヤーb -= 810; }
-                                if (nプレイヤーactaon[2] == 1) { nプレイヤーb -= 400; nプレイヤーd = -1400; nプレイヤーjumptm = 10; }
-                            }
-
-
-                            //特殊
-                            if (nリフトsp[t_] == 1)
-                            {
-                                v効果音再生(Res.nオーディオ_[3]);
-                                eyobi(nリフトa[t_] + 200, nリフトb[t_] - 1000, -240, -1400, 0, 160, 4500, 4500, 2, 120);
-                                eyobi(nリフトa[t_] + 4500 - 200, nリフトb[t_] - 1000, 240, -1400, 0, 160, 4500, 4500, 3, 120);
-                                nリフトa[t_] = -70000000;
-                            }
-
-                            if (nリフトsp[t_] == 2)
-                            {
-                                nプレイヤーc = -2400; nリフトmove[t_] += 1;
-                                if (nリフトmove[t_] >= 100) { nプレイヤーhp = 0; nメッセージtype = 53; nメッセージtm = 30; nリフトmove[t_] = -5000; }
-                            }
-
-                            if (nリフトsp[t_] == 3)
-                            {
-                                nプレイヤーc = 2400; nリフトmove[t_] += 1;
-                                if (nリフトmove[t_] >= 100) { nプレイヤーhp = 0; nメッセージtype = 53; nメッセージtm = 30; nリフトmove[t_] = -5000; }
-                            }
-                        }//判定内
-
-
-                        //疲れ初期化
-                        if ((nリフトsp[t_] == 2 || nリフトsp[t_] == 3) && nプレイヤーc != -2400 && nリフトmove[t_] > 0) { nリフトmove[t_]--; }
-
-                        if (nリフトsp[t_] == 11)
-                        {
-                            if (ma + nプレイヤーnobia > xx[8] + xx[0] - 2000 && ma < xx[8] + xx[12] - xx[0]) { nリフトon[t_] = 1; }// && mb+mnobib>xx[9]-1000 && mb+mnobib<xx[9]+xx[1]+2000)
-                            if (nリフトon[t_] == 1) { nリフトf[t_] = 60; nリフトb[t_] += nリフトe[t_]; }
+                            nプレイヤーzimen = 1; nプレイヤーd = 0;
+                        }
+                        else {
+                            //すべり
+                            nプレイヤーd = -800;
                         }
 
 
-                        //トゲ(下)
-                        if (ma + nプレイヤーnobia > xx[8] + xx[0] && ma < xx[8] + xx[12] - xx[0] && nプレイヤーb > xx[9] - xx[1] / 2 && nプレイヤーb < xx[9] + xx[1] / 2)
-                        {
-                            if (nリフトtype[t_] == 2) { if (nプレイヤーd < 0) { nプレイヤーd = -nプレイヤーd; } nプレイヤーb += 110; if (nプレイヤーmutekitm <= 0) nプレイヤーhp -= 1; if (nプレイヤーmutekion != 1) nプレイヤーmutekitm = 40; }
-                        }
+
                         //落下
-                        if (nリフトacttype[t_] == 6)
+                        if ((nリフトacttype[t_] == 1) && nリフトon[t_] == 0) nリフトon[t_] = 1;
+
+                        if (nリフトacttype[t_] == 1 && nリフトon[t_] == 1 || nリフトacttype[t_] == 3 || nリフトacttype[t_] == 5)
                         {
-                            if (ma + nプレイヤーnobia > xx[8] + xx[0] && ma < xx[8] + xx[12] - xx[0]) { nリフトon[t_] = 1; }
+                            nプレイヤーb += nリフトe[t_];
                         }
 
-                    }//!
+                        if (nリフトacttype[t_] == 7)
+                        {
+                            if (nプレイヤーactaon[2] != 1) { nプレイヤーd = -600; nプレイヤーb -= 810; }
+                            if (nプレイヤーactaon[2] == 1) { nプレイヤーb -= 400; nプレイヤーd = -1400; nプレイヤーjumptm = 10; }
+                        }
+
+
+                        //特殊
+                        if (nリフトsp[t_] == 1)
+                        {
+                            v効果音再生(Res.nオーディオ_[3]);
+                            eyobi(nリフトa[t_] + 200, nリフトb[t_] - 1000, -240, -1400, 0, 160, 4500, 4500, 2, 120);
+                            eyobi(nリフトa[t_] + 4500 - 200, nリフトb[t_] - 1000, 240, -1400, 0, 160, 4500, 4500, 3, 120);
+                            nリフトa[t_] = -70000000;
+                        }
+
+                        if (nリフトsp[t_] == 2)
+                        {
+                            nプレイヤーc = -2400; nリフトmove[t_] += 1;
+                            if (nリフトmove[t_] >= 100) { nプレイヤーhp = 0; nメッセージtype = 53; nメッセージtm = 30; nリフトmove[t_] = -5000; }
+                        }
+
+                        if (nリフトsp[t_] == 3)
+                        {
+                            nプレイヤーc = 2400; nリフトmove[t_] += 1;
+                            if (nリフトmove[t_] >= 100) { nプレイヤーhp = 0; nメッセージtype = 53; nメッセージtm = 30; nリフトmove[t_] = -5000; }
+                        }
+                    }//判定内
+
+
+                    //疲れ初期化
+                    if ((nリフトsp[t_] == 2 || nリフトsp[t_] == 3) && nプレイヤーc != -2400 && nリフトmove[t_] > 0) { nリフトmove[t_]--; }
+
+                    if (nリフトsp[t_] == 11)
+                    {
+                        if (ma + nプレイヤーnobia > xx[8] + xx[0] - 2000 && ma < xx[8] + xx[12] - xx[0]) { nリフトon[t_] = 1; }// && mb+mnobib>xx[9]-1000 && mb+mnobib<xx[9]+xx[1]+2000)
+                        if (nリフトon[t_] == 1) { nリフトf[t_] = 60; nリフトb[t_] += nリフトe[t_]; }
+                    }
+
+
+                    //トゲ(下)
+                    if (ma + nプレイヤーnobia > xx[8] + xx[0] && ma < xx[8] + xx[12] - xx[0] && nプレイヤーb > xx[9] - xx[1] / 2 && nプレイヤーb < xx[9] + xx[1] / 2)
+                    {
+                        if (nリフトtype[t_] == 2) { if (nプレイヤーd < 0) { nプレイヤーd = -nプレイヤーd; } nプレイヤーb += 110; if (nプレイヤーmutekitm <= 0) nプレイヤーhp -= 1; nプレイヤーmutekitm = 40; }
+                    }
+                    //落下
+                    if (nリフトacttype[t_] == 6)
+                    {
+                        if (ma + nプレイヤーnobia > xx[8] + xx[0] && ma < xx[8] + xx[12] - xx[0]) { nリフトon[t_] = 1; }
+                    }
 
                     if (nリフトacttype[t_] == 2 || nリフトacttype[t_] == 4)
                     {
@@ -147,7 +143,7 @@ namespace SyobonAction
                     }
 
                     //敵キャラ適用
-                    for (tt_ = 0; tt_ < n敵キャラmax; tt_++)
+                    for (int tt_ = 0; tt_ < n敵キャラmax; tt_++)
                     {
                         if (n敵キャラzimentype[tt_] == 1)
                         {
@@ -164,7 +160,7 @@ namespace SyobonAction
         static void Drawリフト()
         {
             //リフト
-            for (t_ = 0; t_ < nリフトmax; t_++)
+            for (int t_ = 0; t_ < nリフトmax; t_++)
             {
                 xx[0] = nリフトa[t_] - fx; xx[1] = nリフトb[t_] - fy;
                 if (xx[0] + nリフトc[t_] >= -10 && xx[1] <= n画面幅 + 12100 && nリフトc[t_] / 100 >= 1)

@@ -9,10 +9,6 @@ namespace SyobonAction
     static partial class Program
     {
         static int ma;
-        //t・ttはほぼカウンタ変数として使われているが、
-        //一部他の使い方もされているのでローカルに移せない
-        static int t_;
-        static int tt_;
 
         //String 使用
 
@@ -67,10 +63,6 @@ namespace SyobonAction
         //初期化
         static int zxon;
 
-        //キーコンフィグ
-        static int keyTm;
-
-
         //地面
         const int n地面max = 31;
         static int n地面co;
@@ -90,7 +82,7 @@ namespace SyobonAction
         static int nプレイヤーb, nプレイヤーnobia, nプレイヤーnobib, nプレイヤーhp;
         static int nプレイヤーc,
             nプレイヤーd,
-             nプレイヤーatktm, nokori = 2, nプレイヤーactp, nプレイヤーact;
+             nokori = 2, nプレイヤーactp, nプレイヤーact;
 
         static int nプレイヤーtype,
             nプレイヤーxtype,
@@ -102,8 +94,7 @@ namespace SyobonAction
             nプレイヤーmuki,
             nプレイヤーjumptm,
             nプレイヤーkeytm;
-        static int nプレイヤーmutekitm, nプレイヤーmutekion;
-        static int nプレイヤーztm, nプレイヤーztype;
+        static int nプレイヤーmutekitm;
         static int[] nプレイヤーactaon = new int[7];
         //メッセージ
         static int nメッセージtm, nメッセージtype;
@@ -214,7 +205,7 @@ namespace SyobonAction
             nリフトmove = new int[nリフトmax];
 
         //スクロール範囲
-        static int fx = 0, fy = 0, fzx, scrollX, scrollY;
+        static int fx = 0, fy = 0, fzx, scrollX;
         //全体のポイント
         static int n全体のポイントa = 0, n全体のポイントb = 0;
         //強制スクロール

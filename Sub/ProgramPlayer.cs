@@ -15,13 +15,13 @@ namespace SyobonAction
             xx[0] = 0; nプレイヤーactaon[2] = 0; nプレイヤーactaon[3] = 0;
             if (nプレイヤーkeytm <= 0)
             {
-                if (Key.GetKey(DX.KEY_INPUT_LEFT) && keyTm <= 0)
+                if (Key.GetKey(DX.KEY_INPUT_LEFT))
                 {
                     nプレイヤーactaon[0] = -1;
                     nプレイヤーmuki = 0;
                     nプレイヤーactaon[4] = -1;
                 }
-                if (Key.GetKey(DX.KEY_INPUT_RIGHT) && keyTm <= 0)
+                if (Key.GetKey(DX.KEY_INPUT_RIGHT))
                 {
                     nプレイヤーactaon[0] = 1;
                     nプレイヤーmuki = 1;
@@ -117,7 +117,7 @@ namespace SyobonAction
                         }
                     }
 
-                    if (nプレイヤーc < -xx[9] && nプレイヤーatktm <= 0)
+                    if (nプレイヤーc < -xx[9])
                     {
                         nプレイヤーc -= xx[0] / 10;
                     }
@@ -153,7 +153,7 @@ namespace SyobonAction
                             nプレイヤーc = xx[9] + 1;
                         }
                     }
-                    if (nプレイヤーc > xx[9] && nプレイヤーatktm <= 0)
+                    if (nプレイヤーc > xx[9])
                     {
                         nプレイヤーc += xx[0] / 10;
                     }
@@ -300,7 +300,7 @@ namespace SyobonAction
                     {
                         nプレイヤーc = 0;
                         nプレイヤーd = 0;
-                        t_ = 28;
+                        int t_ = 28;
                         if (nプレイヤーtm <= 16)
                         {
                             nプレイヤーb += 240;

@@ -40,7 +40,7 @@ namespace SyobonAction
 
             //敵キャラのメッセージ
             DXDraw.SetColorBlack();
-            for (t_ = 0; t_ < n敵キャラmax; t_++)
+            for (int t_ = 0; t_ < n敵キャラmax; t_++)
             {
                 if (n敵キャラmsgtm[t_] >= 1)
                 {

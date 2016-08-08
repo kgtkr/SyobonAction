@@ -44,7 +44,7 @@ namespace SyobonAction
             }
             if (Key.GetKey(DX.KEY_INPUT_SPACE))
             {
-                for (t_ = 0; t_ <= xx[7]; t_ += 1)
+                for (int t_ = 0; t_ <= xx[7]; t_ += 1)
                 {
                     xx[12 + t_] -= 300;
                 }
@@ -53,7 +53,7 @@ namespace SyobonAction
             if (maintm <= 1)
             {
                 maintm = 2; bgmChange(Res.nオーディオ_[106]); DX.PlaySoundMem(Res.nオーディオ_[0], DX.DX_PLAYTYPE_LOOP); xx[10] = 0;
-                for (t_ = 0; t_ <= xx[7]; t_ += 1) { xx[12 + t_] = 980000; }
+                for (int t_ = 0; t_ <= xx[7]; t_ += 1) { xx[12 + t_] = 980000; }
                 xx[12] = 460;
                 xx[13] = 540; xx[14] = 590;
                 xx[15] = 650; xx[16] = 700;
@@ -68,11 +68,11 @@ namespace SyobonAction
 
                 xx[30] = 1800;
 
-                for (t_ = 0; t_ <= xx[7]; t_ += 1) { xx[12 + t_] *= 100; }
+                for (int t_ = 0; t_ <= xx[7]; t_ += 1) { xx[12 + t_] *= 100; }
             }
 
             xx[10] += 1;
-            for (t_ = 0; t_ <= xx[7]; t_ += 1) { xx[12 + t_] -= 100; }//t
+            for (int t_ = 0; t_ <= xx[7]; t_ += 1) { xx[12 + t_] -= 100; }//t
 
             if (xx[30] == -200) { bgmChange(Res.nオーディオ_[106]); }
             if (xx[30] <= -400) { e現在の画面 = E画面.Title; nokori = 2; maintm = 0; nスタッフロール = 0; }

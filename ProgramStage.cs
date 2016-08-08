@@ -14,6 +14,7 @@ namespace SyobonAction
             //1-1
             if (nステージa == 1 && nステージb == 1 && nステージc == 0)
             {
+
                 byte[][] stagedatex = stagedatex1;
 
 
@@ -36,7 +37,7 @@ namespace SyobonAction
 
 
                 n地面co = 0;
-                t_ = n地面co;
+                int t_ = n地面co;
                 n地面a[t_] = 20 * 29 * 100 + 500;
                 n地面b[t_] = -6000;
                 n地面c[t_] = 5000;
@@ -90,7 +91,7 @@ namespace SyobonAction
                 n地面c[t_] = 9000 - 1;
                 n地面d[t_] = 3000;
                 n地面type[t_] = 51;
-                n地面gtype [t_] = 0;
+                n地面gtype[t_] = 0;
                 n地面co++;
 
                 t_ = n地面co;
@@ -116,11 +117,12 @@ namespace SyobonAction
                 n敵出現xtype[t_] = 0;
                 n敵出現co++;
 
-                for (tt_ = 0; tt_ <= 1000; tt_++)
+
+                for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t_ = 0; t_ <= 16; t_++)
+                    for (int i = 0; i <= 16; i++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
+                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i][tt_];
                     }
                 }
 
@@ -149,18 +151,17 @@ namespace SyobonAction
 
                 //t=28;
                 n地面co = 0;
-                t_ = n地面co; n地面a[t_] = 14 * 29 * 100 + 500; n地面b[t_] = (9 * 29 - 12) * 100; n地面c[t_] = 6000; n地面d[t_] = 12000 - 200; n地面type[t_] = 50; n地面xtype[t_] = 1; n地面co++;
+                int t_ = n地面co; n地面a[t_] = 14 * 29 * 100 + 500; n地面b[t_] = (9 * 29 - 12) * 100; n地面c[t_] = 6000; n地面d[t_] = 12000 - 200; n地面type[t_] = 50; n地面xtype[t_] = 1; n地面co++;
                 t_ = n地面co; n地面a[t_] = 12 * 29 * 100; n地面b[t_] = (11 * 29 - 12) * 100; n地面c[t_] = 3000; n地面d[t_] = 6000 - 200; n地面type[t_] = 40; n地面xtype[t_] = 0; n地面co++;
                 t_ = n地面co; n地面a[t_] = 14 * 29 * 100 + 1000; n地面b[t_] = -6000; n地面c[t_] = 5000; n地面d[t_] = 70000; n地面type[t_] = 100; n地面xtype[t_] = 1; n地面co++;
-
                 //ブロックもどき
 
 
-                for (tt_ = 0; tt_ <= 1000; tt_++)
+                for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t_ = 0; t_ <= 16; t_++)
+                    for (int i = 0; i <= 16; i++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
+                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i][tt_];
                     }
                 }
 
@@ -192,10 +193,10 @@ namespace SyobonAction
 
                 tyobi(49 * 29, 9 * 29 - 12, 114);
 
-                for (t_ = 0; t_ >= -7; t_--)
+                for (int i = 0; i >= -7; i--)
                 {
 
-                    tyobi(53 * 29, t_ * 29 - 12, 1);
+                    tyobi(53 * 29, i * 29 - 12, 1);
                 }
 
                 nブロックxtype[nブロックco] = 1; tyobi(80 * 29, 5 * 29 - 12, 104);
@@ -203,7 +204,7 @@ namespace SyobonAction
 
 
                 n地面co = 0;
-                t_ = n地面co; n地面a[t_] = 2 * 29 * 100; n地面b[t_] = (13 * 29 - 12) * 100; n地面c[t_] = 3000 * 1 - 1; n地面d[t_] = 3000; n地面type[t_] = 52; n地面co++;
+                int t_ = n地面co; n地面a[t_] = 2 * 29 * 100; n地面b[t_] = (13 * 29 - 12) * 100; n地面c[t_] = 3000 * 1 - 1; n地面d[t_] = 3000; n地面type[t_] = 52; n地面co++;
                 t_ = n地面co; n地面a[t_] = 24 * 29 * 100; n地面b[t_] = (13 * 29 - 12) * 100; n地面c[t_] = 3000 * 1 - 1; n地面d[t_] = 3000; n地面type[t_] = 52; n地面co++;
                 t_ = n地面co; n地面a[t_] = 43 * 29 * 100 + 500; n地面b[t_] = -6000; n地面c[t_] = 3000; n地面d[t_] = 70000; n地面type[t_] = 102; n地面xtype[t_] = 1; n地面co++;
                 t_ = n地面co; n地面a[t_] = 53 * 29 * 100 + 500; n地面b[t_] = -6000; n地面c[t_] = 3000; n地面d[t_] = 70000; n地面type[t_] = 102; n地面xtype[t_] = 2; n地面co++;
@@ -247,11 +248,11 @@ namespace SyobonAction
 
 
 
-                for (tt_ = 0; tt_ <= 1000; tt_++)
+                for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t_ = 0; t_ <= 16; t_++)
+                    for (int i = 0; i <= 16; i++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
+                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i][tt_];
                     }
                 }
 
@@ -272,7 +273,7 @@ namespace SyobonAction
 
                 byte[][] stagedatex = stagedatex4;
 
-                t_ = n地面co; n地面a[t_] = 5 * 29 * 100 + 500; n地面b[t_] = -6000; n地面c[t_] = 3000; n地面d[t_] = 70000; n地面type[t_] = 102; n地面xtype[t_] = 8; n地面co++;
+                int t_ = n地面co; n地面a[t_] = 5 * 29 * 100 + 500; n地面b[t_] = -6000; n地面c[t_] = 3000; n地面d[t_] = 70000; n地面type[t_] = 102; n地面xtype[t_] = 8; n地面co++;
                 //空飛ぶ土管
                 t_ = 28; n地面a[t_] = 44 * 29 * 100 + 500; n地面b[t_] = (10 * 29 - 12) * 100; n地面c[t_] = 6000; n地面d[t_] = 9000 - 200; n地面type[t_] = 50; n地面co++;
 
@@ -281,11 +282,11 @@ namespace SyobonAction
                 t_ = n敵出現co; n敵出現a[t_] = 19 * 29 * 100; n敵出現b[t_] = (2 * 29 - 12) * 100; n敵出現type[t_] = 85; n敵出現xtype[t_] = 0; n敵出現co++;
 
 
-                for (tt_ = 0; tt_ <= 1000; tt_++)
+                for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t_ = 0; t_ <= 16; t_++)
+                    for (int i = 0; i <= 16; i++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
+                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i][tt_];
                     }
                 }
 
@@ -340,7 +341,7 @@ namespace SyobonAction
 
                 //ファイア
                 n敵出現co = 0;
-                t_ = n敵出現co; n敵出現a[t_] = 101 * 29 * 100; n敵出現b[t_] = (5 * 29 - 12) * 100; n敵出現type[t_] = 4; n敵出現xtype[t_] = 1; n敵出現co++;
+                int t_ = n敵出現co; n敵出現a[t_] = 101 * 29 * 100; n敵出現b[t_] = (5 * 29 - 12) * 100; n敵出現type[t_] = 4; n敵出現xtype[t_] = 1; n敵出現co++;
                 t_ = n敵出現co; n敵出現a[t_] = 146 * 29 * 100; n敵出現b[t_] = (10 * 29 - 12) * 100; n敵出現type[t_] = 6; n敵出現xtype[t_] = 1; n敵出現co++;
 
                 t_ = n地面co; n地面a[t_] = 9 * 29 * 100; n地面b[t_] = (13 * 29 - 12) * 100; n地面c[t_] = 9000 - 1; n地面d[t_] = 3000; n地面type[t_] = 52; n地面co++;
@@ -379,11 +380,11 @@ namespace SyobonAction
                 if (stagepoint == 1) { stagepoint = 0; ma = 4500; nプレイヤーb = -3000; n中間ゲート = 0; }
 
 
-                for (tt_ = 0; tt_ <= 1000; tt_++)
+                for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t_ = 0; t_ <= 16; t_++)
+                    for (int i = 0; i <= 16; i++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
+                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i][tt_];
                     }
                 }
 
@@ -411,9 +412,9 @@ namespace SyobonAction
                 nステージc = 0;
 
 
-                for (tt_ = 0; tt_ <= 1000; tt_++)
+                for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t_ = 0; t_ <= 16; t_++)
+                    for (int t_ = 0; t_ <= 16; t_++)
                     {
                         stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
                     }
@@ -439,18 +440,18 @@ namespace SyobonAction
                 byte[][] stagedatex = stagedatex7;
 
                 n地面co = 0;
-                t_ = n地面co; n地面a[t_] = 14 * 29 * 100 - 5; n地面b[t_] = (11 * 29 - 12) * 100; n地面c[t_] = 6000; n地面d[t_] = 15000 - 200; n地面type[t_] = 50; n地面xtype[t_] = 1; n地面co++;
+                int t_ = n地面co; n地面a[t_] = 14 * 29 * 100 - 5; n地面b[t_] = (11 * 29 - 12) * 100; n地面c[t_] = 6000; n地面d[t_] = 15000 - 200; n地面type[t_] = 50; n地面xtype[t_] = 1; n地面co++;
 
 
                 nブロックxtype[nブロックco] = 0; tyobi(12 * 29, 4 * 29 - 12, 112);
                 //ヒント3
                 nブロックxtype[nブロックco] = 3; tyobi(12 * 29, 8 * 29 - 12, 300);
 
-                for (tt_ = 0; tt_ <= 1000; tt_++)
+                for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t_ = 0; t_ <= 16; t_++)
+                    for (int i = 0; i <= 16; i++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
+                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i][tt_];
                     }
                 }
 
@@ -471,7 +472,7 @@ namespace SyobonAction
                 byte[][] stagedatex = stagedatex8;
 
                 n地面co = 0;//sco=140;
-                t_ = n地面co; n地面a[t_] = 35 * 29 * 100 - 1500 + 750; n地面b[t_] = (8 * 29 - 12) * 100 - 1500; n地面c[t_] = 1500; n地面d[t_] = 3000; n地面type[t_] = 105; n地面co++;
+                int t_ = n地面co; n地面a[t_] = 35 * 29 * 100 - 1500 + 750; n地面b[t_] = (8 * 29 - 12) * 100 - 1500; n地面c[t_] = 1500; n地面d[t_] = 3000; n地面type[t_] = 105; n地面co++;
                 t_ = n地面co; n地面a[t_] = 67 * 29 * 100; n地面b[t_] = (4 * 29 - 12) * 100; n地面c[t_] = 9000 - 1; n地面d[t_] = 3000 * 1 - 1; n地面type[t_] = 51; n地面xtype[t_] = 3; n地面gtype [t_] = 0; n地面co++;
                 t_ = n地面co; n地面a[t_] = 73 * 29 * 100; n地面b[t_] = (13 * 29 - 12) * 100; n地面c[t_] = 3000 * 1 - 1; n地面d[t_] = 3000; n地面type[t_] = 52; n地面co++;
                 t_ = n地面co; n地面a[t_] = 123 * 29 * 100; n地面b[t_] = (1 * 29 - 12) * 100; n地面c[t_] = 30 * 6 * 100 - 1 + 0; n地面d[t_] = 3000 - 200; n地面type[t_] = 51; n地面xtype[t_] = 10; n地面co++;
@@ -552,9 +553,9 @@ namespace SyobonAction
                 tyobi(86 * 29, 6 * 29 - 12, 117);
 
                 //もろいぶろっく×３
-                for (t_ = 0; t_ <= 2; t_++)
+                for (int i = 0; i <= 2; i++)
                 {
-                    nブロックxtype[nブロックco] = 3; tyobi((79 + t_) * 29, 13 * 29 - 12, 115);
+                    nブロックxtype[nブロックco] = 3; tyobi((79 + i) * 29, 13 * 29 - 12, 115);
                 }
 
                 //ジャンプ
@@ -582,7 +583,7 @@ namespace SyobonAction
                 nステージc = 0;
 
 
-                for (tt_ = 0; tt_ <= 1000; tt_++)
+                for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
                     for (t_ = 0; t_ <= 16; t_++)
                     {
@@ -708,9 +709,9 @@ namespace SyobonAction
                 n敵出現xtype[n敵出現co] = 1;
                 n敵出現co += 1;
                 //
-                for (tt_ = 0; tt_ <= 1000; tt_++)
+                for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t_ = 0; t_ <= 16; t_++)
+                    for (int t_ = 0; t_ <= 16; t_++)
                     {
                         stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
                     }
@@ -758,9 +759,9 @@ namespace SyobonAction
                 //
                 tyobi(6 * 29, 9 * 29 - 12, 110);
                 //
-                for (tt_ = 0; tt_ <= 1000; tt_++)
+                for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t_ = 0; t_ <= 16; t_++)
+                    for (int t_ = 0; t_ <= 16; t_++)
                     {
                         stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
                     }
@@ -968,9 +969,9 @@ namespace SyobonAction
                 tyobi(71 * 29, 7 * 29 - 12, 115);
                 nブロックco += 1;
                 //
-                for (tt_ = 0; tt_ <= 1000; tt_++)
+                for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t_ = 0; t_ <= 16; t_++)
+                    for (int t_ = 0; t_ <= 16; t_++)
                     {
                         stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
                     }
@@ -1061,9 +1062,9 @@ namespace SyobonAction
                 n敵出現xtype[n敵出現co] = 1;
                 n敵出現co += 1;
                 //
-                for (tt_ = 0; tt_ <= 1000; tt_++)
+                for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t_ = 0; t_ <= 16; t_++)
+                    for (int t_ = 0; t_ <= 16; t_++)
                     {
                         stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
                     }
@@ -1174,9 +1175,9 @@ namespace SyobonAction
                 nリフトsp[nリフトco] = 1;
                 nリフトco++;
                 //
-                for (tt_ = 0; tt_ <= 1000; tt_++)
+                for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t_ = 0; t_ <= 16; t_++)
+                    for (int t_ = 0; t_ <= 16; t_++)
                     {
                         stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
                     }
@@ -1266,9 +1267,9 @@ namespace SyobonAction
                 n地面xtype[n地面co] = 1;
                 n地面co += 1;
                 //
-                for (tt_ = 0; tt_ <= 1000; tt_++)
+                for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t_ = 0; t_ <= 16; t_++)
+                    for (int t_ = 0; t_ <= 16; t_++)
                     {
                         stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
                     }
@@ -1335,9 +1336,9 @@ namespace SyobonAction
                 n地面xtype[n地面co] = 0;
                 n地面co += 1;
                 //
-                for (tt_ = 0; tt_ <= 1000; tt_++)
+                for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t_ = 0; t_ <= 16; t_++)
+                    for (int t_ = 0; t_ <= 16; t_++)
                     {
                         stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
                     }
@@ -1575,9 +1576,9 @@ namespace SyobonAction
                 nリフトsp[nリフトco] = 21;
                 nリフトco += 1;
                 //
-                for (tt_ = 0; tt_ <= 1000; tt_++)
+                for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t_ = 0; t_ <= 16; t_++)
+                    for (int t_ = 0; t_ <= 16; t_++)
                     {
                         stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
                     }
@@ -1675,9 +1676,9 @@ namespace SyobonAction
                 nリフトsp[nリフトco] = 3;
                 nリフトco = 0;
                 //
-                for (tt_ = 0; tt_ <= 1000; tt_++)
+                for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
-                    for (t_ = 0; t_ <= 16; t_++)
+                    for (int t_ = 0; t_ <= 16; t_++)
                     {
                         stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
                     }

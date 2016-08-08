@@ -14,7 +14,7 @@ namespace SyobonAction
             //ブロック
             //1-れんが、コイン、無し、土台、7-隠し
             xx[15] = 0;
-            for (t_ = 0; t_ < nブロックmax; t_++)
+            for (int t_ = 0; t_ < nブロックmax; t_++)
             {
                 xx[0] = 200; xx[1] = 3000; xx[2] = 1000; xx[3] = 3000;//xx[2]=1000
                 xx[8] = nブロックa[t_] - fx; xx[9] = nブロックb[t_] - fy;//xx[15]=0;
@@ -23,11 +23,7 @@ namespace SyobonAction
                     if (nプレイヤーtype != 200 && nプレイヤーtype != 1 && nプレイヤーtype != 2)
                     {
                         if (nブロックtype[t_] < 1000 && nブロックtype[t_] != 800 && nブロックtype[t_] != 140 && nブロックtype[t_] != 141)
-                        {// && ttype[t]!=5){
-
-                            //if (!(mztm>=1 && mztype==1 && actaon[3]==1)){
-                            if (!(nプレイヤーztype == 1))
-                            {
+                        {
                                 xx[16] = 0; xx[17] = 0;
 
                                 //上
@@ -52,7 +48,7 @@ namespace SyobonAction
                                         else if (nブロックtype[t_] == 400)
                                         {
                                             nプレイヤーd = 0; nブロックa[t_] = -8000000; v効果音再生(Res.nオーディオ_[13]);
-                                            for (tt_ = 0; tt_ < nブロックmax; tt_++) { if (nブロックtype[tt_] != 7) { nブロックtype[tt_] = 800; } }
+                                            for (int tt_ = 0; tt_ < nブロックmax; tt_++) { if (nブロックtype[tt_] != 7) { nブロックtype[tt_] = 800; } }
                                         }
 
                                         //音符+
@@ -73,13 +69,10 @@ namespace SyobonAction
 
                                     }
                                 }
-                            }//!
 
 
                             //sstr=""+mjumptm;
                             //ブロック判定の入れ替え
-                            if (!(nプレイヤーztm >= 1 && nプレイヤーztype == 1))
-                            {
                                 xx[21] = 0; xx[22] = 1;//xx[12]=0;
                                 if (nプレイヤーzimen == 1 || nプレイヤーjumptm >= 10) { xx[21] = 3; xx[22] = 0; }
                                 for (t3 = 0; t3 <= 1; t3++)
@@ -150,7 +143,6 @@ namespace SyobonAction
                                     }
 
                                 }//t3
-                            }//!
 
                         }// && ttype[t]<50
 
@@ -437,7 +429,7 @@ namespace SyobonAction
         static void DrawBlock()
         {
             //ブロック描画
-            for (t_ = 0; t_ < nブロックmax; t_++)
+            for (int t_ = 0; t_ < nブロックmax; t_++)
             {
                 xx[0] = nブロックa[t_] - fx; xx[1] = nブロックb[t_] - fy;
                 xx[2] = 32; xx[3] = xx[2];

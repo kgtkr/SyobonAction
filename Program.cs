@@ -308,13 +308,13 @@ namespace SyobonAction
 
         static void stagecls()
         {
-            for (t_ = 0; t_ < n地面max; t_++) { n地面a[t_] = -9000000; n地面b[t_] = 1; n地面c[t_] = 1; n地面d[t_] = 1; n地面gtype[t_] = 0; n地面type[t_] = 0; n地面xtype[t_] = 0; }
-            for (t_ = 0; t_ < nブロックmax; t_++) { nブロックa[t_] = -9000000; nブロックb[t_] = 1; nブロックc[t_] = 1; nブロックd[t_] = 1; nブロックitem[t_] = 0; nブロックxtype[t_] = 0; }
-            for (t_ = 0; t_ < nリフトmax; t_++) { nリフトa[t_] = -9000000; nリフトb[t_] = 1; nリフトc[t_] = 1; nリフトd[t_] = 1; nリフトe[t_] = 0; nリフトf[t_] = 0; nリフトmuki[t_] = 0; nリフトon[t_] = 0; nリフトee[t_] = 0; nリフトsok[t_] = 0; nリフトmove[t_] = 0; nリフトmovep[t_] = 0; nリフトsp[t_] = 0; }
-            for (t_ = 0; t_ < n敵キャラmax; t_++) { n敵キャラa[t_] = -9000000; n敵キャラb[t_] = 1; n敵キャラc[t_] = 0; n敵キャラd[t_] = 1; n敵キャラzimentype[t_] = 0; n敵キャラtype[t_] = 0; n敵キャラxtype[t_] = 0; n敵キャラe[t_] = 0; n敵キャラf[t_] = 0; n敵キャラtm[t_] = 0; n敵キャラ2tm[t_] = 0; n敵キャラbrocktm[t_] = 0; n敵キャラmsgtm[t_] = 0; }
-            for (t_ = 0; t_ < n敵出現max; t_++) { n敵出現a[t_] = -9000000; n敵出現b[t_] = 1; n敵出現z[t_] = 1; n敵出現tm[t_] = 0; n敵出現xtype[t_] = 0; }
-            for (t_ = 0; t_ < n絵max; t_++) { n絵a[t_] = -9000000; n絵b[t_] = 1; n絵c[t_] = 1; n絵d[t_] = 1; n絵gtype[t_] = 0; }
-            for (t_ = 0; t_ < n背景max; t_++)
+            for (int t_ = 0; t_ < n地面max; t_++) { n地面a[t_] = -9000000; n地面b[t_] = 1; n地面c[t_] = 1; n地面d[t_] = 1; n地面gtype[t_] = 0; n地面type[t_] = 0; n地面xtype[t_] = 0; }
+            for (int t_ = 0; t_ < nブロックmax; t_++) { nブロックa[t_] = -9000000; nブロックb[t_] = 1; nブロックc[t_] = 1; nブロックd[t_] = 1; nブロックitem[t_] = 0; nブロックxtype[t_] = 0; }
+            for (int t_ = 0; t_ < nリフトmax; t_++) { nリフトa[t_] = -9000000; nリフトb[t_] = 1; nリフトc[t_] = 1; nリフトd[t_] = 1; nリフトe[t_] = 0; nリフトf[t_] = 0; nリフトmuki[t_] = 0; nリフトon[t_] = 0; nリフトee[t_] = 0; nリフトsok[t_] = 0; nリフトmove[t_] = 0; nリフトmovep[t_] = 0; nリフトsp[t_] = 0; }
+            for (int t_ = 0; t_ < n敵キャラmax; t_++) { n敵キャラa[t_] = -9000000; n敵キャラb[t_] = 1; n敵キャラc[t_] = 0; n敵キャラd[t_] = 1; n敵キャラzimentype[t_] = 0; n敵キャラtype[t_] = 0; n敵キャラxtype[t_] = 0; n敵キャラe[t_] = 0; n敵キャラf[t_] = 0; n敵キャラtm[t_] = 0; n敵キャラ2tm[t_] = 0; n敵キャラbrocktm[t_] = 0; n敵キャラmsgtm[t_] = 0; }
+            for (int t_ = 0; t_ < n敵出現max; t_++) { n敵出現a[t_] = -9000000; n敵出現b[t_] = 1; n敵出現z[t_] = 1; n敵出現tm[t_] = 0; n敵出現xtype[t_] = 0; }
+            for (int t_ = 0; t_ < n絵max; t_++) { n絵a[t_] = -9000000; n絵b[t_] = 1; n絵c[t_] = 1; n絵d[t_] = 1; n絵gtype[t_] = 0; }
+            for (int t_ = 0; t_ < n背景max; t_++)
             {
                 n背景a[t_] = -9000000;
                 n背景b[t_] = 1;
@@ -338,17 +338,12 @@ namespace SyobonAction
             //fzx=6000*100;
             scrollX = 3600 * 100;
 
-
-
-
             stagep();
 
 
-
-
-            for (tt_ = 0; tt_ <= 1000; tt_++)
+            for (int tt_ = 0; tt_ <= 1000; tt_++)
             {
-                for (t_ = 0; t_ <= 16; t_++)
+                for (int t_ = 0; t_ <= 16; t_++)
                 {
                     xx[10] = 0;
                     if (stageDate[t_, tt_] >= 1 && stageDate[t_, tt_] <= 255) xx[10] = (int)stageDate[t_, tt_];
@@ -379,7 +374,7 @@ namespace SyobonAction
             if (n中間ゲート >= 1)
             {
                 xx[17] = 0;
-                for (t_ = 0; t_ < n地面max; t_++)
+                for (int t_ = 0; t_ < n地面max; t_++)
                 {
                     if (n地面type[t_] == 500 && n中間ゲート >= 1)
                     {
@@ -413,11 +408,11 @@ namespace SyobonAction
 
         }//stagep
 
-        static void tekizimen()
+        static void tekizimen(int t_)
         {
 
             //壁
-            for (tt_ = 0; tt_ < n地面max; tt_++)
+            for (int tt_ = 0; tt_ < n地面max; tt_++)
             {
                 if (n地面a[tt_] - fx + n地面c[tt_] >= -12010 && n地面a[tt_] - fx <= n画面幅 + 12100 && n地面type[tt_] <= 99)
                 {
@@ -439,7 +434,7 @@ namespace SyobonAction
             }
 
             //ブロック
-            for (tt_ = 0; tt_ < nブロックmax; tt_++)
+            for (int tt_ = 0; tt_ < nブロックmax; tt_++)
             {
                 xx[0] = 200; xx[1] = 3000; xx[2] = 1000;
                 xx[8] = nブロックa[tt_] - fx; xx[9] = nブロックb[tt_] - fy;

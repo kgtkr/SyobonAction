@@ -12,7 +12,7 @@ namespace SyobonAction
         static void DrawBack()
         {
             //背景
-            for (t_ = 0; t_ < n背景max; t_++)
+            for (int t_ = 0; t_ < n背景max; t_++)
             {
                 xx[0] = n背景a[t_] - fx;
                 xx[1] = n背景b[t_] - fy;
