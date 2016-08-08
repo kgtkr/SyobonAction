@@ -46,7 +46,7 @@ namespace SyobonAction
                 if (nステージc >= 5)
                 {
                     nステージc = 0;
-                    stagepoint = 0;
+                    stagepoint = false;
                 }
             }
 

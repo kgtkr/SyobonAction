@@ -45,7 +45,7 @@ namespace SyobonAction
 
 
         //ステージ読み込みループ(いじらない)
-        static int stagepoint;
+        static bool stagepoint;
         //オーバーフローさせる
         static int over;
 

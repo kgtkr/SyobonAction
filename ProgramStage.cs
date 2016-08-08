@@ -15,7 +15,7 @@ namespace SyobonAction
             if (nステージa == 1 && nステージb == 1 && nステージc == 0)
             {
 
-                byte[][] stagedatex = stagedatex1;
+                byte[,] stagedatex = stagedatex1;
 
 
                 //追加情報
@@ -122,7 +122,7 @@ namespace SyobonAction
                 {
                     for (int i = 0; i <= 16; i++)
                     {
-                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i][tt_];
+                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i,tt_];
                     }
                 }
 
@@ -138,7 +138,7 @@ namespace SyobonAction
 
                 scrollX = 0 * 100;
 
-                byte[][] stagedatex = stagedatex2;
+                byte[,] stagedatex = stagedatex2;
 
 
 
@@ -161,7 +161,7 @@ namespace SyobonAction
                 {
                     for (int i = 0; i <= 16; i++)
                     {
-                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i][tt_];
+                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i,tt_];
                     }
                 }
 
@@ -180,7 +180,7 @@ namespace SyobonAction
                 nステージ色 = 2;
 
 
-                byte[][] stagedatex = stagedatex3;
+                byte[,] stagedatex = stagedatex3;
 
 
 
@@ -252,7 +252,7 @@ namespace SyobonAction
                 {
                     for (int i = 0; i <= 16; i++)
                     {
-                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i][tt_];
+                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i,tt_];
                     }
                 }
 
@@ -271,7 +271,7 @@ namespace SyobonAction
                 scrollX = 900 * 100;
                 ma = 7500; nプレイヤーb = 3000 * 9;
 
-                byte[][] stagedatex = stagedatex4;
+                byte[,] stagedatex = stagedatex4;
 
                 int t_ = n地面co; n地面a[t_] = 5 * 29 * 100 + 500; n地面b[t_] = -6000; n地面c[t_] = 3000; n地面d[t_] = 70000; n地面type[t_] = 102; n地面xtype[t_] = 8; n地面co++;
                 //空飛ぶ土管
@@ -286,7 +286,7 @@ namespace SyobonAction
                 {
                     for (int i = 0; i <= 16; i++)
                     {
-                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i][tt_];
+                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i,tt_];
                     }
                 }
 
@@ -305,7 +305,7 @@ namespace SyobonAction
                 scrollX = 3900 * 100;
                 //ma=3000;mb=3000;
 
-                byte[][] stagedatex = stagedatex5;
+                byte[,] stagedatex = stagedatex5;
 
                 nブロックco = 0;
 
@@ -377,14 +377,14 @@ namespace SyobonAction
 
 
 
-                if (stagepoint == 1) { stagepoint = 0; ma = 4500; nプレイヤーb = -3000; n中間フラグ = 0; }
+                if (stagepoint) { stagepoint = false; ma = 4500; nプレイヤーb = -3000; n中間フラグ = 0; }
 
 
                 for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
                     for (int i = 0; i <= 16; i++)
                     {
-                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i][tt_];
+                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i,tt_];
                     }
                 }
 
@@ -404,7 +404,7 @@ namespace SyobonAction
                 nステージ色 = 2;
 
 
-                byte[][] stagedatex = stagedatex6;
+                byte[,] stagedatex = stagedatex6;
 
 
                 nブロックco = 0;
@@ -416,7 +416,7 @@ namespace SyobonAction
                 {
                     for (int t_ = 0; t_ <= 16; t_++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
+                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_,tt_];
                     }
                 }
 
@@ -435,9 +435,9 @@ namespace SyobonAction
                 scrollX = 0 * 100;
                 ma = 3000; nプレイヤーb = 33000;
 
-                stagepoint = 1;
+                stagepoint = true;
 
-                byte[][] stagedatex = stagedatex7;
+                byte[,] stagedatex = stagedatex7;
 
                 n地面co = 0;
                 int t_ = n地面co; n地面a[t_] = 14 * 29 * 100 - 5; n地面b[t_] = (11 * 29 - 12) * 100; n地面c[t_] = 6000; n地面d[t_] = 15000 - 200; n地面type[t_] = 50; n地面xtype[t_] = 1; n地面co++;
@@ -451,7 +451,7 @@ namespace SyobonAction
                 {
                     for (int i = 0; i <= 16; i++)
                     {
-                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i][tt_];
+                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i,tt_];
                     }
                 }
 
@@ -469,7 +469,7 @@ namespace SyobonAction
                 nステージ色 = 4;
 
 
-                byte[][] stagedatex = stagedatex8;
+                byte[,] stagedatex = stagedatex8;
 
                 n地面co = 0;//sco=140;
                 int t_ = n地面co; n地面a[t_] = 35 * 29 * 100 - 1500 + 750; n地面b[t_] = (8 * 29 - 12) * 100 - 1500; n地面c[t_] = 1500; n地面d[t_] = 3000; n地面type[t_] = 105; n地面co++;
@@ -536,7 +536,6 @@ namespace SyobonAction
                 tyobi(35 * 29, 9 * 29 - 12, 5);
                 //隠し
                 tyobi(55 * 29 + 15, 6 * 29 - 12, 7);
-                //tyobi(62*29,9*29-12,2);
                 //隠しON-OFF
                 nブロックxtype[nブロックco] = 10; tyobi(50 * 29, 9 * 29 - 12, 114);
                 //ヒント3
@@ -546,7 +545,6 @@ namespace SyobonAction
 
                 tyobi(86 * 29, 9 * 29 - 12, 101);
                 //キノコなし　普通
-                //txtype[tco]=2;tyobi(81*29,1*29-12,5);
                 //音符
                 nブロックxtype[nブロックco] = 2;
 
@@ -587,7 +585,7 @@ namespace SyobonAction
                 {
                     for (t_ = 0; t_ <= 16; t_++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
+                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_,tt_];
                     }
                 }
 
@@ -602,7 +600,7 @@ namespace SyobonAction
                 nステージ色 = 1;
                 scrollX = 2900 * (113 - 19);
                 //
-                byte[][] stagedatex = stagedatex9;
+                byte[,] stagedatex = stagedatex9;
                 //追加情報
                 nブロックco = 0;
                 //
@@ -713,7 +711,7 @@ namespace SyobonAction
                 {
                     for (int t_ = 0; t_ <= 16; t_++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
+                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_,tt_];
                     }
                 }
             }
@@ -725,7 +723,7 @@ namespace SyobonAction
                 nステージ色 = 1;
                 scrollX = 2900 * (19 - 19);
                 //
-                byte[][] stagedatex = stagedatex10;
+                byte[,] stagedatex = stagedatex10;
                 //
                 n地面a[n地面co] = 14 * 29 * 100 + 200;
                 n地面b[n地面co] = -6000;
@@ -763,7 +761,7 @@ namespace SyobonAction
                 {
                     for (int t_ = 0; t_ <= 16; t_++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
+                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_,tt_];
                     }
                 }
             }
@@ -776,7 +774,7 @@ namespace SyobonAction
                 ma = 7500; nプレイヤーb = 9000;
                 scrollX = 2900 * (137 - 19);
                 //
-                byte[][] stagedatex = stagedatex11;
+                byte[,] stagedatex = stagedatex11;
                 //
                 n敵出現co = 0;
                 n敵出現a[n敵出現co] = 32 * 29 * 100 - 1400;
@@ -973,7 +971,7 @@ namespace SyobonAction
                 {
                     for (int t_ = 0; t_ <= 16; t_++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
+                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_,tt_];
                     }
                 }
             }
@@ -987,7 +985,7 @@ namespace SyobonAction
                 ma = 7500;
                 nプレイヤーb = 3000 * 9;
                 //
-                byte[][] stagedatex = stagedatex12;
+                byte[,] stagedatex = stagedatex12;
                 //
                 n敵出現co = 0;
                 n敵出現a[n敵出現co] = 9 * 29 * 100;
@@ -1066,7 +1064,7 @@ namespace SyobonAction
                 {
                     for (int t_ = 0; t_ <= 16; t_++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
+                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_,tt_];
                     }
                 }
             }
@@ -1080,7 +1078,7 @@ namespace SyobonAction
                 nステージ色 = 1;
                 scrollX = 2900 * (126 - 19);
                 //
-                byte[][] stagedatex = stagedatex13;
+                byte[,] stagedatex = stagedatex13;
                 //
                 nブロックco = 0;
                 nブロックxtype[nブロックco] = 0;
@@ -1179,7 +1177,7 @@ namespace SyobonAction
                 {
                     for (int t_ = 0; t_ <= 16; t_++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
+                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_,tt_];
                     }
                 }
             }
@@ -1201,7 +1199,7 @@ namespace SyobonAction
                 nステージ色 = 4;
                 scrollX = 2900 * (40 - 19);
                 //
-                byte[][] stagedatex = stagedatex14;
+                byte[,] stagedatex = stagedatex14;
                 //
                 nブロックco = 0;
                 nブロックxtype[nブロックco] = 0;
@@ -1271,7 +1269,7 @@ namespace SyobonAction
                 {
                     for (int t_ = 0; t_ <= 16; t_++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
+                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_,tt_];
                     }
                 }
             }
@@ -1285,7 +1283,7 @@ namespace SyobonAction
                 nステージ色 = 4;
                 scrollX = 2900 * (21 - 19);
                 //
-                byte[][] stagedatex = stagedatex15;
+                byte[,] stagedatex = stagedatex15;
                 //
                 nブロックco = 0;
                 nブロックxtype[nブロックco] = 1;
@@ -1340,7 +1338,7 @@ namespace SyobonAction
                 {
                     for (int t_ = 0; t_ <= 16; t_++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
+                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_,tt_];
                     }
                 }
             }
@@ -1354,7 +1352,7 @@ namespace SyobonAction
                 nステージ色 = 4;
                 scrollX = 2900 * (128 - 19);
                 //
-                byte[][] stagedatex = stagedatex16;
+                byte[,] stagedatex = stagedatex16;
                 //
                 nブロックco = 0;
                 nブロックxtype[nブロックco] = 0;
@@ -1580,7 +1578,7 @@ namespace SyobonAction
                 {
                     for (int t_ = 0; t_ <= 16; t_++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
+                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_,tt_];
                     }
                 }
             }
@@ -1593,7 +1591,7 @@ namespace SyobonAction
                 bgmChange(Res.nオーディオ_[100]);
                 nステージ色 = 5;
                 scrollX = 2900 * (112 - 19);
-                byte[][] stagedatex = stagedatex17;
+                byte[,] stagedatex = stagedatex17;
                 //追加情報
                 nブロックco = 0;
                 //
@@ -1680,7 +1678,7 @@ namespace SyobonAction
                 {
                     for (int t_ = 0; t_ <= 16; t_++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_][tt_];
+                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_,tt_];
                     }
                 }
             }
