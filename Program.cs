@@ -39,7 +39,6 @@ namespace SyobonAction
             {
                 Key.Update();
 
-                maint = 0;
                 //処理
                 Mainprogram();
 
@@ -52,8 +51,6 @@ namespace SyobonAction
                     xx[0] = 60;
                 }
                 wait2(nタイマー測定, DX.GetNowCount(), 1000 / xx[0]);
-
-                if (maint == 3) break;
             }
 
             //ＤＸライブラリ使用の終了処理
@@ -261,7 +258,7 @@ namespace SyobonAction
         static void ayobi(int xa, int xb, int xc, int xd, int xnotm, int xtype, int xxtype)
         {
             int rz = 0;
-            for (t1 = 0; t1 <= 1; t1++)
+            for (int t1 = 0; t1 <= 1; t1++)
             {
                 t1 = 2;
                 if (n敵キャラa[n敵キャラco] >= -9000 && n敵キャラa[n敵キャラco] <= 30000) t1 = 0; rz++;
@@ -371,22 +368,22 @@ namespace SyobonAction
                 }
             }
 
-            if (n中間ゲート >= 1)
+            if (n中間フラグ >= 1)
             {
                 xx[17] = 0;
                 for (int t_ = 0; t_ < n地面max; t_++)
                 {
-                    if (n地面type[t_] == 500 && n中間ゲート >= 1)
+                    if (n地面type[t_] == 500 && n中間フラグ >= 1)
                     {
                         fx = n地面a[t_] - n画面幅 / 2; fzx = fx;
                         ma = n地面a[t_] - fx;
                         nプレイヤーb = n地面b[t_] - fy;
-                        n中間ゲート--; xx[17]++;
+                        n中間フラグ--; xx[17]++;
 
                         n地面a[t_] = -80000000;
                     }
                 }
-                n中間ゲート += xx[17];
+                n中間フラグ += xx[17];
             }
             //tyobi(1,2,3);
 

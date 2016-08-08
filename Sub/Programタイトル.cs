@@ -30,7 +30,7 @@ namespace SyobonAction
 
             if (xx[0] == 1)
             {
-                e現在の画面 = E画面.機数表示; zxon = 0; maintm = 0;
+                e現在の画面 = E画面.機数表示; b初期化 = false; maintm = 0;
                 nokori = 2;
 
                 n中間フラグ = 0;

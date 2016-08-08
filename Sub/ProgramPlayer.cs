@@ -247,7 +247,7 @@ namespace SyobonAction
                 }
                 if (nプレイヤーtm >= 100 || bクイック)
                 {
-                    zxon = 0;
+                    b初期化 = false;
                     e現在の画面 = E画面.機数表示;
                     nプレイヤーtm = 0;
                     nプレイヤーkeytm = 0;
@@ -435,7 +435,7 @@ namespace SyobonAction
                     if (nプレイヤーtm == 250)
                     {
                         nステージb++; nステージc = 0;
-                        zxon = 0;
+                        b初期化 = false;
                         n中間フラグ = 0;
                         e現在の画面 = E画面.機数表示;
                         maintm = 0;
@@ -500,7 +500,7 @@ namespace SyobonAction
                             nステージa++;
                             nステージb = 1;
                             nステージc = 0;
-                            zxon = 0;
+                            b初期化 = false;
                             n中間フラグ = 0;
                             e現在の画面 = E画面.機数表示;
                             maintm = 0;

@@ -33,7 +33,7 @@ namespace SyobonAction
             DXDraw.DrawBox塗り潰し(0, 0, n画面幅, n画面高さ);
 
 
-            if (e現在の画面 == E画面.Game && zxon >= 1)
+            if (e現在の画面 == E画面.Game && b初期化)
             {
                 DrawBack();
 
@@ -61,7 +61,7 @@ namespace SyobonAction
                 {
                     setfont(20, 4);
                     if (nプレイヤーainmsgtype == 1) { DX.DrawString(126, 100, "WELCOME TO OWATA ZONE", DX.GetColor(255, 255, 255)); }
-                    if (nプレイヤーainmsgtype == 1) { for (t2 = 0; t2 <= 2; t2++) DX.DrawString(88 + t2 * 143, 210, "1", DX.GetColor(255, 255, 255)); }
+                    if (nプレイヤーainmsgtype == 1) { for (int t2 = 0; t2 <= 2; t2++) DX.DrawString(88 + t2 * 143, 210, "1", DX.GetColor(255, 255, 255)); }
                     setfont(20, 5);
                 }
 
@@ -73,7 +73,7 @@ namespace SyobonAction
                     DXDraw.DrawBox塗り潰し(0, 0, n画面幅, n画面高さ);
                     if (blackTm == 0)
                     {
-                        if (blackX == 1) { zxon = 0; }
+                        if (blackX == 1) { b初期化 = false; }
                     }
 
                 }
@@ -113,9 +113,9 @@ namespace SyobonAction
 
             if (e現在の画面 == E画面.Game && nメッセージブロックtype == 0)
             {
-                if (zxon == 0)
+                if (!b初期化)
                 {
-                    zxon = 1;
+                    b初期化 = true;
                     nプレイヤーainmsgtype = 0;
 
                     nステージ色 = 1;
@@ -134,7 +134,7 @@ namespace SyobonAction
 
                     fx = 0; fy = 0;
                     fzx = 0;
-                    nステージスイッチ = 0;
+                    bステージスイッチ = false;
 
                     //チーターマン　入れ
                     bgmChange(Res.nオーディオ_[100]);
@@ -241,7 +241,7 @@ namespace SyobonAction
                 if (maintm >= 30) {
                     maintm = 0;
                     e現在の画面 = E画面.Game;
-                    zxon = 0;
+                    b初期化 = false;
                 }
             }//if (main==10){
 

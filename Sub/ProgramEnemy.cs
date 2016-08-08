@@ -156,7 +156,7 @@ namespace SyobonAction
                                 {
                                     eyobi(n敵キャラa[t_] + 1200 - 1200, n敵キャラb[t_] + 3000 - 10 * 3000 - 1500, 0, 0, 0, 0, 1000, 10 * 3000 - 1200, 4, 20);
                                     if (nプレイヤーtype == 300) { nプレイヤーtype = 0; DX.StopSoundMem(Res.nオーディオ_[11]); bgmChange(Res.nオーディオ_[100]); DX.PlaySoundMem(Res.nオーディオ_[0], DX.DX_PLAYTYPE_LOOP); }
-                                    for (t1 = 0; t1 < n地面max; t1++) { if (n地面type[t1] == 104) n地面a[t1] = -80000000; }
+                                    for (int t1 = 0; t1 < n地面max; t1++) { if (n地面type[t1] == 104) n地面a[t1] = -80000000; }
                                 }
                                 if (n敵キャラtm[t_] == 120) { eyobi(n敵キャラa[t_] + 1200 - 1200, n敵キャラb[t_] + 3000 - 10 * 3000 - 1500, 600, -1200, 0, 160, 1000, 10 * 3000 - 1200, 4, 240); n敵キャラmuki[t_] = 1; }
                                 if (n敵キャラtm[t_] == 140) { n敵キャラmuki[t_] = 0; n敵キャラtm[t_] = 0; }

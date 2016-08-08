@@ -377,7 +377,7 @@ namespace SyobonAction
 
 
 
-                if (stagepoint == 1) { stagepoint = 0; ma = 4500; nプレイヤーb = -3000; n中間ゲート = 0; }
+                if (stagepoint == 1) { stagepoint = 0; ma = 4500; nプレイヤーb = -3000; n中間フラグ = 0; }
 
 
                 for (int tt_ = 0; tt_ <= 1000; tt_++)

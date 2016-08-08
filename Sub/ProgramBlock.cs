@@ -75,7 +75,7 @@ namespace SyobonAction
                             //ブロック判定の入れ替え
                                 xx[21] = 0; xx[22] = 1;//xx[12]=0;
                                 if (nプレイヤーzimen == 1 || nプレイヤーjumptm >= 10) { xx[21] = 3; xx[22] = 0; }
-                                for (t3 = 0; t3 <= 1; t3++)
+                                for (int t3 = 0; t3 <= 1; t3++)
                                 {
 
                                     //下
@@ -298,7 +298,7 @@ namespace SyobonAction
                                 if (nブロックxtype[t_] == 2) { v効果音再生(Res.nオーディオ_[4]); eyobi(nブロックa[t_] + 10, nブロックb[t_], 0, -800, 0, 40, 3000, 3000, 0, 16); nブロックtype[t_] = 115; nブロックxtype[t_] = 0; }
                                 if (nブロックxtype[t_] == 10)
                                 {
-                                    if (nステージスイッチ == 1) { nブロックtype[t_] = 130; nステージスイッチ = 0; v効果音再生(Res.nオーディオ_[13]); nブロックxtype[t_] = 2; for (t_ = 0; t_ < n敵キャラmax; t_++) { if (n敵キャラtype[t_] == 87 || n敵キャラtype[t_] == 88) { if (n敵キャラxtype[t_] == 105) { n敵キャラxtype[t_] = 110; } } } }
+                                    if (bステージスイッチ) { nブロックtype[t_] = 130; bステージスイッチ = false; v効果音再生(Res.nオーディオ_[13]); nブロックxtype[t_] = 2; for (t_ = 0; t_ < n敵キャラmax; t_++) { if (n敵キャラtype[t_] == 87 || n敵キャラtype[t_] == 88) { if (n敵キャラxtype[t_] == 105) { n敵キャラxtype[t_] = 110; } } } }
                                     else { v効果音再生(Res.nオーディオ_[4]); eyobi(nブロックa[t_] + 10, nブロックb[t_], 0, -800, 0, 40, 3000, 3000, 0, 16); nブロックtype[t_] = 3; }
                                 }
 
@@ -344,7 +344,7 @@ namespace SyobonAction
                             {
                                 if (nブロックxtype[t_] != 1)
                                 {
-                                    nステージスイッチ = 0; v効果音再生(Res.nオーディオ_[13]);
+                                    bステージスイッチ = false; v効果音再生(Res.nオーディオ_[13]);
                                 }
                             }
                         }
@@ -352,7 +352,7 @@ namespace SyobonAction
                         {
                             if (xx[17] == 1 && nブロックxtype[t_] != 2)
                             {
-                                nステージスイッチ = 1; v効果音再生(Res.nオーディオ_[13]);
+                                bステージスイッチ = true; v効果音再生(Res.nオーディオ_[13]);
                                 if (nブロックxtype[t_] == 1)
                                 {
                                     for (t_ = 0; t_ < n敵キャラmax; t_++) { if (n敵キャラtype[t_] == 87 || n敵キャラtype[t_] == 88) { if (n敵キャラxtype[t_] == 105) { n敵キャラxtype[t_] = 110; } } }
@@ -408,8 +408,8 @@ namespace SyobonAction
 
 
                     //ONOFF
-                    if (nブロックtype[t_] == 130 && nステージスイッチ == 0) { nブロックtype[t_] = 131; }
-                    if (nブロックtype[t_] == 131 && nステージスイッチ == 1) { nブロックtype[t_] = 130; }
+                    if (nブロックtype[t_] == 130 && !bステージスイッチ) { nブロックtype[t_] = 131; }
+                    if (nブロックtype[t_] == 131 && bステージスイッチ) { nブロックtype[t_] = 130; }
 
                     //ヒント
                     if (nブロックtype[t_] == 300)

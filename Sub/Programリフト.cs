@@ -197,7 +197,7 @@ namespace SyobonAction
                     }
                     if (nリフトsp[t_] == 15)
                     {
-                        for (t2 = 0; t2 <= 2; t2++)
+                        for (int t2 = 0; t2 <= 2; t2++)
                         {
                             xx[6] = 1 + 0; DXDraw.DrawGraph(Res.n切り取り画像_[xx[6], 1], (nリフトa[t_] - fx) / 100 + t2 * 29, (nリフトb[t_] - fy) / 100);
                         }

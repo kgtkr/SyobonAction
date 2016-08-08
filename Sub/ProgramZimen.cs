@@ -170,7 +170,7 @@ namespace SyobonAction
                             {
                                 if (n地面xtype[t_] == 0)
                                 {
-                                    for (t3 = 0; t3 <= 3; t3++) { ayobi(n地面a[t_] + t3 * 3000, -3000, 0, 0, 0, 0, 0); }
+                                    for (int t3 = 0; t3 <= 3; t3++) { ayobi(n地面a[t_] + t3 * 3000, -3000, 0, 0, 0, 0, 0); }
                                 }
                                 if (n地面xtype[t_] == 1 && nプレイヤーb >= 16000) { ayobi(n地面a[t_] + 1500, 44000, 0, -2000, 0, 4, 0); }
                                 else if (n地面xtype[t_] == 2) { ayobi(n地面a[t_] + 4500, 30000, 0, -1600, 0, 5, 0); v効果音再生(Res.nオーディオ_[10]); n地面xtype[t_] = 3; n地面a[t_] -= 12000; }
@@ -179,12 +179,12 @@ namespace SyobonAction
 
                                 else if (n地面xtype[t_] == 7) { nプレイヤーainmsgtype = 1; }
                                 else if (n地面xtype[t_] == 8) { ayobi(n地面a[t_] - 5000 - 3000 * 1, 26000, 0, -1600, 0, 5, 0); v効果音再生(Res.nオーディオ_[10]); }
-                                else if (n地面xtype[t_] == 9) { for (t3 = 0; t3 <= 2; t3++) { ayobi(n地面a[t_] + t3 * 3000 + 3000, 48000, 0, -6000, 0, 3, 0); } }
+                                else if (n地面xtype[t_] == 9) { for (int t3 = 0; t3 <= 2; t3++) { ayobi(n地面a[t_] + t3 * 3000 + 3000, 48000, 0, -6000, 0, 3, 0); } }
                                 if (n地面xtype[t_] == 10) { n地面a[t_] -= 5 * 30 * 100; n地面type[t_] = 101; }
 
                                 if (n地面xtype[t_] == 12)
                                 {
-                                    for (t3 = 1; t3 <= 3; t3++) { ayobi(n地面a[t_] + t3 * 3000 - 1000, 40000, 0, -2600, 0, 9, 0); }
+                                    for (int t3 = 1; t3 <= 3; t3++) { ayobi(n地面a[t_] + t3 * 3000 - 1000, 40000, 0, -2600, 0, 9, 0); }
                                 }
 
                                 //スクロール消し
@@ -238,7 +238,7 @@ namespace SyobonAction
                             //中間ゲート
                             if (n地面type[t_] == 500 && nプレイヤーtype == 0 && nプレイヤーhp >= 1)
                             {
-                                n中間ゲート += 1;
+                                n中間フラグ += 1;
                                 n地面a[t_] = -80000000;
                             }
 
@@ -307,23 +307,23 @@ namespace SyobonAction
                     {
                         if (n地面xtype[t_] == 0)
                         {
-                            for (t3 = 0; t3 <= n地面c[t_] / 3000; t3++)
+                            for (int t3 = 0; t3 <= n地面c[t_] / 3000; t3++)
                             {
                                 DXDraw.DrawGraph(Res.n切り取り画像_[1, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb);
                             }
                         }
                         if (n地面xtype[t_] == 1 || n地面xtype[t_] == 2)
                         {
-                            for (t3 = 0; t3 <= n地面c[t_] / 3000; t3++)
+                            for (int t3 = 0; t3 <= n地面c[t_] / 3000; t3++)
                             {
                                 DXDraw.DrawGraph(Res.n切り取り画像_[31, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb);
                             }
                         }
                         if (n地面xtype[t_] == 3 || n地面xtype[t_] == 4)
                         {
-                            for (t3 = 0; t3 <= n地面c[t_] / 3000; t3++)
+                            for (int t3 = 0; t3 <= n地面c[t_] / 3000; t3++)
                             {
-                                for (t2 = 0; t2 <= n地面d[t_] / 3000; t2++)
+                                for (int t2 = 0; t2 <= n地面d[t_] / 3000; t2++)
                                 {
                                     DXDraw.DrawGraph(Res.n切り取り画像_[65, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + 29 * t2 + n全体のポイントb);
                                 }
@@ -332,7 +332,7 @@ namespace SyobonAction
 
                         if (n地面xtype[t_] == 10)
                         {
-                            for (t3 = 0; t3 <= n地面c[t_] / 3000; t3++)
+                            for (int t3 = 0; t3 <= n地面c[t_] / 3000; t3++)
                             {
                                 DXDraw.DrawGraph(Res.n切り取り画像_[65, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb);
                             }
@@ -348,7 +348,7 @@ namespace SyobonAction
                         if (nステージ色 == 4) { xx[29] = 60; }
                         if (nステージ色 == 5) { xx[29] = 90; }
 
-                        for (t3 = 0; t3 <= n地面c[t_] / 3000; t3++)
+                        for (int t3 = 0; t3 <= n地面c[t_] / 3000; t3++)
                         {
                             if (n地面xtype[t_] == 0)
                             {
@@ -358,7 +358,7 @@ namespace SyobonAction
                             }
                             if (n地面xtype[t_] == 1)
                             {
-                                for (t2 = 0; t2 <= n地面d[t_] / 3000; t2++)
+                                for (int t2 = 0; t2 <= n地面d[t_] / 3000; t2++)
                                 {
                                     DXDraw.DrawGraph(Res.n切り取り画像_[1 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29 * t2);
                                 }
@@ -366,7 +366,7 @@ namespace SyobonAction
 
                             if (n地面xtype[t_] == 2)
                             {
-                                for (t2 = 0; t2 <= n地面d[t_] / 3000; t2++)
+                                for (int t2 = 0; t2 <= n地面d[t_] / 3000; t2++)
                                 {
                                     DXDraw.DrawGraph(Res.n切り取り画像_[5 + xx[29], 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + n全体のポイントb + 29 * t2);
                                 }
@@ -377,7 +377,7 @@ namespace SyobonAction
 
 
                     //ステージトラップ
-                    if (nトラップ表示 == 1)
+                    if (bトラップ表示)
                     {
                         if (n地面type[t_] >= 100 && n地面type[t_] <= 299)
                         {
@@ -442,9 +442,9 @@ namespace SyobonAction
                     //地面(ブロック)
                     if (n地面type[t_] == 200)
                     {
-                        for (t3 = 0; t3 <= n地面c[t_] / 3000; t3++)
+                        for (int t3 = 0; t3 <= n地面c[t_] / 3000; t3++)
                         {
-                            for (t2 = 0; t2 <= n地面d[t_] / 3000; t2++)
+                            for (int t2 = 0; t2 <= n地面d[t_] / 3000; t2++)
                             {
                                 DXDraw.DrawGraph(Res.n切り取り画像_[65, 1], (n地面a[t_] - fx) / 100 + n全体のポイントa + 29 * t3, (n地面b[t_] - fy) / 100 + 29 * t2 + n全体のポイントb);
                             }

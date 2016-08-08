@@ -47,20 +47,13 @@ namespace SyobonAction
         //ステージ読み込みループ(いじらない)
         static int stagepoint;
         //オーバーフローさせる
-        static int over = 0;
+        static int over;
 
         //ステージスイッチ
-        static int nステージスイッチ = 0;
-
-
-        static int maint;
-
-        //ループ
-        static int t1, t2, t3;
-
+        static bool bステージスイッチ = false;
 
         //初期化
-        static int zxon;
+        static bool b初期化;
 
         //地面
         const int n地面max = 31;
