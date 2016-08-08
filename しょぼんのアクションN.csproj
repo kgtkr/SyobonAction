@@ -61,7 +61,6 @@
     <Compile Include="Sub\ProgramEnemy.cs" />
     <Compile Include="ProgramLoad.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Program2.cs" />
     <Compile Include="ProgramCore.cs" />
     <Compile Include="ProgramH.cs" />
     <Compile Include="Sub\ProgramMsg.cs" />

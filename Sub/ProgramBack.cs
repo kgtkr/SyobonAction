@@ -14,9 +14,10 @@ namespace SyobonAction
             //背景
             for (t_ = 0; t_ < n背景max; t_++)
             {
-                xx[0] = n背景a[t_] - fx; xx[1] = n背景b[t_] - fy;
-                xx[2] = n背景サイズW_[n背景type[t_]] * 100; xx[3] = n背景サイズH_[n背景type[t_]] * 100;
-                xx[2] = 16000; xx[3] = 16000;
+                xx[0] = n背景a[t_] - fx;
+                xx[1] = n背景b[t_] - fy;
+                xx[2] = 16000;
+                xx[3] = 16000;
 
                 if (xx[0] + xx[2] >= -10 && xx[0] <= n画面幅 && xx[1] + xx[3] >= -10 && xx[3] <= n画面高さ)
                 {

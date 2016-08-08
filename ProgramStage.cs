@@ -517,9 +517,24 @@ namespace SyobonAction
 
                 //マグマ
                 n背景co = 0;
-                n背景a[n背景co] = 7 * 29 * 100 - 300; n背景b[n背景co] = 14 * 29 * 100 - 1200; n背景type[n背景co] = 6; n背景co++; if (n背景co >= n背景max) n背景co = 0;
-                n背景a[n背景co] = 41 * 29 * 100 - 300; n背景b[n背景co] = 14 * 29 * 100 - 1200; n背景type[n背景co] = 6; n背景co++; if (n背景co >= n背景max) n背景co = 0;
-                n背景a[n背景co] = 149 * 29 * 100 - 1100; n背景b[n背景co] = 10 * 29 * 100 - 600; n背景type[n背景co] = 100; n背景co++; if (n背景co >= n背景max) n背景co = 0;
+                n背景a[n背景co] = 7 * 29 * 100 - 300;
+                n背景b[n背景co] = 14 * 29 * 100 - 1200;
+                n背景type[n背景co] = 6;
+                n背景co++;
+                if (n背景co >= n背景max) n背景co = 0;
+
+                n背景a[n背景co] = 41 * 29 * 100 - 300;
+                n背景b[n背景co] = 14 * 29 * 100 - 1200;
+                n背景type[n背景co] = 6;
+                n背景co++;
+
+                if (n背景co >= n背景max) n背景co = 0;
+                n背景a[n背景co] = 149 * 29 * 100 - 1100;
+                n背景b[n背景co] = 10 * 29 * 100 - 600;
+                //TODO 100を代入しているからマグマステージで例外が出る
+                n背景type[n背景co] = 100;
+                n背景co++;
+                if (n背景co >= n背景max) n背景co = 0;
 
                 nブロックco = 0;
                 //ON-OFFブロック
