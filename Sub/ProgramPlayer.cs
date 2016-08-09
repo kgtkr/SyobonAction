@@ -9,6 +9,26 @@ namespace SyobonAction
 {
     static partial class Program
     {
+        //プレイヤー
+        static int nプレイヤーainmsgtype;
+        static int nプレイヤーb, nプレイヤーnobia, nプレイヤーnobib, nプレイヤーhp;
+        static int nプレイヤーc,
+            nプレイヤーd,
+             nokori = 2, nプレイヤーactp, nプレイヤーact;
+
+        static int nプレイヤーtype,
+            nプレイヤーxtype,
+            nプレイヤーtm,
+            nプレイヤーzz;
+        static int nプレイヤーzimen,
+            nプレイヤーrzimen,
+            nプレイヤーkasok,
+            nプレイヤーmuki,
+            nプレイヤーjumptm,
+            nプレイヤーkeytm;
+        static int nプレイヤーmutekitm;
+        static int[] nプレイヤーactaon = new int[7];
+
         static void UpdatePlayer()
         {
             //プレイヤーの移動

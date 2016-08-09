@@ -9,6 +9,18 @@ namespace SyobonAction
 {
     static partial class Program
     {
+        //ブロック
+        const int nブロックmax = 641;
+        static int nブロックco;
+        static int[] nブロックa = new int[nブロックmax],
+            nブロックb = new int[nブロックmax],
+            nブロックc = new int[nブロックmax],
+            nブロックd = new int[nブロックmax],
+            nブロックhp = new int[nブロックmax],
+            nブロックtype = new int[nブロックmax];
+        static int[] nブロックitem = new int[nブロックmax],
+            nブロックxtype = new int[nブロックmax];
+
         static void UpdateBlock()
         {
             //ブロック

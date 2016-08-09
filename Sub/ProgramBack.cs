@@ -9,6 +9,17 @@ namespace SyobonAction
 {
     static partial class Program
     {
+        //背景
+        const int n背景max = 41;
+        static int n背景co;
+        static int[] n背景a = new int[n背景max],
+            n背景b = new int[n背景max],
+            n背景c = new int[n背景max],
+            n背景d = new int[n背景max],
+            n背景type = new int[n背景max];
+        static int[] n背景g = new int[n背景max],
+            n背景x = new int[n背景max];
+
         static void DrawBack()
         {
             //背景

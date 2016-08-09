@@ -94,7 +94,8 @@ namespace SyobonAction
         //メッセージ
         static void ttmsg()
         {
-            xx_1 = 6000 / 100; xx_2 = 4000 / 100;
+            xx_1 = 6000 / 100;
+            xx_2 = 4000 / 100;
             if (nメッセージブロックtype == 1 || nメッセージブロックtype == 2)
             {
                 DXDraw.SetColorBlack();
@@ -244,7 +245,8 @@ namespace SyobonAction
             n絵gtype[n絵co] = xgtype; n絵tm[n絵co] = xtm;
             n絵nobia[n絵co] = xnobia; n絵nobib[n絵co] = xnobib;
 
-            n絵co++; if (n絵co >= n絵max) n絵co = 0;
+            n絵co++;
+            if (n絵co >= n絵max) n絵co = 0;
 
         }//eyobi
 
@@ -267,7 +269,6 @@ namespace SyobonAction
                     n敵キャラc[n敵キャラco] = xc;
                     n敵キャラd[n敵キャラco] = xd;
                     if (xxtype > 100) n敵キャラc[n敵キャラco] = xxtype;
-                    //ae[aco]=0;af[aco]=0;
                     n敵キャラtype[n敵キャラco] = xtype;
                     if (xxtype >= 0 && xxtype <= 99100) n敵キャラxtype[n敵キャラco] = xxtype;//ahp[aco]=iz[bxtype[t]];aytm[aco]=0;
                                                                              //if (xxtype==1)end();
@@ -458,7 +459,7 @@ namespace SyobonAction
                         }
 
                         //左右
-                        xx_27 = 0;
+                        int xx_27 = 0;
                         if ((n敵キャラtype[t_] >= 100 || (nブロックtype[tt_] != 7 || nブロックtype[tt_] == 7 && n敵キャラtype[t_] == 2)) && nブロックtype[tt_] != 117)
                         {
                             if (n敵キャラa[t_] + n敵キャラnobia[t_] - fx > xx_8 && n敵キャラa[t_] - fx < xx_8 + xx_2 && n敵キャラb[t_] + n敵キャラnobib[t_] - fy > xx_9 + xx_1 / 2 - xx_0 && n敵キャラb[t_] - fy < xx_9 + xx_2) { n敵キャラa[t_] = xx_8 - n敵キャラnobia[t_] + fx; n敵キャラc[t_] = 0; n敵キャラmuki[t_] = 0; xx_27 = 1; }
@@ -503,7 +504,7 @@ namespace SyobonAction
                 {
                     if (n敵キャラb[t_] - fy > xx_9 - xx_0 * 2 - 2000 && n敵キャラb[t_] - fy < xx_9 + xx_1 - xx_0 * 2 + 2000 && n敵キャラa[t_] + n敵キャラnobia[t_] - fx > xx_8 - 400 && n敵キャラa[t_] - fx < xx_8 + xx_1)
                     {
-                        nブロックa[tt_] = -800000;//ot(oto[4]);
+                        nブロックa[tt_] = -800000;
                         nリフトacttype[20] = 1; nリフトon[20] = 1;
                     }
                 }

@@ -8,6 +8,9 @@ namespace SyobonAction
 {
     static partial class Program
     {
+        //メッセージ
+        static int nメッセージtm, nメッセージtype;
+
         static void DrawMsg()
         {
             //プレイヤーのメッセージ

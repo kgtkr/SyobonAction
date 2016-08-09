@@ -9,6 +9,26 @@ namespace SyobonAction
 {
     static partial class Program
     {
+        //リフト
+        const int nリフトmax = 21;
+        static int nリフトco;
+        static int[] nリフトa = new int[nリフトmax],
+            nリフトb = new int[nリフトmax],
+            nリフトc = new int[nリフトmax],
+            nリフトd = new int[nリフトmax],
+            nリフトe = new int[nリフトmax],
+            nリフトf = new int[nリフトmax];
+        static int[] nリフトtype = new int[nリフトmax],
+            nリフトgtype = new int[nリフトmax],
+            nリフトacttype = new int[nリフトmax],
+            nリフトsp = new int[nリフトmax];
+        static int[] nリフトmuki = new int[nリフトmax],
+            nリフトon = new int[nリフトmax],
+            nリフトee = new int[nリフトmax];
+        static int[] nリフトsok = new int[nリフトmax],
+            nリフトmovep = new int[nリフトmax],
+            nリフトmove = new int[nリフトmax];
+
         static void Updateリフト()
         {
             //リフト

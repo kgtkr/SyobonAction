@@ -9,6 +9,42 @@ namespace SyobonAction
 {
     static partial class Program
     {
+        //敵キャラ
+        const int n敵キャラmax = 24;
+        static int n敵キャラco;
+        static int[] n敵キャラa = new int[n敵キャラmax],
+            n敵キャラb = new int[n敵キャラmax],
+            n敵キャラnobia = new int[n敵キャラmax],
+            n敵キャラnobib = new int[n敵キャラmax],
+            n敵キャラc = new int[n敵キャラmax],
+            n敵キャラd = new int[n敵キャラmax];
+        static int[] n敵キャラe = new int[n敵キャラmax],
+            n敵キャラf = new int[n敵キャラmax],
+            n敵キャラbrocktm = new int[n敵キャラmax];
+        static int[] n敵キャラacta = new int[n敵キャラmax],
+            n敵キャラactb = new int[n敵キャラmax],
+            n敵キャラzimentype = new int[n敵キャラmax],
+            n敵キャラxzimen = new int[n敵キャラmax];
+        static int[] n敵キャラtype = new int[n敵キャラmax],
+            n敵キャラxtype = new int[n敵キャラmax],
+            n敵キャラmuki = new int[n敵キャラmax],
+            n敵キャラhp = new int[n敵キャラmax];
+        static int[] n敵キャラnotm = new int[n敵キャラmax];
+        static int[] n敵キャラtm = new int[n敵キャラmax],
+            n敵キャラ2tm = new int[n敵キャラmax];
+        static int[] n敵キャラmsgtm = new int[n敵キャラmax],
+            n敵キャラmsgtype = new int[n敵キャラmax];
+
+        //敵出現
+        const int n敵出現max = 81;
+        static int n敵出現co;
+        static int[] n敵出現a = new int[n敵出現max],
+            n敵出現b = new int[n敵出現max],
+            n敵出現tm = new int[n敵出現max];
+        static int[] n敵出現type = new int[n敵出現max],
+            n敵出現xtype = new int[n敵出現max],
+            n敵出現z = new int[n敵出現max];
+
         static void UpdateEnemy()
         {
             //敵キャラの配置

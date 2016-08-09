@@ -8,6 +8,20 @@ namespace SyobonAction
 {
     static partial class Program
     {
+        //効果を持たないグラ
+        const int n絵max = 201;
+        static int n絵co;
+        static int[] n絵a = new int[n絵max],
+            n絵b = new int[n絵max],
+            n絵nobia = new int[n絵max],
+            n絵nobib = new int[n絵max],
+            n絵c = new int[n絵max],
+            n絵d = new int[n絵max];
+        static int[] n絵e = new int[n絵max],
+            n絵f = new int[n絵max],
+            n絵tm = new int[n絵max];
+        static int[] n絵gtype = new int[n絵max];
+
         static void Update絵()
         {
             //グラ

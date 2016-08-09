@@ -9,6 +9,18 @@ namespace SyobonAction
 {
     static partial class Program
     {
+        //地面
+        const int n地面max = 31;
+        static int n地面co;
+        static int[] n地面a = new int[n地面max],
+            n地面b = new int[n地面max],
+            n地面c = new int[n地面max],
+            n地面d = new int[n地面max],
+            n地面type = new int[n地面max],
+            n地面xtype = new int[n地面max],
+            n地面r = new int[n地面max];
+        static int[] n地面gtype = new int[n地面max];
+
         static void UpdateZimen()
         {
             //壁
@@ -344,7 +356,7 @@ namespace SyobonAction
                     //落ちるやつ
                     if (n地面type[t_] == 52)
                     {
-                        xx_29 = 0; if (nステージ色 == 2) { xx_29 = 30; }
+                        int xx_29 = 0; if (nステージ色 == 2) { xx_29 = 30; }
                         if (nステージ色 == 4) { xx_29 = 60; }
                         if (nステージ色 == 5) { xx_29 = 90; }
 

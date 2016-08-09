@@ -8,6 +8,9 @@ namespace SyobonAction
 {
     static partial class Program
     {
+        //メッセージブロック
+        static int nメッセージブロックtm, nメッセージブロックtype, nメッセージブロックy, nメッセージブロック;
+
         static void DrawMsgBlock()
         {
             //メッセージブロック
