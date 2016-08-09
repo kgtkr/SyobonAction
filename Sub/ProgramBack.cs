@@ -30,7 +30,7 @@ namespace SyobonAction
                 xx_2 = 16000;
                 xx_3 = 16000;
 
-                if (xx_0 + xx_2 >= -10 && xx_0 <= n画面幅 && xx_1 + xx_3 >= -10 && xx_3 <= n画面高さ)
+                if (xx_0 + xx_2 >= -10 && xx_0 <= W && xx_1 + xx_3 >= -10 && xx_3 <= H)
                 {
 
                     if (n背景type[t_] != 3)

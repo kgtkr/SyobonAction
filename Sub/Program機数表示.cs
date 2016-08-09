@@ -10,14 +10,7 @@ namespace SyobonAction
     {
         static void Draw機数表示()
         {
-            DXDraw.SetColorBlack();
-            DXDraw.DrawBox塗り潰し(0, 0, n画面幅, n画面高さ);
-
-            DX.SetFontSize(16);
-            DX.SetFontThickness(4);
-
-            DXDraw.DrawGraph(Res.n切り取り画像_[0, 0], 190, 190);
-            DX.DrawString(230, 200, " × " + nokori, DX.GetColor(255, 255, 255));
+            
         }
     }
 }

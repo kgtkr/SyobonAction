@@ -11,10 +11,7 @@ namespace SyobonAction
     {
         static void Draw()
         {
-            //ダブルバッファリング
-            DX.SetDrawScreen(DX.DX_SCREEN_BACK);
-
-            DX.ClearDrawScreen();
+            
 
             DXDraw.SetColor(0, 0, 0);
             if (nステージ色 == 1) DXDraw.SetColor(160, 180, 250);
@@ -30,7 +27,7 @@ namespace SyobonAction
                 nプレイヤーrzimen = 0;
             }
 
-            DXDraw.DrawBox塗り潰し(0, 0, n画面幅, n画面高さ);
+            DXDraw.DrawBox塗り潰し(0, 0, W, H);
 
 
             if (e現在の画面 == E画面.Game && b初期化)
@@ -70,7 +67,7 @@ namespace SyobonAction
                 if (blackTm > 0)
                 {
                     blackTm--;
-                    DXDraw.DrawBox塗り潰し(0, 0, n画面幅, n画面高さ);
+                    DXDraw.DrawBox塗り潰し(0, 0, W, H);
                     if (blackTm == 0)
                     {
                         if (blackX == 1) { b初期化 = false; }
@@ -85,13 +82,6 @@ namespace SyobonAction
                 Drawスタッフロール();
             }
 
-            //機数表示
-            if (e現在の画面 == E画面.機数表示)
-            {
-
-                Draw機数表示();
-            }
-
 
             //タイトル
             if (e現在の画面 == E画面.Title)
@@ -100,7 +90,6 @@ namespace SyobonAction
 
             }
 
-            DX.ScreenFlip();
 
         }
 
@@ -230,17 +219,6 @@ namespace SyobonAction
                 Updateスタッフロール();
 
             }//main==2
-
-            if (e現在の画面 == E画面.機数表示)
-            {
-                maintm++;
-                if (bクイック) maintm += 2;
-                if (maintm >= 30) {
-                    maintm = 0;
-                    e現在の画面 = E画面.Game;
-                    b初期化 = false;
-                }
-            }//if (main==10){
 
             //タイトル
             if (e現在の画面 == E画面.Title)

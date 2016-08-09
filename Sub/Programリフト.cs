@@ -36,7 +36,7 @@ namespace SyobonAction
             {
                 xx_10 = nリフトa[t_]; xx_11 = nリフトb[t_]; xx_12 = nリフトc[t_]; xx_13 = nリフトd[t_];
                 xx_8 = xx_10 - fx; xx_9 = xx_11 - fy;
-                if (xx_8 + xx_12 >= -10 - 12000 && xx_8 <= n画面幅 + 12100)
+                if (xx_8 + xx_12 >= -10 - 12000 && xx_8 <= W + 12100)
                 {
                     xx_0 = 500; xx_1 = 1200; xx_2 = 1000; xx_7 = 2000;
                     if (nプレイヤーd >= 100) { xx_1 = 900 + nプレイヤーd; }
@@ -60,8 +60,8 @@ namespace SyobonAction
                         case 5:
                             if (nリフトmove[t_] == 0) { nリフトmuki[t_] = 0; }
                             else { nリフトmuki[t_] = 1; }
-                            if (nリフトb[t_] - fy < -2100) { nリフトb[t_] = n画面高さ + fy + 2000; }
-                            if (nリフトb[t_] - fy > n画面高さ + 2000) { nリフトb[t_] = -2100 + fy; }
+                            if (nリフトb[t_] - fy < -2100) { nリフトb[t_] = H + fy + 2000; }
+                            if (nリフトb[t_] - fy > H + 2000) { nリフトb[t_] = -2100 + fy; }
                             break;
 
                         case 6:
@@ -183,7 +183,7 @@ namespace SyobonAction
             for (int t_ = 0; t_ < nリフトmax; t_++)
             {
                 xx_0 = nリフトa[t_] - fx; xx_1 = nリフトb[t_] - fy;
-                if (xx_0 + nリフトc[t_] >= -10 && xx_1 <= n画面幅 + 12100 && nリフトc[t_] / 100 >= 1)
+                if (xx_0 + nリフトc[t_] >= -10 && xx_1 <= W + 12100 && nリフトc[t_] / 100 >= 1)
                 {
                     xx_2 = 14; if (nリフトsp[t_] == 1) { xx_2 = 12; }
 

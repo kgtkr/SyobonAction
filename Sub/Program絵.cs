@@ -30,7 +30,7 @@ namespace SyobonAction
                 xx_0 = n絵a[t_] - fx; xx_1 = n絵b[t_] - fy;
                 xx_2 = n絵nobia[t_] / 100; xx_3 = n絵nobib[t_] / 100;
                 if (n絵tm[t_] >= 0) n絵tm[t_]--;
-                if (xx_0 + xx_2 * 100 >= -10 && xx_1 <= n画面幅 && xx_1 + xx_3 * 100 >= -10 - 8000 && xx_3 <= n画面高さ && n絵tm[t_] >= 0)
+                if (xx_0 + xx_2 * 100 >= -10 && xx_1 <= W && xx_1 + xx_3 * 100 >= -10 - 8000 && xx_3 <= H && n絵tm[t_] >= 0)
                 {
                     n絵a[t_] += n絵c[t_]; n絵b[t_] += n絵d[t_];
                     n絵c[t_] += n絵e[t_]; n絵d[t_] += n絵f[t_];
@@ -48,7 +48,7 @@ namespace SyobonAction
             {
                 xx_0 = n絵a[t_] - fx; xx_1 = n絵b[t_] - fy;
                 xx_2 = n絵nobia[t_] / 100; xx_3 = n絵nobib[t_] / 100;
-                if (xx_0 + xx_2 * 100 >= -10 && xx_1 <= n画面幅 && xx_1 + xx_3 * 100 >= -10 - 8000 && xx_3 <= n画面高さ)
+                if (xx_0 + xx_2 * 100 >= -10 && xx_1 <= W && xx_1 + xx_3 * 100 >= -10 - 8000 && xx_3 <= H)
                 {
 
                     //コイン

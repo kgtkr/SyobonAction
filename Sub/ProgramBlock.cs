@@ -30,7 +30,7 @@ namespace SyobonAction
             {
                 xx_0 = 200; xx_1 = 3000; xx_2 = 1000; xx_3 = 3000;//xx_2=1000
                 xx_8 = nブロックa[t_] - fx; xx_9 = nブロックb[t_] - fy;//xx_15=0;
-                if (nブロックa[t_] - fx + xx_1 >= -10 - xx_3 && nブロックa[t_] - fx <= n画面幅 + 12000 + xx_3)
+                if (nブロックa[t_] - fx + xx_1 >= -10 - xx_3 && nブロックa[t_] - fx <= W + 12000 + xx_3)
                 {
                     if (nプレイヤーtype != 200 && nプレイヤーtype != 1 && nプレイヤーtype != 2)
                     {
@@ -445,7 +445,7 @@ namespace SyobonAction
             {
                 xx_0 = nブロックa[t_] - fx; xx_1 = nブロックb[t_] - fy;
                 xx_2 = 32; xx_3 = xx_2;
-                if (xx_0 + xx_2 * 100 >= -10 && xx_1 <= n画面幅)
+                if (xx_0 + xx_2 * 100 >= -10 && xx_1 <= W)
                 {
 
                     xx_9 = 0;

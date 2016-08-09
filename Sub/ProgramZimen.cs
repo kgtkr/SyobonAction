@@ -26,7 +26,7 @@ namespace SyobonAction
             //壁
             for (int t_ = 0; t_ < n地面max; t_++)
             {
-                if (n地面a[t_] - fx + n地面c[t_] >= -12000 && n地面a[t_] - fx <= n画面幅)
+                if (n地面a[t_] - fx + n地面c[t_] >= -12000 && n地面a[t_] - fx <= W)
                 {
                     xx_0 = 200; xx_1 = 2400; xx_2 = 1000; xx_7 = 0;
 
@@ -66,7 +66,7 @@ namespace SyobonAction
                                 if (n地面xtype[t_] == 4) n地面r[t_] = 100;
                             }
 
-                            if (n地面gtype[t_] == 1 && n地面b[t_] <= n画面高さ + 18000)
+                            if (n地面gtype[t_] == 1 && n地面b[t_] <= H + 18000)
                             {
                                 n地面r[t_] += 120; if (n地面r[t_] >= 1600) { n地面r[t_] = 1600; }
                                 n地面b[t_] += n地面r[t_];
@@ -276,7 +276,7 @@ namespace SyobonAction
             //地面(壁)//土管も
             for (int t_ = 0; t_ < n地面max; t_++)
             {
-                if (n地面a[t_] - fx + n地面c[t_] >= -10 && n地面a[t_] - fx <= n画面幅 + 1100)
+                if (n地面a[t_] - fx + n地面c[t_] >= -10 && n地面a[t_] - fx <= W + 1100)
                 {
 
                     if (n地面type[t_] == 0)
@@ -424,7 +424,7 @@ namespace SyobonAction
             //描画上書き(土管)
             for (int t_ = 0; t_ < n地面max; t_++)
             {
-                if (n地面a[t_] - fx + n地面c[t_] >= -10 && n地面a[t_] - fx <= n画面幅 + 1100)
+                if (n地面a[t_] - fx + n地面c[t_] >= -10 && n地面a[t_] - fx <= W + 1100)
                 {
 
                     //入る土管(右)

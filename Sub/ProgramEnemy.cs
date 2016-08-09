@@ -60,9 +60,9 @@ namespace SyobonAction
                         xx_0 = 0; xx_1 = 0;
 
 
-                        if (n敵出現z[t_] == 0 && n敵出現tm[t_] < 0 && n敵出現a[t_] - fx >= n画面幅 + 2000 && n敵出現a[t_] - fx < n画面幅 + 2000 + nプレイヤーc && tt_ == 0) { xx_0 = 1; n敵キャラmuki[n敵キャラco] = 0; }// && mmuki==1
+                        if (n敵出現z[t_] == 0 && n敵出現tm[t_] < 0 && n敵出現a[t_] - fx >= W + 2000 && n敵出現a[t_] - fx < W + 2000 + nプレイヤーc && tt_ == 0) { xx_0 = 1; n敵キャラmuki[n敵キャラco] = 0; }// && mmuki==1
                         if (n敵出現z[t_] == 0 && n敵出現tm[t_] < 0 && n敵出現a[t_] - fx >= -400 - Res.n敵サイズW_[n敵出現type[t_]] + nプレイヤーc && n敵出現a[t_] - fx < -400 - Res.n敵サイズW_[n敵出現type[t_]] && tt_ == 1) { xx_0 = 1; xx_1 = 1; n敵キャラmuki[n敵キャラco] = 1; }// && mmuki==0
-                        if (n敵出現z[t_] == 1 && n敵出現a[t_] - fx >= 0 - Res.n敵サイズW_[n敵出現type[t_]] && n敵出現a[t_] - fx <= n画面幅 + 4000 && n敵出現b[t_] - fy >= -9000 && n敵出現b[t_] - fy <= n画面高さ + 4000 && n敵出現tm[t_] < 0) { xx_0 = 1; n敵出現z[t_] = 0; }// && xza<=5000// && tyuukan!=1
+                        if (n敵出現z[t_] == 1 && n敵出現a[t_] - fx >= 0 - Res.n敵サイズW_[n敵出現type[t_]] && n敵出現a[t_] - fx <= W + 4000 && n敵出現b[t_] - fy >= -9000 && n敵出現b[t_] - fy <= H + 4000 && n敵出現tm[t_] < 0) { xx_0 = 1; n敵出現z[t_] = 0; }// && xza<=5000// && tyuukan!=1
                         if (xx_0 == 1)
                         {//400
                             n敵出現tm[t_] = 401; xx_0 = 0;
@@ -84,7 +84,7 @@ namespace SyobonAction
                 xx_0 = n敵キャラa[t_] - fx; xx_1 = n敵キャラb[t_] - fy;
                 xx_2 = n敵キャラnobia[t_]; xx_3 = n敵キャラnobib[t_]; xx_14 = 12000 * 1;
                 if (n敵キャラnotm[t_] >= 0) n敵キャラnotm[t_]--;
-                if (xx_0 + xx_2 >= -xx_14 && xx_0 <= n画面幅 + xx_14 && xx_1 + xx_3 >= -10 - 9000 && xx_1 <= n画面高さ + 20000)
+                if (xx_0 + xx_2 >= -xx_14 && xx_0 <= W + xx_14 && xx_1 + xx_3 >= -10 - 9000 && xx_1 <= H + 20000)
                 {
                     n敵キャラacta[t_] = 0; n敵キャラactb[t_] = 0;
 
@@ -249,10 +249,10 @@ namespace SyobonAction
                         case 9:
                             n敵キャラzimentype[t_] = 5;
                             n敵キャラb[t_] += n敵キャラd[t_]; n敵キャラd[t_] += 100;
-                            if (n敵キャラb[t_] >= n画面高さ + 1000) { n敵キャラd[t_] = 900; }
-                            if (n敵キャラb[t_] >= n画面高さ + 12000)
+                            if (n敵キャラb[t_] >= H + 1000) { n敵キャラd[t_] = 900; }
+                            if (n敵キャラb[t_] >= H + 12000)
                             {
-                                n敵キャラb[t_] = n画面高さ; n敵キャラd[t_] = -2600;
+                                n敵キャラb[t_] = H; n敵キャラd[t_] = -2600;
                             }
                             break;
 
@@ -771,7 +771,7 @@ namespace SyobonAction
 
                 xx_0 = n敵キャラa[t_] - fx; xx_1 = n敵キャラb[t_] - fy;
                 xx_2 = n敵キャラnobia[t_] / 100; xx_3 = n敵キャラnobib[t_] / 100; xx_14 = 3000; xx_16 = 0;
-                if (xx_0 + xx_2 * 100 >= -10 - xx_14 && xx_1 <= n画面幅 + xx_14 && xx_1 + xx_3 * 100 >= -10 && xx_3 <= n画面高さ)
+                if (xx_0 + xx_2 * 100 >= -10 - xx_14 && xx_1 <= W + xx_14 && xx_1 + xx_3 * 100 >= -10 && xx_3 <= H)
                 {
                     if (n敵キャラmuki[t_] == 1) { DXDraw.nミラー = 1; }
                     if (n敵キャラtype[t_] == 3 && n敵キャラxtype[t_] == 1) { DX.DrawRotaGraph(xx_0 / 100 + 13, xx_1 / 100 + 15, 1.0f, Math.PI / 1, Res.n切り取り画像_[n敵キャラtype[t_], 3], DX.TRUE); xx_16 = 1; }
@@ -914,7 +914,7 @@ namespace SyobonAction
                 xx_14 = 12000; xx_16 = 0;
                 if (n敵キャラtype[t_] == 87 || n敵キャラtype[t_] == 88)
                 {
-                    if (xx_0 + xx_2 * 100 >= -10 - xx_14 && xx_1 <= n画面幅 + xx_14 && xx_1 + xx_3 * 100 >= -10 && xx_3 <= n画面高さ)
+                    if (xx_0 + xx_2 * 100 >= -10 - xx_14 && xx_1 <= W + xx_14 && xx_1 + xx_3 * 100 >= -10 && xx_3 <= H)
                     {
 
                         for (int tt_ = 0; tt_ <= n敵キャラxtype[t_] % 100; tt_++)

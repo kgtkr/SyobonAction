@@ -265,14 +265,13 @@ namespace SyobonAction
                 {
                     nプレイヤーc = 0;
                 }
-                if (nプレイヤーtm >= 100 || bクイック)
+                if (nプレイヤーtm >= 100)
                 {
                     b初期化 = false;
                     e現在の画面 = E画面.機数表示;
                     nプレイヤーtm = 0;
                     nプレイヤーkeytm = 0;
                     nokori--;
-                    if (bクイック) nプレイヤーtype = 0;
                 }
             }
 
@@ -585,7 +584,7 @@ namespace SyobonAction
             if (nプレイヤーtype <= 9 && nプレイヤーhp >= 1)
             {
                 if (ma < 100) { ma = 100; nプレイヤーc = 0; }
-                if (ma + nプレイヤーnobia > n画面幅) { ma = n画面幅 - nプレイヤーnobia; nプレイヤーc = 0; }
+                if (ma + nプレイヤーnobia > W) { ma = W - nプレイヤーnobia; nプレイヤーc = 0; }
             }
             if (nプレイヤーb >= 38000 && nプレイヤーhp >= 0 && nステージ色 == 4) { nプレイヤーhp = -2; nメッセージtm = 30; nメッセージtype = 55; }
             if (nプレイヤーb >= 52000 && nプレイヤーhp >= 0) { nプレイヤーhp = -2; }
