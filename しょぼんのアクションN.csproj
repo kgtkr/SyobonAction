@@ -55,11 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DXDraw.cs" />
-    <Compile Include="Scene\Ending.cs" />
     <Compile Include="Key.cs" />
-    <Compile Include="Scene\Game.cs" />
-    <Compile Include="Scene\Lives.cs" />
-    <Compile Include="Scene\Scene.cs" />
     <Compile Include="Sub\ProgramBack.cs" />
     <Compile Include="Sub\ProgramBlock.cs" />
     <Compile Include="Sub\ProgramEnemy.cs" />
@@ -84,8 +80,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Scene\Title.cs" />
-    <Compile Include="色々.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

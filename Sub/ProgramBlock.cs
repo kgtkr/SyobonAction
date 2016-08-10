@@ -9,17 +9,23 @@ namespace SyobonAction
 {
     static partial class Program
     {
+        struct Cブロック
+        {
+            public int a,
+            b,
+            c,
+            d,
+            hp,
+            type;
+            public int item,
+                xtype;
+        }
+
         //ブロック
         const int nブロックmax = 641;
         static int nブロックco;
-        static int[] nブロックa = new int[nブロックmax],
-            nブロックb = new int[nブロックmax],
-            nブロックc = new int[nブロックmax],
-            nブロックd = new int[nブロックmax],
-            nブロックhp = new int[nブロックmax],
-            nブロックtype = new int[nブロックmax];
-        static int[] nブロックitem = new int[nブロックmax],
-            nブロックxtype = new int[nブロックmax];
+        static Cブロック[] nブロック = new Cブロック[nブロックmax];
+
 
         static void UpdateBlock()
         {
@@ -29,51 +35,51 @@ namespace SyobonAction
             for (int t_ = 0; t_ < nブロックmax; t_++)
             {
                 xx_0 = 200; xx_1 = 3000; xx_2 = 1000; xx_3 = 3000;//xx_2=1000
-                xx_8 = nブロックa[t_] - fx; xx_9 = nブロックb[t_] - fy;//xx_15=0;
-                if (nブロックa[t_] - fx + xx_1 >= -10 - xx_3 && nブロックa[t_] - fx <= W + 12000 + xx_3)
+                xx_8 = nブロック[t_].a - fx; xx_9 = nブロック[t_].b - fy;//xx_15=0;
+                if (nブロック[t_].a - fx + xx_1 >= -10 - xx_3 && nブロック[t_].a - fx <= n画面幅 + 12000 + xx_3)
                 {
                     if (nプレイヤーtype != 200 && nプレイヤーtype != 1 && nプレイヤーtype != 2)
                     {
-                        if (nブロックtype[t_] < 1000 && nブロックtype[t_] != 800 && nブロックtype[t_] != 140 && nブロックtype[t_] != 141)
+                        if (nブロック[t_].type < 1000 && nブロック[t_].type != 800 && nブロック[t_].type != 140 && nブロック[t_].type != 141)
                         {
                                 xx_16 = 0; xx_17 = 0;
 
                                 //上
-                                if (nブロックtype[t_] != 7 && nブロックtype[t_] != 110 && !(nブロックtype[t_] == 114))
+                                if (nブロック[t_].type != 7 && nブロック[t_].type != 110 && !(nブロック[t_].type == 114))
                                 {
                                     if (ma + nプレイヤーnobia > xx_8 + xx_0 * 2 + 100 && ma < xx_8 + xx_1 - xx_0 * 2 - 100 && nプレイヤーb + nプレイヤーnobib > xx_9 && nプレイヤーb + nプレイヤーnobib < xx_9 + xx_1 && nプレイヤーd >= -100)
                                     {
-                                        if (nブロックtype[t_] != 115 && nブロックtype[t_] != 400 && nブロックtype[t_] != 117 && nブロックtype[t_] != 118 && nブロックtype[t_] != 120)
+                                        if (nブロック[t_].type != 115 && nブロック[t_].type != 400 && nブロック[t_].type != 117 && nブロック[t_].type != 118 && nブロック[t_].type != 120)
                                         {
                                             nプレイヤーb = xx_9 - nプレイヤーnobib + 100; nプレイヤーd = 0; nプレイヤーzimen = 1; xx_16 = 1;
                                         }
-                                        else if (nブロックtype[t_] == 115)
+                                        else if (nブロック[t_].type == 115)
                                         {
-                                            v効果音再生(Res.nオーディオ_[3]);
-                                            eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
-                                            eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
-                                            eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);
-                                            eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, -240, -1400, 0, 160, 1000, 1000, 1, 120);
+                                            v効果音再生(Res.nオーディオ3);
+                                            eyobi(nブロック[t_].a + 1200, nブロック[t_].b + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
+                                            eyobi(nブロック[t_].a + 1200, nブロック[t_].b + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
+                                            eyobi(nブロック[t_].a + 1200, nブロック[t_].b + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);
+                                            eyobi(nブロック[t_].a + 1200, nブロック[t_].b + 1200, -240, -1400, 0, 160, 1000, 1000, 1, 120);
                                             brockBreak(t_);
                                         }
                                         //Pスイッチ
-                                        else if (nブロックtype[t_] == 400)
+                                        else if (nブロック[t_].type == 400)
                                         {
-                                            nプレイヤーd = 0; nブロックa[t_] = -8000000; v効果音再生(Res.nオーディオ_[13]);
-                                            for (int tt_ = 0; tt_ < nブロックmax; tt_++) { if (nブロックtype[tt_] != 7) { nブロックtype[tt_] = 800; } }
+                                            nプレイヤーd = 0; nブロック[t_].a = -8000000; v効果音再生(Res.nオーディオ13);
+                                            for (int tt_ = 0; tt_ < nブロックmax; tt_++) { if (nブロック[tt_].type != 7) { nブロック[tt_].type = 800; } }
                                         }
 
                                         //音符+
-                                        else if (nブロックtype[t_] == 117)
+                                        else if (nブロック[t_].type == 117)
                                         {
-                                            v効果音再生(Res.nオーディオ_[14]);
+                                            v効果音再生(Res.nオーディオ14);
                                             nプレイヤーd = -1500; nプレイヤーtype = 2; nプレイヤーtm = 0;
-                                            if (nブロックxtype[t_] >= 2 && nプレイヤーtype == 2) { nプレイヤーtype = 0; nプレイヤーd = -1600; nブロックxtype[t_] = 3; }
-                                            if (nブロックxtype[t_] == 0) nブロックxtype[t_] = 1;
+                                            if (nブロック[t_].xtype >= 2 && nプレイヤーtype == 2) { nプレイヤーtype = 0; nプレイヤーd = -1600; nブロック[t_].xtype = 3; }
+                                            if (nブロック[t_].xtype == 0) nブロック[t_].xtype = 1;
                                         }
 
                                         //ジャンプ台
-                                        else if (nブロックtype[t_] == 120)
+                                        else if (nブロック[t_].type == 120)
                                         {
                                             //txtype[t]=0;
                                             nプレイヤーd = -2400; nプレイヤーtype = 3; nプレイヤーtm = 0;
@@ -91,38 +97,38 @@ namespace SyobonAction
                                 {
 
                                     //下
-                                    if (t3 == xx_21 && nプレイヤーtype != 100 && nブロックtype[t_] != 117)
+                                    if (t3 == xx_21 && nプレイヤーtype != 100 && nブロック[t_].type != 117)
                                     {// && xx_12==0){
                                         if (ma + nプレイヤーnobia > xx_8 + xx_0 * 2 + 800 && ma < xx_8 + xx_1 - xx_0 * 2 - 800 && nプレイヤーb > xx_9 - xx_0 * 2 && nプレイヤーb < xx_9 + xx_1 - xx_0 * 2 && nプレイヤーd <= 0)
                                         {
                                             xx_16 = 1; xx_17 = 1;
                                             nプレイヤーb = xx_9 + xx_1 + xx_0; if (nプレイヤーd < 0) { nプレイヤーd = -nプレイヤーd * 2 / 3; }//}
                                                                                                                              //壊れる
-                                            if (nブロックtype[t_] == 1 && nプレイヤーzimen == 0)
+                                            if (nブロック[t_].type == 1 && nプレイヤーzimen == 0)
                                             {
-                                                v効果音再生(Res.nオーディオ_[3]);
-                                                eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
-                                                eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
-                                                eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);
-                                                eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, -240, -1400, 0, 160, 1000, 1000, 1, 120);
+                                                v効果音再生(Res.nオーディオ3);
+                                                eyobi(nブロック[t_].a + 1200, nブロック[t_].b + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
+                                                eyobi(nブロック[t_].a + 1200, nブロック[t_].b + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
+                                                eyobi(nブロック[t_].a + 1200, nブロック[t_].b + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);
+                                                eyobi(nブロック[t_].a + 1200, nブロック[t_].b + 1200, -240, -1400, 0, 160, 1000, 1000, 1, 120);
                                                 brockBreak(t_);
                                             }
                                             //コイン
-                                            if (nブロックtype[t_] == 2 && nプレイヤーzimen == 0)
+                                            if (nブロック[t_].type == 2 && nプレイヤーzimen == 0)
                                             {
-                                                v効果音再生(Res.nオーディオ_[4]);
-                                                eyobi(nブロックa[t_] + 10, nブロックb[t_], 0, -800, 0, 40, 3000, 3000, 0, 16);
-                                                nブロックtype[t_] = 3;
+                                                v効果音再生(Res.nオーディオ4);
+                                                eyobi(nブロック[t_].a + 10, nブロック[t_].b, 0, -800, 0, 40, 3000, 3000, 0, 16);
+                                                nブロック[t_].type = 3;
                                             }
                                             //隠し
-                                            if (nブロックtype[t_] == 7)
+                                            if (nブロック[t_].type == 7)
                                             {
-                                                v効果音再生(Res.nオーディオ_[4]);
-                                                eyobi(nブロックa[t_] + 10, nブロックb[t_], 0, -800, 0, 40, 3000, 3000, 0, 16);
-                                                nプレイヤーb = xx_9 + xx_1 + xx_0; nブロックtype[t_] = 3; if (nプレイヤーd < 0) { nプレイヤーd = -nプレイヤーd * 2 / 3; }
+                                                v効果音再生(Res.nオーディオ4);
+                                                eyobi(nブロック[t_].a + 10, nブロック[t_].b, 0, -800, 0, 40, 3000, 3000, 0, 16);
+                                                nプレイヤーb = xx_9 + xx_1 + xx_0; nブロック[t_].type = 3; if (nプレイヤーd < 0) { nプレイヤーd = -nプレイヤーd * 2 / 3; }
                                             }
                                             // トゲ
-                                            if (nブロックtype[t_] == 10)
+                                            if (nブロック[t_].type == 10)
                                             {
                                                 nメッセージtm = 30;
                                                 nメッセージtype = 3;
@@ -135,11 +141,11 @@ namespace SyobonAction
                                     //左右
                                     if (t3 == xx_22 && xx_15 == 0)
                                     {
-                                        if (nブロックtype[t_] != 7 && nブロックtype[t_] != 110 && nブロックtype[t_] != 117)
+                                        if (nブロック[t_].type != 7 && nブロック[t_].type != 110 && nブロック[t_].type != 117)
                                         {
-                                            if (!(nブロックtype[t_] == 114))
+                                            if (!(nブロック[t_].type == 114))
                                             {// && txtype[t]==1)){
-                                                if (nブロックa[t_] >= -20000)
+                                                if (nブロック[t_].a >= -20000)
                                                 {
                                                     if (ma + nプレイヤーnobia > xx_8 && ma < xx_8 + xx_2 && nプレイヤーb + nプレイヤーnobib > xx_9 + xx_1 / 2 - xx_0 && nプレイヤーb < xx_9 + xx_2 && nプレイヤーc >= 0)
                                                     {
@@ -158,99 +164,99 @@ namespace SyobonAction
 
                         }// && ttype[t]<50
 
-                        if (nブロックtype[t_] == 800)
+                        if (nブロック[t_].type == 800)
                         {
                             if (nプレイヤーb > xx_9 - xx_0 * 2 - 2000 && nプレイヤーb < xx_9 + xx_1 - xx_0 * 2 + 2000 && ma + nプレイヤーnobia > xx_8 - 400 && ma < xx_8 + xx_1)
                             {
-                                nブロックa[t_] = -800000; v効果音再生(Res.nオーディオ_[4]);
+                                nブロック[t_].a = -800000; v効果音再生(Res.nオーディオ4);
                             }
                         }
 
                         //剣とってクリア
-                        if (nブロックtype[t_] == 140)
+                        if (nブロック[t_].type == 140)
                         {
                             if (nプレイヤーb > xx_9 - xx_0 * 2 - 2000 && nプレイヤーb < xx_9 + xx_1 - xx_0 * 2 + 2000 && ma + nプレイヤーnobia > xx_8 - 400 && ma < xx_8 + xx_1)
                             {
-                                nブロックa[t_] = -800000;//ot(oto[4]);
-                                nリフトacttype[20] = 1; nリフトon[20] = 1;
-                                DX.StopSoundMem(Res.nオーディオ_[0]); nプレイヤーtype = 301; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ_[16]);
+                                nブロック[t_].a = -800000;//ot(oto[4]);
+                                nリフト[20].acttype = 1; nリフト[20].on = 1;
+                                DX.StopSoundMem(Res.n現在のBGM); nプレイヤーtype = 301; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ16);
 
                             }
                         }
 
 
                         //特殊的
-                        if (nブロックtype[t_] == 100)
+                        if (nブロック[t_].type == 100)
                         {//xx_9+xx_1+3000<mb && // && mb>xx_9-xx_0*2
                             if (nプレイヤーb > xx_9 - xx_0 * 2 - 2000 && nプレイヤーb < xx_9 + xx_1 - xx_0 * 2 + 2000 && ma + nプレイヤーnobia > xx_8 - 400 && ma < xx_8 + xx_1 && nプレイヤーd <= 0)
                             {
-                                if (nブロックxtype[t_] == 0) nブロックb[t_] = nプレイヤーb + fy - 1200 - xx_1;
+                                if (nブロック[t_].xtype == 0) nブロック[t_].b = nプレイヤーb + fy - 1200 - xx_1;
                             }
 
-                            if (nブロックxtype[t_] == 1)
+                            if (nブロック[t_].xtype == 1)
                             {
                                 if (xx_17 == 1)
                                 {
-                                    if (ma + nプレイヤーnobia > xx_8 - 400 && ma < xx_8 + xx_1 / 2 - 1500) { nブロックa[t_] += 3000; }
-                                    else if (ma + nプレイヤーnobia >= xx_8 + xx_1 / 2 - 1500 && ma < xx_8 + xx_1) { nブロックa[t_] -= 3000; }
+                                    if (ma + nプレイヤーnobia > xx_8 - 400 && ma < xx_8 + xx_1 / 2 - 1500) { nブロック[t_].a += 3000; }
+                                    else if (ma + nプレイヤーnobia >= xx_8 + xx_1 / 2 - 1500 && ma < xx_8 + xx_1) { nブロック[t_].a -= 3000; }
                                 }
                             }
 
-                            if (xx_17 == 1 && nブロックxtype[t_] == 0)
+                            if (xx_17 == 1 && nブロック[t_].xtype == 0)
                             {
-                                v効果音再生(Res.nオーディオ_[4]);
-                                eyobi(nブロックa[t_] + 10, nブロックb[t_], 0, -800, 0, 40, 3000, 3000, 0, 16);
-                                nブロックtype[t_] = 3;
+                                v効果音再生(Res.nオーディオ4);
+                                eyobi(nブロック[t_].a + 10, nブロック[t_].b, 0, -800, 0, 40, 3000, 3000, 0, 16);
+                                nブロック[t_].type = 3;
                             }
                         }//100
 
                         //敵出現
-                        if (nブロックtype[t_] == 101)
+                        if (nブロック[t_].type == 101)
                         {//xx_9+xx_1+3000<mb && // && mb>xx_9-xx_0*2
                             if (xx_17 == 1)
                             {
-                                v効果音再生(Res.nオーディオ_[8]);
-                                nブロックtype[t_] = 3;
-                                n敵キャラbrocktm[n敵キャラco] = 16;
-                                if (nブロックxtype[t_] == 0) ayobi(nブロックa[t_], nブロックb[t_], 0, 0, 0, 0, 0);
-                                if (nブロックxtype[t_] == 1) ayobi(nブロックa[t_], nブロックb[t_], 0, 0, 0, 4, 0);
-                                if (nブロックxtype[t_] == 3) ayobi(nブロックa[t_], nブロックb[t_], 0, 0, 0, 101, 0);
-                                if (nブロックxtype[t_] == 4) { n敵キャラbrocktm[n敵キャラco] = 20; ayobi(nブロックa[t_] - 400, nブロックb[t_] - 1600, 0, 0, 0, 6, 0); }
-                                if (nブロックxtype[t_] == 10) ayobi(nブロックa[t_], nブロックb[t_], 0, 0, 0, 101, 0);
+                                v効果音再生(Res.nオーディオ8);
+                                nブロック[t_].type = 3;
+                                n敵キャラ[n敵キャラco].brocktm = 16;
+                                if (nブロック[t_].xtype == 0) ayobi(nブロック[t_].a, nブロック[t_].b, 0, 0, 0, 0, 0);
+                                if (nブロック[t_].xtype == 1) ayobi(nブロック[t_].a, nブロック[t_].b, 0, 0, 0, 4, 0);
+                                if (nブロック[t_].xtype == 3) ayobi(nブロック[t_].a, nブロック[t_].b, 0, 0, 0, 101, 0);
+                                if (nブロック[t_].xtype == 4) { n敵キャラ[n敵キャラco].brocktm = 20; ayobi(nブロック[t_].a - 400, nブロック[t_].b - 1600, 0, 0, 0, 6, 0); }
+                                if (nブロック[t_].xtype == 10) ayobi(nブロック[t_].a, nブロック[t_].b, 0, 0, 0, 101, 0);
                             }
                         }//101
 
                         //おいしいきのこ出現
-                        if (nブロックtype[t_] == 102)
+                        if (nブロック[t_].type == 102)
                         {
                             if (xx_17 == 1)
                             {
-                                v効果音再生(Res.nオーディオ_[8]);
-                                nブロックtype[t_] = 3; n敵キャラbrocktm[n敵キャラco] = 16;
-                                if (nブロックxtype[t_] == 0) ayobi(nブロックa[t_], nブロックb[t_], 0, 0, 0, 100, 0);
-                                if (nブロックxtype[t_] == 2) ayobi(nブロックa[t_], nブロックb[t_], 0, 0, 0, 100, 2);
-                                if (nブロックxtype[t_] == 3) ayobi(nブロックa[t_], nブロックb[t_], 0, 0, 0, 102, 1);
+                                v効果音再生(Res.nオーディオ8);
+                                nブロック[t_].type = 3; n敵キャラ[n敵キャラco].brocktm = 16;
+                                if (nブロック[t_].xtype == 0) ayobi(nブロック[t_].a, nブロック[t_].b, 0, 0, 0, 100, 0);
+                                if (nブロック[t_].xtype == 2) ayobi(nブロック[t_].a, nブロック[t_].b, 0, 0, 0, 100, 2);
+                                if (nブロック[t_].xtype == 3) ayobi(nブロック[t_].a, nブロック[t_].b, 0, 0, 0, 102, 1);
                             }
                         }//102
 
                         //まずいきのこ出現
-                        if (nブロックtype[t_] == 103)
+                        if (nブロック[t_].type == 103)
                         {
                             if (xx_17 == 1)
                             {
-                                v効果音再生(Res.nオーディオ_[8]);
-                                nブロックtype[t_] = 3; n敵キャラbrocktm[n敵キャラco] = 16; ayobi(nブロックa[t_], nブロックb[t_], 0, 0, 0, 100, 1);
+                                v効果音再生(Res.nオーディオ8);
+                                nブロック[t_].type = 3; n敵キャラ[n敵キャラco].brocktm = 16; ayobi(nブロック[t_].a, nブロック[t_].b, 0, 0, 0, 100, 1);
                             }
                         }//103
 
 
                         //悪スター出し
-                        if (nブロックtype[t_] == 104)
+                        if (nブロック[t_].type == 104)
                         {
                             if (xx_17 == 1)
                             {
-                                v効果音再生(Res.nオーディオ_[8]);
-                                nブロックtype[t_] = 3; n敵キャラbrocktm[n敵キャラco] = 16; ayobi(nブロックa[t_], nブロックb[t_], 0, 0, 0, 110, 0);
+                                v効果音再生(Res.nオーディオ8);
+                                nブロック[t_].type = 3; n敵キャラ[n敵キャラco].brocktm = 16; ayobi(nブロック[t_].a, nブロック[t_].b, 0, 0, 0, 110, 0);
                             }
                         }//104
 
@@ -258,60 +264,60 @@ namespace SyobonAction
 
 
                         //毒きのこ量産
-                        if (nブロックtype[t_] == 110)
+                        if (nブロック[t_].type == 110)
                         {
                             if (xx_17 == 1)
                             {
-                                nブロックtype[t_] = 111; nブロックhp[t_] = 999;
+                                nブロック[t_].type = 111; nブロック[t_].hp = 999;
                             }
                         }//110
-                        if (nブロックtype[t_] == 111 && nブロックa[t_] - fx >= 0)
+                        if (nブロック[t_].type == 111 && nブロック[t_].a - fx >= 0)
                         {
-                            nブロックhp[t_]++; if (nブロックhp[t_] >= 16)
+                            nブロック[t_].hp++; if (nブロック[t_].hp >= 16)
                             {
-                                nブロックhp[t_] = 0;
-                                v効果音再生(Res.nオーディオ_[8]);
-                                n敵キャラbrocktm[n敵キャラco] = 16; ayobi(nブロックa[t_], nブロックb[t_], 0, 0, 0, 102, 1);
+                                nブロック[t_].hp = 0;
+                                v効果音再生(Res.nオーディオ8);
+                                n敵キャラ[n敵キャラco].brocktm = 16; ayobi(nブロック[t_].a, nブロック[t_].b, 0, 0, 0, 102, 1);
                             }
                         }
 
 
                         //コイン量産
-                        if (nブロックtype[t_] == 112)
+                        if (nブロック[t_].type == 112)
                         {
                             if (xx_17 == 1)
                             {
-                                nブロックtype[t_] = 113; nブロックhp[t_] = 999; nブロックitem[t_] = 0;
+                                nブロック[t_].type = 113; nブロック[t_].hp = 999; nブロック[t_].item = 0;
                             }
                         }//110
-                        if (nブロックtype[t_] == 113 && nブロックa[t_] - fx >= 0)
+                        if (nブロック[t_].type == 113 && nブロック[t_].a - fx >= 0)
                         {
-                            if (nブロックitem[t_] <= 19) nブロックhp[t_]++;
-                            if (nブロックhp[t_] >= 3)
+                            if (nブロック[t_].item <= 19) nブロック[t_].hp++;
+                            if (nブロック[t_].hp >= 3)
                             {
-                                nブロックhp[t_] = 0; nブロックitem[t_]++;
-                                v効果音再生(Res.nオーディオ_[4]);
-                                eyobi(nブロックa[t_] + 10, nブロックb[t_], 0, -800, 0, 40, 3000, 3000, 0, 16);
+                                nブロック[t_].hp = 0; nブロック[t_].item++;
+                                v効果音再生(Res.nオーディオ4);
+                                eyobi(nブロック[t_].a + 10, nブロック[t_].b, 0, -800, 0, 40, 3000, 3000, 0, 16);
                                 //ttype[t]=3;
                             }
                         }
 
 
                         //隠し毒きのこ
-                        if (nブロックtype[t_] == 114)
+                        if (nブロック[t_].type == 114)
                         {
                             if (xx_17 == 1)
                             {
-                                if (nブロックxtype[t_] == 0)
+                                if (nブロック[t_].xtype == 0)
                                 {
-                                    v効果音再生(Res.nオーディオ_[8]); nブロックtype[t_] = 3;
-                                    n敵キャラbrocktm[n敵キャラco] = 16; ayobi(nブロックa[t_], nブロックb[t_], 0, 0, 0, 102, 1);
+                                    v効果音再生(Res.nオーディオ8); nブロック[t_].type = 3;
+                                    n敵キャラ[n敵キャラco].brocktm = 16; ayobi(nブロック[t_].a, nブロック[t_].b, 0, 0, 0, 102, 1);
                                 }
-                                if (nブロックxtype[t_] == 2) { v効果音再生(Res.nオーディオ_[4]); eyobi(nブロックa[t_] + 10, nブロックb[t_], 0, -800, 0, 40, 3000, 3000, 0, 16); nブロックtype[t_] = 115; nブロックxtype[t_] = 0; }
-                                if (nブロックxtype[t_] == 10)
+                                if (nブロック[t_].xtype == 2) { v効果音再生(Res.nオーディオ4); eyobi(nブロック[t_].a + 10, nブロック[t_].b, 0, -800, 0, 40, 3000, 3000, 0, 16); nブロック[t_].type = 115; nブロック[t_].xtype = 0; }
+                                if (nブロック[t_].xtype == 10)
                                 {
-                                    if (bステージスイッチ) { nブロックtype[t_] = 130; bステージスイッチ = false; v効果音再生(Res.nオーディオ_[13]); nブロックxtype[t_] = 2; for (t_ = 0; t_ < n敵キャラmax; t_++) { if (n敵キャラtype[t_] == 87 || n敵キャラtype[t_] == 88) { if (n敵キャラxtype[t_] == 105) { n敵キャラxtype[t_] = 110; } } } }
-                                    else { v効果音再生(Res.nオーディオ_[4]); eyobi(nブロックa[t_] + 10, nブロックb[t_], 0, -800, 0, 40, 3000, 3000, 0, 16); nブロックtype[t_] = 3; }
+                                    if (bステージスイッチ) { nブロック[t_].type = 130; bステージスイッチ = false; v効果音再生(Res.nオーディオ13); nブロック[t_].xtype = 2; for (t_ = 0; t_ < n敵キャラmax; t_++) { if (n敵キャラ[t_].type == 87 || n敵キャラ[t_].type == 88) { if (n敵キャラ[t_].xtype == 105) { n敵キャラ[t_].xtype = 110; } } } }
+                                    else { v効果音再生(Res.nオーディオ4); eyobi(nブロック[t_].a + 10, nブロック[t_].b, 0, -800, 0, 40, 3000, 3000, 0, 16); nブロック[t_].type = 3; }
                                 }
 
                             }
@@ -319,84 +325,84 @@ namespace SyobonAction
 
 
                         //もろいブロック
-                        if (nブロックtype[t_] == 115)
+                        if (nブロック[t_].type == 115)
                         {
 
                         }//115
 
 
                         //Pスイッチ
-                        if (nブロックtype[t_] == 116)
+                        if (nブロック[t_].type == 116)
                         {
                             if (xx_17 == 1)
                             {
-                                v効果音再生(Res.nオーディオ_[8]);
+                                v効果音再生(Res.nオーディオ8);
                                 //ot(oto[13]);
-                                nブロックtype[t_] = 3;//abrocktm[aco]=18;ayobi(ta[t],tb[t],0,0,0,104,1);
-                                tyobi(nブロックa[t_] / 100, (nブロックb[t_] / 100) - 29, 400);
+                                nブロック[t_].type = 3;//abrocktm[aco]=18;ayobi(ta[t],tb[t],0,0,0,104,1);
+                                tyobi(nブロック[t_].a / 100, (nブロック[t_].b / 100) - 29, 400);
                             }
                         }//116
 
 
                         //ファイアバー強化
-                        if (nブロックtype[t_] == 124)
+                        if (nブロック[t_].type == 124)
                         {
                             if (xx_17 == 1)
                             {
-                                v効果音再生(Res.nオーディオ_[13]);
-                                for (t_ = 0; t_ < n敵キャラmax; t_++) { if (n敵キャラtype[t_] == 87 || n敵キャラtype[t_] == 88) { if (n敵キャラxtype[t_] == 101) { n敵キャラxtype[t_] = 120; } } }
-                                nブロックtype[t_] = 3;
+                                v効果音再生(Res.nオーディオ13);
+                                for (t_ = 0; t_ < n敵キャラmax; t_++) { if (n敵キャラ[t_].type == 87 || n敵キャラ[t_].type == 88) { if (n敵キャラ[t_].xtype == 101) { n敵キャラ[t_].xtype = 120; } } }
+                                nブロック[t_].type = 3;
                             }
                         }
 
                         //ONスイッチ
-                        if (nブロックtype[t_] == 130)
+                        if (nブロック[t_].type == 130)
                         {
                             if (xx_17 == 1)
                             {
-                                if (nブロックxtype[t_] != 1)
+                                if (nブロック[t_].xtype != 1)
                                 {
-                                    bステージスイッチ = false; v効果音再生(Res.nオーディオ_[13]);
+                                    bステージスイッチ = false; v効果音再生(Res.nオーディオ13);
                                 }
                             }
                         }
-                        else if (nブロックtype[t_] == 131)
+                        else if (nブロック[t_].type == 131)
                         {
-                            if (xx_17 == 1 && nブロックxtype[t_] != 2)
+                            if (xx_17 == 1 && nブロック[t_].xtype != 2)
                             {
-                                bステージスイッチ = true; v効果音再生(Res.nオーディオ_[13]);
-                                if (nブロックxtype[t_] == 1)
+                                bステージスイッチ = true; v効果音再生(Res.nオーディオ13);
+                                if (nブロック[t_].xtype == 1)
                                 {
-                                    for (t_ = 0; t_ < n敵キャラmax; t_++) { if (n敵キャラtype[t_] == 87 || n敵キャラtype[t_] == 88) { if (n敵キャラxtype[t_] == 105) { n敵キャラxtype[t_] = 110; } } }
+                                    for (t_ = 0; t_ < n敵キャラmax; t_++) { if (n敵キャラ[t_].type == 87 || n敵キャラ[t_].type == 88) { if (n敵キャラ[t_].xtype == 105) { n敵キャラ[t_].xtype = 110; } } }
                                     n敵出現xtype[3] = 105;
                                 }
                             }
                         }
 
                         //ヒント
-                        if (nブロックtype[t_] == 300)
+                        if (nブロック[t_].type == 300)
                         {
                             if (xx_17 == 1)
                             {
-                                v効果音再生(Res.nオーディオ_[15]);
-                                if (nブロックxtype[t_] <= 100)
+                                v効果音再生(Res.nオーディオ15);
+                                if (nブロック[t_].xtype <= 100)
                                 {
-                                    nメッセージブロックtype = 1; nメッセージブロックtm = 15; nメッセージブロックy = 300 + (nブロックxtype[t_] - 1); nメッセージブロック = (nブロックxtype[t_]);
+                                    nメッセージブロックtype = 1; nメッセージブロックtm = 15; nメッセージブロックy = 300 + (nブロック[t_].xtype - 1); nメッセージブロック = (nブロック[t_].xtype);
                                 }
-                                if (nブロックxtype[t_] == 540)
+                                if (nブロック[t_].xtype == 540)
                                 {
-                                    nメッセージブロックtype = 1; nメッセージブロックtm = 15; nメッセージブロックy = 400; nメッセージブロック = 100; nブロックxtype[t_] = 541;
+                                    nメッセージブロックtype = 1; nメッセージブロックtm = 15; nメッセージブロックy = 400; nメッセージブロック = 100; nブロック[t_].xtype = 541;
                                 }
                             }
                         }//300
 
 
-                        if (nブロックtype[t_] == 301)
+                        if (nブロック[t_].type == 301)
                         {
                             if (xx_17 == 1)
                             {
-                                v効果音再生(Res.nオーディオ_[3]);
-                                eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120); eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120); eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120); eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, -240, -1400, 0, 160, 1000, 1000, 1, 120);
+                                v効果音再生(Res.nオーディオ3);
+                                eyobi(nブロック[t_].a + 1200, nブロック[t_].b + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120); eyobi(nブロック[t_].a + 1200, nブロック[t_].b + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120); eyobi(nブロック[t_].a + 1200, nブロック[t_].b + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120); eyobi(nブロック[t_].a + 1200, nブロック[t_].b + 1200, -240, -1400, 0, 160, 1000, 1000, 1, 120);
                                 brockBreak(t_);
                             }
                         }//300
@@ -408,11 +414,11 @@ namespace SyobonAction
                         if (ma + nプレイヤーnobia > xx_8 && ma < xx_8 + xx_1 && nプレイヤーb + nプレイヤーnobib > xx_9 && nプレイヤーb < xx_9 + xx_1)
                         {
 
-                            v効果音再生(Res.nオーディオ_[3]);
-                            eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
-                            eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
-                            eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);
-                            eyobi(nブロックa[t_] + 1200, nブロックb[t_] + 1200, -240, -1400, 0, 160, 1000, 1000, 1, 120);
+                            v効果音再生(Res.nオーディオ3);
+                            eyobi(nブロック[t_].a + 1200, nブロック[t_].b + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
+                            eyobi(nブロック[t_].a + 1200, nブロック[t_].b + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
+                            eyobi(nブロック[t_].a + 1200, nブロック[t_].b + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);
+                            eyobi(nブロック[t_].a + 1200, nブロック[t_].b + 1200, -240, -1400, 0, 160, 1000, 1000, 1, 120);
                             brockBreak(t_);
 
                         }
@@ -420,16 +426,16 @@ namespace SyobonAction
 
 
                     //ONOFF
-                    if (nブロックtype[t_] == 130 && !bステージスイッチ) { nブロックtype[t_] = 131; }
-                    if (nブロックtype[t_] == 131 && bステージスイッチ) { nブロックtype[t_] = 130; }
+                    if (nブロック[t_].type == 130 && !bステージスイッチ) { nブロック[t_].type = 131; }
+                    if (nブロック[t_].type == 131 && bステージスイッチ) { nブロック[t_].type = 130; }
 
                     //ヒント
-                    if (nブロックtype[t_] == 300)
+                    if (nブロック[t_].type == 300)
                     {
-                        if (nブロックxtype[t_] >= 500 && nブロックa[t_] >= -6000)
+                        if (nブロック[t_].xtype >= 500 && nブロック[t_].a >= -6000)
                         {// && ta[t]>=-6000){
-                            if (nブロックxtype[t_] <= 539) nブロックxtype[t_]++;
-                            if (nブロックxtype[t_] >= 540) { nブロックa[t_] -= 500; }
+                            if (nブロック[t_].xtype <= 539) nブロック[t_].xtype++;
+                            if (nブロック[t_].xtype >= 540) { nブロック[t_].a -= 500; }
                         }
                     }//300
 
@@ -443,9 +449,9 @@ namespace SyobonAction
             //ブロック描画
             for (int t_ = 0; t_ < nブロックmax; t_++)
             {
-                xx_0 = nブロックa[t_] - fx; xx_1 = nブロックb[t_] - fy;
+                xx_0 = nブロック[t_].a - fx; xx_1 = nブロック[t_].b - fy;
                 xx_2 = 32; xx_3 = xx_2;
-                if (xx_0 + xx_2 * 100 >= -10 && xx_1 <= W)
+                if (xx_0 + xx_2 * 100 >= -10 && xx_1 <= n画面幅)
                 {
 
                     xx_9 = 0;
@@ -453,69 +459,69 @@ namespace SyobonAction
                     if (nステージ色 == 4) { xx_9 = 60; }
                     if (nステージ色 == 5) { xx_9 = 90; }
 
-                    if (nブロックtype[t_] < 100)
+                    if (nブロック[t_].type < 100)
                     {
-                        xx_6 = nブロックtype[t_] + xx_9; DXDraw.DrawGraph(Res.n切り取り画像_[xx_6, 1], xx_0 / 100, xx_1 / 100);
+                        xx_6 = nブロック[t_].type + xx_9; DXDraw.DrawGraph(Res.n切り取り画像_[xx_6, 1], xx_0 / 100, xx_1 / 100);
                     }
 
-                    if (nブロックxtype[t_] != 10)
+                    if (nブロック[t_].xtype != 10)
                     {
 
-                        if (nブロックtype[t_] == 100 || nブロックtype[t_] == 101 || nブロックtype[t_] == 102 || nブロックtype[t_] == 103 || nブロックtype[t_] == 104 && nブロックxtype[t_] == 1 || nブロックtype[t_] == 114 && nブロックxtype[t_] == 1 || nブロックtype[t_] == 116)
+                        if (nブロック[t_].type == 100 || nブロック[t_].type == 101 || nブロック[t_].type == 102 || nブロック[t_].type == 103 || nブロック[t_].type == 104 && nブロック[t_].xtype == 1 || nブロック[t_].type == 114 && nブロック[t_].xtype == 1 || nブロック[t_].type == 116)
                         {
                             xx_6 = 2 + xx_9; DXDraw.DrawGraph(Res.n切り取り画像_[xx_6, 1], xx_0 / 100, xx_1 / 100);
                         }
 
-                        if (nブロックtype[t_] == 112 || nブロックtype[t_] == 104 && nブロックxtype[t_] == 0 || nブロックtype[t_] == 115 && nブロックxtype[t_] == 1)
+                        if (nブロック[t_].type == 112 || nブロック[t_].type == 104 && nブロック[t_].xtype == 0 || nブロック[t_].type == 115 && nブロック[t_].xtype == 1)
                         {
                             xx_6 = 1 + xx_9; DXDraw.DrawGraph(Res.n切り取り画像_[xx_6, 1], xx_0 / 100, xx_1 / 100);
                         }
 
-                        if (nブロックtype[t_] == 111 || nブロックtype[t_] == 113 || nブロックtype[t_] == 115 && nブロックxtype[t_] == 0 || nブロックtype[t_] == 124)
+                        if (nブロック[t_].type == 111 || nブロック[t_].type == 113 || nブロック[t_].type == 115 && nブロック[t_].xtype == 0 || nブロック[t_].type == 124)
                         {
                             xx_6 = 3 + xx_9; DXDraw.DrawGraph(Res.n切り取り画像_[xx_6, 1], xx_0 / 100, xx_1 / 100);
                         }
 
                     }
 
-                    if (nブロックtype[t_] == 117 && nブロックxtype[t_] == 1)
+                    if (nブロック[t_].type == 117 && nブロック[t_].xtype == 1)
                     {
                         DXDraw.DrawGraph(Res.n切り取り画像_[4, 5], xx_0 / 100, xx_1 / 100);
                     }
 
-                    if (nブロックtype[t_] == 117 && nブロックxtype[t_] >= 3)
+                    if (nブロック[t_].type == 117 && nブロック[t_].xtype >= 3)
                     {
                         DXDraw.DrawGraph(Res.n切り取り画像_[3, 5], xx_0 / 100, xx_1 / 100);
                     }
 
-                    if (nブロックtype[t_] == 115 && nブロックxtype[t_] == 3)
+                    if (nブロック[t_].type == 115 && nブロック[t_].xtype == 3)
                     {
                         xx_6 = 1 + xx_9; DXDraw.DrawGraph(Res.n切り取り画像_[xx_6, 1], xx_0 / 100, xx_1 / 100);
                     }
 
                     //ジャンプ台
-                    if (nブロックtype[t_] == 120 && nブロックxtype[t_] != 1)
+                    if (nブロック[t_].type == 120 && nブロック[t_].xtype != 1)
                     {
                         DXDraw.DrawGraph(Res.n切り取り画像_[16, 1], xx_0 / 100 + 3, xx_1 / 100 + 2);
                     }
 
                     //ON-OFF
-                    if (nブロックtype[t_] == 130) DXDraw.DrawGraph(Res.n切り取り画像_[10, 5], xx_0 / 100, xx_1 / 100);
-                    if (nブロックtype[t_] == 131) DXDraw.DrawGraph(Res.n切り取り画像_[11, 5], xx_0 / 100, xx_1 / 100);
+                    if (nブロック[t_].type == 130) DXDraw.DrawGraph(Res.n切り取り画像_[10, 5], xx_0 / 100, xx_1 / 100);
+                    if (nブロック[t_].type == 131) DXDraw.DrawGraph(Res.n切り取り画像_[11, 5], xx_0 / 100, xx_1 / 100);
 
-                    if (nブロックtype[t_] == 140) DXDraw.DrawGraph(Res.n切り取り画像_[12, 5], xx_0 / 100, xx_1 / 100);
-                    if (nブロックtype[t_] == 141) DXDraw.DrawGraph(Res.n切り取り画像_[13, 5], xx_0 / 100, xx_1 / 100);
-                    if (nブロックtype[t_] == 142) DXDraw.DrawGraph(Res.n切り取り画像_[14, 5], xx_0 / 100, xx_1 / 100);
+                    if (nブロック[t_].type == 140) DXDraw.DrawGraph(Res.n切り取り画像_[12, 5], xx_0 / 100, xx_1 / 100);
+                    if (nブロック[t_].type == 141) DXDraw.DrawGraph(Res.n切り取り画像_[13, 5], xx_0 / 100, xx_1 / 100);
+                    if (nブロック[t_].type == 142) DXDraw.DrawGraph(Res.n切り取り画像_[14, 5], xx_0 / 100, xx_1 / 100);
 
 
-                    if (nブロックtype[t_] == 300 || nブロックtype[t_] == 301)
+                    if (nブロック[t_].type == 300 || nブロック[t_].type == 301)
                         DXDraw.DrawGraph(Res.n切り取り画像_[1, 5], xx_0 / 100, xx_1 / 100);
 
                     //Pスイッチ
-                    if (nブロックtype[t_] == 400) { DXDraw.DrawGraph(Res.n切り取り画像_[2, 5], xx_0 / 100, xx_1 / 100); }
+                    if (nブロック[t_].type == 400) { DXDraw.DrawGraph(Res.n切り取り画像_[2, 5], xx_0 / 100, xx_1 / 100); }
 
                     //コイン
-                    if (nブロックtype[t_] == 800) { DXDraw.DrawGraph(Res.n切り取り画像_[0, 2], xx_0 / 100 + 2, xx_1 / 100 + 1); }
+                    if (nブロック[t_].type == 800) { DXDraw.DrawGraph(Res.n切り取り画像_[0, 2], xx_0 / 100 + 2, xx_1 / 100 + 1); }
 
                 }
             }

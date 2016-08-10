@@ -9,10 +9,35 @@ namespace SyobonAction
 {
     static class Res
     {
-        
+        //[x,y]とすると
+        //x=プレイヤー:0、ブロック=1・5、アイテム=2、敵=3、背景=4、グラ=5
         public static int[,] n切り取り画像_ = new int[161, 8];
         public static int nタイトル画像;
-        public static int[] nオーディオ_ = new int[151];
+        #region オーディオ
+        public static int n現在のBGM;
+        public static int nオーディオ1;
+        public static int nオーディオ3;
+        public static int nオーディオ4;
+        public static int nオーディオ5;
+        public static int nオーディオ6;
+        public static int nオーディオ7;
+        public static int nオーディオ8;
+        public static int nオーディオ9;
+        public static int nオーディオ10;
+        public static int nオーディオ11;
+        public static int nオーディオ12;
+        public static int nオーディオ13;
+        public static int nオーディオ14;
+        public static int nオーディオ15;
+        public static int nオーディオ16;
+        public static int nオーディオ17;
+        public static int nオーディオ18;
+        public static int nオーディオ100;
+        public static int nオーディオ103;
+        public static int nオーディオ104;
+        public static int nオーディオ105;
+        public static int nオーディオ106;
+        #endregion
 
         public static int[] n敵サイズW_ = new int[160];
         public static int[] n敵サイズH_ = new int[160];
@@ -122,7 +147,6 @@ namespace SyobonAction
             n切り取り画像_[101, x1_] = DX.DerivationGraph(33 * 7, 0, 30, 30, n元画像_[2]);
             n切り取り画像_[102, x1_] = DX.DerivationGraph(33 * 3, 0, 30, 30, n元画像_[2]);
 
-            //grap[104][x1] = DerivationGraph( 33*2, 0, 30, 30, mgrap[5]) ;
             n切り取り画像_[105, x1_] = DX.DerivationGraph(33 * 5, 0, 30, 30, n元画像_[2]);
             n切り取り画像_[110, x1_] = DX.DerivationGraph(33 * 4, 0, 30, 30, n元画像_[2]);
 
@@ -148,15 +172,7 @@ namespace SyobonAction
             n切り取り画像_[0, x1_] = DX.DerivationGraph(167, 0, 45, 45, n元画像_[6]);
 
 
-
-
-
-
-
-
-
             //敵サイズ収得
-            //int GrHandle=0;
             x1_ = 3;
             for (int i = 0; i <= 140; i++)
             {
@@ -177,34 +193,34 @@ namespace SyobonAction
             }
 
             DX.SetCreateSoundDataType(DX.DX_SOUNDDATATYPE_MEMPRESS);
-            nオーディオ_[100] = DX.LoadSoundMem("BGM/field.ogg");
-            nオーディオ_[103] = DX.LoadSoundMem("BGM/dungeon.ogg");
-            nオーディオ_[104] = DX.LoadSoundMem("BGM/star4.ogg");
-            nオーディオ_[105] = DX.LoadSoundMem("BGM/castle.ogg");
-            nオーディオ_[106] = DX.LoadSoundMem("BGM/puyo.ogg");
+            nオーディオ100 = DX.LoadSoundMem("BGM/field.ogg");
+            nオーディオ103 = DX.LoadSoundMem("BGM/dungeon.ogg");
+            nオーディオ104 = DX.LoadSoundMem("BGM/star4.ogg");
+            nオーディオ105 = DX.LoadSoundMem("BGM/castle.ogg");
+            nオーディオ106 = DX.LoadSoundMem("BGM/puyo.ogg");
 
             DX.SetCreateSoundDataType(DX.DX_SOUNDDATATYPE_MEMNOPRESS);
-            nオーディオ_[1] = DX.LoadSoundMem("SE/jump.wav");
-            nオーディオ_[3] = DX.LoadSoundMem("SE/brockbreak.wav");
-            nオーディオ_[4] = DX.LoadSoundMem("SE/coin.wav");
-            nオーディオ_[5] = DX.LoadSoundMem("SE/humi.wav");
-            nオーディオ_[6] = DX.LoadSoundMem("SE/koura.wav");
-            nオーディオ_[7] = DX.LoadSoundMem("SE/dokan.wav");
-            nオーディオ_[8] = DX.LoadSoundMem("SE/brockkinoko.wav");
-            nオーディオ_[9] = DX.LoadSoundMem("SE/powerup.wav");
-            nオーディオ_[10] = DX.LoadSoundMem("SE/kirra.wav");
-            nオーディオ_[11] = DX.LoadSoundMem("SE/goal.wav");
-            nオーディオ_[12] = DX.LoadSoundMem("SE/death.wav");
-            nオーディオ_[13] = DX.LoadSoundMem("SE/Pswitch.wav");
-            nオーディオ_[14] = DX.LoadSoundMem("SE/jumpBlock.wav");
-            nオーディオ_[15] = DX.LoadSoundMem("SE/hintBlock.wav");
-            nオーディオ_[16] = DX.LoadSoundMem("SE/4-clear.wav");
-            nオーディオ_[17] = DX.LoadSoundMem("SE/allclear.wav");
-            nオーディオ_[18] = DX.LoadSoundMem("SE/tekifire.wav");
+            nオーディオ1 = DX.LoadSoundMem("SE/jump.wav");
+            nオーディオ3 = DX.LoadSoundMem("SE/brockbreak.wav");
+            nオーディオ4 = DX.LoadSoundMem("SE/coin.wav");
+            nオーディオ5 = DX.LoadSoundMem("SE/humi.wav");
+            nオーディオ6 = DX.LoadSoundMem("SE/koura.wav");
+            nオーディオ7 = DX.LoadSoundMem("SE/dokan.wav");
+            nオーディオ8 = DX.LoadSoundMem("SE/brockkinoko.wav");
+            nオーディオ9 = DX.LoadSoundMem("SE/powerup.wav");
+            nオーディオ10 = DX.LoadSoundMem("SE/kirra.wav");
+            nオーディオ11 = DX.LoadSoundMem("SE/goal.wav");
+            nオーディオ12 = DX.LoadSoundMem("SE/death.wav");
+            nオーディオ13 = DX.LoadSoundMem("SE/Pswitch.wav");
+            nオーディオ14 = DX.LoadSoundMem("SE/jumpBlock.wav");
+            nオーディオ15 = DX.LoadSoundMem("SE/hintBlock.wav");
+            nオーディオ16 = DX.LoadSoundMem("SE/4-clear.wav");
+            nオーディオ17 = DX.LoadSoundMem("SE/allclear.wav");
+            nオーディオ18 = DX.LoadSoundMem("SE/tekifire.wav");
 
 
             x1_ = 40;
-            DX.ChangeVolumeSoundMem(255 * x1_ / 100, nオーディオ_[103]);
+            DX.ChangeVolumeSoundMem(255 * x1_ / 100, nオーディオ103);
         }
     }
 }

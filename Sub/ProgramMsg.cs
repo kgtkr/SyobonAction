@@ -45,71 +45,71 @@ namespace SyobonAction
             DXDraw.SetColorBlack();
             for (int t_ = 0; t_ < n敵キャラmax; t_++)
             {
-                if (n敵キャラmsgtm[t_] >= 1)
+                if (n敵キャラ[t_].msgtm >= 1)
                 {
-                    n敵キャラmsgtm[t_]--;
+                    n敵キャラ[t_].msgtm--;
 
                     string xs_0 = "";
 
-                    if (n敵キャラmsgtype[t_] == 1001) xs_0 = "ヤッフー!!";
-                    if (n敵キャラmsgtype[t_] == 1002) xs_0 = "え?俺勝っちゃったの?";
-                    if (n敵キャラmsgtype[t_] == 1003) xs_0 = "貴様の死に場所はここだ!";
-                    if (n敵キャラmsgtype[t_] == 1004) xs_0 = "二度と会う事もないだろう";
-                    if (n敵キャラmsgtype[t_] == 1005) xs_0 = "俺、最強!!";
-                    if (n敵キャラmsgtype[t_] == 1006) xs_0 = "一昨日来やがれ!!";
-                    if (n敵キャラmsgtype[t_] == 1007) xs_0 = "漢に後退の二文字は無い!!";
-                    if (n敵キャラmsgtype[t_] == 1008) xs_0 = "ハッハァ!!";
+                    if (n敵キャラ[t_].msgtype == 1001) xs_0 = "ヤッフー!!";
+                    if (n敵キャラ[t_].msgtype == 1002) xs_0 = "え?俺勝っちゃったの?";
+                    if (n敵キャラ[t_].msgtype == 1003) xs_0 = "貴様の死に場所はここだ!";
+                    if (n敵キャラ[t_].msgtype == 1004) xs_0 = "二度と会う事もないだろう";
+                    if (n敵キャラ[t_].msgtype == 1005) xs_0 = "俺、最強!!";
+                    if (n敵キャラ[t_].msgtype == 1006) xs_0 = "一昨日来やがれ!!";
+                    if (n敵キャラ[t_].msgtype == 1007) xs_0 = "漢に後退の二文字は無い!!";
+                    if (n敵キャラ[t_].msgtype == 1008) xs_0 = "ハッハァ!!";
 
-                    if (n敵キャラmsgtype[t_] == 1011) xs_0 = "ヤッフー!!";
-                    if (n敵キャラmsgtype[t_] == 1012) xs_0 = "え?俺勝っちゃったの?";
-                    if (n敵キャラmsgtype[t_] == 1013) xs_0 = "貴様の死に場所はここだ!";
-                    if (n敵キャラmsgtype[t_] == 1014) xs_0 = "身の程知らずが……";
-                    if (n敵キャラmsgtype[t_] == 1015) xs_0 = "油断が死を招く";
-                    if (n敵キャラmsgtype[t_] == 1016) xs_0 = "おめでたい奴だ";
-                    if (n敵キャラmsgtype[t_] == 1017) xs_0 = "屑が!!";
-                    if (n敵キャラmsgtype[t_] == 1018) xs_0 = "無謀な……";
+                    if (n敵キャラ[t_].msgtype == 1011) xs_0 = "ヤッフー!!";
+                    if (n敵キャラ[t_].msgtype == 1012) xs_0 = "え?俺勝っちゃったの?";
+                    if (n敵キャラ[t_].msgtype == 1013) xs_0 = "貴様の死に場所はここだ!";
+                    if (n敵キャラ[t_].msgtype == 1014) xs_0 = "身の程知らずが……";
+                    if (n敵キャラ[t_].msgtype == 1015) xs_0 = "油断が死を招く";
+                    if (n敵キャラ[t_].msgtype == 1016) xs_0 = "おめでたい奴だ";
+                    if (n敵キャラ[t_].msgtype == 1017) xs_0 = "屑が!!";
+                    if (n敵キャラ[t_].msgtype == 1018) xs_0 = "無謀な……";
 
-                    if (n敵キャラmsgtype[t_] == 1021) xs_0 = "ヤッフー!!";
-                    if (n敵キャラmsgtype[t_] == 1022) xs_0 = "え?俺勝っちゃったの?";
-                    if (n敵キャラmsgtype[t_] == 1023) xs_0 = "二度と会う事もないだろう";
-                    if (n敵キャラmsgtype[t_] == 1024) xs_0 = "身の程知らずが……";
-                    if (n敵キャラmsgtype[t_] == 1025) xs_0 = "僕は……負けない!!";
-                    if (n敵キャラmsgtype[t_] == 1026) xs_0 = "貴様に見切れる筋は無い";
-                    if (n敵キャラmsgtype[t_] == 1027) xs_0 = "今死ね、すぐ死ね、骨まで砕けろ!!";
-                    if (n敵キャラmsgtype[t_] == 1028) xs_0 = "任務完了!!";
+                    if (n敵キャラ[t_].msgtype == 1021) xs_0 = "ヤッフー!!";
+                    if (n敵キャラ[t_].msgtype == 1022) xs_0 = "え?俺勝っちゃったの?";
+                    if (n敵キャラ[t_].msgtype == 1023) xs_0 = "二度と会う事もないだろう";
+                    if (n敵キャラ[t_].msgtype == 1024) xs_0 = "身の程知らずが……";
+                    if (n敵キャラ[t_].msgtype == 1025) xs_0 = "僕は……負けない!!";
+                    if (n敵キャラ[t_].msgtype == 1026) xs_0 = "貴様に見切れる筋は無い";
+                    if (n敵キャラ[t_].msgtype == 1027) xs_0 = "今死ね、すぐ死ね、骨まで砕けろ!!";
+                    if (n敵キャラ[t_].msgtype == 1028) xs_0 = "任務完了!!";
 
-                    if (n敵キャラmsgtype[t_] == 1031) xs_0 = "ヤッフー!!";
-                    if (n敵キャラmsgtype[t_] == 1032) xs_0 = "え?俺勝っちゃったの?";
-                    if (n敵キャラmsgtype[t_] == 1033) xs_0 = "貴様の死に場所はここだ!";
-                    if (n敵キャラmsgtype[t_] == 1034) xs_0 = "身の程知らずが……";
-                    if (n敵キャラmsgtype[t_] == 1035) xs_0 = "油断が死を招く";
-                    if (n敵キャラmsgtype[t_] == 1036) xs_0 = "おめでたい奴だ";
-                    if (n敵キャラmsgtype[t_] == 1037) xs_0 = "屑が!!";
-                    if (n敵キャラmsgtype[t_] == 1038) xs_0 = "無謀な……";
+                    if (n敵キャラ[t_].msgtype == 1031) xs_0 = "ヤッフー!!";
+                    if (n敵キャラ[t_].msgtype == 1032) xs_0 = "え?俺勝っちゃったの?";
+                    if (n敵キャラ[t_].msgtype == 1033) xs_0 = "貴様の死に場所はここだ!";
+                    if (n敵キャラ[t_].msgtype == 1034) xs_0 = "身の程知らずが……";
+                    if (n敵キャラ[t_].msgtype == 1035) xs_0 = "油断が死を招く";
+                    if (n敵キャラ[t_].msgtype == 1036) xs_0 = "おめでたい奴だ";
+                    if (n敵キャラ[t_].msgtype == 1037) xs_0 = "屑が!!";
+                    if (n敵キャラ[t_].msgtype == 1038) xs_0 = "無謀な……";
 
-                    if (n敵キャラmsgtype[t_] == 15) xs_0 = "鉄壁!!よって、無敵!!";
-                    if (n敵キャラmsgtype[t_] == 16) xs_0 = "丸腰で勝てるとでも?";
-                    if (n敵キャラmsgtype[t_] == 17) xs_0 = "パリイ!!";
-                    if (n敵キャラmsgtype[t_] == 18) xs_0 = "自業自得だ";
-                    if (n敵キャラmsgtype[t_] == 20) xs_0 = "Zzz";
-                    if (n敵キャラmsgtype[t_] == 21) xs_0 = "ク、クマー";
-                    if (n敵キャラmsgtype[t_] == 24) xs_0 = "?";
-                    if (n敵キャラmsgtype[t_] == 25) xs_0 = "食べるべきではなかった!!";
-                    if (n敵キャラmsgtype[t_] == 30) xs_0 = "うめぇ!!";
-                    if (n敵キャラmsgtype[t_] == 31) xs_0 = "ブロックを侮ったな?";
-                    if (n敵キャラmsgtype[t_] == 32) xs_0 = "シャキーン";
+                    if (n敵キャラ[t_].msgtype == 15) xs_0 = "鉄壁!!よって、無敵!!";
+                    if (n敵キャラ[t_].msgtype == 16) xs_0 = "丸腰で勝てるとでも?";
+                    if (n敵キャラ[t_].msgtype == 17) xs_0 = "パリイ!!";
+                    if (n敵キャラ[t_].msgtype == 18) xs_0 = "自業自得だ";
+                    if (n敵キャラ[t_].msgtype == 20) xs_0 = "Zzz";
+                    if (n敵キャラ[t_].msgtype == 21) xs_0 = "ク、クマー";
+                    if (n敵キャラ[t_].msgtype == 24) xs_0 = "?";
+                    if (n敵キャラ[t_].msgtype == 25) xs_0 = "食べるべきではなかった!!";
+                    if (n敵キャラ[t_].msgtype == 30) xs_0 = "うめぇ!!";
+                    if (n敵キャラ[t_].msgtype == 31) xs_0 = "ブロックを侮ったな?";
+                    if (n敵キャラ[t_].msgtype == 32) xs_0 = "シャキーン";
 
-                    if (n敵キャラmsgtype[t_] == 50) xs_0 = "波動砲!!";
-                    if (n敵キャラmsgtype[t_] == 85) xs_0 = "裏切られたとでも思ったか?";
-                    if (n敵キャラmsgtype[t_] == 86) xs_0 = "ポールアターック!!";
+                    if (n敵キャラ[t_].msgtype == 50) xs_0 = "波動砲!!";
+                    if (n敵キャラ[t_].msgtype == 85) xs_0 = "裏切られたとでも思ったか?";
+                    if (n敵キャラ[t_].msgtype == 86) xs_0 = "ポールアターック!!";
 
 
-                    if (n敵キャラmsgtype[t_] != 31)
+                    if (n敵キャラ[t_].msgtype != 31)
                     {
-                        xx_5 = (n敵キャラa[t_] + n敵キャラnobia[t_] + 300 - fx) / 100; xx_6 = (n敵キャラb[t_] - fy) / 100;
+                        xx_5 = (n敵キャラ[t_].a + n敵キャラ[t_].nobia + 300 - fx) / 100; xx_6 = (n敵キャラ[t_].b - fy) / 100;
                     }
                     else {
-                        xx_5 = (n敵キャラa[t_] + n敵キャラnobia[t_] + 300 - fx) / 100; xx_6 = (n敵キャラb[t_] - fy - 800) / 100;
+                        xx_5 = (n敵キャラ[t_].a + n敵キャラ[t_].nobia + 300 - fx) / 100; xx_6 = (n敵キャラ[t_].b - fy - 800) / 100;
                     }
 
                     DX.ChangeFontType(DX.DX_FONTTYPE_EDGE);

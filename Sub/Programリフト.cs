@@ -9,63 +9,69 @@ namespace SyobonAction
 {
     static partial class Program
     {
+        struct Cリフト
+        {
+            public int a,
+            b,
+            c,
+            d,
+            e,
+            f;
+            public int type,
+                gtype,
+                acttype,
+                sp;
+            public int muki,
+                on,
+                ee;
+            public int sok,
+                movep,
+                move;
+        }
+
         //リフト
         const int nリフトmax = 21;
         static int nリフトco;
-        static int[] nリフトa = new int[nリフトmax],
-            nリフトb = new int[nリフトmax],
-            nリフトc = new int[nリフトmax],
-            nリフトd = new int[nリフトmax],
-            nリフトe = new int[nリフトmax],
-            nリフトf = new int[nリフトmax];
-        static int[] nリフトtype = new int[nリフトmax],
-            nリフトgtype = new int[nリフトmax],
-            nリフトacttype = new int[nリフトmax],
-            nリフトsp = new int[nリフトmax];
-        static int[] nリフトmuki = new int[nリフトmax],
-            nリフトon = new int[nリフトmax],
-            nリフトee = new int[nリフトmax];
-        static int[] nリフトsok = new int[nリフトmax],
-            nリフトmovep = new int[nリフトmax],
-            nリフトmove = new int[nリフトmax];
+        static Cリフト[] nリフト=new Cリフト[nリフトmax];
+        
 
         static void Updateリフト()
         {
             //リフト
             for (int t_ = 0; t_ < nリフトmax; t_++)
             {
-                xx_10 = nリフトa[t_]; xx_11 = nリフトb[t_]; xx_12 = nリフトc[t_]; xx_13 = nリフトd[t_];
+                xx_10 = nリフト[t_].a; xx_11 = nリフト[t_].b; xx_12 = nリフト[t_].c; xx_13 = nリフト[t_].d;
                 xx_8 = xx_10 - fx; xx_9 = xx_11 - fy;
-                if (xx_8 + xx_12 >= -10 - 12000 && xx_8 <= W + 12100)
+                if (xx_8 + xx_12 >= -10 - 12000 && xx_8 <= n画面幅 + 12100)
                 {
                     xx_0 = 500; xx_1 = 1200; xx_2 = 1000; xx_7 = 2000;
                     if (nプレイヤーd >= 100) { xx_1 = 900 + nプレイヤーd; }
 
                     if (nプレイヤーd > xx_1) xx_1 = nプレイヤーd + 100;
 
-                    nリフトb[t_] += nリフトe[t_];
-                    nリフトe[t_] += nリフトf[t_];
+                    nリフト[t_].b += nリフト[t_].e;
+                    nリフト[t_].e += nリフト[t_].f;
 
                     //動き
-                    switch (nリフトacttype[t_])
+                    switch (nリフト[t_].acttype)
                     {
 
                         case 1:
-                            if (nリフトon[t_] == 1) nリフトf[t_] = 60;
+                            if (nリフト[t_].on == 1) nリフト[t_].f = 60;
                             break;
                         case 2:
                             break;
 
                         case 3:
                         case 5:
-                            if (nリフトmove[t_] == 0) { nリフトmuki[t_] = 0; }
-                            else { nリフトmuki[t_] = 1; }
-                            if (nリフトb[t_] - fy < -2100) { nリフトb[t_] = H + fy + 2000; }
-                            if (nリフトb[t_] - fy > H + 2000) { nリフトb[t_] = -2100 + fy; }
+                            if (nリフト[t_].move == 0) { nリフト[t_].muki = 0; }
+                            else { nリフト[t_].muki = 1; }
+                            if (nリフト[t_].b - fy < -2100) { nリフト[t_].b = n画面高さ + fy + 2000; }
+                            if (nリフト[t_].b - fy > n画面高さ + 2000) { nリフト[t_].b = -2100 + fy; }
                             break;
 
                         case 6:
-                            if (nリフトon[t_] == 1) nリフトf[t_] = 40;
+                            if (nリフト[t_].on == 1) nリフト[t_].f = 40;
                             break;
 
                         case 7:
@@ -79,9 +85,9 @@ namespace SyobonAction
                     {
                         nプレイヤーb = xx_9 - nプレイヤーnobib + 100;
 
-                        if (nリフトtype[t_] == 1) { nリフトe[10] = 900; nリフトe[11] = 900; }
+                        if (nリフト[t_].type == 1) { nリフト[10].e = 900; nリフト[11].e = 900; }
 
-                        if (nリフトsp[t_] != 12)
+                        if (nリフト[t_].sp != 12)
                         {
                             nプレイヤーzimen = 1; nプレイヤーd = 0;
                         }
@@ -93,14 +99,14 @@ namespace SyobonAction
 
 
                         //落下
-                        if ((nリフトacttype[t_] == 1) && nリフトon[t_] == 0) nリフトon[t_] = 1;
+                        if ((nリフト[t_].acttype == 1) && nリフト[t_].on == 0) nリフト[t_].on = 1;
 
-                        if (nリフトacttype[t_] == 1 && nリフトon[t_] == 1 || nリフトacttype[t_] == 3 || nリフトacttype[t_] == 5)
+                        if (nリフト[t_].acttype == 1 && nリフト[t_].on == 1 || nリフト[t_].acttype == 3 || nリフト[t_].acttype == 5)
                         {
-                            nプレイヤーb += nリフトe[t_];
+                            nプレイヤーb += nリフト[t_].e;
                         }
 
-                        if (nリフトacttype[t_] == 7)
+                        if (nリフト[t_].acttype == 7)
                         {
                             if (nプレイヤーactaon[2] != 1) { nプレイヤーd = -600; nプレイヤーb -= 810; }
                             if (nプレイヤーactaon[2] == 1) { nプレイヤーb -= 400; nプレイヤーd = -1400; nプレイヤーjumptm = 10; }
@@ -108,68 +114,68 @@ namespace SyobonAction
 
 
                         //特殊
-                        if (nリフトsp[t_] == 1)
+                        if (nリフト[t_].sp == 1)
                         {
-                            v効果音再生(Res.nオーディオ_[3]);
-                            eyobi(nリフトa[t_] + 200, nリフトb[t_] - 1000, -240, -1400, 0, 160, 4500, 4500, 2, 120);
-                            eyobi(nリフトa[t_] + 4500 - 200, nリフトb[t_] - 1000, 240, -1400, 0, 160, 4500, 4500, 3, 120);
-                            nリフトa[t_] = -70000000;
+                            v効果音再生(Res.nオーディオ3);
+                            eyobi(nリフト[t_].a + 200, nリフト[t_].b - 1000, -240, -1400, 0, 160, 4500, 4500, 2, 120);
+                            eyobi(nリフト[t_].a + 4500 - 200, nリフト[t_].b - 1000, 240, -1400, 0, 160, 4500, 4500, 3, 120);
+                            nリフト[t_].a = -70000000;
                         }
 
-                        if (nリフトsp[t_] == 2)
+                        if (nリフト[t_].sp == 2)
                         {
-                            nプレイヤーc = -2400; nリフトmove[t_] += 1;
-                            if (nリフトmove[t_] >= 100) { nプレイヤーhp = 0; nメッセージtype = 53; nメッセージtm = 30; nリフトmove[t_] = -5000; }
+                            nプレイヤーc = -2400; nリフト[t_].move += 1;
+                            if (nリフト[t_].move >= 100) { nプレイヤーhp = 0; nメッセージtype = 53; nメッセージtm = 30; nリフト[t_].move = -5000; }
                         }
 
-                        if (nリフトsp[t_] == 3)
+                        if (nリフト[t_].sp == 3)
                         {
-                            nプレイヤーc = 2400; nリフトmove[t_] += 1;
-                            if (nリフトmove[t_] >= 100) { nプレイヤーhp = 0; nメッセージtype = 53; nメッセージtm = 30; nリフトmove[t_] = -5000; }
+                            nプレイヤーc = 2400; nリフト[t_].move += 1;
+                            if (nリフト[t_].move >= 100) { nプレイヤーhp = 0; nメッセージtype = 53; nメッセージtm = 30; nリフト[t_].move = -5000; }
                         }
                     }//判定内
 
 
                     //疲れ初期化
-                    if ((nリフトsp[t_] == 2 || nリフトsp[t_] == 3) && nプレイヤーc != -2400 && nリフトmove[t_] > 0) { nリフトmove[t_]--; }
+                    if ((nリフト[t_].sp == 2 || nリフト[t_].sp == 3) && nプレイヤーc != -2400 && nリフト[t_].move > 0) { nリフト[t_].move--; }
 
-                    if (nリフトsp[t_] == 11)
+                    if (nリフト[t_].sp == 11)
                     {
-                        if (ma + nプレイヤーnobia > xx_8 + xx_0 - 2000 && ma < xx_8 + xx_12 - xx_0) { nリフトon[t_] = 1; }// && mb+mnobib>xx_9-1000 && mb+mnobib<xx_9+xx_1+2000)
-                        if (nリフトon[t_] == 1) { nリフトf[t_] = 60; nリフトb[t_] += nリフトe[t_]; }
+                        if (ma + nプレイヤーnobia > xx_8 + xx_0 - 2000 && ma < xx_8 + xx_12 - xx_0) { nリフト[t_].on = 1; }// && mb+mnobib>xx_9-1000 && mb+mnobib<xx_9+xx_1+2000)
+                        if (nリフト[t_].on == 1) { nリフト[t_].f = 60; nリフト[t_].b += nリフト[t_].e; }
                     }
 
 
                     //トゲ(下)
                     if (ma + nプレイヤーnobia > xx_8 + xx_0 && ma < xx_8 + xx_12 - xx_0 && nプレイヤーb > xx_9 - xx_1 / 2 && nプレイヤーb < xx_9 + xx_1 / 2)
                     {
-                        if (nリフトtype[t_] == 2) { if (nプレイヤーd < 0) { nプレイヤーd = -nプレイヤーd; } nプレイヤーb += 110; if (nプレイヤーmutekitm <= 0) nプレイヤーhp -= 1; nプレイヤーmutekitm = 40; }
+                        if (nリフト[t_].type == 2) { if (nプレイヤーd < 0) { nプレイヤーd = -nプレイヤーd; } nプレイヤーb += 110; if (nプレイヤーmutekitm <= 0) nプレイヤーhp -= 1; nプレイヤーmutekitm = 40; }
                     }
                     //落下
-                    if (nリフトacttype[t_] == 6)
+                    if (nリフト[t_].acttype == 6)
                     {
-                        if (ma + nプレイヤーnobia > xx_8 + xx_0 && ma < xx_8 + xx_12 - xx_0) { nリフトon[t_] = 1; }
+                        if (ma + nプレイヤーnobia > xx_8 + xx_0 && ma < xx_8 + xx_12 - xx_0) { nリフト[t_].on = 1; }
                     }
 
-                    if (nリフトacttype[t_] == 2 || nリフトacttype[t_] == 4)
+                    if (nリフト[t_].acttype == 2 || nリフト[t_].acttype == 4)
                     {
-                        if (nリフトmuki[t_] == 0) nリフトa[t_] -= nリフトsok[t_];
-                        if (nリフトmuki[t_] == 1) nリフトa[t_] += nリフトsok[t_];
+                        if (nリフト[t_].muki == 0) nリフト[t_].a -= nリフト[t_].sok;
+                        if (nリフト[t_].muki == 1) nリフト[t_].a += nリフト[t_].sok;
                     }
-                    if (nリフトacttype[t_] == 3 || nリフトacttype[t_] == 5)
+                    if (nリフト[t_].acttype == 3 || nリフト[t_].acttype == 5)
                     {
-                        if (nリフトmuki[t_] == 0) nリフトb[t_] -= nリフトsok[t_];
-                        if (nリフトmuki[t_] == 1) nリフトb[t_] += nリフトsok[t_];
+                        if (nリフト[t_].muki == 0) nリフト[t_].b -= nリフト[t_].sok;
+                        if (nリフト[t_].muki == 1) nリフト[t_].b += nリフト[t_].sok;
                     }
 
                     //敵キャラ適用
                     for (int tt_ = 0; tt_ < n敵キャラmax; tt_++)
                     {
-                        if (n敵キャラzimentype[tt_] == 1)
+                        if (n敵キャラ[tt_].zimentype == 1)
                         {
-                            if (n敵キャラa[tt_] + n敵キャラnobia[tt_] - fx > xx_8 + xx_0 && n敵キャラa[tt_] - fx < xx_8 + xx_12 - xx_0 && n敵キャラb[tt_] + n敵キャラnobib[tt_] > xx_11 - 100 && n敵キャラb[tt_] + n敵キャラnobib[tt_] < xx_11 + xx_1 + 500 && n敵キャラd[tt_] >= -100)
+                            if (n敵キャラ[tt_].a + n敵キャラ[tt_].nobia - fx > xx_8 + xx_0 && n敵キャラ[tt_].a - fx < xx_8 + xx_12 - xx_0 && n敵キャラ[tt_].b + n敵キャラ[tt_].nobib > xx_11 - 100 && n敵キャラ[tt_].b + n敵キャラ[tt_].nobib < xx_11 + xx_1 + 500 && n敵キャラ[tt_].d >= -100)
                             {
-                                n敵キャラb[tt_] = xx_9 - n敵キャラnobib[tt_] + 100; n敵キャラd[tt_] = 0; n敵キャラxzimen[tt_] = 1;
+                                n敵キャラ[tt_].b = xx_9 - n敵キャラ[tt_].nobib + 100; n敵キャラ[tt_].d = 0; n敵キャラ[tt_].xzimen = 1;
                             }
                         }
                     }
@@ -182,44 +188,44 @@ namespace SyobonAction
             //リフト
             for (int t_ = 0; t_ < nリフトmax; t_++)
             {
-                xx_0 = nリフトa[t_] - fx; xx_1 = nリフトb[t_] - fy;
-                if (xx_0 + nリフトc[t_] >= -10 && xx_1 <= W + 12100 && nリフトc[t_] / 100 >= 1)
+                xx_0 = nリフト[t_].a - fx; xx_1 = nリフト[t_].b - fy;
+                if (xx_0 + nリフト[t_].c >= -10 && xx_1 <= n画面幅 + 12100 && nリフト[t_].c / 100 >= 1)
                 {
-                    xx_2 = 14; if (nリフトsp[t_] == 1) { xx_2 = 12; }
+                    xx_2 = 14; if (nリフト[t_].sp == 1) { xx_2 = 12; }
 
-                    if (nリフトsp[t_] <= 9 || nリフトsp[t_] >= 20)
+                    if (nリフト[t_].sp <= 9 || nリフト[t_].sp >= 20)
                     {
                         DXDraw.SetColor(220, 220, 0);
-                        if (nリフトsp[t_] == 2 || nリフトsp[t_] == 3) { DXDraw.SetColor(0, 220, 0); }
-                        if (nリフトsp[t_] == 21) { DXDraw.SetColor(180, 180, 180); }
-                        DXDraw.DrawBox塗り潰し((nリフトa[t_] - fx) / 100, (nリフトb[t_] - fy) / 100, nリフトc[t_] / 100, xx_2);
+                        if (nリフト[t_].sp == 2 || nリフト[t_].sp == 3) { DXDraw.SetColor(0, 220, 0); }
+                        if (nリフト[t_].sp == 21) { DXDraw.SetColor(180, 180, 180); }
+                        DXDraw.DrawBox塗り潰し((nリフト[t_].a - fx) / 100, (nリフト[t_].b - fy) / 100, nリフト[t_].c / 100, xx_2);
 
                         DXDraw.SetColor(180, 180, 0);
-                        if (nリフトsp[t_] == 2 || nリフトsp[t_] == 3) { DXDraw.SetColor(0, 180, 0); }
-                        if (nリフトsp[t_] == 21) { DXDraw.SetColor(150, 150, 150); }
-                        DXDraw.DrawBox塗り無し((nリフトa[t_] - fx) / 100, (nリフトb[t_] - fy) / 100, nリフトc[t_] / 100, xx_2);
+                        if (nリフト[t_].sp == 2 || nリフト[t_].sp == 3) { DXDraw.SetColor(0, 180, 0); }
+                        if (nリフト[t_].sp == 21) { DXDraw.SetColor(150, 150, 150); }
+                        DXDraw.DrawBox塗り無し((nリフト[t_].a - fx) / 100, (nリフト[t_].b - fy) / 100, nリフト[t_].c / 100, xx_2);
                     }
-                    else if (nリフトsp[t_] <= 14)
+                    else if (nリフト[t_].sp <= 14)
                     {
-                        if (nリフトc[t_] >= 5000)
+                        if (nリフト[t_].c >= 5000)
                         {
                             DXDraw.SetColor(0, 200, 0);
-                            DXDraw.DrawBox塗り潰し((nリフトa[t_] - fx) / 100, (nリフトb[t_] - fy) / 100, nリフトc[t_] / 100, 30);
+                            DXDraw.DrawBox塗り潰し((nリフト[t_].a - fx) / 100, (nリフト[t_].b - fy) / 100, nリフト[t_].c / 100, 30);
                             DXDraw.SetColor(0, 160, 0);
-                            DXDraw.DrawBox塗り無し((nリフトa[t_] - fx) / 100, (nリフトb[t_] - fy) / 100, nリフトc[t_] / 100, 30);
+                            DXDraw.DrawBox塗り無し((nリフト[t_].a - fx) / 100, (nリフト[t_].b - fy) / 100, nリフト[t_].c / 100, 30);
 
                             DXDraw.SetColor(180, 120, 60);
-                            DXDraw.DrawBox塗り潰し((nリフトa[t_] - fx) / 100 + 20, (nリフトb[t_] - fy) / 100 + 30, nリフトc[t_] / 100 - 40, 480);
+                            DXDraw.DrawBox塗り潰し((nリフト[t_].a - fx) / 100 + 20, (nリフト[t_].b - fy) / 100 + 30, nリフト[t_].c / 100 - 40, 480);
                             DXDraw.SetColor(100, 80, 20);
-                            DXDraw.DrawBox塗り無し((nリフトa[t_] - fx) / 100 + 20, (nリフトb[t_] - fy) / 100 + 30, nリフトc[t_] / 100 - 40, 480);
+                            DXDraw.DrawBox塗り無し((nリフト[t_].a - fx) / 100 + 20, (nリフト[t_].b - fy) / 100 + 30, nリフト[t_].c / 100 - 40, 480);
 
                         }
                     }
-                    if (nリフトsp[t_] == 15)
+                    if (nリフト[t_].sp == 15)
                     {
                         for (int t2 = 0; t2 <= 2; t2++)
                         {
-                            xx_6 = 1 + 0; DXDraw.DrawGraph(Res.n切り取り画像_[xx_6, 1], (nリフトa[t_] - fx) / 100 + t2 * 29, (nリフトb[t_] - fy) / 100);
+                            xx_6 = 1 + 0; DXDraw.DrawGraph(Res.n切り取り画像_[xx_6, 1], (nリフト[t_].a - fx) / 100 + t2 * 29, (nリフト[t_].b - fy) / 100);
                         }
                     }//15
                 }

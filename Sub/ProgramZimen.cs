@@ -26,7 +26,7 @@ namespace SyobonAction
             //壁
             for (int t_ = 0; t_ < n地面max; t_++)
             {
-                if (n地面a[t_] - fx + n地面c[t_] >= -12000 && n地面a[t_] - fx <= W)
+                if (n地面a[t_] - fx + n地面c[t_] >= -12000 && n地面a[t_] - fx <= n画面幅)
                 {
                     xx_0 = 200; xx_1 = 2400; xx_2 = 1000; xx_7 = 0;
 
@@ -66,7 +66,7 @@ namespace SyobonAction
                                 if (n地面xtype[t_] == 4) n地面r[t_] = 100;
                             }
 
-                            if (n地面gtype[t_] == 1 && n地面b[t_] <= H + 18000)
+                            if (n地面gtype[t_] == 1 && n地面b[t_] <= n画面高さ + 18000)
                             {
                                 n地面r[t_] += 120; if (n地面r[t_] >= 1600) { n地面r[t_] = 1600; }
                                 n地面b[t_] += n地面r[t_];
@@ -113,26 +113,26 @@ namespace SyobonAction
                                 //飛び出し
                                 if (n地面xtype[t_] == 0)
                                 {
-                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ_[7]); nプレイヤーxtype = 0;
+                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ7); nプレイヤーxtype = 0;
                                 }
                                 //普通
                                 if (n地面xtype[t_] == 1)
                                 {
-                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ_[7]); nプレイヤーxtype = 1;
+                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ7); nプレイヤーxtype = 1;
                                 }
                                 //普通
                                 if (n地面xtype[t_] == 2)
                                 {
-                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ_[7]); nプレイヤーxtype = 2;
+                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ7); nプレイヤーxtype = 2;
                                 }
                                 if (n地面xtype[t_] == 5)
                                 {
-                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ_[7]); nプレイヤーxtype = 5;
+                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ7); nプレイヤーxtype = 5;
                                 }
                                 // ループ
                                 if (n地面xtype[t_] == 6)
                                 {
-                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ_[7]); nプレイヤーxtype = 6;
+                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ7); nプレイヤーxtype = 6;
                                 }
                             }
                         }//50
@@ -145,20 +145,20 @@ namespace SyobonAction
                              //飛び出し
                                 if (n地面xtype[t_] == 0)
                                 {
-                                    nプレイヤーtype = 500; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ_[7]);//mxtype=1;
+                                    nプレイヤーtype = 500; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ7);//mxtype=1;
                                     nプレイヤーtype = 100; nプレイヤーxtype = 10;
                                 }
 
                                 if (n地面xtype[t_] == 2)
                                 {
                                     nプレイヤーxtype = 3;
-                                    nプレイヤーtm = 0; v効果音再生(Res.nオーディオ_[7]);//mxtype=1;
+                                    nプレイヤーtm = 0; v効果音再生(Res.nオーディオ7);//mxtype=1;
                                     nプレイヤーtype = 100;
                                 }
                                 // ループ
                                 if (n地面xtype[t_] == 6)
                                 {
-                                    nプレイヤーtype = 3; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ_[7]); nプレイヤーxtype = 6;
+                                    nプレイヤーtype = 3; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ7); nプレイヤーxtype = 6;
                                 }
                             }
                         }//40
@@ -172,12 +172,12 @@ namespace SyobonAction
                         {
                             if (n地面type[t_] == 100)
                             {
-                                if (n地面xtype[t_] == 0 || n地面xtype[t_] == 1 && nブロックtype[1] != 3)
+                                if (n地面xtype[t_] == 0 || n地面xtype[t_] == 1 && nブロック[1].type != 3)
                                 {
-                                    ayobi(n地面a[t_] + 1000, 32000, 0, 0, 0, 3, 0); n地面a[t_] = -800000000; v効果音再生(Res.nオーディオ_[10]);
+                                    ayobi(n地面a[t_] + 1000, 32000, 0, 0, 0, 3, 0); n地面a[t_] = -800000000; v効果音再生(Res.nオーディオ10);
                                 }
                             }
-                            if (n地面type[t_] == 101) { ayobi(n地面a[t_] + 6000, -4000, 0, 0, 0, 3, 1); n地面a[t_] = -800000000; v効果音再生(Res.nオーディオ_[10]); }
+                            if (n地面type[t_] == 101) { ayobi(n地面a[t_] + 6000, -4000, 0, 0, 0, 3, 1); n地面a[t_] = -800000000; v効果音再生(Res.nオーディオ10); }
                             if (n地面type[t_] == 102)
                             {
                                 if (n地面xtype[t_] == 0)
@@ -185,12 +185,12 @@ namespace SyobonAction
                                     for (int t3 = 0; t3 <= 3; t3++) { ayobi(n地面a[t_] + t3 * 3000, -3000, 0, 0, 0, 0, 0); }
                                 }
                                 if (n地面xtype[t_] == 1 && nプレイヤーb >= 16000) { ayobi(n地面a[t_] + 1500, 44000, 0, -2000, 0, 4, 0); }
-                                else if (n地面xtype[t_] == 2) { ayobi(n地面a[t_] + 4500, 30000, 0, -1600, 0, 5, 0); v効果音再生(Res.nオーディオ_[10]); n地面xtype[t_] = 3; n地面a[t_] -= 12000; }
+                                else if (n地面xtype[t_] == 2) { ayobi(n地面a[t_] + 4500, 30000, 0, -1600, 0, 5, 0); v効果音再生(Res.nオーディオ10); n地面xtype[t_] = 3; n地面a[t_] -= 12000; }
                                 else if (n地面xtype[t_] == 3) { n地面a[t_] += 12000; n地面xtype[t_] = 4; }
-                                else if (n地面xtype[t_] == 4) { ayobi(n地面a[t_] + 4500, 30000, 0, -1600, 0, 5, 0); v効果音再生(Res.nオーディオ_[10]); n地面xtype[t_] = 5; n地面xtype[t_] = 0; }
+                                else if (n地面xtype[t_] == 4) { ayobi(n地面a[t_] + 4500, 30000, 0, -1600, 0, 5, 0); v効果音再生(Res.nオーディオ10); n地面xtype[t_] = 5; n地面xtype[t_] = 0; }
 
                                 else if (n地面xtype[t_] == 7) { nプレイヤーainmsgtype = 1; }
-                                else if (n地面xtype[t_] == 8) { ayobi(n地面a[t_] - 5000 - 3000 * 1, 26000, 0, -1600, 0, 5, 0); v効果音再生(Res.nオーディオ_[10]); }
+                                else if (n地面xtype[t_] == 8) { ayobi(n地面a[t_] - 5000 - 3000 * 1, 26000, 0, -1600, 0, 5, 0); v効果音再生(Res.nオーディオ10); }
                                 else if (n地面xtype[t_] == 9) { for (int t3 = 0; t3 <= 2; t3++) { ayobi(n地面a[t_] + t3 * 3000 + 3000, 48000, 0, -6000, 0, 3, 0); } }
                                 if (n地面xtype[t_] == 10) { n地面a[t_] -= 5 * 30 * 100; n地面type[t_] = 101; }
 
@@ -209,7 +209,7 @@ namespace SyobonAction
                                 if (n地面xtype[t_] == 30)
                                 {
                                     n地面a[t_] = -80000000; nプレイヤーd = 0;
-                                    DX.StopSoundMem(Res.nオーディオ_[0]); nプレイヤーtype = 302; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ_[16]);
+                                    DX.StopSoundMem(Res.n現在のBGM); nプレイヤーtype = 302; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ16);
                                 }
 
                                 if (n地面xtype[t_] != 3 && n地面xtype[t_] != 4 && n地面xtype[t_] != 10) { n地面a[t_] = -800000000; }
@@ -219,13 +219,13 @@ namespace SyobonAction
                             {
                                 if (n地面xtype[t_] == 0)
                                 {
-                                    n敵キャラmsgtm[n敵キャラco] = 10; n敵キャラmsgtype[n敵キャラco] = 50; ayobi(n地面a[t_] + 9000, n地面b[t_] + 2000, 0, 0, 0, 79, 0); n地面a[t_] = -800000000;
+                                    n敵キャラ[n敵キャラco].msgtm = 10; n敵キャラ[n敵キャラco].msgtype = 50; ayobi(n地面a[t_] + 9000, n地面b[t_] + 2000, 0, 0, 0, 79, 0); n地面a[t_] = -800000000;
                                 }
 
-                                if (n地面xtype[t_] == 1 && nブロックtype[6] <= 6)
+                                if (n地面xtype[t_] == 1 && nブロック[6].type <= 6)
                                 {
-                                    n敵キャラmsgtm[n敵キャラco] = 10; n敵キャラmsgtype[n敵キャラco] = 50; ayobi(n地面a[t_] - 12000, n地面b[t_] + 2000, 0, 0, 0, 79, 0); n地面a[t_] = -800000000;
-                                    nブロックxtype[9] = 500;//ttype[9]=1;
+                                    n敵キャラ[n敵キャラco].msgtm = 10; n敵キャラ[n敵キャラco].msgtype = 50; ayobi(n地面a[t_] - 12000, n地面b[t_] + 2000, 0, 0, 0, 79, 0); n地面a[t_] = -800000000;
+                                    nブロック[9].xtype = 500;//ttype[9]=1;
                                 }
                             }//103
 
@@ -242,10 +242,10 @@ namespace SyobonAction
                                 }
                             }
 
-                            if (n地面type[t_] == 105 && nプレイヤーzimen == 0 && nプレイヤーd >= 0) { nブロックa[1] -= 1000; nブロックa[2] += 1000; n地面xtype[t_]++; if (n地面xtype[t_] >= 3) n地面a[t_] = -8000000; }
+                            if (n地面type[t_] == 105 && nプレイヤーzimen == 0 && nプレイヤーd >= 0) { nブロック[1].a -= 1000; nブロック[2].a += 1000; n地面xtype[t_]++; if (n地面xtype[t_] >= 3) n地面a[t_] = -8000000; }
 
 
-                            if (n地面type[t_] == 300 && nプレイヤーtype == 0 && nプレイヤーb < xx_9 + n地面d[t_] + xx_0 - 3000 && nプレイヤーhp >= 1) { DX.StopSoundMem(Res.nオーディオ_[0]); nプレイヤーtype = 300; nプレイヤーtm = 0; ma = n地面a[t_] - fx - 2000; v効果音再生(Res.nオーディオ_[11]); }
+                            if (n地面type[t_] == 300 && nプレイヤーtype == 0 && nプレイヤーb < xx_9 + n地面d[t_] + xx_0 - 3000 && nプレイヤーhp >= 1) { DX.StopSoundMem(Res.n現在のBGM); nプレイヤーtype = 300; nプレイヤーtm = 0; ma = n地面a[t_] - fx - 2000; v効果音再生(Res.nオーディオ11); }
 
                             //中間ゲート
                             if (n地面type[t_] == 500 && nプレイヤーtype == 0 && nプレイヤーhp >= 1)
@@ -276,7 +276,7 @@ namespace SyobonAction
             //地面(壁)//土管も
             for (int t_ = 0; t_ < n地面max; t_++)
             {
-                if (n地面a[t_] - fx + n地面c[t_] >= -10 && n地面a[t_] - fx <= W + 1100)
+                if (n地面a[t_] - fx + n地面c[t_] >= -10 && n地面a[t_] - fx <= n画面幅 + 1100)
                 {
 
                     if (n地面type[t_] == 0)
@@ -424,7 +424,7 @@ namespace SyobonAction
             //描画上書き(土管)
             for (int t_ = 0; t_ < n地面max; t_++)
             {
-                if (n地面a[t_] - fx + n地面c[t_] >= -10 && n地面a[t_] - fx <= W + 1100)
+                if (n地面a[t_] - fx + n地面c[t_] >= -10 && n地面a[t_] - fx <= n画面幅 + 1100)
                 {
 
                     //入る土管(右)

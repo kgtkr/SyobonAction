@@ -32,7 +32,7 @@ namespace SyobonAction
         static int nステージa = 1, nステージb = 4, nステージc = 0;
 
         //トラップ表示(デパッグ)
-        public const bool bトラップ表示 = false;
+        const bool bトラップ表示 = false;
 
         //中間ゲート
         static int n中間フラグ = 0;
@@ -61,7 +61,7 @@ namespace SyobonAction
         //強制スクロール
         static int n強制スクロール = 0;
         //画面サイズ(ファミコンサイズ×2)(256-224)
-        public const int W = 48000, H = 42000;
+        const int n画面幅 = 48000, n画面高さ = 42000;
 
         //ステージ
         static byte[,] stageDate = new byte[17, 2001];

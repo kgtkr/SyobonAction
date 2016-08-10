@@ -20,10 +20,10 @@ namespace SyobonAction
 
                 //追加情報
                 tyobi(8 * 29, 9 * 29 - 12, 100);
-                nブロックxtype[nブロックco] = 2;
+                nブロック[nブロックco].xtype = 2;
 
                 tyobi(13 * 29, 9 * 29 - 12, 102);
-                nブロックxtype[nブロックco] = 0;
+                nブロック[nブロックco].xtype = 0;
 
                 tyobi(14 * 29, 5 * 29 - 12, 101);
 
@@ -134,7 +134,7 @@ namespace SyobonAction
             {
 
                 //マリ　地上　入れ
-                bgmChange(Res.nオーディオ_[100]);
+                bgmChange(Res.nオーディオ100);
 
                 scrollX = 0 * 100;
 
@@ -144,7 +144,7 @@ namespace SyobonAction
 
                 nブロックco = 0;
                 //ヒント1
-                nブロックxtype[nブロックco] = 1; tyobi(4 * 29, 9 * 29 - 12, 300);
+                nブロック[nブロックco].xtype = 1; tyobi(4 * 29, 9 * 29 - 12, 300);
 
                 //毒1
                 tyobi(13 * 29, 8 * 29 - 12, 114);
@@ -173,7 +173,7 @@ namespace SyobonAction
             {
 
                 //マリ　地下　入れ
-                bgmChange(Res.nオーディオ_[103]);
+                bgmChange(Res.nオーディオ103);
 
                 scrollX = 4080 * 100;
                 ma = 6000; nプレイヤーb = 3000;
@@ -185,11 +185,11 @@ namespace SyobonAction
 
 
                 nブロックco = 0;
-                nブロックxtype[nブロックco] = 2; tyobi(7 * 29, 9 * 29 - 12, 102);
+                nブロック[nブロックco].xtype = 2; tyobi(7 * 29, 9 * 29 - 12, 102);
 
                 tyobi(10 * 29, 9 * 29 - 12, 101);
 
-                nブロックxtype[nブロックco] = 2;
+                nブロック[nブロックco].xtype = 2;
 
                 tyobi(49 * 29, 9 * 29 - 12, 114);
 
@@ -199,8 +199,8 @@ namespace SyobonAction
                     tyobi(53 * 29, i * 29 - 12, 1);
                 }
 
-                nブロックxtype[nブロックco] = 1; tyobi(80 * 29, 5 * 29 - 12, 104);
-                nブロックxtype[nブロックco] = 2; tyobi(78 * 29, 5 * 29 - 12, 102);
+                nブロック[nブロックco].xtype = 1; tyobi(80 * 29, 5 * 29 - 12, 104);
+                nブロック[nブロックco].xtype = 2; tyobi(78 * 29, 5 * 29 - 12, 102);
 
 
                 n地面co = 0;
@@ -241,10 +241,10 @@ namespace SyobonAction
 
                 //リフト
                 nリフトco = 0;
-                t_ = nリフトco; nリフトa[t_] = 111 * 29 * 100; nリフトb[t_] = (8 * 29 - 12) * 100; nリフトc[t_] = 90 * 100; nリフトtype[t_] = 0; nリフトacttype[t_] = 5; nリフトe[t_] = -300; nリフトco++;
-                t_ = nリフトco; nリフトa[t_] = 111 * 29 * 100; nリフトb[t_] = (0 * 29 - 12) * 100; nリフトc[t_] = 90 * 100; nリフトtype[t_] = 0; nリフトacttype[t_] = 5; nリフトe[t_] = -300; nリフトco++;
-                t_ = 10; nリフトa[t_] = 116 * 29 * 100; nリフトb[t_] = (4 * 29 - 12) * 100; nリフトc[t_] = 90 * 100; nリフトtype[t_] = 1; nリフトacttype[t_] = 5; nリフトe[t_] = 300; nリフトco++;
-                t_ = 11; nリフトa[t_] = 116 * 29 * 100; nリフトb[t_] = (12 * 29 - 12) * 100; nリフトc[t_] = 90 * 100; nリフトtype[t_] = 1; nリフトacttype[t_] = 5; nリフトe[t_] = 300; nリフトco++;
+                t_ = nリフトco; nリフト[t_].a = 111 * 29 * 100; nリフト[t_].b = (8 * 29 - 12) * 100; nリフト[t_].c = 90 * 100; nリフト[t_].type = 0; nリフト[t_].acttype = 5; nリフト[t_].e = -300; nリフトco++;
+                t_ = nリフトco; nリフト[t_].a = 111 * 29 * 100; nリフト[t_].b = (0 * 29 - 12) * 100; nリフト[t_].c = 90 * 100; nリフト[t_].type = 0; nリフト[t_].acttype = 5; nリフト[t_].e = -300; nリフトco++;
+                t_ = 10; nリフト[t_].a = 116 * 29 * 100; nリフト[t_].b = (4 * 29 - 12) * 100; nリフト[t_].c = 90 * 100; nリフト[t_].type = 1; nリフト[t_].acttype = 5; nリフト[t_].e = 300; nリフトco++;
+                t_ = 11; nリフト[t_].a = 116 * 29 * 100; nリフト[t_].b = (12 * 29 - 12) * 100; nリフト[t_].c = 90 * 100; nリフト[t_].type = 1; nリフト[t_].acttype = 5; nリフト[t_].e = 300; nリフトco++;
 
 
 
@@ -266,7 +266,7 @@ namespace SyobonAction
             {
 
                 //マリ　地上　入れ
-                bgmChange(Res.nオーディオ_[100]);
+                bgmChange(Res.nオーディオ100);
 
                 scrollX = 900 * 100;
                 ma = 7500; nプレイヤーb = 3000 * 9;
@@ -300,7 +300,7 @@ namespace SyobonAction
             if (nステージa == 1 && nステージb == 3 && nステージc == 6) { nステージc = 0; }
             if (nステージa == 1 && nステージb == 3 && nステージc == 0)
             {
-                bgmChange(Res.nオーディオ_[100]);
+                bgmChange(Res.nオーディオ100);
 
                 scrollX = 3900 * 100;
                 //ma=3000;mb=3000;
@@ -318,26 +318,26 @@ namespace SyobonAction
                 tyobi(19 * 29, 14 * 29 - 12, 117);
 
                 tyobi(20 * 29, 14 * 29 - 12, 117);
-                nブロックxtype[nブロックco] = 1; tyobi(61 * 29, 9 * 29 - 12, 101);//5
+                nブロック[nブロックco].xtype = 1; tyobi(61 * 29, 9 * 29 - 12, 101);//5
 
                 tyobi(74 * 29, 9 * 29 - 12, 7);//6
 
                 //ヒント2
-                nブロックxtype[nブロックco] = 2; tyobi(28 * 29, 9 * 29 - 12, 300);//7
+                nブロック[nブロックco].xtype = 2; tyobi(28 * 29, 9 * 29 - 12, 300);//7
                                                                   //ファイア
-                nブロックxtype[nブロックco] = 3; tyobi(7 * 29, 9 * 29 - 12, 101);
+                nブロック[nブロックco].xtype = 3; tyobi(7 * 29, 9 * 29 - 12, 101);
                 //ヒント3
-                nブロックxtype[nブロックco] = 4; tyobi(70 * 29, 8 * 29 - 12, 300);//9
+                nブロック[nブロックco].xtype = 4; tyobi(70 * 29, 8 * 29 - 12, 300);//9
 
                 //もろいぶろっく×３
-                nブロックxtype[nブロックco] = 1; tyobi(58 * 29, 13 * 29 - 12, 115);
-                nブロックxtype[nブロックco] = 1; tyobi(59 * 29, 13 * 29 - 12, 115);
-                nブロックxtype[nブロックco] = 1; tyobi(60 * 29, 13 * 29 - 12, 115);
+                nブロック[nブロックco].xtype = 1; tyobi(58 * 29, 13 * 29 - 12, 115);
+                nブロック[nブロックco].xtype = 1; tyobi(59 * 29, 13 * 29 - 12, 115);
+                nブロック[nブロックco].xtype = 1; tyobi(60 * 29, 13 * 29 - 12, 115);
 
                 //ヒントブレイク
-                nブロックxtype[nブロックco] = 0; tyobi(111 * 29, 6 * 29 - 12, 301);
+                nブロック[nブロックco].xtype = 0; tyobi(111 * 29, 6 * 29 - 12, 301);
                 //ジャンプ
-                nブロックxtype[nブロックco] = 0; tyobi(114 * 29, 9 * 29 - 12, 120);
+                nブロック[nブロックco].xtype = 0; tyobi(114 * 29, 9 * 29 - 12, 120);
 
                 //ファイア
                 n敵出現co = 0;
@@ -366,14 +366,14 @@ namespace SyobonAction
 
                 //リフト
                 nリフトco = 0;
-                t_ = nリフトco; nリフトa[t_] = 33 * 29 * 100; nリフトb[t_] = (3 * 29 - 12) * 100; nリフトc[t_] = 90 * 100; nリフトtype[t_] = 0; nリフトacttype[t_] = 0; nリフトe[t_] = 0; nリフトsp[t_] = 1; nリフトco++;
-                t_ = nリフトco; nリフトa[t_] = 39 * 29 * 100 - 2000; nリフトb[t_] = (6 * 29 - 12) * 100; nリフトc[t_] = 90 * 100; nリフトtype[t_] = 0; nリフトacttype[t_] = 1; nリフトe[t_] = 0; nリフトco++;
-                t_ = nリフトco; nリフトa[t_] = 45 * 29 * 100 + 1500; nリフトb[t_] = (10 * 29 - 12) * 100; nリフトc[t_] = 90 * 100; nリフトtype[t_] = 0; nリフトacttype[t_] = 0; nリフトe[t_] = 0; nリフトsp[t_] = 2; nリフトco++;
+                t_ = nリフトco; nリフト[t_].a = 33 * 29 * 100; nリフト[t_].b = (3 * 29 - 12) * 100; nリフト[t_].c = 90 * 100; nリフト[t_].type = 0; nリフト[t_].acttype = 0; nリフト[t_].e = 0; nリフト[t_].sp = 1; nリフトco++;
+                t_ = nリフトco; nリフト[t_].a = 39 * 29 * 100 - 2000; nリフト[t_].b = (6 * 29 - 12) * 100; nリフト[t_].c = 90 * 100; nリフト[t_].type = 0; nリフト[t_].acttype = 1; nリフト[t_].e = 0; nリフトco++;
+                t_ = nリフトco; nリフト[t_].a = 45 * 29 * 100 + 1500; nリフト[t_].b = (10 * 29 - 12) * 100; nリフト[t_].c = 90 * 100; nリフト[t_].type = 0; nリフト[t_].acttype = 0; nリフト[t_].e = 0; nリフト[t_].sp = 2; nリフトco++;
 
-                t_ = nリフトco; nリフトa[t_] = 95 * 29 * 100; nリフトb[t_] = (7 * 29 - 12) * 100; nリフトc[t_] = 180 * 100; nリフトtype[t_] = 0; nリフトacttype[t_] = 0; nリフトe[t_] = 0; nリフトsp[t_] = 10; nリフトco++;
-                t_ = nリフトco; nリフトa[t_] = 104 * 29 * 100; nリフトb[t_] = (9 * 29 - 12) * 100; nリフトc[t_] = 90 * 100; nリフトtype[t_] = 0; nリフトacttype[t_] = 0; nリフトe[t_] = 0; nリフトsp[t_] = 12; nリフトco++;
-                t_ = nリフトco; nリフトa[t_] = 117 * 29 * 100; nリフトb[t_] = (3 * 29 - 12) * 100; nリフトc[t_] = 90 * 100; nリフトtype[t_] = 0; nリフトacttype[t_] = 1; nリフトe[t_] = 0; nリフトsp[t_] = 15; nリフトco++;
-                t_ = nリフトco; nリフトa[t_] = 124 * 29 * 100; nリフトb[t_] = (5 * 29 - 12) * 100; nリフトc[t_] = 210 * 100; nリフトtype[t_] = 0; nリフトacttype[t_] = 0; nリフトe[t_] = 0; nリフトsp[t_] = 10; nリフトco++;
+                t_ = nリフトco; nリフト[t_].a = 95 * 29 * 100; nリフト[t_].b = (7 * 29 - 12) * 100; nリフト[t_].c = 180 * 100; nリフト[t_].type = 0; nリフト[t_].acttype = 0; nリフト[t_].e = 0; nリフト[t_].sp = 10; nリフトco++;
+                t_ = nリフトco; nリフト[t_].a = 104 * 29 * 100; nリフト[t_].b = (9 * 29 - 12) * 100; nリフト[t_].c = 90 * 100; nリフト[t_].type = 0; nリフト[t_].acttype = 0; nリフト[t_].e = 0; nリフト[t_].sp = 12; nリフトco++;
+                t_ = nリフトco; nリフト[t_].a = 117 * 29 * 100; nリフト[t_].b = (3 * 29 - 12) * 100; nリフト[t_].c = 90 * 100; nリフト[t_].type = 0; nリフト[t_].acttype = 1; nリフト[t_].e = 0; nリフト[t_].sp = 15; nリフトco++;
+                t_ = nリフトco; nリフト[t_].a = 124 * 29 * 100; nリフト[t_].b = (5 * 29 - 12) * 100; nリフト[t_].c = 210 * 100; nリフト[t_].type = 0; nリフト[t_].acttype = 0; nリフト[t_].e = 0; nリフト[t_].sp = 10; nリフトco++;
 
 
 
@@ -397,7 +397,7 @@ namespace SyobonAction
             {
 
                 //マリ　地上　入れ
-                bgmChange(Res.nオーディオ_[103]);
+                bgmChange(Res.nオーディオ103);
 
                 scrollX = 0 * 100;
                 ma = 6000; nプレイヤーb = 6000;
@@ -430,7 +430,7 @@ namespace SyobonAction
 
                 nステージ色 = 3;
 
-                bgmChange(Res.nオーディオ_[104]);
+                bgmChange(Res.nオーディオ104);
 
                 scrollX = 0 * 100;
                 ma = 3000; nプレイヤーb = 33000;
@@ -443,9 +443,9 @@ namespace SyobonAction
                 int t_ = n地面co; n地面a[t_] = 14 * 29 * 100 - 5; n地面b[t_] = (11 * 29 - 12) * 100; n地面c[t_] = 6000; n地面d[t_] = 15000 - 200; n地面type[t_] = 50; n地面xtype[t_] = 1; n地面co++;
 
 
-                nブロックxtype[nブロックco] = 0; tyobi(12 * 29, 4 * 29 - 12, 112);
+                nブロック[nブロックco].xtype = 0; tyobi(12 * 29, 4 * 29 - 12, 112);
                 //ヒント3
-                nブロックxtype[nブロックco] = 3; tyobi(12 * 29, 8 * 29 - 12, 300);
+                nブロック[nブロックco].xtype = 3; tyobi(12 * 29, 8 * 29 - 12, 300);
 
                 for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
@@ -462,7 +462,7 @@ namespace SyobonAction
             {
 
                 //マリ　地上　入れ
-                bgmChange(Res.nオーディオ_[105]);
+                bgmChange(Res.nオーディオ105);
 
                 scrollX = 4400 * 100;
                 ma = 12000; nプレイヤーb = 6000;
@@ -508,28 +508,28 @@ namespace SyobonAction
 
                 //マグマ
                 n背景co = 0;
-                n背景a[n背景co] = 7 * 29 * 100 - 300;
-                n背景b[n背景co] = 14 * 29 * 100 - 1200;
-                n背景type[n背景co] = 6;
+                n背景[n背景co].a = 7 * 29 * 100 - 300;
+                n背景[n背景co].b = 14 * 29 * 100 - 1200;
+                n背景[n背景co].type = 6;
                 n背景co++;
                 if (n背景co >= n背景max) n背景co = 0;
 
-                n背景a[n背景co] = 41 * 29 * 100 - 300;
-                n背景b[n背景co] = 14 * 29 * 100 - 1200;
-                n背景type[n背景co] = 6;
+                n背景[n背景co].a = 41 * 29 * 100 - 300;
+                n背景[n背景co].b = 14 * 29 * 100 - 1200;
+                n背景[n背景co].type = 6;
                 n背景co++;
 
                 if (n背景co >= n背景max) n背景co = 0;
-                n背景a[n背景co] = 149 * 29 * 100 - 1100;
-                n背景b[n背景co] = 10 * 29 * 100 - 600;
+                n背景[n背景co].a = 149 * 29 * 100 - 1100;
+                n背景[n背景co].b = 10 * 29 * 100 - 600;
                 //TODO 100を代入しているからマグマステージで例外が出る
-                n背景type[n背景co] = 100;
+                n背景[n背景co].type = 100;
                 n背景co++;
                 if (n背景co >= n背景max) n背景co = 0;
 
                 nブロックco = 0;
                 //ON-OFFブロック
-                nブロックxtype[nブロックco] = 1; tyobi(29 * 29, 3 * 29 - 12, 130);
+                nブロック[nブロックco].xtype = 1; tyobi(29 * 29, 3 * 29 - 12, 130);
                 //1-2
                 tyobi(34 * 29, 9 * 29 - 12, 5);
 
@@ -537,31 +537,31 @@ namespace SyobonAction
                 //隠し
                 tyobi(55 * 29 + 15, 6 * 29 - 12, 7);
                 //隠しON-OFF
-                nブロックxtype[nブロックco] = 10; tyobi(50 * 29, 9 * 29 - 12, 114);
+                nブロック[nブロックco].xtype = 10; tyobi(50 * 29, 9 * 29 - 12, 114);
                 //ヒント3
-                nブロックxtype[nブロックco] = 5; tyobi(1 * 29, 5 * 29 - 12, 300);
+                nブロック[nブロックco].xtype = 5; tyobi(1 * 29, 5 * 29 - 12, 300);
                 //ファイア
-                nブロックxtype[nブロックco] = 3;
+                nブロック[nブロックco].xtype = 3;
 
                 tyobi(86 * 29, 9 * 29 - 12, 101);
                 //キノコなし　普通
                 //音符
-                nブロックxtype[nブロックco] = 2;
+                nブロック[nブロックco].xtype = 2;
 
                 tyobi(86 * 29, 6 * 29 - 12, 117);
 
                 //もろいぶろっく×３
                 for (int i = 0; i <= 2; i++)
                 {
-                    nブロックxtype[nブロックco] = 3; tyobi((79 + i) * 29, 13 * 29 - 12, 115);
+                    nブロック[nブロックco].xtype = 3; tyobi((79 + i) * 29, 13 * 29 - 12, 115);
                 }
 
                 //ジャンプ
-                nブロックxtype[nブロックco] = 3; tyobi(105 * 29, 11 * 29 - 12, 120);
+                nブロック[nブロックco].xtype = 3; tyobi(105 * 29, 11 * 29 - 12, 120);
                 //毒1
-                nブロックxtype[nブロックco] = 3; tyobi(109 * 29, 7 * 29 - 12, 102);
+                nブロック[nブロックco].xtype = 3; tyobi(109 * 29, 7 * 29 - 12, 102);
                 //デフラグ
-                nブロックxtype[nブロックco] = 4; tyobi(111 * 29, 7 * 29 - 12, 101);
+                nブロック[nブロックco].xtype = 4; tyobi(111 * 29, 7 * 29 - 12, 101);
                 //剣
                 tyobi(132 * 29, 8 * 29 - 12 - 3, 140);
 
@@ -574,8 +574,8 @@ namespace SyobonAction
 
                 //リフト
                 nリフトco = 0;
-                t_ = nリフトco; nリフトa[t_] = 93 * 29 * 100; nリフトb[t_] = (10 * 29 - 12) * 100; nリフトc[t_] = 60 * 100; nリフトtype[t_] = 0; nリフトacttype[t_] = 1; nリフトe[t_] = 0; nリフトco++;
-                t_ = 20; nリフトa[t_] = 119 * 29 * 100 + 300; nリフトb[t_] = (10 * 29 - 12) * 100; nリフトc[t_] = 12 * 30 * 100 + 1000; nリフトtype[t_] = 0; nリフトacttype[t_] = 0; nリフトsp[t_] = 21; nリフトe[t_] = 0; nリフトco++;
+                t_ = nリフトco; nリフト[t_].a = 93 * 29 * 100; nリフト[t_].b = (10 * 29 - 12) * 100; nリフト[t_].c = 60 * 100; nリフト[t_].type = 0; nリフト[t_].acttype = 1; nリフト[t_].e = 0; nリフトco++;
+                t_ = 20; nリフト[t_].a = 119 * 29 * 100 + 300; nリフト[t_].b = (10 * 29 - 12) * 100; nリフト[t_].c = 12 * 30 * 100 + 1000; nリフト[t_].type = 0; nリフト[t_].acttype = 0; nリフト[t_].sp = 21; nリフト[t_].e = 0; nリフトco++;
 
 
                 nステージc = 0;
@@ -596,7 +596,7 @@ namespace SyobonAction
                 ma = 5600;
                 nプレイヤーb = 32000;
 
-                bgmChange(Res.nオーディオ_[100]);
+                bgmChange(Res.nオーディオ100);
                 nステージ色 = 1;
                 scrollX = 2900 * (113 - 19);
                 //
@@ -604,27 +604,27 @@ namespace SyobonAction
                 //追加情報
                 nブロックco = 0;
                 //
-                nブロックxtype[nブロックco] = 6;
+                nブロック[nブロックco].xtype = 6;
 
                 tyobi(1 * 29, 9 * 29 - 12, 300);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 0;
+                nブロック[nブロックco].xtype = 0;
 
                 tyobi(40 * 29, 9 * 29 - 12, 110);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 7;
+                nブロック[nブロックco].xtype = 7;
 
                 tyobi(79 * 29, 7 * 29 - 12, 300);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 2;
+                nブロック[nブロックco].xtype = 2;
 
                 tyobi(83 * 29, 7 * 29 - 12, 102);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 0;
+                nブロック[nブロックco].xtype = 0;
 
                 tyobi(83 * 29, 2 * 29 - 12, 114);
                 nブロックco += 1;
@@ -719,7 +719,7 @@ namespace SyobonAction
             if (nステージa == 2 && nステージb == 2 && nステージc == 0)
             {//2-2(地上)
 
-                bgmChange(Res.nオーディオ_[100]);
+                bgmChange(Res.nオーディオ100);
                 nステージ色 = 1;
                 scrollX = 2900 * (19 - 19);
                 //
@@ -769,7 +769,7 @@ namespace SyobonAction
             if (nステージa == 2 && nステージb == 2 && nステージc == 1)
             {//2-2(地下)
 
-                bgmChange(Res.nオーディオ_[103]);
+                bgmChange(Res.nオーディオ103);
                 nステージ色 = 2;
                 ma = 7500; nプレイヤーb = 9000;
                 scrollX = 2900 * (137 - 19);
@@ -909,60 +909,60 @@ namespace SyobonAction
                 n地面co += 1;
                 //
                 nブロックco = 0;
-                nブロックxtype[nブロックco] = 0;
+                nブロック[nブロックco].xtype = 0;
 
                 tyobi(0 * 29, 0 * 29 - 12, 4);
                 nブロックco = 1;
-                nブロックxtype[nブロックco] = 0;
+                nブロック[nブロックco].xtype = 0;
 
                 tyobi(2 * 29, 9 * 29 - 12, 4);
                 nブロックco = 2;
-                nブロックxtype[nブロックco] = 0;
+                nブロック[nブロックco].xtype = 0;
 
                 tyobi(3 * 29, 9 * 29 - 12, 4);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 1;
+                nブロック[nブロックco].xtype = 1;
 
                 tyobi(5 * 29, 9 * 29 - 12, 115);
                 nブロックco += 1;
-                nブロックxtype[nブロックco] = 1;
+                nブロック[nブロックco].xtype = 1;
 
                 tyobi(6 * 29, 9 * 29 - 12, 115);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 1;
+                nブロック[nブロックco].xtype = 1;
 
                 tyobi(5 * 29, 10 * 29 - 12, 115);
                 nブロックco += 1;
-                nブロックxtype[nブロックco] = 1;
+                nブロック[nブロックco].xtype = 1;
 
                 tyobi(6 * 29, 10 * 29 - 12, 115);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 1;
+                nブロック[nブロックco].xtype = 1;
 
                 tyobi(5 * 29, 11 * 29 - 12, 115);
                 nブロックco += 1;
-                nブロックxtype[nブロックco] = 1;
+                nブロック[nブロックco].xtype = 1;
 
                 tyobi(6 * 29, 11 * 29 - 12, 115);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 1;
+                nブロック[nブロックco].xtype = 1;
 
                 tyobi(5 * 29, 12 * 29 - 12, 115);
                 nブロックco += 1;
-                nブロックxtype[nブロックco] = 1;
+                nブロック[nブロックco].xtype = 1;
 
                 tyobi(6 * 29, 12 * 29 - 12, 115);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 1;
+                nブロック[nブロックco].xtype = 1;
 
                 tyobi(70 * 29, 7 * 29 - 12, 115);
                 nブロックco += 1;
-                nブロックxtype[nブロックco] = 1;
+                nブロック[nブロックco].xtype = 1;
 
                 tyobi(71 * 29, 7 * 29 - 12, 115);
                 nブロックco += 1;
@@ -979,7 +979,7 @@ namespace SyobonAction
             if (nステージa == 2 && nステージb == 2 && nステージc == 2)
             {// 2-2 地上
              //
-                bgmChange(Res.nオーディオ_[100]);
+                bgmChange(Res.nオーディオ100);
                 nステージ色 = 1;
                 scrollX = 2900 * (36 - 19);
                 ma = 7500;
@@ -1074,14 +1074,14 @@ namespace SyobonAction
                 ma = 7500;
                 nプレイヤーb = 3000 * 8;
 
-                bgmChange(Res.nオーディオ_[100]);
+                bgmChange(Res.nオーディオ100);
                 nステージ色 = 1;
                 scrollX = 2900 * (126 - 19);
                 //
                 byte[,] stagedatex = stagedatex13;
                 //
                 nブロックco = 0;
-                nブロックxtype[nブロックco] = 0;
+                nブロック[nブロックco].xtype = 0;
                 for (int i = -1; i > -7; i -= 1)
                 {
 
@@ -1089,27 +1089,27 @@ namespace SyobonAction
                     nブロックco += 1;
                 }
                 //
-                nブロックxtype[nブロックco] = 0;
+                nブロック[nブロックco].xtype = 0;
 
                 tyobi(64 * 29, 12 * 29 - 12, 120);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 1;
+                nブロック[nブロックco].xtype = 1;
 
                 tyobi(66 * 29, 3 * 29 - 12, 115);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 1;
+                nブロック[nブロックco].xtype = 1;
 
                 tyobi(67 * 29, 3 * 29 - 12, 115);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 1;
+                nブロック[nブロックco].xtype = 1;
 
                 tyobi(68 * 29, 3 * 29 - 12, 115);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 8;
+                nブロック[nブロックco].xtype = 8;
 
                 tyobi(60 * 29, 6 * 29 - 12, 300);
                 nブロックco += 1;
@@ -1128,49 +1128,49 @@ namespace SyobonAction
                 n地面co += 1;
                 //
                 nリフトco = 0;
-                nリフトa[nリフトco] = 1 * 29 * 100;
-                nリフトb[nリフトco] = (10 * 29 - 12) * 100;
-                nリフトc[nリフトco] = 5 * 3000;
-                nリフトtype[nリフトco] = 0;
-                nリフトacttype[nリフトco] = 1;
-                nリフトe[nリフトco] = 0;
-                nリフトsp[nリフトco] = 10;
+                nリフト[nリフトco].a = 1 * 29 * 100;
+                nリフト[nリフトco].b = (10 * 29 - 12) * 100;
+                nリフト[nリフトco].c = 5 * 3000;
+                nリフト[nリフトco].type = 0;
+                nリフト[nリフトco].acttype = 1;
+                nリフト[nリフトco].e = 0;
+                nリフト[nリフトco].sp = 10;
                 nリフトco++;
                 //
-                nリフトa[nリフトco] = 18 * 29 * 100;
-                nリフトb[nリフトco] = (4 * 29 - 12) * 100;
-                nリフトc[nリフトco] = 3 * 3000;
-                nリフトtype[nリフトco] = 0;
-                nリフトacttype[nリフトco] = 0;
-                nリフトe[nリフトco] = 0;
-                nリフトsp[nリフトco] = 10;
+                nリフト[nリフトco].a = 18 * 29 * 100;
+                nリフト[nリフトco].b = (4 * 29 - 12) * 100;
+                nリフト[nリフトco].c = 3 * 3000;
+                nリフト[nリフトco].type = 0;
+                nリフト[nリフトco].acttype = 0;
+                nリフト[nリフトco].e = 0;
+                nリフト[nリフトco].sp = 10;
                 nリフトco++;
                 //
-                nリフトa[nリフトco] = 35 * 29 * 100;
-                nリフトb[nリフトco] = (4 * 29 - 12) * 100;
-                nリフトc[nリフトco] = 5 * 3000;
-                nリフトtype[nリフトco] = 0;
-                nリフトacttype[nリフトco] = 0;
-                nリフトe[nリフトco] = 0;
-                nリフトsp[nリフトco] = 10;
+                nリフト[nリフトco].a = 35 * 29 * 100;
+                nリフト[nリフトco].b = (4 * 29 - 12) * 100;
+                nリフト[nリフトco].c = 5 * 3000;
+                nリフト[nリフトco].type = 0;
+                nリフト[nリフトco].acttype = 0;
+                nリフト[nリフトco].e = 0;
+                nリフト[nリフトco].sp = 10;
                 nリフトco++;
                 //
-                nリフトa[nリフトco] = 35 * 29 * 100;
-                nリフトb[nリフトco] = (8 * 29 - 12) * 100;
-                nリフトc[nリフトco] = 5 * 3000;
-                nリフトtype[nリフトco] = 0;
-                nリフトacttype[nリフトco] = 0;
-                nリフトe[nリフトco] = 0;
-                nリフトsp[nリフトco] = 10;
+                nリフト[nリフトco].a = 35 * 29 * 100;
+                nリフト[nリフトco].b = (8 * 29 - 12) * 100;
+                nリフト[nリフトco].c = 5 * 3000;
+                nリフト[nリフトco].type = 0;
+                nリフト[nリフトco].acttype = 0;
+                nリフト[nリフトco].e = 0;
+                nリフト[nリフトco].sp = 10;
                 nリフトco++;
                 //
-                nリフトa[nリフトco] = 94 * 29 * 100;
-                nリフトb[nリフトco] = (6 * 29 - 12) * 100;
-                nリフトc[nリフトco] = 3 * 3000;
-                nリフトtype[nリフトco] = 0;
-                nリフトacttype[nリフトco] = 0;
-                nリフトe[nリフトco] = 0;
-                nリフトsp[nリフトco] = 1;
+                nリフト[nリフトco].a = 94 * 29 * 100;
+                nリフト[nリフトco].b = (6 * 29 - 12) * 100;
+                nリフト[nリフトco].c = 3 * 3000;
+                nリフト[nリフトco].type = 0;
+                nリフト[nリフトco].acttype = 0;
+                nリフト[nリフトco].e = 0;
+                nリフト[nリフトco].sp = 1;
                 nリフトco++;
                 //
                 for (int tt_ = 0; tt_ <= 1000; tt_++)
@@ -1195,34 +1195,34 @@ namespace SyobonAction
                     nステージc = 0;
                 }
 
-                bgmChange(Res.nオーディオ_[105]);
+                bgmChange(Res.nオーディオ105);
                 nステージ色 = 4;
                 scrollX = 2900 * (40 - 19);
                 //
                 byte[,] stagedatex = stagedatex14;
                 //
                 nブロックco = 0;
-                nブロックxtype[nブロックco] = 0;
+                nブロック[nブロックco].xtype = 0;
 
                 tyobi(0 * 29, -1 * 29 - 12, 5);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 0;
+                nブロック[nブロックco].xtype = 0;
 
                 tyobi(4 * 29, -1 * 29 - 12, 5);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 0;
+                nブロック[nブロックco].xtype = 0;
 
                 tyobi(1 * 29, 14 * 29 - 12, 5);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 0;
+                nブロック[nブロックco].xtype = 0;
 
                 tyobi(6 * 29, 14 * 29 - 12, 5);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 0;
+                nブロック[nブロックco].xtype = 0;
 
                 tyobi(7 * 29, 14 * 29 - 12, 5);
                 nブロックco += 1;
@@ -1279,24 +1279,24 @@ namespace SyobonAction
                 ma = 4500;
                 nプレイヤーb = 3000 * 11;
 
-                bgmChange(Res.nオーディオ_[105]);
+                bgmChange(Res.nオーディオ105);
                 nステージ色 = 4;
                 scrollX = 2900 * (21 - 19);
                 //
                 byte[,] stagedatex = stagedatex15;
                 //
                 nブロックco = 0;
-                nブロックxtype[nブロックco] = 1;
+                nブロック[nブロックco].xtype = 1;
 
                 tyobi(12 * 29, 13 * 29 - 12, 115);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 1;
+                nブロック[nブロックco].xtype = 1;
 
                 tyobi(13 * 29, 13 * 29 - 12, 115);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 1;
+                nブロック[nブロックco].xtype = 1;
 
                 tyobi(14 * 29, 13 * 29 - 12, 115);
                 nブロックco += 1;
@@ -1348,49 +1348,49 @@ namespace SyobonAction
                 ma = 4500;
                 nプレイヤーb = 3000 * 11;
 
-                bgmChange(Res.nオーディオ_[105]);
+                bgmChange(Res.nオーディオ105);
                 nステージ色 = 4;
                 scrollX = 2900 * (128 - 19);
                 //
                 byte[,] stagedatex = stagedatex16;
                 //
                 nブロックco = 0;
-                nブロックxtype[nブロックco] = 0;
+                nブロック[nブロックco].xtype = 0;
 
                 tyobi(1 * 29, 14 * 29 - 12, 5);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 0;
+                nブロック[nブロックco].xtype = 0;
 
                 tyobi(2 * 29, 14 * 29 - 12, 5);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 9;
+                nブロック[nブロックco].xtype = 9;
 
                 tyobi(3 * 29, 4 * 29 - 12, 300);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 1;
+                nブロック[nブロックco].xtype = 1;
 
                 tyobi(32 * 29, 9 * 29 - 12, 115);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 0;
+                nブロック[nブロックco].xtype = 0;
 
                 tyobi(76 * 29, 14 * 29 - 12, 5);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 0;
+                nブロック[nブロックco].xtype = 0;
 
                 tyobi(108 * 29, 11 * 29 - 12, 141);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 0;
+                nブロック[nブロックco].xtype = 0;
 
                 tyobi(109 * 29, 10 * 29 - 12 - 3, 140);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 0;
+                nブロック[nブロックco].xtype = 0;
 
                 tyobi(121 * 29, 10 * 29 - 12, 142);
                 nブロックco += 1;
@@ -1556,22 +1556,22 @@ namespace SyobonAction
                 n地面co += 1;
                 //
                 nリフトco = 0;
-                nリフトa[nリフトco] = 74 * 29 * 100 - 1500;
-                nリフトb[nリフトco] = (7 * 29 - 12) * 100;
-                nリフトc[nリフトco] = 2 * 3000;
-                nリフトtype[nリフトco] = 0;
-                nリフトacttype[nリフトco] = 1;
-                nリフトe[nリフトco] = 0;
-                nリフトsp[nリフトco] = 0;
+                nリフト[nリフトco].a = 74 * 29 * 100 - 1500;
+                nリフト[nリフトco].b = (7 * 29 - 12) * 100;
+                nリフト[nリフトco].c = 2 * 3000;
+                nリフト[nリフトco].type = 0;
+                nリフト[nリフトco].acttype = 1;
+                nリフト[nリフトco].e = 0;
+                nリフト[nリフトco].sp = 0;
                 nリフトco = 20;
                 //
-                nリフトa[nリフトco] = 97 * 29 * 100;
-                nリフトb[nリフトco] = (12 * 29 - 12) * 100;
-                nリフトc[nリフトco] = 12 * 3000;
-                nリフトtype[nリフトco] = 0;
-                nリフトacttype[nリフトco] = 0;
-                nリフトe[nリフトco] = 0;
-                nリフトsp[nリフトco] = 21;
+                nリフト[nリフトco].a = 97 * 29 * 100;
+                nリフト[nリフトco].b = (12 * 29 - 12) * 100;
+                nリフト[nリフトco].c = 12 * 3000;
+                nリフト[nリフトco].type = 0;
+                nリフト[nリフトco].acttype = 0;
+                nリフト[nリフトco].e = 0;
+                nリフト[nリフトco].sp = 21;
                 nリフトco += 1;
                 //
                 for (int tt_ = 0; tt_ <= 1000; tt_++)
@@ -1588,24 +1588,24 @@ namespace SyobonAction
                 ma = 5600;
                 nプレイヤーb = 32000;
 
-                bgmChange(Res.nオーディオ_[100]);
+                bgmChange(Res.nオーディオ100);
                 nステージ色 = 5;
                 scrollX = 2900 * (112 - 19);
                 byte[,] stagedatex = stagedatex17;
                 //追加情報
                 nブロックco = 0;
                 //
-                nブロックxtype[nブロックco] = 10;
+                nブロック[nブロックco].xtype = 10;
 
                 tyobi(2 * 29, 9 * 29 - 12, 300);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 1;
+                nブロック[nブロックco].xtype = 1;
 
                 tyobi(63 * 29, 13 * 29 - 12, 115);
                 nブロックco += 1;
                 //
-                nブロックxtype[nブロックco] = 1;
+                nブロック[nブロックco].xtype = 1;
 
                 tyobi(64 * 29, 13 * 29 - 12, 115);
                 nブロックco += 1;
@@ -1665,13 +1665,13 @@ namespace SyobonAction
                 n敵出現co += 1;
                 //
                 nリフトco = 0;
-                nリフトa[nリフトco] = 41 * 29 * 100;
-                nリフトb[nリフトco] = (3 * 29 - 12) * 100;
-                nリフトc[nリフトco] = 3 * 3000;
-                nリフトtype[nリフトco] = 0;
-                nリフトacttype[nリフトco] = 0;
-                nリフトe[nリフトco] = 0;
-                nリフトsp[nリフトco] = 3;
+                nリフト[nリフトco].a = 41 * 29 * 100;
+                nリフト[nリフトco].b = (3 * 29 - 12) * 100;
+                nリフト[nリフトco].c = 3 * 3000;
+                nリフト[nリフトco].type = 0;
+                nリフト[nリフトco].acttype = 0;
+                nリフト[nリフトco].e = 0;
+                nリフト[nリフトco].sp = 3;
                 nリフトco = 0;
                 //
                 for (int tt_ = 0; tt_ <= 1000; tt_++)

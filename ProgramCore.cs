@@ -11,7 +11,10 @@ namespace SyobonAction
     {
         static void Draw()
         {
-            
+            //ダブルバッファリング
+            DX.SetDrawScreen(DX.DX_SCREEN_BACK);
+
+            DX.ClearDrawScreen();
 
             DXDraw.SetColor(0, 0, 0);
             if (nステージ色 == 1) DXDraw.SetColor(160, 180, 250);
@@ -27,7 +30,7 @@ namespace SyobonAction
                 nプレイヤーrzimen = 0;
             }
 
-            DXDraw.DrawBox塗り潰し(0, 0, W, H);
+            DXDraw.DrawBox塗り潰し(0, 0, n画面幅, n画面高さ);
 
 
             if (e現在の画面 == E画面.Game && b初期化)
@@ -67,7 +70,7 @@ namespace SyobonAction
                 if (blackTm > 0)
                 {
                     blackTm--;
-                    DXDraw.DrawBox塗り潰し(0, 0, W, H);
+                    DXDraw.DrawBox塗り潰し(0, 0, n画面幅, n画面高さ);
                     if (blackTm == 0)
                     {
                         if (blackX == 1) { b初期化 = false; }
@@ -82,6 +85,13 @@ namespace SyobonAction
                 Drawスタッフロール();
             }
 
+            //機数表示
+            if (e現在の画面 == E画面.機数表示)
+            {
+
+                Draw機数表示();
+            }
+
 
             //タイトル
             if (e現在の画面 == E画面.Title)
@@ -90,13 +100,17 @@ namespace SyobonAction
 
             }
 
+            DX.ScreenFlip();
 
         }
 
         static void Mainprogram()
         {
             if (nスタッフロール == 1) e現在の画面 = E画面.Ending;
-
+            if (Key.GetKey(DX.KEY_INPUT_F1))
+            {
+                e現在の画面 = E画面.Title;
+            }
             if (e現在の画面 == E画面.Game && nメッセージブロックtype == 0)
             {
                 if (!b初期化)
@@ -123,7 +137,7 @@ namespace SyobonAction
                     bステージスイッチ = false;
 
                     //チーターマン　入れ
-                    bgmChange(Res.nオーディオ_[100]);
+                    bgmChange(Res.nオーディオ100);
 
                     stagecls();
 
@@ -136,14 +150,14 @@ namespace SyobonAction
                         {
                             if (DX.GetRand(3) <= 1)
                             {
-                                nブロックa[t_] = (DX.GetRand(500) - 1) * 29 * 100;
-                                nブロックb[t_] = DX.GetRand(14) * 100 * 29 - 1200;
-                                nブロックtype[t_] = DX.GetRand(142);
-                                if (nブロックtype[t_] >= 9 && nブロックtype[t_] <= 99)
+                                nブロック[t_].a = (DX.GetRand(500) - 1) * 29 * 100;
+                                nブロック[t_].b = DX.GetRand(14) * 100 * 29 - 1200;
+                                nブロック[t_].type = DX.GetRand(142);
+                                if (nブロック[t_].type >= 9 && nブロック[t_].type <= 99)
                                 {
-                                    nブロックtype[t_] = DX.GetRand(8);
+                                    nブロック[t_].type = DX.GetRand(8);
                                 }
-                                nブロックxtype[t_] = DX.GetRand(4);
+                                nブロック[t_].xtype = DX.GetRand(4);
                             }
                         }
                         for (int t_ = 0; t_ < n敵出現max; t_++)
@@ -162,13 +176,13 @@ namespace SyobonAction
                         {
                             nリフトco = 0;
                             int t_ = nリフトco;
-                            nリフトa[t_] = ma + fx;
-                            nリフトb[t_] = (13 * 29 - 12) * 100;
-                            nリフトc[t_] = 30 * 100;
-                            nリフトtype[t_] = 0;
-                            nリフトacttype[t_] = 0;
-                            nリフトe[t_] = 0;
-                            nリフトsp[t_] = 0;
+                            nリフト[t_].a = ma + fx;
+                            nリフト[t_].b = (13 * 29 - 12) * 100;
+                            nリフト[t_].c = 30 * 100;
+                            nリフト[t_].type = 0;
+                            nリフト[t_].acttype = 0;
+                            nリフト[t_].e = 0;
+                            nリフト[t_].sp = 0;
                             nリフトco++;
                         }
                         if (DX.GetRand(4) == 0) nステージ色 = DX.GetRand(5);
@@ -176,11 +190,11 @@ namespace SyobonAction
 
 
 
-                    DX.StopSoundMem(Res.nオーディオ_[0]);
+                    DX.StopSoundMem(Res.n現在のBGM);
 
 
                     //メインBGM
-                    DX.PlaySoundMem(Res.nオーディオ_[0], DX.DX_PLAYTYPE_LOOP);
+                    DX.PlaySoundMem(Res.n現在のBGM, DX.DX_PLAYTYPE_LOOP);
 
 
                 }//zxon
@@ -219,6 +233,16 @@ namespace SyobonAction
                 Updateスタッフロール();
 
             }//main==2
+
+            if (e現在の画面 == E画面.機数表示)
+            {
+                maintm++;
+                if (maintm >= 30) {
+                    maintm = 0;
+                    e現在の画面 = E画面.Game;
+                    b初期化 = false;
+                }
+            }//if (main==10){
 
             //タイトル
             if (e現在の画面 == E画面.Title)

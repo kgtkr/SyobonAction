@@ -53,10 +53,7 @@ namespace SyobonAction
                 }
             }
 
-            if (Key.GetKey(DX.KEY_INPUT_F1))
-            {
-                e現在の画面 = E画面.Title;
-            }
+            
             if (Key.GetKey(DX.KEY_INPUT_O))
             {
                 if (nプレイヤーhp >= 1)
@@ -223,7 +220,7 @@ namespace SyobonAction
                 nプレイヤーd = -1200;
                 nプレイヤーjumptm = 10;
 
-                v効果音再生(Res.nオーディオ_[1]);
+                v効果音再生(Res.nオーディオ1);
 
                 nプレイヤーzimen = 0;
 
@@ -245,10 +242,10 @@ namespace SyobonAction
                 nプレイヤーhp = -20;
                 nプレイヤーtype = 200;
                 nプレイヤーtm = 0;
-                v効果音再生(Res.nオーディオ_[12]);
-                DX.StopSoundMem(Res.nオーディオ_[0]);
-                DX.StopSoundMem(Res.nオーディオ_[11]);
-                DX.StopSoundMem(Res.nオーディオ_[16]);
+                v効果音再生(Res.nオーディオ12);
+                DX.StopSoundMem(Res.n現在のBGM);
+                DX.StopSoundMem(Res.nオーディオ11);
+                DX.StopSoundMem(Res.nオーディオ16);
             }//mhp
             if (nプレイヤーtype == 200)
             {
@@ -288,7 +285,7 @@ namespace SyobonAction
                     blackX = 1;
                     blackTm = 20;
                     nステージc += 5;
-                    DX.StopSoundMem(Res.nオーディオ_[0]);
+                    DX.StopSoundMem(Res.n現在のBGM);
                     nプレイヤーtm = 0;
                     nプレイヤーtype = 0;
                     nプレイヤーkeytm = -1;
@@ -370,7 +367,7 @@ namespace SyobonAction
                             ma += 240;
                         }
                         if (nプレイヤーtm == 16) nプレイヤーb -= 1100;
-                        if (nプレイヤーtm == 20) v効果音再生(Res.nオーディオ_[10]);
+                        if (nプレイヤーtm == 20) v効果音再生(Res.nオーディオ10);
 
                         if (nプレイヤーtm >= 24)
                         {
@@ -423,7 +420,7 @@ namespace SyobonAction
                             nプレイヤーxtype = 0;
                             blackX = 1;
                             blackTm = 20;
-                            DX.StopSoundMem(Res.nオーディオ_[0]);
+                            DX.StopSoundMem(Res.n現在のBGM);
                         }
                     }
                 }
@@ -487,24 +484,24 @@ namespace SyobonAction
 
                     if (nプレイヤーtm == 200)
                     {
-                        v効果音再生(Res.nオーディオ_[17]);
+                        v効果音再生(Res.nオーディオ17);
                         if (nプレイヤーtype == 301)
                         {
-                            n背景a[n背景co] = 117 * 29 * 100 - 1100;
-                            n背景b[n背景co] = 4 * 29 * 100;
-                            n背景type[n背景co] = 101;
+                            n背景[n背景co].a = 117 * 29 * 100 - 1100;
+                            n背景[n背景co].b = 4 * 29 * 100;
+                            n背景[n背景co].type = 101;
                             n背景co++;
                             if (n背景co >= n背景max) n背景co = 0;
 
-                            n背景a[n背景co] = 115 * 29 * 100 - 1100;
-                            n背景b[n背景co] = 6 * 29 * 100;
-                            n背景type[n背景co] = 102;
+                            n背景[n背景co].a = 115 * 29 * 100 - 1100;
+                            n背景[n背景co].b = 6 * 29 * 100;
+                            n背景[n背景co].type = 102;
                             n背景co++;
                             if (n背景co >= n背景max) n背景co = 0;
                         }
                         else {
-                            n背景a[n背景co] = 157 * 29 * 100 - 1100; n背景b[n背景co] = 4 * 29 * 100; n背景type[n背景co] = 101; n背景co++; if (n背景co >= n背景max) n背景co = 0;
-                            n背景a[n背景co] = 155 * 29 * 100 - 1100; n背景b[n背景co] = 6 * 29 * 100; n背景type[n背景co] = 102; n背景co++; if (n背景co >= n背景max) n背景co = 0;
+                            n背景[n背景co].a = 157 * 29 * 100 - 1100; n背景[n背景co].b = 4 * 29 * 100; n背景[n背景co].type = 101; n背景co++; if (n背景co >= n背景max) n背景co = 0;
+                            n背景[n背景co].a = 155 * 29 * 100 - 1100; n背景[n背景co].b = 6 * 29 * 100; n背景[n背景co].type = 102; n背景co++; if (n背景co >= n背景max) n背景co = 0;
                         }
                     }
                     //スタッフロールへ
@@ -576,7 +573,6 @@ namespace SyobonAction
                 }
             }
 
-
             //地面判定初期化
             nプレイヤーzimen = 0;
 
@@ -584,7 +580,7 @@ namespace SyobonAction
             if (nプレイヤーtype <= 9 && nプレイヤーhp >= 1)
             {
                 if (ma < 100) { ma = 100; nプレイヤーc = 0; }
-                if (ma + nプレイヤーnobia > W) { ma = W - nプレイヤーnobia; nプレイヤーc = 0; }
+                if (ma + nプレイヤーnobia > n画面幅) { ma = n画面幅 - nプレイヤーnobia; nプレイヤーc = 0; }
             }
             if (nプレイヤーb >= 38000 && nプレイヤーhp >= 0 && nステージ色 == 4) { nプレイヤーhp = -2; nメッセージtm = 30; nメッセージtype = 55; }
             if (nプレイヤーb >= 52000 && nプレイヤーhp >= 0) { nプレイヤーhp = -2; }
