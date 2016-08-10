@@ -461,7 +461,7 @@ namespace SyobonAction
 
                     if (nブロック[t_].type < 100)
                     {
-                        xx_6 = nブロック[t_].type + xx_9; DXDraw.DrawGraph(Res.n切り取り画像_[xx_6, 1], xx_0 / 100, xx_1 / 100);
+                        xx_6 = nブロック[t_].type + xx_9; DXDraw.DrawGraph(Res.n切り取り画像[xx_6, 1], xx_0 / 100, xx_1 / 100);
                     }
 
                     if (nブロック[t_].xtype != 10)
@@ -469,59 +469,59 @@ namespace SyobonAction
 
                         if (nブロック[t_].type == 100 || nブロック[t_].type == 101 || nブロック[t_].type == 102 || nブロック[t_].type == 103 || nブロック[t_].type == 104 && nブロック[t_].xtype == 1 || nブロック[t_].type == 114 && nブロック[t_].xtype == 1 || nブロック[t_].type == 116)
                         {
-                            xx_6 = 2 + xx_9; DXDraw.DrawGraph(Res.n切り取り画像_[xx_6, 1], xx_0 / 100, xx_1 / 100);
+                            xx_6 = 2 + xx_9; DXDraw.DrawGraph(Res.n切り取り画像[xx_6, 1], xx_0 / 100, xx_1 / 100);
                         }
 
                         if (nブロック[t_].type == 112 || nブロック[t_].type == 104 && nブロック[t_].xtype == 0 || nブロック[t_].type == 115 && nブロック[t_].xtype == 1)
                         {
-                            xx_6 = 1 + xx_9; DXDraw.DrawGraph(Res.n切り取り画像_[xx_6, 1], xx_0 / 100, xx_1 / 100);
+                            xx_6 = 1 + xx_9; DXDraw.DrawGraph(Res.n切り取り画像[xx_6, 1], xx_0 / 100, xx_1 / 100);
                         }
 
                         if (nブロック[t_].type == 111 || nブロック[t_].type == 113 || nブロック[t_].type == 115 && nブロック[t_].xtype == 0 || nブロック[t_].type == 124)
                         {
-                            xx_6 = 3 + xx_9; DXDraw.DrawGraph(Res.n切り取り画像_[xx_6, 1], xx_0 / 100, xx_1 / 100);
+                            xx_6 = 3 + xx_9; DXDraw.DrawGraph(Res.n切り取り画像[xx_6, 1], xx_0 / 100, xx_1 / 100);
                         }
 
                     }
 
                     if (nブロック[t_].type == 117 && nブロック[t_].xtype == 1)
                     {
-                        DXDraw.DrawGraph(Res.n切り取り画像_[4, 5], xx_0 / 100, xx_1 / 100);
+                        DXDraw.DrawGraph(Res.n切り取り画像[4, 5], xx_0 / 100, xx_1 / 100);
                     }
 
                     if (nブロック[t_].type == 117 && nブロック[t_].xtype >= 3)
                     {
-                        DXDraw.DrawGraph(Res.n切り取り画像_[3, 5], xx_0 / 100, xx_1 / 100);
+                        DXDraw.DrawGraph(Res.n切り取り画像[3, 5], xx_0 / 100, xx_1 / 100);
                     }
 
                     if (nブロック[t_].type == 115 && nブロック[t_].xtype == 3)
                     {
-                        xx_6 = 1 + xx_9; DXDraw.DrawGraph(Res.n切り取り画像_[xx_6, 1], xx_0 / 100, xx_1 / 100);
+                        xx_6 = 1 + xx_9; DXDraw.DrawGraph(Res.n切り取り画像[xx_6, 1], xx_0 / 100, xx_1 / 100);
                     }
 
                     //ジャンプ台
                     if (nブロック[t_].type == 120 && nブロック[t_].xtype != 1)
                     {
-                        DXDraw.DrawGraph(Res.n切り取り画像_[16, 1], xx_0 / 100 + 3, xx_1 / 100 + 2);
+                        DXDraw.DrawGraph(Res.n切り取り画像[16, 1], xx_0 / 100 + 3, xx_1 / 100 + 2);
                     }
 
                     //ON-OFF
-                    if (nブロック[t_].type == 130) DXDraw.DrawGraph(Res.n切り取り画像_[10, 5], xx_0 / 100, xx_1 / 100);
-                    if (nブロック[t_].type == 131) DXDraw.DrawGraph(Res.n切り取り画像_[11, 5], xx_0 / 100, xx_1 / 100);
+                    if (nブロック[t_].type == 130) DXDraw.DrawGraph(Res.n切り取り画像[10, 5], xx_0 / 100, xx_1 / 100);
+                    if (nブロック[t_].type == 131) DXDraw.DrawGraph(Res.n切り取り画像[11, 5], xx_0 / 100, xx_1 / 100);
 
-                    if (nブロック[t_].type == 140) DXDraw.DrawGraph(Res.n切り取り画像_[12, 5], xx_0 / 100, xx_1 / 100);
-                    if (nブロック[t_].type == 141) DXDraw.DrawGraph(Res.n切り取り画像_[13, 5], xx_0 / 100, xx_1 / 100);
-                    if (nブロック[t_].type == 142) DXDraw.DrawGraph(Res.n切り取り画像_[14, 5], xx_0 / 100, xx_1 / 100);
+                    if (nブロック[t_].type == 140) DXDraw.DrawGraph(Res.n切り取り画像[12, 5], xx_0 / 100, xx_1 / 100);
+                    if (nブロック[t_].type == 141) DXDraw.DrawGraph(Res.n切り取り画像[13, 5], xx_0 / 100, xx_1 / 100);
+                    if (nブロック[t_].type == 142) DXDraw.DrawGraph(Res.n切り取り画像[14, 5], xx_0 / 100, xx_1 / 100);
 
 
                     if (nブロック[t_].type == 300 || nブロック[t_].type == 301)
-                        DXDraw.DrawGraph(Res.n切り取り画像_[1, 5], xx_0 / 100, xx_1 / 100);
+                        DXDraw.DrawGraph(Res.n切り取り画像[1, 5], xx_0 / 100, xx_1 / 100);
 
                     //Pスイッチ
-                    if (nブロック[t_].type == 400) { DXDraw.DrawGraph(Res.n切り取り画像_[2, 5], xx_0 / 100, xx_1 / 100); }
+                    if (nブロック[t_].type == 400) { DXDraw.DrawGraph(Res.n切り取り画像[2, 5], xx_0 / 100, xx_1 / 100); }
 
                     //コイン
-                    if (nブロック[t_].type == 800) { DXDraw.DrawGraph(Res.n切り取り画像_[0, 2], xx_0 / 100 + 2, xx_1 / 100 + 1); }
+                    if (nブロック[t_].type == 800) { DXDraw.DrawGraph(Res.n切り取り画像[0, 2], xx_0 / 100 + 2, xx_1 / 100 + 1); }
 
                 }
             }

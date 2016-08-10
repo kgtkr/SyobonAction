@@ -42,14 +42,14 @@ namespace SyobonAction
                     {
                         if ((n背景[t_].type == 1 || n背景[t_].type == 2) && nステージ色 == 5)
                         {
-                            DXDraw.DrawGraph(Res.n切り取り画像_[n背景[t_].type + 30, 4], xx_0 / 100, xx_1 / 100);
+                            DXDraw.DrawGraph(Res.n切り取り画像[n背景[t_].type + 30, 4], xx_0 / 100, xx_1 / 100);
                         }
                         else {
-                            DXDraw.DrawGraph(Res.n切り取り画像_[n背景[t_].type, 4], xx_0 / 100, xx_1 / 100);
+                            DXDraw.DrawGraph(Res.n切り取り画像[n背景[t_].type, 4], xx_0 / 100, xx_1 / 100);
                         }
                     }
                     if (n背景[t_].type == 3)
-                        DXDraw.DrawGraph(Res.n切り取り画像_[n背景[t_].type, 4], xx_0 / 100 - 5, xx_1 / 100);
+                        DXDraw.DrawGraph(Res.n切り取り画像[n背景[t_].type, 4], xx_0 / 100 - 5, xx_1 / 100);
 
                     //51
                     if (n背景[t_].type == 100)

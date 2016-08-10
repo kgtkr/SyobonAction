@@ -225,7 +225,7 @@ namespace SyobonAction
                     {
                         for (int t2 = 0; t2 <= 2; t2++)
                         {
-                            xx_6 = 1 + 0; DXDraw.DrawGraph(Res.n切り取り画像_[xx_6, 1], (nリフト[t_].a - fx) / 100 + t2 * 29, (nリフト[t_].b - fy) / 100);
+                            xx_6 = 1 + 0; DXDraw.DrawGraph(Res.n切り取り画像[xx_6, 1], (nリフト[t_].a - fx) / 100 + t2 * 29, (nリフト[t_].b - fy) / 100);
                         }
                     }//15
                 }

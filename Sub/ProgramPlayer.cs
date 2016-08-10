@@ -598,23 +598,23 @@ namespace SyobonAction
                 if (nプレイヤーzimen == 1)
                 {
                     // 読みこんだグラフィックを拡大描画
-                    if (nプレイヤーact == 0) DXDraw.DrawGraph(Res.n切り取り画像_[0, 0], ma / 100, nプレイヤーb / 100);
-                    if (nプレイヤーact == 1) DXDraw.DrawGraph(Res.n切り取り画像_[1, 0], ma / 100, nプレイヤーb / 100);
+                    if (nプレイヤーact == 0) DXDraw.DrawGraph(Res.n切り取り画像[0, 0], ma / 100, nプレイヤーb / 100);
+                    if (nプレイヤーact == 1) DXDraw.DrawGraph(Res.n切り取り画像[1, 0], ma / 100, nプレイヤーb / 100);
                 }
                 if (nプレイヤーzimen == 0)
                 {
-                    DXDraw.DrawGraph(Res.n切り取り画像_[2, 0], ma / 100, nプレイヤーb / 100);
+                    DXDraw.DrawGraph(Res.n切り取り画像[2, 0], ma / 100, nプレイヤーb / 100);
                 }
             }
             //巨大化
             else if (nプレイヤーtype == 1)
             {
-                DXDraw.DrawGraph(Res.n切り取り画像_[41, 0], ma / 100, nプレイヤーb / 100);
+                DXDraw.DrawGraph(Res.n切り取り画像[41, 0], ma / 100, nプレイヤーb / 100);
             }
 
             else if (nプレイヤーtype == 200)
             {
-                DXDraw.DrawGraph(Res.n切り取り画像_[3, 0], ma / 100, nプレイヤーb / 100);
+                DXDraw.DrawGraph(Res.n切り取り画像[3, 0], ma / 100, nプレイヤーb / 100);
             }
         }
     }

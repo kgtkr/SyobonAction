@@ -44,15 +44,15 @@ namespace SyobonAction
 
             DXDraw.DrawGraph(Res.nタイトル画像, 240 - 380 / 2, 60);
 
-            DXDraw.DrawGraph(Res.n切り取り画像_[0, 4], 12 * 30, 10 * 29 - 12);
-            DXDraw.DrawGraph(Res.n切り取り画像_[1, 4], 6 * 30, 12 * 29 - 12);
+            DXDraw.DrawGraph(Res.n切り取り画像[0, 4], 12 * 30, 10 * 29 - 12);
+            DXDraw.DrawGraph(Res.n切り取り画像[1, 4], 6 * 30, 12 * 29 - 12);
 
             //プレイヤー
-            DXDraw.DrawGraph(Res.n切り取り画像_[0, 0], 2 * 30, 12 * 29 - 12 - 6);
+            DXDraw.DrawGraph(Res.n切り取り画像[0, 0], 2 * 30, 12 * 29 - 12 - 6);
             for (int t_ = 0; t_ <= 16; t_++)
             {
-                DXDraw.DrawGraph(Res.n切り取り画像_[5, 1], 29 * t_, 13 * 29 - 12);
-                DXDraw.DrawGraph(Res.n切り取り画像_[6, 1], 29 * t_, 14 * 29 - 12);
+                DXDraw.DrawGraph(Res.n切り取り画像[5, 1], 29 * t_, 13 * 29 - 12);
+                DXDraw.DrawGraph(Res.n切り取り画像[6, 1], 29 * t_, 14 * 29 - 12);
             }
 
 

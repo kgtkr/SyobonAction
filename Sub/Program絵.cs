@@ -59,7 +59,7 @@ namespace SyobonAction
 
                     //コイン
                     if (n絵[t_].gtype == 0)
-                        DXDraw.DrawGraph(Res.n切り取り画像_[0, 2], xx_0 / 100, xx_1 / 100);
+                        DXDraw.DrawGraph(Res.n切り取り画像[0, 2], xx_0 / 100, xx_1 / 100);
 
                     //ブロックの破片
                     if (n絵[t_].gtype == 1)
@@ -77,7 +77,7 @@ namespace SyobonAction
                     if (n絵[t_].gtype == 2 || n絵[t_].gtype == 3)
                     {
                         if (n絵[t_].gtype == 3) DXDraw.nミラー = 1;
-                        DXDraw.DrawGraph(Res.n切り取り画像_[0, 5], xx_0 / 100, xx_1 / 100);
+                        DXDraw.DrawGraph(Res.n切り取り画像[0, 5], xx_0 / 100, xx_1 / 100);
                         DXDraw.nミラー = 0;
                     }
 

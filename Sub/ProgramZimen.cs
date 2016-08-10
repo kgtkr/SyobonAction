@@ -326,14 +326,14 @@ namespace SyobonAction
                         {
                             for (int t3 = 0; t3 <= n地面[t_].c / 3000; t3++)
                             {
-                                DXDraw.DrawGraph(Res.n切り取り画像_[1, 1], (n地面[t_].a - fx) / 100 + n全体のポイントa + 29 * t3, (n地面[t_].b - fy) / 100 + n全体のポイントb);
+                                DXDraw.DrawGraph(Res.n切り取り画像[1, 1], (n地面[t_].a - fx) / 100 + n全体のポイントa + 29 * t3, (n地面[t_].b - fy) / 100 + n全体のポイントb);
                             }
                         }
                         if (n地面[t_].xtype == 1 || n地面[t_].xtype == 2)
                         {
                             for (int t3 = 0; t3 <= n地面[t_].c / 3000; t3++)
                             {
-                                DXDraw.DrawGraph(Res.n切り取り画像_[31, 1], (n地面[t_].a - fx) / 100 + n全体のポイントa + 29 * t3, (n地面[t_].b - fy) / 100 + n全体のポイントb);
+                                DXDraw.DrawGraph(Res.n切り取り画像[31, 1], (n地面[t_].a - fx) / 100 + n全体のポイントa + 29 * t3, (n地面[t_].b - fy) / 100 + n全体のポイントb);
                             }
                         }
                         if (n地面[t_].xtype == 3 || n地面[t_].xtype == 4)
@@ -342,7 +342,7 @@ namespace SyobonAction
                             {
                                 for (int t2 = 0; t2 <= n地面[t_].d / 3000; t2++)
                                 {
-                                    DXDraw.DrawGraph(Res.n切り取り画像_[65, 1], (n地面[t_].a - fx) / 100 + n全体のポイントa + 29 * t3, (n地面[t_].b - fy) / 100 + 29 * t2 + n全体のポイントb);
+                                    DXDraw.DrawGraph(Res.n切り取り画像[65, 1], (n地面[t_].a - fx) / 100 + n全体のポイントa + 29 * t3, (n地面[t_].b - fy) / 100 + 29 * t2 + n全体のポイントb);
                                 }
                             }
                         }
@@ -351,7 +351,7 @@ namespace SyobonAction
                         {
                             for (int t3 = 0; t3 <= n地面[t_].c / 3000; t3++)
                             {
-                                DXDraw.DrawGraph(Res.n切り取り画像_[65, 1], (n地面[t_].a - fx) / 100 + n全体のポイントa + 29 * t3, (n地面[t_].b - fy) / 100 + n全体のポイントb);
+                                DXDraw.DrawGraph(Res.n切り取り画像[65, 1], (n地面[t_].a - fx) / 100 + n全体のポイントa + 29 * t3, (n地面[t_].b - fy) / 100 + n全体のポイントb);
                             }
                         }
 
@@ -369,15 +369,15 @@ namespace SyobonAction
                         {
                             if (n地面[t_].xtype == 0)
                             {
-                                DXDraw.DrawGraph(Res.n切り取り画像_[5 + xx_29, 1], (n地面[t_].a - fx) / 100 + n全体のポイントa + 29 * t3, (n地面[t_].b - fy) / 100 + n全体のポイントb);
-                                if (nステージ色 != 4) { DXDraw.DrawGraph(Res.n切り取り画像_[6 + xx_29, 1], (n地面[t_].a - fx) / 100 + n全体のポイントa + 29 * t3, (n地面[t_].b - fy) / 100 + n全体のポイントb + 29); }
-                                else { DXDraw.DrawGraph(Res.n切り取り画像_[5 + xx_29, 1], (n地面[t_].a - fx) / 100 + n全体のポイントa + 29 * t3, (n地面[t_].b - fy) / 100 + n全体のポイントb + 29); }
+                                DXDraw.DrawGraph(Res.n切り取り画像[5 + xx_29, 1], (n地面[t_].a - fx) / 100 + n全体のポイントa + 29 * t3, (n地面[t_].b - fy) / 100 + n全体のポイントb);
+                                if (nステージ色 != 4) { DXDraw.DrawGraph(Res.n切り取り画像[6 + xx_29, 1], (n地面[t_].a - fx) / 100 + n全体のポイントa + 29 * t3, (n地面[t_].b - fy) / 100 + n全体のポイントb + 29); }
+                                else { DXDraw.DrawGraph(Res.n切り取り画像[5 + xx_29, 1], (n地面[t_].a - fx) / 100 + n全体のポイントa + 29 * t3, (n地面[t_].b - fy) / 100 + n全体のポイントb + 29); }
                             }
                             if (n地面[t_].xtype == 1)
                             {
                                 for (int t2 = 0; t2 <= n地面[t_].d / 3000; t2++)
                                 {
-                                    DXDraw.DrawGraph(Res.n切り取り画像_[1 + xx_29, 1], (n地面[t_].a - fx) / 100 + n全体のポイントa + 29 * t3, (n地面[t_].b - fy) / 100 + n全体のポイントb + 29 * t2);
+                                    DXDraw.DrawGraph(Res.n切り取り画像[1 + xx_29, 1], (n地面[t_].a - fx) / 100 + n全体のポイントa + 29 * t3, (n地面[t_].b - fy) / 100 + n全体のポイントb + 29 * t2);
                                 }
                             }
 
@@ -385,7 +385,7 @@ namespace SyobonAction
                             {
                                 for (int t2 = 0; t2 <= n地面[t_].d / 3000; t2++)
                                 {
-                                    DXDraw.DrawGraph(Res.n切り取り画像_[5 + xx_29, 1], (n地面[t_].a - fx) / 100 + n全体のポイントa + 29 * t3, (n地面[t_].b - fy) / 100 + n全体のポイントb + 29 * t2);
+                                    DXDraw.DrawGraph(Res.n切り取り画像[5 + xx_29, 1], (n地面[t_].a - fx) / 100 + n全体のポイントa + 29 * t3, (n地面[t_].b - fy) / 100 + n全体のポイントb + 29 * t2);
                                 }
                             }
 
@@ -420,7 +420,7 @@ namespace SyobonAction
                     //中間
                     if (n地面[t_].type == 500)
                     {
-                        DXDraw.DrawGraph(Res.n切り取り画像_[20, 4], (n地面[t_].a - fx) / 100, (n地面[t_].b - fy) / 100);
+                        DXDraw.DrawGraph(Res.n切り取り画像[20, 4], (n地面[t_].a - fx) / 100, (n地面[t_].b - fy) / 100);
                     }
                 }
             }//t
@@ -463,7 +463,7 @@ namespace SyobonAction
                         {
                             for (int t2 = 0; t2 <= n地面[t_].d / 3000; t2++)
                             {
-                                DXDraw.DrawGraph(Res.n切り取り画像_[65, 1], (n地面[t_].a - fx) / 100 + n全体のポイントa + 29 * t3, (n地面[t_].b - fy) / 100 + 29 * t2 + n全体のポイントb);
+                                DXDraw.DrawGraph(Res.n切り取り画像[65, 1], (n地面[t_].a - fx) / 100 + n全体のポイントa + 29 * t3, (n地面[t_].b - fy) / 100 + 29 * t2 + n全体のポイントb);
                             }
                         }
                     }

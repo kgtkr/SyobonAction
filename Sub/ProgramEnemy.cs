@@ -79,8 +79,8 @@ namespace SyobonAction
 
                         if (n敵出現z[t_] == 0 &&
                             n敵出現tm[t_] < 0 &&
-                            n敵出現a[t_] - fx >= -400 - Res.n敵サイズW_[n敵出現type[t_]] + nプレイヤーc &&
-                            n敵出現a[t_] - fx < -400 - Res.n敵サイズW_[n敵出現type[t_]]
+                            n敵出現a[t_] - fx >= -400 - Res.n敵サイズ[n敵出現type[t_]].w + nプレイヤーc &&
+                            n敵出現a[t_] - fx < -400 - Res.n敵サイズ[n敵出現type[t_]].w
                             && tt_ == 1)
                         {
                             xx_0 = 1; xx_1 = 1;
@@ -88,7 +88,7 @@ namespace SyobonAction
                         }
 
                         if (n敵出現z[t_] == 1 &&
-                            n敵出現a[t_] - fx >= 0 - Res.n敵サイズW_[n敵出現type[t_]] &&
+                            n敵出現a[t_] - fx >= 0 - Res.n敵サイズ[n敵出現type[t_]].w &&
                             n敵出現a[t_] - fx <= n画面幅 + 4000 &&
                             n敵出現b[t_] - fy >= -9000 &&
                             n敵出現b[t_] - fy <= n画面高さ + 4000 &&
@@ -805,8 +805,8 @@ namespace SyobonAction
                 if (xx_0 + xx_2 * 100 >= -10 - xx_14 && xx_1 <= n画面幅 + xx_14 && xx_1 + xx_3 * 100 >= -10 && xx_3 <= n画面高さ)
                 {
                     if (n敵キャラ[t_].muki == 1) { DXDraw.nミラー = 1; }
-                    if (n敵キャラ[t_].type == 3 && n敵キャラ[t_].xtype == 1) { DX.DrawRotaGraph(xx_0 / 100 + 13, xx_1 / 100 + 15, 1.0f, Math.PI / 1, Res.n切り取り画像_[n敵キャラ[t_].type, 3], DX.TRUE); xx_16 = 1; }
-                    if (n敵キャラ[t_].type == 9 && n敵キャラ[t_].d >= 1) { DX.DrawRotaGraph(xx_0 / 100 + 13, xx_1 / 100 + 15, 1.0f, Math.PI / 1, Res.n切り取り画像_[n敵キャラ[t_].type, 3], DX.TRUE); xx_16 = 1; }
+                    if (n敵キャラ[t_].type == 3 && n敵キャラ[t_].xtype == 1) { DX.DrawRotaGraph(xx_0 / 100 + 13, xx_1 / 100 + 15, 1.0f, Math.PI / 1, Res.n切り取り画像[n敵キャラ[t_].type, 3], DX.TRUE); xx_16 = 1; }
+                    if (n敵キャラ[t_].type == 9 && n敵キャラ[t_].d >= 1) { DX.DrawRotaGraph(xx_0 / 100 + 13, xx_1 / 100 + 15, 1.0f, Math.PI / 1, Res.n切り取り画像[n敵キャラ[t_].type, 3], DX.TRUE); xx_16 = 1; }
                     if (n敵キャラ[t_].type >= 100 && n敵キャラ[t_].muki == 1) DXDraw.nミラー = 0;
 
                     //メイン
@@ -814,7 +814,7 @@ namespace SyobonAction
                     {
                         if (!((n敵キャラ[t_].type == 80 || n敵キャラ[t_].type == 81) && n敵キャラ[t_].xtype == 1))
                         {
-                            DXDraw.DrawGraph(Res.n切り取り画像_[n敵キャラ[t_].type, 3], xx_0 / 100, xx_1 / 100);
+                            DXDraw.DrawGraph(Res.n切り取り画像[n敵キャラ[t_].type, 3], xx_0 / 100, xx_1 / 100);
                         }
                     }
 
@@ -824,18 +824,18 @@ namespace SyobonAction
                     {
                         if (n敵キャラ[t_].tm >= 10 && n敵キャラ[t_].tm <= 19 || n敵キャラ[t_].tm >= 100 && n敵キャラ[t_].tm <= 119 || n敵キャラ[t_].tm >= 200)
                         {
-                            DXDraw.DrawGraph(Res.n切り取り画像_[150, 3], xx_0 / 100, xx_1 / 100);
+                            DXDraw.DrawGraph(Res.n切り取り画像[150, 3], xx_0 / 100, xx_1 / 100);
                         }
                         else {
-                            DXDraw.DrawGraph(Res.n切り取り画像_[6, 3], xx_0 / 100, xx_1 / 100);
+                            DXDraw.DrawGraph(Res.n切り取り画像[6, 3], xx_0 / 100, xx_1 / 100);
                         }
                     }
 
                     //モララー
                     if (n敵キャラ[t_].type == 30)
                     {
-                        if (n敵キャラ[t_].xtype == 0) DXDraw.DrawGraph(Res.n切り取り画像_[30, 3], xx_0 / 100, xx_1 / 100);
-                        if (n敵キャラ[t_].xtype == 1) DXDraw.DrawGraph(Res.n切り取り画像_[155, 3], xx_0 / 100, xx_1 / 100);
+                        if (n敵キャラ[t_].xtype == 0) DXDraw.DrawGraph(Res.n切り取り画像[30, 3], xx_0 / 100, xx_1 / 100);
+                        if (n敵キャラ[t_].xtype == 1) DXDraw.DrawGraph(Res.n切り取り画像[155, 3], xx_0 / 100, xx_1 / 100);
                     }
 
 
@@ -843,7 +843,7 @@ namespace SyobonAction
                     //ステルス雲
                     if ((n敵キャラ[t_].type == 81) && n敵キャラ[t_].xtype == 1)
                     {
-                        DXDraw.DrawGraph(Res.n切り取り画像_[130, 3], xx_0 / 100, xx_1 / 100);
+                        DXDraw.DrawGraph(Res.n切り取り画像[130, 3], xx_0 / 100, xx_1 / 100);
                     }
 
                     if (n敵キャラ[t_].type == 79)
@@ -862,7 +862,7 @@ namespace SyobonAction
                             xx_9 = 0; if (nステージ色 == 2) { xx_9 = 30; }
                             if (nステージ色 == 4) { xx_9 = 60; }
                             if (nステージ色 == 5) { xx_9 = 90; }
-                            xx_6 = 5 + xx_9; DXDraw.DrawGraph(Res.n切り取り画像_[xx_6, 1], xx_0 / 100, xx_1 / 100);
+                            xx_6 = 5 + xx_9; DXDraw.DrawGraph(Res.n切り取り画像[xx_6, 1], xx_0 / 100, xx_1 / 100);
                         }
 
                         if (n敵キャラ[t_].xtype == 1)
@@ -870,12 +870,12 @@ namespace SyobonAction
                             xx_9 = 0; if (nステージ色 == 2) { xx_9 = 30; }
                             if (nステージ色 == 4) { xx_9 = 60; }
                             if (nステージ色 == 5) { xx_9 = 90; }
-                            xx_6 = 4 + xx_9; DXDraw.DrawGraph(Res.n切り取り画像_[xx_6, 1], xx_0 / 100, xx_1 / 100);
+                            xx_6 = 4 + xx_9; DXDraw.DrawGraph(Res.n切り取り画像[xx_6, 1], xx_0 / 100, xx_1 / 100);
                         }
 
                         if (n敵キャラ[t_].xtype == 2)
                         {
-                            DXDraw.DrawGraph(Res.n切り取り画像_[1, 5], xx_0 / 100, xx_1 / 100);
+                            DXDraw.DrawGraph(Res.n切り取り画像[1, 5], xx_0 / 100, xx_1 / 100);
                         }
 
                     }
@@ -887,7 +887,7 @@ namespace SyobonAction
                             xx_9 = 0; if (nステージ色 == 2) { xx_9 = 30; }
                             if (nステージ色 == 4) { xx_9 = 60; }
                             if (nステージ色 == 5) { xx_9 = 90; }
-                            xx_6 = 5 + xx_9; DXDraw.DrawGraph(Res.n切り取り画像_[xx_6, 1], xx_0 / 100 + 10, xx_1 / 100 + 9);
+                            xx_6 = 5 + xx_9; DXDraw.DrawGraph(Res.n切り取り画像[xx_6, 1], xx_0 / 100 + 10, xx_1 / 100 + 9);
                         }
 
                         if (n敵キャラ[t_].xtype == 1)
@@ -895,7 +895,7 @@ namespace SyobonAction
                             xx_9 = 0; if (nステージ色 == 2) { xx_9 = 30; }
                             if (nステージ色 == 4) { xx_9 = 60; }
                             if (nステージ色 == 5) { xx_9 = 90; }
-                            xx_6 = 4 + xx_9; DXDraw.DrawGraph(Res.n切り取り画像_[xx_6, 1], xx_0 / 100 + 10, xx_1 / 100 + 9);
+                            xx_6 = 4 + xx_9; DXDraw.DrawGraph(Res.n切り取り画像[xx_6, 1], xx_0 / 100 + 10, xx_1 / 100 + 9);
                         }
 
                     }
@@ -920,15 +920,15 @@ namespace SyobonAction
                     {
                         if (ma >= n敵キャラ[t_].a - fx - nプレイヤーnobia - 4000 && ma <= n敵キャラ[t_].a - fx + n敵キャラ[t_].nobia + 4000)
                         {
-                            DXDraw.DrawGraph(Res.n切り取り画像_[152, 3], xx_0 / 100, xx_1 / 100);
+                            DXDraw.DrawGraph(Res.n切り取り画像[152, 3], xx_0 / 100, xx_1 / 100);
                         }
                         else {
-                            DXDraw.DrawGraph(Res.n切り取り画像_[86, 3], xx_0 / 100, xx_1 / 100);
+                            DXDraw.DrawGraph(Res.n切り取り画像[86, 3], xx_0 / 100, xx_1 / 100);
                         }
                     }
 
                     if (n敵キャラ[t_].type == 200)
-                        DXDraw.DrawGraph(Res.n切り取り画像_[0, 3], xx_0 / 100, xx_1 / 100);
+                        DXDraw.DrawGraph(Res.n切り取り画像[0, 3], xx_0 / 100, xx_1 / 100);
 
                     DXDraw.nミラー = 0;
                 }

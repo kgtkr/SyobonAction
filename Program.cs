@@ -278,7 +278,8 @@ namespace SyobonAction
                     if (n敵キャラ[n敵キャラco].brocktm >= 1) n敵キャラ[n敵キャラco].muki = 1;
                     if (n敵キャラ[n敵キャラco].brocktm == 20) n敵キャラ[n敵キャラco].muki = 0;
 
-                    n敵キャラ[n敵キャラco].nobia = Res.n敵サイズW_[n敵キャラ[n敵キャラco].type]; n敵キャラ[n敵キャラco].nobib = Res.n敵サイズH_[n敵キャラ[n敵キャラco].type];
+                    n敵キャラ[n敵キャラco].nobia = Res.n敵サイズ[n敵キャラ[n敵キャラco].type].w;
+                    n敵キャラ[n敵キャラco].nobib = Res.n敵サイズ[n敵キャラ[n敵キャラco].type].h;
 
 
 
@@ -313,8 +314,8 @@ namespace SyobonAction
                 n背景[t_].b = 1;
                 n背景[t_].c = 1;
                 n背景[t_].d = 1;
-                Res.n背景サイズW_[t_] = 1;
-                Res.n背景サイズH_[t_] = 1;
+                Res.n背景サイズ[t_].w = 1;
+                Res.n背景サイズ[t_].h = 1;
                 n背景[t_].g = 0;
                 n背景[t_].type = 0;
             }
