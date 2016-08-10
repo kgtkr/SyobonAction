@@ -215,9 +215,9 @@ namespace SyobonAction
                             {
                                 for (int tt_ = 0; tt_ < n地面max; tt_++)
                                 {
-                                    if (n地面type[tt_] == 300)
+                                    if (n地面[tt_].type == 300)
                                     {
-                                        if (n敵キャラ[t_].a - fx >= -8000 && n敵キャラ[t_].a >= n地面a[tt_] + 2000 && n敵キャラ[t_].a <= n地面a[tt_] + 3600 && n敵キャラ[t_].xzimen == 1) { n地面a[tt_] = -800000; n敵キャラ[t_].tm = 100; }
+                                        if (n敵キャラ[t_].a - fx >= -8000 && n敵キャラ[t_].a >= n地面[tt_].a + 2000 && n敵キャラ[t_].a <= n地面[tt_].a + 3600 && n敵キャラ[t_].xzimen == 1) { n地面[tt_].a = -800000; n敵キャラ[t_].tm = 100; }
                                     }
                                 }
 
@@ -225,7 +225,7 @@ namespace SyobonAction
                                 {
                                     eyobi(n敵キャラ[t_].a + 1200 - 1200, n敵キャラ[t_].b + 3000 - 10 * 3000 - 1500, 0, 0, 0, 0, 1000, 10 * 3000 - 1200, 4, 20);
                                     if (nプレイヤーtype == 300) { nプレイヤーtype = 0; DX.StopSoundMem(Res.nオーディオ11); bgmChange(Res.nオーディオ100); DX.PlaySoundMem(Res.n現在のBGM, DX.DX_PLAYTYPE_LOOP); }
-                                    for (int t1 = 0; t1 < n地面max; t1++) { if (n地面type[t1] == 104) n地面a[t1] = -80000000; }
+                                    for (int t1 = 0; t1 < n地面max; t1++) { if (n地面[t1].type == 104) n地面[t1].a = -80000000; }
                                 }
                                 if (n敵キャラ[t_].tm == 120) { eyobi(n敵キャラ[t_].a + 1200 - 1200, n敵キャラ[t_].b + 3000 - 10 * 3000 - 1500, 600, -1200, 0, 160, 1000, 10 * 3000 - 1200, 4, 240); n敵キャラ[t_].muki = 1; }
                                 if (n敵キャラ[t_].tm == 140) { n敵キャラ[t_].muki = 0; n敵キャラ[t_].tm = 0; }
@@ -761,7 +761,7 @@ namespace SyobonAction
                             {
                                 if (n敵キャラ[t_].xtype == 0)
                                 {
-                                    v効果音再生(Res.nオーディオ4); n地面gtype[26] = 6;
+                                    v効果音再生(Res.nオーディオ4); n地面[26].gtype = 6;
                                 }
                                 if (n敵キャラ[t_].xtype == 1)
                                 {
