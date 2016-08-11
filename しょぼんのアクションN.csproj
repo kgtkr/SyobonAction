@@ -59,7 +59,7 @@
     <Compile Include="Sub\ProgramBack.cs" />
     <Compile Include="Sub\ProgramBlock.cs" />
     <Compile Include="Sub\ProgramEnemy.cs" />
-    <Compile Include="ProgramRes.cs" />
+    <Compile Include="Res.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgramCore.cs" />
     <Compile Include="ProgramH.cs" />
@@ -67,7 +67,7 @@
     <Compile Include="Sub\ProgramMsgBlock.cs" />
     <Compile Include="Sub\ProgramPlayer.cs" />
     <Compile Include="ProgramStage.cs" />
-    <Compile Include="ProgramStageData.cs" />
+    <Compile Include="MapList.cs" />
     <Compile Include="Sub\ProgramZimen.cs" />
     <Compile Include="Sub\Programスタッフロール.cs" />
     <Compile Include="Sub\Programタイトル.cs" />

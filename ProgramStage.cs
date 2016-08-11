@@ -15,7 +15,7 @@ namespace SyobonAction
             if (nステージa == 1 && nステージb == 1 && nステージc == 0)
             {
 
-                byte[,] stagedatex = stagedatex1;
+                var stagedatex = MapList.stagedatex1;
 
 
                 //追加情報
@@ -138,7 +138,7 @@ namespace SyobonAction
 
                 scrollX = 0 * 100;
 
-                byte[,] stagedatex = stagedatex2;
+                var stagedatex = MapList.stagedatex2;
 
 
 
@@ -180,7 +180,7 @@ namespace SyobonAction
                 nステージ色 = 2;
 
 
-                byte[,] stagedatex = stagedatex3;
+                var stagedatex = MapList.stagedatex3;
 
 
 
@@ -271,7 +271,7 @@ namespace SyobonAction
                 scrollX = 900 * 100;
                 ma = 7500; nプレイヤー.b = 3000 * 9;
 
-                byte[,] stagedatex = stagedatex4;
+                var stagedatex = MapList.stagedatex4;
 
                 int t_ = n地面co; n地面[t_].a = 5 * 29 * 100 + 500; n地面[t_].b = -6000; n地面[t_].c = 3000; n地面[t_].d = 70000; n地面[t_].type = 102; n地面[t_].xtype = 8; n地面co++;
                 //空飛ぶ土管
@@ -305,7 +305,7 @@ namespace SyobonAction
                 scrollX = 3900 * 100;
                 //ma=3000;mb=3000;
 
-                byte[,] stagedatex = stagedatex5;
+                var stagedatex = MapList.stagedatex5;
 
                 nブロックco = 0;
 
@@ -404,7 +404,7 @@ namespace SyobonAction
                 nステージ色 = 2;
 
 
-                byte[,] stagedatex = stagedatex6;
+                var stagedatex = MapList.stagedatex6;
 
 
                 nブロックco = 0;
@@ -437,7 +437,7 @@ namespace SyobonAction
 
                 stagepoint = true;
 
-                byte[,] stagedatex = stagedatex7;
+                var stagedatex = MapList.stagedatex7;
 
                 n地面co = 0;
                 int t_ = n地面co; n地面[t_].a = 14 * 29 * 100 - 5; n地面[t_].b = (11 * 29 - 12) * 100; n地面[t_].c = 6000; n地面[t_].d = 15000 - 200; n地面[t_].type = 50; n地面[t_].xtype = 1; n地面co++;
@@ -469,7 +469,7 @@ namespace SyobonAction
                 nステージ色 = 4;
 
 
-                byte[,] stagedatex = stagedatex8;
+                var stagedatex = MapList.stagedatex8;
 
                 n地面co = 0;//sco=140;
                 int t_ = n地面co; n地面[t_].a = 35 * 29 * 100 - 1500 + 750; n地面[t_].b = (8 * 29 - 12) * 100 - 1500; n地面[t_].c = 1500; n地面[t_].d = 3000; n地面[t_].type = 105; n地面co++;
@@ -600,7 +600,7 @@ namespace SyobonAction
                 nステージ色 = 1;
                 scrollX = 2900 * (113 - 19);
                 //
-                byte[,] stagedatex = stagedatex9;
+                var stagedatex = MapList.stagedatex9;
                 //追加情報
                 nブロックco = 0;
                 //
@@ -723,7 +723,7 @@ namespace SyobonAction
                 nステージ色 = 1;
                 scrollX = 2900 * (19 - 19);
                 //
-                byte[,] stagedatex = stagedatex10;
+                var stagedatex = MapList.stagedatex10;
                 //
                 n地面[n地面co].a = 14 * 29 * 100 + 200;
                 n地面[n地面co].b = -6000;
@@ -774,7 +774,7 @@ namespace SyobonAction
                 ma = 7500; nプレイヤー.b = 9000;
                 scrollX = 2900 * (137 - 19);
                 //
-                byte[,] stagedatex = stagedatex11;
+                var stagedatex = MapList.stagedatex11;
                 //
                 n敵出現co = 0;
                 n敵出現[n敵出現co].a = 32 * 29 * 100 - 1400;
@@ -985,7 +985,7 @@ namespace SyobonAction
                 ma = 7500;
                 nプレイヤー.b = 3000 * 9;
                 //
-                byte[,] stagedatex = stagedatex12;
+                var stagedatex = MapList.stagedatex12;
                 //
                 n敵出現co = 0;
                 n敵出現[n敵出現co].a = 9 * 29 * 100;
@@ -1078,7 +1078,7 @@ namespace SyobonAction
                 nステージ色 = 1;
                 scrollX = 2900 * (126 - 19);
                 //
-                byte[,] stagedatex = stagedatex13;
+                var stagedatex = MapList.stagedatex13;
                 //
                 nブロックco = 0;
                 nブロック[nブロックco].xtype = 0;
@@ -1199,7 +1199,7 @@ namespace SyobonAction
                 nステージ色 = 4;
                 scrollX = 2900 * (40 - 19);
                 //
-                byte[,] stagedatex = stagedatex14;
+                var stagedatex = MapList.stagedatex14;
                 //
                 nブロックco = 0;
                 nブロック[nブロックco].xtype = 0;
@@ -1283,7 +1283,7 @@ namespace SyobonAction
                 nステージ色 = 4;
                 scrollX = 2900 * (21 - 19);
                 //
-                byte[,] stagedatex = stagedatex15;
+                var stagedatex = MapList.stagedatex15;
                 //
                 nブロックco = 0;
                 nブロック[nブロックco].xtype = 1;
@@ -1352,7 +1352,7 @@ namespace SyobonAction
                 nステージ色 = 4;
                 scrollX = 2900 * (128 - 19);
                 //
-                byte[,] stagedatex = stagedatex16;
+                var stagedatex = MapList.stagedatex16;
                 //
                 nブロックco = 0;
                 nブロック[nブロックco].xtype = 0;
@@ -1591,7 +1591,7 @@ namespace SyobonAction
                 bgmChange(Res.nオーディオ100);
                 nステージ色 = 5;
                 scrollX = 2900 * (112 - 19);
-                byte[,] stagedatex = stagedatex17;
+                var stagedatex = MapList.stagedatex17;
                 //追加情報
                 nブロックco = 0;
                 //
