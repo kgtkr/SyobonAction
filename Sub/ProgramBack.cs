@@ -16,8 +16,7 @@ namespace SyobonAction
             c,
             d,
             type;
-            public int g,
-                x;
+            public int g;
         }
 
         //背景

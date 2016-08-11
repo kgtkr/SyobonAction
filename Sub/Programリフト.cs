@@ -18,7 +18,6 @@ namespace SyobonAction
             e,
             f;
             public int type,
-                gtype,
                 acttype,
                 sp;
             public int muki,

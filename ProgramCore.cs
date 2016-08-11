@@ -164,11 +164,11 @@ namespace SyobonAction
                         {
                             if (DX.GetRand(2) <= 1)
                             {
-                                n敵出現a[t_] = (DX.GetRand(500) - 1) * 29 * 100;
-                                n敵出現b[t_] = DX.GetRand(15) * 100 * 29 - 1200 - 3000;
+                                n敵出現[t_].a = (DX.GetRand(500) - 1) * 29 * 100;
+                                n敵出現[t_].b = DX.GetRand(15) * 100 * 29 - 1200 - 3000;
                                 if (DX.GetRand(6) == 0)
                                 {
-                                    n敵出現type[t_] = DX.GetRand(9);
+                                    n敵出現[t_].type = DX.GetRand(9);
                                 }
                             }
                         }

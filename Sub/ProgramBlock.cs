@@ -374,7 +374,7 @@ namespace SyobonAction
                                 if (nブロック[t_].xtype == 1)
                                 {
                                     for (t_ = 0; t_ < n敵キャラmax; t_++) { if (n敵キャラ[t_].type == 87 || n敵キャラ[t_].type == 88) { if (n敵キャラ[t_].xtype == 105) { n敵キャラ[t_].xtype = 110; } } }
-                                    n敵出現xtype[3] = 105;
+                                    n敵出現[3].xtype = 105;
                                 }
                             }
                         }

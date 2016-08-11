@@ -26,8 +26,7 @@ namespace SyobonAction
                 xzimen;
             public int type,
                 xtype,
-                muki,
-                hp;
+                muki;
             public int notm;
             public int tm,
                 _2tm;
@@ -40,27 +39,33 @@ namespace SyobonAction
         static int n敵キャラco;
         static C敵キャラ[] n敵キャラ = new C敵キャラ[n敵キャラmax];
 
+
+        struct C敵出現
+        {
+            public int a,
+            b,
+            tm;
+            public int type,
+                xtype,
+                z;
+        }
+
         //敵出現
         const int n敵出現max = 81;
         static int n敵出現co;
-        static int[] n敵出現a = new int[n敵出現max],
-            n敵出現b = new int[n敵出現max],
-            n敵出現tm = new int[n敵出現max];
-        static int[] n敵出現type = new int[n敵出現max],
-            n敵出現xtype = new int[n敵出現max],
-            n敵出現z = new int[n敵出現max];
+        static C敵出現[] n敵出現 = new C敵出現[n敵出現max];
 
         static void UpdateEnemy()
         {
             //敵キャラの配置
             for (int t_ = 0; t_ < n敵出現max; t_++)
             {
-                if (n敵出現a[t_] >= -80000)
+                if (n敵出現[t_].a >= -80000)
                 {
 
-                    if (n敵出現tm[t_] >= 0)
+                    if (n敵出現[t_].tm >= 0)
                     {
-                        n敵出現tm[t_] = n敵出現tm[t_] - 1;
+                        n敵出現[t_].tm = n敵出現[t_].tm - 1;
                     }
 
                     for (int tt_ = 0; tt_ <= 1; tt_++)
@@ -68,44 +73,44 @@ namespace SyobonAction
                         xx_0 = 0; xx_1 = 0;
 
 
-                        if (n敵出現z[t_] == 0 && n敵出現tm[t_] < 0 &&
-                            n敵出現a[t_] - fx >= n画面幅 + 2000 &&
-                            n敵出現a[t_] - fx < n画面幅 + 2000 + nプレイヤーc &&
+                        if (n敵出現[t_].z == 0 && n敵出現[t_].tm < 0 &&
+                            n敵出現[t_].a - fx >= n画面幅 + 2000 &&
+                            n敵出現[t_].a - fx < n画面幅 + 2000 + nプレイヤーc &&
                             tt_ == 0)
                         {
                             xx_0 = 1;
                             n敵キャラ[n敵キャラco].muki = 0;
                         }
 
-                        if (n敵出現z[t_] == 0 &&
-                            n敵出現tm[t_] < 0 &&
-                            n敵出現a[t_] - fx >= -400 - Res.n敵サイズ[n敵出現type[t_]].w + nプレイヤーc &&
-                            n敵出現a[t_] - fx < -400 - Res.n敵サイズ[n敵出現type[t_]].w
+                        if (n敵出現[t_].z == 0 &&
+                            n敵出現[t_].tm < 0 &&
+                            n敵出現[t_].a - fx >= -400 - Res.n敵サイズ[n敵出現[t_].type].w + nプレイヤーc &&
+                            n敵出現[t_].a - fx < -400 - Res.n敵サイズ[n敵出現[t_].type].w
                             && tt_ == 1)
                         {
                             xx_0 = 1; xx_1 = 1;
                             n敵キャラ[n敵キャラco].muki = 1;
                         }
 
-                        if (n敵出現z[t_] == 1 &&
-                            n敵出現a[t_] - fx >= 0 - Res.n敵サイズ[n敵出現type[t_]].w &&
-                            n敵出現a[t_] - fx <= n画面幅 + 4000 &&
-                            n敵出現b[t_] - fy >= -9000 &&
-                            n敵出現b[t_] - fy <= n画面高さ + 4000 &&
-                            n敵出現tm[t_] < 0)
+                        if (n敵出現[t_].z == 1 &&
+                            n敵出現[t_].a - fx >= 0 - Res.n敵サイズ[n敵出現[t_].type].w &&
+                            n敵出現[t_].a - fx <= n画面幅 + 4000 &&
+                            n敵出現[t_].b - fy >= -9000 &&
+                            n敵出現[t_].b - fy <= n画面高さ + 4000 &&
+                            n敵出現[t_].tm < 0)
                         {
-                            xx_0 = 1; n敵出現z[t_] = 0;
+                            xx_0 = 1; n敵出現[t_].z = 0;
                         }
                         if (xx_0 == 1)
                         {//400
-                            n敵出現tm[t_] = 401; xx_0 = 0;
-                            if (n敵出現type[t_] >= 10)
+                            n敵出現[t_].tm = 401; xx_0 = 0;
+                            if (n敵出現[t_].type >= 10)
                             {
-                                n敵出現tm[t_] = 9999999;
+                                n敵出現[t_].tm = 9999999;
                             }
 
                             //10
-                            ayobi(n敵出現a[t_], n敵出現b[t_], 0, 0, 0, n敵出現type[t_], n敵出現xtype[t_]);
+                            ayobi(n敵出現[t_].a, n敵出現[t_].b, 0, 0, 0, n敵出現[t_].type, n敵出現[t_].xtype);
                         }
 
                     }//tt
