@@ -44,9 +44,9 @@ namespace SyobonAction
                 if (xx_8 + xx_12 >= -10 - 12000 && xx_8 <= n画面幅 + 12100)
                 {
                     xx_0 = 500; xx_1 = 1200; xx_2 = 1000; xx_7 = 2000;
-                    if (nプレイヤーd >= 100) { xx_1 = 900 + nプレイヤーd; }
+                    if (nプレイヤー.d >= 100) { xx_1 = 900 + nプレイヤー.d; }
 
-                    if (nプレイヤーd > xx_1) xx_1 = nプレイヤーd + 100;
+                    if (nプレイヤー.d > xx_1) xx_1 = nプレイヤー.d + 100;
 
                     nリフト[t_].b += nリフト[t_].e;
                     nリフト[t_].e += nリフト[t_].f;
@@ -80,19 +80,19 @@ namespace SyobonAction
                     }//sw
 
                     //乗ったとき
-                    if (ma + nプレイヤーnobia > xx_8 + xx_0 && ma < xx_8 + xx_12 - xx_0 && nプレイヤーb + nプレイヤーnobib > xx_9 && nプレイヤーb + nプレイヤーnobib < xx_9 + xx_1 && nプレイヤーd >= -100)
+                    if (ma + nプレイヤー.nobia > xx_8 + xx_0 && ma < xx_8 + xx_12 - xx_0 && nプレイヤー.b + nプレイヤー.nobib > xx_9 && nプレイヤー.b + nプレイヤー.nobib < xx_9 + xx_1 && nプレイヤー.d >= -100)
                     {
-                        nプレイヤーb = xx_9 - nプレイヤーnobib + 100;
+                        nプレイヤー.b = xx_9 - nプレイヤー.nobib + 100;
 
                         if (nリフト[t_].type == 1) { nリフト[10].e = 900; nリフト[11].e = 900; }
 
                         if (nリフト[t_].sp != 12)
                         {
-                            nプレイヤーzimen = 1; nプレイヤーd = 0;
+                            nプレイヤー.zimen = 1; nプレイヤー.d = 0;
                         }
                         else {
                             //すべり
-                            nプレイヤーd = -800;
+                            nプレイヤー.d = -800;
                         }
 
 
@@ -102,13 +102,13 @@ namespace SyobonAction
 
                         if (nリフト[t_].acttype == 1 && nリフト[t_].on == 1 || nリフト[t_].acttype == 3 || nリフト[t_].acttype == 5)
                         {
-                            nプレイヤーb += nリフト[t_].e;
+                            nプレイヤー.b += nリフト[t_].e;
                         }
 
                         if (nリフト[t_].acttype == 7)
                         {
-                            if (nプレイヤーactaon[2] != 1) { nプレイヤーd = -600; nプレイヤーb -= 810; }
-                            if (nプレイヤーactaon[2] == 1) { nプレイヤーb -= 400; nプレイヤーd = -1400; nプレイヤーjumptm = 10; }
+                            if (nプレイヤー.actaon[2] != 1) { nプレイヤー.d = -600; nプレイヤー.b -= 810; }
+                            if (nプレイヤー.actaon[2] == 1) { nプレイヤー.b -= 400; nプレイヤー.d = -1400; nプレイヤー.jumptm = 10; }
                         }
 
 
@@ -123,37 +123,37 @@ namespace SyobonAction
 
                         if (nリフト[t_].sp == 2)
                         {
-                            nプレイヤーc = -2400; nリフト[t_].move += 1;
-                            if (nリフト[t_].move >= 100) { nプレイヤーhp = 0; nメッセージtype = 53; nメッセージtm = 30; nリフト[t_].move = -5000; }
+                            nプレイヤー.c = -2400; nリフト[t_].move += 1;
+                            if (nリフト[t_].move >= 100) { nプレイヤー.hp = 0; nメッセージtype = 53; nメッセージtm = 30; nリフト[t_].move = -5000; }
                         }
 
                         if (nリフト[t_].sp == 3)
                         {
-                            nプレイヤーc = 2400; nリフト[t_].move += 1;
-                            if (nリフト[t_].move >= 100) { nプレイヤーhp = 0; nメッセージtype = 53; nメッセージtm = 30; nリフト[t_].move = -5000; }
+                            nプレイヤー.c = 2400; nリフト[t_].move += 1;
+                            if (nリフト[t_].move >= 100) { nプレイヤー.hp = 0; nメッセージtype = 53; nメッセージtm = 30; nリフト[t_].move = -5000; }
                         }
                     }//判定内
 
 
                     //疲れ初期化
-                    if ((nリフト[t_].sp == 2 || nリフト[t_].sp == 3) && nプレイヤーc != -2400 && nリフト[t_].move > 0) { nリフト[t_].move--; }
+                    if ((nリフト[t_].sp == 2 || nリフト[t_].sp == 3) && nプレイヤー.c != -2400 && nリフト[t_].move > 0) { nリフト[t_].move--; }
 
                     if (nリフト[t_].sp == 11)
                     {
-                        if (ma + nプレイヤーnobia > xx_8 + xx_0 - 2000 && ma < xx_8 + xx_12 - xx_0) { nリフト[t_].on = 1; }// && mb+mnobib>xx_9-1000 && mb+mnobib<xx_9+xx_1+2000)
+                        if (ma + nプレイヤー.nobia > xx_8 + xx_0 - 2000 && ma < xx_8 + xx_12 - xx_0) { nリフト[t_].on = 1; }// && mb+mnobib>xx_9-1000 && mb+mnobib<xx_9+xx_1+2000)
                         if (nリフト[t_].on == 1) { nリフト[t_].f = 60; nリフト[t_].b += nリフト[t_].e; }
                     }
 
 
                     //トゲ(下)
-                    if (ma + nプレイヤーnobia > xx_8 + xx_0 && ma < xx_8 + xx_12 - xx_0 && nプレイヤーb > xx_9 - xx_1 / 2 && nプレイヤーb < xx_9 + xx_1 / 2)
+                    if (ma + nプレイヤー.nobia > xx_8 + xx_0 && ma < xx_8 + xx_12 - xx_0 && nプレイヤー.b > xx_9 - xx_1 / 2 && nプレイヤー.b < xx_9 + xx_1 / 2)
                     {
-                        if (nリフト[t_].type == 2) { if (nプレイヤーd < 0) { nプレイヤーd = -nプレイヤーd; } nプレイヤーb += 110; if (nプレイヤーmutekitm <= 0) nプレイヤーhp -= 1; nプレイヤーmutekitm = 40; }
+                        if (nリフト[t_].type == 2) { if (nプレイヤー.d < 0) { nプレイヤー.d = -nプレイヤー.d; } nプレイヤー.b += 110; if (nプレイヤー.mutekitm <= 0) nプレイヤー.hp -= 1; nプレイヤー.mutekitm = 40; }
                     }
                     //落下
                     if (nリフト[t_].acttype == 6)
                     {
-                        if (ma + nプレイヤーnobia > xx_8 + xx_0 && ma < xx_8 + xx_12 - xx_0) { nリフト[t_].on = 1; }
+                        if (ma + nプレイヤー.nobia > xx_8 + xx_0 && ma < xx_8 + xx_12 - xx_0) { nリフト[t_].on = 1; }
                     }
 
                     if (nリフト[t_].acttype == 2 || nリフト[t_].acttype == 4)

@@ -270,11 +270,11 @@ namespace SyobonAction
                     n敵キャラ[n敵キャラco].d = xd;
                     if (xxtype > 100) n敵キャラ[n敵キャラco].c = xxtype;
                     n敵キャラ[n敵キャラco].type = xtype;
-                    if (xxtype >= 0 && xxtype <= 99100) n敵キャラ[n敵キャラco].xtype = xxtype;//ahp[aco]=iz[bxtype[t]];aytm[aco]=0;
-                                                                             //if (xxtype==1)end();
+                    if (xxtype >= 0 && xxtype <= 99100) n敵キャラ[n敵キャラco].xtype = xxtype;
+
                     n敵キャラ[n敵キャラco].notm = xnotm;
-                    if (n敵キャラ[n敵キャラco].a - fx <= ma + nプレイヤーnobia / 2) n敵キャラ[n敵キャラco].muki = 1;
-                    if (n敵キャラ[n敵キャラco].a - fx > ma + nプレイヤーnobia / 2) n敵キャラ[n敵キャラco].muki = 0;
+                    if (n敵キャラ[n敵キャラco].a - fx <= ma + nプレイヤー.nobia / 2) n敵キャラ[n敵キャラco].muki = 1;
+                    if (n敵キャラ[n敵キャラco].a - fx > ma + nプレイヤー.nobia / 2) n敵キャラ[n敵キャラco].muki = 0;
                     if (n敵キャラ[n敵キャラco].brocktm >= 1) n敵キャラ[n敵キャラco].muki = 1;
                     if (n敵キャラ[n敵キャラco].brocktm == 20) n敵キャラ[n敵キャラco].muki = 0;
 
@@ -373,7 +373,7 @@ namespace SyobonAction
                     {
                         fx = n地面[t_].a - n画面幅 / 2; fzx = fx;
                         ma = n地面[t_].a - fx;
-                        nプレイヤーb = n地面[t_].b - fy;
+                        nプレイヤー.b = n地面[t_].b - fy;
                         n中間フラグ--; xx_17++;
 
                         n地面[t_].a = -80000000;

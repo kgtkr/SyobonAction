@@ -33,10 +33,10 @@ namespace SyobonAction
                 if (nメッセージtype == 55) xs_0 = "溶岩と合体したい……";
 
                 DXDraw.SetColorBlack();
-                DXDraw.DrawString(xs_0, (ma + nプレイヤーnobia + 300) / 100 - 1, nプレイヤーb / 100 - 1);
-                DXDraw.DrawString(xs_0, (ma + nプレイヤーnobia + 300) / 100 + 1, nプレイヤーb / 100 + 1);
+                DXDraw.DrawString(xs_0, (ma + nプレイヤー.nobia + 300) / 100 - 1, nプレイヤー.b / 100 - 1);
+                DXDraw.DrawString(xs_0, (ma + nプレイヤー.nobia + 300) / 100 + 1, nプレイヤー.b / 100 + 1);
                 DXDraw.SetColorWhite();
-                DXDraw.DrawString(xs_0, (ma + nプレイヤーnobia + 300) / 100, nプレイヤーb / 100);
+                DXDraw.DrawString(xs_0, (ma + nプレイヤー.nobia + 300) / 100, nプレイヤー.b / 100);
 
             }//mmsgtm
 

@@ -36,20 +36,20 @@ namespace SyobonAction
                     xx_0 = 200; xx_1 = 2400; xx_2 = 1000; xx_7 = 0;
 
                     xx_8 = n地面[t_].a - fx; xx_9 = n地面[t_].b - fy;
-                    if ((n地面[t_].type <= 99 || n地面[t_].type == 200) && nプレイヤーtype < 10)
+                    if ((n地面[t_].type <= 99 || n地面[t_].type == 200) && nプレイヤー.type < 10)
                     {
 
                         //おちるブロック
                         if (n地面[t_].type == 51)
                         {
-                            if (ma + nプレイヤーnobia > xx_8 + xx_0 + 3000 && ma < xx_8 + n地面[t_].c - xx_0 && nプレイヤーb + nプレイヤーnobib > xx_9 + 3000 && n地面[t_].gtype == 0)
+                            if (ma + nプレイヤー.nobia > xx_8 + xx_0 + 3000 && ma < xx_8 + n地面[t_].c - xx_0 && nプレイヤー.b + nプレイヤー.nobib > xx_9 + 3000 && n地面[t_].gtype == 0)
                             {
                                 if (n地面[t_].xtype == 0)
                                 {
                                     n地面[t_].gtype = 1; n地面[t_].r = 0;
                                 }
                             }
-                            if (ma + nプレイヤーnobia > xx_8 + xx_0 + 1000 && ma < xx_8 + n地面[t_].c - xx_0 && nプレイヤーb + nプレイヤーnobib > xx_9 + 3000 && n地面[t_].gtype == 0)
+                            if (ma + nプレイヤー.nobia > xx_8 + xx_0 + 1000 && ma < xx_8 + n地面[t_].c - xx_0 && nプレイヤー.b + nプレイヤー.nobib > xx_9 + 3000 && n地面[t_].gtype == 0)
                             {
                                 if ((n地面[t_].xtype == 10) && n地面[t_].gtype == 0)
                                 {
@@ -57,15 +57,15 @@ namespace SyobonAction
                                 }
                             }
 
-                            if ((n地面[t_].xtype == 1) && n地面[27].b >= 25000 && n地面[27].a > ma + nプレイヤーnobia && t_ != 27 && n地面[t_].gtype == 0)
+                            if ((n地面[t_].xtype == 1) && n地面[27].b >= 25000 && n地面[27].a > ma + nプレイヤー.nobia && t_ != 27 && n地面[t_].gtype == 0)
                             {
                                 n地面[t_].gtype = 1; n地面[t_].r = 0;
                             }
-                            if (n地面[t_].xtype == 2 && n地面[28].b >= 48000 && t_ != 28 && n地面[t_].gtype == 0 && nプレイヤーhp >= 1)
+                            if (n地面[t_].xtype == 2 && n地面[28].b >= 48000 && t_ != 28 && n地面[t_].gtype == 0 && nプレイヤー.hp >= 1)
                             {
                                 n地面[t_].gtype = 1; n地面[t_].r = 0;
                             }
-                            if ((n地面[t_].xtype == 3 && nプレイヤーb >= 30000 || n地面[t_].xtype == 4 && nプレイヤーb >= 25000) && n地面[t_].gtype == 0 && nプレイヤーhp >= 1 && ma + nプレイヤーnobia > xx_8 + xx_0 + 3000 - 300 && ma < xx_8 + n地面[t_].c - xx_0)
+                            if ((n地面[t_].xtype == 3 && nプレイヤー.b >= 30000 || n地面[t_].xtype == 4 && nプレイヤー.b >= 25000) && n地面[t_].gtype == 0 && nプレイヤー.hp >= 1 && ma + nプレイヤー.nobia > xx_8 + xx_0 + 3000 - 300 && ma < xx_8 + n地面[t_].c - xx_0)
                             {
                                 n地面[t_].gtype = 1; n地面[t_].r = 0;
                                 if (n地面[t_].xtype == 4) n地面[t_].r = 100;
@@ -75,9 +75,9 @@ namespace SyobonAction
                             {
                                 n地面[t_].r += 120; if (n地面[t_].r >= 1600) { n地面[t_].r = 1600; }
                                 n地面[t_].b += n地面[t_].r;
-                                if (ma + nプレイヤーnobia > xx_8 + xx_0 && ma < xx_8 + n地面[t_].c - xx_0 && nプレイヤーb + nプレイヤーnobib > xx_9 && nプレイヤーb < xx_9 + n地面[t_].d + xx_0)
+                                if (ma + nプレイヤー.nobia > xx_8 + xx_0 && ma < xx_8 + n地面[t_].c - xx_0 && nプレイヤー.b + nプレイヤー.nobib > xx_9 && nプレイヤー.b < xx_9 + n地面[t_].d + xx_0)
                                 {
-                                    nプレイヤーhp--; xx_7 = 1;
+                                    nプレイヤー.hp--; xx_7 = 1;
                                 }
                             }
                         }
@@ -85,7 +85,7 @@ namespace SyobonAction
                         //おちるブロック2
                         if (n地面[t_].type == 52)
                         {
-                            if (n地面[t_].gtype == 0 && ma + nプレイヤーnobia > xx_8 + xx_0 + 2000 && ma < xx_8 + n地面[t_].c - xx_0 - 2500 && nプレイヤーb + nプレイヤーnobib > xx_9 - 3000)
+                            if (n地面[t_].gtype == 0 && ma + nプレイヤー.nobia > xx_8 + xx_0 + 2000 && ma < xx_8 + n地面[t_].c - xx_0 - 2500 && nプレイヤー.b + nプレイヤー.nobib > xx_9 - 3000)
                             {
                                 n地面[t_].gtype = 1; n地面[t_].r = 0;
                             }
@@ -101,43 +101,43 @@ namespace SyobonAction
                         //通常地面
                         if (xx_7 == 0)
                         {
-                            if (ma + nプレイヤーnobia > xx_8 + xx_0 && ma < xx_8 + n地面[t_].c - xx_0 && nプレイヤーb + nプレイヤーnobib > xx_9 && nプレイヤーb + nプレイヤーnobib < xx_9 + xx_1 && nプレイヤーd >= -100) { nプレイヤーb = n地面[t_].b - fy - nプレイヤーnobib + 100; nプレイヤーd = 0; nプレイヤーzimen = 1; }
-                            if (ma + nプレイヤーnobia > xx_8 - xx_0 && ma < xx_8 + xx_2 && nプレイヤーb + nプレイヤーnobib > xx_9 + xx_1 * 3 / 4 && nプレイヤーb < xx_9 + n地面[t_].d - xx_2) { ma = xx_8 - xx_0 - nプレイヤーnobia; nプレイヤーc = 0; }
-                            if (ma + nプレイヤーnobia > xx_8 + n地面[t_].c - xx_0 && ma < xx_8 + n地面[t_].c + xx_0 && nプレイヤーb + nプレイヤーnobib > xx_9 + xx_1 * 3 / 4 && nプレイヤーb < xx_9 + n地面[t_].d - xx_2) { ma = xx_8 + n地面[t_].c + xx_0; nプレイヤーc = 0; }
-                            if (ma + nプレイヤーnobia > xx_8 + xx_0 * 2 && ma < xx_8 + n地面[t_].c - xx_0 * 2 && nプレイヤーb > xx_9 + n地面[t_].d - xx_1 && nプレイヤーb < xx_9 + n地面[t_].d + xx_0)
+                            if (ma + nプレイヤー.nobia > xx_8 + xx_0 && ma < xx_8 + n地面[t_].c - xx_0 && nプレイヤー.b + nプレイヤー.nobib > xx_9 && nプレイヤー.b + nプレイヤー.nobib < xx_9 + xx_1 && nプレイヤー.d >= -100) { nプレイヤー.b = n地面[t_].b - fy - nプレイヤー.nobib + 100; nプレイヤー.d = 0; nプレイヤー.zimen = 1; }
+                            if (ma + nプレイヤー.nobia > xx_8 - xx_0 && ma < xx_8 + xx_2 && nプレイヤー.b + nプレイヤー.nobib > xx_9 + xx_1 * 3 / 4 && nプレイヤー.b < xx_9 + n地面[t_].d - xx_2) { ma = xx_8 - xx_0 - nプレイヤー.nobia; nプレイヤー.c = 0; }
+                            if (ma + nプレイヤー.nobia > xx_8 + n地面[t_].c - xx_0 && ma < xx_8 + n地面[t_].c + xx_0 && nプレイヤー.b + nプレイヤー.nobib > xx_9 + xx_1 * 3 / 4 && nプレイヤー.b < xx_9 + n地面[t_].d - xx_2) { ma = xx_8 + n地面[t_].c + xx_0; nプレイヤー.c = 0; }
+                            if (ma + nプレイヤー.nobia > xx_8 + xx_0 * 2 && ma < xx_8 + n地面[t_].c - xx_0 * 2 && nプレイヤー.b > xx_9 + n地面[t_].d - xx_1 && nプレイヤー.b < xx_9 + n地面[t_].d + xx_0)
                             {
-                                nプレイヤーb = xx_9 + n地面[t_].d + xx_0; if (nプレイヤーd < 0) { nプレイヤーd = -nプレイヤーd * 2 / 3; }
+                                nプレイヤー.b = xx_9 + n地面[t_].d + xx_0; if (nプレイヤー.d < 0) { nプレイヤー.d = -nプレイヤー.d * 2 / 3; }
                             }
                         }//xx_7
 
                         //入る土管
                         if (n地面[t_].type == 50)
                         {
-                            if (ma + nプレイヤーnobia > xx_8 + 2800 && ma < xx_8 + n地面[t_].c - 3000 && nプレイヤーb + nプレイヤーnobib > xx_9 - 1000 && nプレイヤーb + nプレイヤーnobib < xx_9 + xx_1 + 3000 && nプレイヤーzimen == 1 && nプレイヤーactaon[3] == 1 && nプレイヤーtype == 0)
+                            if (ma + nプレイヤー.nobia > xx_8 + 2800 && ma < xx_8 + n地面[t_].c - 3000 && nプレイヤー.b + nプレイヤー.nobib > xx_9 - 1000 && nプレイヤー.b + nプレイヤー.nobib < xx_9 + xx_1 + 3000 && nプレイヤー.zimen == 1 && nプレイヤー.actaon[3] == 1 && nプレイヤー.type == 0)
                             {
                                 //飛び出し
                                 if (n地面[t_].xtype == 0)
                                 {
-                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ7); nプレイヤーxtype = 0;
+                                    nプレイヤー.type = 100; nプレイヤー.tm = 0; v効果音再生(Res.nオーディオ7); nプレイヤー.xtype = 0;
                                 }
                                 //普通
                                 if (n地面[t_].xtype == 1)
                                 {
-                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ7); nプレイヤーxtype = 1;
+                                    nプレイヤー.type = 100; nプレイヤー.tm = 0; v効果音再生(Res.nオーディオ7); nプレイヤー.xtype = 1;
                                 }
                                 //普通
                                 if (n地面[t_].xtype == 2)
                                 {
-                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ7); nプレイヤーxtype = 2;
+                                    nプレイヤー.type = 100; nプレイヤー.tm = 0; v効果音再生(Res.nオーディオ7); nプレイヤー.xtype = 2;
                                 }
                                 if (n地面[t_].xtype == 5)
                                 {
-                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ7); nプレイヤーxtype = 5;
+                                    nプレイヤー.type = 100; nプレイヤー.tm = 0; v効果音再生(Res.nオーディオ7); nプレイヤー.xtype = 5;
                                 }
                                 // ループ
                                 if (n地面[t_].xtype == 6)
                                 {
-                                    nプレイヤーtype = 100; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ7); nプレイヤーxtype = 6;
+                                    nプレイヤー.type = 100; nプレイヤー.tm = 0; v効果音再生(Res.nオーディオ7); nプレイヤー.xtype = 6;
                                 }
                             }
                         }//50
@@ -145,25 +145,25 @@ namespace SyobonAction
                         //入る土管(左から)
                         if (n地面[t_].type == 40)
                         {
-                            if (ma + nプレイヤーnobia > xx_8 - 300 && ma < xx_8 + n地面[t_].c - 1000 && nプレイヤーb > xx_9 + 1000 && nプレイヤーb + nプレイヤーnobib < xx_9 + xx_1 + 4000 && nプレイヤーzimen == 1 && nプレイヤーactaon[4] == 1 && nプレイヤーtype == 0)
+                            if (ma + nプレイヤー.nobia > xx_8 - 300 && ma < xx_8 + n地面[t_].c - 1000 && nプレイヤー.b > xx_9 + 1000 && nプレイヤー.b + nプレイヤー.nobib < xx_9 + xx_1 + 4000 && nプレイヤー.zimen == 1 && nプレイヤー.actaon[4] == 1 && nプレイヤー.type == 0)
                             {//end();
                              //飛び出し
                                 if (n地面[t_].xtype == 0)
                                 {
-                                    nプレイヤーtype = 500; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ7);//mxtype=1;
-                                    nプレイヤーtype = 100; nプレイヤーxtype = 10;
+                                    nプレイヤー.type = 500; nプレイヤー.tm = 0; v効果音再生(Res.nオーディオ7);//mxtype=1;
+                                    nプレイヤー.type = 100; nプレイヤー.xtype = 10;
                                 }
 
                                 if (n地面[t_].xtype == 2)
                                 {
-                                    nプレイヤーxtype = 3;
-                                    nプレイヤーtm = 0; v効果音再生(Res.nオーディオ7);//mxtype=1;
-                                    nプレイヤーtype = 100;
+                                    nプレイヤー.xtype = 3;
+                                    nプレイヤー.tm = 0; v効果音再生(Res.nオーディオ7);//mxtype=1;
+                                    nプレイヤー.type = 100;
                                 }
                                 // ループ
                                 if (n地面[t_].xtype == 6)
                                 {
-                                    nプレイヤーtype = 3; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ7); nプレイヤーxtype = 6;
+                                    nプレイヤー.type = 3; nプレイヤー.tm = 0; v効果音再生(Res.nオーディオ7); nプレイヤー.xtype = 6;
                                 }
                             }
                         }//40
@@ -173,7 +173,7 @@ namespace SyobonAction
 
                     }//stype
                     else {
-                        if (ma + nプレイヤーnobia > xx_8 + xx_0 && ma < xx_8 + n地面[t_].c - xx_0 && nプレイヤーb + nプレイヤーnobib > xx_9 && nプレイヤーb < xx_9 + n地面[t_].d + xx_0)
+                        if (ma + nプレイヤー.nobia > xx_8 + xx_0 && ma < xx_8 + n地面[t_].c - xx_0 && nプレイヤー.b + nプレイヤー.nobib > xx_9 && nプレイヤー.b < xx_9 + n地面[t_].d + xx_0)
                         {
                             if (n地面[t_].type == 100)
                             {
@@ -189,12 +189,12 @@ namespace SyobonAction
                                 {
                                     for (int t3 = 0; t3 <= 3; t3++) { ayobi(n地面[t_].a + t3 * 3000, -3000, 0, 0, 0, 0, 0); }
                                 }
-                                if (n地面[t_].xtype == 1 && nプレイヤーb >= 16000) { ayobi(n地面[t_].a + 1500, 44000, 0, -2000, 0, 4, 0); }
+                                if (n地面[t_].xtype == 1 && nプレイヤー.b >= 16000) { ayobi(n地面[t_].a + 1500, 44000, 0, -2000, 0, 4, 0); }
                                 else if (n地面[t_].xtype == 2) { ayobi(n地面[t_].a + 4500, 30000, 0, -1600, 0, 5, 0); v効果音再生(Res.nオーディオ10); n地面[t_].xtype = 3; n地面[t_].a -= 12000; }
                                 else if (n地面[t_].xtype == 3) { n地面[t_].a += 12000; n地面[t_].xtype = 4; }
                                 else if (n地面[t_].xtype == 4) { ayobi(n地面[t_].a + 4500, 30000, 0, -1600, 0, 5, 0); v効果音再生(Res.nオーディオ10); n地面[t_].xtype = 5; n地面[t_].xtype = 0; }
 
-                                else if (n地面[t_].xtype == 7) { nプレイヤーainmsgtype = 1; }
+                                else if (n地面[t_].xtype == 7) { nプレイヤー.ainmsgtype = 1; }
                                 else if (n地面[t_].xtype == 8) { ayobi(n地面[t_].a - 5000 - 3000 * 1, 26000, 0, -1600, 0, 5, 0); v効果音再生(Res.nオーディオ10); }
                                 else if (n地面[t_].xtype == 9) { for (int t3 = 0; t3 <= 2; t3++) { ayobi(n地面[t_].a + t3 * 3000 + 3000, 48000, 0, -6000, 0, 3, 0); } }
                                 if (n地面[t_].xtype == 10) { n地面[t_].a -= 5 * 30 * 100; n地面[t_].type = 101; }
@@ -213,8 +213,8 @@ namespace SyobonAction
                                 //クリア
                                 if (n地面[t_].xtype == 30)
                                 {
-                                    n地面[t_].a = -80000000; nプレイヤーd = 0;
-                                    DX.StopSoundMem(Res.n現在のBGM); nプレイヤーtype = 302; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ16);
+                                    n地面[t_].a = -80000000; nプレイヤー.d = 0;
+                                    DX.StopSoundMem(Res.n現在のBGM); nプレイヤー.type = 302; nプレイヤー.tm = 0; v効果音再生(Res.nオーディオ16);
                                 }
 
                                 if (n地面[t_].xtype != 3 && n地面[t_].xtype != 4 && n地面[t_].xtype != 10) { n地面[t_].a = -800000000; }
@@ -247,13 +247,13 @@ namespace SyobonAction
                                 }
                             }
 
-                            if (n地面[t_].type == 105 && nプレイヤーzimen == 0 && nプレイヤーd >= 0) { nブロック[1].a -= 1000; nブロック[2].a += 1000; n地面[t_].xtype++; if (n地面[t_].xtype >= 3) n地面[t_].a = -8000000; }
+                            if (n地面[t_].type == 105 && nプレイヤー.zimen == 0 && nプレイヤー.d >= 0) { nブロック[1].a -= 1000; nブロック[2].a += 1000; n地面[t_].xtype++; if (n地面[t_].xtype >= 3) n地面[t_].a = -8000000; }
 
 
-                            if (n地面[t_].type == 300 && nプレイヤーtype == 0 && nプレイヤーb < xx_9 + n地面[t_].d + xx_0 - 3000 && nプレイヤーhp >= 1) { DX.StopSoundMem(Res.n現在のBGM); nプレイヤーtype = 300; nプレイヤーtm = 0; ma = n地面[t_].a - fx - 2000; v効果音再生(Res.nオーディオ11); }
+                            if (n地面[t_].type == 300 && nプレイヤー.type == 0 && nプレイヤー.b < xx_9 + n地面[t_].d + xx_0 - 3000 && nプレイヤー.hp >= 1) { DX.StopSoundMem(Res.n現在のBGM); nプレイヤー.type = 300; nプレイヤー.tm = 0; ma = n地面[t_].a - fx - 2000; v効果音再生(Res.nオーディオ11); }
 
                             //中間ゲート
-                            if (n地面[t_].type == 500 && nプレイヤーtype == 0 && nプレイヤーhp >= 1)
+                            if (n地面[t_].type == 500 && nプレイヤー.type == 0 && nプレイヤー.hp >= 1)
                             {
                                 n中間フラグ += 1;
                                 n地面[t_].a = -80000000;

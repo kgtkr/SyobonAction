@@ -24,10 +24,10 @@ namespace SyobonAction
             if (nステージ色 == 5)
             {
                 DXDraw.SetColor(160, 180, 250);
-                nプレイヤーrzimen = 1;
+                nプレイヤー.rzimen = 1;
             }
             else {
-                nプレイヤーrzimen = 0;
+                nプレイヤー.rzimen = 0;
             }
 
             DXDraw.DrawBox塗り潰し(0, 0, n画面幅, n画面高さ);
@@ -57,11 +57,11 @@ namespace SyobonAction
 
 
                 //メッセージ
-                if (nプレイヤーainmsgtype >= 1)
+                if (nプレイヤー.ainmsgtype >= 1)
                 {
                     setfont(20, 4);
-                    if (nプレイヤーainmsgtype == 1) { DX.DrawString(126, 100, "WELCOME TO OWATA ZONE", DX.GetColor(255, 255, 255)); }
-                    if (nプレイヤーainmsgtype == 1) { for (int t2 = 0; t2 <= 2; t2++) DX.DrawString(88 + t2 * 143, 210, "1", DX.GetColor(255, 255, 255)); }
+                    if (nプレイヤー.ainmsgtype == 1) { DX.DrawString(126, 100, "WELCOME TO OWATA ZONE", DX.GetColor(255, 255, 255)); }
+                    if (nプレイヤー.ainmsgtype == 1) { for (int t2 = 0; t2 <= 2; t2++) DX.DrawString(88 + t2 * 143, 210, "1", DX.GetColor(255, 255, 255)); }
                     setfont(20, 5);
                 }
 
@@ -116,21 +116,21 @@ namespace SyobonAction
                 if (!b初期化)
                 {
                     b初期化 = true;
-                    nプレイヤーainmsgtype = 0;
+                    nプレイヤー.ainmsgtype = 0;
 
                     nステージ色 = 1;
                     ma = 5600;
-                    nプレイヤーb = 32000;
-                    nプレイヤーmuki = 1;
-                    nプレイヤーhp = 1;
+                    nプレイヤー.b = 32000;
+                    nプレイヤー.muki = 1;
+                    nプレイヤー.hp = 1;
 
-                    nプレイヤーc = 0;
-                    nプレイヤーd = 0;
+                    nプレイヤー.c = 0;
+                    nプレイヤー.d = 0;
 
-                    nプレイヤーnobia = 3000;
-                    nプレイヤーnobib = 3600;
+                    nプレイヤー.nobia = 3000;
+                    nプレイヤー.nobib = 3600;
 
-                    nプレイヤーtype = 0;
+                    nプレイヤー.type = 0;
 
                     fx = 0; fy = 0;
                     fzx = 0;
@@ -209,7 +209,7 @@ namespace SyobonAction
                 UpdateZimen();
 
                 //キー入力初期化
-                nプレイヤーactaon[0] = 0; nプレイヤーactaon[4] = 0;
+                nプレイヤー.actaon[0] = 0; nプレイヤー.actaon[4] = 0;
 
                 Updateリフト();
 

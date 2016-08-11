@@ -38,7 +38,7 @@ namespace SyobonAction
                 xx_8 = nブロック[t_].a - fx; xx_9 = nブロック[t_].b - fy;//xx_15=0;
                 if (nブロック[t_].a - fx + xx_1 >= -10 - xx_3 && nブロック[t_].a - fx <= n画面幅 + 12000 + xx_3)
                 {
-                    if (nプレイヤーtype != 200 && nプレイヤーtype != 1 && nプレイヤーtype != 2)
+                    if (nプレイヤー.type != 200 && nプレイヤー.type != 1 && nプレイヤー.type != 2)
                     {
                         if (nブロック[t_].type < 1000 && nブロック[t_].type != 800 && nブロック[t_].type != 140 && nブロック[t_].type != 141)
                         {
@@ -47,11 +47,11 @@ namespace SyobonAction
                                 //上
                                 if (nブロック[t_].type != 7 && nブロック[t_].type != 110 && !(nブロック[t_].type == 114))
                                 {
-                                    if (ma + nプレイヤーnobia > xx_8 + xx_0 * 2 + 100 && ma < xx_8 + xx_1 - xx_0 * 2 - 100 && nプレイヤーb + nプレイヤーnobib > xx_9 && nプレイヤーb + nプレイヤーnobib < xx_9 + xx_1 && nプレイヤーd >= -100)
+                                    if (ma + nプレイヤー.nobia > xx_8 + xx_0 * 2 + 100 && ma < xx_8 + xx_1 - xx_0 * 2 - 100 && nプレイヤー.b + nプレイヤー.nobib > xx_9 && nプレイヤー.b + nプレイヤー.nobib < xx_9 + xx_1 && nプレイヤー.d >= -100)
                                     {
                                         if (nブロック[t_].type != 115 && nブロック[t_].type != 400 && nブロック[t_].type != 117 && nブロック[t_].type != 118 && nブロック[t_].type != 120)
                                         {
-                                            nプレイヤーb = xx_9 - nプレイヤーnobib + 100; nプレイヤーd = 0; nプレイヤーzimen = 1; xx_16 = 1;
+                                            nプレイヤー.b = xx_9 - nプレイヤー.nobib + 100; nプレイヤー.d = 0; nプレイヤー.zimen = 1; xx_16 = 1;
                                         }
                                         else if (nブロック[t_].type == 115)
                                         {
@@ -65,7 +65,7 @@ namespace SyobonAction
                                         //Pスイッチ
                                         else if (nブロック[t_].type == 400)
                                         {
-                                            nプレイヤーd = 0; nブロック[t_].a = -8000000; v効果音再生(Res.nオーディオ13);
+                                            nプレイヤー.d = 0; nブロック[t_].a = -8000000; v効果音再生(Res.nオーディオ13);
                                             for (int tt_ = 0; tt_ < nブロックmax; tt_++) { if (nブロック[tt_].type != 7) { nブロック[tt_].type = 800; } }
                                         }
 
@@ -73,8 +73,8 @@ namespace SyobonAction
                                         else if (nブロック[t_].type == 117)
                                         {
                                             v効果音再生(Res.nオーディオ14);
-                                            nプレイヤーd = -1500; nプレイヤーtype = 2; nプレイヤーtm = 0;
-                                            if (nブロック[t_].xtype >= 2 && nプレイヤーtype == 2) { nプレイヤーtype = 0; nプレイヤーd = -1600; nブロック[t_].xtype = 3; }
+                                            nプレイヤー.d = -1500; nプレイヤー.type = 2; nプレイヤー.tm = 0;
+                                            if (nブロック[t_].xtype >= 2 && nプレイヤー.type == 2) { nプレイヤー.type = 0; nプレイヤー.d = -1600; nブロック[t_].xtype = 3; }
                                             if (nブロック[t_].xtype == 0) nブロック[t_].xtype = 1;
                                         }
 
@@ -82,7 +82,7 @@ namespace SyobonAction
                                         else if (nブロック[t_].type == 120)
                                         {
                                             //txtype[t]=0;
-                                            nプレイヤーd = -2400; nプレイヤーtype = 3; nプレイヤーtm = 0;
+                                            nプレイヤー.d = -2400; nプレイヤー.type = 3; nプレイヤー.tm = 0;
                                         }
 
                                     }
@@ -92,19 +92,19 @@ namespace SyobonAction
                             //sstr=""+mjumptm;
                             //ブロック判定の入れ替え
                                 xx_21 = 0; xx_22 = 1;//xx_12=0;
-                                if (nプレイヤーzimen == 1 || nプレイヤーjumptm >= 10) { xx_21 = 3; xx_22 = 0; }
+                                if (nプレイヤー.zimen == 1 || nプレイヤー.jumptm >= 10) { xx_21 = 3; xx_22 = 0; }
                                 for (int t3 = 0; t3 <= 1; t3++)
                                 {
 
                                     //下
-                                    if (t3 == xx_21 && nプレイヤーtype != 100 && nブロック[t_].type != 117)
+                                    if (t3 == xx_21 && nプレイヤー.type != 100 && nブロック[t_].type != 117)
                                     {// && xx_12==0){
-                                        if (ma + nプレイヤーnobia > xx_8 + xx_0 * 2 + 800 && ma < xx_8 + xx_1 - xx_0 * 2 - 800 && nプレイヤーb > xx_9 - xx_0 * 2 && nプレイヤーb < xx_9 + xx_1 - xx_0 * 2 && nプレイヤーd <= 0)
+                                        if (ma + nプレイヤー.nobia > xx_8 + xx_0 * 2 + 800 && ma < xx_8 + xx_1 - xx_0 * 2 - 800 && nプレイヤー.b > xx_9 - xx_0 * 2 && nプレイヤー.b < xx_9 + xx_1 - xx_0 * 2 && nプレイヤー.d <= 0)
                                         {
                                             xx_16 = 1; xx_17 = 1;
-                                            nプレイヤーb = xx_9 + xx_1 + xx_0; if (nプレイヤーd < 0) { nプレイヤーd = -nプレイヤーd * 2 / 3; }//}
+                                            nプレイヤー.b = xx_9 + xx_1 + xx_0; if (nプレイヤー.d < 0) { nプレイヤー.d = -nプレイヤー.d * 2 / 3; }//}
                                                                                                                              //壊れる
-                                            if (nブロック[t_].type == 1 && nプレイヤーzimen == 0)
+                                            if (nブロック[t_].type == 1 && nプレイヤー.zimen == 0)
                                             {
                                                 v効果音再生(Res.nオーディオ3);
                                                 eyobi(nブロック[t_].a + 1200, nブロック[t_].b + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
@@ -114,7 +114,7 @@ namespace SyobonAction
                                                 brockBreak(t_);
                                             }
                                             //コイン
-                                            if (nブロック[t_].type == 2 && nプレイヤーzimen == 0)
+                                            if (nブロック[t_].type == 2 && nプレイヤー.zimen == 0)
                                             {
                                                 v効果音再生(Res.nオーディオ4);
                                                 eyobi(nブロック[t_].a + 10, nブロック[t_].b, 0, -800, 0, 40, 3000, 3000, 0, 16);
@@ -125,14 +125,14 @@ namespace SyobonAction
                                             {
                                                 v効果音再生(Res.nオーディオ4);
                                                 eyobi(nブロック[t_].a + 10, nブロック[t_].b, 0, -800, 0, 40, 3000, 3000, 0, 16);
-                                                nプレイヤーb = xx_9 + xx_1 + xx_0; nブロック[t_].type = 3; if (nプレイヤーd < 0) { nプレイヤーd = -nプレイヤーd * 2 / 3; }
+                                                nプレイヤー.b = xx_9 + xx_1 + xx_0; nブロック[t_].type = 3; if (nプレイヤー.d < 0) { nプレイヤー.d = -nプレイヤー.d * 2 / 3; }
                                             }
                                             // トゲ
                                             if (nブロック[t_].type == 10)
                                             {
                                                 nメッセージtm = 30;
                                                 nメッセージtype = 3;
-                                                nプレイヤーhp--;
+                                                nプレイヤー.hp--;
                                             }
                                         }
                                     }
@@ -147,13 +147,13 @@ namespace SyobonAction
                                             {// && txtype[t]==1)){
                                                 if (nブロック[t_].a >= -20000)
                                                 {
-                                                    if (ma + nプレイヤーnobia > xx_8 && ma < xx_8 + xx_2 && nプレイヤーb + nプレイヤーnobib > xx_9 + xx_1 / 2 - xx_0 && nプレイヤーb < xx_9 + xx_2 && nプレイヤーc >= 0)
+                                                    if (ma + nプレイヤー.nobia > xx_8 && ma < xx_8 + xx_2 && nプレイヤー.b + nプレイヤー.nobib > xx_9 + xx_1 / 2 - xx_0 && nプレイヤー.b < xx_9 + xx_2 && nプレイヤー.c >= 0)
                                                     {
-                                                        ma = xx_8 - nプレイヤーnobia; nプレイヤーc = 0; xx_16 = 1;
+                                                        ma = xx_8 - nプレイヤー.nobia; nプレイヤー.c = 0; xx_16 = 1;
                                                     }
-                                                    if (ma + nプレイヤーnobia > xx_8 + xx_2 && ma < xx_8 + xx_1 && nプレイヤーb + nプレイヤーnobib > xx_9 + xx_1 / 2 - xx_0 && nプレイヤーb < xx_9 + xx_2 && nプレイヤーc <= 0)
+                                                    if (ma + nプレイヤー.nobia > xx_8 + xx_2 && ma < xx_8 + xx_1 && nプレイヤー.b + nプレイヤー.nobib > xx_9 + xx_1 / 2 - xx_0 && nプレイヤー.b < xx_9 + xx_2 && nプレイヤー.c <= 0)
                                                     {
-                                                        ma = xx_8 + xx_1; nプレイヤーc = 0; xx_16 = 1;//end();
+                                                        ma = xx_8 + xx_1; nプレイヤー.c = 0; xx_16 = 1;//end();
                                                     }
                                                 }
                                             }
@@ -166,7 +166,7 @@ namespace SyobonAction
 
                         if (nブロック[t_].type == 800)
                         {
-                            if (nプレイヤーb > xx_9 - xx_0 * 2 - 2000 && nプレイヤーb < xx_9 + xx_1 - xx_0 * 2 + 2000 && ma + nプレイヤーnobia > xx_8 - 400 && ma < xx_8 + xx_1)
+                            if (nプレイヤー.b > xx_9 - xx_0 * 2 - 2000 && nプレイヤー.b < xx_9 + xx_1 - xx_0 * 2 + 2000 && ma + nプレイヤー.nobia > xx_8 - 400 && ma < xx_8 + xx_1)
                             {
                                 nブロック[t_].a = -800000; v効果音再生(Res.nオーディオ4);
                             }
@@ -175,11 +175,11 @@ namespace SyobonAction
                         //剣とってクリア
                         if (nブロック[t_].type == 140)
                         {
-                            if (nプレイヤーb > xx_9 - xx_0 * 2 - 2000 && nプレイヤーb < xx_9 + xx_1 - xx_0 * 2 + 2000 && ma + nプレイヤーnobia > xx_8 - 400 && ma < xx_8 + xx_1)
+                            if (nプレイヤー.b > xx_9 - xx_0 * 2 - 2000 && nプレイヤー.b < xx_9 + xx_1 - xx_0 * 2 + 2000 && ma + nプレイヤー.nobia > xx_8 - 400 && ma < xx_8 + xx_1)
                             {
                                 nブロック[t_].a = -800000;//ot(oto[4]);
                                 nリフト[20].acttype = 1; nリフト[20].on = 1;
-                                DX.StopSoundMem(Res.n現在のBGM); nプレイヤーtype = 301; nプレイヤーtm = 0; v効果音再生(Res.nオーディオ16);
+                                DX.StopSoundMem(Res.n現在のBGM); nプレイヤー.type = 301; nプレイヤー.tm = 0; v効果音再生(Res.nオーディオ16);
 
                             }
                         }
@@ -188,17 +188,17 @@ namespace SyobonAction
                         //特殊的
                         if (nブロック[t_].type == 100)
                         {//xx_9+xx_1+3000<mb && // && mb>xx_9-xx_0*2
-                            if (nプレイヤーb > xx_9 - xx_0 * 2 - 2000 && nプレイヤーb < xx_9 + xx_1 - xx_0 * 2 + 2000 && ma + nプレイヤーnobia > xx_8 - 400 && ma < xx_8 + xx_1 && nプレイヤーd <= 0)
+                            if (nプレイヤー.b > xx_9 - xx_0 * 2 - 2000 && nプレイヤー.b < xx_9 + xx_1 - xx_0 * 2 + 2000 && ma + nプレイヤー.nobia > xx_8 - 400 && ma < xx_8 + xx_1 && nプレイヤー.d <= 0)
                             {
-                                if (nブロック[t_].xtype == 0) nブロック[t_].b = nプレイヤーb + fy - 1200 - xx_1;
+                                if (nブロック[t_].xtype == 0) nブロック[t_].b = nプレイヤー.b + fy - 1200 - xx_1;
                             }
 
                             if (nブロック[t_].xtype == 1)
                             {
                                 if (xx_17 == 1)
                                 {
-                                    if (ma + nプレイヤーnobia > xx_8 - 400 && ma < xx_8 + xx_1 / 2 - 1500) { nブロック[t_].a += 3000; }
-                                    else if (ma + nプレイヤーnobia >= xx_8 + xx_1 / 2 - 1500 && ma < xx_8 + xx_1) { nブロック[t_].a -= 3000; }
+                                    if (ma + nプレイヤー.nobia > xx_8 - 400 && ma < xx_8 + xx_1 / 2 - 1500) { nブロック[t_].a += 3000; }
+                                    else if (ma + nプレイヤー.nobia >= xx_8 + xx_1 / 2 - 1500 && ma < xx_8 + xx_1) { nブロック[t_].a -= 3000; }
                                 }
                             }
 
@@ -409,9 +409,9 @@ namespace SyobonAction
 
 
                     }
-                    else if (nプレイヤーtype == 1)
+                    else if (nプレイヤー.type == 1)
                     {
-                        if (ma + nプレイヤーnobia > xx_8 && ma < xx_8 + xx_1 && nプレイヤーb + nプレイヤーnobib > xx_9 && nプレイヤーb < xx_9 + xx_1)
+                        if (ma + nプレイヤー.nobia > xx_8 && ma < xx_8 + xx_1 && nプレイヤー.b + nプレイヤー.nobib > xx_9 && nプレイヤー.b < xx_9 + xx_1)
                         {
 
                             v効果音再生(Res.nオーディオ3);

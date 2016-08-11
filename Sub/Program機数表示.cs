@@ -17,7 +17,7 @@ namespace SyobonAction
             DX.SetFontThickness(4);
 
             DXDraw.DrawGraph(Res.n切り取り画像[0, 0], 190, 190);
-            DX.DrawString(230, 200, " × " + nokori, DX.GetColor(255, 255, 255));
+            DX.DrawString(230, 200, " × " + nプレイヤー.nokori, DX.GetColor(255, 255, 255));
         }
     }
 }

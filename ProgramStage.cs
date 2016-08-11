@@ -176,7 +176,7 @@ namespace SyobonAction
                 bgmChange(Res.nオーディオ103);
 
                 scrollX = 4080 * 100;
-                ma = 6000; nプレイヤーb = 3000;
+                ma = 6000; nプレイヤー.b = 3000;
                 nステージ色 = 2;
 
 
@@ -269,7 +269,7 @@ namespace SyobonAction
                 bgmChange(Res.nオーディオ100);
 
                 scrollX = 900 * 100;
-                ma = 7500; nプレイヤーb = 3000 * 9;
+                ma = 7500; nプレイヤー.b = 3000 * 9;
 
                 byte[,] stagedatex = stagedatex4;
 
@@ -377,7 +377,7 @@ namespace SyobonAction
 
 
 
-                if (stagepoint) { stagepoint = false; ma = 4500; nプレイヤーb = -3000; n中間フラグ = 0; }
+                if (stagepoint) { stagepoint = false; ma = 4500; nプレイヤー.b = -3000; n中間フラグ = 0; }
 
 
                 for (int tt_ = 0; tt_ <= 1000; tt_++)
@@ -400,7 +400,7 @@ namespace SyobonAction
                 bgmChange(Res.nオーディオ103);
 
                 scrollX = 0 * 100;
-                ma = 6000; nプレイヤーb = 6000;
+                ma = 6000; nプレイヤー.b = 6000;
                 nステージ色 = 2;
 
 
@@ -433,7 +433,7 @@ namespace SyobonAction
                 bgmChange(Res.nオーディオ104);
 
                 scrollX = 0 * 100;
-                ma = 3000; nプレイヤーb = 33000;
+                ma = 3000; nプレイヤー.b = 33000;
 
                 stagepoint = true;
 
@@ -465,7 +465,7 @@ namespace SyobonAction
                 bgmChange(Res.nオーディオ105);
 
                 scrollX = 4400 * 100;
-                ma = 12000; nプレイヤーb = 6000;
+                ma = 12000; nプレイヤー.b = 6000;
                 nステージ色 = 4;
 
 
@@ -594,7 +594,7 @@ namespace SyobonAction
             if (nステージa == 2 && nステージb == 1 && nステージc == 0)
             {// 2-1
                 ma = 5600;
-                nプレイヤーb = 32000;
+                nプレイヤー.b = 32000;
 
                 bgmChange(Res.nオーディオ100);
                 nステージ色 = 1;
@@ -771,7 +771,7 @@ namespace SyobonAction
 
                 bgmChange(Res.nオーディオ103);
                 nステージ色 = 2;
-                ma = 7500; nプレイヤーb = 9000;
+                ma = 7500; nプレイヤー.b = 9000;
                 scrollX = 2900 * (137 - 19);
                 //
                 byte[,] stagedatex = stagedatex11;
@@ -983,7 +983,7 @@ namespace SyobonAction
                 nステージ色 = 1;
                 scrollX = 2900 * (36 - 19);
                 ma = 7500;
-                nプレイヤーb = 3000 * 9;
+                nプレイヤー.b = 3000 * 9;
                 //
                 byte[,] stagedatex = stagedatex12;
                 //
@@ -1072,7 +1072,7 @@ namespace SyobonAction
             if (nステージa == 2 && nステージb == 3 && nステージc == 0)
             {// 2-3
                 ma = 7500;
-                nプレイヤーb = 3000 * 8;
+                nプレイヤー.b = 3000 * 8;
 
                 bgmChange(Res.nオーディオ100);
                 nステージ色 = 1;
@@ -1187,11 +1187,11 @@ namespace SyobonAction
                 if (nステージc == 0)
                 {
                     ma = 7500;
-                    nプレイヤーb = 3000 * 4;
+                    nプレイヤー.b = 3000 * 4;
                 }
                 else {
                     ma = 19500;
-                    nプレイヤーb = 3000 * 11;
+                    nプレイヤー.b = 3000 * 11;
                     nステージc = 0;
                 }
 
@@ -1277,7 +1277,7 @@ namespace SyobonAction
             if (nステージa == 2 && nステージb == 4 && nステージc == 1)
             {// 2-4(2番)
                 ma = 4500;
-                nプレイヤーb = 3000 * 11;
+                nプレイヤー.b = 3000 * 11;
 
                 bgmChange(Res.nオーディオ105);
                 nステージ色 = 4;
@@ -1346,7 +1346,7 @@ namespace SyobonAction
             if (nステージa == 2 && nステージb == 4 && nステージc == 2)
             {// 2-4(3番)
                 ma = 4500;
-                nプレイヤーb = 3000 * 11;
+                nプレイヤー.b = 3000 * 11;
 
                 bgmChange(Res.nオーディオ105);
                 nステージ色 = 4;
@@ -1586,7 +1586,7 @@ namespace SyobonAction
             if (nステージa == 3 && nステージb == 1 && nステージc == 0)
             {// 3-1
                 ma = 5600;
-                nプレイヤーb = 32000;
+                nプレイヤー.b = 32000;
 
                 bgmChange(Res.nオーディオ100);
                 nステージ色 = 5;
