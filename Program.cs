@@ -252,51 +252,38 @@ namespace SyobonAction
 
 
         //敵キャラ、アイテム作成
-        static void v敵キャラアイテム作成(int xa, int xb, int xc, int xd, int xnotm, int xtype, int xxtype)
+        static void v敵キャラアイテム作成(C敵キャラ cec,int xa, int xb, int xc, int xd, int xnotm, int xtype, int xxtype)
         {
-            int rz = 0;
-            for (int t1 = 0; t1 <= 1; t1++)
-            {
-                t1 = 2;
-                if (n敵キャラ[n敵キャラco].a >= -9000 && n敵キャラ[n敵キャラco].a <= 30000) t1 = 0; rz++;
+            cec.a = xa;
+            cec.b = xb;
+            cec.c = xc;
+            cec.d = xd;
+            if (xxtype > 100) cec.c = xxtype;
+            cec.type = xtype;
+            if (xxtype >= 0 && xxtype <= 99100) cec.xtype = xxtype;
 
-                if (rz <= n敵キャラmax)
-                {
-                    t1 = 3;
+            cec.notm = xnotm;
+            if (cec.a - fx <= ma + nプレイヤー.nobia / 2) cec.muki = 1;
+            if (cec.a - fx > ma + nプレイヤー.nobia / 2) cec.muki = 0;
+            if (cec.brocktm >= 1) cec.muki = 1;
+            if (cec.brocktm == 20) cec.muki = 0;
 
-                    n敵キャラ[n敵キャラco].a = xa;
-                    n敵キャラ[n敵キャラco].b = xb;
-                    n敵キャラ[n敵キャラco].c = xc;
-                    n敵キャラ[n敵キャラco].d = xd;
-                    if (xxtype > 100) n敵キャラ[n敵キャラco].c = xxtype;
-                    n敵キャラ[n敵キャラco].type = xtype;
-                    if (xxtype >= 0 && xxtype <= 99100) n敵キャラ[n敵キャラco].xtype = xxtype;
-
-                    n敵キャラ[n敵キャラco].notm = xnotm;
-                    if (n敵キャラ[n敵キャラco].a - fx <= ma + nプレイヤー.nobia / 2) n敵キャラ[n敵キャラco].muki = 1;
-                    if (n敵キャラ[n敵キャラco].a - fx > ma + nプレイヤー.nobia / 2) n敵キャラ[n敵キャラco].muki = 0;
-                    if (n敵キャラ[n敵キャラco].brocktm >= 1) n敵キャラ[n敵キャラco].muki = 1;
-                    if (n敵キャラ[n敵キャラco].brocktm == 20) n敵キャラ[n敵キャラco].muki = 0;
-
-                    n敵キャラ[n敵キャラco].nobia = Res.n敵サイズ[n敵キャラ[n敵キャラco].type].w;
-                    n敵キャラ[n敵キャラco].nobib = Res.n敵サイズ[n敵キャラ[n敵キャラco].type].h;
+            cec.nobia = Res.n敵サイズ[cec.type].w;
+            cec.nobib = Res.n敵サイズ[cec.type].h;
 
 
 
-                    //大砲音
-                    if (xtype == 7 && DX.CheckSoundMem(Res.nオーディオ10) == 0) { v効果音再生(Res.nオーディオ10); }
-                    //ファイア音
-                    if (xtype == 10 && DX.CheckSoundMem(Res.nオーディオ18) == 0) { v効果音再生(Res.nオーディオ18); }
+            //大砲音
+            if (xtype == 7 && DX.CheckSoundMem(Res.nオーディオ10) == 0) { v効果音再生(Res.nオーディオ10); }
+            //ファイア音
+            if (xtype == 10 && DX.CheckSoundMem(Res.nオーディオ18) == 0) { v効果音再生(Res.nオーディオ18); }
 
 
-                    n敵キャラ[n敵キャラco].zimentype = 1;
+            cec.zimentype = 1;
 
-                    if (xtype == 87) { n敵キャラ[n敵キャラco].tm = DX.GetRand(179) + (-90); }
-
-                    n敵キャラco += 1; if (n敵キャラco >= n敵キャラmax - 1) { n敵キャラco = 0; }
-                }//t1
-
-            }//rz
+            if (xtype == 87) {
+                cec.tm = DX.GetRand(179) + (-90);
+            }
 
         }//ayobi
 
@@ -305,7 +292,7 @@ namespace SyobonAction
             for (int t_ = 0; t_ < n地面max; t_++) { n地面[t_].a = -9000000; n地面[t_].b = 1; n地面[t_].c = 1; n地面[t_].d = 1; n地面[t_].gtype = 0; n地面[t_].type = 0; n地面[t_].xtype = 0; }
             for (int t_ = 0; t_ < nブロックmax; t_++) { nブロック[t_].a = -9000000; nブロック[t_].b = 1; nブロック[t_].c = 1; nブロック[t_].d = 1; nブロック[t_].item = 0; nブロック[t_].xtype = 0; }
             for (int t_ = 0; t_ < nリフトmax; t_++) { nリフト[t_].a = -9000000; nリフト[t_].b = 1; nリフト[t_].c = 1; nリフト[t_].d = 1; nリフト[t_].e = 0; nリフト[t_].f = 0; nリフト[t_].muki = 0; nリフト[t_].on = 0; nリフト[t_].ee = 0; nリフト[t_].sok = 0; nリフト[t_].move = 0; nリフト[t_].movep = 0; nリフト[t_].sp = 0; }
-            for (int t_ = 0; t_ < n敵キャラmax; t_++) { n敵キャラ[t_].a = -9000000; n敵キャラ[t_].b = 1; n敵キャラ[t_].c = 0; n敵キャラ[t_].d = 1; n敵キャラ[t_].zimentype = 0; n敵キャラ[t_].type = 0; n敵キャラ[t_].xtype = 0; n敵キャラ[t_].e = 0; n敵キャラ[t_].f = 0; n敵キャラ[t_].tm = 0; n敵キャラ[t_]._2tm = 0; n敵キャラ[t_].brocktm = 0; n敵キャラ[t_].msgtm = 0; }
+            n敵キャラ.Clear();
             n敵出現.Clear();
             for (int t_ = 0; t_ < n絵max; t_++) { n絵[t_].a = -9000000; n絵[t_].b = 1; n絵[t_].c = 1; n絵[t_].d = 1; n絵[t_].gtype = 0; }
             for (int t_ = 0; t_ < n背景max; t_++)
@@ -321,7 +308,7 @@ namespace SyobonAction
             }
 
 
-            n地面co = 0; nブロックco = 0; n敵キャラco = 0; n絵co = 0; n背景co = 0;
+            n地面co = 0; nブロックco = 0; n絵co = 0; n背景co = 0;
             //haikeitouroku();
         }//stagecls()
 
@@ -405,7 +392,7 @@ namespace SyobonAction
 
         }//stagep
 
-        static void tekizimen(int t_)
+        static void tekizimen(C敵キャラ ec)
         {
 
             //壁
@@ -417,14 +404,14 @@ namespace SyobonAction
                     xx_1 = 2000;//anobia[t]
 
                     xx_8 = n地面[tt_].a - fx; xx_9 = n地面[tt_].b - fy;
-                    if (n敵キャラ[t_].a + n敵キャラ[t_].nobia - fx > xx_8 - xx_0 && n敵キャラ[t_].a - fx < xx_8 + xx_2 && n敵キャラ[t_].b + n敵キャラ[t_].nobib - fy > xx_9 + xx_1 * 3 / 4 && n敵キャラ[t_].b - fy < xx_9 + n地面[tt_].d - xx_2) { n敵キャラ[t_].a = xx_8 - xx_0 - n敵キャラ[t_].nobia + fx; n敵キャラ[t_].muki = 0; }
-                    if (n敵キャラ[t_].a + n敵キャラ[t_].nobia - fx > xx_8 + n地面[tt_].c - xx_0 && n敵キャラ[t_].a - fx < xx_8 + n地面[tt_].c + xx_0 && n敵キャラ[t_].b + n敵キャラ[t_].nobib - fy > xx_9 + xx_1 * 3 / 4 && n敵キャラ[t_].b - fy < xx_9 + n地面[tt_].d - xx_2) { n敵キャラ[t_].a = xx_8 + n地面[tt_].c + xx_0 + fx; n敵キャラ[t_].muki = 1; }
+                    if (ec.a + ec.nobia - fx > xx_8 - xx_0 && ec.a - fx < xx_8 + xx_2 && ec.b + ec.nobib - fy > xx_9 + xx_1 * 3 / 4 && ec.b - fy < xx_9 + n地面[tt_].d - xx_2) { ec.a = xx_8 - xx_0 - ec.nobia + fx; ec.muki = 0; }
+                    if (ec.a + ec.nobia - fx > xx_8 + n地面[tt_].c - xx_0 && ec.a - fx < xx_8 + n地面[tt_].c + xx_0 && ec.b + ec.nobib - fy > xx_9 + xx_1 * 3 / 4 && ec.b - fy < xx_9 + n地面[tt_].d - xx_2) { ec.a = xx_8 + n地面[tt_].c + xx_0 + fx; ec.muki = 1; }
 
-                    if (n敵キャラ[t_].a + n敵キャラ[t_].nobia - fx > xx_8 + xx_0 && n敵キャラ[t_].a - fx < xx_8 + n地面[tt_].c - xx_0 && n敵キャラ[t_].b + n敵キャラ[t_].nobib - fy > xx_9 && n敵キャラ[t_].b + n敵キャラ[t_].nobib - fy < xx_9 + n地面[tt_].d - xx_1 && n敵キャラ[t_].d >= -100) { n敵キャラ[t_].b = n地面[tt_].b - fy - n敵キャラ[t_].nobib + 100 + fy; n敵キャラ[t_].d = 0; n敵キャラ[t_].xzimen = 1; }
+                    if (ec.a + ec.nobia - fx > xx_8 + xx_0 && ec.a - fx < xx_8 + n地面[tt_].c - xx_0 && ec.b + ec.nobib - fy > xx_9 && ec.b + ec.nobib - fy < xx_9 + n地面[tt_].d - xx_1 && ec.d >= -100) { ec.b = n地面[tt_].b - fy - ec.nobib + 100 + fy; ec.d = 0; ec.xzimen = 1; }
 
-                    if (n敵キャラ[t_].a + n敵キャラ[t_].nobia - fx > xx_8 + xx_0 && n敵キャラ[t_].a - fx < xx_8 + n地面[tt_].c - xx_0 && n敵キャラ[t_].b - fy > xx_9 + n地面[tt_].d - xx_1 && n敵キャラ[t_].b - fy < xx_9 + n地面[tt_].d + xx_0)
+                    if (ec.a + ec.nobia - fx > xx_8 + xx_0 && ec.a - fx < xx_8 + n地面[tt_].c - xx_0 && ec.b - fy > xx_9 + n地面[tt_].d - xx_1 && ec.b - fy < xx_9 + n地面[tt_].d + xx_0)
                     {
-                        n敵キャラ[t_].b = xx_9 + n地面[tt_].d + xx_0 + fy; if (n敵キャラ[t_].d < 0) { n敵キャラ[t_].d = -n敵キャラ[t_].d * 2 / 3; }//axzimen[t]=1;
+                        ec.b = xx_9 + n地面[tt_].d + xx_0 + fy; if (ec.d < 0) { ec.d = -ec.d * 2 / 3; }//axzimen[t]=1;
                     }
 
                 }
@@ -437,7 +424,7 @@ namespace SyobonAction
                 xx_8 = nブロック[tt_].a - fx; xx_9 = nブロック[tt_].b - fy;
                 if (nブロック[tt_].a - fx + xx_1 >= -12010 && nブロック[tt_].a - fx <= n画面幅 + 12000)
                 {
-                    if (n敵キャラ[t_].type != 86 && n敵キャラ[t_].type != 90 && nブロック[tt_].type != 140)
+                    if (ec.type != 86 && ec.type != 90 && nブロック[tt_].type != 140)
                     {
 
                         //上
@@ -445,11 +432,11 @@ namespace SyobonAction
                         {
                             if (!(nブロック[tt_].type == 117))
                             {
-                                if (n敵キャラ[t_].a + n敵キャラ[t_].nobia - fx > xx_8 + xx_0 && n敵キャラ[t_].a - fx < xx_8 + xx_1 - xx_0 * 1 && n敵キャラ[t_].b + n敵キャラ[t_].nobib - fy > xx_9 && n敵キャラ[t_].b + n敵キャラ[t_].nobib - fy < xx_9 + xx_1 && n敵キャラ[t_].d >= -100)
+                                if (ec.a + ec.nobia - fx > xx_8 + xx_0 && ec.a - fx < xx_8 + xx_1 - xx_0 * 1 && ec.b + ec.nobib - fy > xx_9 && ec.b + ec.nobib - fy < xx_9 + xx_1 && ec.d >= -100)
                                 {
-                                    n敵キャラ[t_].b = xx_9 - n敵キャラ[t_].nobib + 100 + fy; n敵キャラ[t_].d = 0; n敵キャラ[t_].xzimen = 1;
+                                    ec.b = xx_9 - ec.nobib + 100 + fy; ec.d = 0; ec.xzimen = 1;
                                     //ジャンプ台
-                                    if (nブロック[tt_].type == 120) { n敵キャラ[t_].d = -1600; n敵キャラ[t_].zimentype = 30; }
+                                    if (nブロック[tt_].type == 120) { ec.d = -1600; ec.zimentype = 30; }
                                 }
                             }
                         }
@@ -457,20 +444,20 @@ namespace SyobonAction
                         //下
                         if (nブロック[tt_].type != 117)
                         {
-                            if (n敵キャラ[t_].a + n敵キャラ[t_].nobia - fx > xx_8 + xx_0 && n敵キャラ[t_].a - fx < xx_8 + xx_1 - xx_0 * 1 && n敵キャラ[t_].b - fy > xx_9 + xx_1 - xx_1 && n敵キャラ[t_].b - fy < xx_9 + xx_1 + xx_0)
+                            if (ec.a + ec.nobia - fx > xx_8 + xx_0 && ec.a - fx < xx_8 + xx_1 - xx_0 * 1 && ec.b - fy > xx_9 + xx_1 - xx_1 && ec.b - fy < xx_9 + xx_1 + xx_0)
                             {
-                                n敵キャラ[t_].b = xx_9 + xx_1 + xx_0 + fy; if (n敵キャラ[t_].d < 0) { n敵キャラ[t_].d = 0; }                                                             //}
+                                ec.b = xx_9 + xx_1 + xx_0 + fy; if (ec.d < 0) { ec.d = 0; }                                                             //}
                             }
                         }
 
                         //左右
                         int xx_27 = 0;
-                        if ((n敵キャラ[t_].type >= 100 || (nブロック[tt_].type != 7 || nブロック[tt_].type == 7 && n敵キャラ[t_].type == 2)) && nブロック[tt_].type != 117)
+                        if ((ec.type >= 100 || (nブロック[tt_].type != 7 || nブロック[tt_].type == 7 && ec.type == 2)) && nブロック[tt_].type != 117)
                         {
-                            if (n敵キャラ[t_].a + n敵キャラ[t_].nobia - fx > xx_8 && n敵キャラ[t_].a - fx < xx_8 + xx_2 && n敵キャラ[t_].b + n敵キャラ[t_].nobib - fy > xx_9 + xx_1 / 2 - xx_0 && n敵キャラ[t_].b - fy < xx_9 + xx_2) { n敵キャラ[t_].a = xx_8 - n敵キャラ[t_].nobia + fx; n敵キャラ[t_].c = 0; n敵キャラ[t_].muki = 0; xx_27 = 1; }
-                            if (n敵キャラ[t_].a + n敵キャラ[t_].nobia - fx > xx_8 + xx_1 - xx_0 * 2 && n敵キャラ[t_].a - fx < xx_8 + xx_1 && n敵キャラ[t_].b + n敵キャラ[t_].nobib - fy > xx_9 + xx_1 / 2 - xx_0 && n敵キャラ[t_].b - fy < xx_9 + xx_2) { n敵キャラ[t_].a = xx_8 + xx_1 + fx; n敵キャラ[t_].c = 0; n敵キャラ[t_].muki = 1; xx_27 = 1; }
+                            if (ec.a + ec.nobia - fx > xx_8 && ec.a - fx < xx_8 + xx_2 && ec.b + ec.nobib - fy > xx_9 + xx_1 / 2 - xx_0 && ec.b - fy < xx_9 + xx_2) { ec.a = xx_8 - ec.nobia + fx; ec.c = 0; ec.muki = 0; xx_27 = 1; }
+                            if (ec.a + ec.nobia - fx > xx_8 + xx_1 - xx_0 * 2 && ec.a - fx < xx_8 + xx_1 && ec.b + ec.nobib - fy > xx_9 + xx_1 / 2 - xx_0 && ec.b - fy < xx_9 + xx_2) { ec.a = xx_8 + xx_1 + fx; ec.c = 0; ec.muki = 1; xx_27 = 1; }
                             //こうらブレイク
-                            if (xx_27 == 1 && (nブロック[tt_].type == 7 || nブロック[tt_].type == 1) && n敵キャラ[t_].type == 2)
+                            if (xx_27 == 1 && (nブロック[tt_].type == 7 || nブロック[tt_].type == 1) && ec.type == 2)
                             {
                                 if (nブロック[tt_].type == 7)
                                 {
@@ -490,9 +477,9 @@ namespace SyobonAction
                             }
                         }
                     }
-                    if (n敵キャラ[t_].type == 86 || n敵キャラ[t_].type == 90)
+                    if (ec.type == 86 || ec.type == 90)
                     {
-                        if (n敵キャラ[t_].a + n敵キャラ[t_].nobia - fx > xx_8 && n敵キャラ[t_].a - fx < xx_8 + xx_1 && n敵キャラ[t_].b + n敵キャラ[t_].nobib - fy > xx_9 && n敵キャラ[t_].b - fy < xx_9 + xx_1)
+                        if (ec.a + ec.nobia - fx > xx_8 && ec.a - fx < xx_8 + xx_1 && ec.b + ec.nobib - fy > xx_9 && ec.b - fy < xx_9 + xx_1)
                         {
                             v効果音再生(Res.nオーディオ3);
                             eyobi(nブロック[tt_].a + 1200, nブロック[tt_].b + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
@@ -507,7 +494,7 @@ namespace SyobonAction
                 //剣とってクリア
                 if (nブロック[tt_].type == 140)
                 {
-                    if (n敵キャラ[t_].b - fy > xx_9 - xx_0 * 2 - 2000 && n敵キャラ[t_].b - fy < xx_9 + xx_1 - xx_0 * 2 + 2000 && n敵キャラ[t_].a + n敵キャラ[t_].nobia - fx > xx_8 - 400 && n敵キャラ[t_].a - fx < xx_8 + xx_1)
+                    if (ec.b - fy > xx_9 - xx_0 * 2 - 2000 && ec.b - fy < xx_9 + xx_1 - xx_0 * 2 + 2000 && ec.a + ec.nobia - fx > xx_8 - 400 && ec.a - fx < xx_8 + xx_1)
                     {
                         nブロック[tt_].a = -800000;
                         nリフト[20].acttype = 1; nリフト[20].on = 1;

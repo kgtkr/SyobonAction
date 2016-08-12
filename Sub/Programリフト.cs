@@ -168,13 +168,13 @@ namespace SyobonAction
                     }
 
                     //敵キャラ適用
-                    for (int tt_ = 0; tt_ < n敵キャラmax; tt_++)
+                    foreach (C敵キャラ et in n敵キャラ.ToArray())
                     {
-                        if (n敵キャラ[tt_].zimentype == 1)
+                        if (et.zimentype == 1)
                         {
-                            if (n敵キャラ[tt_].a + n敵キャラ[tt_].nobia - fx > xx_8 + xx_0 && n敵キャラ[tt_].a - fx < xx_8 + xx_12 - xx_0 && n敵キャラ[tt_].b + n敵キャラ[tt_].nobib > xx_11 - 100 && n敵キャラ[tt_].b + n敵キャラ[tt_].nobib < xx_11 + xx_1 + 500 && n敵キャラ[tt_].d >= -100)
+                            if (et.a + et.nobia - fx > xx_8 + xx_0 && et.a - fx < xx_8 + xx_12 - xx_0 && et.b + et.nobib > xx_11 - 100 && et.b + et.nobib < xx_11 + xx_1 + 500 && et.d >= -100)
                             {
-                                n敵キャラ[tt_].b = xx_9 - n敵キャラ[tt_].nobib + 100; n敵キャラ[tt_].d = 0; n敵キャラ[tt_].xzimen = 1;
+                                et.b = xx_9 - et.nobib + 100; et.d = 0; et.xzimen = 1;
                             }
                         }
                     }
