@@ -252,7 +252,7 @@ namespace SyobonAction
 
 
         //敵キャラ、アイテム作成
-        static void ayobi(int xa, int xb, int xc, int xd, int xnotm, int xtype, int xxtype)
+        static void v敵キャラアイテム作成(int xa, int xb, int xc, int xd, int xnotm, int xtype, int xxtype)
         {
             int rz = 0;
             for (int t1 = 0; t1 <= 1; t1++)
@@ -306,7 +306,7 @@ namespace SyobonAction
             for (int t_ = 0; t_ < nブロックmax; t_++) { nブロック[t_].a = -9000000; nブロック[t_].b = 1; nブロック[t_].c = 1; nブロック[t_].d = 1; nブロック[t_].item = 0; nブロック[t_].xtype = 0; }
             for (int t_ = 0; t_ < nリフトmax; t_++) { nリフト[t_].a = -9000000; nリフト[t_].b = 1; nリフト[t_].c = 1; nリフト[t_].d = 1; nリフト[t_].e = 0; nリフト[t_].f = 0; nリフト[t_].muki = 0; nリフト[t_].on = 0; nリフト[t_].ee = 0; nリフト[t_].sok = 0; nリフト[t_].move = 0; nリフト[t_].movep = 0; nリフト[t_].sp = 0; }
             for (int t_ = 0; t_ < n敵キャラmax; t_++) { n敵キャラ[t_].a = -9000000; n敵キャラ[t_].b = 1; n敵キャラ[t_].c = 0; n敵キャラ[t_].d = 1; n敵キャラ[t_].zimentype = 0; n敵キャラ[t_].type = 0; n敵キャラ[t_].xtype = 0; n敵キャラ[t_].e = 0; n敵キャラ[t_].f = 0; n敵キャラ[t_].tm = 0; n敵キャラ[t_]._2tm = 0; n敵キャラ[t_].brocktm = 0; n敵キャラ[t_].msgtm = 0; }
-            for (int t_ = 0; t_ < n敵出現max; t_++) { n敵出現[t_].a = -9000000; n敵出現[t_].b = 1; n敵出現[t_].z = 1; n敵出現[t_].tm = 0; n敵出現[t_].xtype = 0; }
+            n敵出現.Clear();
             for (int t_ = 0; t_ < n絵max; t_++) { n絵[t_].a = -9000000; n絵[t_].b = 1; n絵[t_].c = 1; n絵[t_].d = 1; n絵[t_].gtype = 0; }
             for (int t_ = 0; t_ < n背景max; t_++)
             {
@@ -321,7 +321,7 @@ namespace SyobonAction
             }
 
 
-            n地面co = 0; nブロックco = 0; n敵キャラco = 0; n敵出現co = 0; n絵co = 0; n背景co = 0;
+            n地面co = 0; nブロックco = 0; n敵キャラco = 0; n絵co = 0; n背景co = 0;
             //haikeitouroku();
         }//stagecls()
 
@@ -353,7 +353,11 @@ namespace SyobonAction
                     //これなぜかバグの原因ｗ
                     if (xx_10 >= 50 && xx_10 <= 79)
                     {
-                        n敵出現[n敵出現co].a = xx_21 * 100; n敵出現[n敵出現co].b = xx_22 * 100; n敵出現[n敵出現co].type = xx_23 - 50; n敵出現co++; if (n敵出現co >= n敵出現max) n敵出現co = 0;
+                        var ct = new C敵出現();
+                        ct.a = xx_21 * 100;
+                        ct.b = xx_22 * 100;
+                        ct.type = xx_23 - 50;
+                        n敵出現.Add(ct);
                     }
 
                     if (xx_10 >= 80 && xx_10 <= 89) { n背景[n背景co].a = xx_21 * 100; n背景[n背景co].b = xx_22 * 100; n背景[n背景co].type = xx_23 - 80; n背景co++; if (n背景co >= n背景max) n背景co = 0; }

@@ -14,9 +14,7 @@ namespace SyobonAction
             //1-1
             if (nステージa == 1 && nステージb == 1 && nステージc == 0)
             {
-
                 var stagedatex = MapList.stagedatex1;
-
 
                 //追加情報
                 tyobi(8 * 29, 9 * 29 - 12, 100);
@@ -44,7 +42,7 @@ namespace SyobonAction
                 n地面[t_].d = 70000;
                 n地面[t_].type = 100;
                 n地面co++;
-
+                
                 t_ = n地面co;
                 n地面[t_].a = 54 * 29 * 100 - 500;
                 n地面[t_].b = -6000;
@@ -102,27 +100,28 @@ namespace SyobonAction
                 n地面[t_].type = 52;
                 n地面co++;
 
-                n敵出現co = 0;
-                t_ = n敵出現co;
-                n敵出現[t_].a = 27 * 29 * 100;
-                n敵出現[t_].b = (9 * 29 - 12) * 100;
-                n敵出現[t_].type = 0;
-                n敵出現[t_].xtype = 0;
-                n敵出現co++;
+                C敵出現 ct;
+                ct = new C敵出現();
+                ct.a = 27 * 29 * 100;
+                ct.b = (9 * 29 - 12) * 100;
+                ct.type = 0;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
 
-                t_ = n敵出現co;
-                n敵出現[t_].a = 103 * 29 * 100;
-                n敵出現[t_].b = (5 * 29 - 12 + 10) * 100;
-                n敵出現[t_].type = 80;
-                n敵出現[t_].xtype = 0;
-                n敵出現co++;
+                ct = new C敵出現();
+                ct.a = 103 * 29 * 100;
+                ct.b = (5 * 29 - 12 + 10) * 100;
+                ct.type = 80;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
+
 
 
                 for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
                     for (int i = 0; i <= 16; i++)
                     {
-                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i,tt_];
+                        stageDate[i, tt_] = stagedatex[i,tt_];
                     }
                 }
 
@@ -161,7 +160,7 @@ namespace SyobonAction
                 {
                     for (int i = 0; i <= 16; i++)
                     {
-                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i,tt_];
+                        stageDate[i, tt_] = stagedatex[i,tt_];
                     }
                 }
 
@@ -231,12 +230,29 @@ namespace SyobonAction
 
 
 
-                n敵出現co = 0;
-                t_ = n敵出現co; n敵出現[t_].a = 18 * 29 * 100; n敵出現[t_].b = (10 * 29 - 12) * 100; n敵出現[t_].type = 82; n敵出現[t_].xtype = 1; n敵出現co++;
-                t_ = n敵出現co; n敵出現[t_].a = 51 * 29 * 100 + 1000; n敵出現[t_].b = (2 * 29 - 12 + 10) * 100; n敵出現[t_].type = 80; n敵出現[t_].xtype = 1; n敵出現co++;
+                C敵出現 ct;
+
+                ct = new C敵出現();
+                ct.a = 18 * 29 * 100;
+                ct.b = (10 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
+
+                ct = new C敵出現();
+                ct.a = 51 * 29 * 100 + 1000;
+                ct.b = (2 * 29 - 12 + 10) * 100;
+                ct.type = 80;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
 
                 //？ボール
-                t_ = n敵出現co; n敵出現[t_].a = 96 * 29 * 100 + 100; n敵出現[t_].b = (10 * 29 - 12) * 100; n敵出現[t_].type = 105; n敵出現[t_].xtype = 0; n敵出現co++;
+                ct = new C敵出現();
+                ct.a = 96 * 29 * 100 + 100;
+                ct.b = (10 * 29 - 12) * 100;
+                ct.type = 105;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
 
 
                 //リフト
@@ -252,7 +268,7 @@ namespace SyobonAction
                 {
                     for (int i = 0; i <= 16; i++)
                     {
-                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i,tt_];
+                        stageDate[i, tt_] = stagedatex[i,tt_];
                     }
                 }
 
@@ -278,15 +294,20 @@ namespace SyobonAction
                 t_ = 28; n地面[t_].a = 44 * 29 * 100 + 500; n地面[t_].b = (10 * 29 - 12) * 100; n地面[t_].c = 6000; n地面[t_].d = 9000 - 200; n地面[t_].type = 50; n地面co++;
 
                 //ポールもどき
-                n敵出現co = 0;
-                t_ = n敵出現co; n敵出現[t_].a = 19 * 29 * 100; n敵出現[t_].b = (2 * 29 - 12) * 100; n敵出現[t_].type = 85; n敵出現[t_].xtype = 0; n敵出現co++;
+                C敵出現 ct;
 
+                ct = new C敵出現();
+                ct.a = 19 * 29 * 100;
+                ct.b = (2 * 29 - 12) * 100;
+                ct.type = 85;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
 
                 for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
                     for (int i = 0; i <= 16; i++)
                     {
-                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i,tt_];
+                        stageDate[i, tt_] = stagedatex[i,tt_];
                     }
                 }
 
@@ -300,6 +321,8 @@ namespace SyobonAction
             if (nステージa == 1 && nステージb == 3 && nステージc == 6) { nステージc = 0; }
             if (nステージa == 1 && nステージb == 3 && nステージc == 0)
             {
+                int t_;
+
                 bgmChange(Res.nオーディオ100);
 
                 scrollX = 3900 * 100;
@@ -340,9 +363,22 @@ namespace SyobonAction
                 nブロック[nブロックco].xtype = 0; tyobi(114 * 29, 9 * 29 - 12, 120);
 
                 //ファイア
-                n敵出現co = 0;
-                int t_ = n敵出現co; n敵出現[t_].a = 101 * 29 * 100; n敵出現[t_].b = (5 * 29 - 12) * 100; n敵出現[t_].type = 4; n敵出現[t_].xtype = 1; n敵出現co++;
-                t_ = n敵出現co; n敵出現[t_].a = 146 * 29 * 100; n敵出現[t_].b = (10 * 29 - 12) * 100; n敵出現[t_].type = 6; n敵出現[t_].xtype = 1; n敵出現co++;
+                C敵出現 ct;
+
+                ct = new C敵出現();
+                ct.a = 101 * 29 * 100;
+                ct.b = (5 * 29 - 12) * 100;
+                ct.type = 4;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
+
+
+                ct = new C敵出現();
+                ct.a = 146 * 29 * 100;
+                ct.b = (10 * 29 - 12) * 100;
+                ct.type = 6;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
 
                 t_ = n地面co; n地面[t_].a = 9 * 29 * 100; n地面[t_].b = (13 * 29 - 12) * 100; n地面[t_].c = 9000 - 1; n地面[t_].d = 3000; n地面[t_].type = 52; n地面co++;
 
@@ -357,11 +393,27 @@ namespace SyobonAction
 
 
                 //？ボール
-                t_ = n敵出現co; n敵出現[t_].a = 10 * 29 * 100 + 100; n敵出現[t_].b = (11 * 29 - 12) * 100; n敵出現[t_].type = 105; n敵出現[t_].xtype = 1; n敵出現co++;
+                ct = new C敵出現();
+                ct.a = 10 * 29 * 100 + 100;
+                ct.b = (11 * 29 - 12) * 100;
+                ct.type = 105; ct.xtype = 1;
+                n敵出現.Add(ct);
+
                 //ブロックもどき
-                t_ = n敵出現co; n敵出現[t_].a = 43 * 29 * 100; n敵出現[t_].b = (11 * 29 - 12) * 100; n敵出現[t_].type = 82; n敵出現[t_].xtype = 1; n敵出現co++;
+                ct = new C敵出現();
+                ct.a = 43 * 29 * 100;
+                ct.b = (11 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
+
                 //うめぇ
-                t_ = n敵出現co; n敵出現[t_].a = 1 * 29 * 100; n敵出現[t_].b = (2 * 29 - 12 + 10) * 100 - 1000; n敵出現[t_].type = 80; n敵出現[t_].xtype = 0; n敵出現co++;
+                ct = new C敵出現();
+                ct.a = 1 * 29 * 100;
+                ct.b = (2 * 29 - 12 + 10) * 100 - 1000;
+                ct.type = 80;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
 
 
                 //リフト
@@ -384,7 +436,7 @@ namespace SyobonAction
                 {
                     for (int i = 0; i <= 16; i++)
                     {
-                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i,tt_];
+                        stageDate[i, tt_] = stagedatex[i,tt_];
                     }
                 }
 
@@ -451,7 +503,7 @@ namespace SyobonAction
                 {
                     for (int i = 0; i <= 16; i++)
                     {
-                        stageDate[i, tt_] = 0; stageDate[i, tt_] = stagedatex[i,tt_];
+                        stageDate[i, tt_] = stagedatex[i,tt_];
                     }
                 }
 
@@ -488,23 +540,88 @@ namespace SyobonAction
                 t_ = n地面co; n地面[t_].a = 11 * 29 * 100; n地面[t_].b = -1 * 29 * 100 + 1700; n地面[t_].c = 3000 * 8 - 1; n地面[t_].d = 3000 * 4 - 1; n地面[t_].type = 200; n地面[t_].xtype = 0; n地面co++;
 
 
-                n敵出現co = 0;
-                t_ = n敵出現co; n敵出現[t_].a = 8 * 29 * 100 - 1400; n敵出現[t_].b = (2 * 29 - 12) * 100 + 500; n敵出現[t_].type = 86; n敵出現[t_].xtype = 0; n敵出現co++;
-                t_ = n敵出現co; n敵出現[t_].a = 42 * 29 * 100 - 1400; n敵出現[t_].b = (-2 * 29 - 12) * 100 + 500; n敵出現[t_].type = 86; n敵出現[t_].xtype = 0; n敵出現co++;
-                t_ = n敵出現co; n敵出現[t_].a = 29 * 29 * 100 + 1500; n敵出現[t_].b = (7 * 29 - 12) * 100 + 1500; n敵出現[t_].type = 87; n敵出現[t_].xtype = 105; n敵出現co++;
-                t_ = n敵出現co; n敵出現[t_].a = 47 * 29 * 100 + 1500; n敵出現[t_].b = (9 * 29 - 12) * 100 + 1500; n敵出現[t_].type = 87; n敵出現[t_].xtype = 110; n敵出現co++;
-                t_ = n敵出現co; n敵出現[t_].a = 70 * 29 * 100 + 1500; n敵出現[t_].b = (9 * 29 - 12) * 100 + 1500; n敵出現[t_].type = 87; n敵出現[t_].xtype = 105; n敵出現co++;
-                t_ = n敵出現co; n敵出現[t_].a = 66 * 29 * 100 + 1501; n敵出現[t_].b = (4 * 29 - 12) * 100 + 1500; n敵出現[t_].type = 87; n敵出現[t_].xtype = 101; n敵出現co++;
-                t_ = n敵出現co; n敵出現[t_].a = 85 * 29 * 100 + 1501; n敵出現[t_].b = (4 * 29 - 12) * 100 + 1500; n敵出現[t_].type = 87; n敵出現[t_].xtype = 105; n敵出現co++;
+                C敵出現 ct;
+
+                ct = new C敵出現();
+                ct.a = 8 * 29 * 100 - 1400;
+                ct.b = (2 * 29 - 12) * 100 + 500;
+                ct.type = 86;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
+
+                ct = new C敵出現();
+                ct.a = 42 * 29 * 100 - 1400;
+                ct.b = (-2 * 29 - 12) * 100 + 500;
+                ct.type = 86;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
+
+                ct = new C敵出現();
+                ct.a = 29 * 29 * 100 + 1500;
+                ct.b = (7 * 29 - 12) * 100 + 1500;
+                ct.type = 87;
+                ct.xtype = 105;
+                n敵出現.Add(ct);
+
+                ct = new C敵出現();
+                ct.a = 47 * 29 * 100 + 1500;
+                ct.b = (9 * 29 - 12) * 100 + 1500;
+                ct.type = 87;
+                ct.xtype = 110;
+                n敵出現.Add(ct);
+
+                ct = new C敵出現();
+                ct.a = 70 * 29 * 100 + 1500;
+                ct.b = (9 * 29 - 12) * 100 + 1500;
+                ct.type = 87;
+                ct.xtype = 105;
+                n敵出現.Add(ct);
+
+                ct = new C敵出現();
+                ct.a = 66 * 29 * 100 + 1501;
+                ct.b = (4 * 29 - 12) * 100 + 1500;
+                ct.type = 87;
+                ct.xtype = 101;
+                n敵出現.Add(ct);
+
+                ct = new C敵出現();
+                ct.a = 85 * 29 * 100 + 1501;
+                ct.b = (4 * 29 - 12) * 100 + 1500;
+                ct.type = 87;
+                ct.xtype = 105;
+                n敵出現.Add(ct);
 
                 //ステルスうめぇ
-                t_ = n敵出現co; n敵出現[t_].a = 57 * 29 * 100; n敵出現[t_].b = (2 * 29 - 12 + 10) * 100 - 500; n敵出現[t_].type = 80; n敵出現[t_].xtype = 1; n敵出現co++;
+                ct = new C敵出現();
+                ct.a = 57 * 29 * 100;
+                ct.b = (2 * 29 - 12 + 10) * 100 - 500;
+                ct.type = 80;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
+
                 //ブロックもどき
-                t_ = n敵出現co; n敵出現[t_].a = 77 * 29 * 100; n敵出現[t_].b = (5 * 29 - 12) * 100; n敵出現[t_].type = 82; n敵出現[t_].xtype = 2; n敵出現co++;
+                ct = new C敵出現();
+                ct.a = 77 * 29 * 100;
+                ct.b = (5 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 2;
+                n敵出現.Add(ct);
+
                 //ボス
-                t_ = n敵出現co; n敵出現[t_].a = 130 * 29 * 100; n敵出現[t_].b = (8 * 29 - 12) * 100; n敵出現[t_].type = 30; n敵出現[t_].xtype = 0; n敵出現co++;
+                ct = new C敵出現();
+                ct.a = 130 * 29 * 100;
+                ct.b = (8 * 29 - 12) * 100;
+                ct.type = 30;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
+
                 //クックル
-                t_ = n敵出現co; n敵出現[t_].a = 142 * 29 * 100; n敵出現[t_].b = (10 * 29 - 12) * 100; n敵出現[t_].type = 31; n敵出現[t_].xtype = 0; n敵出現co++;
+                ct = new C敵出現();
+                ct.a = 142 * 29 * 100;
+                ct.b = (10 * 29 - 12) * 100;
+                ct.type = 31;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
 
                 //マグマ
                 n背景co = 0;
@@ -585,7 +702,7 @@ namespace SyobonAction
                 {
                     for (t_ = 0; t_ <= 16; t_++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_,tt_];
+                        stageDate[t_, tt_] = stagedatex[t_,tt_];
                     }
                 }
 
@@ -669,49 +786,55 @@ namespace SyobonAction
                 n地面[n地面co].xtype = 0;
                 n地面co += 1;
                 //
-                n敵出現co = 0;
+                C敵出現 ct;
                 //
-                n敵出現[n敵出現co].a = 6 * 29 * 100;
-                n敵出現[n敵出現co].b = (3 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 80;
-                n敵出現[n敵出現co].xtype = 0;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 6 * 29 * 100;
+                ct.b = (3 * 29 - 12) * 100;
+                ct.type = 80;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 13 * 29 * 100;
-                n敵出現[n敵出現co].b = (6 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 4;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 13 * 29 * 100;
+                ct.b = (6 * 29 - 12) * 100;
+                ct.type = 4;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 23 * 29 * 100;
-                n敵出現[n敵出現co].b = (7 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 80;
-                n敵出現[n敵出現co].xtype = 0;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 23 * 29 * 100;
+                ct.b = (7 * 29 - 12) * 100;
+                ct.type = 80;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 25 * 29 * 100;
-                n敵出現[n敵出現co].b = (7 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 80;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 25 * 29 * 100;
+                ct.b = (7 * 29 - 12) * 100;
+                ct.type = 80;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 27 * 29 * 100;
-                n敵出現[n敵出現co].b = (7 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 80;
-                n敵出現[n敵出現co].xtype = 0;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 27 * 29 * 100;
+                ct.b = (7 * 29 - 12) * 100;
+                ct.type = 80;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 88 * 29 * 100;
-                n敵出現[n敵出現co].b = (12 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 82;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 88 * 29 * 100;
+                ct.b = (12 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
                 //
                 for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
                     for (int t_ = 0; t_ <= 16; t_++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_,tt_];
+                        stageDate[t_, tt_] = stagedatex[t_,tt_];
                     }
                 }
             }
@@ -761,7 +884,7 @@ namespace SyobonAction
                 {
                     for (int t_ = 0; t_ <= 16; t_++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_,tt_];
+                        stageDate[t_, tt_] = stagedatex[t_,tt_];
                     }
                 }
             }
@@ -776,72 +899,84 @@ namespace SyobonAction
                 //
                 var stagedatex = MapList.stagedatex11;
                 //
-                n敵出現co = 0;
-                n敵出現[n敵出現co].a = 32 * 29 * 100 - 1400;
-                n敵出現[n敵出現co].b = (-2 * 29 - 12) * 100 + 500;
-                n敵出現[n敵出現co].type = 86;
-                n敵出現[n敵出現co].xtype = 0;
-                n敵出現co += 1;
+                C敵出現 ct;
                 //
-                n敵出現[n敵出現co].a = (31 * 29 - 12) * 100;
-                n敵出現[n敵出現co].b = (7 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 7;
-                n敵出現[n敵出現co].xtype = 0;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 32 * 29 * 100 - 1400;
+                ct.b = (-2 * 29 - 12) * 100 + 500;
+                ct.type = 86;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 38 * 29 * 100 + 1500;
-                n敵出現[n敵出現co].b = (6 * 29 - 12) * 100 + 1500;
-                n敵出現[n敵出現co].type = 87;
-                n敵出現[n敵出現co].xtype = 107;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = (31 * 29 - 12) * 100;
+                ct.b = (7 * 29 - 12) * 100;
+                ct.type = 7;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 38 * 29 * 100 + 1500;
-                n敵出現[n敵出現co].b = (6 * 29 - 12) * 100 + 1500;
-                n敵出現[n敵出現co].type = 88;
-                n敵出現[n敵出現co].xtype = 107;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 38 * 29 * 100 + 1500;
+                ct.b = (6 * 29 - 12) * 100 + 1500;
+                ct.type = 87;
+                ct.xtype = 107;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 42 * 29 * 100 + 1500;
-                n敵出現[n敵出現co].b = (6 * 29 - 12) * 100 + 1500;
-                n敵出現[n敵出現co].type = 87;
-                n敵出現[n敵出現co].xtype = 107;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 38 * 29 * 100 + 1500;
+                ct.b = (6 * 29 - 12) * 100 + 1500;
+                ct.type = 88;
+                ct.xtype = 107;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 42 * 29 * 100 + 1500;
-                n敵出現[n敵出現co].b = (6 * 29 - 12) * 100 + 1500;
-                n敵出現[n敵出現co].type = 88;
-                n敵出現[n敵出現co].xtype = 107;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 42 * 29 * 100 + 1500;
+                ct.b = (6 * 29 - 12) * 100 + 1500;
+                ct.type = 87;
+                ct.xtype = 107;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 46 * 29 * 100 + 1500;
-                n敵出現[n敵出現co].b = (6 * 29 - 12) * 100 + 1500;
-                n敵出現[n敵出現co].type = 87;
-                n敵出現[n敵出現co].xtype = 107;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 42 * 29 * 100 + 1500;
+                ct.b = (6 * 29 - 12) * 100 + 1500;
+                ct.type = 88;
+                ct.xtype = 107;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 46 * 29 * 100 + 1500;
-                n敵出現[n敵出現co].b = (6 * 29 - 12) * 100 + 1500;
-                n敵出現[n敵出現co].type = 88;
-                n敵出現[n敵出現co].xtype = 107;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 46 * 29 * 100 + 1500;
+                ct.b = (6 * 29 - 12) * 100 + 1500;
+                ct.type = 87;
+                ct.xtype = 107;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 58 * 29 * 100;
-                n敵出現[n敵出現co].b = (7 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 82;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 46 * 29 * 100 + 1500;
+                ct.b = (6 * 29 - 12) * 100 + 1500;
+                ct.type = 88;
+                ct.xtype = 107;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 66 * 29 * 100;
-                n敵出現[n敵出現co].b = (7 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 82;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 58 * 29 * 100;
+                ct.b = (7 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 76 * 29 * 100 - 1400;
-                n敵出現[n敵出現co].b = (-2 * 29 - 12) * 100 + 500;
-                n敵出現[n敵出現co].type = 86;
-                n敵出現[n敵出現co].xtype = 0;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 66 * 29 * 100;
+                ct.b = (7 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
+                //
+                ct = new C敵出現();
+                ct.a = 76 * 29 * 100 - 1400;
+                ct.b = (-2 * 29 - 12) * 100 + 500;
+                ct.type = 86;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
                 //
                 n地面co = 0;
                 n地面[n地面co].a = 2 * 29 * 100;
@@ -971,7 +1106,7 @@ namespace SyobonAction
                 {
                     for (int t_ = 0; t_ <= 16; t_++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_,tt_];
+                        stageDate[t_, tt_] = stagedatex[t_,tt_];
                     }
                 }
             }
@@ -987,84 +1122,97 @@ namespace SyobonAction
                 //
                 var stagedatex = MapList.stagedatex12;
                 //
-                n敵出現co = 0;
-                n敵出現[n敵出現co].a = 9 * 29 * 100;
-                n敵出現[n敵出現co].b = (12 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 82;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                C敵出現 ct;
                 //
-                n敵出現[n敵出現co].a = 10 * 29 * 100;
-                n敵出現[n敵出現co].b = (11 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 82;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 9 * 29 * 100;
+                ct.b = (12 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 11 * 29 * 100;
-                n敵出現[n敵出現co].b = (10 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 82;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 10 * 29 * 100;
+                ct.b = (11 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 12 * 29 * 100;
-                n敵出現[n敵出現co].b = (9 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 82;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 11 * 29 * 100;
+                ct.b = (10 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 13 * 29 * 100;
-                n敵出現[n敵出現co].b = (8 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 82;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 12 * 29 * 100;
+                ct.b = (9 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 14 * 29 * 100;
-                n敵出現[n敵出現co].b = (7 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 82;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 13 * 29 * 100;
+                ct.b = (8 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 15 * 29 * 100;
-                n敵出現[n敵出現co].b = (6 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 82;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 14 * 29 * 100;
+                ct.b = (7 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 16 * 29 * 100;
-                n敵出現[n敵出現co].b = (5 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 82;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 15 * 29 * 100;
+                ct.b = (6 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 17 * 29 * 100;
-                n敵出現[n敵出現co].b = (5 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 82;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 16 * 29 * 100;
+                ct.b = (5 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 18 * 29 * 100;
-                n敵出現[n敵出現co].b = (5 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 82;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 17 * 29 * 100;
+                ct.b = (5 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 19 * 29 * 100;
-                n敵出現[n敵出現co].b = (5 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 82;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 18 * 29 * 100;
+                ct.b = (5 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 20 * 29 * 100;
-                n敵出現[n敵出現co].b = (5 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 82;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 19 * 29 * 100;
+                ct.b = (5 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
+                //
+                ct = new C敵出現();
+                ct.a = 20 * 29 * 100;
+                ct.b = (5 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
                 //
                 for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
                     for (int t_ = 0; t_ <= 16; t_++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_,tt_];
+                        stageDate[t_, tt_] = stagedatex[t_,tt_];
                     }
                 }
             }
@@ -1113,12 +1261,13 @@ namespace SyobonAction
 
                 tyobi(60 * 29, 6 * 29 - 12, 300);
                 nブロックco += 1;
-                n敵出現co = 1;
-                n敵出現[n敵出現co].a = (54 * 29 - 12) * 100;
-                n敵出現[n敵出現co].b = (1 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 80;
-                n敵出現[n敵出現co].xtype = 0;
-                n敵出現co += 1;
+                //
+                C敵出現 ct = new C敵出現();
+                ct.a = (54 * 29 - 12) * 100;
+                ct.b = (1 * 29 - 12) * 100;
+                ct.type = 80;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
                 //
                 n地面co = 0;
                 n敵出現[n地面co].a = (102 * 29 - 12) * 100;
@@ -1177,7 +1326,7 @@ namespace SyobonAction
                 {
                     for (int t_ = 0; t_ <= 16; t_++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_,tt_];
+                        stageDate[t_, tt_] = stagedatex[t_,tt_];
                     }
                 }
             }
@@ -1227,18 +1376,21 @@ namespace SyobonAction
                 tyobi(7 * 29, 14 * 29 - 12, 5);
                 nブロックco += 1;
                 //
-                n敵出現co = 0;
-                n敵出現[n敵出現co].a = 2 * 29 * 100 - 1400;
-                n敵出現[n敵出現co].b = (-2 * 29 - 12) * 100 + 500;
-                n敵出現[n敵出現co].type = 86;
-                n敵出現[n敵出現co].xtype = 0;
-                n敵出現co += 1;
+                C敵出現 ct;
                 //
-                n敵出現[n敵出現co].a = 20 * 29 * 100 + 1500;
-                n敵出現[n敵出現co].b = (5 * 29 - 12) * 100 + 1500;
-                n敵出現[n敵出現co].type = 87;
-                n敵出現[n敵出現co].xtype = 107;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 2 * 29 * 100 - 1400;
+                ct.b = (-2 * 29 - 12) * 100 + 500;
+                ct.type = 86;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
+                //
+                ct = new C敵出現();
+                ct.a = 20 * 29 * 100 + 1500;
+                ct.b = (5 * 29 - 12) * 100 + 1500;
+                ct.type = 87;
+                ct.xtype = 107;
+                n敵出現.Add(ct);
                 //
                 n地面co = 0;
                 n地面[n地面co].a = 17 * 29 * 100;
@@ -1269,7 +1421,7 @@ namespace SyobonAction
                 {
                     for (int t_ = 0; t_ <= 16; t_++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_,tt_];
+                        stageDate[t_, tt_] = stagedatex[t_,tt_];
                     }
                 }
             }
@@ -1338,7 +1490,7 @@ namespace SyobonAction
                 {
                     for (int t_ = 0; t_ <= 16; t_++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_,tt_];
+                        stageDate[t_, tt_] = stagedatex[t_,tt_];
                     }
                 }
             }
@@ -1395,108 +1547,126 @@ namespace SyobonAction
                 tyobi(121 * 29, 10 * 29 - 12, 142);
                 nブロックco += 1;
                 //
-                n敵出現co = 0;
-                n敵出現[n敵出現co].a = 0 * 29 * 100 + 1500;
-                n敵出現[n敵出現co].b = (8 * 29 - 12) * 100 + 1500;
-                n敵出現[n敵出現co].type = 88;
-                n敵出現[n敵出現co].xtype = 105;
-                n敵出現co += 1;
+                C敵出現 ct;
                 //
-                n敵出現[n敵出現co].a = 2 * 29 * 100;
-                n敵出現[n敵出現co].b = (0 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 80;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 0 * 29 * 100 + 1500;
+                ct.b = (8 * 29 - 12) * 100 + 1500;
+                ct.type = 88;
+                ct.xtype = 105;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 3 * 29 * 100 + 1500;
-                n敵出現[n敵出現co].b = (8 * 29 - 12) * 100 + 1500;
-                n敵出現[n敵出現co].type = 87;
-                n敵出現[n敵出現co].xtype = 105;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 2 * 29 * 100;
+                ct.b = (0 * 29 - 12) * 100;
+                ct.type = 80;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 6 * 29 * 100 + 1500;
-                n敵出現[n敵出現co].b = (8 * 29 - 12) * 100 + 1500;
-                n敵出現[n敵出現co].type = 88;
-                n敵出現[n敵出現co].xtype = 107;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 3 * 29 * 100 + 1500;
+                ct.b = (8 * 29 - 12) * 100 + 1500;
+                ct.type = 87;
+                ct.xtype = 105;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 9 * 29 * 100 + 1500;
-                n敵出現[n敵出現co].b = (8 * 29 - 12) * 100 + 1500;
-                n敵出現[n敵出現co].type = 88;
-                n敵出現[n敵出現co].xtype = 107;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 6 * 29 * 100 + 1500;
+                ct.b = (8 * 29 - 12) * 100 + 1500;
+                ct.type = 88;
+                ct.xtype = 107;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 25 * 29 * 100 - 1400;
-                n敵出現[n敵出現co].b = (2 * 29 - 12) * 100 - 400;
-                n敵出現[n敵出現co].type = 86;
-                n敵出現[n敵出現co].xtype = 0;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 9 * 29 * 100 + 1500;
+                ct.b = (8 * 29 - 12) * 100 + 1500;
+                ct.type = 88;
+                ct.xtype = 107;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 40 * 29 * 100;
-                n敵出現[n敵出現co].b = (8 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 82;
-                n敵出現[n敵出現co].xtype = 0;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 25 * 29 * 100 - 1400;
+                ct.b = (2 * 29 - 12) * 100 - 400;
+                ct.type = 86;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 42 * 29 * 100;
-                n敵出現[n敵出現co].b = (8 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 82;
-                n敵出現[n敵出現co].xtype = 0;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 40 * 29 * 100;
+                ct.b = (8 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 43 * 29 * 100 + 1500;
-                n敵出現[n敵出現co].b = (6 * 29 - 12) * 100 + 1500;
-                n敵出現[n敵出現co].type = 88;
-                n敵出現[n敵出現co].xtype = 105;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 42 * 29 * 100;
+                ct.b = (8 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 47 * 29 * 100 + 1500;
-                n敵出現[n敵出現co].b = (6 * 29 - 12) * 100 + 1500;
-                n敵出現[n敵出現co].type = 87;
-                n敵出現[n敵出現co].xtype = 105;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 43 * 29 * 100 + 1500;
+                ct.b = (6 * 29 - 12) * 100 + 1500;
+                ct.type = 88;
+                ct.xtype = 105;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 57 * 29 * 100;
-                n敵出現[n敵出現co].b = (7 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 82;
-                n敵出現[n敵出現co].xtype = 0;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 47 * 29 * 100 + 1500;
+                ct.b = (6 * 29 - 12) * 100 + 1500;
+                ct.type = 87;
+                ct.xtype = 105;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 77 * 29 * 100 - 1400;
-                n敵出現[n敵出現co].b = (2 * 29 - 12) * 100 - 400;
-                n敵出現[n敵出現co].type = 86;
-                n敵出現[n敵出現co].xtype = 0;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 57 * 29 * 100;
+                ct.b = (7 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 83 * 29 * 100 - 1400;
-                n敵出現[n敵出現co].b = (2 * 29 - 12) * 100 - 400;
-                n敵出現[n敵出現co].type = 86;
-                n敵出現[n敵出現co].xtype = 0;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 77 * 29 * 100 - 1400;
+                ct.b = (2 * 29 - 12) * 100 - 400;
+                ct.type = 86;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 88 * 29 * 100 + 1500;
-                n敵出現[n敵出現co].b = (9 * 29 - 12) * 100 + 1500;
-                n敵出現[n敵出現co].type = 87;
-                n敵出現[n敵出現co].xtype = 105;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 83 * 29 * 100 - 1400;
+                ct.b = (2 * 29 - 12) * 100 - 400;
+                ct.type = 86;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 88 * 29 * 100 + 1500;
-                n敵出現[n敵出現co].b = (9 * 29 - 12) * 100 + 1500;
-                n敵出現[n敵出現co].type = 88;
-                n敵出現[n敵出現co].xtype = 105;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 88 * 29 * 100 + 1500;
+                ct.b = (9 * 29 - 12) * 100 + 1500;
+                ct.type = 87;
+                ct.xtype = 105;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 90 * 29 * 100;
-                n敵出現[n敵出現co].b = (9 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 82;
-                n敵出現[n敵出現co].xtype = 0;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 88 * 29 * 100 + 1500;
+                ct.b = (9 * 29 - 12) * 100 + 1500;
+                ct.type = 88;
+                ct.xtype = 105;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 107 * 29 * 100;
-                n敵出現[n敵出現co].b = (10 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 30;
-                n敵出現[n敵出現co].xtype = 0;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 90 * 29 * 100;
+                ct.b = (9 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
+                //
+                ct = new C敵出現();
+                ct.a = 107 * 29 * 100;
+                ct.b = (10 * 29 - 12) * 100;
+                ct.type = 30;
+                ct.xtype = 0;
+                n敵出現.Add(ct);
                 //
                 n地面co = 0;
                 n地面[n地面co].a = 13 * 29 * 100;
@@ -1578,7 +1748,7 @@ namespace SyobonAction
                 {
                     for (int t_ = 0; t_ <= 16; t_++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_,tt_];
+                        stageDate[t_, tt_] = stagedatex[t_,tt_];
                     }
                 }
             }
@@ -1627,42 +1797,49 @@ namespace SyobonAction
                 n地面[n地面co].xtype = 0;
                 n地面co += 1;
                 //
-                n敵出現co = 0;
-                n敵出現[n敵出現co].a = 108 * 29 * 100;
-                n敵出現[n敵出現co].b = (6 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 6;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                C敵出現 ct;
                 //
-                n敵出現[n敵出現co].a = 33 * 29 * 100;
-                n敵出現[n敵出現co].b = (10 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 82;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 108 * 29 * 100;
+                ct.b = (6 * 29 - 12) * 100;
+                ct.type = 6;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 36 * 29 * 100;
-                n敵出現[n敵出現co].b = (0 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 80;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 33 * 29 * 100;
+                ct.b = (10 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 78 * 29 * 100 + 1500;
-                n敵出現[n敵出現co].b = (7 * 29 - 12) * 100 + 1500;
-                n敵出現[n敵出現co].type = 88;
-                n敵出現[n敵出現co].xtype = 105;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 36 * 29 * 100;
+                ct.b = (0 * 29 - 12) * 100;
+                ct.type = 80;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 80 * 29 * 100 + 1500;
-                n敵出現[n敵出現co].b = (7 * 29 - 12) * 100 + 1500;
-                n敵出現[n敵出現co].type = 87;
-                n敵出現[n敵出現co].xtype = 105;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 78 * 29 * 100 + 1500;
+                ct.b = (7 * 29 - 12) * 100 + 1500;
+                ct.type = 88;
+                ct.xtype = 105;
+                n敵出現.Add(ct);
                 //
-                n敵出現[n敵出現co].a = 85 * 29 * 100;
-                n敵出現[n敵出現co].b = (11 * 29 - 12) * 100;
-                n敵出現[n敵出現co].type = 82;
-                n敵出現[n敵出現co].xtype = 1;
-                n敵出現co += 1;
+                ct = new C敵出現();
+                ct.a = 80 * 29 * 100 + 1500;
+                ct.b = (7 * 29 - 12) * 100 + 1500;
+                ct.type = 87;
+                ct.xtype = 105;
+                n敵出現.Add(ct);
+                //
+                ct = new C敵出現();
+                ct.a = 85 * 29 * 100;
+                ct.b = (11 * 29 - 12) * 100;
+                ct.type = 82;
+                ct.xtype = 1;
+                n敵出現.Add(ct);
                 //
                 nリフトco = 0;
                 nリフト[nリフトco].a = 41 * 29 * 100;
@@ -1678,7 +1855,7 @@ namespace SyobonAction
                 {
                     for (int t_ = 0; t_ <= 16; t_++)
                     {
-                        stageDate[t_, tt_] = 0; stageDate[t_, tt_] = stagedatex[t_,tt_];
+                        stageDate[t_, tt_] = stagedatex[t_,tt_];
                     }
                 }
             }

@@ -160,15 +160,15 @@ namespace SyobonAction
                                 nブロック[t_].xtype = DX.GetRand(4);
                             }
                         }
-                        for (int t_ = 0; t_ < n敵出現max; t_++)
+                        foreach (C敵出現 ct in n敵出現.ToArray())
                         {
                             if (DX.GetRand(2) <= 1)
                             {
-                                n敵出現[t_].a = (DX.GetRand(500) - 1) * 29 * 100;
-                                n敵出現[t_].b = DX.GetRand(15) * 100 * 29 - 1200 - 3000;
+                                ct.a = (DX.GetRand(500) - 1) * 29 * 100;
+                                ct.b = DX.GetRand(15) * 100 * 29 - 1200 - 3000;
                                 if (DX.GetRand(6) == 0)
                                 {
-                                    n敵出現[t_].type = DX.GetRand(9);
+                                    ct.type = DX.GetRand(9);
                                 }
                             }
                         }

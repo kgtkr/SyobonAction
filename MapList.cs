@@ -8,6 +8,7 @@ namespace SyobonAction
 {
     static class MapList
     {
+        //不変
         public sealed class Map
         {
             private byte[,] data;
