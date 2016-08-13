@@ -492,21 +492,34 @@ namespace SyobonAction
                         v効果音再生(Res.nオーディオ17);
                         if (nプレイヤー.type == 301)
                         {
-                            n背景[n背景co].a = 117 * 29 * 100 - 1100;
-                            n背景[n背景co].b = 4 * 29 * 100;
-                            n背景[n背景co].type = 101;
-                            n背景co++;
-                            if (n背景co >= n背景max) n背景co = 0;
+                            C背景 cb;
 
-                            n背景[n背景co].a = 115 * 29 * 100 - 1100;
-                            n背景[n背景co].b = 6 * 29 * 100;
-                            n背景[n背景co].type = 102;
-                            n背景co++;
-                            if (n背景co >= n背景max) n背景co = 0;
+                            cb = new C背景();
+                            cb.a = 117 * 29 * 100 - 1100;
+                            cb.b = 4 * 29 * 100;
+                            cb.type = 101;
+                            n背景.Add(cb);
+
+                            cb = new C背景();
+                            cb.a = 115 * 29 * 100 - 1100;
+                            cb.b = 6 * 29 * 100;
+                            cb.type = 102;
+                            n背景.Add(cb);
                         }
                         else {
-                            n背景[n背景co].a = 157 * 29 * 100 - 1100; n背景[n背景co].b = 4 * 29 * 100; n背景[n背景co].type = 101; n背景co++; if (n背景co >= n背景max) n背景co = 0;
-                            n背景[n背景co].a = 155 * 29 * 100 - 1100; n背景[n背景co].b = 6 * 29 * 100; n背景[n背景co].type = 102; n背景co++; if (n背景co >= n背景max) n背景co = 0;
+                            C背景 cb;
+
+                            cb = new C背景();
+                            cb.a = 157 * 29 * 100 - 1100;
+                            cb.b = 4 * 29 * 100;
+                            cb.type = 101;
+                            n背景.Add(cb);
+
+                            cb = new C背景();
+                            cb.a = 155 * 29 * 100 - 1100;
+                            cb.b = 6 * 29 * 100;
+                            cb.type = 102;
+                            n背景.Add(cb);
                         }
                     }
                     //スタッフロールへ

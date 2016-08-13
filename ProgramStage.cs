@@ -274,9 +274,6 @@ namespace SyobonAction
 
             }//sta1-2-1
 
-
-
-
             //1-2(地上)
             if (nステージa == 1 && nステージb == 2 && nステージc == 2)
             {
@@ -624,25 +621,26 @@ namespace SyobonAction
                 n敵出現.Add(ct);
 
                 //マグマ
-                n背景co = 0;
-                n背景[n背景co].a = 7 * 29 * 100 - 300;
-                n背景[n背景co].b = 14 * 29 * 100 - 1200;
-                n背景[n背景co].type = 6;
-                n背景co++;
-                if (n背景co >= n背景max) n背景co = 0;
+                C背景 cb;
 
-                n背景[n背景co].a = 41 * 29 * 100 - 300;
-                n背景[n背景co].b = 14 * 29 * 100 - 1200;
-                n背景[n背景co].type = 6;
-                n背景co++;
+                cb = new C背景();
+                cb.a = 7 * 29 * 100 - 300;
+                cb.b = 14 * 29 * 100 - 1200;
+                cb.type = 6;
+                n背景.Add(cb);
 
-                if (n背景co >= n背景max) n背景co = 0;
-                n背景[n背景co].a = 149 * 29 * 100 - 1100;
-                n背景[n背景co].b = 10 * 29 * 100 - 600;
-                //TODO 100を代入しているからマグマステージで例外が出る
-                n背景[n背景co].type = 100;
-                n背景co++;
-                if (n背景co >= n背景max) n背景co = 0;
+                cb = new C背景();
+                cb.a = 41 * 29 * 100 - 300;
+                cb.b = 14 * 29 * 100 - 1200;
+                cb.type = 6;
+                n背景.Add(cb);
+
+                cb = new C背景();
+                cb.a = 149 * 29 * 100 - 1100;
+                cb.b = 10 * 29 * 100 - 600;
+                cb.type = 100;
+                n背景.Add(cb);
+
 
                 nブロックco = 0;
                 //ON-OFFブロック

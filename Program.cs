@@ -295,20 +295,15 @@ namespace SyobonAction
             n敵キャラ.Clear();
             n敵出現.Clear();
             for (int t_ = 0; t_ < n絵max; t_++) { n絵[t_].a = -9000000; n絵[t_].b = 1; n絵[t_].c = 1; n絵[t_].d = 1; n絵[t_].gtype = 0; }
-            for (int t_ = 0; t_ < n背景max; t_++)
+            n背景.Clear();
+            for (int i = 0; i < Res.n背景サイズ.Length; i++)
             {
-                n背景[t_].a = -9000000;
-                n背景[t_].b = 1;
-                n背景[t_].c = 1;
-                n背景[t_].d = 1;
-                Res.n背景サイズ[t_].w = 1;
-                Res.n背景サイズ[t_].h = 1;
-                n背景[t_].g = 0;
-                n背景[t_].type = 0;
+                Res.n背景サイズ[i].w = 1;
+                Res.n背景サイズ[i].h = 1;
             }
 
 
-            n地面co = 0; nブロックco = 0; n絵co = 0; n背景co = 0;
+            n地面co = 0; nブロックco = 0; n絵co = 0;
             //haikeitouroku();
         }//stagecls()
 
@@ -347,7 +342,14 @@ namespace SyobonAction
                         n敵出現.Add(ct);
                     }
 
-                    if (xx_10 >= 80 && xx_10 <= 89) { n背景[n背景co].a = xx_21 * 100; n背景[n背景co].b = xx_22 * 100; n背景[n背景co].type = xx_23 - 80; n背景co++; if (n背景co >= n背景max) n背景co = 0; }
+                    if (xx_10 >= 80 && xx_10 <= 89) {
+                        var cb = new C背景();
+                        cb.a = xx_21 * 100;
+                        cb.b = xx_22 * 100;
+                        cb.type = xx_23 - 80;
+                        n背景.Add(cb);
+                    }
+
 
                     //コイン
                     if (xx_10 == 9) { tyobi(tt_ * 29, t_ * 29 - 12, 800); }
