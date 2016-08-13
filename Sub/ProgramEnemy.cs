@@ -224,11 +224,20 @@ namespace SyobonAction
 
                                 if (ec.tm == 100)
                                 {
-                                    eyobi(ec.a + 1200 - 1200, ec.b + 3000 - 10 * 3000 - 1500, 0, 0, 0, 0, 1000, 10 * 3000 - 1200, 4, 20);
+                                    var ce = new C絵();
+                                    eyobi(ce,ec.a + 1200 - 1200, ec.b + 3000 - 10 * 3000 - 1500, 0, 0, 0, 0, 1000, 10 * 3000 - 1200, 4, 20);
+                                    n絵.Add(ce);
+
                                     if (nプレイヤー.type == 300) { nプレイヤー.type = 0; DX.StopSoundMem(Res.nオーディオ11); bgmChange(Res.nオーディオ100); DX.PlaySoundMem(Res.n現在のBGM, DX.DX_PLAYTYPE_LOOP); }
                                     for (int t1 = 0; t1 < n地面max; t1++) { if (n地面[t1].type == 104) n地面[t1].a = -80000000; }
                                 }
-                                if (ec.tm == 120) { eyobi(ec.a + 1200 - 1200, ec.b + 3000 - 10 * 3000 - 1500, 600, -1200, 0, 160, 1000, 10 * 3000 - 1200, 4, 240); ec.muki = 1; }
+                                if (ec.tm == 120) {
+                                    var ce = new C絵();
+                                    eyobi(ce,ec.a + 1200 - 1200, ec.b + 3000 - 10 * 3000 - 1500, 600, -1200, 0, 160, 1000, 10 * 3000 - 1200, 4, 240);
+                                    n絵.Add(ce);
+
+                                    ec.muki = 1;
+                                }
                                 if (ec.tm == 140) { ec.muki = 0; ec.tm = 0; }
                             }
                             if (ec.tm >= 220) { ec.tm = 0; ec.muki = 0; }

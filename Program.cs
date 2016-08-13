@@ -237,18 +237,7 @@ namespace SyobonAction
 
 
 
-        //グラ作成
-        static void eyobi(int xa, int xb, int xc, int xd, int xe, int xf, int xnobia, int xnobib, int xgtype, int xtm)
-        {
-
-            n絵[n絵co].a = xa; n絵[n絵co].b = xb; n絵[n絵co].c = xc; n絵[n絵co].d = xd; n絵[n絵co].e = xe; n絵[n絵co].f = xf;
-            n絵[n絵co].gtype = xgtype; n絵[n絵co].tm = xtm;
-            n絵[n絵co].nobia = xnobia; n絵[n絵co].nobib = xnobib;
-
-            n絵co++;
-            if (n絵co >= n絵max) n絵co = 0;
-
-        }//eyobi
+        
 
 
         //敵キャラ、アイテム作成
@@ -294,7 +283,7 @@ namespace SyobonAction
             for (int t_ = 0; t_ < nリフトmax; t_++) { nリフト[t_].a = -9000000; nリフト[t_].b = 1; nリフト[t_].c = 1; nリフト[t_].d = 1; nリフト[t_].e = 0; nリフト[t_].f = 0; nリフト[t_].muki = 0; nリフト[t_].on = 0; nリフト[t_].ee = 0; nリフト[t_].sok = 0; nリフト[t_].move = 0; nリフト[t_].movep = 0; nリフト[t_].sp = 0; }
             n敵キャラ.Clear();
             n敵出現.Clear();
-            for (int t_ = 0; t_ < n絵max; t_++) { n絵[t_].a = -9000000; n絵[t_].b = 1; n絵[t_].c = 1; n絵[t_].d = 1; n絵[t_].gtype = 0; }
+            n絵.Clear();
             n背景.Clear();
             for (int i = 0; i < Res.n背景サイズ.Length; i++)
             {
@@ -303,8 +292,7 @@ namespace SyobonAction
             }
 
 
-            n地面co = 0; nブロックco = 0; n絵co = 0;
-            //haikeitouroku();
+            n地面co = 0; nブロックco = 0;
         }//stagecls()
 
         //ステージロード
@@ -464,15 +452,33 @@ namespace SyobonAction
                                 if (nブロック[tt_].type == 7)
                                 {
                                     v効果音再生(Res.nオーディオ4); nブロック[tt_].type = 3;
-                                    eyobi(nブロック[tt_].a + 10, nブロック[tt_].b, 0, -800, 0, 40, 3000, 3000, 0, 16);
+
+                                    var ce = new C絵();
+                                    eyobi(ce,nブロック[tt_].a + 10, nブロック[tt_].b, 0, -800, 0, 40, 3000, 3000, 0, 16);
+                                    n絵.Add(ce);
                                 }
                                 else if (nブロック[tt_].type == 1)
                                 {
                                     v効果音再生(Res.nオーディオ3);
-                                    eyobi(nブロック[tt_].a + 1200, nブロック[tt_].b + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
-                                    eyobi(nブロック[tt_].a + 1200, nブロック[tt_].b + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
-                                    eyobi(nブロック[tt_].a + 1200, nブロック[tt_].b + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);
-                                    eyobi(nブロック[tt_].a + 1200, nブロック[tt_].b + 1200, -240, -1400, 0, 160, 1000, 1000, 1, 120);
+
+                                    C絵 ce;
+
+                                    ce = new C絵();
+                                    eyobi(ce, nブロック[tt_].a + 1200, nブロック[tt_].b + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
+                                    n絵.Add(ce);
+
+                                    ce = new C絵();
+                                    eyobi(ce, nブロック[tt_].a + 1200, nブロック[tt_].b + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
+                                    n絵.Add(ce);
+
+                                    ce = new C絵();
+                                    eyobi(ce, nブロック[tt_].a + 1200, nブロック[tt_].b + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);
+                                    n絵.Add(ce);
+
+                                    ce = new C絵();
+                                    eyobi(ce,nブロック[tt_].a + 1200, nブロック[tt_].b + 1200, -240, -1400, 0, 160, 1000, 1000, 1, 120);
+                                    n絵.Add(ce);
+
                                     brockBreak(tt_);
                                 }
 
@@ -484,10 +490,26 @@ namespace SyobonAction
                         if (ec.a + ec.nobia - fx > xx_8 && ec.a - fx < xx_8 + xx_1 && ec.b + ec.nobib - fy > xx_9 && ec.b - fy < xx_9 + xx_1)
                         {
                             v効果音再生(Res.nオーディオ3);
-                            eyobi(nブロック[tt_].a + 1200, nブロック[tt_].b + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
-                            eyobi(nブロック[tt_].a + 1200, nブロック[tt_].b + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
-                            eyobi(nブロック[tt_].a + 1200, nブロック[tt_].b + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);
-                            eyobi(nブロック[tt_].a + 1200, nブロック[tt_].b + 1200, -240, -1400, 0, 160, 1000, 1000, 1, 120);
+
+                            C絵 ce;
+
+                            ce = new C絵();
+                            eyobi(ce, nブロック[tt_].a + 1200, nブロック[tt_].b + 1200, 300, -1000, 0, 160, 1000, 1000, 1, 120);
+                            n絵.Add(ce);
+
+                            ce = new C絵();
+                            eyobi(ce, nブロック[tt_].a + 1200, nブロック[tt_].b + 1200, -300, -1000, 0, 160, 1000, 1000, 1, 120);
+                            n絵.Add(ce);
+
+                            ce = new C絵();
+                            eyobi(ce, nブロック[tt_].a + 1200, nブロック[tt_].b + 1200, 240, -1400, 0, 160, 1000, 1000, 1, 120);
+                            n絵.Add(ce);
+
+                            ce = new C絵();
+                            eyobi(ce, nブロック[tt_].a + 1200, nブロック[tt_].b + 1200, -240, -1400, 0, 160, 1000, 1000, 1, 120);
+                            n絵.Add(ce);
+
+
                             brockBreak(tt_);
 
                         }

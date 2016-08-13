@@ -8,7 +8,7 @@ namespace SyobonAction
 {
     static partial class Program
     {
-        struct C絵
+        class C絵
         {
             public int a,
             b,
@@ -23,26 +23,26 @@ namespace SyobonAction
         }
 
         //効果を持たないグラ
-        const int n絵max = 201;
-        static int n絵co;
-        static C絵[] n絵 = new C絵[n絵max];
+        static List<C絵> n絵 = new List<C絵>();
 
 
         static void Update絵()
         {
             //グラ
-            for (int t_ = 0; t_ < n絵max; t_++)
+            foreach (C絵 ce in n絵.ToArray())
             {
-                xx_0 = n絵[t_].a - fx; xx_1 = n絵[t_].b - fy;
-                xx_2 = n絵[t_].nobia / 100; xx_3 = n絵[t_].nobib / 100;
-                if (n絵[t_].tm >= 0) n絵[t_].tm--;
-                if (xx_0 + xx_2 * 100 >= -10 && xx_1 <= n画面幅 && xx_1 + xx_3 * 100 >= -10 - 8000 && xx_3 <= n画面高さ && n絵[t_].tm >= 0)
+                xx_0 = ce.a - fx; xx_1 = ce.b - fy;
+                xx_2 = ce.nobia / 100; xx_3 = ce.nobib / 100;
+                if (ce.tm >= 0) ce.tm--;
+                if (xx_0 + xx_2 * 100 >= -10 && xx_1 <= n画面幅 && xx_1 + xx_3 * 100 >= -10 - 8000 && xx_3 <= n画面高さ && ce.tm >= 0)
                 {
-                    n絵[t_].a += n絵[t_].c; n絵[t_].b += n絵[t_].d;
-                    n絵[t_].c += n絵[t_].e; n絵[t_].d += n絵[t_].f;
+                    ce.a += ce.c; ce.b += ce.d;
+                    ce.c += ce.e; ce.d += ce.f;
 
                 }
-                else { n絵[t_].a = -9000000; }
+                else {
+                    n絵.Remove(ce);
+                }
 
             }//emax
         }
@@ -50,19 +50,19 @@ namespace SyobonAction
         static void Draw絵()
         {
             //グラ
-            for (int t_ = 0; t_ < n絵max; t_++)
+            foreach (C絵 ce in n絵.ToArray())
             {
-                xx_0 = n絵[t_].a - fx; xx_1 = n絵[t_].b - fy;
-                xx_2 = n絵[t_].nobia / 100; xx_3 = n絵[t_].nobib / 100;
+                xx_0 = ce.a - fx; xx_1 = ce.b - fy;
+                xx_2 = ce.nobia / 100; xx_3 = ce.nobib / 100;
                 if (xx_0 + xx_2 * 100 >= -10 && xx_1 <= n画面幅 && xx_1 + xx_3 * 100 >= -10 - 8000 && xx_3 <= n画面高さ)
                 {
 
                     //コイン
-                    if (n絵[t_].gtype == 0)
+                    if (ce.gtype == 0)
                         DXDraw.DrawGraph(Res.n切り取り画像[0, 2], xx_0 / 100, xx_1 / 100);
 
                     //ブロックの破片
-                    if (n絵[t_].gtype == 1)
+                    if (ce.gtype == 1)
                     {
                         if (nステージ色 == 1 || nステージ色 == 3 || nステージ色 == 5) DXDraw.SetColor(9 * 16, 6 * 16, 3 * 16);
                         if (nステージ色 == 2) DXDraw.SetColor(0, 120, 160);
@@ -74,15 +74,15 @@ namespace SyobonAction
                     }
 
                     //リフトの破片
-                    if (n絵[t_].gtype == 2 || n絵[t_].gtype == 3)
+                    if (ce.gtype == 2 || ce.gtype == 3)
                     {
-                        if (n絵[t_].gtype == 3) DXDraw.nミラー = 1;
+                        if (ce.gtype == 3) DXDraw.nミラー = 1;
                         DXDraw.DrawGraph(Res.n切り取り画像[0, 5], xx_0 / 100, xx_1 / 100);
                         DXDraw.nミラー = 0;
                     }
 
                     //ポール
-                    if (n絵[t_].gtype == 4)
+                    if (ce.gtype == 4)
                     {
                         DXDraw.SetColorWhite();
                         DXDraw.DrawBox塗り潰し((xx_0) / 100 + 10, (xx_1) / 100, 10, xx_3);
@@ -98,5 +98,15 @@ namespace SyobonAction
                 }
             }
         }
+
+        //グラ作成
+        static void eyobi(C絵 ce, int xa, int xb, int xc, int xd, int xe, int xf, int xnobia, int xnobib, int xgtype, int xtm)
+        {
+
+            ce.a = xa; ce.b = xb; ce.c = xc; ce.d = xd; ce.e = xe; ce.f = xf;
+            ce.gtype = xgtype; ce.tm = xtm;
+            ce.nobia = xnobia; ce.nobib = xnobib;
+
+        }//eyobi
     }
 }
