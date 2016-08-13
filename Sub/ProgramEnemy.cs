@@ -17,8 +17,7 @@ namespace SyobonAction
             nobib,
             c,
             d;
-            public int e,
-                f,
+            public int f,
                 brocktm;
             public int acta,
                 actb,
@@ -28,8 +27,7 @@ namespace SyobonAction
                 xtype,
                 muki;
             public int notm;
-            public int tm,
-                _2tm;
+            public int tm;
             public int msgtm,
                 msgtype;
         }
