@@ -256,11 +256,45 @@ namespace SyobonAction
 
 
                 //リフト
-                nリフトco = 0;
-                t_ = nリフトco; nリフト[t_].a = 111 * 29 * 100; nリフト[t_].b = (8 * 29 - 12) * 100; nリフト[t_].c = 90 * 100; nリフト[t_].type = 0; nリフト[t_].acttype = 5; nリフト[t_].e = -300; nリフトco++;
-                t_ = nリフトco; nリフト[t_].a = 111 * 29 * 100; nリフト[t_].b = (0 * 29 - 12) * 100; nリフト[t_].c = 90 * 100; nリフト[t_].type = 0; nリフト[t_].acttype = 5; nリフト[t_].e = -300; nリフトco++;
-                t_ = 10; nリフト[t_].a = 116 * 29 * 100; nリフト[t_].b = (4 * 29 - 12) * 100; nリフト[t_].c = 90 * 100; nリフト[t_].type = 1; nリフト[t_].acttype = 5; nリフト[t_].e = 300; nリフトco++;
-                t_ = 11; nリフト[t_].a = 116 * 29 * 100; nリフト[t_].b = (12 * 29 - 12) * 100; nリフト[t_].c = 90 * 100; nリフト[t_].type = 1; nリフト[t_].acttype = 5; nリフト[t_].e = 300; nリフトco++;
+                Cリフト cl;
+
+                cl = new Cリフト();
+                cl.a = 111 * 29 * 100;
+                cl.b = (8 * 29 - 12) * 100;
+                cl.c = 90 * 100;
+                cl.type = 0;
+                cl.acttype = 5;
+                cl.e = -300;
+                nリフト.Add(cl);
+
+                cl = new Cリフト();
+                cl.a = 111 * 29 * 100;
+                cl.b = (0 * 29 - 12) * 100;
+                cl.c = 90 * 100;
+                cl.type = 0;
+                cl.acttype = 5;
+                cl.e = -300;
+                nリフト.Add(cl);
+
+                cl = new Cリフト();
+                cl.a = 116 * 29 * 100;
+                cl.b = (4 * 29 - 12) * 100;
+                cl.c = 90 * 100;
+                cl.type = 1;
+                cl.acttype = 5;
+                cl.e = 300;
+                cl.b落ちる = true;
+                nリフト.Add(cl);
+
+                cl = new Cリフト();
+                cl.a = 116 * 29 * 100;
+                cl.b = (12 * 29 - 12) * 100;
+                cl.c = 90 * 100;
+                cl.type = 1;
+                cl.acttype = 5;
+                cl.e = 300;
+                cl.b落ちる = true;
+                nリフト.Add(cl);
 
 
 
@@ -414,15 +448,74 @@ namespace SyobonAction
 
 
                 //リフト
-                nリフトco = 0;
-                t_ = nリフトco; nリフト[t_].a = 33 * 29 * 100; nリフト[t_].b = (3 * 29 - 12) * 100; nリフト[t_].c = 90 * 100; nリフト[t_].type = 0; nリフト[t_].acttype = 0; nリフト[t_].e = 0; nリフト[t_].sp = 1; nリフトco++;
-                t_ = nリフトco; nリフト[t_].a = 39 * 29 * 100 - 2000; nリフト[t_].b = (6 * 29 - 12) * 100; nリフト[t_].c = 90 * 100; nリフト[t_].type = 0; nリフト[t_].acttype = 1; nリフト[t_].e = 0; nリフトco++;
-                t_ = nリフトco; nリフト[t_].a = 45 * 29 * 100 + 1500; nリフト[t_].b = (10 * 29 - 12) * 100; nリフト[t_].c = 90 * 100; nリフト[t_].type = 0; nリフト[t_].acttype = 0; nリフト[t_].e = 0; nリフト[t_].sp = 2; nリフトco++;
+                Cリフト cl;
 
-                t_ = nリフトco; nリフト[t_].a = 95 * 29 * 100; nリフト[t_].b = (7 * 29 - 12) * 100; nリフト[t_].c = 180 * 100; nリフト[t_].type = 0; nリフト[t_].acttype = 0; nリフト[t_].e = 0; nリフト[t_].sp = 10; nリフトco++;
-                t_ = nリフトco; nリフト[t_].a = 104 * 29 * 100; nリフト[t_].b = (9 * 29 - 12) * 100; nリフト[t_].c = 90 * 100; nリフト[t_].type = 0; nリフト[t_].acttype = 0; nリフト[t_].e = 0; nリフト[t_].sp = 12; nリフトco++;
-                t_ = nリフトco; nリフト[t_].a = 117 * 29 * 100; nリフト[t_].b = (3 * 29 - 12) * 100; nリフト[t_].c = 90 * 100; nリフト[t_].type = 0; nリフト[t_].acttype = 1; nリフト[t_].e = 0; nリフト[t_].sp = 15; nリフトco++;
-                t_ = nリフトco; nリフト[t_].a = 124 * 29 * 100; nリフト[t_].b = (5 * 29 - 12) * 100; nリフト[t_].c = 210 * 100; nリフト[t_].type = 0; nリフト[t_].acttype = 0; nリフト[t_].e = 0; nリフト[t_].sp = 10; nリフトco++;
+                cl = new Cリフト();
+                cl.a = 33 * 29 * 100;
+                cl.b = (3 * 29 - 12) * 100;
+                cl.c = 90 * 100;
+                cl.type = 0;
+                cl.acttype = 0;
+                cl.e = 0;
+                cl.sp = 1;
+                nリフト.Add(cl);
+
+                cl = new Cリフト();
+                cl.a = 39 * 29 * 100 - 2000;
+                cl.b = (6 * 29 - 12) * 100;
+                cl.c = 90 * 100; cl.type = 0;
+                cl.acttype = 1;
+                cl.e = 0;
+                nリフト.Add(cl);
+
+                cl = new Cリフト();
+                cl.a = 45 * 29 * 100 + 1500;
+                cl.b = (10 * 29 - 12) * 100;
+                cl.c = 90 * 100; cl.type = 0;
+                cl.acttype = 0;
+                cl.e = 0;
+                cl.sp = 2;
+                nリフト.Add(cl);
+
+                cl = new Cリフト();
+                cl.a = 95 * 29 * 100;
+                cl.b = (7 * 29 - 12) * 100;
+                cl.c = 180 * 100;
+                cl.type = 0;
+                cl.acttype = 0;
+                cl.e = 0;
+                cl.sp = 10;
+                nリフト.Add(cl);
+
+                cl = new Cリフト();
+                cl.a = 104 * 29 * 100;
+                cl.b = (9 * 29 - 12) * 100;
+                cl.c = 90 * 100;
+                cl.type = 0;
+                cl.acttype = 0;
+                cl.e = 0;
+                cl.sp = 12;
+                nリフト.Add(cl);
+
+                cl = new Cリフト();
+                cl.a = 117 * 29 * 100;
+                cl.b = (3 * 29 - 12) * 100;
+                cl.c = 90 * 100;
+                cl.type = 0;
+                cl.acttype = 1;
+                cl.e = 0;
+                cl.sp = 15;
+                nリフト.Add(cl);
+
+                cl = new Cリフト();
+                cl.a = 124 * 29 * 100;
+                cl.b = (5 * 29 - 12) * 100;
+                cl.c = 210 * 100;
+                cl.type = 0;
+                cl.acttype = 0;
+                cl.e = 0;
+                cl.sp = 10;
+                nリフト.Add(cl);
 
 
 
@@ -688,9 +781,25 @@ namespace SyobonAction
 
 
                 //リフト
-                nリフトco = 0;
-                t_ = nリフトco; nリフト[t_].a = 93 * 29 * 100; nリフト[t_].b = (10 * 29 - 12) * 100; nリフト[t_].c = 60 * 100; nリフト[t_].type = 0; nリフト[t_].acttype = 1; nリフト[t_].e = 0; nリフトco++;
-                t_ = 20; nリフト[t_].a = 119 * 29 * 100 + 300; nリフト[t_].b = (10 * 29 - 12) * 100; nリフト[t_].c = 12 * 30 * 100 + 1000; nリフト[t_].type = 0; nリフト[t_].acttype = 0; nリフト[t_].sp = 21; nリフト[t_].e = 0; nリフトco++;
+                Cリフト cl;
+
+                cl = new Cリフト();
+                cl.a = 93 * 29 * 100;
+                cl.b = (10 * 29 - 12) * 100;
+                cl.c = 60 * 100; cl.type = 0;
+                cl.acttype = 1;
+                cl.e = 0;
+                nリフト.Add(cl);
+
+                cl = new Cリフト();
+                cl.a = 119 * 29 * 100 + 300;
+                cl.b = (10 * 29 - 12) * 100;
+                cl.c = 12 * 30 * 100 + 1000;
+                cl.type = 0;
+                cl.acttype = 0;
+                cl.sp = 21;
+                cl.e = 0;
+                nリフト.Add(cl);
 
 
                 nステージc = 0;
@@ -1274,51 +1383,57 @@ namespace SyobonAction
                 n敵出現[n地面co].xtype = 1;
                 n地面co += 1;
                 //
-                nリフトco = 0;
-                nリフト[nリフトco].a = 1 * 29 * 100;
-                nリフト[nリフトco].b = (10 * 29 - 12) * 100;
-                nリフト[nリフトco].c = 5 * 3000;
-                nリフト[nリフトco].type = 0;
-                nリフト[nリフトco].acttype = 1;
-                nリフト[nリフトco].e = 0;
-                nリフト[nリフトco].sp = 10;
-                nリフトco++;
+                Cリフト cl;
                 //
-                nリフト[nリフトco].a = 18 * 29 * 100;
-                nリフト[nリフトco].b = (4 * 29 - 12) * 100;
-                nリフト[nリフトco].c = 3 * 3000;
-                nリフト[nリフトco].type = 0;
-                nリフト[nリフトco].acttype = 0;
-                nリフト[nリフトco].e = 0;
-                nリフト[nリフトco].sp = 10;
-                nリフトco++;
+                cl = new Cリフト();
+                cl.a = 1 * 29 * 100;
+                cl.b = (10 * 29 - 12) * 100;
+                cl.c = 5 * 3000;
+                cl.type = 0;
+                cl.acttype = 1;
+                cl.e = 0;
+                cl.sp = 10;
+                nリフト.Add(cl);
                 //
-                nリフト[nリフトco].a = 35 * 29 * 100;
-                nリフト[nリフトco].b = (4 * 29 - 12) * 100;
-                nリフト[nリフトco].c = 5 * 3000;
-                nリフト[nリフトco].type = 0;
-                nリフト[nリフトco].acttype = 0;
-                nリフト[nリフトco].e = 0;
-                nリフト[nリフトco].sp = 10;
-                nリフトco++;
+                cl = new Cリフト();
+                cl.a = 18 * 29 * 100;
+                cl.b = (4 * 29 - 12) * 100;
+                cl.c = 3 * 3000;
+                cl.type = 0;
+                cl.acttype = 0;
+                cl.e = 0;
+                cl.sp = 10;
+                nリフト.Add(cl);
                 //
-                nリフト[nリフトco].a = 35 * 29 * 100;
-                nリフト[nリフトco].b = (8 * 29 - 12) * 100;
-                nリフト[nリフトco].c = 5 * 3000;
-                nリフト[nリフトco].type = 0;
-                nリフト[nリフトco].acttype = 0;
-                nリフト[nリフトco].e = 0;
-                nリフト[nリフトco].sp = 10;
-                nリフトco++;
+                cl = new Cリフト();
+                cl.a = 35 * 29 * 100;
+                cl.b = (4 * 29 - 12) * 100;
+                cl.c = 5 * 3000;
+                cl.type = 0;
+                cl.acttype = 0;
+                cl.e = 0;
+                cl.sp = 10;
+                nリフト.Add(cl);
                 //
-                nリフト[nリフトco].a = 94 * 29 * 100;
-                nリフト[nリフトco].b = (6 * 29 - 12) * 100;
-                nリフト[nリフトco].c = 3 * 3000;
-                nリフト[nリフトco].type = 0;
-                nリフト[nリフトco].acttype = 0;
-                nリフト[nリフトco].e = 0;
-                nリフト[nリフトco].sp = 1;
-                nリフトco++;
+                cl = new Cリフト();
+                cl.a = 35 * 29 * 100;
+                cl.b = (8 * 29 - 12) * 100;
+                cl.c = 5 * 3000;
+                cl.type = 0;
+                cl.acttype = 0;
+                cl.e = 0;
+                cl.sp = 10;
+                nリフト.Add(cl);
+                //
+                cl = new Cリフト();
+                cl.a = 94 * 29 * 100;
+                cl.b = (6 * 29 - 12) * 100;
+                cl.c = 3 * 3000;
+                cl.type = 0;
+                cl.acttype = 0;
+                cl.e = 0;
+                cl.sp = 1;
+                nリフト.Add(cl);
                 //
                 for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
@@ -1723,24 +1838,27 @@ namespace SyobonAction
                 n地面[n地面co].xtype = 20;
                 n地面co += 1;
                 //
-                nリフトco = 0;
-                nリフト[nリフトco].a = 74 * 29 * 100 - 1500;
-                nリフト[nリフトco].b = (7 * 29 - 12) * 100;
-                nリフト[nリフトco].c = 2 * 3000;
-                nリフト[nリフトco].type = 0;
-                nリフト[nリフトco].acttype = 1;
-                nリフト[nリフトco].e = 0;
-                nリフト[nリフトco].sp = 0;
-                nリフトco = 20;
+                Cリフト cl;
                 //
-                nリフト[nリフトco].a = 97 * 29 * 100;
-                nリフト[nリフトco].b = (12 * 29 - 12) * 100;
-                nリフト[nリフトco].c = 12 * 3000;
-                nリフト[nリフトco].type = 0;
-                nリフト[nリフトco].acttype = 0;
-                nリフト[nリフトco].e = 0;
-                nリフト[nリフトco].sp = 21;
-                nリフトco += 1;
+                cl = new Cリフト();
+                cl.a = 74 * 29 * 100 - 1500;
+                cl.b = (7 * 29 - 12) * 100;
+                cl.c = 2 * 3000;
+                cl.type = 0;
+                cl.acttype = 1;
+                cl.e = 0;
+                cl.sp = 0;
+                nリフト.Add(cl);
+                //
+                cl = new Cリフト();
+                cl.a = 97 * 29 * 100;
+                cl.b = (12 * 29 - 12) * 100;
+                cl.c = 12 * 3000;
+                cl.type = 0;
+                cl.acttype = 0;
+                cl.e = 0;
+                cl.sp = 21;
+                nリフト.Add(cl);
                 //
                 for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {
@@ -1839,15 +1957,15 @@ namespace SyobonAction
                 ct.xtype = 1;
                 n敵出現.Add(ct);
                 //
-                nリフトco = 0;
-                nリフト[nリフトco].a = 41 * 29 * 100;
-                nリフト[nリフトco].b = (3 * 29 - 12) * 100;
-                nリフト[nリフトco].c = 3 * 3000;
-                nリフト[nリフトco].type = 0;
-                nリフト[nリフトco].acttype = 0;
-                nリフト[nリフトco].e = 0;
-                nリフト[nリフトco].sp = 3;
-                nリフトco = 0;
+                var cl = new Cリフト();
+                cl.a = 41 * 29 * 100;
+                cl.b = (3 * 29 - 12) * 100;
+                cl.c = 3 * 3000;
+                cl.type = 0;
+                cl.acttype = 0;
+                cl.e = 0;
+                cl.sp = 3;
+                nリフト.Add(cl);
                 //
                 for (int tt_ = 0; tt_ <= 1000; tt_++)
                 {

@@ -174,16 +174,15 @@ namespace SyobonAction
                         }
 
                         {
-                            nリフトco = 0;
-                            int t_ = nリフトco;
-                            nリフト[t_].a = ma + fx;
-                            nリフト[t_].b = (13 * 29 - 12) * 100;
-                            nリフト[t_].c = 30 * 100;
-                            nリフト[t_].type = 0;
-                            nリフト[t_].acttype = 0;
-                            nリフト[t_].e = 0;
-                            nリフト[t_].sp = 0;
-                            nリフトco++;
+                            var cl = new Cリフト();
+                            cl.a = ma + fx;
+                            cl.b = (13 * 29 - 12) * 100;
+                            cl.c = 30 * 100;
+                            cl.type = 0;
+                            cl.acttype = 0;
+                            cl.e = 0;
+                            cl.sp = 0;
+                            nリフト.Add(cl);
                         }
                         if (DX.GetRand(4) == 0) nステージ色 = DX.GetRand(5);
                     }

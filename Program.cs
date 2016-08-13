@@ -280,7 +280,7 @@ namespace SyobonAction
         {
             for (int t_ = 0; t_ < n地面max; t_++) { n地面[t_].a = -9000000; n地面[t_].b = 1; n地面[t_].c = 1; n地面[t_].d = 1; n地面[t_].gtype = 0; n地面[t_].type = 0; n地面[t_].xtype = 0; }
             for (int t_ = 0; t_ < nブロックmax; t_++) { nブロック[t_].a = -9000000; nブロック[t_].b = 1; nブロック[t_].c = 1; nブロック[t_].d = 1; nブロック[t_].item = 0; nブロック[t_].xtype = 0; }
-            for (int t_ = 0; t_ < nリフトmax; t_++) { nリフト[t_].a = -9000000; nリフト[t_].b = 1; nリフト[t_].c = 1; nリフト[t_].d = 1; nリフト[t_].e = 0; nリフト[t_].f = 0; nリフト[t_].muki = 0; nリフト[t_].on = 0; nリフト[t_].ee = 0; nリフト[t_].sok = 0; nリフト[t_].move = 0; nリフト[t_].movep = 0; nリフト[t_].sp = 0; }
+            nリフト.Clear();
             n敵キャラ.Clear();
             n敵出現.Clear();
             n絵.Clear();
@@ -312,7 +312,14 @@ namespace SyobonAction
                     if (stageDate[t_, tt_] >= 1 && stageDate[t_, tt_] <= 255) xx_10 = (int)stageDate[t_, tt_];
                     xx_21 = tt_ * 29; xx_22 = t_ * 29 - 12; xx_23 = xx_10;
                     if (xx_10 >= 1 && xx_10 <= 19 && xx_10 != 9) { tyobi(tt_ * 29, t_ * 29 - 12, xx_10); }
-                    if (xx_10 >= 20 && xx_10 <= 29) { nリフト[nリフトco].a = xx_21 * 100; nリフト[nリフトco].b = xx_22 * 100; nリフト[nリフトco].c = 3000; nリフト[nリフトco].type = 0; nリフトco++; if (nリフトco >= nリフトmax) nリフトco = 0; }
+                    if (xx_10 >= 20 && xx_10 <= 29) {
+                        var cl = new Cリフト();
+                        cl.a = xx_21 * 100;
+                        cl.b = xx_22 * 100;
+                        cl.c = 3000;
+                        cl.type = 0;
+                        nリフト.Add(cl);
+                    }
                     if (xx_10 == 30) { n地面[n地面co].a = xx_21 * 100; n地面[n地面co].b = xx_22 * 100; n地面[n地面co].c = 3000; n地面[n地面co].d = 6000; n地面[n地面co].type = 500; n地面co++; if (n地面co >= n地面max) n地面co = 0; }
                     if (xx_10 == 40) { n地面[n地面co].a = xx_21 * 100; n地面[n地面co].b = xx_22 * 100; n地面[n地面co].c = 6000; n地面[n地面co].d = 3000; n地面[n地面co].type = 1; n地面co++; if (n地面co >= n地面max) n地面co = 0; }
                     if (xx_10 == 41) { n地面[n地面co].a = xx_21 * 100 + 500; n地面[n地面co].b = xx_22 * 100; n地面[n地面co].c = 5000; n地面[n地面co].d = 3000; n地面[n地面co].type = 2; n地面co++; if (n地面co >= n地面max) n地面co = 0; }
